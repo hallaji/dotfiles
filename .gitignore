@@ -1,0 +1,8 @@
+# Mac
+.DS_Store
+
+# Bare git repository
+.cfg/
+
+# Others
+.envrc
