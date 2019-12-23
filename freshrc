@@ -1,0 +1,88 @@
+# ███████╗██████╗ ███████╗███████╗██╗  ██╗
+# ██╔════╝██╔══██╗██╔════╝██╔════╝██║  ██║
+# █████╗  ██████╔╝█████╗  ███████╗███████║
+# ██╔══╝  ██╔══██╗██╔══╝  ╚════██║██╔══██║
+# ██║     ██║  ██║███████╗███████║██║  ██║
+# ╚═╝     ╚═╝  ╚═╝╚══════╝╚══════╝╚═╝  ╚═╝
+
+fresh freshshell/fresh bin/fresh --bin
+fresh freshshell/fresh contrib/source-build.sh --file=~/.zshrc
+
+# ███████╗███████╗██╗  ██╗
+# ╚══███╔╝██╔════╝██║  ██║
+#   ███╔╝ ███████╗███████║
+#  ███╔╝  ╚════██║██╔══██║
+# ███████╗███████║██║  ██║
+# ╚══════╝╚══════╝╚═╝  ╚═╝
+
+fresh-options --file=~/.zshrc --marker
+  fresh shell/exports.sh
+  # @NOTINUSE fresh shell/ohmyzsh.sh
+  fresh shell/direnv.sh
+  fresh shell/jenv.sh
+  fresh shell/nvm.sh
+  fresh shell/sdkman.sh
+  fresh shell/starship/starship.sh
+  fresh shell/vi-mode.sh
+  fresh shell/zplugin.sh
+fresh-options
+
+fresh-options --file=~/.zshenv --marker
+  fresh shell/aliases.sh
+fresh-options
+
+#  ██████╗ ██████╗ ███╗   ██╗███████╗██╗ ██████╗
+# ██╔════╝██╔═══██╗████╗  ██║██╔════╝██║██╔════╝
+# ██║     ██║   ██║██╔██╗ ██║█████╗  ██║██║  ███╗
+# ██║     ██║   ██║██║╚██╗██║██╔══╝  ██║██║   ██║
+# ╚██████╗╚██████╔╝██║ ╚████║██║     ██║╚██████╔╝
+#  ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝     ╚═╝ ╚═════╝
+
+fresh shell/starship/config.toml --file=~/.config/starship.toml
+fresh ssh/config.conf --file=~/.ssh/config
+fresh-options --file
+  fresh git/\*
+fresh-options
+
+# ██╗   ██╗██╗███╗   ███╗
+# ██║   ██║██║████╗ ████║
+# ██║   ██║██║██╔████╔██║
+# ╚██╗ ██╔╝██║██║╚██╔╝██║
+#  ╚████╔╝ ██║██║ ╚═╝ ██║
+#   ╚═══╝  ╚═╝╚═╝     ╚═╝
+
+fresh vim/colors/theme.vim --file='~/.vim/colors/theme.vim' --marker='"'
+fresh vim/nvim.vim --file=~/.config/nvim/init.vim --marker='"'
+fresh-options --file=~/.vimrc --marker='"'
+  fresh vim/plugins.vim
+  fresh vim/.vimrc
+fresh-options
+
+# ███████╗██╗ ██████╗ ██╗     ███████╗████████╗
+# ██╔════╝██║██╔════╝ ██║     ██╔════╝╚══██╔══╝
+# █████╗  ██║██║  ███╗██║     █████╗     ██║
+# ██╔══╝  ██║██║   ██║██║     ██╔══╝     ██║
+# ██║     ██║╚██████╔╝███████╗███████╗   ██║
+# ╚═╝     ╚═╝ ╚═════╝ ╚══════╝╚══════╝   ╚═╝
+
+declare -a arr=(
+  "ansi regular.flf"
+  "ansi shadow.flf"
+  "calvin s.flf"
+  "ivrit.flf"
+  "speed.flf"
+  "stforek.flf"
+)
+
+for font in "${arr[@]}"
+do
+  file="/usr/local/opt/figlet/share/figlet/fonts/$font"
+    if [ ! -f "$file" ]; then
+      fresh xero/figlet-fonts "$font" --file="$file"
+  fi
+done
+
+# @TODO
+#  python colors.py
+#  python colors.py #26282B
+# https://gist.githubusercontent.com/MicahElliott/719710/raw/73d047f0a3ffc35f0655488547e7f24fa3f04ea6/colortrans.py

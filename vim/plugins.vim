@@ -23,16 +23,60 @@ call vundle#begin()
 " ██║     ███████╗╚██████╔╝╚██████╔╝██║██║ ╚████║███████║
 " ╚═╝     ╚══════╝ ╚═════╝  ╚═════╝ ╚═╝╚═╝  ╚═══╝╚══════╝
 
-" let Vundle manage Vundle, required
+" ┬  ┬┬ ┬┌┐┌┌┬┐┬  ┌─┐
+" └┐┌┘│ ││││ │││  ├┤
+"  └┘ └─┘┘└┘─┴┘┴─┘└─┘
+
 Plugin 'VundleVim/Vundle.vim'
+
+" ┌┬┐┌─┐┌─┐┬  ┌─┐
+"  │ │ ││ ││  └─┐
+"  ┴ └─┘└─┘┴─┘└─┘
+
 Plugin 'tpope/vim-vinegar'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'rking/ag.vim'
 Plugin 'skwp/greplace.vim'
-Plugin 'itchyny/lightline.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'travisjeffery/vim-auto-mkdir'
 Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'itchyny/lightline.vim'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'cocopon/colorswatch.vim'
+Plugin 'cocopon/inspecthi.vim'
+
+" ┌─┐┬ ┬┌┐┌┌┬┐┌─┐─┐ ┬
+" └─┐└┬┘│││ │ ├─┤┌┴┬┘
+" └─┘ ┴ ┘└┘ ┴ ┴ ┴┴ └─
+
+Plugin 'leafgarland/typescript-vim'
+Plugin 'elixir-editors/vim-elixir'
+Plugin 'flowtype/vim-flow'
+Plugin 'jparise/vim-graphql'
+Plugin 'pangloss/vim-javascript'
+Plugin 'peitalin/vim-jsx-typescript'
+Plugin 'tpope/vim-markdown'
+Plugin 'udalov/kotlin-vim'
+
+" ┌┬┐┬ ┬┌─┐┌┬┐┌─┐┌─┐
+"  │ ├─┤├┤ │││├┤ └─┐
+"  ┴ ┴ ┴└─┘┴ ┴└─┘└─┘
+
+Plugin 'joshdick/onedark.vim'
+Plugin 'cocopon/iceberg.vim'
+Plugin 'flrnd/plastic.vim'
+Plugin 'w0ng/vim-hybrid'
+
+" ┌┐┌┌─┐┌┬┐  ┬┌┐┌  ┬ ┬┌─┐┌─┐
+" ││││ │ │   ││││  │ │└─┐├┤
+" ┘└┘└─┘ ┴   ┴┘└┘  └─┘└─┘└─┘
+
+"Plugin 'jelera/vim-javascript-syntax'
+"Plugin 'HerringtonDarkholme/yats.vim'
+"Plugin 'MaxMEllon/vim-jsx-pretty'
+"Plugin 'file:///home/vahid/path/to/plugin'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
