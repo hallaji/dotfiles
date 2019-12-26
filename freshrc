@@ -54,9 +54,20 @@ fresh-options
 fresh vim/colors/theme.vim --file='~/.vim/colors/theme.vim' --marker='"'
 fresh vim/nvim.vim --file=~/.config/nvim/init.vim --marker='"'
 fresh-options --file=~/.vimrc --marker='"'
-  fresh vim/plugins.vim
-  fresh vim/.vimrc
+  # fresh vim/plugins.vim
+  fresh vim/plug.vim
+  fresh vim/plugins/ctrlp.vim
+  fresh vim/plugins/nerdtree.vim
+  fresh vim/plugins/coc.vim
+  fresh vim/plugins/greplace.vim
+  fresh vim/plugins/lightline.vim
+  fresh vim/functions.vim
+  fresh vim/settings.vim
+  fresh vim/visuals.vim
+  fresh vim/mappings.vim
 fresh-options
+fresh vim/coc-settings.json --file=~/.config/nvim/coc-settings.json
+fresh vim/coc-settings.json --file=~/.vim/coc-settings.json
 
 # ███████╗██╗ ██████╗ ██╗     ███████╗████████╗
 # ██╔════╝██║██╔════╝ ██║     ██╔════╝╚══██╔══╝

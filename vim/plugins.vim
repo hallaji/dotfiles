@@ -6,7 +6,7 @@
 "   ╚═══╝   ╚═════╝ ╚═╝  ╚═══╝╚═════╝ ╚══════╝╚══════╝
 
 " Vundle is short for Vim bundle and is a Vim plugin manager.
-" https://github.com/VundleVim/Vundle.vim
+" @see https://github.com/VundleVim/Vundle.vim
 
 filetype off                  " required
 
@@ -15,13 +15,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
-
-" ██████╗ ██╗     ██╗   ██╗ ██████╗ ██╗███╗   ██╗███████╗
-" ██╔══██╗██║     ██║   ██║██╔════╝ ██║████╗  ██║██╔════╝
-" ██████╔╝██║     ██║   ██║██║  ███╗██║██╔██╗ ██║███████╗
-" ██╔═══╝ ██║     ██║   ██║██║   ██║██║██║╚██╗██║╚════██║
-" ██║     ███████╗╚██████╔╝╚██████╔╝██║██║ ╚████║███████║
-" ╚═╝     ╚══════╝ ╚═════╝  ╚═════╝ ╚═╝╚═╝  ╚═══╝╚══════╝
 
 " ┬  ┬┬ ┬┌┐┌┌┬┐┬  ┌─┐
 " └┐┌┘│ ││││ │││  ├┤
