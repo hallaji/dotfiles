@@ -54,7 +54,7 @@ fresh-options
 fresh vim/colors/theme.vim --file='~/.vim/colors/theme.vim' --marker='"'
 fresh vim/nvim.vim --file=~/.config/nvim/init.vim --marker='"'
 fresh-options --file=~/.vimrc --marker='"'
-  # fresh vim/plugins.vim
+  # fresh vim/vundle.vim
   fresh vim/plug.vim
   fresh vim/plugins/ctrlp.vim
   fresh vim/plugins/nerdtree.vim

@@ -12,7 +12,7 @@ let mapleader = ','
 " Make it easy to edit the vimrc file. n stands for normal mode. cr stands for carriage return.
 
 nmap <Leader>ev :tabedit $MYVIMRC<cr>
-nmap <Leader>ep :tabedit ~/.vim/plugins.vim<cr>
+nmap <Leader>ep :tabedit ~/.vim/plug.vim<cr>
 nmap <Leader>egv :tabedit ~/.gvimrc<cr>
 nmap <Leader>ez :e ~/.zshrc<cr>
 nmap <Leader>es :e ~/.vim/snippets/
