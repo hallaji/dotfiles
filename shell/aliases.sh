@@ -2,6 +2,8 @@ alias ,c="clear"
 alias ,r="source ~/.zshrc && source ~/.zshenv && clear"
 alias internet\?="ping 8.8.8.8"
 
+alias sleep="pmset sleepnow" # mac-specific
+
 alias ,ez="$EDITOR ~/.zshrc"
 alias ,eze="$EDITOR ~/.zshenv"
 
