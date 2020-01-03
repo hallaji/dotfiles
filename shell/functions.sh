@@ -6,5 +6,6 @@
 # ╚═╝      ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
 
 open_source_code() {
-  eval "$EDITOR $CODE/$*"
+  SOURCE_DIR="$CODE/$*"
+  eval "cd $SOURCE_DIR && $EDITOR $SOURCE_DIR"
 }
