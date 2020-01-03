@@ -8,6 +8,13 @@ if exists('syntax_on')
   syntax reset
 endif
 
+"  ██████╗ ██████╗ ██╗      ██████╗ ██████╗ ███████╗
+" ██╔════╝██╔═══██╗██║     ██╔═══██╗██╔══██╗██╔════╝
+" ██║     ██║   ██║██║     ██║   ██║██████╔╝███████╗
+" ██║     ██║   ██║██║     ██║   ██║██╔══██╗╚════██║
+" ╚██████╗╚██████╔╝███████╗╚██████╔╝██║  ██║███████║
+"  ╚═════╝ ╚═════╝ ╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝
+
 " Green: #35FFDC
 " Magenta: #FF90D0
 " Red: #EC2864
@@ -17,13 +24,6 @@ endif
 " Cyan: #15FCDC
 " Black: #292A2B
 " White: F3F3F3
-
-"  ██████╗ ██████╗ ██╗      ██████╗ ██████╗ ███████╗
-" ██╔════╝██╔═══██╗██║     ██╔═══██╗██╔══██╗██╔════╝
-" ██║     ██║   ██║██║     ██║   ██║██████╔╝███████╗
-" ██║     ██║   ██║██║     ██║   ██║██╔══██╗╚════██║
-" ╚██████╗╚██████╔╝███████╗╚██████╔╝██║  ██║███████║
-"  ╚═════╝ ╚═════╝ ╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝
 
 let s:foreground = { 'gui': '#dadada', 'cterm': '253' }
 let s:background = { 'gui': '#26282B', 'cterm': '0' }
@@ -311,7 +311,7 @@ call s:highlight ('dosiniLabel', { 'bg': s:background, 'fg': s:color14 })
 
 
 
-" // TODO
+" // @TODO
 " DiffAdd         diff mode: Added line diff.txt
 " DiffChange      diff mode: Changed line diff.txt
 " DiffDelete      diff mode: Deleted line diff.txt
