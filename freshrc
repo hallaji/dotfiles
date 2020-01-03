@@ -15,9 +15,22 @@ fresh freshshell/fresh contrib/source-build.sh --file=~/.zshrc
 # ███████╗███████║██║  ██║
 # ╚══════╝╚══════╝╚═╝  ╚═╝
 
-fresh-options --file=~/.zshrc --marker
+# ┌─┐┌─┐┬ ┬┌─┐┌┐┌┬  ┬
+# ┌─┘└─┐├─┤├┤ │││└┐┌┘
+# └─┘└─┘┴ ┴└─┘┘└┘ └┘
+
+fresh-options --file=~/.zshenv --marker
   fresh shell/exports.sh
+  fresh shell/aliases.sh
+fresh-options
+
+# ┌─┐┌─┐┬ ┬┬─┐┌─┐
+# ┌─┘└─┐├─┤├┬┘│
+# └─┘└─┘┴ ┴┴└─└─┘
+
+fresh-options --file=~/.zshrc --marker
   # @NOTINUSE fresh shell/ohmyzsh.sh
+  fresh shell/functions.sh
   fresh shell/direnv.sh
   fresh shell/jenv.sh
   fresh shell/nvm.sh
@@ -27,8 +40,41 @@ fresh-options --file=~/.zshrc --marker
   fresh shell/zplugin.sh
 fresh-options
 
-fresh-options --file=~/.zshenv --marker
-  fresh shell/aliases.sh
+# ██╗   ██╗██╗███╗   ███╗
+# ██║   ██║██║████╗ ████║
+# ██║   ██║██║██╔████╔██║
+# ╚██╗ ██╔╝██║██║╚██╔╝██║
+#  ╚████╔╝ ██║██║ ╚═╝ ██║
+#   ╚═══╝  ╚═╝╚═╝     ╚═╝
+
+# ┌┐┌┬  ┬┬┌┬┐
+# │││└┐┌┘││││
+# ┘└┘ └┘ ┴┴ ┴
+
+fresh vim/nvim.vim --file=~/.config/nvim/init.vim --marker='"'
+
+# ┌─┐┌─┐┬  ┌─┐┬─┐┌─┐
+# │  │ ││  │ │├┬┘└─┐
+# └─┘└─┘┴─┘└─┘┴└─└─┘
+
+fresh vim/colors/theme.vim --file='~/.vim/colors/theme.vim' --marker='"'
+
+# ┬  ┬┬┌┬┐┬─┐┌─┐
+# └┐┌┘││││├┬┘│
+#  └┘ ┴┴ ┴┴└─└─┘
+
+fresh-options --file=~/.vimrc --marker='"'
+  # @NOTINUSE fresh vim/vundle.vim
+  fresh vim/plug.vim
+  fresh vim/plugins/ctrlp.vim
+  fresh vim/plugins/nerdtree.vim
+  fresh vim/plugins/coc/coc.vim
+  fresh vim/plugins/greplace.vim
+  fresh vim/plugins/lightline.vim
+  fresh vim/functions.vim
+  fresh vim/settings.vim
+  fresh vim/visuals.vim
+  fresh vim/mappings.vim
 fresh-options
 
 #  ██████╗ ██████╗ ███╗   ██╗███████╗██╗ ██████╗
@@ -38,36 +84,32 @@ fresh-options
 # ╚██████╗╚██████╔╝██║ ╚████║██║     ██║╚██████╔╝
 #  ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝     ╚═╝ ╚═════╝
 
+# ┌─┐┌┬┐┌─┐┬─┐┌─┐┬ ┬┬┌─┐
+# └─┐ │ ├─┤├┬┘└─┐├─┤│├─┘
+# └─┘ ┴ ┴ ┴┴└─└─┘┴ ┴┴┴
+
 fresh shell/starship/config.toml --file=~/.config/starship.toml
+
+# ┌─┐┌─┐┬ ┬
+# └─┐└─┐├─┤
+# └─┘└─┘┴ ┴
+
 fresh ssh/config.conf --file=~/.ssh/config
+
+# ┌─┐┬┌┬┐
+# │ ┬│ │
+# └─┘┴ ┴
+
 fresh-options --file
   fresh git/\*
 fresh-options
 
-# ██╗   ██╗██╗███╗   ███╗
-# ██║   ██║██║████╗ ████║
-# ██║   ██║██║██╔████╔██║
-# ╚██╗ ██╔╝██║██║╚██╔╝██║
-#  ╚████╔╝ ██║██║ ╚═╝ ██║
-#   ╚═══╝  ╚═╝╚═╝     ╚═╝
+# ┌─┐┌─┐┌─┐
+# │  │ ││
+# └─┘└─┘└─┘
 
-fresh vim/colors/theme.vim --file='~/.vim/colors/theme.vim' --marker='"'
-fresh vim/nvim.vim --file=~/.config/nvim/init.vim --marker='"'
-fresh-options --file=~/.vimrc --marker='"'
-  # fresh vim/vundle.vim
-  fresh vim/plug.vim
-  fresh vim/plugins/ctrlp.vim
-  fresh vim/plugins/nerdtree.vim
-  fresh vim/plugins/coc.vim
-  fresh vim/plugins/greplace.vim
-  fresh vim/plugins/lightline.vim
-  fresh vim/functions.vim
-  fresh vim/settings.vim
-  fresh vim/visuals.vim
-  fresh vim/mappings.vim
-fresh-options
-fresh vim/coc-settings.json --file=~/.config/nvim/coc-settings.json
-fresh vim/coc-settings.json --file=~/.vim/coc-settings.json
+fresh vim/plugins/coc/settings.json --file=~/.config/nvim/coc-settings.json
+fresh vim/plugins/coc/settings.json --file=~/.vim/coc-settings.json
 
 # ███████╗██╗ ██████╗ ██╗     ███████╗████████╗
 # ██╔════╝██║██╔════╝ ██║     ██╔════╝╚══██╔══╝
@@ -80,9 +122,6 @@ declare -a arr=(
   "ansi regular.flf"
   "ansi shadow.flf"
   "calvin s.flf"
-  "ivrit.flf"
-  "speed.flf"
-  "stforek.flf"
 )
 
 for font in "${arr[@]}"
@@ -93,23 +132,11 @@ do
   fi
 done
 
-# @TODO
-#  python colors.py
-#  python colors.py #26282B
-# https://gist.githubusercontent.com/MicahElliott/719710/raw/73d047f0a3ffc35f0655488547e7f24fa3f04ea6/colortrans.py
+#  ██████╗ ██████╗ ██╗      ██████╗ ██████╗ ███████╗   ██████╗ ██╗   ██╗
+# ██╔════╝██╔═══██╗██║     ██╔═══██╗██╔══██╗██╔════╝   ██╔══██╗╚██╗ ██╔╝
+# ██║     ██║   ██║██║     ██║   ██║██████╔╝███████╗   ██████╔╝ ╚████╔╝
+# ██║     ██║   ██║██║     ██║   ██║██╔══██╗╚════██║   ██╔═══╝   ╚██╔╝
+# ╚██████╗╚██████╔╝███████╗╚██████╔╝██║  ██║███████║██╗██║        ██║
+#  ╚═════╝ ╚═════╝ ╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝╚═╝        ╚═╝
 
-#  ██████╗ ███╗   ███╗██╗  ██╗
-# ██╔═══██╗████╗ ████║██║ ██╔╝
-# ██║   ██║██╔████╔██║█████╔╝
-# ██║▄▄ ██║██║╚██╔╝██║██╔═██╗
-# ╚██████╔╝██║ ╚═╝ ██║██║  ██╗
-#  ╚══▀▀═╝ ╚═╝     ╚═╝╚═╝  ╚═╝
-# ███████╗██╗██████╗ ███╗   ███╗██╗    ██╗ █████╗ ██████╗ ███████╗
-# ██╔════╝██║██╔══██╗████╗ ████║██║    ██║██╔══██╗██╔══██╗██╔════╝
-# █████╗  ██║██████╔╝██╔████╔██║██║ █╗ ██║███████║██████╔╝█████╗
-# ██╔══╝  ██║██╔══██╗██║╚██╔╝██║██║███╗██║██╔══██║██╔══██╗██╔══╝
-# ██║     ██║██║  ██║██║ ╚═╝ ██║╚███╔███╔╝██║  ██║██║  ██║███████╗
-# ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝ ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝
-
-# fresh qmk/qmk_firmware util/docker_build.sh --file=~/.qmk_firmware/util/docker_build.sh
-fresh qmk/qmk_firmware util --file=~/.qmk_firmware/util/
+fresh https://gist.github.com/719710.git colortrans.py --bin=~/bin/colors

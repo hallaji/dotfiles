@@ -1,6 +1,6 @@
 # dotfiles
 
-My dotfiles are managed by [fresh](https://freshshell.com).
+My dotfiles are managed by [fresh](https://freshshell.com). It's a tool to source shell configuration from different locations either locally or remotely into your own configuration files.
 
 ## Installation
 
@@ -11,20 +11,20 @@ $ sh setup.sh
 
 #### Manual
 
-First, install [Zplugin](https://github.com/zdharma/zplugin) zsh plugin manager on `~/.zplugin/bin` directory.
+First, clone [Zplugin](https://github.com/zdharma/zplugin) zsh plugin manager on `~/.zplugin/bin` directory.
 ```
-ZPLUGIN_DIR=~/.zplugin/bin \
-  && mkdir -p "$ZPLUGIN_DIR" \
-  && git clone https://github.com/zdharma/zplugin.git "$ZPLUGIN_DIR"
+ZPLUGIN_DIR=~/.zplugin/bin
+mkdir -p "$ZPLUGIN_DIR"
+git clone https://github.com/zdharma/zplugin.git "$ZPLUGIN_DIR"
 ```
-Then, install [fresh shell](https://freshshell.com) through utilising local files relative to `~/.dotfiles`
-as a source. if the directory does not exist, it will clone from the repo. Github is the
+Finally, install [fresh shell](https://freshshell.com). The installation uses local files relative to `~/.dotfiles`
+as a source. if the directory does not exist, it will clone from the repo `hallaji/dotfiles`. Github is the
 default repository if no full Git URL is specified.
 ```
 FRESH_LOCAL_SOURCE=hallaji/dotfiles bash -c "`curl -sL https://get.freshshell.com`"
 ```
 
-## Usage
+## Freshing
 
 ```
 # Build shell configuration and relevant symlinks.
@@ -42,3 +42,5 @@ fresh search <something>
 # Output each line of `~/.freshrc` along with every source file those lines match.
 fresh show
 ```
+
+> MIT License
