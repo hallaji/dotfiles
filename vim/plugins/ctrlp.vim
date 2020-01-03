@@ -5,5 +5,11 @@
 " ╚██████╗   ██║   ██║  ██║███████╗██║
 "  ╚═════╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚═╝
 
-let g:ctrlp_custom_ignore = 'node_modules\DS_Store\|git'
-let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:20,results:20'
+" Make sure to delete the cache after any change.
+" Run `:CtrlPClearAllCaches` or delete the `.cache/ctrlp` in your home directory.
+
+"Ignore files in .gitignore
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+
+" Exclude files and directories
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
