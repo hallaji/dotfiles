@@ -5,7 +5,12 @@
 # ███████╗██║     ███████╗╚██████╔╝╚██████╔╝██║██║ ╚████║
 # ╚══════╝╚═╝     ╚══════╝ ╚═════╝  ╚═════╝ ╚═╝╚═╝  ╚═══╝
 
+# Source above compinit i.e. initialising completion for the current session
 source ~/.zplugin/bin/zplugin.zsh
+
+# If you place the source below compinit, then add those two lines after the source:
+# autoload -Uz _zplugin
+# (( ${+_comps} )) && _comps[zplugin]=_zplugin
 
 zplugin snippet OMZ::plugins/git/git.plugin.zsh
 zplugin snippet OMZ::plugins/nvm/nvm.plugin.zsh

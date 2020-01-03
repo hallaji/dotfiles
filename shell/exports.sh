@@ -14,12 +14,6 @@ export LANG=en_AU.UTF-8
 export DOTFILES="~/.dotfiles"
 export CODE="~/Code"
 
-# ┌─┐ ┌┬┐┬┌─  ┌─┐┬┬─┐┌┬┐┬ ┬┌─┐┬─┐┌─┐
-# │─┼┐│││├┴┐  ├┤ │├┬┘││││││├─┤├┬┘├┤
-# └─┘└┴ ┴┴ ┴  └  ┴┴└─┴ ┴└┴┘┴ ┴┴└─└─┘
-
-export QMK_FIRMWARE="~/.qmk_firmware"
-
 # ┌─┐┌─┐┌─┐
 # │ ┬├─┘│ ┬
 # └─┘┴  └─┘
