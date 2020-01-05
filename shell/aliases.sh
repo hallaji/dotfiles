@@ -18,7 +18,8 @@ alias sleep="pmset sleepnow" # mac-specific
 # │─┼┐│ │││  ├┴┐  ├┤  │││ │
 # └─┘└└─┘┴└─┘┴ ┴  └─┘─┴┘┴ ┴
 
-alias c=open_source_code # check out functions.sh
+alias ,e=open_source_code # check out functions.sh
+alias ,ed="cd $DOTFILES && $EDITOR $DOTFILES"
 alias ,ez="$EDITOR ~/.zshrc"
 alias ,eze="$EDITOR ~/.zshenv"
 
