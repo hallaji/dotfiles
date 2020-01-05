@@ -142,7 +142,7 @@ call s:link ('LineNr', 'FoldColumn')
 
 call s:highlight ('Search', { 'bg': s:color14, 'fg': s:black })
 call s:highlight ('IncSearch', { 'bg': s:color03, 'fg': s:black })
-" Substitute // TODO
+" Substitute // @TODO
 
 call s:highlight ('MatchParen', { 'bg': s:color14, 'fg': s:black })
 
@@ -319,3 +319,7 @@ call s:highlight ('dosiniLabel', { 'bg': s:background, 'fg': s:color14 })
 " DiffChange      diff mode: Changed line diff.txt
 " DiffDelete      diff mode: Deleted line diff.txt
 " DiffText        diff mode: Changed text within a changed line diff.txt
+
+" highlight GitGutterAdd    guifg=#009900 guibg=<X> ctermfg=2 ctermbg=<Y>
+" highlight GitGutterChange guifg=#bbbb00 guibg=<X> ctermfg=3 ctermbg=<Y>
+" highlight GitGutterDelete guifg=#ff2222 guibg=<X> ctermfg=1 ctermbg=<Y>
