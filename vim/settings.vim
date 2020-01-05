@@ -1,37 +1,33 @@
-" Hide buffers instead of closing them.
-set hidden
+" ███████╗███████╗████████╗████████╗██╗███╗   ██╗ ██████╗ ███████╗
+" ██╔════╝██╔════╝╚══██╔══╝╚══██╔══╝██║████╗  ██║██╔════╝ ██╔════╝
+" ███████╗█████╗     ██║      ██║   ██║██╔██╗ ██║██║  ███╗███████╗
+" ╚════██║██╔══╝     ██║      ██║   ██║██║╚██╗██║██║   ██║╚════██║
+" ███████║███████╗   ██║      ██║   ██║██║ ╚████║╚██████╔╝███████║
+" ╚══════╝╚══════╝   ╚═╝      ╚═╝   ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝
 
-" Use latest vim settings, not vi
-set nocompatible
-
-syntax enable
 set number
 set ruler
+set foldcolumn=1                    " Custom left padding for each window
+set cursorline
+set signcolumn=yes                  " Always have the sign column
 
-" Make backspace behave like every other editor.
-set backspace=indent,eol,start
+set tabstop=4                       " The width of a TAB is set to 4.
+set shiftwidth=4                    " Indents will have a width of 4
+set softtabstop=4                   " Sets the number of columns for a TAB
+set expandtab                       " Expand TABs to spaces
 
-" No bells
-set noerrorbells visualbell t_vb=
+set hidden                          " Hide buffers instead of closing them
+set nocompatible                    " Use latest vim settings, not vi
+set backspace=indent,eol,start      " Make backspace behave like every other editor
 
-" Search highlights
-set hlsearch
+set noerrorbells visualbell t_vb=   " No bells
+
+set hlsearch                        " Search highlights
 set incsearch
 
-" Turn showmode off because the lightline plugin already shows the mode.
-set noshowmode
+set noshowmode                      " Turn showmode off because the lightline plugin already shows the mode
 
-" Enable scrolling with the scroll wheel
-set mouse=a
+set mouse=a                         " Enable scrolling with the scroll wheel
 
-" Splitting
-" Make splits default to below...
-set splitbelow
-" And to the right. This feels more natural.
-set splitright
-
-" Automatically source the vimrc file on save.
-augroup autosourcing
-    autocmd!
-	autocmd BufWritePost .vimrc source %
-augroup END
+set splitbelow                      " Make splits default to below
+set splitright                      " And to the right
