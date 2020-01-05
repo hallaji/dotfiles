@@ -42,3 +42,6 @@ nmap <C-J> <C-W><C-J>
 nmap <C-K> <C-W><C-K>
 nmap <C-H> <C-W><C-H>
 nmap <C-L> <C-W><C-L>
+
+" Trim trailing whitespaces
+nmap <Leader>tw :call TrimWhitespace()<cr>
