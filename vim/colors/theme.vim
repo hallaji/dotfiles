@@ -117,6 +117,7 @@ call s:highlight ('PmenuThumb', { 'bg': s:color03, 'fg': s:noise })
 "  └┘ ┴└─┘└─┘┴ ┴┴─┘
 
 call s:highlight ('Visual', { 'bg': s:select, 'fg': s:noise })
+call s:link ('Visual', 'ColorColumn')
 
 call s:highlight ('Cursor', { 'bg': s:color03, 'fg': s:black })
 call s:link ('Cursor', 'CursorColumn')
@@ -130,7 +131,6 @@ call s:highlight ('WarningMsg', { 'bg': s:color03, 'fg': s:black })
 call s:highlight ('CursorLine', { 'bg': s:background })
 call s:highlight ('CursorLineNr', { 'bg': s:background, 'fg': s:line })
 
-call s:highlight ('ColorColumn', { 'bg': s:color14, 'fg': s:black })
 
 " SignColumn // @TODO
 
