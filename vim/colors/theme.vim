@@ -161,7 +161,7 @@ call s:highlight ('EndOfBuffer', { 'bg': s:background, 'fg': s:pale })
 call s:highlight ('Constant', { 'bg': s:background, 'fg': s:color04 })
 
 " @TODO
-"call s:highlight ('jsObjectKey', { 'bg': s:background, 'fg': s:color14 })
+call s:highlight ('jsObjectKey', { 'bg': s:background, 'fg': s:color14 })
 
 call s:highlight ('String', { 'bg': s:background, 'fg': s:color02 })
 call s:link ('String', 'Character')
