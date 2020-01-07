@@ -37,11 +37,6 @@ Plug 'cocopon/colorswatch.vim'
 Plug 'cocopon/inspecthi.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-" ┌─┐─┐ ┬┌┬┐┌─┐┌┐┌┌─┐┬┌─┐┌┐┌┌─┐
-" ├┤ ┌┴┬┘ │ ├┤ │││└─┐││ ││││└─┐
-" └─┘┴ └─ ┴ └─┘┘└┘└─┘┴└─┘┘└┘└─┘
-
-
 " ┌─┐┬ ┬┌┐┌┌┬┐┌─┐─┐ ┬
 " └─┐└┬┘│││ │ ├─┤┌┴┬┘
 " └─┘ ┴ ┘└┘ ┴ ┴ ┴┴ └─

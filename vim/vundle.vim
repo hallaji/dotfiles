@@ -5,6 +5,8 @@
 "  ╚████╔╝ ╚██████╔╝██║ ╚████║██████╔╝███████╗███████╗
 "   ╚═══╝   ╚═════╝ ╚═╝  ╚═══╝╚═════╝ ╚══════╝╚══════╝
 
+" @NOTINUSE
+"
 " Vundle is short for Vim bundle and is a Vim plugin manager.
 " @see https://github.com/VundleVim/Vundle.vim
 
