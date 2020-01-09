@@ -7,7 +7,7 @@
 
 set number
 set ruler
-set colorcolumn=120
+set colorcolumn=0                   " Set a column guide
 set foldcolumn=1                    " Custom left padding for each window
 set cursorline
 set signcolumn=yes                  " Always have the sign column
