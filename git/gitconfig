@@ -6,16 +6,37 @@
 #  ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝     ╚═╝ ╚═════╝
 
 [user]
-	name = Vahid Hallaji
-	email = vahid@hallaji.com
-	signingkey = 61CF4B720B545C3F
+  name = Vahid Hallaji
+  email = vahid@hallaji.com
+  signingkey = 61CF4B720B545C3F
 
 [core]
-	ignorecase = false
-	excludesfile = ~/.gitignore
+  ignorecase = false
+  excludesfile = ~/.gitignore
+  pager = diff-so-fancy | less --tabs=4 -RFX
 
 [commit]
-	gpgsign = true
+  gpgsign = true
 
 [gpg]
-	program = gpg2
+  program = gpg2
+
+[diff-so-fancy]
+	useUnicodeRuler = false
+
+[color "diff"]
+  commit = 3
+  meta = 241
+	frag = 241
+	old = 167
+	new = 2
+	whitespace = 167 reverse
+
+[color]
+	ui = true
+
+[color "diff-highlight"]
+	oldNormal = 167
+	oldHighlight = 167 reverse
+	newNormal = 2
+	newHighlight = 2 reverse
