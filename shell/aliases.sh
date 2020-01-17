@@ -23,6 +23,12 @@ alias ,ed="cd $DOTFILES && $EDITOR $DOTFILES"
 alias ,ez="$EDITOR ~/.zshrc"
 alias ,eze="$EDITOR ~/.zshenv"
 
+# ┌─┐ ┬ ┬┬┌─┐┬┌─  ┌─┐┬ ┬┌─┐┌┐┌┌─┐┌─┐
+# │─┼┐│ │││  ├┴┐  │  ├─┤├─┤││││ ┬├┤
+# └─┘└└─┘┴└─┘┴ ┴  └─┘┴ ┴┴ ┴┘└┘└─┘└─┘
+
+alias ,cd=change_source_code
+
 # ┬ ┬┬┌─┐┌┬┐┌─┐┬─┐┬ ┬
 # ├─┤│└─┐ │ │ │├┬┘└┬┘
 # ┴ ┴┴└─┘ ┴ └─┘┴└─ ┴
