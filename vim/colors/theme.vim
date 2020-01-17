@@ -129,7 +129,7 @@ call s:highlight ('ErrorMsg', { 'bg': s:color01, 'fg': s:white })
 call s:highlight ('WarningMsg', { 'bg': s:color03, 'fg': s:black })
 
 call s:highlight ('CursorLine', { 'bg': s:background })
-call s:highlight ('CursorLineNr', { 'bg': s:background, 'fg': s:line })
+call s:highlight ('CursorLineNr', { 'bg': s:background, 'fg': s:color08 })
 
 
 " SignColumn // @TODO
