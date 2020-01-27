@@ -14,6 +14,9 @@ alias ,r="source $HOME/.zshrc && source $HOME/.zshenv && clear"
 alias internet\?="ping 8.8.8.8"
 alias sleep="pmset sleepnow" # mac-specific
 
+alias :q="exit"
+alias ,q="exit"
+
 # ┌─┐ ┬ ┬┬┌─┐┬┌─  ┌─┐┌┬┐┬┌┬┐
 # │─┼┐│ │││  ├┴┐  ├┤  │││ │
 # └─┘└└─┘┴└─┘┴ ┴  └─┘─┴┘┴ ┴
@@ -22,10 +25,6 @@ alias ,e=open_source_code # check out functions.sh
 alias ,ed="cd $DOTFILES && $EDITOR $DOTFILES"
 alias ,ez="$EDITOR ~/.zshrc"
 alias ,eze="$EDITOR ~/.zshenv"
-
-# ┌─┐ ┬ ┬┬┌─┐┬┌─  ┌─┐┬ ┬┌─┐┌┐┌┌─┐┌─┐
-# │─┼┐│ │││  ├┴┐  │  ├─┤├─┤││││ ┬├┤
-# └─┘└└─┘┴└─┘┴ ┴  └─┘┴ ┴┴ ┴┘└┘└─┘└─┘
 
 alias ,cd=change_source_code
 
