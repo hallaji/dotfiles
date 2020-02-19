@@ -11,29 +11,26 @@
 
 alias ,c="clear"
 alias ,r="source $HOME/.zshrc && source $HOME/.zshenv && clear"
-alias internet\?="ping 8.8.8.8"
-alias sleep="pmset sleepnow" # mac-specific
-
-alias :q="exit"
 alias ,q="exit"
+alias ,s="pmset sleepnow" # mac-specific
+alias internet\?="ping 8.8.8.8"
 
 # ┌─┐ ┬ ┬┬┌─┐┬┌─  ┌─┐┌┬┐┬┌┬┐
 # │─┼┐│ │││  ├┴┐  ├┤  │││ │
 # └─┘└└─┘┴└─┘┴ ┴  └─┘─┴┘┴ ┴
 
-alias ,e=open_source_code # check out functions.sh
+# see functions.sh
+alias ,f=find_source
+alias ,d=change_source
+alias ,e=edit_source
 alias ,ed="cd $DOTFILES && $EDITOR $DOTFILES"
-alias ,ez="$EDITOR ~/.zshrc"
-alias ,eze="$EDITOR ~/.zshenv"
-
-alias ,cd=change_source_code
 
 # ┬ ┬┬┌─┐┌┬┐┌─┐┬─┐┬ ┬
 # ├─┤│└─┐ │ │ │├┬┘└┬┘
 # ┴ ┴┴└─┘ ┴ └─┘┴└─ ┴
 
-alias h='history'
-alias hsi='history | grep $* -i'
+alias ,h='history'
+alias ,hs='history | grep $* -i'
 
 # ┌─┐┬┌┬┐
 # │ ┬│ │

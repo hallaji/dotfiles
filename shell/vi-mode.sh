@@ -8,19 +8,23 @@
 # Vi Mode
 bindkey -v
 
-# Kill the lag
+# kill the lag
 export KEYTIMEOUT=1
+
+# see quick_find in function.sh
+zle -N quick_find_widget find_source
+bindkey "^p" quick_find_widget
 
 # allow v to edit the command line
 autoload -Uz edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd 'v' edit-command-line
 
-# allow ctrl-p, ctrl-n for navigate history
-bindkey '^P' up-history
-bindkey '^N' down-history
+# navigate history
+bindkey '^k' up-history
+bindkey '^j' down-history
 
-# Better searching in command mode
+# better searching in command mode
 bindkey -M vicmd '?' history-incremental-search-backward
 bindkey -M vicmd '/' history-incremental-search-forward
 
