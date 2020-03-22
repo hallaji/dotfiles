@@ -48,7 +48,7 @@ fresh-options
 # └─┘└─┘┴ ┴┴└─└─┘
 
 fresh-options --file=~/.zshrc --marker
-  # @NOTINUSE fresh shell/ohmyzsh.sh
+  fresh shell/ohmyzsh.sh
   fresh shell/functions.sh
   fresh shell/direnv.sh
   fresh shell/jenv.sh
