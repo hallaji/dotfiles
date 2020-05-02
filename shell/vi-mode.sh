@@ -32,7 +32,6 @@ bindkey -M vicmd '/' history-incremental-search-forward
 bindkey '^r' history-incremental-search-backward
 
 # backspace and ^h working even after returning from command mode
-bindkey '^?' backward-delete-char
 bindkey '^h' backward-delete-char
 
 # ctrl-w removes a word backward
