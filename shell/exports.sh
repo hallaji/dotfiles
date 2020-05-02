@@ -9,6 +9,9 @@
 # │ ┬├┤ │││├┤ ├┬┘││
 # └─┘└─┘┘└┘└─┘┴└─┴└─┘
 
+# for formulae that put executables in /usr/local/sbin - homebrew
+export PATH="/usr/local/sbin:$PATH"
+
 export LANG=en_AU.UTF-8
 
 export DOTFILES="~/.dotfiles"
