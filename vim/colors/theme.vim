@@ -131,14 +131,17 @@ call s:highlight ('WarningMsg', { 'bg': s:color03, 'fg': s:black })
 call s:highlight ('CursorLine', { 'bg': s:background })
 call s:highlight ('CursorLineNr', { 'bg': s:background, 'fg': s:color08 })
 
-
-" SignColumn // @TODO
-
 call s:highlight ('VertSplit', { 'bg': s:background, 'fg': s:line })
 
+call s:highlight ('SignColumn', { 'bg': s:background, 'fg': s:pale })
 call s:highlight ('LineNr', { 'bg': s:background, 'fg': s:pale })
 call s:link ('LineNr', 'Folded')
 call s:link ('LineNr', 'FoldColumn')
+
+call s:highlight ('DiffAdd', { 'bg': s:background, 'fg': s:color02 })
+call s:highlight ('DiffChange', { 'bg': s:background, 'fg': s:color03 })
+call s:highlight ('DiffDelete', { 'bg': s:background, 'fg': s:color01 })
+call s:highlight ('DiffText', { 'bg': s:background, 'fg': s:foreground })
 
 call s:highlight ('Search', { 'bg': s:color14, 'fg': s:black })
 call s:highlight ('IncSearch', { 'bg': s:color03, 'fg': s:black })
@@ -311,15 +314,3 @@ call s:link ('yamlBlockMappingKey', 'dockerfileKeyword')
 
 call s:highlight ('dosiniHeader', { 'bg': s:background, 'fg': s:color01 })
 call s:highlight ('dosiniLabel', { 'bg': s:background, 'fg': s:color14 })
-
-
-
-" // @TODO
-" DiffAdd         diff mode: Added line diff.txt
-" DiffChange      diff mode: Changed line diff.txt
-" DiffDelete      diff mode: Deleted line diff.txt
-" DiffText        diff mode: Changed text within a changed line diff.txt
-
-" highlight GitGutterAdd    guifg=#009900 guibg=<X> ctermfg=2 ctermbg=<Y>
-" highlight GitGutterChange guifg=#bbbb00 guibg=<X> ctermfg=3 ctermbg=<Y>
-" highlight GitGutterDelete guifg=#ff2222 guibg=<X> ctermfg=1 ctermbg=<Y>

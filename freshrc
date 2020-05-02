@@ -91,6 +91,7 @@ fresh-options --file=~/.vimrc --marker='"'
   fresh vim/plugins/coc/coc.vim
   fresh vim/plugins/greplace.vim
   fresh vim/plugins/lightline.vim
+  fresh vim/plugins/gitgutter.vim
   fresh vim/functions.vim
   fresh vim/commands.vim
   fresh vim/settings.vim
