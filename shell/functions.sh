@@ -17,7 +17,7 @@ edit_source() {
 
 # @see https://danishpraka.sh/2018/08/03/command-line-dir-switcher.html
 find_source() {
-  cd $(find ~/Code -type d -not -path '*/\.*' -maxdepth 1 | fzf)
+  cd $(find ~/Code -type d -not -path '*/\.*' -maxdepth 2 | fzf)
   starship_precmd
   zle reset-prompt
 }
