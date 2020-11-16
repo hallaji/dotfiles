@@ -40,3 +40,6 @@
 	oldHighlight = 167 reverse
 	newNormal = 2
 	newHighlight = 2 reverse
+
+[pull]
+	rebase = false
