@@ -57,7 +57,7 @@ fresh-options --file=~/.zshrc --marker
   fresh shell/sdkman.sh
   fresh shell/starship/starship.sh
   fresh shell/vi-mode.sh
-  fresh shell/zplugin.sh
+  fresh shell/zinit.sh
 fresh-options
 
 # ██╗   ██╗██╗███╗   ███╗
