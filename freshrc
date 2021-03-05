@@ -52,6 +52,7 @@ fresh-options --file=~/.zshrc --marker
   fresh shell/functions.sh
   fresh shell/direnv.sh
   fresh shell/jenv.sh
+  fresh shell/pyenv.sh
   fresh shell/nvm.sh
   fresh shell/sdkman.sh
   fresh shell/starship/starship.sh
