@@ -53,7 +53,6 @@ fresh-options --file=~/.zshrc --marker
   fresh shell/direnv.sh
   fresh shell/jenv.sh
   fresh shell/nvm.sh
-  fresh shell/anaconda.sh
   fresh shell/sdkman.sh
   fresh shell/starship/starship.sh
   fresh shell/vi-mode.sh
