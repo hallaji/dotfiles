@@ -34,7 +34,7 @@ ZINIT_DIR=~/.zinit/bin
 if ! [ -d "$ZINIT_DIR" ]; then
   mkdir -p "$ZINIT_DIR" && git clone https://github.com/zdharma/zinit.git "$ZINIT_DIR"
 else
-  cd "$ZINIT_DIR" && git pull
+  zinit self-update # cd "$ZINIT_DIR" && git pull
 fi
 
 
