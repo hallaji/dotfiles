@@ -14,3 +14,6 @@ augroup autosourcing                                    " Automatically source t
   autocmd!
 	autocmd BufWritePost .vimrc source %
 augroup END
+
+au CursorHold,CursorHoldI * checktime                   " Trigger when cursor stops moving
+au FocusGained,BufEnter * checktime                     " Trigger when buffer changes

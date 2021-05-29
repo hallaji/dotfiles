@@ -34,8 +34,6 @@ set mouse=a                         " Enable scrolling with the scroll wheel
 set splitbelow                      " Make splits default to below
 set splitright                      " And to the right
 
-set autoread
-
 set updatetime=100                  " Shorter update time - default is 4000 ms
 
 " set tags=./tags,tags;$HOME          " Look for a tags file in the directory of the current file, up and up until home
