@@ -11,8 +11,9 @@ set colorcolumn=0                   " Set a column guide
 set foldcolumn=1                    " Custom left padding for each window
 set cursorline
 set signcolumn=yes                  " Always have the sign column
+set cmdheight=1                     " Command height under status line
 
-set tabstop=4                       " The width of a TAB is set to 4.
+set tabstop=4                       " The width of a TAB is set to 4
 set shiftwidth=4                    " Indents will have a width of 4
 set softtabstop=4                   " Sets the number of columns for a TAB
 set expandtab                       " Expand TABs to spaces
@@ -33,4 +34,8 @@ set mouse=a                         " Enable scrolling with the scroll wheel
 set splitbelow                      " Make splits default to below
 set splitright                      " And to the right
 
-set tags=./tags,tags;$HOME          " Look for a tags file in the directory of the current file, up and up until home
+set autoread
+
+set updatetime=100                  " Shorter update time - default is 4000 ms
+
+" set tags=./tags,tags;$HOME          " Look for a tags file in the directory of the current file, up and up until home
