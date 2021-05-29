@@ -14,6 +14,7 @@ alias ,r="source $HOME/.zshrc && source $HOME/.zshenv && clear"
 alias ,q="exit"
 alias ,s="pmset sleepnow" # mac-specific
 alias internet\?="ping 8.8.8.8"
+alias weather="curl wttr.in/Melbourne,AU"
 
 # ┌─┐ ┬ ┬┬┌─┐┬┌─  ┌─┐┌┬┐┬┌┬┐
 # │─┼┐│ │││  ├┴┐  ├┤  │││ │
