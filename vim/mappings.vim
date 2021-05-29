@@ -36,5 +36,11 @@ nmap <C-L> <C-W><C-L>
 nmap <Leader>w :call TrimWhitespace()<cr>
 
 " Gitgutter
-nmap ]h <Plug>(GitGutterNextHunk)
-nmap [h <Plug>(GitGutterPrevHunk)
+nmap <silent> ]h :call GitGutterNextHunkCycle()<cr>
+nmap <silent> [h :call GitGutterPrevHunkCycle()<cr>
+nmap <silent> ]c :call GitGutterNextHunkAllBuffers()<cr>
+nmap <silent> [c :call GitGutterPrevHunkAllBuffers()<cr>
+nmap <Leader>hp <Plug>(GitGutterPreviewHunk)
+nmap <Leader>hs :GitGutterStageHunk<cr>
+nmap <Leader>hu :GitGutterUndoHunk<cr>
+nmap <Leader>hf :GitGutterFold<cr>
