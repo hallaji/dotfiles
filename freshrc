@@ -115,14 +115,14 @@ fresh shell/starship/config.toml --file=~/.config/starship.toml
 # └─┐└─┐├─┤
 # └─┘└─┘┴ ┴
 
-fresh ssh/config.conf --file=~/.ssh/config
+fresh ssh/config.conf --file=~/.ssh/config --filter=erb
 
 # ┌─┐┬┌┬┐
 # │ ┬│ │
 # └─┘┴ ┴
 
 fresh-options --file
-  fresh git/\*
+  fresh git/\* --filter=erb
 fresh-options
 
 # ┌─┐┌─┐┌─┐

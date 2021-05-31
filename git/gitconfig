@@ -6,9 +6,9 @@
 #  ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝     ╚═╝ ╚═════╝
 
 [user]
-  name = Vahid Hallaji
-  email = vahid@hallaji.com
-  signingkey = 61CF4B720B545C3F
+  name = <%= ENV["USER_NAME"] %>
+  signingkey = <%= ENV["USER_SIGNING_KEY"] %>
+  # email = <%= ENV["USER_EMAIL"] %> # Commented. Configure email per repo instead.
 
 [core]
   ignorecase = false
@@ -17,9 +17,16 @@
 
 [commit]
   gpgsign = true
+  template = ~/.gitmessage
 
 [gpg]
   program = gpg2
+
+[pull]
+	rebase = false
+
+[color]
+	ui = true
 
 [diff-so-fancy]
 	useUnicodeRuler = false
@@ -32,14 +39,8 @@
 	new = 2
 	whitespace = 167 reverse
 
-[color]
-	ui = true
-
 [color "diff-highlight"]
 	oldNormal = 167
 	oldHighlight = 167 reverse
 	newNormal = 2
 	newHighlight = 2 reverse
-
-[pull]
-	rebase = false
