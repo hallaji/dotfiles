@@ -9,22 +9,22 @@
 let mapleader = ','
 
 " Make it easy to edit dotfiles
-nmap <Leader>ed :tabedit $DOTFILES<cr>
+nmap <leader>ed :tabedit $DOTFILES<cr>
 
 " Add simple highlight removal.
-nmap <Leader><space> :nohlsearch<cr>
+nmap <leader><space> :nohlsearch<cr>
 
 " Make NERDTree easier to toggle
-nmap <Leader>q :NERDTreeToggle<cr>
+nmap <leader>q :NERDTreeToggle<cr>
 
 " CtrlP
-nmap <Leader>f :CtrlP<cr>
-nmap <Leader>a :CtrlPMixed<cr>
-nmap <Leader>b :CtrlPBuffer<cr>
-nmap <Leader>m :CtrlPMRU<cr>
+nmap <leader>f :CtrlP<cr>
+nmap <leader>a :CtrlPMixed<cr>
+nmap <leader>b :CtrlPBuffer<cr>
+nmap <leader>m :CtrlPMRU<cr>
 
 " Be ready to find a tag using ctags
-nmap <Leader>t :tag<space>
+nmap <leader>t :tag<space>
 
 " Simpler mappings to switch between splits
 nmap <C-J> <C-W><C-J>
@@ -33,14 +33,14 @@ nmap <C-H> <C-W><C-H>
 nmap <C-L> <C-W><C-L>
 
 " Trim trailing whitespaces
-nmap <Leader>w :call TrimWhitespace()<cr>
+nmap <leader>w :call TrimWhitespace()<cr>
 
 " Gitgutter
 nmap <silent> ]h :call GitGutterNextHunkCycle()<cr>
 nmap <silent> [h :call GitGutterPrevHunkCycle()<cr>
 nmap <silent> ]c :call GitGutterNextHunkAllBuffers()<cr>
 nmap <silent> [c :call GitGutterPrevHunkAllBuffers()<cr>
-nmap <Leader>hp <Plug>(GitGutterPreviewHunk)
-nmap <Leader>hs :GitGutterStageHunk<cr>
-nmap <Leader>hu :GitGutterUndoHunk<cr>
-nmap <Leader>hf :GitGutterFold<cr>
+nmap <leader>hp <Plug>(GitGutterPreviewHunk)
+nmap <leader>hs :GitGutterStageHunk<cr>
+nmap <leader>hu :GitGutterUndoHunk<cr>
+nmap <leader>hf :GitGutterFold<cr>
