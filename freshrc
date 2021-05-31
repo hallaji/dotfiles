@@ -84,7 +84,6 @@ fresh vim/colors/theme.vim --file='~/.vim/colors/theme.vim' --marker='"'
 #  └┘ ┴┴ ┴┴└─└─┘
 
 fresh-options --file=~/.vimrc --marker='"'
-  # @NOTINUSE fresh vim/vundle.vim
   fresh vim/plug.vim
   fresh vim/plugins/ctrlp.vim
   fresh vim/plugins/nerdtree.vim
