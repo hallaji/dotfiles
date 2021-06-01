@@ -16,14 +16,15 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
-" call plug#begin('~/.vim/bundle')
 
 " ┌┬┐┌─┐┌─┐┬  ┌─┐
 "  │ │ ││ ││  └─┐
 "  ┴ └─┘└─┘┴─┘└─┘
 
 Plug 'tpope/vim-vinegar'
-Plug 'scrooloose/nerdtree'
+Plug 'preservim/nerdtree' |
+  \ Plug 'Xuyuanp/nerdtree-git-plugin' |
+  \ Plug 'ryanoasis/vim-devicons'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'rking/ag.vim'
 Plug 'skwp/greplace.vim'
