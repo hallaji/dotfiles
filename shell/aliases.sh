@@ -37,10 +37,7 @@ alias ,hs="history | grep $* -i"
 # │ ┬│ │
 # └─┘┴ ┴
 
-alias gitwho="git config user.name && git config user.email"
-alias gitme="git config user.email vahid@hallaji.com"
-alias gitbueno="git config user.email vhallaji@buenosystems.com.au"
+alias ,gw='git config user.name && git config user.email'
+alias ,gme='git config user.email <%= ENV["USER_EMAIL"] %>'
+alias ,gco='git config user.email <%= ENV["CORPORATE_USER_EMAIL"] %>'
 
-alias dotfile="git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
-alias tdf="dotfile config --local status.showUntrackedFiles normal"
-alias utdf="dotfile config --local status.showUntrackedFiles no"
