@@ -8,6 +8,7 @@
 fresh freshshell/fresh bin/fresh --bin
 fresh freshshell/fresh contrib/source-build.sh --file=~/.zshrc
 
+
 # ██████╗ ██╗███╗   ██╗ █████╗ ██████╗ ██╗███████╗███████╗
 # ██╔══██╗██║████╗  ██║██╔══██╗██╔══██╗██║██╔════╝██╔════╝
 # ██████╔╝██║██╔██╗ ██║███████║██████╔╝██║█████╗  ███████╗
@@ -15,17 +16,12 @@ fresh freshshell/fresh contrib/source-build.sh --file=~/.zshrc
 # ██████╔╝██║██║ ╚████║██║  ██║██║  ██║██║███████╗███████║
 # ╚═════╝ ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚══════╝╚══════╝
 
-# ┌─┐┌─┐┬  ┌─┐┬─┐┌─┐
-# │  │ ││  │ │├┬┘└─┐
-# └─┘└─┘┴─┘└─┘┴└─└─┘
-
-fresh https://gist.github.com/719710.git colortrans.py --bin=~/bin/colors
-
-# ┌┬┐┬┌─┐┌─┐  ┌─┐┌─┐  ┌─┐┌─┐┌┐┌┌─┐┬ ┬
-#  │││├┤ ├┤   └─┐│ │  ├┤ ├─┤││││  └┬┘
-# ─┴┘┴└  └    └─┘└─┘  └  ┴ ┴┘└┘└─┘ ┴
+fresh-options --bin
+  fresh bin/\*
+fresh-options
 
 fresh so-fancy/diff-so-fancy third_party/build_fatpack/diff-so-fancy --bin=~/bin/diff-so-fancy
+
 
 # ███████╗███████╗██╗  ██╗
 # ╚══███╔╝██╔════╝██║  ██║
@@ -34,11 +30,31 @@ fresh so-fancy/diff-so-fancy third_party/build_fatpack/diff-so-fancy --bin=~/bin
 # ███████╗███████║██║  ██║
 # ╚══════╝╚══════╝╚═╝  ╚═╝
 
+# ┌─┐┌─┐┌┬┐┌─┐┬  ┌─┐┌┬┐┬┌─┐┌┐┌┌─┐
+# │  │ ││││├─┘│  ├┤  │ ││ ││││└─┐
+# └─┘└─┘┴ ┴┴  ┴─┘└─┘ ┴ ┴└─┘┘└┘└─┘
+
+fresh zsh-users/zsh-completions src --file=completions/
+fresh freshshell/fresh contrib/completion/fresh-completion.zsh --file=completions/_fresh
+fresh docker/cli contrib/completion/zsh/_docker --file=completions/_docker
+fresh docker/compose contrib/completion/zsh/_docker-compose --file=completions/_docker-compose
+fresh sdkman/sdkman-cli contrib/completion/zsh/sdk --file=completions/_sdk
+fresh asdf-vm/asdf completions/_asdf --file=completions/_asdf
+
+# ┌─┐┬  ┬ ┬┌─┐┬┌┐┌┌─┐
+# ├─┘│  │ ││ ┬││││└─┐
+# ┴  ┴─┘└─┘└─┘┴┘└┘└─┘
+
+fresh ohmyzsh/ohmyzsh plugins --file=vendor/ohmyzsh/plugins/
+fresh zsh-users/zsh-syntax-highlighting . --file=vendor/zsh-users/zsh-syntax-highlighting/
+fresh zsh-users/zsh-autosuggestions . --file=vendor/zsh-users/zsh-autosuggestions/
+fresh zdharma/fast-syntax-highlighting . --file=vendor/zdharma/fast-syntax-highlighting/
+
 # ┌─┐┌─┐┬ ┬┌─┐┌┐┌┬  ┬
 # ┌─┘└─┐├─┤├┤ │││└┐┌┘
 # └─┘└─┘┴ ┴└─┘┘└┘ └┘
 
-fresh-options --file=~/.zshenv --marker
+fresh-options --filter=erb --file=~/.zshenv --marker
   fresh shell/exports.sh
   fresh shell/aliases.sh
 fresh-options
@@ -48,7 +64,9 @@ fresh-options
 # └─┘└─┘┴ ┴┴└─└─┘
 
 fresh-options --file=~/.zshrc --marker
-  fresh shell/ohmyzsh.sh
+  fresh shell/zsh/completions.sh
+  fresh shell/zsh/plugins.sh
+  fresh shell/zsh/vi-mode.sh
   fresh shell/functions.sh
   fresh shell/direnv.sh
   fresh shell/jenv.sh
@@ -56,9 +74,8 @@ fresh-options --file=~/.zshrc --marker
   fresh shell/nvm.sh
   fresh shell/sdkman.sh
   fresh shell/starship/starship.sh
-  fresh shell/vi-mode.sh
-  fresh shell/zinit.sh
 fresh-options
+
 
 # ██╗   ██╗██╗███╗   ███╗
 # ██║   ██║██║████╗ ████║
@@ -98,6 +115,7 @@ fresh-options --file=~/.vimrc --marker='"'
   fresh vim/mappings.vim
 fresh-options
 
+
 #  ██████╗ ██████╗ ███╗   ██╗███████╗██╗ ██████╗
 # ██╔════╝██╔═══██╗████╗  ██║██╔════╝██║██╔════╝
 # ██║     ██║   ██║██╔██╗ ██║█████╗  ██║██║  ███╗
@@ -132,24 +150,12 @@ fresh-options
 fresh vim/plugins/coc/settings.json --file=~/.config/nvim/coc-settings.json
 fresh vim/plugins/coc/settings.json --file=~/.vim/coc-settings.json
 
-# ███████╗██╗ ██████╗ ██╗     ███████╗████████╗
-# ██╔════╝██║██╔════╝ ██║     ██╔════╝╚══██╔══╝
-# █████╗  ██║██║  ███╗██║     █████╗     ██║
-# ██╔══╝  ██║██║   ██║██║     ██╔══╝     ██║
-# ██║     ██║╚██████╔╝███████╗███████╗   ██║
-# ╚═╝     ╚═╝ ╚═════╝ ╚══════╝╚══════╝   ╚═╝
 
-declare -a arr=(
-  "ansi regular.flf"
-  "ansi shadow.flf"
-  "calvin s.flf"
-)
+# ██╗   ██╗███████╗███╗   ██╗██████╗  ██████╗ ██████╗
+# ██║   ██║██╔════╝████╗  ██║██╔══██╗██╔═══██╗██╔══██╗
+# ██║   ██║█████╗  ██╔██╗ ██║██║  ██║██║   ██║██████╔╝
+# ╚██╗ ██╔╝██╔══╝  ██║╚██╗██║██║  ██║██║   ██║██╔══██╗
+#  ╚████╔╝ ███████╗██║ ╚████║██████╔╝╚██████╔╝██║  ██║
+#   ╚═══╝  ╚══════╝╚═╝  ╚═══╝╚═════╝  ╚═════╝ ╚═╝  ╚═╝
 
-for font in "${arr[@]}"
-do
-  file="/usr/local/opt/figlet/share/figlet/fonts/$font"
-    if [ ! -f "$file" ]; then
-      fresh xero/figlet-fonts "$font" --file="$file"
-  fi
-done
-
+fresh xero/figlet-fonts . --file=~/.figlet/
