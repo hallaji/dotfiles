@@ -1,46 +1,62 @@
 # dotfiles
 
-My dotfiles are managed by [fresh](https://freshshell.com). It's a tool to source shell configuration from different locations either locally or remotely into your own configuration files.
+My dotfiles and shell configurations are managed by [fresh](https://freshshell.com).
 
 ## Installation
 
-#### Automatic
-```
-$ sh setup.sh
-```
+### Environment Variables
 
-#### Manual
+Make a copy of `.envrc.example` to `.envrc` file in the root directory and set your own values. Then, load variables into your environemnt using a tool like [direnv](https://direnv.net).
 
-First, clone [Zplugin](https://github.com/zdharma/zplugin) zsh plugin manager on `~/.zplugin/bin` directory.
-```
-ZPLUGIN_DIR=~/.zplugin/bin
-mkdir -p "$ZPLUGIN_DIR"
-git clone https://github.com/zdharma/zplugin.git "$ZPLUGIN_DIR"
-```
-Finally, install [fresh shell](https://freshshell.com). The installation uses local files relative to `~/.dotfiles`
-as a source. if the directory does not exist, it will clone from the repo `hallaji/dotfiles`. Github is the
-default repository if no full Git URL is specified.
-```
-FRESH_LOCAL_SOURCE=hallaji/dotfiles bash -c "`curl -sL https://get.freshshell.com`"
+```shell
+❯ direnv allow .
 ```
 
-## Freshing
+### Setup Dotfiles
 
-```
-# Build shell configuration and relevant symlinks.
-fresh [install]
-
-# Update sources either remotely or locally using `--local`. This will run fresh install as well.
-fresh update --local
-
-# Remove dead symlinks and source repos.
-fresh clean
-
-# Search fresh directory `https://github.com/freshshell/fresh/wiki/directory`.
-fresh search <something>
-
-# Output each line of `~/.freshrc` along with every source file those lines match.
-fresh show
+```shell
+❯ FRESH_LOCAL_SOURCE=hallaji/dotfiles bash -c "`curl -sL https://get.freshshell.com`"
 ```
 
-> MIT License
+This command checks for a `FRESH_LOCAL_SOURCE` variable and tries to clone the repo into `~/.dotfiles`. This means that the entire dotfiles can be set up on a brand new machine by simply running the command above.
+
+> **Note:** If you have forked the repo, just specify your forked repo in `FRESH_LOCAL_SOURCE` variable.
+
+## Fresh
+
+### Install
+
+Run `fresh` or `fresh install` to build shell configuration and relevant symlinks after any change in configurations.
+
+```shell
+❯ fresh
+```
+
+### Update
+
+Running `fresh update` will update dotfiles itself and all integrated sources from GitHub repositories. In addition, it will run `fresh install` to rebuild them.
+
+```shell
+❯ fresh update
+```
+
+Specify `--local` option to just pull any changes made in dotfiles repo into `~/.dotfiles`.
+
+```shell
+❯ fresh update --local
+```
+
+### More Options
+
+```shell
+❯ fresh help
+clean    -- Removes dead symlinks and source repos
+edit     -- Open freshrc for editing
+help     -- Show this help
+install  -- Build shell configuration and relevant symlinks (default)
+search   -- Search the fresh directory
+show     -- Show source references for freshrc lines
+update   -- Update from source repos and rebuild
+```
+
+*Your dot files are now `fresh`.*
