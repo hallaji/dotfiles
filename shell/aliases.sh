@@ -10,7 +10,7 @@
 # └─┘└─┘┘└┘└─┘┴└─┴└─┘
 
 alias ,c="clear"
-alias ,r="source $HOME/.zshrc && source $HOME/.zshenv && clear"
+alias ,r="exec $SHELL -l"
 alias ,q="exit"
 alias ,s="pmset sleepnow" # mac-specific
 alias internet\?="ping 8.8.8.8"
@@ -20,7 +20,7 @@ alias weather="curl wttr.in/Melbourne,AU"
 # │─┼┐│ │││  ├┴┐  ├┤  │││ │
 # └─┘└└─┘┴└─┘┴ ┴  └─┘─┴┘┴ ┴
 
-# see functions.sh
+# @see shell/functions.sh
 alias ,f=find_source
 alias ,d=change_source
 alias ,e=edit_source
@@ -30,8 +30,8 @@ alias ,ed="cd $DOTFILES && $EDITOR $DOTFILES"
 # ├─┤│└─┐ │ │ │├┬┘└┬┘
 # ┴ ┴┴└─┘ ┴ └─┘┴└─ ┴
 
-alias ,h='history'
-alias ,hs='history | grep $* -i'
+alias ,h="history"
+alias ,hs="history | grep $* -i"
 
 # ┌─┐┬┌┬┐
 # │ ┬│ │
