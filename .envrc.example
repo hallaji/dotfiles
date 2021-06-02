@@ -1,8 +1,9 @@
-export USER_NAME=
-export USER_EMAIL=
-export USER_SIGNING_KEY=
-export SSH_IDENTITY_FILE=
+export USER_NAME="Your name"
+export USER_EMAIL="Your personal email"
+export USER_SIGNING_KEY="Your GPG signing key"
+export SSH_IDENTITY_FILE="path/to/your/identity/file" # e.g. `~/.ssh/id_rsa`
 
-export CORPORATE_GIT_HOST=
-export CORPORATE_GIT_HOST_NAME=
-export CORPORATE_SSH_IDENTITY_FILE=
+export CORPORATE_GIT_HOST="Your corporate git host"
+export CORPORATE_GIT_HOST_NAME="Your corporate git hostname"
+export CORPORATE_SSH_IDENTITY_FILE="path/to/your/corporate/identity/file" # e.g. `~/.ssh/id_rsa`
+export CORPORATE_USER_EMAIL="Your corporate email"
