@@ -13,8 +13,18 @@ function! SetupCommandAbbrs (from, to)
 endfunction
 
 " Trim trailing whitespaces
-fun! TrimWhitespace()
+function! TrimWhiteSpaces()
   let l:save = winsaveview()
   keeppatterns %s/\s\+$//e
   call winrestview(l:save)
-endfun
+endfunction
+
+" Toggle rulers in 80 and 120
+function! ToggleRuler()
+  execute "set colorcolumn=" . (&colorcolumn == "" ? "80,120" : "")
+endfunction
+
+" Toggle wrapping
+function! ToggleWrap()
+  execute "set wrap! wrap?"
+endfunction

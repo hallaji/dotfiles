@@ -32,8 +32,18 @@ nmap <C-K> <C-W><C-K>
 nmap <C-H> <C-W><C-H>
 nmap <C-L> <C-W><C-L>
 
-" Trim trailing whitespaces
-nmap <leader>w :call TrimWhitespace()<cr>
+" Trim the trailing whitespaces
+nmap <silent> <leader>z :TrimWhiteSpaces<cr>
+
+" Toggle the ruler
+nnoremap <silent> <leader>r :ToggleRuler<cr>
+
+" Toggle wrapping
+nnoremap <silent> <leader>w :ToggleWrap<cr>
+
+" Copy/paste from/to system clipboard in visual mode
+vnoremap <leader>y "*y
+vnoremap <leader>p "*p
 
 " Gitgutter
 nmap <silent> ]h :call GitGutterNextHunkCycle()<cr>

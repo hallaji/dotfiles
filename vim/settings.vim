@@ -7,11 +7,12 @@
 
 set number
 set ruler
-set colorcolumn=0                   " Set a column guide
+set colorcolumn=80,120              " Set a ruler in 80 and 120
 set foldcolumn=1                    " Custom left padding for each window
 set cursorline
 set signcolumn=yes                  " Always have the sign column
 set cmdheight=1                     " Command height under status line
+set nowrap                          " No wrap by default
 
 set tabstop=4                       " The width of a TAB is set to 4
 set shiftwidth=4                    " Indents will have a width of 4
