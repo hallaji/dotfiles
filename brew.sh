@@ -56,6 +56,7 @@ FORMULAE=(
   imagemagick                # Tools and libraries to manipulate images in many formats
   ddgr                       # DuckDuckGo from the terminal
   googler                    # Google from the terminal
+  coreutils                  # GNU File, Shell, and Text utilities
 )
 brew install ${FORMULAE[@]}
 
@@ -66,6 +67,7 @@ cat <<-MESSAGE
 └─┘┴ ┴└─┘┴ ┴└─┘
 MESSAGE
 CASKS=(
+  gpg-suite                  # Tools to protect your emails and files
   google-cloud-sdk           # Set of tools to manage resources and applications hosted on Google Cloud
   hey                        # Email provider
   google-chrome              # Google chrome web browser
