@@ -19,7 +19,6 @@ fresh freshshell/fresh contrib/source-build.sh --file=~/.zshrc
 fresh-options --bin
   fresh bin/\*
 fresh-options
-
 fresh so-fancy/diff-so-fancy third_party/build_fatpack/diff-so-fancy --bin=~/bin/diff-so-fancy
 
 
@@ -106,8 +105,8 @@ fresh-options --file=~/.vimrc --marker='"'
   fresh vim/plugins/nerdtree.vim
   fresh vim/plugins/coc/coc.vim
   fresh vim/plugins/greplace.vim
-  fresh vim/plugins/lightline.vim
   fresh vim/plugins/gitgutter.vim
+  fresh vim/plugins/airline.vim
   fresh vim/functions.vim
   fresh vim/commands.vim
   fresh vim/settings.vim
@@ -122,6 +121,14 @@ fresh-options
 # ██║     ██║   ██║██║╚██╗██║██╔══╝  ██║██║   ██║
 # ╚██████╗╚██████╔╝██║ ╚████║██║     ██║╚██████╔╝
 #  ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝     ╚═╝ ╚═════╝
+
+# ┌─┐┬  ┌─┐┌─┐┬─┐┬┌┬┐┌┬┐┬ ┬
+# ├─┤│  ├─┤│  ├┬┘│ │  │ └┬┘
+# ┴ ┴┴─┘┴ ┴└─┘┴└─┴ ┴  ┴  ┴
+
+fresh-options --file=~/.config/alacritty/alacritty.yml
+  fresh alacritty/\*
+fresh-options
 
 # ┌─┐┌┬┐┌─┐┬─┐┌─┐┬ ┬┬┌─┐
 # └─┐ │ ├─┤├┬┘└─┐├─┤│├─┘
