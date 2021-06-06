@@ -21,6 +21,8 @@ call plug#begin('~/.vim/plugged')
 "  │ │ ││ ││  └─┐
 "  ┴ └─┘└─┘┴─┘└─┘
 
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-vinegar'
 Plug 'preservim/nerdtree' |
   \ Plug 'Xuyuanp/nerdtree-git-plugin' |
@@ -32,7 +34,6 @@ Plug 'tpope/vim-surround'
 Plug 'travisjeffery/vim-auto-mkdir'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'itchyny/lightline.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'cocopon/colorswatch.vim'
 Plug 'cocopon/inspecthi.vim'

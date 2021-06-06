@@ -8,7 +8,6 @@
 set laststatus=2
 
 " Color schemes: powerline, wombat, seoul256, one
-
 let g:lightline = {
   \ 'colorscheme': 'wombat',
   \ }

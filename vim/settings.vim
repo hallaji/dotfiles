@@ -28,8 +28,6 @@ set noerrorbells visualbell t_vb=   " No bells
 set hlsearch                        " Search highlights
 set incsearch
 
-set noshowmode                      " Turn showmode off because the lightline plugin already shows the mode
-
 set mouse=a                         " Enable scrolling with the scroll wheel
 
 set splitbelow                      " Make splits default to below
