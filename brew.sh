@@ -57,6 +57,7 @@ FORMULAE=(
   ddgr                       # DuckDuckGo from the terminal
   googler                    # Google from the terminal
   coreutils                  # GNU File, Shell, and Text utilities
+  showkey                    # Simple keystroke visualizer
 )
 brew install ${FORMULAE[@]}
 
@@ -67,6 +68,8 @@ cat <<-MESSAGE
 └─┘┴ ┴└─┘┴ ┴└─┘
 MESSAGE
 CASKS=(
+  alacritty                  # GPU-accelerated terminal emulator
+  iterm2                     # Terminal emulator as alternative to Apple's Terminal app
   gpg-suite                  # Tools to protect your emails and files
   google-cloud-sdk           # Set of tools to manage resources and applications hosted on Google Cloud
   hey                        # Email provider
@@ -88,7 +91,6 @@ CASKS=(
   notion                     # App to write, plan, collaborate, and get organized
   fork                       # GIT client
   github                     # Desktop client for GitHub repositories
-  iterm2                     # Terminal emulator as alternative to Apple's Terminal app
   hyper                      # Terminal built on web technologies
   postman                    # Collaboration platform for API development
   insomnia                   # HTTP and GraphQL Client
