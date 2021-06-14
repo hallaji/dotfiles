@@ -1,0 +1,36 @@
+#!/bin/bash -e
+
+# ┏━╸╻  ┏━┓┏━┓╻ ╻
+# ┣╸ ┃  ┣━┫┗━┓┣━┫
+# ╹  ┗━╸╹ ╹┗━┛╹ ╹
+
+# Usage❯ flash <keyboard> <keymap>
+
+if [ "$#" -ne 2 ]; then
+  echo "Usage❯ $(basename "$0") <keyboard> <keymap>" >&2
+  exit 1
+fi
+
+ROOT_DIR="$DOTFILES/firmware"
+WORKING_DIR="/qmk_firmware"
+BUILD_DIR="$WORKING_DIR/.build"
+KEYMAP="$WORKING_DIR/keyboards/$1/keymaps/$2/keymap.c"
+
+mkdir -p "$ROOT_DIR$BUILD_DIR"
+
+docker run --rm -it \
+  -w "$WORKING_DIR" \
+  -v "$ROOT_DIR$KEYMAP:$KEYMAP" \
+  -v "$ROOT_DIR$BUILD_DIR:$BUILD_DIR" \
+  qmkfm/qmk_firmware \
+  make "$1:$2"
+
+sleep 1
+dfu-programmer atmega32u4 erase --force
+dfu-programmer atmega32u4 flash "$ROOT_DIR$BUILD_DIR/$1_$2.hex"
+dfu-programmer atmega32u4 reset
+
+sleep 1
+rm -rf "$ROOT_DIR$BUILD_DIR"
+
+echo "Done! $1 keyboard is ready for $2 keymap."
