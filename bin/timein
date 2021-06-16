@@ -1,7 +1,13 @@
 #!/bin/bash -e
 
+# ╺┳╸╻┏┳┓┏━╸╻┏┓╻
+#  ┃ ┃┃┃┃┣╸ ┃┃┗┫
+#  ╹ ╹╹ ╹┗━╸╹╹ ╹
+
+# Usage❯ timein <zone>
+
 if [[ -z "$1" ]]; then
-  echo "usage: $(basename "$0") [zone]" >&2
+  echo "Usage❯ $(basename "$0") [zone]" >&2
   exit 1
 fi
 export TZ="$1"
