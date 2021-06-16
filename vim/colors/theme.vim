@@ -15,16 +15,6 @@ endif
 " ╚██████╗╚██████╔╝███████╗╚██████╔╝██║  ██║███████║
 "  ╚═════╝ ╚═════╝ ╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝
 
-" Green: #35FFDC
-" Magenta: #FF90D0
-" Red: #EC2864
-" Yellow: #FFB86C
-" Blue: #7DC1FF
-" Purple: #B084EB
-" Cyan: #15FCDC
-" Black: #292A2B
-" White: F3F3F3
-
 let s:foreground = { 'gui': '#dadada', 'cterm': '253' }
 let s:background = { 'gui': '#26282B', 'cterm': '0' }
 
@@ -36,28 +26,22 @@ let s:black = { 'gui': '#000000', 'cterm': '16' }
 let s:white = { 'gui': '#FFFFFF', 'cterm': '231' }
 
 let s:color00 = { 'gui': '#26282B', 'cterm': '0' }
-let s:color08 = { 'gui': '#676B79', 'cterm': '8' }
-
 let s:color01 = { 'gui': '#EC2864', 'cterm': '167' }
-let s:color09 = { 'gui': '#FF4B82', 'cterm': '9' }
-
 let s:color02 = { 'gui': '#2ad3ba', 'cterm': '2' }
-let s:color10 = { 'gui': '#35FFDC', 'cterm': '10' }
-
 let s:color03 = { 'gui': '#FFB86C', 'cterm': '3' }
-let s:color11 = { 'gui': '#FFCC95', 'cterm': '11' }
-
 let s:color04 = { 'gui': '#45A9F9', 'cterm': '4' }
-let s:color12 = { 'gui': '#6FC1FF', 'cterm': '12' }
-
-let s:color05 = { 'gui': '#b084EB', 'cterm': '5' }
-let s:color13 = { 'gui': '#ada0d3', 'cterm': '13' }
-
-let s:color06 = { 'gui': '#5f8787', 'cterm': '66' }
-let s:color14 = { 'gui': '#87d7d7', 'cterm': '116' }
-
+let s:color05 = { 'gui': '#e86db2', 'cterm': '5' }
+let s:color06 = { 'gui': '#2fbca7', 'cterm': '66' }
 let s:color07 = { 'gui': '#c6c8d1', 'cterm': '7' }
-let s:color15 = { 'gui': '#b2b2b2', 'cterm': '249' }
+
+let s:color08 = { 'gui': '#676B79', 'cterm': '8' }
+let s:color09 = { 'gui': '#FF4B82', 'cterm': '9' }
+let s:color10 = { 'gui': '#e9ff5e', 'cterm': '10' }
+let s:color11 = { 'gui': '#FFCC95', 'cterm': '11' }
+let s:color12 = { 'gui': '#6FC1FF', 'cterm': '12' }
+let s:color13 = { 'gui': '#ada0d3', 'cterm': '13' }
+let s:color14 = { 'gui': '#87d7d7', 'cterm': '116' }
+let s:color15 = { 'gui': '#f2f2f2', 'cterm': '249' }
 
 
 " ██╗   ██╗████████╗██╗██╗     ███████╗

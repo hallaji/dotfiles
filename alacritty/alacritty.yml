@@ -5,6 +5,9 @@
 # ██║  ██║███████╗██║  ██║╚██████╗██║  ██║██║   ██║      ██║      ██║
 # ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝   ╚═╝      ╚═╝      ╚═╝
 
+# @see https://github.com/alacritty/alacritty
+
+
 # ┌─┐┌┐┌┬  ┬
 # ├┤ │││└┐┌┘
 # └─┘┘└┘ └┘
@@ -92,10 +95,10 @@ colors:
     bright_foreground: '#ffffff'
   cursor:
     text: '#26282B'
-    cursor: '#35FFDC'
+    cursor: '#FF4B82'
   vi_mode_cursor:
     text: '#26282B'
-    cursor: '#35FFDC'
+    cursor: '#FF4B82'
   search:
     matches:
       foreground: '#000000'
@@ -134,9 +137,9 @@ colors:
     green:   '#e9ff5e'
     yellow:  '#FFCC95'
     blue:    '#6FC1FF'
-    magenta: '#FF90D0'
+    magenta: '#ada0d3'
     cyan:    '#87d7d7'
-    white:   '#d2d4dd'
+    white:   '#f2f2f2'
   # The indexed colors include all colors from 16 to 256.
   # When these are not set, they're filled with sensible defaults.
   # indexed_colors:
