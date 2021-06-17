@@ -61,6 +61,12 @@ Plug 'cocopon/iceberg.vim'
 Plug 'flrnd/plastic.vim'
 Plug 'w0ng/vim-hybrid'
 
+" ┌┬┐┌─┐┬  ┬┌─┐┬  ┌─┐┌─┐┌┬┐┌─┐┌┐┌┌┬┐
+"  ││├┤ └┐┌┘├┤ │  │ │├─┘│││├┤ │││ │
+" ─┴┘└─┘ └┘ └─┘┴─┘└─┘┴  ┴ ┴└─┘┘└┘ ┴
+
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
 " ┌┐┌┌─┐┌┬┐  ┬┌┐┌  ┬ ┬┌─┐┌─┐
 " ││││ │ │   ││││  │ │└─┐├┤
 " ┘└┘└─┘ ┴   ┴┘└┘  └─┘└─┘└─┘
