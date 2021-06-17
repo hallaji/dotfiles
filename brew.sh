@@ -23,6 +23,9 @@ FORMULAE=(
   zsh                        # UNIX shell (command interpreter)
   neovim                     # Ambitious Vim-fork focused on extensibility and agility
   vim                        # Vi 'workalike' with many additional features
+  gnupg                      # GNU Pretty Good Privacy (PGP) package
+  fzf                        # Command-line fuzzy finder written in Go
+  pinentry-mac               # Pinentry for GPG on Mac
   git                        # Distributed revision control system
   tig                        # Text interface for Git repositories
   awscli                     # Official Amazon AWS command-line interface
@@ -58,6 +61,7 @@ FORMULAE=(
   googler                    # Google from the terminal
   coreutils                  # GNU File, Shell, and Text utilities
   showkey                    # Simple keystroke visualizer
+  gopls                      # Language server for the Go language https://github.com/golang/tools/tree/master/gopls
 )
 brew install ${FORMULAE[@]}
 
@@ -117,5 +121,8 @@ FONTS=(
   font-jetbrains-mono
   font-fira-code
   font-fira-code-nerd-font
+  # Roboto
+  # Ubuntu mono
+  # DroidSerif
 )
 brew install --cask ${FONTS[@]}
