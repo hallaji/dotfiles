@@ -7,8 +7,13 @@
 
 # @see https://starship.rs
 
-# Don't print a new line at the start of the prompt
 add_newline = true
+
+[aws]
+symbol = "🅰 "
 
 [gcloud]
 symbol = "🅶 "
+
+[line_break]
+disabled = false
