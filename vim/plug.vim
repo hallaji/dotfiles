@@ -1,3 +1,4 @@
+
 " ██████╗ ██╗     ██╗   ██╗ ██████╗
 " ██╔══██╗██║     ██║   ██║██╔════╝
 " ██████╔╝██║     ██║   ██║██║  ███╗
@@ -38,6 +39,8 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'cocopon/colorswatch.vim'
 Plug 'cocopon/inspecthi.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }    " A command-line fuzzy finder
+Plug 'tpope/vim-commentary'
 
 " ┌─┐┬ ┬┌┐┌┌┬┐┌─┐─┐ ┬
 " └─┐└┬┘│││ │ ├─┤┌┴┬┘
