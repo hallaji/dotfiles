@@ -1,8 +1,22 @@
 # dotfiles
 
+```text
+██████╗  ██████╗ ████████╗███████╗██╗██╗     ███████╗███████╗
+██╔══██╗██╔═══██╗╚══██╔══╝██╔════╝██║██║     ██╔════╝██╔════╝
+██║  ██║██║   ██║   ██║   █████╗  ██║██║     █████╗  ███████╗
+██║  ██║██║   ██║   ██║   ██╔══╝  ██║██║     ██╔══╝  ╚════██║
+██████╔╝╚██████╔╝   ██║   ██║     ██║███████╗███████╗███████║
+╚═════╝  ╚═════╝    ╚═╝   ╚═╝     ╚═╝╚══════╝╚══════╝╚══════╝
+```
+
 My dotfiles and shell configurations are managed by [fresh](https://freshshell.com).
 
-## Installation
+## Prerequisites
+
+* Making sure to back up and remove existing dotfiles e.g. `.zshrc`, `.vimrc`, `.gitconfig`, etc.
+* Checking out [installations](INSTALLATIONS.md).
+
+## Cloning Dotfiles
 
 ### Environment Variables
 
@@ -12,7 +26,7 @@ Make a copy of `.envrc.example` to `.envrc` file in the root directory and set y
 ❯ direnv allow .
 ```
 
-### Setup Dotfiles
+### Setup
 
 ```shell
 ❯ FRESH_LOCAL_SOURCE=hallaji/dotfiles bash -c "`curl -sL https://get.freshshell.com`"
