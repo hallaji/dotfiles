@@ -22,12 +22,6 @@ fresh-options
 fresh so-fancy/diff-so-fancy third_party/build_fatpack/diff-so-fancy --bin=~/bin/diff-so-fancy
 
 
-# ███████╗███████╗██╗  ██╗
-# ╚══███╔╝██╔════╝██║  ██║
-#   ███╔╝ ███████╗███████║
-#  ███╔╝  ╚════██║██╔══██║
-# ███████╗███████║██║  ██║
-# ╚══════╝╚══════╝╚═╝  ╚═╝
 #  █████╗ ██╗      █████╗  ██████╗██████╗ ██╗████████╗████████╗██╗   ██╗
 # ██╔══██╗██║     ██╔══██╗██╔════╝██╔══██╗██║╚══██╔══╝╚══██╔══╝╚██╗ ██╔╝
 # ███████║██║     ███████║██║     ██████╔╝██║   ██║      ██║    ╚████╔╝
@@ -39,6 +33,14 @@ fresh-options --file=~/.config/alacritty/alacritty.yml
   fresh alacritty/\*
 fresh-options
 
+
+# ███████╗██╗  ██╗███████╗██╗     ██╗
+# ██╔════╝██║  ██║██╔════╝██║     ██║
+# ███████╗███████║█████╗  ██║     ██║
+# ╚════██║██╔══██║██╔══╝  ██║     ██║
+# ███████║██║  ██║███████╗███████╗███████╗
+# ╚══════╝╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝
+
 # ┌─┐┌─┐┌┬┐┌─┐┬  ┌─┐┌┬┐┬┌─┐┌┐┌┌─┐
 # │  │ ││││├─┘│  ├┤  │ ││ ││││└─┐
 # └─┘└─┘┴ ┴┴  ┴─┘└─┘ ┴ ┴└─┘┘└┘└─┘
@@ -49,6 +51,7 @@ fresh docker/cli contrib/completion/zsh/_docker --file=completions/_docker
 fresh docker/compose contrib/completion/zsh/_docker-compose --file=completions/_docker-compose
 fresh sdkman/sdkman-cli contrib/completion/zsh/sdk --file=completions/_sdk
 fresh asdf-vm/asdf completions/_asdf --file=completions/_asdf
+fresh alacritty/alacritty extra/completions/_alacritty --file=completions/_alacritty
 
 # ┌─┐┬  ┬ ┬┌─┐┬┌┐┌┌─┐
 # ├─┘│  │ ││ ┬││││└─┐
@@ -80,10 +83,22 @@ fresh-options --file=~/.zshrc --marker
   fresh shell/direnv.sh
   fresh shell/jenv.sh
   fresh shell/pyenv.sh
-  fresh shell/nvm.sh
+  # fresh shell/nvm.sh
   fresh shell/sdkman.sh
   fresh shell/starship/starship.sh
 fresh-options
+
+# ┌─┐┌┬┐┌─┐┬─┐┌─┐┬ ┬┬┌─┐
+# └─┐ │ ├─┤├┬┘└─┐├─┤│├─┘
+# └─┘ ┴ ┴ ┴┴└─└─┘┴ ┴┴┴
+
+fresh shell/starship/config.toml --file=~/.config/starship.toml
+
+# ┌─┐┬┌─┐
+# ├─┘│├─┘
+# ┴  ┴┴
+
+fresh shell/pip.conf --file=~/.config/pip/pip.conf
 
 
 # ██╗   ██╗██╗███╗   ███╗
@@ -99,24 +114,21 @@ fresh-options
 
 fresh vim/nvim.vim --file=~/.config/nvim/init.vim --marker='"'
 
-# ┌─┐┌─┐┬  ┌─┐┬─┐┌─┐
-# │  │ ││  │ │├┬┘└─┐
-# └─┘└─┘┴─┘└─┘┴└─└─┘
-
-fresh vim/colors/theme.vim --file='~/.vim/colors/theme.vim' --marker='"'
-
 # ┬  ┬┬┌┬┐┬─┐┌─┐
 # └┐┌┘││││├┬┘│
 #  └┘ ┴┴ ┴┴└─└─┘
 
 fresh-options --file=~/.vimrc --marker='"'
   fresh vim/plug.vim
+  # fresh vim/plugins/syntastic.vim
+  fresh vim/plugins/editorconfig.vim
   fresh vim/plugins/ctrlp.vim
   fresh vim/plugins/nerdtree.vim
-  fresh vim/plugins/coc/coc.vim
   fresh vim/plugins/greplace.vim
   fresh vim/plugins/gitgutter.vim
   fresh vim/plugins/airline.vim
+  fresh vim/plugins/vim-go.vim
+  # fresh vim/plugins/language-client.vim
   fresh vim/functions.vim
   fresh vim/commands.vim
   fresh vim/settings.vim
@@ -124,48 +136,54 @@ fresh-options --file=~/.vimrc --marker='"'
   fresh vim/mappings.vim
 fresh-options
 
-
-#  ██████╗ ██████╗ ███╗   ██╗███████╗██╗ ██████╗
-# ██╔════╝██╔═══██╗████╗  ██║██╔════╝██║██╔════╝
-# ██║     ██║   ██║██╔██╗ ██║█████╗  ██║██║  ███╗
-# ██║     ██║   ██║██║╚██╗██║██╔══╝  ██║██║   ██║
-# ╚██████╗╚██████╔╝██║ ╚████║██║     ██║╚██████╔╝
-#  ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝     ╚═╝ ╚═════╝
-
-# ┌─┐┬  ┌─┐┌─┐┬─┐┬┌┬┐┌┬┐┬ ┬
-# ├─┤│  ├─┤│  ├┬┘│ │  │ └┬┘
-# ┴ ┴┴─┘┴ ┴└─┘┴└─┴ ┴  ┴  ┴
-
-fresh-options --file=~/.config/alacritty/alacritty.yml
-  fresh alacritty/\*
-fresh-options
-
-# ┌─┐┌┬┐┌─┐┬─┐┌─┐┬ ┬┬┌─┐
-# └─┐ │ ├─┤├┬┘└─┐├─┤│├─┘
-# └─┘ ┴ ┴ ┴┴└─└─┘┴ ┴┴┴
-
-fresh shell/starship/config.toml --file=~/.config/starship.toml
-
-# ┌─┐┌─┐┬ ┬
-# └─┐└─┐├─┤
-# └─┘└─┘┴ ┴
-
-fresh ssh/config.conf --file=~/.ssh/config --filter=erb
-
-# ┌─┐┬┌┬┐
-# │ ┬│ │
-# └─┘┴ ┴
-
-fresh-options --file
-  fresh git/\* --filter=erb
-fresh-options
-
 # ┌─┐┌─┐┌─┐
 # │  │ ││
 # └─┘└─┘└─┘
 
-fresh vim/plugins/coc/settings.json --file=~/.config/nvim/coc-settings.json
-fresh vim/plugins/coc/settings.json --file=~/.vim/coc-settings.json
+fresh vim/plugins/coc-settings.json --file=~/.config/nvim/coc-settings.json
+fresh vim/plugins/coc-settings.json --file=~/.vim/coc-settings.json
+
+# ┌┬┐┬ ┬┌─┐┌┬┐┌─┐
+#  │ ├─┤├┤ │││├┤
+#  ┴ ┴ ┴└─┘┴ ┴└─┘
+
+fresh vim/theme.vim --file='~/.vim/colors/theme.vim' --marker='"'
+
+
+#  ██████╗ ██╗████████╗
+# ██╔════╝ ██║╚══██╔══╝
+# ██║  ███╗██║   ██║
+# ██║   ██║██║   ██║
+# ╚██████╔╝██║   ██║
+#  ╚═════╝ ╚═╝   ╚═╝
+
+fresh-options --file --filter=erb
+  fresh git/\*
+fresh-options
+
+
+# ███████╗███████╗██╗  ██╗
+# ██╔════╝██╔════╝██║  ██║
+# ███████╗███████╗███████║
+# ╚════██║╚════██║██╔══██║
+# ███████║███████║██║  ██║
+# ╚══════╝╚══════╝╚═╝  ╚═╝
+
+fresh-options --file=~/.ssh/config --filter=erb
+  fresh ssh/default.conf
+  fresh ssh/corporate.conf
+fresh-options
+
+
+#  ██████╗ ██████╗  ██████╗
+# ██╔════╝ ██╔══██╗██╔════╝
+# ██║  ███╗██████╔╝██║  ███╗
+# ██║   ██║██╔═══╝ ██║   ██║
+# ╚██████╔╝██║     ╚██████╔╝
+#  ╚═════╝ ╚═╝      ╚═════╝
+
+fresh gpg/gpg.conf --file=~/.gnupg/gpg.conf
+fresh gpg/gpg-agent.conf --file=~/.gnupg/gpg-agent.conf
 
 
 # ██╗   ██╗███████╗███╗   ██╗██████╗  ██████╗ ██████╗
