@@ -1,3 +1,4 @@
+
 "  ██████╗ ██████╗ ███╗   ███╗███╗   ███╗ █████╗ ███╗   ██╗██████╗ ███████╗
 " ██╔════╝██╔═══██╗████╗ ████║████╗ ████║██╔══██╗████╗  ██║██╔══██╗██╔════╝
 " ██║     ██║   ██║██╔████╔██║██╔████╔██║███████║██╔██╗ ██║██║  ██║███████╗
@@ -15,7 +16,7 @@ autocmd FileType json syntax match Comment +\/\/.\+$+   " Get correct comment hi
 " Automatically source the vimrc file on save.
 augroup autosourcing
   autocmd!
-	autocmd BufWritePost .vimrc source %
+  autocmd BufWritePost .vimrc source %
 augroup END
 
 " Check if any buffers were changed outside of Vim
