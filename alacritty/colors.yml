@@ -1,0 +1,67 @@
+
+#  ██████╗ ██████╗ ██╗      ██████╗ ██████╗ ███████╗
+# ██╔════╝██╔═══██╗██║     ██╔═══██╗██╔══██╗██╔════╝
+# ██║     ██║   ██║██║     ██║   ██║██████╔╝███████╗
+# ██║     ██║   ██║██║     ██║   ██║██╔══██╗╚════██║
+# ╚██████╗╚██████╔╝███████╗╚██████╔╝██║  ██║███████║
+#  ╚═════╝ ╚═════╝ ╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝
+
+draw_bold_text_with_bright_colors: false
+
+colors:
+  primary:
+    background: '#26282B'
+    foreground: '#dadada'
+    dim_foreground: '#585858'
+    bright_foreground: '#ffffff'
+  cursor:
+    text: '#26282B'
+    cursor: '#FF4B82'
+  vi_mode_cursor:
+    text: '#26282B'
+    cursor: '#FF4B82'
+  search:
+    matches:
+      foreground: '#000000'
+      background: '#87d7d7'
+    focused_match:
+      foreground: '#000000'
+      background: '#b084EB'
+    bar:
+      background: '#292c30'
+      foreground: '#ffffff'
+  hints:
+    start:
+      foreground: '#1d1f21'
+      background: '#e9ff5e'
+    end:
+      foreground: '#e9ff5e'
+      background: '#1d1f21'
+  line_indicator:
+    foreground: '#585858'
+    background: '#303030'
+  selection:
+    text: '#585858'
+    background: '#303030'
+  normal:
+    black:   '#26282B'
+    red:     '#EC2864'
+    green:   '#2ad3ba'
+    yellow:  '#FFB86C'
+    blue:    '#45A9F9'
+    magenta: '#e86db2'
+    cyan:    '#2fbca7'
+    white:   '#c6c8d1'
+  bright:
+    black:   '#676B79'
+    red:     '#FF4B82'
+    green:   '#e9ff5e'
+    yellow:  '#FFCC95'
+    blue:    '#6FC1FF'
+    magenta: '#ada0d3'
+    cyan:    '#87d7d7'
+    white:   '#f2f2f2'
+  # The indexed colors include all colors from 16 to 256.
+  # When these are not set, they're filled with sensible defaults.
+  # indexed_colors:
+  #   - { index: 16, color: '#ff00ff' }
