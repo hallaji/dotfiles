@@ -39,7 +39,7 @@ alias ,hs="history | grep $* -i"
 
 alias ,gw='git config user.name && git config user.email'
 alias ,gme='git config user.email <%= ENV["USER_EMAIL"] %>'
-alias ,gco='git config user.email <%= ENV["CORPORATE_USER_EMAIL"] %>'
+alias ,gco='git config user.email <%= ENV["USER_EMAIL_CORPORATE"] %>'
 
 # ┌─┐┬┌─┐┬  ┌─┐┌┬┐
 # ├┤ ││ ┬│  ├┤  │
