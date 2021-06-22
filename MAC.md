@@ -23,6 +23,8 @@
 * [Type Fu](https://type-fu.com)
 * [ColorPicker](http://www.northernspysoftware.com/software/colorpicker)
 * [Carbon](https://carbon.now.sh)
+* [Fantastical](https://flexibits.com/fantastical)
+* [System Color Picker](https://apps.apple.com/app/id1545870783)
 
 ## Browser Extensions
 

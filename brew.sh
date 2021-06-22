@@ -108,6 +108,7 @@ CASKS=(
   spotify                    # Music streaming service
   steam                      # Video game digital distribution service
   qmk-toolbox                # A Toolbox companion for QMK Firmware
+  openvpn-connect            # OpenVPN Connect client
 )
 brew install --cask ${CASKS[@]}
 
