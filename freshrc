@@ -82,6 +82,7 @@ fresh-options --file=~/.zshrc --marker
   fresh shell/direnv.sh
   fresh shell/jenv.sh
   fresh shell/pyenv.sh
+  fresh shell/asdf.sh
   fresh shell/starship/starship.sh
 fresh-options
 
