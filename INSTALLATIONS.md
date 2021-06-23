@@ -15,19 +15,15 @@ If that doesn't show you any updates, run:
 ❯ sudo xcode-select --install
 ```
 
-## Installing pre-built homebrew packages
+## Homebrew
 
 ```shell
-❯ bash -c "`curl -sL https://raw.githubusercontent.com/hallaji/dotfiles/master/brew.sh`"
+❯ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-## Installing dependencies from source
+## ASDF
 
-```shell
-❯ bash -c "`curl -sL https://raw.githubusercontent.com/hallaji/dotfiles/master/source.sh`"
-```
-
-## ASDF - Managing multiple runtime versions
+Managing multiple runtime versions.
 
 ```shell
 ❯ asdf install <name> <version> [<version>...]
@@ -49,20 +45,14 @@ If that doesn't show you any updates, run:
 ❯ asdf global nodejs latest
 ```
 
-## SDKMAN - Managing parallel versions of multiple SDK
-
-### Java
+### Ruby
 
 ```shell
-❯ sdk install java x.y.z-adpt
+❯ asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
+❯ asdf install ruby latest
+❯ asdf global ruby latest
 ```
 
-### Kotlin
+## Manual Installations
 
-```shell
-❯ sdk install kotlin
-```
-
-## Manual installations for macOS
-
-Check out [MAC.md](MAC.md) for a list of macOS-specific apps.
+Check out [MAC.md](MAC.md) for a list of macOS-specific apps and extensions.
