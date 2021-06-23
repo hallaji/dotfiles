@@ -49,7 +49,6 @@ fresh zsh-users/zsh-completions src --file=completions/
 fresh freshshell/fresh contrib/completion/fresh-completion.zsh --file=completions/_fresh
 fresh docker/cli contrib/completion/zsh/_docker --file=completions/_docker
 fresh docker/compose contrib/completion/zsh/_docker-compose --file=completions/_docker-compose
-fresh sdkman/sdkman-cli contrib/completion/zsh/sdk --file=completions/_sdk
 fresh asdf-vm/asdf completions/_asdf --file=completions/_asdf
 fresh alacritty/alacritty extra/completions/_alacritty --file=completions/_alacritty
 
@@ -83,7 +82,6 @@ fresh-options --file=~/.zshrc --marker
   fresh shell/direnv.sh
   fresh shell/jenv.sh
   fresh shell/pyenv.sh
-  fresh shell/sdkman.sh
   fresh shell/starship/starship.sh
 fresh-options
 
