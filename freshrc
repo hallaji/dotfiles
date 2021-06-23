@@ -83,7 +83,6 @@ fresh-options --file=~/.zshrc --marker
   fresh shell/direnv.sh
   fresh shell/jenv.sh
   fresh shell/pyenv.sh
-  # fresh shell/nvm.sh
   fresh shell/sdkman.sh
   fresh shell/starship/starship.sh
 fresh-options
@@ -108,9 +107,9 @@ fresh shell/pip.conf --file=~/.config/pip/pip.conf
 #  ╚████╔╝ ██║██║ ╚═╝ ██║
 #   ╚═══╝  ╚═╝╚═╝     ╚═╝
 
-# ┌┐┌┬  ┬┬┌┬┐
-# │││└┐┌┘││││
-# ┘└┘ └┘ ┴┴ ┴
+# ┌┐┌┌─┐┌─┐┬  ┬┬┌┬┐
+# │││├┤ │ │└┐┌┘││││
+# ┘└┘└─┘└─┘ └┘ ┴┴ ┴
 
 fresh vim/nvim.vim --file=~/.config/nvim/init.vim --marker='"'
 
@@ -184,6 +183,16 @@ fresh-options
 
 fresh gpg/gpg.conf --file=~/.gnupg/gpg.conf
 fresh gpg/gpg-agent.conf --file=~/.gnupg/gpg-agent.conf
+
+
+#  █████╗ ███████╗██████╗ ███████╗
+# ██╔══██╗██╔════╝██╔══██╗██╔════╝
+# ███████║███████╗██║  ██║█████╗
+# ██╔══██║╚════██║██║  ██║██╔══╝
+# ██║  ██║███████║██████╔╝██║
+# ╚═╝  ╚═╝╚══════╝╚═════╝ ╚═╝
+
+fresh config/asdf/asdf.conf --file=~/.asdfrc
 
 
 # ██╗   ██╗███████╗███╗   ██╗██████╗  ██████╗ ██████╗
