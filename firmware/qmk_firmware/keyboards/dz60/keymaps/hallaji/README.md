@@ -34,6 +34,12 @@ Mod = `Control+Alt`
 - Mod + `C` Center
 - Mod + `R` Restore
 
+### Input (Mic Drop)
+
+Mod = `Control+Shift+Alt+Cmd`
+
+- Mod + `9` On/Off microphone
+
 ### Audio and Video (Zoom)
 
 Mod = `Control+Shift+Alt+Cmd`
