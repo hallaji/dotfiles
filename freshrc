@@ -168,7 +168,7 @@ fresh vim/theme.vim --file='~/.vim/colors/theme.vim' --marker='"'
 #  ╚═════╝ ╚═╝   ╚═╝
 
 fresh-options --file --filter=erb
-  fresh git/\*
+  fresh config/git/\*
 fresh-options
 
 
@@ -180,8 +180,8 @@ fresh-options
 # ╚══════╝╚══════╝╚═╝  ╚═╝
 
 fresh-options --file=~/.ssh/config --filter=erb
-  fresh ssh/default.conf
-  fresh ssh/corporate.conf
+  fresh config/ssh/default.conf
+  fresh config/ssh/corporate.conf
 fresh-options
 
 
@@ -192,8 +192,8 @@ fresh-options
 # ╚██████╔╝██║     ╚██████╔╝
 #  ╚═════╝ ╚═╝      ╚═════╝
 
-fresh gpg/gpg.conf --file=~/.gnupg/gpg.conf
-fresh gpg/gpg-agent.conf --file=~/.gnupg/gpg-agent.conf
+fresh config/gpg/gpg.conf --file=~/.gnupg/gpg.conf
+fresh config/gpg/gpg-agent.conf --file=~/.gnupg/gpg-agent.conf
 
 
 #  █████╗ ███████╗██████╗ ███████╗
