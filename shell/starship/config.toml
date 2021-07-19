@@ -9,12 +9,12 @@
 
 add_newline = true
 
-command_timeout = 1000
-
 [aws]
+disabled = true
 symbol = "🅰 "
 
 [gcloud]
+disabled = true
 symbol = "🅶 "
 
 [line_break]
