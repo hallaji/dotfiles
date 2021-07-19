@@ -30,7 +30,7 @@ fresh so-fancy/diff-so-fancy third_party/build_fatpack/diff-so-fancy --bin=~/bin
 # ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝   ╚═╝      ╚═╝      ╚═╝
 
 fresh-options --file=~/.config/alacritty/alacritty.yml
-  fresh alacritty/\*
+  fresh config/alacritty/\*
 fresh-options
 
 
@@ -87,13 +87,14 @@ fresh-options
 
 fresh-options --file=~/.zshrc --marker
   fresh shell/zsh/completions.sh
+  fresh shell/asdf.sh
   fresh shell/zsh/plugins.sh
   fresh shell/zsh/vi-mode.sh
   fresh shell/functions.sh
   fresh shell/direnv.sh
   fresh shell/jenv.sh
   fresh shell/pyenv.sh
-  fresh shell/asdf.sh
+  fresh shell/mongo.sh
   fresh shell/starship/starship.sh
 fresh-options
 
