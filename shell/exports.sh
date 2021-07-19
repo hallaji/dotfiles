@@ -15,8 +15,8 @@ export PATH="/usr/local/sbin:$PATH"
 
 export LANG=en_AU.UTF-8
 
-export DOTFILES="~/.dotfiles"
-export CODE="~/Code"
+export DOTFILES="$HOME/.dotfiles"
+export CODE="$HOME/Code"
 
 # ┌┬┐┌─┐┌─┐┌─┐┬ ┬┬ ┌┬┐  ┌─┐┌┬┐┬┌┬┐┌─┐┬─┐
 #  ││├┤ ├┤ ├─┤│ ││  │   ├┤  │││ │ │ │├┬┘
