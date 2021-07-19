@@ -16,7 +16,7 @@ nmap <leader>ed :tabedit $DOTFILES<cr>
 nmap <leader><space> :nohlsearch<cr>
 
 " Make NERDTree easier to toggle
-nmap <leader>q :NERDTreeToggle<cr>
+nmap <leader>, :NERDTreeToggle<cr>
 
 " CtrlP
 nmap <leader>f :CtrlP<cr>
