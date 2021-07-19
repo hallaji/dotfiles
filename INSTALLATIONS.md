@@ -8,13 +8,6 @@ Update CLT from Software Update in System Preferences or run:
 ❯ softwareupdate --all --install --force
 ```
 
-If that doesn't show you any updates, run:
-
-```shell
-❯ sudo rm -rf /Library/Developer/CommandLineTools
-❯ sudo xcode-select --install
-```
-
 ## Homebrew
 
 ```shell

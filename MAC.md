@@ -25,6 +25,7 @@
 * [Carbon](https://carbon.now.sh)
 * [Fantastical](https://flexibits.com/fantastical)
 * [System Color Picker](https://apps.apple.com/app/id1545870783)
+* [Mic Drop](https://getmicdrop.com)
 
 ## Browser Extensions
 

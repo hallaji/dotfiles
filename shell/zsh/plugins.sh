@@ -18,9 +18,6 @@ OHMYZSH_PLUGINS=(
   npm
   yarn
   node
-  nvm
-  asdf
-  aws
   gcloud
   osx
   z
