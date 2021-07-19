@@ -6,19 +6,18 @@
 # ██║     ╚██████╔╝██║ ╚████║╚██████╗   ██║   ██║╚██████╔╝██║ ╚████║███████║
 # ╚═╝      ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
 
+# @see https://danishpraka.sh/2018/08/03/command-line-dir-switcher.html
+find_in_directory() {
+  cd $(find $1 -type d -not -path '*/\.*' -maxdepth 2 | fzf)
+  starship_precmd
+  zle reset-prompt
+}
+
 change_source() {
-  SOURCE_DIR="$CODE/$*"
-  eval "cd $SOURCE_DIR"
+  find_in_directory $CODE
 }
 
 edit_source() {
-  SOURCE_DIR="$CODE/$*"
-  eval "cd $SOURCE_DIR && $EDITOR $SOURCE_DIR"
-}
-
-# @see https://danishpraka.sh/2018/08/03/command-line-dir-switcher.html
-find_source() {
-  cd $(find ~/Code -type d -not -path '*/\.*' -maxdepth 2 | fzf)
-  starship_precmd
-  zle reset-prompt
+  find_in_directory $CODE
+  eval "$EDITOR ."
 }
