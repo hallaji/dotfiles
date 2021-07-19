@@ -6,12 +6,37 @@
 # ██████╔╝██║██║ ╚████║██████╔╝██║██║ ╚████║╚██████╔╝███████║
 # ╚═════╝ ╚═╝╚═╝  ╚═══╝╚═════╝ ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝
 
-# @see https://docs.rs/glutin/*/glutin/event/enum.VirtualKeyCode.html#variants
+# ❯ xxd -psd   # --> Run to create a hex dump of a standard input.
+# ^Bv          # --> Press: `Ctrl + b` and then `v`.
+# 02760a       # --> Output: 02 is `c-b`, 76 is `v`, 0a is `return` and ^C is `c-c`.
 
 mouse_bindings:
   - { mouse: Middle, action: PasteSelection }
 
-# key_bindings:
+key_bindings:
+  # tmux bindings:
+  - { key: D,     mods: Command,       chars: "\x02\x76" } # Vertical pane
+  - { key: D,     mods: Command|Shift, chars: "\x02\x73" } # Horizontal pane
+  - { key: W,     mods: Command,       chars: "\x02\x78" } # Close pane/tab
+  - { key: H,     mods: Command,       chars: "\x02\x68" } # Move cursor to left pane
+  - { key: J,     mods: Command,       chars: "\x02\x6a" } # Move cursor to bottom pane
+  - { key: K,     mods: Command,       chars: "\x02\x6b" } # Move cursor to top pane
+  - { key: L,     mods: Command,       chars: "\x02\x6c" } # Move cursor to left pane
+  - { key: T,     mods: Command,       chars: "\x02\x63" } # Open new tab
+  - { key: Left,  mods: Command,       chars: "\x02\x48" } # Resize pane to left
+  - { key: Down,  mods: Command,       chars: "\x02\x4a" } # Resize pane to down
+  - { key: Up,    mods: Command,       chars: "\x02\x4b" } # Resize pane to up
+  - { key: Right, mods: Command,       chars: "\x02\x4c" } # Resize pane to right
+  - { key: Key1,  mods: Command,       chars: "\x02\x31" } # Switch to tab #1
+  - { key: Key2,  mods: Command,       chars: "\x02\x32" } # Switch to tab #2
+  - { key: Key3,  mods: Command,       chars: "\x02\x33" } # Switch to tab #3
+  - { key: Key4,  mods: Command,       chars: "\x02\x34" } # Switch to tab #4
+  - { key: Key5,  mods: Command,       chars: "\x02\x35" } # Switch to tab #5
+  - { key: Key6,  mods: Command,       chars: "\x02\x36" } # Switch to tab #6
+  - { key: Key7,  mods: Command,       chars: "\x02\x37" } # Switch to tab #7
+  - { key: Key8,  mods: Command,       chars: "\x02\x38" } # Switch to tab #8
+  - { key: Key9,  mods: Command,       chars: "\x02\x39" } # Switch to tab #9
+
   # - { key: Paste,                                       action: Paste          }
   # - { key: Copy,                                        action: Copy           }
   # - { key: L,         mods: Control,                    action: ClearLogNotice }
