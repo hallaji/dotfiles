@@ -41,7 +41,9 @@ fresh-options
 #    ██║   ██║ ╚═╝ ██║╚██████╔╝██╔╝ ██╗
 #    ╚═╝   ╚═╝     ╚═╝ ╚═════╝ ╚═╝  ╚═╝
 
-fresh config/tmux/tmux.conf --file=~/.tmux.conf
+fresh-options --file=~/.tmux.conf
+  fresh config/tmux/\*
+fresh-options
 fresh tmux-plugins/tpm . --file=~/.tmux/plugins/tpm/
 
 
