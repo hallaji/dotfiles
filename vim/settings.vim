@@ -8,11 +8,11 @@
 
 set number
 set ruler
-set colorcolumn=80,120              " Set a ruler in 80 and 120
+" set colorcolumn=80,120              " Set a ruler in 80 and 120 by default
 set foldcolumn=1                    " Custom left padding for each window
 set cursorline
 set signcolumn=yes                  " Always have the sign column
-set cmdheight=2                     " Command height under status line
+set cmdheight=1                     " Command height under status line
 set nowrap                          " No wrap by default
 
 set tabstop=4                       " The width of a TAB is set to 4
@@ -39,6 +39,6 @@ set updatetime=300                  " Shorter update time - default is 4000 ms
 set nobackup                         " Some lang servers have issues with backup files
 set nowritebackup                    " Some lang servers have issues with backup files
 
-set shortmess+=c                     " don't give |ins-completion-menu| messages.
+set shortmess+=c                     " don't give ins-completion-menu messages.
 
 " set tags=./tags,tags;$HOME          " Look for a tags file in the directory of the current file, up and up until home
