@@ -8,7 +8,7 @@
 # @see https://starship.rs
 
 add_newline = true
-command_timeout = 1000
+command_timeout = 2000
 
 [aws]
 disabled = true
