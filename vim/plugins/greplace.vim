@@ -6,6 +6,8 @@
 " ╚██████╔╝██║  ██║███████╗██║     ███████╗██║  ██║╚██████╗███████╗
 "  ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝     ╚══════╝╚═╝  ╚═╝ ╚═════╝╚══════╝
 
+" @see https://github.com/skwp/greplace.vim
+
 " Use ag for the search
 set grepprg=ag
 let g:grep_cmd_opts = '--line-numbers --noheading'

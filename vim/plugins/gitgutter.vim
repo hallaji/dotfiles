@@ -6,6 +6,8 @@
 " ╚██████╔╝██║   ██║   ╚██████╔╝╚██████╔╝   ██║      ██║   ███████╗██║  ██║
 "  ╚═════╝ ╚═╝   ╚═╝    ╚═════╝  ╚═════╝   ╚═╝      ╚═╝   ╚══════╝╚═╝  ╚═╝
 
+" @see https://github.com/airblade/vim-gitgutter
+
 let g:gitgutter_highlight_lines = 0
 let g:gitgutter_highlight_linenrs = 1
 

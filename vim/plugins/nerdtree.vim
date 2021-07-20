@@ -6,6 +6,8 @@
 " ██║ ╚████║███████╗██║  ██║██████╔╝   ██║   ██║  ██║███████╗███████╗
 " ╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═════╝    ╚═╝   ╚═╝  ╚═╝╚══════╝╚══════╝
 
+" @see https://github.com/preservim/nerdtree
+
 let NERDTreeHijackNetrw = 0
 
 " Exit Vim if NERDTree is the only window left.

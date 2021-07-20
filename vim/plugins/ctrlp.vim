@@ -6,6 +6,8 @@
 " ╚██████╗   ██║   ██║  ██║███████╗██║
 "  ╚═════╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚═╝
 
+" @see https://github.com/ctrlpvim/ctrlp.vim
+
 " Make sure to delete the cache after any change.
 " Run `:CtrlPClearAllCaches` or delete the `.cache/ctrlp` in your home directory.
 
