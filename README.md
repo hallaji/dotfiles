@@ -9,12 +9,13 @@
 ╚═════╝  ╚═════╝    ╚═╝   ╚═╝     ╚═╝╚══════╝╚══════╝╚══════╝
 ```
 
-My dotfiles and shell configurations are managed by [fresh](https://freshshell.com).
+My dotfiles and shell configurations are managed by [fresh](https://freshshell.com). Read [cheat sheet](docs/CHEATSHEET.md)
+for current key bindings and commands.
 
 ## Prerequisites
 
-* Back up and remove existing dotfiles e.g. `.zshrc`, `.vimrc`, `.gitconfig`, etc.
-* Install [Homebrew](https://brew.sh/)
+* Back up and delete the [listed dotfiles](docs/FRESH.md) from your machine to let [fresh](https://freshshell.com) create symlinks.
+* Install [Homebrew](https://brew.sh/).
 
 ## Setup
 
