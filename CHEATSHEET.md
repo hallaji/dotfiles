@@ -1,6 +1,8 @@
 # Cheat Sheet
 
-## Visual Selecttion
+## VIM
+
+### Visual Selecttion
 
 Use `v` for visual select. `i` is for inner and `a` for around selection.
 
@@ -13,7 +15,7 @@ Use `v` for visual select. `i` is for inner and `a` for around selection.
 - `va(` selects around ()
 - `v%` if the cursor is on a starting/ending of parenthesis or curly brace
 
-## Yank/Copy
+### Yank/Copy
 
 - `"*y` yanks selected text to the system clipboard
 - `y` yanks selected text
@@ -21,12 +23,12 @@ Use `v` for visual select. `i` is for inner and `a` for around selection.
 - `yiw` yanks an inner word
 - `ya{` yanks around `{}`
 
-## Navigation
+### Navigation
 
 - `]]` takes you to the next function or method
 - `[[` takes you to the previous function or method
 
-## Git Gutter
+### Git Gutter
 
 - `]h` Go to next hunk - cycle through hunks in current buffer
 - `[h` Go to previous hunk - cycle through hunks in current buffer
@@ -37,14 +39,14 @@ Use `v` for visual select. `i` is for inner and `a` for around selection.
 - `<leader>hu` Undo the hunk
 - `<leader>hf` Fold all unchanged lines, leaving just the hunks visible
 
-## VIM Plug
+### VIM Plug
 
 - `PlugUpgrade` Upgrade vim-plug itself
 - `PlugUpdate [name ...] [#threads]` Install or update plugins
 
 ## Tmux
 
-prefix = `Ctrl + b`
+Prefix `Ctrl + b`
 
 - `prefix + ,` Rename a window
 - `prefix + I` Install tmux plugins
@@ -57,6 +59,32 @@ prefix = `Ctrl + b`
 - `prefix + H`, `prefix + J`, `prefix + K`, `prefix + L` Resize panes
 - `prefix + <number>` Jump to specific window/tab
 - `prefix + d` Detach current session
+
+## Alacritty
+
+### Tmux bindings
+
+- `⌘ + D` Vertical pane
+- `⌘ + shift + D` Horizontal pane
+- `⌘ + W` Close pane/tab
+- `⌘ + H` Move cursor to left pane
+- `⌘ + J` Move cursor to bottom pane
+- `⌘ + K` Move cursor to top pane
+- `⌘ + L` Move cursor to left pane
+- `⌘ + T` Open new tab
+- `⌘ + ←` Resize pane to left
+- `⌘ + →` Resize pane to down
+- `⌘ + ↑` Resize pane to up
+- `⌘ + →` Resize pane to right
+- `⌘ + 1` Switch to tab #1
+- `⌘ + 2` Switch to tab #2
+- `⌘ + 3` Switch to tab #3
+- `⌘ + 4` Switch to tab #4
+- `⌘ + 5` Switch to tab #5
+- `⌘ + 6` Switch to tab #6
+- `⌘ + 7` Switch to tab #7
+- `⌘ + 8` Switch to tab #8
+- `⌘ + 9` Switch to tab #9
 
 ## Vi-mode
 
