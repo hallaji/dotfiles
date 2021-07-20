@@ -41,6 +41,8 @@ Plug 'cocopon/inspecthi.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }    " A command-line fuzzy finder
 Plug 'tpope/vim-commentary'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+Plug 'edkolev/tmuxline.vim'
 
 " ┌─┐┬ ┬┌┐┌┌┬┐┌─┐─┐ ┬
 " └─┐└┬┘│││ │ ├─┤┌┴┬┘
@@ -77,9 +79,7 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 "Plug 'jelera/vim-javascript-syntax'
 "Plug 'HerringtonDarkholme/yats.vim'
 "Plug 'MaxMEllon/vim-jsx-pretty'
-
 "Plug 'junegunn/seoul256.vim'
-"Plug 'junegunn/goyo.vim'
 "Plug 'junegunn/limelight.vim'
 
 "Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}

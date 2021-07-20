@@ -144,6 +144,8 @@ fresh-options --file=~/.vimrc --marker='"'
   fresh vim/plugins/greplace.vim
   fresh vim/plugins/gitgutter.vim
   fresh vim/plugins/airline.vim
+  fresh vim/plugins/tmuxline.vim
+  fresh vim/plugins/markdown-preview.vim
   fresh vim/plugins/vim-go.vim
   # fresh vim/plugins/language-client.vim
   fresh vim/functions.vim
