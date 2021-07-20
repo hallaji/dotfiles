@@ -22,7 +22,8 @@ key_bindings:
   - { key: J,     mods: Command,       chars: "\x02\x6a" } # Move cursor to bottom pane
   - { key: K,     mods: Command,       chars: "\x02\x6b" } # Move cursor to top pane
   - { key: L,     mods: Command,       chars: "\x02\x6c" } # Move cursor to left pane
-  - { key: T,     mods: Command,       chars: "\x02\x63" } # Open new tab
+  - { key: T,     mods: Command,       chars: "\x02\x63" } # Open a new tab
+  - { key: R,     mods: Command,       chars: "\x02\x2c" } # Rname a tab
   - { key: Left,  mods: Command,       chars: "\x02\x48" } # Resize pane to left
   - { key: Down,  mods: Command,       chars: "\x02\x4a" } # Resize pane to down
   - { key: Up,    mods: Command,       chars: "\x02\x4b" } # Resize pane to up
