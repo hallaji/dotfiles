@@ -91,12 +91,12 @@ fresh-options
 
 fresh-options --file=~/.zshrc --marker
   fresh shell/zsh/init.sh
-  fresh shell/starship/starship.sh
   fresh shell/zsh/plugins.sh
   fresh shell/zsh/vi-mode.sh
   fresh shell/functions.sh
   fresh shell/aliases.sh
-  fresh shell/direnv.sh
+  type starship > /dev/null && fresh shell/starship.sh
+  type direnv > /dev/null && fresh shell/direnv.sh
   type jenv > /dev/null && fresh shell/jenv.sh
   type pyenv > /dev/null && fresh shell/pyenv.sh
   brew --prefix mongodb-community@3.6 > /dev/null && fresh shell/mongo.sh
@@ -107,13 +107,13 @@ fresh-options
 # └─┐ │ ├─┤├┬┘└─┐├─┤│├─┘
 # └─┘ ┴ ┴ ┴┴└─└─┘┴ ┴┴┴
 
-fresh shell/starship/config.toml --file=~/.config/starship.toml
+fresh config/starship/config.toml --file=~/.config/starship.toml
 
 # ┌─┐┬┌─┐
 # ├─┘│├─┘
 # ┴  ┴┴
 
-fresh shell/pip.conf --file=~/.config/pip/pip.conf
+fresh config/pip/pip.conf --file=~/.config/pip/pip.conf
 
 
 # ██╗   ██╗██╗███╗   ███╗
@@ -162,7 +162,7 @@ fresh vim/plugins/coc-settings.json --file=~/.vim/coc-settings.json
 #  │ ├─┤├┤ │││├┤
 #  ┴ ┴ ┴└─┘┴ ┴└─┘
 
-fresh vim/theme.vim --file='~/.vim/colors/theme.vim' --marker='"'
+fresh vim/theme.vim --file=~/.vim/colors/theme.vim --marker='"'
 
 
 #  ██████╗ ██╗████████╗
