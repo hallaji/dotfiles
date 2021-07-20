@@ -5,6 +5,4 @@
 # ██║ ╚═╝ ██║╚██████╔╝██║ ╚████║╚██████╔╝╚██████╔╝██████╔╝██████╔╝
 # ╚═╝     ╚═╝ ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝  ╚═════╝ ╚═════╝ ╚═════╝
 
-if brew ls --versions mongodb-community@3.6 > /dev/null; then
-  export PATH="/usr/local/opt/mongodb-community@3.6/bin:$PATH"
-fi
+export PATH="/usr/local/opt/mongodb-community@3.6/bin:$PATH"

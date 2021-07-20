@@ -9,4 +9,4 @@
 # @see https://asdf-vm.com
 # @see https://github.com/asdf-vm/asdf
 
-[[ -s "$(brew --prefix asdf)/asdf.sh" ]] && source "$(brew --prefix asdf)/asdf.sh"
+source "$(brew --prefix asdf)/asdf.sh"

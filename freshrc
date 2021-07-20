@@ -58,10 +58,9 @@ fresh tmux-plugins/tpm . --file=~/.tmux/plugins/tpm/
 
 fresh zsh-users/zsh-completions src --file=completions/
 fresh freshshell/fresh contrib/completion/fresh-completion.zsh --file=completions/_fresh
+fresh alacritty/alacritty extra/completions/_alacritty --file=completions/_alacritty
 fresh docker/cli contrib/completion/zsh/_docker --file=completions/_docker
 fresh docker/compose contrib/completion/zsh/_docker-compose --file=completions/_docker-compose
-fresh asdf-vm/asdf completions/_asdf --file=completions/_asdf
-fresh alacritty/alacritty extra/completions/_alacritty --file=completions/_alacritty
 
 # ┌─┐┬  ┬ ┬┌─┐┬┌┐┌┌─┐
 # ├─┘│  │ ││ ┬││││└─┐
@@ -72,13 +71,18 @@ fresh zsh-users/zsh-syntax-highlighting . --file=vendor/zsh-users/zsh-syntax-hig
 fresh zsh-users/zsh-autosuggestions . --file=vendor/zsh-users/zsh-autosuggestions/
 fresh zdharma/fast-syntax-highlighting . --file=vendor/zdharma/fast-syntax-highlighting/
 
+# ┌─┐┌─┐┬─┐┌─┐┌─┐┬┬  ┌─┐
+# ┌─┘├─┘├┬┘│ │├┤ ││  ├┤
+# └─┘┴  ┴└─└─┘└  ┴┴─┘└─┘
+
+fresh shell/zsh/profile.sh --file=~/.zprofile --marker
+
 # ┌─┐┌─┐┬ ┬┌─┐┌┐┌┬  ┬
 # ┌─┘└─┐├─┤├┤ │││└┐┌┘
 # └─┘└─┘┴ ┴└─┘┘└┘ └┘
 
 fresh-options --filter=erb --file=~/.zshenv --marker
   fresh shell/exports.sh
-  fresh shell/aliases.sh
 fresh-options
 
 # ┌─┐┌─┐┬ ┬┬─┐┌─┐
@@ -86,16 +90,17 @@ fresh-options
 # └─┘└─┘┴ ┴┴└─└─┘
 
 fresh-options --file=~/.zshrc --marker
-  fresh shell/zsh/completions.sh
-  fresh shell/asdf.sh
+  fresh shell/zsh/init.sh
+  fresh shell/starship/starship.sh
   fresh shell/zsh/plugins.sh
   fresh shell/zsh/vi-mode.sh
   fresh shell/functions.sh
+  fresh shell/aliases.sh
   fresh shell/direnv.sh
-  fresh shell/jenv.sh
-  fresh shell/pyenv.sh
-  fresh shell/mongo.sh
-  fresh shell/starship/starship.sh
+  type jenv > /dev/null && fresh shell/jenv.sh
+  type pyenv > /dev/null && fresh shell/pyenv.sh
+  brew --prefix mongodb-community@3.6 > /dev/null && fresh shell/mongo.sh
+  brew --prefix asdf > /dev/null && fresh shell/asdf.sh
 fresh-options
 
 # ┌─┐┌┬┐┌─┐┬─┐┌─┐┬ ┬┬┌─┐
