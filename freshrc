@@ -117,6 +117,12 @@ fresh config/starship/config.toml --file=~/.config/starship.toml
 
 fresh config/pip/pip.conf --file=~/.config/pip/pip.conf
 
+# ┌─┐┌┬┐┌─┐┌─┐┌─┐
+# │   │ ├─┤│ ┬└─┐
+# └─┘ ┴ ┴ ┴└─┘└─┘
+
+fresh config/ctags/ctags.conf --file=~/.ctags
+
 
 # ██╗   ██╗██╗███╗   ███╗
 # ██║   ██║██║████╗ ████║
