@@ -19,17 +19,9 @@ for current key bindings and commands.
 
 ## Setup
 
-### Environment Variables
+### 1. Cloning Dotfiles
 
-Make a copy of `.envrc.example` to `.envrc` file in the root directory and set your own values. Then, load variables into your environemnt using a tool like [direnv](https://direnv.net).
-
-```shell
-❯ direnv allow .
-```
-
-### Cloning Dotfiles
-
-This command checks for a `FRESH_LOCAL_SOURCE` variable and tries to clone the repo into `~/.dotfiles`. This means that the entire dotfiles can be set up on a brand new machine by simply running the command above.
+This command checks for a `FRESH_LOCAL_SOURCE` variable and tries to clone the repo into `~/.dotfiles`. This means that the entire dotfiles can be set up on a brand new machine by simply running the command below.
 
 > **Note:** If you have forked the repo, just specify your forked repo in `FRESH_LOCAL_SOURCE` variable.
 
@@ -37,25 +29,46 @@ This command checks for a `FRESH_LOCAL_SOURCE` variable and tries to clone the r
 ❯ FRESH_LOCAL_SOURCE=hallaji/dotfiles bash -c "`curl -sL https://get.freshshell.com`"
 ```
 
-### Brewing Dependencies
+The `fresh` command is now available to run globally and will symlink your further editions from `~/.dotfiles` to your home directory.
 
-Install and upgrade all dependencies from the freshed and global `~/.Brewfile`.
+
+### 2. Brewing Dependencies
+
+A fresh Brewfile is symlinked into home directory `~/.Brewfile`. Install and upgrade all the dependencies using the command below.
 
 ```shell
 ❯ brew bundle --global
 ```
 
-## Fresh
+### 3. Freshing Dotfiles with Environment Variables
 
-### Install
+Make a copy of `.envrc.example` to `.envrc` under `~/.dotfiles` and set your own values. Then, load variables into your environemnt using a tool like [direnv](https://direnv.net).
 
-Run `fresh` or `fresh install` to build shell configuration and relevant symlinks after any change in configurations.
+```shell
+❯ cd ~/.dotfiles
+❯ cp .envrc.example .envrc
+❯ direnv edit .
+❯ direnv allow .
+```
+
+You need to make sure you have your environemnt variables loaded before running `fresh` command. The `direnv` may unload variables if you run away from `~/.dotfiles`.
+In this case, run the command from `~/.dotfiles` to refresh them with your environemnt variables.
 
 ```shell
 ❯ fresh
 ```
 
-### Update
+## Further Editions on Dotfiles
+
+### Fresh Install
+
+After any further change in `~/.dotfiles`, you can run `fresh` or `fresh install` to build shell configuration and relevant symlinks.
+
+```shell
+❯ fresh
+```
+
+### Fresh Update
 
 Running `fresh update` will update dotfiles itself and all integrated sources from GitHub repositories. In addition, it will run `fresh install` to rebuild them.
 
