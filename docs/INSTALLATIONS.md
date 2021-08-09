@@ -46,6 +46,15 @@ Managing multiple runtime versions.
 ❯ asdf global ruby latest
 ```
 
+## COC
+
+[Language servers](https://github.com/neoclide/coc.nvim/wiki/Language-servers)
+
+```shell
+:CocInstall coc-tsserver
+:CocInstall coc-json
+```
+
 ## Manual Installations
 
 Check out [MAC.md](MAC.md) for a list of macOS-specific apps and extensions.
