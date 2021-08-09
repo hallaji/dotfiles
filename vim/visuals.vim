@@ -7,4 +7,4 @@
 "   ╚═══╝  ╚═╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝╚══════╝
 
 syntax enable
-colorscheme theme
+colorscheme catamaran

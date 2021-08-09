@@ -173,7 +173,7 @@ fresh config/coc/settings.json --file=~/.vim/coc-settings.json
 #  │ ├─┤├┤ │││├┤
 #  ┴ ┴ ┴└─┘┴ ┴└─┘
 
-fresh vim/theme.vim --file=~/.vim/colors/theme.vim --marker='"'
+fresh vim/themes/catamaran.vim --file=~/.vim/colors/catamaran.vim --marker='"'
 
 
 #  ██████╗ ██╗████████╗
