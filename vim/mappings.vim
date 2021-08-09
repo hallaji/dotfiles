@@ -6,35 +6,26 @@
 " ██║ ╚═╝ ██║██║  ██║██║     ██║     ██║██║ ╚████║╚██████╔╝███████║
 " ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝     ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝
 
-" Default leader is backslash \ but a , is much better.
-let mapleader = ','
+let mapleader = ',' " Default leader is backslash \
 
-" Make it easy to edit dotfiles
-nmap <leader>ed :tabedit $DOTFILES<cr>
+" ┌─┐┌─┐┌┐┌┌─┐┬─┐┌─┐┬
+" │ ┬├┤ │││├┤ ├┬┘├─┤│
+" └─┘└─┘┘└┘└─┘┴└─┴ ┴┴─┘
 
-" Add simple highlight removal.
-nmap <leader><space> :nohlsearch<cr>
+" Edit my dotfiles in a new tab
+nnoremap <leader>dot :tabedit $DOTFILES<cr>
 
-" Make NERDTree easier to toggle
-nmap <leader>, :NERDTreeToggle<cr>
+" Make Y behave like other capitals
+nnoremap Y y$
 
-" CtrlP
-nmap <leader>f :CtrlP<cr>
-nmap <leader>a :CtrlPMixed<cr>
-nmap <leader>b :CtrlPBuffer<cr>
-nmap <leader>m :CtrlPMRU<cr>
+" qq to record, Q to replay
+nnoremap Q @q
 
-" Be ready to find a tag using ctags
-nmap <leader>t :tag<space>
-
-" Simpler mappings to switch between splits
-nmap <C-J> <C-W><C-J>
-nmap <C-K> <C-W><C-K>
-nmap <C-H> <C-W><C-H>
-nmap <C-L> <C-W><C-L>
+" Remove search highlights
+nmap <silent> <leader><space> :nohlsearch<cr>
 
 " Commentary
-noremap <leader>/ :Commentary<cr>
+map <leader>/ :Commentary<cr>
 
 " Trim the trailing whitespaces
 nmap <silent> <leader>z :TrimWhiteSpaces<cr>
@@ -45,19 +36,116 @@ nnoremap <silent> <leader>r :ToggleRuler<cr>
 " Toggle wrapping
 nnoremap <silent> <leader>w :ToggleWrap<cr>
 
-" Copy/paste from/to system clipboard in visual mode
+" Neovim support showing relative number
+nnoremap <leader>n :set relativenumber!<cr>
+
+" Copy/paste from/to system clipboard in visual/select mode
 vnoremap <leader>y "*y
 vnoremap <leader>p "*p
 
-" Gitgutter
-nmap <silent> ]h :call GitGutterNextHunkCycle()<cr>
-nmap <silent> [h :call GitGutterPrevHunkCycle()<cr>
-nmap <silent> ]c :call GitGutterNextHunkAllBuffers()<cr>
-nmap <silent> [c :call GitGutterPrevHunkAllBuffers()<cr>
-nmap <leader>hp <Plug>(GitGutterPreviewHunk)
-nmap <leader>hs :GitGutterStageHunk<cr>
-nmap <leader>hu :GitGutterUndoHunk<cr>
-nmap <leader>hf :GitGutterFold<cr>
+" ┌┐┌┌─┐┬  ┬┬┌─┐┌─┐┌┬┐┬┌─┐┌┐┌
+" │││├─┤└┐┌┘││ ┬├─┤ │ ││ ││││
+" ┘└┘┴ ┴ └┘ ┴└─┘┴ ┴ ┴ ┴└─┘┘└┘
+
+" Jump between splits
+nnoremap <C-h> <C-W><C-H>
+nnoremap <C-j> <C-W><C-J>
+nnoremap <C-k> <C-W><C-K>
+nnoremap <C-l> <C-W><C-L>
+
+" Resize splits
+nnoremap <C-Left> <C-W><
+nnoremap <C-Down> <C-W>-
+nnoremap <C-Up> <C-W>+
+nnoremap <C-Right> <C-W>>
+
+" Circle windows (splits)
+nnoremap <tab>   <c-w>w
+nnoremap <S-tab> <c-w>W
+
+" Circle buffers
+nnoremap ]b :bnext<cr>
+nnoremap [b :bprev<cr>
+
+" Circle tabs
+nnoremap ]t :tabn<cr>
+nnoremap [t :tabp<cr>
+
+" Circle hunks in a buffer
+nnoremap <silent> ]h :call GitGutterNextHunkCycle()<cr>
+nnoremap <silent> [h :call GitGutterPrevHunkCycle()<cr>
+
+" Circle hunks in all buffers
+nnoremap <silent> ]c :call GitGutterNextHunkAllBuffers()<cr>
+nnoremap <silent> [c :call GitGutterPrevHunkAllBuffers()<cr>
+
+" ┌─┐┌─┐┬  ┬┌─┐
+" └─┐├─┤└┐┌┘├┤
+" └─┘┴ ┴ └┘ └─┘
+
+inoremap <C-s> <C-O>:update<cr>
+nnoremap <C-s> :update<cr>
+nnoremap <leader>s :update<cr>
+
+" ┌─┐ ┬ ┬┬┌┬┐
+" │─┼┐│ ││ │
+" └─┘└└─┘┴ ┴
+
+inoremap <C-q> <esc>:q<cr>
+nnoremap <C-q> :q<cr>
+vnoremap <C-q> <esc>
+nnoremap <leader>q :q<cr>
+nnoremap <leader>Q :qa!<cr>
+
+" ┌┐┌┌─┐┬─┐┌┬┐┌┬┐┬─┐┌─┐┌─┐
+" │││├┤ ├┬┘ ││ │ ├┬┘├┤ ├┤
+" ┘└┘└─┘┴└──┴┘ ┴ ┴└─└─┘└─┘
+
+nnoremap <silent> <leader>, :NERDTreeToggle<cr>
+
+" ┌┬┐┌─┐┬─┐┬┌─┌┬┐┌─┐┬ ┬┌┐┌
+" │││├─┤├┬┘├┴┐ │││ │││││││
+" ┴ ┴┴ ┴┴└─┴ ┴─┴┘└─┘└┴┘┘└┘
+
+nnoremap <C-m> :MarkdownPreview<cr>
+nnoremap <leader>m :MarkdownPreview<cr>
+
+" ┌─┐┬ ┬┌─┐┬┌┬┐┬┬  ┬┌─┐
+" ├┤ │ ││ ┬│ │ │└┐┌┘├┤
+" └  └─┘└─┘┴ ┴ ┴ └┘ └─┘
+
+nnoremap <C-g> :Git<cr>
+nnoremap <leader>gg :Git<cr>
+
+" ┌─┐┬┌┬┐┌─┐┬ ┬┌┬┐┌┬┐┌─┐┬─┐
+" │ ┬│ │ │ ┬│ │ │  │ ├┤ ├┬┘
+" └─┘┴ ┴ └─┘└─┘ ┴  ┴ └─┘┴└─
+
+nmap <leader>gp <Plug>(GitGutterPreviewHunk)
+nmap <leader>gs <Plug>(GitGutterStageHunk)
+nmap <leader>gd <Plug>(GitGutterUndoHunk)
+nmap <leader>gf <Plug>(GitGutterFold)
+
+" ┌─┐┌─┐┌─┐
+" ├┤ ┌─┘├┤
+" └  └─┘└
+
+nmap <leader><tab> <plug>(fzf-maps-n)
+xmap <leader><tab> <plug>(fzf-maps-x)
+omap <leader><tab> <plug>(fzf-maps-o)
+
+nnoremap <leader>bb :Buffers<cr>
+nnoremap <leader>bf :Files<cr>
+nnoremap <leader>bg :GFiles?<cr>
+nnoremap <leader>bt :Tags<cr>
+nnoremap <leader>bw :Windows<cr>
+nnoremap <leader>bc :Commands<cr>
+nnoremap <leader>bh :History:<cr>
+nnoremap <leader>bs :Snippets<cr>
+nnoremap <leader>bs :Snippets<cr>
+nnoremap <leader>bg :GV<cr>
+nnoremap <leader>bgc :GV!<cr>
+nnoremap <leader>bgr :GV?<cr>
 
 " ┌─┐┌─┐┌─┐
 " │  │ ││
@@ -146,11 +234,6 @@ if has('nvim-0.4.0') || has('patch-8.2.0750')
   vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
   vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
 endif
-
-" Use CTRL-S for selections ranges.
-" Requires 'textDocument/selectionRange' support of language server.
-nmap <silent> <C-s> <Plug>(coc-range-select)
-xmap <silent> <C-s> <Plug>(coc-range-select)
 
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
