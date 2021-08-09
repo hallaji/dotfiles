@@ -17,7 +17,7 @@ bindkey "^p" quick_edit_widget
 
 # @see shell/function.sh
 zle -N quick_change_widget change_source
-bindkey "^f" quick_change_widget
+bindkey "^o" quick_change_widget
 
 # Navigate history
 bindkey '^k' up-history
