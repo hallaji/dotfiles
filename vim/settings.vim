@@ -11,7 +11,6 @@ set ruler
 " set colorcolumn=80,120              " Set a ruler in 80 and 120 by default
 set foldcolumn=1                    " Custom left padding for each window
 set cursorline
-set signcolumn=yes                  " Always have the sign column
 set cmdheight=1                     " Command height under status line
 set nowrap                          " No wrap by default
 
@@ -41,4 +40,9 @@ set nowritebackup                    " Some lang servers have issues with backup
 
 set shortmess+=c                     " don't give ins-completion-menu messages.
 
-" set tags=./tags,tags;$HOME          " Look for a tags file in the directory of the current file, up and up until home
+" Always show the signcolumn
+if has("nvim-0.5.0") || has("patch-8.1.1564")
+  set signcolumn=number " Recently vim can merge signcolumn and number column into one
+else
+  set signcolumn=yes
+endif
