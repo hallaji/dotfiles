@@ -21,7 +21,7 @@ alias ,p='f() { lsof -nP -iTCP:"$1" -sTCP:LISTEN };f'
 # │─┼┐│ │││  ├┴┐  ├┤  │││ │
 # └─┘└└─┘┴└─┘┴ ┴  └─┘─┴┘┴ ┴
 
-alias ,ed="cd $DOTFILES && $EDITOR $DOTFILES"
+alias ,dot="cd $DOTFILES && $EDITOR $DOTFILES"
 
 # ┬ ┬┬┌─┐┌┬┐┌─┐┬─┐┬ ┬
 # ├─┤│└─┐ │ │ │├┬┘└┬┘
