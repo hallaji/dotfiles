@@ -33,16 +33,25 @@ Plug 'rking/ag.vim'
 Plug 'skwp/greplace.vim'
 Plug 'tpope/vim-surround'
 Plug 'travisjeffery/vim-auto-mkdir'
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'cocopon/colorswatch.vim'
 Plug 'cocopon/inspecthi.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }    " A command-line fuzzy finder
+Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-commentary'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'edkolev/tmuxline.vim'
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
+
+" ┌─┐┬┌┬┐
+" │ ┬│ │
+" └─┘┴ ┴
+
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
+Plug 'airblade/vim-gitgutter'
+Plug 'junegunn/gv.vim'
 
 " ┌─┐┬ ┬┌┐┌┌┬┐┌─┐─┐ ┬
 " └─┐└┬┘│││ │ ├─┤┌┴┬┘
@@ -54,17 +63,18 @@ Plug 'flowtype/vim-flow'
 Plug 'jparise/vim-graphql'
 Plug 'pangloss/vim-javascript'
 Plug 'peitalin/vim-jsx-typescript'
-Plug 'tpope/vim-markdown'
+" Plug 'tpope/vim-markdown'
 Plug 'udalov/kotlin-vim'
 
 " ┌┬┐┬ ┬┌─┐┌┬┐┌─┐┌─┐
 "  │ ├─┤├┤ │││├┤ └─┐
 "  ┴ ┴ ┴└─┘┴ ┴└─┘└─┘
 
-Plug 'joshdick/onedark.vim'
-Plug 'cocopon/iceberg.vim'
-Plug 'flrnd/plastic.vim'
-Plug 'w0ng/vim-hybrid'
+" Plug 'arcticicestudio/nord-vim'
+" Plug 'joshdick/onedark.vim'
+" Plug 'cocopon/iceberg.vim'
+" Plug 'flrnd/plastic.vim'
+" Plug 'w0ng/vim-hybrid'
 
 " ┌┬┐┌─┐┬  ┬┌─┐┬  ┌─┐┌─┐┌┬┐┌─┐┌┐┌┌┬┐
 "  ││├┤ └┐┌┘├┤ │  │ │├─┘│││├┤ │││ │
