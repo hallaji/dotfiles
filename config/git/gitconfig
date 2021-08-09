@@ -24,24 +24,24 @@
   program = gpg
 
 [pull]
-	rebase = false
+  rebase = false
 
 [color]
-	ui = true
+  ui = true
 
 [diff-so-fancy]
-	useUnicodeRuler = false
+  useUnicodeRuler = false
 
 [color "diff"]
   commit = 3
   meta = 241
-	frag = 241
-	old = 167
-	new = 2
-	whitespace = 167 reverse
+  frag = 241
+  old = 167
+  new = 2
+  whitespace = 167 reverse
 
 [color "diff-highlight"]
-	oldNormal = 167
-	oldHighlight = 167 reverse
-	newNormal = 2
-	newHighlight = 2 reverse
+  oldNormal = 167
+  oldHighlight = 167 reverse
+  newNormal = 2
+  newHighlight = 2 reverse
