@@ -198,8 +198,8 @@ fresh-options
 # ╚══════╝╚══════╝╚═╝  ╚═╝
 
 fresh-options --file=~/.ssh/config --filter=erb
-  fresh config/ssh/default.conf
   fresh config/ssh/corporate.conf
+  fresh config/ssh/default.conf
 fresh-options
 
 
