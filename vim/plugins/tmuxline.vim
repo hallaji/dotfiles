@@ -8,6 +8,12 @@
 
 " @see https://github.com/edkolev/tmuxline.vim
 
+let g:tmuxline_preset = {
+      \'a'    : '#S',
+      \'cwin'  : ['#I', '#W'],
+      \'win'  : ['#I', '#W'],
+      \'z'    : '#(whoami)'}
+
 let g:tmuxline_separators = {
     \ 'left' : '',
     \ 'left_alt': '',

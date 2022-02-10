@@ -13,7 +13,7 @@ let g:airline#extensions#tabline#enabled = 1          " Enable Tabline extension
 let g:airline#extensions#ale#enabled = 1              " Enable Ale extension
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 
-" tomorrow, iceberg, ravenpower, fruit_punch, peaksea, distinguished,
+" tomorrow, iceberg, raven, ravenpower, fruit_punch, peaksea, distinguished,
 " fairyfloss, base16color, onedark, hybrid, hybridline, minimalist
 let g:airline_theme='tomorrow'
 
