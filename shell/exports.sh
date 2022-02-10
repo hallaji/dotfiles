@@ -28,3 +28,10 @@ if [[ -n $SSH_CONNECTION ]]; then
 else
   export EDITOR='nvim'
 fi
+
+# ┌─┐┬┌┬┐┬ ┬┬ ┬┌┐
+# │ ┬│ │ ├─┤│ │├┴┐
+# └─┘┴ ┴ ┴ ┴└─┘└─┘
+
+export GITHUB_TOKEN=<%= ENV["GITHUB_TOKEN"] %>
+export GITHUB_REGISTRY_TOKEN=<%= ENV["GITHUB_REGISTRY_TOKEN"] %>
