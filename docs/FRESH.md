@@ -16,6 +16,7 @@ List of files and directories that are symlinked by [fresh](https://freshshell.c
 ~/.gitmessage
 ~/.gnupg/gpg.conf
 ~/.gnupg/gpg-agent.conf
+~/.npmrc
 ~/.ssh/config
 ~/.tmux.conf
 ~/.tmux/plugins/tpm/*

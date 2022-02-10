@@ -53,6 +53,24 @@ Managing multiple runtime versions.
 ```shell
 :CocInstall coc-tsserver
 :CocInstall coc-json
+:CocInstall coc-prettier
+:CocInstall coc-go
+```
+
+## Brew Services
+
+```shell
+brew services start yabai
+brew services start skhd
+brew services start postgresql
+```
+
+## SKHD
+
+Trigger a manual reload of the config file.
+
+```shell
+skhd --reload
 ```
 
 ## Manual Installations

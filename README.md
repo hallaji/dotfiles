@@ -14,14 +14,14 @@ for current key bindings and commands.
 
 ## Prerequisites
 
-* Back up and delete the [listed dotfiles](docs/FRESH.md) from your machine to let [fresh](https://freshshell.com) create symlinks.
-* Install [Homebrew](https://brew.sh/).
+- Back up and delete the [listed dotfiles](docs/FRESH.md) from your machine to let [fresh](https://freshshell.com) create symlinks.
+- Install [Homebrew](https://brew.sh/).
 
 ## Setup
 
 ### 1. Cloning Dotfiles
 
-This command checks for a `FRESH_LOCAL_SOURCE` variable and tries to clone the repo into `~/.dotfiles`. This means that the entire dotfiles can be set up on a brand new machine by simply running the command below.
+This command checks for a repository slug in `FRESH_LOCAL_SOURCE` environemnt variable and tries to clone it into `~/.dotfiles`. This means that the entire dotfiles can be set up on a brand new machine by simply running the command below.
 
 > **Note:** If you have forked the repo, just specify your forked repo in `FRESH_LOCAL_SOURCE` variable.
 
@@ -30,7 +30,6 @@ This command checks for a `FRESH_LOCAL_SOURCE` variable and tries to clone the r
 ```
 
 The `fresh` command is now available to run globally and will symlink your further editions from `~/.dotfiles` to your home directory.
-
 
 ### 2. Brewing Dependencies
 
@@ -95,4 +94,4 @@ show     -- Show source references for freshrc lines
 update   -- Update from source repos and rebuild
 ```
 
-*Reload your terminal. Your dot files are now `fresh`.*
+_Reload your terminal. Your dot files are now `fresh`._

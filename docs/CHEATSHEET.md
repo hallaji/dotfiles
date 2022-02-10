@@ -1,27 +1,191 @@
 # Cheat Sheet
 
-- `⌘` Command (Cmd)
-- `⇧` Shift
-- `⌥` Option (Alt)
-- `⌃` Control (Ctrl)
-- `⇪` Caps Lock
-- `⇥` Tab
-- `⎋` Escape
-- `<leader>` Leader = `,`
+- [Yabai & SKHD](#yabai-%26-skhd)
+- [Tmux](#tmux)
+  - [Tmux Glossary](#tmux-glossary)
+  - [Tmux Theme](#tmux-theme)
+  - [Tmux Key Bindings](#tmux-key-bindings)
+  - [Tmux Commands](#tmux-commands)
+- [Alacritty](#alacritty)
+  - [Tmux bindings](#tmux-bindings)
+  - [Vi-mode](#vi-mode)
+- [Vim](#vim)
+  - [Vim Glossary](#vim-glossary)
+  - [Vim Commands](#vim-commands)
+    - [General Commands](#general-commands)
+    - [Tab Commands](#tab-commands)
+    - [Buffer Commands](#buffer-commands)
+    - [Normal Mode](#normal-mode)
+    - [Insert Mode](#insert-mode)
+    - [Visual Mode](#visual-mode)
+    - [Visual Selection](#visual-selection)
+    - [Yank/Copy](#yank%2Fcopy)
+  - [Vim Plugins](#vim-plugins)
+    - [Plug](#plug)
+    - [CtrlP](#ctrlp)
+    - [COC](#coc)
+    - [Fugitive](#fugitive)
+    - [Git Gutter](#git-gutter)
+    - [GV](#gv)
+    - [Nerd Tree](#nerd-tree)
+    - [Netrw](#netrw)
+    - [FZF](#fzf)
+    - [Number Toggle](#number-toggle)
+  - [Vimium](#vimium)
+- [Footnote](#footnote)
+
+## Yabai & SKHD
+
+[koekeishiya/yabai](https://github.com/koekeishiya/yabai) and [koekeishiya/skhd](https://github.com/koekeishiya/skhd)
+
+- `⌃⌥ + 1` Focus on monitor #1
+- `⌃⌥ + 2` Focus on monitor #2
+- `⌃⌥ + 3` Focus on monitor #3
+- `⌃⌥ + 0x32` Focus on the next space `0x32 = backtick`
+- `⌃⌥ + h` Focus on left window
+- `⌃⌥ + j` Focus on bottom window
+- `⌃⌥ + k` Focus on top window
+- `⌃⌥ + l` Focus on right window
+- `⌃⌥ + home` Move window left
+- `⌃⌥ + pagedown` Move window bottom
+- `⌃⌥ + pageup` Move window top
+- `⌃⌥ + end` Move window right
+- `⌃⌥ + left` Resize window left
+- `⌃⌥ + down` Resize window down
+- `⌃⌥ + up` Resize window up
+- `⌃⌥ + right` Resize window right
+- `⌃⌥ + r` Rotate windows
+- `⌃⌥ + y` Mirror tree y-axis
+- `⌃⌥ + x` Mirror tree x-axis
+- `⌃⌥ + p` Toggle picture-in-picture
+- `⌃⌥ + e` Toggle layout
+- `⌃⌥ + s` Toggle sticky (show on all spaces)
+- `⌃⌥ + f` Toggle window fullscreen zoom
+- `⌃⌥ + d` Toggle window parent zoom
+- `⌃⌥ + o` Toggle desktop offset
+- `⌃⌥ + w` Destroy space (desktop)
+- `⌃⌥ + c` Move window to previous space
+- `⌃⌥ + x` Move window to recent space
+- `⌃⌥ + z` Move window to next space
+- `⌃⌥ + n` Create a desktop and follow focus
+
+## Tmux
+
+[tmux/tmux](https://github.com/tmux/tmux)
+
+### Tmux Glossary
+
+- Session is a collection of terminals that tmux handles and each session has one more windows.
+- Window is a tab occupies the entire screen. It can be split into panes.
+
+### Tmux Theme
+
+Run the commands below in vim to write a snapshot of current tmuxline theme into tmux config file.
+Note: Tmuxline inherits airline theme.
+
+```text
+:!rm config/tmux/colors.conf
+:TmuxlineSnapshot config/tmux/colors.conf
+```
+
+### Tmux Key Bindings
+
+Tmux prefix `⌃ + b`
+
+- `prefix + ,` Rename a window
+- `prefix + I` Install tmux plugins
+- `prefix + U` Update tmux plugins
+- `prefix + alt + u` Uninstall tmux plugins
+- `prefix + v` Create vertical pane
+- `prefix + s` Create horizontal pane
+- `prefix + c` Create a window/tab
+- `prefix + &` Close a window/tab
+- `prefix + x` Close a pane
+- `prefix + h`, `prefix + j`, `prefix + k`, `prefix + l` Move between panes
+- `prefix + H`, `prefix + J`, `prefix + K`, `prefix + L` Resize panes
+- `prefix + <number>` Jump to specific window/tab
+- `prefix + d` Detach current session
+
+### Tmux Commands
+
+- `tmux ls` List all sessions managed by the server
+- `tmux new [-n window-name] [-s session-name] [-t target-session]`
+  - `-n` Specify a window name
+  - `-s` Create a new session with name `session-name`
+  - `-t` Group the new session with `target-session`
+- `tmux attach [-t target-session]` Attach or switch to `terget-session`
+- `tmux detach [-s target-session] [-t target-client]`
+  - `-s` Detach all clients currently attached to the `target-session`
+  - `-t` Detach the current client if bound to a key `target-client`
+- `tmux kill-session [-t target-session]` Destroy the given session and close any windows linked to it
+- `tmux kill-server` Kill the tmux server and clients and destroy all sessions
+
+## Alacritty
+
+### Tmux bindings
+
+- `⌘ + D` Vertical pane
+- `⌘⇧ + D` Horizontal pane
+- `⌘ + W` Close pane/tab
+- `⌘ + H` Move cursor to left pane
+- `⌘ + J` Move cursor to bottom pane
+- `⌘ + K` Move cursor to top pane
+- `⌘ + L` Move cursor to left pane
+- `⌘ + T` Open a new tab
+- `⌘ + R` Rename a tab
+- `⌘⇧ + H` Previous tab
+- `⌘⇧ + L` Next tab
+- `⌘ + ←` Resize pane to left
+- `⌘ + ↓` Resize pane to down
+- `⌘ + ↑` Resize pane to up
+- `⌘ + →` Resize pane to right
+- `⌘ + 1` Switch to tab #1
+- `⌘ + 2` Switch to tab #2
+- `⌘ + 3` Switch to tab #3
+- `⌘ + 4` Switch to tab #4
+- `⌘ + 5` Switch to tab #5
+- `⌘ + 6` Switch to tab #6
+- `⌘ + 7` Switch to tab #7
+- `⌘ + 8` Switch to tab #8
+- `⌘ + 9` Switch to tab #9
+
+### Vi-mode
+
+Use `ESC` or `⌃[` to enter Normal mode.
+
+> **Note:** some of these key bindings are set by zsh by default when using a vi-mode keymap.
+
+- `⌃ + p` : Start editing a code directory under `~/.Code`
+- `⌃ + o` : Open a code direcotry under `~/.Code`
+- `⌃ + k` Previous command in history.
+- `⌃ + j` Next command in history.
+- `/` Search backward in history.
+- `n` Repeat the last backward search.
+- `⌃ + r` Search backward in history.
+- `⌃ + s` Search forward in history.
+- `vv` : Edit current command line in vim
+- `⌃ + e` To the end of the line.
+- `⌃ + a` To the beginning of the line.
 
 ## Vim
 
-- A buffer is the in-memory text of a file. Use to open up all required files.
-- A window (AKA split or pane) is a viewport on a buffer. Use when you need multiple viewports of buffers.
-- A tab is a collection of windows (splits). Make one when working on a different project.
+### Vim Glossary
+
+- Buffer is the in-memory text of a file. Use to open up all required files.
+- Window (AKA split or pane) is a viewport on a buffer. Use when you need multiple viewports of buffers.
+- Tab is a collection of windows (splits). Make one when working on a different project.
 
 ### Vim Commands
 
+Leader key `,`
+
+#### General Commands
+
 - `:ter[minal]` Open a terminal window
 - `:w[rite]` Write the whole buffer to the current file
-- `:up[date]` Like `:w[rite]`, but only write when the buffer has been modified
+- `:up[date]` Similar to `:w[rite]`, but only write when the buffer has been modified
 
-#### Tabs
+#### Tab Commands
 
 - `:tab<tab>` See command
 - `:tabnew [path]`, `:tabe[dit] [path]` Open a new tab with optional path or filename
@@ -32,7 +196,7 @@
 - `:-tabmove` Move the tab page to the left
 - `:+tabmove` Move the tab page to the right
 
-#### Buffers
+#### Buffer Commands
 
 - `:e[dit] file` Edit a file in a new buffer
 - `:b<tab>` See commands
@@ -44,14 +208,12 @@
 - `:bd[elete]` Delete a buffer (close a file)
 - `:b[uffer]#` Go to a buffer by index #
 - `:b[uffer] file` Go to a buffer by file
-- `:ls`, `:buffers` List all open buffers
-
-### Vim Modes
+- `:buffers`, `:ls` List all open buffers
 
 #### Normal Mode
 
-- `⌃w>``⌃w<`, `⌃>``⌃<` Resize the width of current window
-- `⌃w+``⌃w-` Resize the height of current window
+- `⌃w>` `⌃w<`, `⌃>` `⌃<` Resize the width of current window
+- `⌃w+`, `⌃w-` Resize the height of current window
 - `⌃wh`, `⌃h` Move cursor to left window
 - `⌃wj`, `⌃j` Move cursor to bottom window
 - `⌃wk`, `⌃k` Move cursor to top window
@@ -92,7 +254,9 @@
 - `E` Forward to the end of WORD [count] inclusive
 - `b` [count] words backward
 - `B` [count] WORDS backward
-- +++
+
+##### Custom Mappings in Normal Mode
+
 - `<tab>`, `<S-tab>` Circle windows
 - `]]` Go to the next function or method
 - `[[` Go to the previous function or method
@@ -101,32 +265,35 @@
 - `]h`, `[h` Circle hunks in a buffer
 - `]c`, `[c` Circle hunks in all buffers
 - `<leader>dot` Edit dotfiles in a new tab
-- `<leader> ` Clear search highlighting
+- `<leader> ` Clear search highlighting with leader + space
 - `<leader>/` Toggle commeneting a line
 - `<leader>r` Toggle ruler
 - `<leader>z` Toggle white space trimming
 - `<leader>w` Toggle wrap
 - `<leader>n` Toggle relatie number
-- `⌃s`, `<leader>s` Save
-- `⌃q`, `<leader>q` Quit
+- `⌃ + s`, `<leader>s` Save
+- `⌃ + q`, `<leader>q` Quit
 - `<leader>Q` Quit all
 
-### Insert Mode
+#### Insert Mode
 
-- `⌃h` Delete character before the cursor
-- `⌃w` Delete word before the cursor
-- +++
-- `⌃s` Save
-- `⌃q` Quit
+- `⌃ + h` Delete character before the cursor
+- `⌃ + w` Delete word before the cursor
 
-### Visual Mode
+##### Custom Mappings in Insert Mode
 
-- +++
+- `⌃ + s` Save
+- `⌃ + q` Quit
+
+#### Visual Mode
+
+##### Custom Mappings in Visual Mode
+
 - `,y` Copy to the system clipboard
 - `,p` Paste from the system clipboard
-- `⌃q` Escape
+- `⌃ + q` Escape
 
-#### Visual Selecttion
+#### Visual Selection
 
 Use `v` for visual select. `i` is for inner and `a` for around selection.
 
@@ -147,9 +314,11 @@ Use `v` for visual select. `i` is for inner and `a` for around selection.
 - `yiw` yanks an inner word
 - `ya{` yanks around `{}`
 
-### Plugins
+### Vim Plugins
 
-#### VIM Plug
+#### Plug
+
+[junegunn/vim-plug](https://github.com/junegunn/vim-plug)
 
 - `:Plug<tab>` Choose a command
 
@@ -161,7 +330,7 @@ Use `v` for visual select. `i` is for inner and `a` for around selection.
 - `:help ctrlp-mappings`
 - `:help ctrlp-extensions`
 - `:help ctrlp-commands`
-_ `:help ctrlp-options`
+- `:help ctrlp-options`
 - `⌃p` Toggle CtrlP in file mode
   - `<Tab>` Auto-complete directory names
   - `⌃f`, `⌃b` Cycle between "files", "buffers", "mru files" (most recently used files) or "mixed" (all three modes at the same time)
@@ -189,13 +358,17 @@ _ `:help ctrlp-options`
     - MRU mode: Wipe the list and delete entries marked by `⌃z`
     - Buffer mode: Delete entry under the cursor or delete multiple entries marked by `⌃z`
 
+#### COC
+
+- @TODO
+
 #### Fugitive
 
 [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive) and [tpope/vim-rhubarb](https://github.com/tpope/vim-rhubarb)
 
 - `:help fugitive` Help
 - `:G [git command]` Run any git command e.g. `:G add .`, `:G blame`, etc.
-- `:G` Bring up summary window
+- `:G`, `⌃g` Bring up summary window
   - `<Enter>` Open the file
   - `<⌃n>` `<⌃p>` Move down an up between file names skipping blank lines in between
   - `-` Stage or unstage the file or hunk under the cursor and multiple lines can also be selected (`git add`/`git reset`)
@@ -263,7 +436,7 @@ _ `:help ctrlp-options`
 - `%` Create new file from netrw
 - `d` Create new directory from netrw
 
-#### Fzf
+#### FZF
 
 [junegunn/fzf.vim](https://github.com/junegunn/fzf.vim)
 
@@ -271,113 +444,61 @@ _ `:help ctrlp-options`
 - `⌃x` Open in a new split
 - `⌃v` Open in a new vertical split
 
-##### Number Toggle
+#### Number Toggle
 
 [jeffkreeftmeijer/vim-numbertoggle](https://github.com/jeffkreeftmeijer/vim-numbertoggle)
 
 - `,n` Switch to absolute or relative line numbers
 
-## Tmux
+## Vimium
 
-- Session: A collection of terminals that tmux handles and each session has one more windows.
-- Window: A window (tab) occupies the entire screen. It can be split into panes.
-- Pane: the smallest unit in a window.
+[philc/vimium](https://github.com/philc/vimium)
 
-### Theme
+### Navigating history
 
-Run the commands below in vim to write a snapshot of current tmuxline theme into tmux config file.
-Note: Tmuxline inherits airline theme.
+- `H` Go back in history
+- `L` Go forward in history
 
-```text
-:!rm config/tmux/colors.conf
-:TmuxlineSnapshot config/tmux/colors.conf
-```
+### Manipulating tabs
 
-### Key Bindings
+- `K, gt` Go one tab right
+- `J, gT` Go one tab left
+- `t` Create new tab
+- `x` Close current tab
+- `X` Restore closed tab
 
-Prefix `⌃ + b`
+### Navigating the page
 
-- `prefix + ,` Rename a window
-- `prefix + I` Install tmux plugins
-- `prefix + U` Update tmux plugins
-- `prefix + alt + u` Uninstall tmux plugins
-- `prefix + v` Create vertical pane
-- `prefix + s` Create horizontal pane
-- `prefix + c` Create a window/tab
-- `prefix + &` Close a window/tab
-- `prefix + x` Close a pane
-- `prefix + h`, `prefix + j`, `prefix + k`, `prefix + l` Move between panes
-- `prefix + H`, `prefix + J`, `prefix + K`, `prefix + L` Resize panes
-- `prefix + <number>` Jump to specific window/tab
-- `prefix + d` Detach current session
+- `?` Show the help dialog
+- `j` Scroll down
+- `k` Scroll up
+- `h` Scroll left
+- `l` Scroll right
+- `gg` Scroll to the top of the page
+- `G` Scroll to the bottom of the page
+- `u, <c-u>` Scroll a half page up
+- `d, <c-d>`Scroll a half page down
+- `<c-f>` Scroll a full page down
+- `<c-b>` Scroll a full page up
+- `f` Open a link in the current tab
+- `F` Open a link in a new tab
+- `o` Open URL, bookmark, or history entry
+- `O` Open URL, bookmark, or history entry in a new tab
+- `r` Reload the page
+- `gs` View page source
+- `/` Enter find mode
+- `n` Cycle forward to the next find match
+- `N` Cycle backward to the previous find match
+- `yy` Copy the current URL to the clipboard
+- `gf` Cycle focus to the next frame
+- `i` Enter insert mode
 
-### Tmux Commands
+## Footnote
 
-- `tmux ls` List all sessions managed by the server
-- `tmux new [-n window-name] [-s session-name] [-t target-session]`
-  - `-n` Specify a window name
-  - `-s` Create a new session with name `session-name`
-  - `-t` Group the new session with `target-session`
-- `tmux attach [-t target-session]` Attach or switch to `terget-session`
-- `tmux detach [-s target-session] [-t target-client]`
-  - `-s` Detach all clients currently attached to the `target-session`
-  - `-t` Detach the current client if bound to a key `target-client`
-- `tmux kill-session [-t target-session]` Destroy the given session and close any windows linked to it
-- `tmux kill-server` Kill the tmux server and clients and destroy all sessions
-
-## Alacritty
-
-### Tmux bindings
-
-- `⌘D` Vertical pane
-- `⌘⇧D` Horizontal pane
-- `⌘W` Close pane/tab
-- `⌘H` Move cursor to left pane
-- `⌘J` Move cursor to bottom pane
-- `⌘K` Move cursor to top pane
-- `⌘L` Move cursor to left pane
-- `⌘T` Open a new tab
-- `⌘R` Rename a tab
-- `⌘⇧H` Previous tab
-- `⌘⇧L` Next tab
-- `⌘←` Resize pane to left
-- `⌘↓` Resize pane to down
-- `⌘↑` Resize pane to up
-- `⌘→` Resize pane to right
-- `⌘1` Switch to tab #1
-- `⌘2` Switch to tab #2
-- `⌘3` Switch to tab #3
-- `⌘4` Switch to tab #4
-- `⌘5` Switch to tab #5
-- `⌘6` Switch to tab #6
-- `⌘7` Switch to tab #7
-- `⌘8` Switch to tab #8
-- `⌘9` Switch to tab #9
-
-## Vi-mode
-
-Use `ESC` or `⌃[` to enter Normal mode.
-
-NOTE: some of these key bindings are set by zsh by default when using a vi-mode keymap.
-
-### Find/Edit source code
-
-- `⌃p` : Start editing a code directory under `~/.Code`
-- `⌃o` : Open a code direcotry under `~/.Code`
-
-### History
-
-- `⌃k` Previous command in history.
-- `⌃j` Next command in history.
-- `/` Search backward in history.
-- `n` Repeat the last backward search.
-- `⌃r` Search backward in history.
-- `⌃s` Search forward in history.
-
-### Vim edition
-
-- `vv` : Edit current command line in Vim
-NOTE: this used to be bound to `v`. That is now the default (visual-mode)
-
-- `⌃e` To the end of the line.
-- `⌃a` To the beginning of the line.
+- `⌘` Command (Cmd)
+- `⇧` Shift
+- `⌥` Option (Alt)
+- `⌃` Control (Ctrl)
+- `⇪` Caps Lock
+- `⇥` Tab
+- `⎋` Escape
