@@ -20,7 +20,7 @@ window:
     y: 0
   padding:
     x: 15
-    y: 10
+    y: 5
   decorations: buttonless
   startup_mode: Windowed
   title: Alacritty
