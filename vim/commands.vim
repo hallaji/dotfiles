@@ -6,10 +6,15 @@
 " ╚██████╗╚██████╔╝██║ ╚═╝ ██║██║ ╚═╝ ██║██║  ██║██║ ╚████║██████╔╝███████║
 "  ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═════╝ ╚══════╝
 
+" Commands calling functions
 command! TrimWhiteSpaces call TrimWhiteSpaces()         " A command to trim whitespaces
 command! ToggleRuler call ToggleRuler()                 " A command to toggle rulers
 command! ToggleWrap call ToggleWrap()                   " A command to toggle wrapping
 
+" CoC Actions
+command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile') " A command to run prettier formatter
+
+" Auto commands
 autocmd BufWritePre * :call TrimWhiteSpaces()           " Automatically trim before writing to the disk
 autocmd FileType json syntax match Comment +\/\/.\+$+   " Get correct comment highlighting in JSON files
 

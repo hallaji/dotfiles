@@ -66,6 +66,16 @@ Plug 'peitalin/vim-jsx-typescript'
 " Plug 'tpope/vim-markdown'
 Plug 'udalov/kotlin-vim'
 
+" ┌─┐┌─┐┬─┐┌┬┐┌─┐┌┬┐┌┬┐┬┌┐┌┌─┐
+" ├┤ │ │├┬┘│││├─┤ │  │ │││││ ┬
+" └  └─┘┴└─┴ ┴┴ ┴ ┴  ┴ ┴┘└┘└─┘
+
+" ┌┬┐┌─┐┬  ┬┌─┐┬  ┌─┐┌─┐┌┬┐┌─┐┌┐┌┌┬┐
+"  ││├┤ └┐┌┘├┤ │  │ │├─┘│││├┤ │││ │
+" ─┴┘└─┘ └┘ └─┘┴─┘└─┘┴  ┴ ┴└─┘┘└┘ ┴
+
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
 " ┌┬┐┬ ┬┌─┐┌┬┐┌─┐┌─┐
 "  │ ├─┤├┤ │││├┤ └─┐
 "  ┴ ┴ ┴└─┘┴ ┴└─┘└─┘
@@ -75,12 +85,6 @@ Plug 'udalov/kotlin-vim'
 " Plug 'cocopon/iceberg.vim'
 " Plug 'flrnd/plastic.vim'
 " Plug 'w0ng/vim-hybrid'
-
-" ┌┬┐┌─┐┬  ┬┌─┐┬  ┌─┐┌─┐┌┬┐┌─┐┌┐┌┌┬┐
-"  ││├┤ └┐┌┘├┤ │  │ │├─┘│││├┤ │││ │
-" ─┴┘└─┘ └┘ └─┘┴─┘└─┘┴  ┴ ┴└─┘┘└┘ ┴
-
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 " ┌┐┌┌─┐┌┬┐  ┬┌┐┌  ┬ ┬┌─┐┌─┐
 " ││││ │ │   ││││  │ │└─┐├┤
