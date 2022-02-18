@@ -14,7 +14,8 @@ mouse_bindings:
   - { mouse: Middle, action: PasteSelection }
 
 key_bindings:
-  # tmux bindings:
+  # Tmux bindings:
+  - { key: U,     mods: Command,       chars: "\x02\x75" } # Grab and open any URL from the terminal window
   - { key: D,     mods: Command,       chars: "\x02\x76" } # Vertical pane
   - { key: D,     mods: Command|Shift, chars: "\x02\x73" } # Horizontal pane
   - { key: W,     mods: Command,       chars: "\x02\x78" } # Close pane/tab

@@ -105,6 +105,7 @@ Tmux prefix `⌃ + b`
 - `prefix + H`, `prefix + J`, `prefix + K`, `prefix + L` Resize panes
 - `prefix + <number>` Jump to specific window/tab
 - `prefix + d` Detach current session
+- `prefix + u` Grab and open any URL from the terminal window
 
 ### Tmux Commands
 
@@ -124,6 +125,7 @@ Tmux prefix `⌃ + b`
 
 ### Tmux bindings
 
+- `⌘ + U` Grab and open any URL from the terminal window
 - `⌘ + D` Vertical pane
 - `⌘⇧ + D` Horizontal pane
 - `⌘ + W` Close pane/tab
