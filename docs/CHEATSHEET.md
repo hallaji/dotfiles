@@ -388,7 +388,14 @@ Use `v` for visual select. `i` is for inner and `a` for around selection.
   - `=` Toggle an inline diff of the file under the cursor
   - `o` Open the file or object under the cursor in a new split
   - `O` Open the file or object under the cursor in a new tab
+  - `gO` Open the file or object under the cursor in a new vertical split
   - `p` Open the file or object under the cursor in a preview window
+  - `C` Open the commit containing the current file
+  - `(` Jump to the previous file, hunk or revision
+  - `)` Jump to the next file, hunk or revision
+  - `i` Jump to the next file or hunk, expanding inline diffs
+  - `[c` Jump to previous hunk, expanding inline diffs automatically
+  - `]c` Jump to next hunk, expanding inline diffs automatically
 - `:Gwrite` Stage the current file to the index `git-add`
 - `:Gread` Revert current file to last checked in version `git-checkout`
 - `:Gdiff` Open diff to compare working copy (run it from a working tree file)
