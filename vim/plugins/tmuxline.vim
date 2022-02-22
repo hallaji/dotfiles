@@ -10,8 +10,10 @@
 
 let g:tmuxline_preset = {
       \'a'    : '#S',
-      \'cwin'  : ['#I', '#W'],
-      \'win'  : ['#I', '#W'],
+      \'b'    : '#W',
+      \'cwin' : ['#I', '#W'],
+      \'win'  : '#I #W',
+      \'y'    : ['%R', '%a'],
       \'z'    : '#(whoami)'}
 
 let g:tmuxline_separators = {
