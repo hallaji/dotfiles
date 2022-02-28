@@ -6,5 +6,6 @@ export USER_SIGNING_KEY="your-signing-key"
 export SSH_IDENTITY_FILE="~/.ssh/path/to/your/identity/file"
 export SSH_IDENTITY_FILE_CORPORATE="~/.ssh/path/to/your/corporate/identity/file"
 
+export GITHUB_USER="github-user"
 export GITHUB_TOKEN="github-public-pat"
 export GITHUB_REGISTRY_TOKEN="github-registry-pat"
