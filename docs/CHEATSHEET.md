@@ -70,8 +70,8 @@
 - `⌃⌥ + n` Create a desktop and follow focus
 - `⌃⌥ + m` Create a desktop, move focused window and follow focus
 - `⌃⌥ + 0` Balance size of windows
-- `⌃⌥ + 8` Set normal window opacity to minimum
-- `⌃⌥ + 9` Set normal window opacity to maximum
+- `⌃⌥ + -` Set normal window opacity to minimum
+- `⌃⌥ + =` Set normal window opacity to maximum
 
 ## Tmux
 
