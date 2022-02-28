@@ -6,12 +6,12 @@
 # ╚███╔███╔╝██║██║ ╚████║██████╔╝╚██████╔╝╚███╔███╔╝
 #  ╚══╝╚══╝ ╚═╝╚═╝  ╚═══╝╚═════╝  ╚═════╝  ╚══╝╚══╝
 
-background_opacity: 1.0
 live_config_reload: true     # Live config reload (changes require restart)
 working_directory: None      # Startup directory
 alt_send_esc: false          # Send ESC (\x1b) before characters when alt is pressed.
 
 window:
+  opacity: 1.0
   dimensions:
     columns: 120
     lines: 26
