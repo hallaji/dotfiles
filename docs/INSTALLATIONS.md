@@ -55,6 +55,8 @@ Managing multiple runtime versions.
 :CocInstall coc-json
 :CocInstall coc-prettier
 :CocInstall coc-go
+:CocInstall coc-eslint
+:CocInstall coc-yaml
 ```
 
 ## Brew Services
