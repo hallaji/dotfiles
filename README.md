@@ -21,27 +21,22 @@ for current key bindings and commands.
 
 ### 1. Cloning Dotfiles
 
-This command checks for a repository slug in `FRESH_LOCAL_SOURCE` environemnt variable and tries to clone it into `~/.dotfiles`. This means that the entire dotfiles can be set up on a brand new machine by simply running the command below.
-
-> **Note:** If you have forked the repo, just specify your forked repo in `FRESH_LOCAL_SOURCE` variable.
-
 ```shell
 ❯ FRESH_LOCAL_SOURCE=hallaji/dotfiles bash -c "`curl -sL https://get.freshshell.com`"
 ```
 
-The `fresh` command is now available to run globally and will symlink your further editions from `~/.dotfiles` to your home directory.
+This command checks for a repository slug in `FRESH_LOCAL_SOURCE` environment variable and tries to clone it into
+`~/.dotfiles`. The entire dotfiles can be set up on a brand new machine by simply running the command above.
 
 ### 2. Brewing Dependencies
-
-A fresh Brewfile is symlinked into home directory `~/.Brewfile`. Install and upgrade all the dependencies using the command below.
 
 ```shell
 ❯ brew bundle --global
 ```
 
-### 3. Freshing Dotfiles with Environment Variables
+A fresh Brewfile is now symlinked into home directory `~/.Brewfile` and facilitates global dependencies installation.
 
-Make a copy of `.envrc.example` to `.envrc` under `~/.dotfiles` and set your own values. Then, load variables into your environemnt using a tool like [direnv](https://direnv.net).
+### 3. Loading Environment Variables
 
 ```shell
 ❯ cd ~/.dotfiles
@@ -50,48 +45,40 @@ Make a copy of `.envrc.example` to `.envrc` under `~/.dotfiles` and set your own
 ❯ direnv allow .
 ```
 
-You need to make sure you have your environemnt variables loaded before running `fresh` command. The `direnv` may unload variables if you run away from `~/.dotfiles`.
-In this case, run the command from `~/.dotfiles` to refresh them with your environemnt variables.
+Make a copy of `.envrc.example` to `.envrc` under `~/.dotfiles`, set your own values and load variables into your
+environemnt using a tool like [direnv](https://direnv.net).
+
+### 4. Freshing Dotfiles
 
 ```shell
 ❯ fresh
 ```
 
-## Further Editions on Dotfiles
-
-### Fresh Install
-
-After any further change in `~/.dotfiles`, you can run `fresh` or `fresh install` to build shell configuration and relevant symlinks.
-
-```shell
-❯ fresh
-```
-
-### Fresh Update
-
-Running `fresh update` will update dotfiles itself and all integrated sources from GitHub repositories. In addition, it will run `fresh install` to rebuild them.
+The `fresh` or `fresh install` command is available globally and will build shell configuration and relevant symlinks
+of your further editions from `~/.dotfiles` to your home directory. However, you need to make sure you have your
+environemnt variables loaded before running `fresh` command. The `direnv` may unload variables if you run away from
+`~/.dotfiles` directory. So make sure to run the command from `~/.dotfiles` to refresh them with your environemnt variables.
 
 ```shell
 ❯ fresh update
-```
-
-Specify `--local` option to just pull any changes made in dotfiles repo into `~/.dotfiles`.
-
-```shell
 ❯ fresh update --local
 ```
 
-### More Options
+Running `fresh update` will update dotfiles itself and all integrated sources from GitHub repositories. In addition, it
+will run `fresh install` to rebuild them. Specify `--local` option to just pull any remote changes made in dotfiles repo
+into `~/.dotfiles` directory.
+
 
 ```shell
 ❯ fresh help
-clean    -- Removes dead symlinks and source repos
-edit     -- Open freshrc for editing
-help     -- Show this help
-install  -- Build shell configuration and relevant symlinks (default)
-search   -- Search the fresh directory
-show     -- Show source references for freshrc lines
-update   -- Update from source repos and rebuild
 ```
 
-_Reload your terminal. Your dot files are now `fresh`._
+If you need more help, check out `fresh help`.
+
+---
+
+> _Reload your terminal. Your dot files are now `fresh`._
+
+<a href="https://hallaji.com">
+  <img src="https://hallaji.com/assets/fav/fav.svg" widht="48" height="48">
+</a>
