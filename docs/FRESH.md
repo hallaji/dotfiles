@@ -3,6 +3,7 @@
 List of files and directories that are symlinked by [fresh](https://freshshell.com) under home `~` directory.
 
 ```text
+~/.aws/config
 ~/.asdfrc
 ~/.bundle/config
 ~/.config/alacritty/alacritty.yml

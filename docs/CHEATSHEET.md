@@ -1,38 +1,41 @@
 # Cheat Sheet
 
-- [Yabai & SKHD](#yabai-%26-skhd)
-- [Tmux](#tmux)
-  - [Tmux Glossary](#tmux-glossary)
-  - [Tmux Theme](#tmux-theme)
-  - [Tmux Key Bindings](#tmux-key-bindings)
-  - [Tmux Commands](#tmux-commands)
-- [Alacritty](#alacritty)
-  - [Tmux bindings](#tmux-bindings)
-  - [Vi-mode](#vi-mode)
-- [Vim](#vim)
-  - [Vim Glossary](#vim-glossary)
-  - [Vim Commands](#vim-commands)
-    - [General Commands](#general-commands)
-    - [Tab Commands](#tab-commands)
-    - [Buffer Commands](#buffer-commands)
-    - [Normal Mode](#normal-mode)
-    - [Insert Mode](#insert-mode)
-    - [Visual Mode](#visual-mode)
-    - [Visual Selection](#visual-selection)
-    - [Yank/Copy](#yank%2Fcopy)
-  - [Vim Plugins](#vim-plugins)
-    - [Plug](#plug)
-    - [CtrlP](#ctrlp)
-    - [COC](#coc)
-    - [Fugitive](#fugitive)
-    - [Git Gutter](#git-gutter)
-    - [GV](#gv)
-    - [Nerd Tree](#nerd-tree)
-    - [Netrw](#netrw)
-    - [FZF](#fzf)
-    - [Number Toggle](#number-toggle)
-  - [Vimium](#vimium)
-- [Footnote](#footnote)
+- [Cheat Sheet](#cheat-sheet)
+  - [Yabai & SKHD](#yabai--skhd)
+  - [Tmux](#tmux)
+    - [Tmux Glossary](#tmux-glossary)
+    - [Tmux Key Bindings](#tmux-key-bindings)
+    - [Tmux Commands](#tmux-commands)
+  - [Alacritty](#alacritty)
+    - [Tmux bindings](#tmux-bindings)
+    - [Vi-mode](#vi-mode)
+  - [Vim](#vim)
+    - [Vim Glossary](#vim-glossary)
+    - [Vim Commands](#vim-commands)
+      - [General Commands](#general-commands)
+      - [Tab Commands](#tab-commands)
+      - [Buffer Commands](#buffer-commands)
+      - [Normal Mode](#normal-mode)
+        - [Custom Mappings in Normal Mode](#custom-mappings-in-normal-mode)
+      - [Insert Mode](#insert-mode)
+        - [Custom Mappings in Insert Mode](#custom-mappings-in-insert-mode)
+      - [Visual Mode](#visual-mode)
+        - [Custom Mappings in Visual Mode](#custom-mappings-in-visual-mode)
+      - [Visual Selection](#visual-selection)
+      - [Yank/Copy](#yankcopy)
+    - [Vim Plugins](#vim-plugins)
+      - [Plug](#plug)
+      - [CtrlP](#ctrlp)
+      - [COC](#coc)
+      - [Fugitive](#fugitive)
+      - [Git Gutter](#git-gutter)
+      - [GV](#gv)
+      - [Nerd Tree](#nerd-tree)
+      - [Netrw](#netrw)
+      - [FZF](#fzf)
+      - [Number Toggle](#number-toggle)
+  - [Vimium / Vimari](#vimium--vimari)
+  - [Footnote](#footnote)
 
 ## Yabai & SKHD
 
@@ -81,16 +84,6 @@
 
 - Session is a collection of terminals that tmux handles and each session has one more windows.
 - Window is a tab occupies the entire screen. It can be split into panes.
-
-### Tmux Theme
-
-Run the commands below in vim to write a snapshot of current tmuxline theme into tmux config file.
-Note: Tmuxline inherits airline theme.
-
-```text
-:!rm config/tmux/colors.conf
-:TmuxlineSnapshot config/tmux/colors.conf
-```
 
 ### Tmux Key Bindings
 
@@ -366,7 +359,24 @@ Use `v` for visual select. `i` is for inner and `a` for around selection.
 
 #### COC
 
-- @TODO
+[neoclide/coc.nvim)](https://github.com/neoclide/coc.nvim)
+
+- `:checkhealth` Check and see if the coc.nvim service is running
+- `:CocDiagnostics` Get all diagnostics of current buffer in location list
+- `:CocInfo` Get some useful information after starting the server
+- `[g`, `]g` Navigate through diagnostics
+- `gd` Go to definition
+- `gy` Go to type definition
+- `gi` Go to implementation
+- `gr` Go to references
+- `K` Show documentation in preview mode
+- `,rn` Rename a symbol
+- `,f` Format selectd code
+- `<space>a` Show all diagnostics
+- `<space>e` Manage extensions
+- `<space>c` Show commands
+- `<space>o` Find symbol of current document
+- `<space>s` Search workspace symbol
 
 #### Fugitive
 
@@ -463,48 +473,39 @@ Use `v` for visual select. `i` is for inner and `a` for around selection.
 
 - `,n` Switch to absolute or relative line numbers
 
-## Vimium
+## Vimium / Vimari
 
 [philc/vimium](https://github.com/philc/vimium)
-
-### Navigating history
+[televator-apps/vimari](https://github.com/televator-apps/vimari)
 
 - `H` Go back in history
 - `L` Go forward in history
-
-### Manipulating tabs
-
-- `K, gt` Go one tab right
-- `J, gT` Go one tab left
+- `K` Go one tab right
+- `J` Go one tab left
 - `t` Create new tab
 - `x` Close current tab
 - `X` Restore closed tab
-
-### Navigating the page
-
-- `?` Show the help dialog
+- `r` Reload the page
 - `j` Scroll down
 - `k` Scroll up
 - `h` Scroll left
 - `l` Scroll right
+- `u` Scroll a half page up
+- `d` Scroll a half page down
 - `gg` Scroll to the top of the page
 - `G` Scroll to the bottom of the page
-- `u, <c-u>` Scroll a half page up
-- `d, <c-d>`Scroll a half page down
-- `<c-f>` Scroll a full page down
-- `<c-b>` Scroll a full page up
 - `f` Open a link in the current tab
 - `F` Open a link in a new tab
-- `o` Open URL, bookmark, or history entry
-- `O` Open URL, bookmark, or history entry in a new tab
-- `r` Reload the page
-- `gs` View page source
 - `/` Enter find mode
 - `n` Cycle forward to the next find match
 - `N` Cycle backward to the previous find match
 - `yy` Copy the current URL to the clipboard
 - `gf` Cycle focus to the next frame
+- `gi` Go to first input
 - `i` Enter insert mode
+- `o` Open URL, bookmark, or history entry
+- `O` Open URL, bookmark, or history entry in a new tab
+- `gs` View page source
 
 ## Footnote
 
