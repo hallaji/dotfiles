@@ -83,6 +83,7 @@ nnoremap <silent> [c :call GitGutterPrevHunkAllBuffers()<cr>
 " └─┐├─┤└┐┌┘├┤
 " └─┘┴ ┴ └┘ └─┘
 
+" @FIXME There's a conflict with COC
 inoremap <C-s> <C-O>:update<cr>
 nnoremap <C-s> :update<cr>
 nnoremap <leader>s :update<cr>
@@ -96,6 +97,8 @@ nnoremap <C-q> :q<cr>
 vnoremap <C-q> <esc>
 nnoremap <leader>q :q<cr>
 nnoremap <leader>Q :qa!<cr>
+
+" @TODO: add ,f to search
 
 " ┌┐┌┌─┐┬─┐┌┬┐┌┬┐┬─┐┌─┐┌─┐
 " │││├┤ ├┬┘ ││ │ ├┬┘├┤ ├┤
@@ -142,7 +145,6 @@ nnoremap <leader>bw :Windows<cr>
 nnoremap <leader>bc :Commands<cr>
 nnoremap <leader>bh :History:<cr>
 nnoremap <leader>bs :Snippets<cr>
-nnoremap <leader>bs :Snippets<cr>
 nnoremap <leader>bg :GV<cr>
 nnoremap <leader>bgc :GV!<cr>
 nnoremap <leader>bgr :GV?<cr>
@@ -178,7 +180,7 @@ nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 " GoTo code navigation.
-nmap <silent> go <Plug>(coc-definition)
+nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
@@ -214,6 +216,9 @@ nmap <leader>ac  <Plug>(coc-codeaction)
 " Apply AutoFix to problem on the current line.
 nmap <leader>qf  <Plug>(coc-fix-current)
 
+" Run the Code Lens action on the current line.
+nmap <leader>cl  <Plug>(coc-codelens-action)
+
 " Map function and class text objects
 " NOTE: Requires 'textDocument.documentSymbol' support from the language server.
 xmap if <Plug>(coc-funcobj-i)
@@ -235,14 +240,19 @@ if has('nvim-0.4.0') || has('patch-8.2.0750')
   vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
 endif
 
+" Use CTRL-S for selections ranges.
+" Requires 'textDocument/selectionRange' support of language server.
+nmap <silent> <C-s> <Plug>(coc-range-select)
+xmap <silent> <C-s> <Plug>(coc-range-select)
+
 " Add `:Format` command to format current buffer.
-command! -nargs=0 Format :call CocAction('format')
+command! -nargs=0 Format :call CocActionAsync('format')
 
 " Add `:Fold` command to fold current buffer.
 command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 
 " Add `:OR` command for organize imports of the current buffer.
-command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.organizeImport')
 
 " Add (Neo)Vim's native statusline support.
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
