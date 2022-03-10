@@ -36,7 +36,7 @@ alias ,hs="history | grep $* -i"
 
 alias ,gwho='git config user.name && git config user.email'
 alias ,gme='git config user.email <%= ENV["USER_EMAIL"] %> && ,gwho'
-alias ,gco='git config user.email <%= ENV["USER_EMAIL_CORPORATE"] %> && ,gwho'
+alias ,gca='git config user.email <%= ENV["USER_EMAIL_CULTUREAMP"] %> && ,gwho'
 alias ,gra='git commit --amend --reset-author'
 
 # ┌─┐┬┌─┐┬  ┌─┐┌┬┐

@@ -165,7 +165,6 @@ fresh vim/nvim.vim --file=~/.config/nvim/init.vim --marker='"'
 
 fresh-options --file=~/.vimrc --marker='"'
   fresh vim/plug.vim
-  # fresh vim/plugins/syntastic.vim
   fresh vim/plugins/editorconfig.vim
   fresh vim/plugins/ctrlp.vim
   fresh vim/plugins/netrw.vim
@@ -177,7 +176,6 @@ fresh-options --file=~/.vimrc --marker='"'
   fresh vim/plugins/markdown-preview.vim
   fresh vim/plugins/vim-go.vim
   fresh vim/plugins/fzf.vim
-  # fresh vim/plugins/language-client.vim
   fresh vim/functions.vim
   fresh vim/commands.vim
   fresh vim/settings.vim
@@ -219,7 +217,7 @@ fresh-options
 # ╚══════╝╚══════╝╚═╝  ╚═╝
 
 fresh-options --file=~/.ssh/config --filter=erb
-  fresh config/ssh/corporate.conf
+  fresh config/ssh/cltrmp.conf
   fresh config/ssh/default.conf
 fresh-options
 
@@ -233,6 +231,19 @@ fresh-options
 
 fresh config/gpg/gpg.conf --file=~/.gnupg/gpg.conf
 fresh config/gpg/gpg-agent.conf --file=~/.gnupg/gpg-agent.conf
+
+
+#  █████╗ ██╗    ██╗███████╗
+# ██╔══██╗██║    ██║██╔════╝
+# ███████║██║ █╗ ██║███████╗
+# ██╔══██║██║███╗██║╚════██║
+# ██║  ██║╚███╔███╔╝███████║
+# ╚═╝  ╚═╝ ╚══╝╚══╝ ╚══════╝
+
+fresh-options --file=~/.aws/config --filter=erb
+  fresh config/aws/cltrmp.conf
+  fresh config/aws/default.conf
+fresh-options
 
 
 #  █████╗ ███████╗██████╗ ███████╗
@@ -272,14 +283,16 @@ fresh config/bundler/bundler.conf --file=~/.bundle/config --filter=erb
 # ██████╔╝██║  ██║███████╗╚███╔███╔╝
 # ╚═════╝ ╚═╝  ╚═╝╚══════╝ ╚══╝╚══╝
 
-fresh config/homebrew/Brewfile --file=~/.Brewfile
+fresh-options --file=~/.Brewfile
+  fresh config/homebrew/Brewfile
+  fresh config/homebrew/Brewfile.cltrmp
+fresh-options
 
-
-# ██╗   ██╗███████╗███╗   ██╗██████╗  ██████╗ ██████╗
-# ██║   ██║██╔════╝████╗  ██║██╔══██╗██╔═══██╗██╔══██╗
-# ██║   ██║█████╗  ██╔██╗ ██║██║  ██║██║   ██║██████╔╝
-# ╚██╗ ██╔╝██╔══╝  ██║╚██╗██║██║  ██║██║   ██║██╔══██╗
-#  ╚████╔╝ ███████╗██║ ╚████║██████╔╝╚██████╔╝██║  ██║
-#   ╚═══╝  ╚══════╝╚═╝  ╚═══╝╚═════╝  ╚═════╝ ╚═╝  ╚═╝
+# ███████╗██╗ ██████╗ ██╗     ███████╗████████╗
+# ██╔════╝██║██╔════╝ ██║     ██╔════╝╚══██╔══╝
+# █████╗  ██║██║  ███╗██║     █████╗     ██║
+# ██╔══╝  ██║██║   ██║██║     ██╔══╝     ██║
+# ██║     ██║╚██████╔╝███████╗███████╗   ██║
+# ╚═╝     ╚═╝ ╚═════╝ ╚══════╝╚══════╝   ╚═╝
 
 fresh xero/figlet-fonts . --file=~/.figlet/

@@ -1,0 +1,2 @@
+brew "mongodb-community@3.6"
+cask "robo-3t"
