@@ -11,12 +11,14 @@ add_newline = true
 command_timeout = 2000
 
 [aws]
-disabled = true
+disabled = false
 symbol = "🅰 "
+format = '[$symbol($profile )(\($region\) )]($style)'
 
 [gcloud]
-disabled = true
+disabled = false
 symbol = "🅶 "
+format = '[$symbol$account@*(\($project\))]($style) '
 
 [line_break]
 disabled = false
