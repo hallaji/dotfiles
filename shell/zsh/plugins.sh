@@ -19,7 +19,7 @@ OHMYZSH_PLUGINS=(
   yarn
   node
   gcloud
-  osx
+  macos
   z
   colored-man-pages
 )
