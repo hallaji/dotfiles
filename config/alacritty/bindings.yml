@@ -16,6 +16,8 @@ mouse_bindings:
 key_bindings:
   # Tmux bindings:
   - { key: U,     mods: Command,       chars: "\x02\x75" } # Grab and open any URL from the terminal window
+  - { key: S,     mods: Command|Shift, chars: "\x02\x53" } # Save environment
+  - { key: R,     mods: Command|Shift, chars: "\x02\x52" } # Save environment
   - { key: D,     mods: Command,       chars: "\x02\x76" } # Vertical pane
   - { key: D,     mods: Command|Shift, chars: "\x02\x73" } # Horizontal pane
   - { key: W,     mods: Command,       chars: "\x02\x78" } # Close pane/tab
@@ -24,7 +26,7 @@ key_bindings:
   - { key: K,     mods: Command,       chars: "\x02\x6b" } # Move cursor to top pane
   - { key: L,     mods: Command,       chars: "\x02\x6c" } # Move cursor to left pane
   - { key: T,     mods: Command,       chars: "\x02\x63" } # Open a new tab
-  - { key: R,     mods: Command,       chars: "\x02\x2c" } # Rname a tab
+  - { key: R,     mods: Command,       chars: "\x02\x2c" } # Rename a tab
   - { key: H,     mods: Command|Shift, chars: "\x02\x70" } # Previous tab
   - { key: L,     mods: Command|Shift, chars: "\x02\x6e" } # Next tab
   - { key: Left,  mods: Command,       chars: "\x02\x48" } # Resize pane to left

@@ -68,7 +68,6 @@
 - `⌃⌥ + o` Toggle desktop offset
 - `⌃⌥ + w` Destroy space (desktop)
 - `⌃⌥ + c` Move window to previous space
-- `⌃⌥ + x` Move window to recent space
 - `⌃⌥ + z` Move window to next space
 - `⌃⌥ + n` Create a desktop and follow focus
 - `⌃⌥ + m` Create a desktop, move focused window and follow focus
@@ -103,6 +102,8 @@ Tmux prefix `⌃ + b`
 - `prefix + <number>` Jump to specific window/tab
 - `prefix + d` Detach current session
 - `prefix + u` Grab and open any URL from the terminal window
+- `prefix + S` Save environment
+- `prefix + R` Restore environment
 
 ### Tmux Commands
 
@@ -123,6 +124,8 @@ Tmux prefix `⌃ + b`
 ### Tmux bindings
 
 - `⌘ + U` Grab and open any URL from the terminal window
+- `⌘⇧ + S` Save environment
+- `⌘⇧ + R` Restore environment
 - `⌘ + D` Vertical pane
 - `⌘⇧ + D` Horizontal pane
 - `⌘ + W` Close pane/tab
