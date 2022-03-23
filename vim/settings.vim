@@ -12,7 +12,7 @@ set ruler
 " set colorcolumn=80,120              " Set a ruler in 80 and 120 by default
 set foldcolumn=1                    " Custom left padding for each window
 set cursorline
-set cmdheight=2                     " Command height under status line
+set cmdheight=1                     " Command height under status line
 set nowrap                          " No wrap by default
 
 set tabstop=4                       " The width of a TAB is set to 4
