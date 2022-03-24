@@ -123,20 +123,21 @@ Tmux prefix `⌃ + b`
 
 ### Tmux bindings
 
-- `⌘ + U` Grab and open any URL from the terminal window
-- `⌘⇧ + S` Save environment
-- `⌘⇧ + R` Restore environment
-- `⌘ + D` Vertical pane
-- `⌘⇧ + D` Horizontal pane
-- `⌘ + W` Close pane/tab
-- `⌘ + H` Move cursor to left pane
-- `⌘ + J` Move cursor to bottom pane
-- `⌘ + K` Move cursor to top pane
-- `⌘ + L` Move cursor to left pane
-- `⌘ + T` Open a new tab
-- `⌘ + R` Rename a tab
-- `⌘⇧ + H` Previous tab
-- `⌘⇧ + L` Next tab
+- `⌘ + u` Grab and open any URL from the terminal window
+- `⌘ + s` Save environment
+- `⌘⇧ + s` Restore environment
+- `⌘ + d` Vertical pane
+- `⌘⇧ + d` Horizontal pane
+- `⌘ + w` Close pane/tab
+- `⌘ + h` Move cursor to left pane
+- `⌘ + j` Move cursor to bottom pane
+- `⌘ + k` Move cursor to top pane
+- `⌘ + l` Move cursor to left pane
+- `⌘ + t` Open a new tab
+- `⌘ + r` Rename a tab
+- `⌘⇧ + r` Rename a session
+- `⌘⇧ + h` Previous tab
+- `⌘⇧ + l` Next tab
 - `⌘ + ←` Resize pane to left
 - `⌘ + ↓` Resize pane to down
 - `⌘ + ↑` Resize pane to up
