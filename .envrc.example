@@ -1,10 +1,9 @@
+export USER_SIGNING_KEY="signing-key"
 export USER_NAME="name"
 export USER_EMAIL="email"
-export USER_EMAIL_CULTUREAMP="email"
-export USER_SIGNING_KEY="signing-key"
+export USER_EMAIL_CLTRMP="email"
 
 export SSH_IDENTITY_FILE="~/.ssh/path/to/identity/file"
-export SSH_IDENTITY_FILE_CULTUREAMP="~/.ssh/path/to/corporate/identity/file"
 
 export GITHUB_USER="github-user"
 export GITHUB_TOKEN="github-public-pat"
