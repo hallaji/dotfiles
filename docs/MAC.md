@@ -26,6 +26,9 @@
 * [Fantastical](https://flexibits.com/fantastical)
 * [System Color Picker](https://apps.apple.com/app/id1545870783)
 * [Mic Drop](https://getmicdrop.com)
+* [Lungo - Keeps your computer awake](https://sindresorhus.com/lungo)
+* [Postico - A Modern PostgreSQL Client for the Mac](https://eggerapps.at/postico/)
+* [Insomnia - Build APIs that work](https://insomnia.rest/)
 
 ## Browser Extensions
 
