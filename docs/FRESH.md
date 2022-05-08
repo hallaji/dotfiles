@@ -7,6 +7,7 @@ List of files and directories that are symlinked by [fresh](https://freshshell.c
 ~/.asdfrc
 ~/.bundle/config
 ~/.config/alacritty/alacritty.yml
+~/.config/gh-dash/config.yml
 ~/.config/nvim/coc-settings.json
 ~/.config/nvim/init.vim
 ~/.config/pip/pip.conf

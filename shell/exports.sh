@@ -15,6 +15,8 @@ export PATH="/usr/local/sbin:$PATH"
 
 export LANG=en_AU.UTF-8
 
+export XDG_CONFIG_HOME="$HOME/.config"
+
 export DOTFILES="$HOME/.dotfiles"
 export CODE="$HOME/Code"
 

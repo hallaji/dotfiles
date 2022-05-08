@@ -145,6 +145,12 @@ fresh config/pip/pip.conf --file=~/.config/pip/pip.conf
 
 fresh config/ctags/ctags.conf --file=~/.ctags
 
+# ┌─┐┬┌┬┐┬ ┬┬ ┬┌┐   ┌─┐┬  ┬
+# │ ┬│ │ ├─┤│ │├┴┐  │  │  │
+# └─┘┴ ┴ ┴ ┴└─┘└─┘  └─┘┴─┘┴
+
+fresh config/gh/dash/config.yml --file=~/.config/gh-dash/config.yml
+
 
 # ██╗   ██╗██╗███╗   ███╗
 # ██║   ██║██║████╗ ████║

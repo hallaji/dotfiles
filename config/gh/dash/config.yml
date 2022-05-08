@@ -1,0 +1,24 @@
+# https://github.com/dlvhdr/gh-dash
+# https://docs.github.com/en/search-github/searching-on-github/searching-issues-and-pull-requests
+prSections:
+  - title: My Pull Requests
+    filters: is:open author:@me
+  - title: Needs Review
+    filters: is:open review-requested:@me
+  - title: Drafts
+    filters: is:open author:@me draft:true
+  - title: Mentions
+    filters: is:open mentions:@me sort:created-desc # org:cultureamp
+    limit: 50 # optional limit per section
+issuesSections:
+  - title: My Issues
+    filters: is:open author:@me
+  - title: Assigned
+    filters: is:open assignee:@me
+defaults:
+  preview:
+    open: true
+    width: 50
+  prsLimit: 20
+  issuesLimit: 20
+  view: prs
