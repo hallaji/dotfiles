@@ -24,23 +24,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
  /** Layout 1
   * +---------------------------------------------------------------------------------------------------------------------+
-  * | Sleep |  RGB-  |  RGB  |  RGB+  |  N/A  | Prev | Play | Next |  N/A  | HYPR(9) | Mute |  Vol- |  Vol+ |         Del |
+  * | Sleep |  RGB-  |  RGB  |  RGB+  |  N/A  | Prev | Play | Next |  N/A  | HYPR(M) | Mute |  Vol- |  Vol+ |         Del |
   * |---------------------------------------------------------------------------------------------------------------------|
-  * | N/A      |   F1  |   F2  |   F3  |   F4  |   F5  |   F6  |   F7  |   F8  |   F9  |  F10  |  F11  |  F12  |    N/A   |
+  * | HYPR(P)  |   F1  |   F2  |   F3  |   F4  |   F5  |   F6  |   F7  |   F8  |   F9  |  F10  |  F11  |  F12  | HYPR(\)  |
   * |---------------------------------------------------------------------------------------------------------------------|
   * | N/A       |  N/A  | Home  | PgUp  | PgDn  |  End  |   ←   |   ↓   |   ↑   |   →   | N/A (LCA) |  N/A  |       N/A   |
   * |---------------------------------------------------------------------------------------------------------------------|
   * | N/A           |  N/A  |  N/A  |  N/A  |  N/A  |  N/A  |  N/A  |  N/A  |  N/A  |  N/A  | HYPR(X) |           HYPR(Z) |
   * |---------------------------------------------------------------------------------------------------------------------|
-  * |  Trans  |  Trans  |  Trans  |                    N/A                        |  Trans  |  Trans  |  Trans  | HYPR(V) |
+  * |  Trans  |  Trans  |  Trans  |                  HYPR(KC_SPC)                 |  Trans  |  Trans  |  Trans  | HYPR(V) |
   * +---------------------------------------------------------------------------------------------------------------------+
   */
   [1] = LAYOUT_60_ansi(
-    KC_SLEP, RGB_RMOD, RGB_TOG, RGB_MOD, KC_NO, KC_MPRV, KC_MPLY, KC_MNXT, KC_NO, HYPR(KC_9), KC_MUTE, KC_VOLD, KC_VOLU, KC_DEL,
-    KC_NO, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_F12, KC_NO,
+    KC_SLEP, RGB_RMOD, RGB_TOG, RGB_MOD, KC_NO, KC_MPRV, KC_MPLY, KC_MNXT, KC_NO, HYPR(KC_M), KC_MUTE, KC_VOLD, KC_VOLU, KC_DEL,
+    HYPR(KC_P), KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_F12, HYPR(KC_BSLS),
     KC_NO, KC_NO, KC_HOME, KC_PGUP, KC_PGDN, KC_END, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, LCA_T(KC_NO), KC_NO, KC_NO,
     KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, HYPR(KC_X), HYPR(KC_Z),
-    KC_TRNS, KC_TRNS, KC_TRNS, KC_NO, KC_TRNS, KC_TRNS, KC_TRNS, HYPR(KC_V)
+    KC_TRNS, KC_TRNS, KC_TRNS, HYPR(KC_SPC), KC_TRNS, KC_TRNS, KC_TRNS, HYPR(KC_V)
   ),
 
  /** Layout 2

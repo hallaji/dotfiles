@@ -14,37 +14,4 @@ Note: Check out `bin/flash`  for further details.
 ❯ flash "dz60" "hallaji"
 ```
 
-## Global Shortcuts
-
-### Organising Windows (Magnet)
-
-Mod = `Control+Alt`
-
-- Mod + `H` Left
-- Mod + `L` Right
-- Mod + `K` Up
-- Mod + `J` Down
-- Mod + `S` Top Left
-- Mod + `G` Top Right
-- Mod + `D` Bottom Left
-- Mod + `F` Bottom Right
-- Mod + `T` Next Display
-- Mod + `E` Previous Display
-- Mod + `M` Maximise
-- Mod + `C` Center
-- Mod + `R` Restore
-
-### Input (Mic Drop)
-
-Mod = `Control+Shift+Alt+Cmd`
-
-- Mod + `9` On/Off microphone
-
-### Audio and Video (Zoom)
-
-Mod = `Control+Shift+Alt+Cmd`
-
-- Mod + `V` Start/Stop video
-- Mod + `A` Mute/Unmute audio
-- Mod + `Z` Start/Stop screen sharing
-- Mod + `X` Pause/Resume screen sharing
+> **Note:** Check out [mac-specific shortcuts](../../../../../../docs/CHEATSHEET.md#mac-specific) for HYPR key actions.

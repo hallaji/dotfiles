@@ -109,4 +109,5 @@ skhd --observe
 
 ## Manual Installations
 
-Check out [MAC.md](MAC.md) for a list of macOS-specific apps and extensions.
+- Check out [MAC.md](MAC.md) for a list of macOS-specific apps and extensions.
+- Set [shortcuts](./CHEATSHEET.md#mac-specific) for apps.

@@ -35,16 +35,17 @@
       - [FZF](#fzf)
       - [Number Toggle](#number-toggle)
   - [Vimium / Vimari](#vimium--vimari)
+  - [Mac-specific](#mac-specific)
   - [Footnote](#footnote)
 
 ## Yabai & SKHD
 
 [koekeishiya/yabai](https://github.com/koekeishiya/yabai) and [koekeishiya/skhd](https://github.com/koekeishiya/skhd)
 
+- `⌃⌥ + 0x32` Focus on the next space `0x32 = backtick`
 - `⌃⌥ + 1` Focus on monitor #1
 - `⌃⌥ + 2` Focus on monitor #2
 - `⌃⌥ + 3` Focus on monitor #3
-- `⌃⌥ + 0x32` Focus on the next space `0x32 = backtick`
 - `⌃⌥ + h` Focus on left window
 - `⌃⌥ + j` Focus on bottom window
 - `⌃⌥ + k` Focus on top window
@@ -81,29 +82,29 @@
 
 ### Tmux Glossary
 
-- Session is a collection of terminals that tmux handles and each session has one more windows.
+- Session is a collection of terminals that tmux handles and each session has windows.
 - Window is a tab occupies the entire screen. It can be split into panes.
 
 ### Tmux Key Bindings
 
-Tmux prefix `⌃ + b`
+Prefix = `⌃ + b`
 
-- `prefix + ,` Rename a window
-- `prefix + I` Install tmux plugins
-- `prefix + U` Update tmux plugins
-- `prefix + alt + u` Uninstall tmux plugins
-- `prefix + v` Create vertical pane
-- `prefix + s` Create horizontal pane
-- `prefix + c` Create a window/tab
-- `prefix + &` Close a window/tab
-- `prefix + x` Close a pane
-- `prefix + h`, `prefix + j`, `prefix + k`, `prefix + l` Move between panes
-- `prefix + H`, `prefix + J`, `prefix + K`, `prefix + L` Resize panes
-- `prefix + <number>` Jump to specific window/tab
-- `prefix + d` Detach current session
-- `prefix + u` Grab and open any URL from the terminal window
-- `prefix + S` Save environment
-- `prefix + R` Restore environment
+- `Prefix + ,` Rename a window
+- `Prefix + I` Install tmux plugins
+- `Prefix + U` Update tmux plugins
+- `Prefix + alt + u` Uninstall tmux plugins
+- `Prefix + v` Create vertical pane
+- `Prefix + s` Create horizontal pane
+- `Prefix + c` Create a window/tab
+- `Prefix + &` Close a window/tab
+- `Prefix + x` Close a pane
+- `Prefix + h`, `prefix + j`, `prefix + k`, `prefix + l` Move between panes
+- `Prefix + H`, `prefix + J`, `prefix + K`, `prefix + L` Resize panes
+- `Prefix + <number>` Jump to specific window/tab
+- `Prefix + d` Detach current session
+- `Prefix + u` Grab and open any URL from the terminal window
+- `Prefix + S` Save environment
+- `Prefix + R` Restore environment
 
 ### Tmux Commands
 
@@ -510,6 +511,22 @@ Use `v` for visual select. `i` is for inner and `a` for around selection.
 - `o` Open URL, bookmark, or history entry
 - `O` Open URL, bookmark, or history entry in a new tab
 - `gs` View page source
+
+## Mac-specific
+
+Checkout keyboards' [map](../firmware/qmk_firmware/keyboards) to find out key place.
+
+- `⌃⇧⌥⌘ + Space` Toogle search (LaunchBar)
+- `⌃⇧⌥⌘ + P` Toggle password manager (1password Quick Access)
+- `⌃⇧⌥⌘ + V` Start/Stop video (Zoom)
+- `⌃⇧⌥⌘ + A` Mute/Unmute audio (Zoom)
+- `⌃⇧⌥⌘ + Z` Start/Stop screen sharing (Zoom)
+- `⌃⇧⌥⌘ + X` Pause/Resume screen sharing (Zoom)
+- `⌃⇧⌥⌘ + M` On/Off microphone (Mic drop)
+- `⌃⇧⌥⌘ + \` Toggle network monitor (Little Snitch)
+- `⌃⌥ + 7` Toogle battery/power dropdown (iStat Menus)
+- `⌃⌥ + 8` Toggle network dropdown (iStat Menus)
+- `⌃⌥ + 9` Toggle time dropdown (iStat Menus)
 
 ## Footnote
 
