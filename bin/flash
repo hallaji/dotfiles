@@ -4,33 +4,61 @@
 # ├┤ │  ├─┤└─┐├─┤
 # └  ┴─┘┴ ┴└─┘┴ ┴
 
-# Usage❯ flash <keyboard> <keymap>
-
-if [ "$#" -ne 2 ]; then
-  echo "Usage❯ $(basename "$0") <keyboard> <keymap>" >&2
+if [ "$#" -ne 2 ] && [ "$#" -ne 3 ]; then
+  echo "⚠ Usage❯ $(basename "$0") <keyboard> <keymap> [--build]" >&2
   exit 1
 fi
 
-ROOT_DIR="$DOTFILES/firmware"
-WORKING_DIR="/qmk_firmware"
-BUILD_DIR="$WORKING_DIR/.build"
-KEYMAP="$WORKING_DIR/keyboards/$1/keymaps/$2/keymap.c"
+BRAND=`echo $1 | cut -d/ -f1`
 
-mkdir -p "$ROOT_DIR$BUILD_DIR"
+case $BRAND in
+"keychron")
+  FORK="keychron/qmk_firmware"
+  BRANCH="playground"
+  BUILD="${1//[\/]/_}_$2.bin"
+  ;;
+*)
+  FORK="qmk/qmk_firmware"
+  BRANCH="master"
+  BUILD="${1//[\/]/_}_$2.hex"
+  ;;
+esac
 
-docker run --rm -it \
-  -w "$WORKING_DIR" \
-  -v "$ROOT_DIR$KEYMAP:$KEYMAP" \
-  -v "$ROOT_DIR$BUILD_DIR:$BUILD_DIR" \
-  qmkfm/qmk_firmware \
-  make "$1:$2"
+if [ ! -z "$3" ] && [ "$3" = "--build" ]; then
+  echo "⌨️ Building the firmware..."
+  commands="
+    qmk setup -H ./qmk_firmware -b $BRANCH -y $FORK;
+    cp -R /keyboards/* ./qmk_firmware/keyboards;
+    qmk compile -kb $1 -km $2;
+    mkdir -p /keyboards/.build;
+    cp ./qmk_firmware/$BUILD /keyboards/.build;
+  "
+  docker run --rm -it \
+    -w "/qmk" \
+    -v "$DOTFILES/keyboards:/keyboards" \
+    qmkfm/qmk_cli \
+    sh -c "$commands"
+fi
+
+FILE="$DOTFILES/keyboards/.build/$BUILD"
+if [ ! -f "$FILE" ]; then
+  echo "⚠ There is no build. Use \`--build\` option to build and flash the firmware."
+  exit 2
+fi
+
+echo "⌨️ Flashing..."
 
 sleep 1
-dfu-programmer atmega32u4 erase --force
-dfu-programmer atmega32u4 flash "$ROOT_DIR$BUILD_DIR/$1_$2.hex"
-dfu-programmer atmega32u4 reset
 
-sleep 1
-rm -rf "$ROOT_DIR$BUILD_DIR"
+case $BRAND in
+"keychron")
+  dfu-util -a 0 -d 0483:DF11 -s 0x8000000:leave -D "$FILE"
+  ;;
+*)
+  dfu-programmer atmega32u4 erase --force
+  dfu-programmer atmega32u4 flash "$FILE"
+  dfu-programmer atmega32u4 reset
+  ;;
+esac
 
-echo "Done! $1 keyboard is ready for $2 keymap."
+echo "⌨️ Done! $FORK fork on $BRANCH branch / keyboard:$1 / keymap:$2"
