@@ -2,14 +2,14 @@
 
 - [Cheat Sheet](#cheat-sheet)
   - [Steering Focus](#steering-focus)
-    - [macOS `⌃⇧⌥⌘`](#macos-)
+    - [macOS](#macos)
       - [Menubar](#menubar)
       - [Meetings](#meetings)
       - [Password Manager](#password-manager)
       - [OS](#os)
-    - [Windows `⌃⌥⌘`](#windows-)
-    - [Terminals (Alacritty) `⌘`](#terminals-alacritty-)
-    - [Editors (VIM / Visual Studio Code) `⌃`](#editors-vim--visual-studio-code-)
+    - [Windows](#windows)
+    - [Terminals (Alacritty)](#terminals-alacritty)
+    - [Editors (VIM / Visual Studio Code)](#editors-vim--visual-studio-code)
     - [Browsers (Vimium / Vimari extensions)](#browsers-vimium--vimari-extensions)
     - [General](#general)
   - [Yabai & SKHD](#yabai--skhd)
@@ -50,9 +50,9 @@
 
 ## Steering Focus
 
-### macOS `⌃⇧⌥⌘`
+### macOS
 
-Checkout keyboards' [map](../firmware/qmk_firmware/keyboards) to find the key place.
+Checkout keyboard [keymaps](../keyboards) to find the key place.
 
 #### Menubar
 
@@ -92,13 +92,13 @@ Checkout keyboards' [map](../firmware/qmk_firmware/keyboards) to find the key pl
 - `⌃⇧⌥⌘ + T` New terminal in current space [via SKHD]
 - `⌃⇧⌥⌘ + R` New browser in current space [via SKHD]
 
-### Windows `⌃⌥⌘`
+### Windows
 
 - Resize a window: `⌃⌥⌘` + (`←` | `↓` | `↑` | `→`)
 - Focus on a window: `⌃⌥⌘` + (`h` | `j` | `k` | `l`)
 - Move a window: `⌃⌥⌘` + `home` | `pagedown` | `pageup` | `end`
 
-### Terminals (Alacritty) `⌘`
+### Terminals (Alacritty)
 
 - Resize a pane: `⌘` + (`←` | `↓` | `↑` | `→`)
 - Focus on a pane: `⌘` + (`h` | `j` | `k` | `l`)
@@ -108,7 +108,7 @@ Checkout keyboards' [map](../firmware/qmk_firmware/keyboards) to find the key pl
 - Jump between Tmux tabs `⌘⇧` + (`h` | `l`)
 - Jump between Tmux sessions `⌘⇧` + (`←` | `→`)
 
-### Editors (VIM / Visual Studio Code) `⌃`
+### Editors (VIM / Visual Studio Code)
 
 - Resize a pane: `⌃` + (`←` | `↓` | `↑` | `→`)
 - Focus on a pane: `⌃` + (`h` | `j` | `k` | `l`)
