@@ -49,3 +49,11 @@ alias ,fl="figlet -d ~/.figlet/ $*"
 alias ,flh1="figlet -d ~/.figlet/ -f ANSI\ Shadow $*"
 alias ,flh2="figlet -d ~/.figlet/ -f Calvin\ S $*" # bold version with `-f future`
 alias ,flh3="figlet -d ~/.figlet/ -f wideterm $*"
+
+# ┌─┐┬┌┬┐┬ ┬┬ ┬┌┐   ┌─┐┬  ┬
+# │ ┬│ │ ├─┤│ │├┴┐  │  │  │
+# └─┘┴ ┴ ┴ ┴└─┘└─┘  └─┘┴─┘┴
+
+alias ,ghb="gh browse"
+alias ,ghd="gh dash"
+alias ,ghc="gh contrib --style fisheye"
