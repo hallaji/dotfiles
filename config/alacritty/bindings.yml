@@ -15,34 +15,39 @@ mouse_bindings:
 
 key_bindings:
   # Tmux bindings:
-  - { key: U,     mods: Command,       chars: "\x02\x75" } # Grab and open any URL from the terminal window
-  - { key: S,     mods: Command,       chars: "\x02\x53" } # Save environment
-  - { key: S,     mods: Command|Shift, chars: "\x02\x52" } # Restore environment
-  - { key: D,     mods: Command,       chars: "\x02\x76" } # Vertical pane
-  - { key: D,     mods: Command|Shift, chars: "\x02\x73" } # Horizontal pane
-  - { key: W,     mods: Command,       chars: "\x02\x78" } # Close pane/tab
-  - { key: H,     mods: Command,       chars: "\x02\x68" } # Move cursor to left pane
-  - { key: J,     mods: Command,       chars: "\x02\x6a" } # Move cursor to bottom pane
-  - { key: K,     mods: Command,       chars: "\x02\x6b" } # Move cursor to top pane
-  - { key: L,     mods: Command,       chars: "\x02\x6c" } # Move cursor to left pane
-  - { key: T,     mods: Command,       chars: "\x02\x63" } # Open a new tab
-  - { key: R,     mods: Command,       chars: "\x02\x2c" } # Rename a tab
-  - { key: R,     mods: Command|Shift, chars: "\x02\x24" } # Rename a session
-  - { key: H,     mods: Command|Shift, chars: "\x02\x70" } # Previous tab
-  - { key: L,     mods: Command|Shift, chars: "\x02\x6e" } # Next tab
-  - { key: Left,  mods: Command,       chars: "\x02\x48" } # Resize pane to left
-  - { key: Down,  mods: Command,       chars: "\x02\x4a" } # Resize pane to down
-  - { key: Up,    mods: Command,       chars: "\x02\x4b" } # Resize pane to up
-  - { key: Right, mods: Command,       chars: "\x02\x4c" } # Resize pane to right
-  - { key: Key1,  mods: Command,       chars: "\x02\x31" } # Switch to tab #1
-  - { key: Key2,  mods: Command,       chars: "\x02\x32" } # Switch to tab #2
-  - { key: Key3,  mods: Command,       chars: "\x02\x33" } # Switch to tab #3
-  - { key: Key4,  mods: Command,       chars: "\x02\x34" } # Switch to tab #4
-  - { key: Key5,  mods: Command,       chars: "\x02\x35" } # Switch to tab #5
-  - { key: Key6,  mods: Command,       chars: "\x02\x36" } # Switch to tab #6
-  - { key: Key7,  mods: Command,       chars: "\x02\x37" } # Switch to tab #7
-  - { key: Key8,  mods: Command,       chars: "\x02\x38" } # Switch to tab #8
-  - { key: Key9,  mods: Command,       chars: "\x02\x39" } # Switch to tab #9
+  - { key: Semicolon, mods: Command,       chars: "\x02\x3a" } # Run a tmux command
+  - { key: U,         mods: Command,       chars: "\x02\x75" } # Grab and open any URL from the terminal window
+  - { key: P,         mods: Command,       chars: "\x02\x77" } # Show session tree
+  - { key: S,         mods: Command,       chars: "\x02\x53" } # Save environment
+  - { key: S,         mods: Command|Shift, chars: "\x02\x52" } # Restore environment
+  - { key: D,         mods: Command,       chars: "\x02\x76" } # Vertical pane
+  - { key: D,         mods: Command|Shift, chars: "\x02\x73" } # Horizontal pane
+  - { key: W,         mods: Command,       chars: "\x02\x78" } # Close pane/tab
+  - { key: H,         mods: Command,       chars: "\x02\x68" } # Move cursor to left pane
+  - { key: J,         mods: Command,       chars: "\x02\x6a" } # Move cursor to bottom pane
+  - { key: K,         mods: Command,       chars: "\x02\x6b" } # Move cursor to top pane
+  - { key: L,         mods: Command,       chars: "\x02\x6c" } # Move cursor to left pane
+  - { key: T,         mods: Command,       chars: "\x02\x63" } # Open a new tab
+  - { key: R,         mods: Command,       chars: "\x02\x2c" } # Rename a tab
+  - { key: R,         mods: Command|Shift, chars: "\x02\x24" } # Rename a session
+  - { key: H,         mods: Command|Shift, chars: "\x02\x70" } # Previous tab
+  - { key: L,         mods: Command|Shift, chars: "\x02\x6e" } # Next tab
+  - { key: Left,      mods: Command|Shift, chars: "\x02\x28" } # Previous session
+  - { key: Right,     mods: Command|Shift, chars: "\x02\x29" } # Next session
+  - { key: Left,      mods: Command,       chars: "\x02\x48" } # Resize pane to left
+  - { key: Down,      mods: Command,       chars: "\x02\x4a" } # Resize pane to down
+  - { key: Up,        mods: Command,       chars: "\x02\x4b" } # Resize pane to up
+  - { key: Right,     mods: Command,       chars: "\x02\x4c" } # Resize pane to right
+  - { key: Key1,      mods: Command,       chars: "\x02\x31" } # Switch to tab #1
+  - { key: Key2,      mods: Command,       chars: "\x02\x32" } # Switch to tab #2
+  - { key: Key3,      mods: Command,       chars: "\x02\x33" } # Switch to tab #3
+  - { key: Key4,      mods: Command,       chars: "\x02\x34" } # Switch to tab #4
+  - { key: Key5,      mods: Command,       chars: "\x02\x35" } # Switch to tab #5
+  - { key: Key6,      mods: Command,       chars: "\x02\x36" } # Switch to tab #6
+  - { key: Key7,      mods: Command,       chars: "\x02\x37" } # Switch to tab #7
+  - { key: Key8,      mods: Command,       chars: "\x02\x38" } # Switch to tab #8
+  - { key: Key9,      mods: Command,       chars: "\x02\x39" } # Switch to tab #9
+  - { key: Q,         mods: Control,       chars: "\x11"     } # https://github.com/alacritty/alacritty/issues/1359
   # Vi Mode
   #- { key: Space,  mods: Shift|Control, mode: ~Search,    action: ToggleViMode            }
   #- { key: Space,  mods: Shift|Control, mode: Vi|~Search, action: ScrollToBottom          }
