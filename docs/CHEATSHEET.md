@@ -1,6 +1,17 @@
 # Cheat Sheet
 
 - [Cheat Sheet](#cheat-sheet)
+  - [Steering Focus](#steering-focus)
+    - [macOS `⌃⇧⌥⌘`](#macos-)
+      - [Menubar](#menubar)
+      - [Meetings](#meetings)
+      - [Password Manager](#password-manager)
+      - [OS](#os)
+    - [Windows `⌃⌥⌘`](#windows-)
+    - [Terminals (Alacritty) `⌘`](#terminals-alacritty-)
+    - [Editors (VIM / Visual Studio Code) `⌃`](#editors-vim--visual-studio-code-)
+    - [Browsers (Vimium / Vimari extensions)](#browsers-vimium--vimari-extensions)
+    - [General](#general)
   - [Yabai & SKHD](#yabai--skhd)
   - [Tmux](#tmux)
     - [Tmux Glossary](#tmux-glossary)
@@ -35,46 +46,124 @@
       - [FZF](#fzf)
       - [Number Toggle](#number-toggle)
   - [Vimium / Vimari](#vimium--vimari)
-  - [Mac-specific](#mac-specific)
   - [Footnote](#footnote)
+
+## Steering Focus
+
+### macOS `⌃⇧⌥⌘`
+
+Checkout keyboards' [map](../firmware/qmk_firmware/keyboards) to find the key place.
+
+#### Menubar
+
+- `⌃⇧⌥⌘ + C` Toggle calendar dropdown (Itsycal)
+- `⌃⇧⌥⌘ + ]` Toggle network monitor (Little Snitch)
+- `⌃⇧⌥⌘ + [` Toggle network dropdown (iStat Menus)
+- `⌃⇧⌥⌘ + P` Toogle battery/power dropdown (iStat Menus)
+- `⌃⇧⌥⌘ + O` Toggle meeting bar (MeetingBar)
+- `⌃⇧⌥⌘ + I` Toggle time dropdown (iStat Menus)
+- `⌃⇧⌥⌘ + U` Toogle computer awake mode (Lungo) [via SKHD]
+- `⌃⇧⌥⌘ + Y` Toogle mic/camera indicator (Micro Snitch)
+- `⌃⇧⌥⌘ + Space` Toogle search (LaunchBar)
+
+#### Meetings
+
+- `⌃⇧⌥⌘ + M` End current meeting or join the next one otherwise (MeetingBar) [via SKHD]
+- `⌃⇧⌥⌘ + J` Join next meeting (MeetingBar)
+- `⌃⇧⌥⌘ + '` Toggle meeting title visibility (MeetingBar)
+- `⌃⇧⌥⌘ + Z` Start/Stop screen sharing (Zoom)
+- `⌃⇧⌥⌘ + X` Pause/Resume screen sharing (Zoom)
+- `⌃⇧⌥⌘ + A` Mute/Unmute audio (Zoom)
+- `⌃⇧⌥⌘ + V` Start/Stop video (Zoom)
+
+#### Password Manager
+
+- `⌃⇧⌥⌘ + 1` Toggle quick access for password manager (1password)
+- `⌃⇧⌥⌘ + 2` Open password manager (1password)
+- `⌃⇧⌥⌘ + 3` Lock password manager (1password)
+
+#### OS
+
+- `⌃⇧⌥⌘ + E` On/Off microphone (Applescript) [via macOS Shortcuts → Services]
+- `⌃⇧⌥⌘ + N` Show notification centre [via macOS Shortcuts → Mission Control]
+- `⌃⇧⌥⌘ + 0x32` Toggle menu bar `0x32 = backtick`
+- `⌃⇧⌥⌘ + L` Lock screen [via SKHD]
+- `⌃⇧⌥⌘ + D` Show desktop [via SKHD]
+- `⌃⇧⌥⌘ + T` New terminal in current space [via SKHD]
+- `⌃⇧⌥⌘ + R` New browser in current space [via SKHD]
+
+### Windows `⌃⌥⌘`
+
+- Resize a window: `⌃⌥⌘` + (`←` | `↓` | `↑` | `→`)
+- Focus on a window: `⌃⌥⌘` + (`h` | `j` | `k` | `l`)
+- Move a window: `⌃⌥⌘` + `home` | `pagedown` | `pageup` | `end`
+
+### Terminals (Alacritty) `⌘`
+
+- Resize a pane: `⌘` + (`←` | `↓` | `↑` | `→`)
+- Focus on a pane: `⌘` + (`h` | `j` | `k` | `l`)
+- Move the cursor in vi-mode: `h` | `l` (left or right)
+- Go through history in vi-mode: `j` | `k` (down or up)
+- Move the cursor in Alacritty vi-mode: `h` | `j` | `k` | `l`
+- Jump between Tmux tabs `⌘⇧` + (`h` | `l`)
+- Jump between Tmux sessions `⌘⇧` + (`←` | `→`)
+
+### Editors (VIM / Visual Studio Code) `⌃`
+
+- Resize a pane: `⌃` + (`←` | `↓` | `↑` | `→`)
+- Focus on a pane: `⌃` + (`h` | `j` | `k` | `l`)
+- Move the cursor: `h` | `j` | `k` | `l`
+
+### Browsers (Vimium / Vimari extensions)
+
+- Scroll: `h` | `j` | `k` | `l`
+- Scroll half a page: `u` | `d` (up or down )
+- Go through history `H` | `L` (back or forwrad)
+- Go to a tab `K` | `J` (left or right)
+
+### General
+
+- Move `←` | `↓` | `↑` | `→`
+- Navigate `home` | `pagedown` | `pageup` | `end`
 
 ## Yabai & SKHD
 
 [koekeishiya/yabai](https://github.com/koekeishiya/yabai) and [koekeishiya/skhd](https://github.com/koekeishiya/skhd)
 
-- `⌃⌥ + 0x32` Focus on the next space `0x32 = backtick`
-- `⌃⌥ + 1` Focus on monitor #1
-- `⌃⌥ + 2` Focus on monitor #2
-- `⌃⌥ + 3` Focus on monitor #3
-- `⌃⌥ + h` Focus on left window
-- `⌃⌥ + j` Focus on bottom window
-- `⌃⌥ + k` Focus on top window
-- `⌃⌥ + l` Focus on right window
-- `⌃⌥ + home` Move window left
-- `⌃⌥ + pagedown` Move window bottom
-- `⌃⌥ + pageup` Move window top
-- `⌃⌥ + end` Move window right
-- `⌃⌥ + left` Resize window left
-- `⌃⌥ + down` Resize window down
-- `⌃⌥ + up` Resize window up
-- `⌃⌥ + right` Resize window right
-- `⌃⌥ + r` Rotate windows
-- `⌃⌥ + y` Mirror tree y-axis
-- `⌃⌥ + x` Mirror tree x-axis
-- `⌃⌥ + p` Toggle picture-in-picture
-- `⌃⌥ + e` Toggle layout
-- `⌃⌥ + s` Toggle sticky (show on all spaces)
-- `⌃⌥ + f` Toggle window fullscreen zoom
-- `⌃⌥ + d` Toggle window parent zoom
-- `⌃⌥ + o` Toggle desktop offset
-- `⌃⌥ + w` Destroy space (desktop)
-- `⌃⌥ + c` Move window to previous space
-- `⌃⌥ + z` Move window to next space
-- `⌃⌥ + n` Create a desktop and follow focus
-- `⌃⌥ + m` Create a desktop, move focused window and follow focus
-- `⌃⌥ + 0` Balance size of windows
-- `⌃⌥ + -` Set normal window opacity to minimum
-- `⌃⌥ + =` Set normal window opacity to maximum
+- `⌃⌥⌘ + 0x32` Focus on the next space
+- `⌃⌥⌘ + 1` Focus on monitor #1
+- `⌃⌥⌘ + 2` Focus on monitor #2
+- `⌃⌥⌘ + 3` Focus on monitor #3
+- `⌃⌥⌘ + 4` Focus on monitor #4
+- `⌃⌥⌘ + h` Focus on left window
+- `⌃⌥⌘ + j` Focus on bottom window
+- `⌃⌥⌘ + k` Focus on top window
+- `⌃⌥⌘ + l` Focus on right window
+- `⌃⌥⌘ + home` Move window left
+- `⌃⌥⌘ + pagedown` Move window bottom
+- `⌃⌥⌘ + pageup` Move window top
+- `⌃⌥⌘ + end` Move window right
+- `⌃⌥⌘ + ←` Resize window left
+- `⌃⌥⌘ + ↓` Resize window down
+- `⌃⌥⌘ + ↑` Resize window up
+- `⌃⌥⌘ + →` Resize window right
+- `⌃⌥⌘ + r` Rotate windows
+- `⌃⌥⌘ + y` Mirror tree y-axis
+- `⌃⌥⌘ + x` Mirror tree x-axis
+- `⌃⌥⌘ + p` Toggle picture-in-picture
+- `⌃⌥⌘ + e` Toggle layout
+- `⌃⌥⌘ + s` Toggle sticky (show on all spaces)
+- `⌃⌥⌘ + f` Toggle window fullscreen zoom
+- `⌃⌥⌘ + d` Toggle window parent zoom
+- `⌃⌥⌘ + o` Toggle desktop offset
+- `⌃⌥⌘ + w` Destroy space (desktop)
+- `⌃⌥⌘ + c` Move window to previous space
+- `⌃⌥⌘ + z` Move window to next space
+- `⌃⌥⌘ + n` Create a desktop and follow focus
+- `⌃⌥⌘ + m` Create a desktop, move focused window and follow focus
+- `⌃⌥⌘ + 0` Balance size of windows
+- `⌃⌥⌘ + -` Set normal window opacity to minimum
+- `⌃⌥⌘ + =` Set normal window opacity to maximum
 
 ## Tmux
 
@@ -89,6 +178,11 @@
 
 Prefix = `⌃ + b`
 
+- `Prefix + :` Run a tmux command
+- `Prefix + r` Reload tmux config file
+- `Prefix + w` Show session tree
+- `Prefix + (` Switch to previous session
+- `Prefix + )` Switch to next session
 - `Prefix + ,` Rename a window
 - `Prefix + I` Install tmux plugins
 - `Prefix + U` Update tmux plugins
@@ -98,8 +192,8 @@ Prefix = `⌃ + b`
 - `Prefix + c` Create a window/tab
 - `Prefix + &` Close a window/tab
 - `Prefix + x` Close a pane
-- `Prefix + h`, `prefix + j`, `prefix + k`, `prefix + l` Move between panes
-- `Prefix + H`, `prefix + J`, `prefix + K`, `prefix + L` Resize panes
+- `Prefix + h`, `Prefix + j`, `Prefix + k`, `Prefix + l` Move between panes
+- `Prefix + H`, `Prefix + J`, `Prefix + K`, `Prefix + L` Resize panes
 - `Prefix + <number>` Jump to specific window/tab
 - `Prefix + d` Detach current session
 - `Prefix + u` Grab and open any URL from the terminal window
@@ -113,45 +207,51 @@ Prefix = `⌃ + b`
   - `-n` Specify a window name
   - `-s` Create a new session with name `session-name`
   - `-t` Group the new session with `target-session`
-- `tmux attach [-t target-session]` Attach or switch to `terget-session`
-- `tmux detach [-s target-session] [-t target-client]`
-  - `-s` Detach all clients currently attached to the `target-session`
-  - `-t` Detach the current client if bound to a key `target-client`
+- `tmux attach` Attach latest session
+  - `[-t target-session]` Switch to `target-session`
+- `tmux detach` Detach latest session
+  - `[-s target-session]` Detach all clients currently attached to the `target-session`
+  - `[-t target-client]` Detach the current client if bound to a key `target-client`
 - `tmux kill-session [-t target-session]` Destroy the given session and close any windows linked to it
 - `tmux kill-server` Kill the tmux server and clients and destroy all sessions
+- `tmux switch -t [target-session]` Switch between sessions
 
 ## Alacritty
 
 ### Tmux bindings
 
-- `⌘ + u` Grab and open any URL from the terminal window
-- `⌘ + s` Save environment
-- `⌘⇧ + s` Restore environment
-- `⌘ + d` Vertical pane
-- `⌘⇧ + d` Horizontal pane
-- `⌘ + w` Close pane/tab
-- `⌘ + h` Move cursor to left pane
-- `⌘ + j` Move cursor to bottom pane
-- `⌘ + k` Move cursor to top pane
-- `⌘ + l` Move cursor to left pane
-- `⌘ + t` Open a new tab
-- `⌘ + r` Rename a tab
-- `⌘⇧ + r` Rename a session
-- `⌘⇧ + h` Previous tab
-- `⌘⇧ + l` Next tab
-- `⌘ + ←` Resize pane to left
-- `⌘ + ↓` Resize pane to down
-- `⌘ + ↑` Resize pane to up
-- `⌘ + →` Resize pane to right
-- `⌘ + 1` Switch to tab #1
-- `⌘ + 2` Switch to tab #2
-- `⌘ + 3` Switch to tab #3
-- `⌘ + 4` Switch to tab #4
-- `⌘ + 5` Switch to tab #5
-- `⌘ + 6` Switch to tab #6
-- `⌘ + 7` Switch to tab #7
-- `⌘ + 8` Switch to tab #8
-- `⌘ + 9` Switch to tab #9
+- `⌘ + :`   Run a tmux command
+- `⌘ + u`   Grab and open any URL from the terminal window
+- `⌘ + p`   Show session tree
+- `⌘ + s`   Save environment
+- `⌘⇧ + s`  Restore environment
+- `⌘ + d`   Vertical pane
+- `⌘⇧ + d`  Horizontal pane
+- `⌘ + w`   Close pane/tab
+- `⌘ + t`   Open a new tab
+- `⌘ + r`   Rename a tab
+- `⌘⇧ + r`  Rename a session
+- `⌘⇧ + h`  Previous tab
+- `⌘⇧ + l`  Next tab
+- `⌘⇧ + ←`  Previous tmux session
+- `⌘⇧ + →`  Next tmux session
+- `⌘ + h`   Move cursor to left pane
+- `⌘ + j`   Move cursor to bottom pane
+- `⌘ + k`   Move cursor to top pane
+- `⌘ + l`   Move cursor to left pane
+- `⌘ + ←`   Resize pane to left
+- `⌘ + ↓`   Resize pane to down
+- `⌘ + ↑`   Resize pane to up
+- `⌘ + →`   Resize pane to right
+- `⌘ + 1`   Switch to tab #1
+- `⌘ + 2`   Switch to tab #2
+- `⌘ + 3`   Switch to tab #3
+- `⌘ + 4`   Switch to tab #4
+- `⌘ + 5`   Switch to tab #5
+- `⌘ + 6`   Switch to tab #6
+- `⌘ + 7`   Switch to tab #7
+- `⌘ + 8`   Switch to tab #8
+- `⌘ + 9`   Switch to tab #9
 
 ### Vi-mode
 
@@ -258,6 +358,8 @@ Leader key `,`
 - `E` Forward to the end of WORD [count] inclusive
 - `b` [count] words backward
 - `B` [count] WORDS backward
+- `qq` Record a macro
+- `Q` Replay a macro recording
 
 ##### Custom Mappings in Normal Mode
 
@@ -511,22 +613,6 @@ Use `v` for visual select. `i` is for inner and `a` for around selection.
 - `o` Open URL, bookmark, or history entry
 - `O` Open URL, bookmark, or history entry in a new tab
 - `gs` View page source
-
-## Mac-specific
-
-Checkout keyboards' [map](../firmware/qmk_firmware/keyboards) to find out key place.
-
-- `⌃⇧⌥⌘ + Space` Toogle search (LaunchBar)
-- `⌃⇧⌥⌘ + P` Toggle password manager (1password Quick Access)
-- `⌃⇧⌥⌘ + V` Start/Stop video (Zoom)
-- `⌃⇧⌥⌘ + A` Mute/Unmute audio (Zoom)
-- `⌃⇧⌥⌘ + Z` Start/Stop screen sharing (Zoom)
-- `⌃⇧⌥⌘ + X` Pause/Resume screen sharing (Zoom)
-- `⌃⇧⌥⌘ + M` On/Off microphone (Mic drop)
-- `⌃⇧⌥⌘ + \` Toggle network monitor (Little Snitch)
-- `⌃⌥ + 7` Toogle battery/power dropdown (iStat Menus)
-- `⌃⌥ + 8` Toggle network dropdown (iStat Menus)
-- `⌃⌥ + 9` Toggle time dropdown (iStat Menus)
 
 ## Footnote
 

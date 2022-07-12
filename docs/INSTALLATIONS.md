@@ -107,6 +107,14 @@ Output keycode and modifiers of event
 skhd --observe
 ```
 
+## Installing/Upgrading Github CLI Extensions
+
+```shell
+❯ gh extension install dlvhdr/gh-dash
+❯ gh extension install mislav/gh-contrib
+❯ gh extension upgrade --all
+```
+
 ## Manual Installations
 
 - Check out [MAC.md](MAC.md) for a list of macOS-specific apps and extensions.
