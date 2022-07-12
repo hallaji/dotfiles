@@ -1,2 +1,6 @@
-brew "mongodb-community@3.6"
+tap "mongodb/brew"
+tap "cultureamp/tap"
+tap "cultureamp/web-team-devtools"
+brew "mongodb-community@4.4"
+brew "mongosh"
 cask "robo-3t"
