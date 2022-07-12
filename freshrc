@@ -123,7 +123,8 @@ fresh-options --filter=erb --file=~/.zshrc --marker
   type direnv > /dev/null && fresh shell/direnv.sh
   type jenv > /dev/null && fresh shell/jenv.sh
   type pyenv > /dev/null && fresh shell/pyenv.sh
-  brew --prefix mongodb-community@3.6 > /dev/null && fresh shell/mongo.sh
+  brew --prefix mongodb-community@4.4 > /dev/null && fresh shell/mongo.sh
+  brew --prefix postgresql@13 > /dev/null && fresh shell/psql.sh
   brew --prefix asdf > /dev/null && fresh shell/asdf.sh
 fresh-options
 

@@ -5,4 +5,4 @@
 # ██║ ╚═╝ ██║╚██████╔╝██║ ╚████║╚██████╔╝╚██████╔╝██████╔╝██████╔╝
 # ╚═╝     ╚═╝ ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝  ╚═════╝ ╚═════╝ ╚═════╝
 
-export PATH="/usr/local/opt/mongodb-community@3.6/bin:$PATH"
+export PATH="/usr/local/opt/mongodb-community@4.4/bin:$PATH"
