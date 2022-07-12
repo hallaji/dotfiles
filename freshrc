@@ -119,13 +119,14 @@ fresh-options --filter=erb --file=~/.zshrc --marker
   fresh shell/bat.sh
   fresh shell/functions.sh
   fresh shell/aliases.sh
-  type starship > /dev/null && fresh shell/starship.sh
-  type direnv > /dev/null && fresh shell/direnv.sh
-  type jenv > /dev/null && fresh shell/jenv.sh
-  type pyenv > /dev/null && fresh shell/pyenv.sh
+  type starship > /dev/null && fresh shell/zsh/starship.sh
+  type direnv > /dev/null && fresh shell/zsh/direnv.sh
+  type jenv > /dev/null && fresh shell/zsh/jenv.sh
+  type pyenv > /dev/null && fresh shell/zsh/pyenv.sh
+  brew --prefix asdf > /dev/null && fresh shell/zsh/asdf.sh
   brew --prefix mongodb-community@4.4 > /dev/null && fresh shell/mongo.sh
   brew --prefix postgresql@13 > /dev/null && fresh shell/psql.sh
-  brew --prefix asdf > /dev/null && fresh shell/asdf.sh
+  type op > /dev/null && fresh shell/zsh/1password.sh
 fresh-options
 
 # ┌─┐┌┬┐┌─┐┬─┐┌─┐┬ ┬┬┌─┐

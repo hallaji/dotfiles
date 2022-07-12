@@ -6,7 +6,11 @@
 # ██║  ██║███████║██████╔╝██║
 # ╚═╝  ╚═╝╚══════╝╚═════╝ ╚═╝
 
-# @see https://asdf-vm.com
-# @see https://github.com/asdf-vm/asdf
+# https://asdf-vm.com
+# https://github.com/asdf-vm/asdf
 
-source "$(brew --prefix asdf)/asdf.sh"
+# ZSH & Homebrew
+source "$(brew --prefix asdf)/libexec/asdf.sh"
+
+# https://github.com/halcyon/asdf-java#java_home
+source ~/.asdf/plugins/java/set-java-home.zsh
