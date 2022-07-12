@@ -12,12 +12,12 @@ bindkey -v
 export KEYTIMEOUT=20
 
 # @see shell/function.sh
-zle -N quick_edit_widget edit_source
-bindkey "^p" quick_edit_widget
+zle -N edit_source_directory_widget edit_source_directory
+bindkey "^p" edit_source_directory_widget
 
 # @see shell/function.sh
-zle -N quick_change_widget change_source
-bindkey "^o" quick_change_widget
+zle -N change_source_directory_widget change_source_directory
+bindkey "^o" change_source_directory_widget
 
 # Navigate history
 bindkey '^k' up-history
