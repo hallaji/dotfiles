@@ -22,3 +22,18 @@ defaults:
   prsLimit: 20
   issuesLimit: 20
   view: prs
+theme:
+  colors:
+    text:
+      primary: "#E2E1ED"
+      secondary: "#666CA6"
+      inverted: "#242347"
+      faint: "#3E4057"
+      warning: "#F23D5C"
+      success: "#3DF294"
+    background:
+      selected: "#39386B"
+    border:
+      primary: "#383B5B"
+      secondary: "#39386B"
+      faint: "#2B2B40"
