@@ -57,6 +57,7 @@ Checkout keyboard [keymaps](../keyboards) to find the key place.
 
 #### Menubar
 
+- `⌘ + Space` Toogle search (LaunchBar)
 - `⌃⇧⌥⌘ + C` Toggle calendar dropdown (Itsycal)
 - `⌃⇧⌥⌘ + ]` Toggle network monitor (Little Snitch)
 - `⌃⇧⌥⌘ + [` Toggle network dropdown (iStat Menus)
@@ -65,7 +66,6 @@ Checkout keyboard [keymaps](../keyboards) to find the key place.
 - `⌃⇧⌥⌘ + I` Toggle time dropdown (iStat Menus)
 - `⌃⇧⌥⌘ + U` Toogle computer awake mode (Lungo) [via SKHD]
 - `⌃⇧⌥⌘ + Y` Toogle mic/camera indicator (Micro Snitch)
-- `⌃⇧⌥⌘ + Space` Toogle search (LaunchBar)
 
 #### Meetings
 
