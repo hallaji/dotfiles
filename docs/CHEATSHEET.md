@@ -51,6 +51,40 @@
 
 ## Steering Focus
 
+### Windows
+
+- Resize a window: `⌃⌥⌘` + (`←` | `↓` | `↑` | `→`)
+- Focus on a window: `⌃⌥⌘` + (`h` | `j` | `k` | `l`)
+- Move a window: `⌃⌥⌘` + `home` | `pagedown` | `pageup` | `end`
+
+### Terminals (Alacritty)
+
+- Resize a pane: `⌘` + (`←` | `↓` | `↑` | `→`)
+- Focus on a pane: `⌘` + (`h` | `j` | `k` | `l`)
+- Move the cursor in vi-mode: `h` | `l` (left or right)
+- Go through history in vi-mode: `j` | `k` (down or up)
+- Move the cursor in Alacritty vi-mode: `h` | `j` | `k` | `l`
+- Jump between Tmux tabs `⌘⇧` + (`h` | `l`)
+- Jump between Tmux sessions `⌘⇧` + (`←` | `→`)
+
+### Editors (VIM / Visual Studio Code)
+
+- Resize a pane: `⌃` + (`←` | `↓` | `↑` | `→`)
+- Focus on a pane: `⌃` + (`h` | `j` | `k` | `l`)
+- Move the cursor: `h` | `j` | `k` | `l`
+
+### Browsers (Vimium / Vimari extensions)
+
+- Scroll: `h` | `j` | `k` | `l`
+- Scroll half a page: `u` | `d` (up or down )
+- Go through history `H` | `L` (back or forwrad)
+- Go to a tab `K` | `J` (left or right)
+
+### General
+
+- Move `←` | `↓` | `↑` | `→`
+- Navigate `home` | `pagedown` | `pageup` | `end`
+
 ### macOS
 
 Checkout keyboard [keymaps](../keyboards) to find the key place.
@@ -92,40 +126,6 @@ Checkout keyboard [keymaps](../keyboards) to find the key place.
 - `⌃⇧⌥⌘ + D` Show desktop [via SKHD]
 - `⌃⇧⌥⌘ + T` New terminal in current space [via SKHD]
 - `⌃⇧⌥⌘ + R` New browser in current space [via SKHD]
-
-### Windows
-
-- Resize a window: `⌃⌥⌘` + (`←` | `↓` | `↑` | `→`)
-- Focus on a window: `⌃⌥⌘` + (`h` | `j` | `k` | `l`)
-- Move a window: `⌃⌥⌘` + `home` | `pagedown` | `pageup` | `end`
-
-### Terminals (Alacritty)
-
-- Resize a pane: `⌘` + (`←` | `↓` | `↑` | `→`)
-- Focus on a pane: `⌘` + (`h` | `j` | `k` | `l`)
-- Move the cursor in vi-mode: `h` | `l` (left or right)
-- Go through history in vi-mode: `j` | `k` (down or up)
-- Move the cursor in Alacritty vi-mode: `h` | `j` | `k` | `l`
-- Jump between Tmux tabs `⌘⇧` + (`h` | `l`)
-- Jump between Tmux sessions `⌘⇧` + (`←` | `→`)
-
-### Editors (VIM / Visual Studio Code)
-
-- Resize a pane: `⌃` + (`←` | `↓` | `↑` | `→`)
-- Focus on a pane: `⌃` + (`h` | `j` | `k` | `l`)
-- Move the cursor: `h` | `j` | `k` | `l`
-
-### Browsers (Vimium / Vimari extensions)
-
-- Scroll: `h` | `j` | `k` | `l`
-- Scroll half a page: `u` | `d` (up or down )
-- Go through history `H` | `L` (back or forwrad)
-- Go to a tab `K` | `J` (left or right)
-
-### General
-
-- Move `←` | `↓` | `↑` | `→`
-- Navigate `home` | `pagedown` | `pageup` | `end`
 
 ## Yabai & SKHD
 
@@ -222,7 +222,6 @@ Checkout keyboard [keymaps](../keyboards) to find the key place.
   - `V` Select line
   - `y` Copy selection
 - `⌃b + b` List buffers
-- `⌃b + p` Paste from clipboard/buffer
 - `⌃b + P` Choose buffer
 
 ### Tmux Commands
@@ -243,6 +242,8 @@ Checkout keyboard [keymaps](../keyboards) to find the key place.
 
 ## Alacritty
 
+[alacritty/alacritty](https://github.com/alacritty/alacritty)
+
 ### Tmux bindings
 
 - `⌘ + :`   Run a tmux command
@@ -253,6 +254,10 @@ Checkout keyboard [keymaps](../keyboards) to find the key place.
 - `⌘ + d`   Vertical pane
 - `⌘⇧ + d`  Horizontal pane
 - `⌘ + w`   Close pane/tab
+- `⌘ + h`   Move cursor to left pane
+- `⌘ + j`   Move cursor to bottom pane
+- `⌘ + k`   Move cursor to top pane
+- `⌘ + l`   Move cursor to left pane
 - `⌘ + t`   Open a new tab
 - `⌘ + r`   Rename a tab
 - `⌘⇧ + r`  Rename a session
@@ -260,10 +265,6 @@ Checkout keyboard [keymaps](../keyboards) to find the key place.
 - `⌘⇧ + l`  Next tab
 - `⌘⇧ + ←`  Previous tmux session
 - `⌘⇧ + →`  Next tmux session
-- `⌘ + h`   Move cursor to left pane
-- `⌘ + j`   Move cursor to bottom pane
-- `⌘ + k`   Move cursor to top pane
-- `⌘ + l`   Move cursor to left pane
 - `⌘ + ←`   Resize pane to left
 - `⌘ + ↓`   Resize pane to down
 - `⌘ + ↑`   Resize pane to up
@@ -277,6 +278,8 @@ Checkout keyboard [keymaps](../keyboards) to find the key place.
 - `⌘ + 7`   Switch to tab #7
 - `⌘ + 8`   Switch to tab #8
 - `⌘ + 9`   Switch to tab #9
+- `⌘ + c`   Start tmux copy mode
+- `⌘ + v`   Paste from clipboard
 
 ### Vi-mode
 
