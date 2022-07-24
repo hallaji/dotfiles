@@ -16,6 +16,7 @@
   - [Tmux](#tmux)
     - [Tmux Glossary](#tmux-glossary)
     - [Tmux Key Bindings](#tmux-key-bindings)
+      - [Custom Key Bindings](#custom-key-bindings)
     - [Tmux Commands](#tmux-commands)
   - [Alacritty](#alacritty)
     - [Tmux bindings](#tmux-bindings)
@@ -176,29 +177,53 @@ Checkout keyboard [keymaps](../keyboards) to find the key place.
 
 ### Tmux Key Bindings
 
-Prefix = `⌃ + b`
+- `⌃b + :` Run a tmux command
+- `⌃b + t` Show digital clock
+- `⌃b + s` List sessions
+- `⌃b + w` List windows
+- `⌃b + (` Switch to previous session
+- `⌃b + )` Switch to next session
+- `⌃b + ,` Rename a window
+- `⌃b + I` Install tmux plugins
+- `⌃b + U` Update tmux plugins
+- `⌃b + ⌥u` Uninstall/remove tmux plugin
+- `⌃b + c` Create a window/tab
+- `⌃b + &` Close a window/tab
+- `⌃b + %` Split window/tab vertically (create vertical pane)
+- `⌃b + "` Split window/tab horizontally (create horizontal pane)
+- `⌃b + x` Close a window/tab or pane
+- `⌃b + <number>` Jump to specific window/tab
+- `⌃b + d` Detach current session
+- `⌃b + [` Start copy mode
+  - `Space` Start selection
+  - `Enter` Copy selection
+  - `q` Quit mode
+- `⌃b + ]` Paste copied text from clipboard
 
-- `Prefix + :` Run a tmux command
-- `Prefix + r` Reload tmux config file
-- `Prefix + w` Show session tree
-- `Prefix + (` Switch to previous session
-- `Prefix + )` Switch to next session
-- `Prefix + ,` Rename a window
-- `Prefix + I` Install tmux plugins
-- `Prefix + U` Update tmux plugins
-- `Prefix + alt + u` Uninstall tmux plugins
-- `Prefix + v` Create vertical pane
-- `Prefix + s` Create horizontal pane
-- `Prefix + c` Create a window/tab
-- `Prefix + &` Close a window/tab
-- `Prefix + x` Close a pane
-- `Prefix + h`, `Prefix + j`, `Prefix + k`, `Prefix + l` Move between panes
-- `Prefix + H`, `Prefix + J`, `Prefix + K`, `Prefix + L` Resize panes
-- `Prefix + <number>` Jump to specific window/tab
-- `Prefix + d` Detach current session
-- `Prefix + u` Grab and open any URL from the terminal window
-- `Prefix + S` Save environment
-- `Prefix + R` Restore environment
+#### Custom Key Bindings
+
+- `⌃b + ⌃r` Reload tmux config file
+- `⌃b + ⌃s` Sync panes
+- `⌃b + S` Save environment
+- `⌃b + R` Restore environment
+- `⌃b + h`, `⌃b + j`, `⌃b + k`, `⌃b + l` Move between panes
+- `⌃b + H`, `⌃b + J`, `⌃b + K`, `⌃b + L` Resize panes
+- `⌃b + u` Grab and open any URL from the terminal window
+- `⌃⇧ + ←` Swap current window with left
+- `⌃⇧ + →` Swap current window with right
+- `⌃b + y`
+  - Copy text from the command line to the clipboard (normal mode)
+  - Copy selection to system clipboard (copy mode)
+- `⌃b + Y`
+  - Copy current working directory to the clipboard (normal mode)
+  - Copy selection and paste it to the command line (copy mode)
+- `⌃b + Enter` Enter copy mode
+  - `v` Begin selection
+  - `V` Select line
+  - `y` Copy selection
+- `⌃b + b` List buffers
+- `⌃b + p` Paste from clipboard/buffer
+- `⌃b + P` Choose buffer
 
 ### Tmux Commands
 
