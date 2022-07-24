@@ -10,7 +10,7 @@ Unplug the keyboard, hold down `Space + B`, plug in your keyboard and wait a sec
 
 ## KEYCHRON Q4
 
-Unplug the keyboard, hold down `ESC`, plug in your keyboard and wait a second before releasing the key.
+Unplug the keyboard, hold down the key located at `[0][0]`, plug in your keyboard and wait a second before releasing the key.
 
 ```shell
 ❯ flash keychron/q4/q4_ansi_stm32l432 hallaji --build
