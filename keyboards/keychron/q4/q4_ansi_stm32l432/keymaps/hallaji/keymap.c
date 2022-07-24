@@ -52,7 +52,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         /*------------------------------------------------------------------------------------------------------------*/
         KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_RSFT,
         /*------------------------------------------------------------------------------------------------------------*/
-        KC_LCTL, KC_LOPTN, KC_LCMMD, KC_SPC, HYPR(KC_SPC), LT(_THIRD, KC_NO), HYPR(KC_D), HYPR(KC_A)
+        KC_LCTL, KC_LOPTN, KC_LCMMD, KC_SPC, RGUI(KC_SPC), LT(_THIRD, KC_NO), HYPR(KC_D), HYPR(KC_A)
         /*------------------------------------------------------------------------------------------------------------*/
         ),
 
@@ -86,7 +86,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         /*------------------------------------------------------------------------------------------------------------*/
         KC_TRNS, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, HYPR(KC_X), HYPR(KC_Z),
         /*------------------------------------------------------------------------------------------------------------*/
-        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, HYPR(KC_NO), HYPR(KC_NO), HYPR(KC_L), HYPR(KC_V)
+        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, HYPR(KC_NO), HYPR(KC_L), HYPR(KC_V)
         /*------------------------------------------------------------------------------------------------------------*/
         ),
 
@@ -100,7 +100,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         /*------------------------------------------------------------------------------------------------------------*/
         KC_TRNS, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
         /*------------------------------------------------------------------------------------------------------------*/
-        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_NO, KC_NO, KC_NO, KC_NO
+        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_NO, KC_NO, KC_NO
         /*------------------------------------------------------------------------------------------------------------*/
         )};
 
