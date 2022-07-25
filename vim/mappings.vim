@@ -6,35 +6,37 @@
 " ██║ ╚═╝ ██║██║  ██║██║     ██║     ██║██║ ╚████║╚██████╔╝███████║
 " ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝     ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝
 
-let mapleader = ',' " Default leader is backslash \
+" https://neovim.io/doc/user/map.html
+
+let mapleader = ',' " If not set or empty, a backslash is used instead.
 
 " ┌─┐┌─┐┌┐┌┌─┐┬─┐┌─┐┬
 " │ ┬├┤ │││├┤ ├┬┘├─┤│
 " └─┘└─┘┘└┘└─┘┴└─┴ ┴┴─┘
 
 " Edit my dotfiles in a new tab
-nnoremap <leader>dot :tabedit $DOTFILES<cr>
+nnoremap <silent> <leader>dot :tabedit $DOTFILES<cr>
 
 " Make Y behave like other capitals
 nnoremap Y y$
 
-" qq to record, Q to replay
+" Replay macro recording with Q
 nnoremap Q @q
 
 " Remove search highlights
-nmap <silent> <leader><space> :nohlsearch<cr>
+nmap <leader><space> :nohlsearch<cr>
 
-" Commentary
+" Comment a line
 map <leader>/ :Commentary<cr>
 
 " Trim the trailing whitespaces
-nmap <silent> <leader>z :TrimWhiteSpaces<cr>
+nmap <leader>z :TrimWhiteSpaces<cr>
 
 " Toggle the ruler
-nnoremap <silent> <leader>r :ToggleRuler<cr>
+nnoremap <leader>r :ToggleRuler<cr>
 
 " Toggle wrapping
-nnoremap <silent> <leader>w :ToggleWrap<cr>
+nnoremap <leader>w :ToggleWrap<cr>
 
 " Neovim support showing relative number
 nnoremap <leader>n :set relativenumber!<cr>
@@ -99,26 +101,30 @@ nnoremap <leader>q :q<cr>
 nnoremap <leader>Q :qa!<cr>
 
 " @TODO: add ,f to search
+" ┌┐┌┌─┐┌┬┐┬─┐┬ ┬
+" │││├┤  │ ├┬┘│││
+" ┘└┘└─┘ ┴ ┴└─└┴┘
+
+nnoremap <silent> _ :Explore<cr>
 
 " ┌┐┌┌─┐┬─┐┌┬┐┌┬┐┬─┐┌─┐┌─┐
 " │││├┤ ├┬┘ ││ │ ├┬┘├┤ ├┤
 " ┘└┘└─┘┴└──┴┘ ┴ ┴└─└─┘└─┘
 
-nnoremap <silent> <leader>, :NERDTreeToggle<cr>
+nnoremap <silent> ` :NERDTreeFocus<cr>
 
 " ┌┬┐┌─┐┬─┐┬┌─┌┬┐┌─┐┬ ┬┌┐┌
 " │││├─┤├┬┘├┴┐ │││ │││││││
 " ┴ ┴┴ ┴┴└─┴ ┴─┴┘└─┘└┴┘┘└┘
 
-nnoremap <C-m> :MarkdownPreview<cr>
-nnoremap <leader>m :MarkdownPreview<cr>
+nmap <leader>m <Plug>MarkdownPreviewToggle
 
 " ┌─┐┬ ┬┌─┐┬┌┬┐┬┬  ┬┌─┐
 " ├┤ │ ││ ┬│ │ │└┐┌┘├┤
 " └  └─┘└─┘┴ ┴ ┴ └┘ └─┘
 
 nnoremap <C-g> :Git<cr>
-nnoremap <leader>gg :Git<cr>
+nnoremap <leader>g :Git<cr>
 
 " ┌─┐┬┌┬┐┌─┐┬ ┬┌┬┐┌┬┐┌─┐┬─┐
 " │ ┬│ │ │ ┬│ │ │  │ ├┤ ├┬┘
