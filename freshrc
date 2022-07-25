@@ -185,6 +185,7 @@ fresh-options --file=~/.vimrc --marker='"'
   fresh vim/plugins/markdown-preview.vim
   fresh vim/plugins/vim-go.vim
   fresh vim/plugins/fzf.vim
+  fresh vim/plugins/nnn.vim
   fresh vim/plugins/startify.vim
   fresh vim/functions.vim
   fresh vim/commands.vim
@@ -298,6 +299,7 @@ fresh-options --file=~/.Brewfile
   fresh config/homebrew/Brewfile.cltrmp
 fresh-options
 
+
 # ███████╗██╗ ██████╗ ██╗     ███████╗████████╗
 # ██╔════╝██║██╔════╝ ██║     ██╔════╝╚══██╔══╝
 # █████╗  ██║██║  ███╗██║     █████╗     ██║
@@ -306,3 +308,23 @@ fresh-options
 # ╚═╝     ╚═╝ ╚═════╝ ╚══════╝╚══════╝   ╚═╝
 
 fresh xero/figlet-fonts . --file=~/.figlet/
+
+
+# ███╗   ██╗███╗   ██╗███╗   ██╗
+# ████╗  ██║████╗  ██║████╗  ██║
+# ██╔██╗ ██║██╔██╗ ██║██╔██╗ ██║
+# ██║╚██╗██║██║╚██╗██║██║╚██╗██║
+# ██║ ╚████║██║ ╚████║██║ ╚████║
+# ╚═╝  ╚═══╝╚═╝  ╚═══╝╚═╝  ╚═══╝
+
+fresh jarun/nnn . --file=vendor/nnn/
+make_nnn() {
+  cd ~/.fresh/source/jarun/nnn && make O_GITSTATUS=1 O_NERD=1 &>/dev/null
+  ln -sf ~/.fresh/source/jarun/nnn/nnn ~/bin/nnn
+}
+
+# ---
+
+fresh_after_build() {
+  make_nnn
+}

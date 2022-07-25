@@ -106,6 +106,9 @@ call s:highlight ('CursorLine', { 'bg': s:background })
 call s:highlight ('CursorLineNr', { 'bg': s:background, 'fg': s:color08 })
 
 call s:highlight ('VertSplit', { 'bg': s:background, 'fg': s:line })
+call s:link ('VertSplit', 'WinSeparator')
+call s:link ('VertSplit', 'NnnVertSplit')
+call s:link ('VertSplit', 'NnnWinSeparator')
 
 call s:highlight ('SignColumn', { 'bg': s:background, 'fg': s:pale })
 call s:highlight ('LineNr', { 'bg': s:background, 'fg': s:pale })

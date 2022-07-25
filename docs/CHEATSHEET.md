@@ -409,6 +409,10 @@ Leader key `,`
 - `⌃ + s`, `<leader>s` Save
 - `⌃ + q`, `<leader>q` Quit
 - `<leader>Q` Quit all
+- `Backtick` Open NERDTree explorer
+- `-` Open NNN picker
+- `_` Open Netrw explorer
+- `~` Open NNN explorer
 
 #### Insert Mode
 

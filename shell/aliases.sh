@@ -27,6 +27,7 @@ alias ,hs="history | grep $* -i"
 # └─┘└└─┘┴└─┘┴ ┴  └─┘─┴┘┴ ┴
 
 alias ,e="nvim" # https://github.com/neovim/neovim
+alias ,ls="nnn -eoi" # https://github.com/jarun/nnn
 alias ,dot="cd $DOTFILES && $EDITOR $DOTFILES"
 
 # ┌─┐┬┌┬┐

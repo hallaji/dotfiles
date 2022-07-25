@@ -113,6 +113,13 @@ nnoremap <silent> _ :Explore<cr>
 
 nnoremap <silent> ` :NERDTreeFocus<cr>
 
+" ┌┐┌┌┐┌┌┐┌
+" │││││││││
+" ┘└┘┘└┘┘└┘
+
+nnoremap <silent> - :NnnPicker %:p:h<CR>
+nnoremap <silent> ~ :NnnExplorer<CR>
+
 " ┌┬┐┌─┐┬─┐┬┌─┌┬┐┌─┐┬ ┬┌┐┌
 " │││├─┤├┬┘├┴┐ │││ │││││││
 " ┴ ┴┴ ┴┴└─┴ ┴─┴┘└─┘└┴┘┘└┘
