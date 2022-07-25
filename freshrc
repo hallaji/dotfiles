@@ -185,6 +185,7 @@ fresh-options --file=~/.vimrc --marker='"'
   fresh vim/plugins/markdown-preview.vim
   fresh vim/plugins/vim-go.vim
   fresh vim/plugins/fzf.vim
+  fresh vim/plugins/startify.vim
   fresh vim/functions.vim
   fresh vim/commands.vim
   fresh vim/settings.vim

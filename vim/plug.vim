@@ -43,6 +43,7 @@ Plug 'tpope/vim-commentary'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'edkolev/tmuxline.vim'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
+Plug 'mhinz/vim-startify' " https://github.com/mhinz/vim-startify
 
 " ┌─┐┬┌┬┐
 " │ ┬│ │
