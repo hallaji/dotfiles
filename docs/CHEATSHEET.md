@@ -248,7 +248,8 @@ Checkout keyboard [keymaps](../keyboards) to find the key place.
 
 - `⌘ + :`   Run a tmux command
 - `⌘ + u`   Grab and open any URL from the terminal window
-- `⌘ + p`   Show session tree
+- `⌘ + p`   Look up in files/directories
+- `⌘⇧ + p`  Show session tree
 - `⌘ + s`   Save environment
 - `⌘⇧ + s`  Restore environment
 - `⌘ + d`   Vertical pane

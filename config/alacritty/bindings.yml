@@ -17,7 +17,8 @@ key_bindings:
   # Tmux bindings:
   - { key: Semicolon, mods: Command,       chars: "\x02\x3a" } # Run a tmux command
   - { key: U,         mods: Command,       chars: "\x02\x75" } # Grab and open any URL from the terminal window
-  - { key: P,         mods: Command,       chars: "\x02\x77" } # Show sessions tree
+  - { key: P,         mods: Command,       chars: "\x10"     } # Look up in files/directories
+  - { key: P,         mods: Command|Shift, chars: "\x02\x77" } # Show sessions tree
   - { key: S,         mods: Command,       chars: "\x02\x53" } # Save environment
   - { key: S,         mods: Command|Shift, chars: "\x02\x52" } # Restore environment
   - { key: D,         mods: Command,       chars: "\x02\x25" } # Vertical pane
