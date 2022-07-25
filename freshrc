@@ -122,6 +122,7 @@ fresh-options --filter=erb --file=~/.zshrc --marker
   type starship > /dev/null && fresh shell/zsh/starship.sh
   type direnv > /dev/null && fresh shell/zsh/direnv.sh
   type jenv > /dev/null && fresh shell/zsh/jenv.sh
+  type jump > /dev/null && fresh shell/zsh/jump.sh
   type pyenv > /dev/null && fresh shell/zsh/pyenv.sh
   brew --prefix asdf > /dev/null && fresh shell/zsh/asdf.sh
   brew --prefix mongodb-community@4.4 > /dev/null && fresh shell/mongo.sh
