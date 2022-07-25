@@ -34,6 +34,7 @@ fi
 # ┌─┐┬┌┬┐┬ ┬┬ ┬┌┐
 # │ ┬│ │ ├─┤│ │├┴┐
 # └─┘┴ ┴ ┴ ┴└─┘└─┘
+# https://github.com
 
 export GITHUB_TOKEN=<%= ENV["GITHUB_TOKEN"] %>
 export GITHUB_REGISTRY_TOKEN=<%= ENV["GITHUB_REGISTRY_TOKEN"] %>
