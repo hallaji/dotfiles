@@ -1,0 +1,52 @@
+#!/bin/bash -e
+
+# ┌─┐┬ ┬┌┬┐┬  ┬┌┐┌┬┌─┌─┐  ┬─┐┌─┐┌┬┐┌─┐┬  ┬┌─┐┬
+# └─┐└┬┘││││  ││││├┴┐└─┐  ├┬┘├┤ ││││ │└┐┌┘├─┤│
+# └─┘ ┴ ┴ ┴┴─┘┴┘└┘┴ ┴└─┘  ┴└─└─┘┴ ┴└─┘ └┘ ┴ ┴┴─┘
+
+# List of files and directories that are symlinked by fresh
+
+links=(
+  ~/.aws/config
+  ~/.asdfrc
+  ~/.bundle/config
+  ~/.config/alacritty/alacritty.yml
+  ~/.config/gh-dash/config.yml
+  ~/.config/nvim/coc-settings.json
+  ~/.config/nvim/init.vim
+  ~/.config/pip/pip.conf
+  ~/.config/starship.toml
+  ~/.ctags
+  ~/.Brewfile
+  ~/.figlet/
+  ~/.gitconfig
+  ~/.gitignore
+  ~/.gitmessage
+  ~/.gnupg/gpg.conf
+  ~/.gnupg/gpg-agent.conf
+  ~/.npmrc
+  ~/.skhdrc
+  ~/.ssh/config
+  ~/.tmux.conf
+  ~/.tmux/plugins/tpm/
+  ~/.vimrc
+  ~/.vim/coc-settings.json
+  ~/.vim/colors/catamaran.vim
+  ~/.yabairc
+  ~/.zprofile
+  ~/.zshenv
+  ~/.zshrc
+)
+
+for item in ${links[@]}; do
+  echo $item
+done
+
+echo "Remove all? (y/n)"
+read -r operation
+
+if [ "$operation" = "y" ]; then
+  for item in ${links[@]}; do
+    rm -rf $item
+  done
+fi
