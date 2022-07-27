@@ -2,17 +2,16 @@
 
 - [Cheat Sheet](#cheat-sheet)
   - [Steering Focus](#steering-focus)
-    - [macOS](#macos)
-      - [Menubar](#menubar)
-      - [Meetings](#meetings)
-      - [Password Manager](#password-manager)
-      - [OS](#os)
-    - [Windows](#windows)
+    - [Spaces & Monitors (Yabai / SKHD)](#spaces--monitors-yabai--skhd)
     - [Terminals (Alacritty)](#terminals-alacritty)
-    - [Editors (VIM / Visual Studio Code)](#editors-vim--visual-studio-code)
-    - [Browsers (Vimium / Vimari extensions)](#browsers-vimium--vimari-extensions)
+    - [Editors (VIM / VSCode)](#editors-vim--vscode)
+    - [Browsers (Vimium / Vimari)](#browsers-vimium--vimari)
+  - [OS Shortcuts (macOS)](#os-shortcuts-macos)
+    - [Menubar](#menubar)
+    - [Meetings](#meetings)
+    - [Password Manager](#password-manager)
     - [General](#general)
-  - [Yabai & SKHD](#yabai--skhd)
+  - [Yabai / SKHD](#yabai--skhd)
   - [Tmux](#tmux)
     - [Tmux Glossary](#tmux-glossary)
     - [Tmux Key Bindings](#tmux-key-bindings)
@@ -51,11 +50,13 @@
 
 ## Steering Focus
 
-### Windows
+### Spaces & Monitors (Yabai / SKHD)
 
 - Resize a window: `⌃⌥⌘` + (`←` | `↓` | `↑` | `→`)
 - Focus on a window: `⌃⌥⌘` + (`h` | `j` | `k` | `l`)
-- Move a window: `⌃⌥⌘` + `home` | `pagedown` | `pageup` | `end`
+- Move a window: `⌃⌥⌘` + (`home` | `pagedown` | `pageup` | `end`)
+- Focus on a monitor by number `⌃⌥⌘` + (`1` | `2` | `3` | etc.)
+- Focus on the next space `⌃⌥⌘ + Backtick`
 
 ### Terminals (Alacritty)
 
@@ -66,30 +67,26 @@
 - Move the cursor in Alacritty vi-mode: `h` | `j` | `k` | `l`
 - Jump between Tmux tabs `⌘⇧` + (`h` | `l`)
 - Jump between Tmux sessions `⌘⇧` + (`←` | `→`)
+- Switch to a tab by number `⌘` + (`1` | `2` | `3` | etc.)
 
-### Editors (VIM / Visual Studio Code)
+### Editors (VIM / VSCode)
 
 - Resize a pane: `⌃` + (`←` | `↓` | `↑` | `→`)
 - Focus on a pane: `⌃` + (`h` | `j` | `k` | `l`)
 - Move the cursor: `h` | `j` | `k` | `l`
 
-### Browsers (Vimium / Vimari extensions)
+### Browsers (Vimium / Vimari)
 
 - Scroll: `h` | `j` | `k` | `l`
 - Scroll half a page: `u` | `d` (up or down )
 - Go through history `H` | `L` (back or forwrad)
 - Go to a tab `K` | `J` (left or right)
 
-### General
-
-- Move `←` | `↓` | `↑` | `→`
-- Navigate `home` | `pagedown` | `pageup` | `end`
-
-### macOS
+## OS Shortcuts (macOS)
 
 Checkout keyboard [keymaps](../keyboards) to find the key place.
 
-#### Menubar
+### Menubar
 
 - `⌘ + Space` Toogle search (LaunchBar)
 - `⌃⇧⌥⌘ + C` Toggle calendar dropdown (Itsycal)
@@ -101,7 +98,7 @@ Checkout keyboard [keymaps](../keyboards) to find the key place.
 - `⌃⇧⌥⌘ + U` Toogle computer awake mode (Lungo) [via SKHD]
 - `⌃⇧⌥⌘ + Y` Toogle mic/camera indicator (Micro Snitch)
 
-#### Meetings
+### Meetings
 
 - `⌃⇧⌥⌘ + M` End current meeting or join the next one otherwise (MeetingBar) [via SKHD]
 - `⌃⇧⌥⌘ + J` Join next meeting (MeetingBar)
@@ -111,43 +108,26 @@ Checkout keyboard [keymaps](../keyboards) to find the key place.
 - `⌃⇧⌥⌘ + A` Mute/Unmute audio (Zoom)
 - `⌃⇧⌥⌘ + V` Start/Stop video (Zoom)
 
-#### Password Manager
+### Password Manager
 
 - `⌃⇧⌥⌘ + 1` Toggle quick access for password manager (1password)
 - `⌃⇧⌥⌘ + 2` Open password manager (1password)
 - `⌃⇧⌥⌘ + 3` Lock password manager (1password)
 
-#### OS
+### General
 
 - `⌃⇧⌥⌘ + E` On/Off microphone (Applescript) [via macOS Shortcuts → Services]
 - `⌃⇧⌥⌘ + N` Show notification centre [via macOS Shortcuts → Mission Control]
-- `⌃⇧⌥⌘ + 0x32` Toggle menu bar `0x32 = backtick`
+- `⌃⇧⌥⌘ + Backtick` Toggle menu bar
 - `⌃⇧⌥⌘ + L` Lock screen [via SKHD]
 - `⌃⇧⌥⌘ + D` Show desktop [via SKHD]
 - `⌃⇧⌥⌘ + T` New terminal in current space [via SKHD]
 - `⌃⇧⌥⌘ + R` New browser in current space [via SKHD]
 
-## Yabai & SKHD
+## Yabai / SKHD
 
 [koekeishiya/yabai](https://github.com/koekeishiya/yabai) and [koekeishiya/skhd](https://github.com/koekeishiya/skhd)
 
-- `⌃⌥⌘ + 0x32` Focus on the next space
-- `⌃⌥⌘ + 1` Focus on monitor #1
-- `⌃⌥⌘ + 2` Focus on monitor #2
-- `⌃⌥⌘ + 3` Focus on monitor #3
-- `⌃⌥⌘ + 4` Focus on monitor #4
-- `⌃⌥⌘ + h` Focus on left window
-- `⌃⌥⌘ + j` Focus on bottom window
-- `⌃⌥⌘ + k` Focus on top window
-- `⌃⌥⌘ + l` Focus on right window
-- `⌃⌥⌘ + home` Move window left
-- `⌃⌥⌘ + pagedown` Move window bottom
-- `⌃⌥⌘ + pageup` Move window top
-- `⌃⌥⌘ + end` Move window right
-- `⌃⌥⌘ + ←` Resize window left
-- `⌃⌥⌘ + ↓` Resize window down
-- `⌃⌥⌘ + ↑` Resize window up
-- `⌃⌥⌘ + →` Resize window right
 - `⌃⌥⌘ + r` Rotate windows
 - `⌃⌥⌘ + y` Mirror tree y-axis
 - `⌃⌥⌘ + x` Mirror tree x-axis
@@ -163,8 +143,8 @@ Checkout keyboard [keymaps](../keyboards) to find the key place.
 - `⌃⌥⌘ + n` Create a desktop and follow focus
 - `⌃⌥⌘ + m` Create a desktop, move focused window and follow focus
 - `⌃⌥⌘ + 0` Balance size of windows
-- `⌃⌥⌘ + -` Set normal window opacity to minimum
-- `⌃⌥⌘ + =` Set normal window opacity to maximum
+- `⌃⌥⌘ + -` Set the opacity of normal windows to minimum
+- `⌃⌥⌘ + =` Set the opacity of normal windows to maximum
 
 ## Tmux
 
@@ -177,52 +157,52 @@ Checkout keyboard [keymaps](../keyboards) to find the key place.
 
 ### Tmux Key Bindings
 
-- `⌃b + :` Run a tmux command
-- `⌃b + t` Show digital clock
-- `⌃b + s` List sessions
-- `⌃b + w` List windows
-- `⌃b + (` Switch to previous session
-- `⌃b + )` Switch to next session
-- `⌃b + ,` Rename a window
-- `⌃b + I` Install tmux plugins
-- `⌃b + U` Update tmux plugins
-- `⌃b + ⌥u` Uninstall/remove tmux plugin
-- `⌃b + c` Create a window/tab
-- `⌃b + &` Close a window/tab
-- `⌃b + %` Split window/tab vertically (create vertical pane)
-- `⌃b + "` Split window/tab horizontally (create horizontal pane)
-- `⌃b + x` Close a window/tab or pane
-- `⌃b + <number>` Jump to specific window/tab
-- `⌃b + d` Detach current session
-- `⌃b + [` Start copy mode
+- `⌃ + b` + `:` Run a tmux command
+- `⌃ + b` + `t` Show digital clock
+- `⌃ + b` + `s` List sessions
+- `⌃ + b` + `w` List windows
+- `⌃ + b` + `(` Switch to previous session
+- `⌃ + b` + `)` Switch to next session
+- `⌃ + b` + `,` Rename a window
+- `⌃ + b` + `I` Install tmux plugins
+- `⌃ + b` + `U` Update tmux plugins
+- `⌃ + b` + `⌥u` Uninstall/remove tmux plugin
+- `⌃ + b` + `c` Create a window/tab
+- `⌃ + b` + `&` Close a window/tab
+- `⌃ + b` + `%` Split window/tab vertically (create vertical pane)
+- `⌃ + b` + `"` Split window/tab horizontally (create horizontal pane)
+- `⌃ + b` + `x` Close a window/tab or pane
+- `⌃ + b` + `<number>` Jump to specific window/tab
+- `⌃ + b` + `d` Detach current session
+- `⌃ + b` + `[` Start copy mode
   - `Space` Start selection
   - `Enter` Copy selection
   - `q` Quit mode
-- `⌃b + ]` Paste copied text from clipboard
+- `⌃ + b` + `]` Paste copied text from clipboard
 
 #### Custom Key Bindings
 
-- `⌃b + ⌃r` Reload tmux config file
-- `⌃b + ⌃s` Sync panes
-- `⌃b + S` Save environment
-- `⌃b + R` Restore environment
-- `⌃b + h`, `⌃b + j`, `⌃b + k`, `⌃b + l` Move between panes
-- `⌃b + H`, `⌃b + J`, `⌃b + K`, `⌃b + L` Resize panes
-- `⌃b + u` Grab and open any URL from the terminal window
+- `⌃ + b` + `⌃ + r` Reload tmux config file
+- `⌃ + b` + `⌃ + s` Sync panes
+- `⌃ + b` + `S` Save environment
+- `⌃ + b` + `R` Restore environment
+- `⌃ + b` + (`h` | `j` | `k` | `l`) Move between panes
+- `⌃ + b` + (`H` | `J` | `K` | `L`) Resize panes
+- `⌃ + b` + `u` Grab and open any URL from the terminal window
 - `⌃⇧ + ←` Swap current window with left
 - `⌃⇧ + →` Swap current window with right
-- `⌃b + y`
+- `⌃ + b` + `y`
   - Copy text from the command line to the clipboard (normal mode)
   - Copy selection to system clipboard (copy mode)
-- `⌃b + Y`
+- `⌃ + b` + `Y`
   - Copy current working directory to the clipboard (normal mode)
   - Copy selection and paste it to the command line (copy mode)
-- `⌃b + Enter` Enter copy mode
+- `⌃ + b` + `Enter` Enter copy mode
   - `v` Begin selection
   - `V` Select line
   - `y` Copy selection
-- `⌃b + b` List buffers
-- `⌃b + P` Choose buffer
+- `⌃ + b` + `b` List buffers
+- `⌃ + b` + `P` Choose buffer
 
 ### Tmux Commands
 
@@ -255,30 +235,9 @@ Checkout keyboard [keymaps](../keyboards) to find the key place.
 - `⌘ + d`   Vertical pane
 - `⌘⇧ + d`  Horizontal pane
 - `⌘ + w`   Close pane/tab
-- `⌘ + h`   Move cursor to left pane
-- `⌘ + j`   Move cursor to bottom pane
-- `⌘ + k`   Move cursor to top pane
-- `⌘ + l`   Move cursor to left pane
 - `⌘ + t`   Open a new tab
 - `⌘ + r`   Rename a tab
 - `⌘⇧ + r`  Rename a session
-- `⌘⇧ + h`  Previous tab
-- `⌘⇧ + l`  Next tab
-- `⌘⇧ + ←`  Previous tmux session
-- `⌘⇧ + →`  Next tmux session
-- `⌘ + ←`   Resize pane to left
-- `⌘ + ↓`   Resize pane to down
-- `⌘ + ↑`   Resize pane to up
-- `⌘ + →`   Resize pane to right
-- `⌘ + 1`   Switch to tab #1
-- `⌘ + 2`   Switch to tab #2
-- `⌘ + 3`   Switch to tab #3
-- `⌘ + 4`   Switch to tab #4
-- `⌘ + 5`   Switch to tab #5
-- `⌘ + 6`   Switch to tab #6
-- `⌘ + 7`   Switch to tab #7
-- `⌘ + 8`   Switch to tab #8
-- `⌘ + 9`   Switch to tab #9
 - `⌘ + c`   Start tmux copy mode
 - `⌘ + v`   Paste from clipboard
 
@@ -288,8 +247,8 @@ Use `ESC` or `⌃[` to enter Normal mode.
 
 > **Note:** some of these key bindings are set by zsh by default when using a vi-mode keymap.
 
-- `⌃ + p` : Start editing a code directory under `~/.Code`
-- `⌃ + o` : Open a code direcotry under `~/.Code`
+- `⌃ + p` : Change to a directory (Looking up in `~/.Code`)
+- `⌃ + o` : Open a direcotry in editor (looking up in `~/.Code`)
 - `⌃ + k` Previous command in history.
 - `⌃ + j` Next command in history.
 - `/` Search backward in history.
@@ -590,7 +549,9 @@ Use `v` for visual select. `i` is for inner and `a` for around selection.
 
 [preservim/nerdtree](https://github.com/preservim/nerdtree)
 
-- `,,` Toggle nerd tree
+- `o` Open in prev window
+- `t` Open in new tab
+- `T` Open in new tab silently
 
 #### Netrw
 
