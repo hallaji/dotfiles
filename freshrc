@@ -124,6 +124,7 @@ fresh-options --filter=erb --file=~/.zshrc --marker
   type jenv > /dev/null && fresh shell/zsh/jenv.sh
   type jump > /dev/null && fresh shell/zsh/jump.sh
   type pyenv > /dev/null && fresh shell/zsh/pyenv.sh
+  type nnn > /dev/null && fresh shell/zsh/nnn.sh
   brew --prefix asdf > /dev/null && fresh shell/zsh/asdf.sh
   brew --prefix mongodb-community@4.4 > /dev/null && fresh shell/mongo.sh
   brew --prefix postgresql@13 > /dev/null && fresh shell/psql.sh
