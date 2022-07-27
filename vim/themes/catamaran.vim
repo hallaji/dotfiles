@@ -5,6 +5,8 @@
 " ╚██████╗██║  ██║   ██║   ██║  ██║██║ ╚═╝ ██║██║  ██║██║  ██║██║  ██║██║ ╚████║
 "  ╚═════╝╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝
 
+" https://robotmoon.com/256-colors/
+
 let g:colors_name = expand('<sfile>:t:r')
 set background=dark
 hi clear
@@ -22,6 +24,7 @@ let s:background = { 'gui': '#26282B', 'cterm': '0' }
 
 let s:pale = { 'gui': '#444444', 'cterm': '238' }
 let s:line = { 'gui': '#303030', 'cterm': '236' }
+let s:ruler = { 'gui': '#303030', 'cterm': '235' }
 let s:select = { 'gui': '#303030', 'cterm': '236' }
 let s:noise = { 'gui': '#585858', 'cterm': '240' }
 let s:black = { 'gui': '#000000', 'cterm': '16' }
@@ -91,7 +94,6 @@ call s:highlight ('PmenuThumb', { 'bg': s:color03, 'fg': s:noise })
 "  └┘ ┴└─┘└─┘┴ ┴┴─┘
 
 call s:highlight ('Visual', { 'bg': s:select, 'fg': s:noise })
-call s:link ('Visual', 'ColorColumn')
 
 call s:highlight ('Cursor', { 'bg': s:color03, 'fg': s:black })
 call s:link ('Cursor', 'CursorColumn')
@@ -105,6 +107,9 @@ call s:highlight ('WarningMsg', { 'bg': s:color03, 'fg': s:black })
 call s:highlight ('CursorLine', { 'bg': s:background })
 call s:highlight ('CursorLineNr', { 'bg': s:background, 'fg': s:color08 })
 
+call s:highlight ('NnnBorder', { 'bg': s:background, 'fg': s:color05 })
+call s:highlight ('ColorColumn', { 'bg': s:ruler, 'fg': s:ruler })
+" call s:highlight ('NnnNormalFloat', { 'bg': s:ruler, 'fg': s:foreground })
 call s:highlight ('VertSplit', { 'bg': s:background, 'fg': s:line })
 call s:link ('VertSplit', 'WinSeparator')
 call s:link ('VertSplit', 'NnnVertSplit')
