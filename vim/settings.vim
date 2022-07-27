@@ -34,16 +34,9 @@ set mouse=a                         " Enable scrolling with the scroll wheel
 set splitbelow                      " Make splits default to below
 set splitright                      " And to the right
 
-set updatetime=300                  " Shorter update time - default is 4000 ms
+set updatetime=100                  " Shorter update time - default is 4000 ms
 
 set nobackup                        " Some lang servers have issues with backup files
 set nowritebackup                   " Some lang servers have issues with backup files
 
 set shortmess+=c                    " don't give ins-completion-menu messages.
-
-" Always show the signcolumn
-if has("nvim-0.5.0") || has("patch-8.1.1564")
-  set signcolumn=number " Recently vim can merge signcolumn and number column into one
-else
-  set signcolumn=yes
-endif
