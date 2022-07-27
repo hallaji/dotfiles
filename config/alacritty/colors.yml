@@ -10,7 +10,7 @@ draw_bold_text_with_bright_colors: false
 
 colors:
   primary:
-    background: '#26282B'
+    background: '#22272e'
     foreground: '#dadada'
     dim_foreground: '#585858'
     bright_foreground: '#ffffff'
@@ -44,7 +44,7 @@ colors:
     text: '#585858'
     background: '#303030'
   normal:
-    black:   '#26282B'
+    black:   '#22272e'
     red:     '#EC2864'
     green:   '#2ad3ba'
     yellow:  '#FFB86C'
