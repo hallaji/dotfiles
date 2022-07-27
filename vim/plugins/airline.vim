@@ -6,16 +6,14 @@
 " ██║  ██║██║██║  ██║███████╗██║██║ ╚████║███████╗
 " ╚═╝  ╚═╝╚═╝╚═╝  ╚═╝╚══════╝╚═╝╚═╝  ╚═══╝╚══════╝
 
-" @see https://github.com/vim-airline/vim-airline
-" @see https://github.com/vim-airline/vim-airline/wiki/Screenshots
+" https://github.com/vim-airline/vim-airline
+" https://github.com/vim-airline/vim-airline/wiki/Screenshots
 
-let g:airline#extensions#tabline#enabled = 1          " Enable Tabline extension
-let g:airline#extensions#ale#enabled = 1              " Enable Ale extension
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
-
-" tomorrow, iceberg, raven, ravenpower, fruit_punch, peaksea, distinguished,
-" fairyfloss, base16color, onedark, hybrid, hybridline, minimalist
-let g:airline_theme='tomorrow'
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'tomorrow' " tomorrow | fruit_punch | distinguished | minimalist
 
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
@@ -26,4 +24,3 @@ let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
 
-let g:airline_powerline_fonts = 1
