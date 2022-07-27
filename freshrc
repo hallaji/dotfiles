@@ -163,12 +163,6 @@ fresh config/gh/dash/config.yml --file=~/.config/gh-dash/config.yml
 #  ╚████╔╝ ██║██║ ╚═╝ ██║
 #   ╚═══╝  ╚═╝╚═╝     ╚═╝
 
-# ┌┐┌┌─┐┌─┐┬  ┬┬┌┬┐
-# │││├┤ │ │└┐┌┘││││
-# ┘└┘└─┘└─┘ └┘ ┴┴ ┴
-
-fresh vim/nvim.vim --file=~/.config/nvim/init.vim --marker='"'
-
 # ┬  ┬┬┌┬┐┬─┐┌─┐
 # └┐┌┘││││├┬┘│
 #  └┘ ┴┴ ┴┴└─└─┘
@@ -191,9 +185,14 @@ fresh-options --file=~/.vimrc --marker='"'
   fresh vim/functions.vim
   fresh vim/commands.vim
   fresh vim/settings.vim
-  fresh vim/visuals.vim
   fresh vim/mappings.vim
 fresh-options
+
+# ┌┐┌┌─┐┌─┐┬  ┬┬┌┬┐
+# │││├┤ │ │└┐┌┘││││
+# ┘└┘└─┘└─┘ └┘ ┴┴ ┴
+
+fresh vim/nvim.vim --file=~/.config/nvim/init.vim --marker='"'
 
 # ┌─┐┌─┐┌─┐
 # │  │ ││

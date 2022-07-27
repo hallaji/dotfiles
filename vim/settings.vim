@@ -6,7 +6,10 @@
 " ███████║███████╗   ██║      ██║   ██║██║ ╚████║╚██████╔╝███████║
 " ╚══════╝╚══════╝   ╚═╝      ╚═╝   ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝
 
-set encoding=utf-8                  " Set internal encoding of vim
+syntax enable
+colorscheme catamaran
+
+set encoding=utf-8
 set number
 set ruler
 " set colorcolumn=80,120              " Set a ruler in 80 and 120 by default
@@ -39,4 +42,4 @@ set updatetime=100                  " Shorter update time - default is 4000 ms
 set nobackup                        " Some lang servers have issues with backup files
 set nowritebackup                   " Some lang servers have issues with backup files
 
-set shortmess+=c                    " don't give ins-completion-menu messages.
+set shortmess+=c                    " Don't give ins-completion-menu messages.
