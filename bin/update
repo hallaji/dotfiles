@@ -1,0 +1,78 @@
+#!/bin/bash
+
+# ┬ ┬┌─┐┌┬┐┌─┐┌┬┐┌─┐
+# │ │├─┘ ││├─┤ │ ├┤
+# └─┘┴  ─┴┘┴ ┴ ┴ └─┘
+
+cat << EOF
+┬  ┬┬┌┬┐  ┌─┐┬  ┬ ┬┌─┐
+└┐┌┘││││  ├─┘│  │ ││ ┬
+ └┘ ┴┴ ┴  ┴  ┴─┘└─┘└─┘
+EOF
+
+nvim +PlugUpgrade +PlugUpdate +qall && echo "VIM plug and plugins updated!"
+
+
+cat << EOF
+┌┬┐┌┬┐┬ ┬─┐ ┬
+ │ ││││ │┌┴┬┘
+ ┴ ┴ ┴└─┘┴ └─
+EOF
+
+nvim -c "TmuxlineSnapshot! $DOTFILES/config/tmux/colors.conf" -c qall && echo "Tmuxline snapshot updated!"
+~/.tmux/plugins/tpm/bin/update_plugins all
+
+
+cat << EOF
+┌─┐┬┌┬┐┬ ┬┬ ┬┌┐   ┌─┐┬  ┬
+│ ┬│ │ ├─┤│ │├┴┐  │  │  │
+└─┘┴ ┴ ┴ ┴└─┘└─┘  └─┘┴─┘┴
+EOF
+
+gh extension upgrade --all
+
+
+cat << EOF
+┌┐┌┌┐┌┌┐┌
+│││││││││
+┘└┘┘└┘┘└┘
+EOF
+
+rm -rf ${XDG_CONFIG_HOME:-$HOME/.config}/nnn/plugins
+curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
+
+
+cat << EOF
+┌─┐┌─┐┌┬┐┌─┐  ┌─┐┬  ┬ ┬┌─┐┬┌┐┌┌─┐
+├─┤└─┐ ││├┤   ├─┘│  │ ││ ┬││││└─┐
+┴ ┴└─┘─┴┘└    ┴  ┴─┘└─┘└─┘┴┘└┘└─┘
+EOF
+
+plugins=(
+  direnv
+  golang
+  java
+  kotlin
+  lua
+  maven
+  mysql
+  nodejs
+  php
+  postgres
+  python
+  ruby
+  yarn
+)
+for item in ${plugins[@]}; do
+  asdf plugin add $item
+done
+asdf plugin update --all
+
+
+cat << EOF
+┌─┐┬─┐┌─┐┌─┐┬ ┬
+├┤ ├┬┘├┤ └─┐├─┤
+└  ┴└─└─┘└─┘┴ ┴
+EOF
+
+fresh update
