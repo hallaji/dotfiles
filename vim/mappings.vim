@@ -45,6 +45,9 @@ nnoremap <leader>n :set relativenumber!<cr>
 vnoremap <leader>y "*y
 vnoremap <leader>p "*p
 
+" Re-copy selected area on paste operation (vim paste has no memory)
+xnoremap p pgvy
+
 " ┌┐┌┌─┐┬  ┬┬┌─┐┌─┐┌┬┐┬┌─┐┌┐┌
 " │││├─┤└┐┌┘││ ┬├─┤ │ ││ ││││
 " ┘└┘┴ ┴ └┘ ┴└─┘┴ ┴ ┴ ┴└─┘┘└┘
