@@ -48,6 +48,10 @@ vnoremap <leader>p "*p
 " Re-copy selected area on paste operation (vim paste has no memory)
 xnoremap p pgvy
 
+" Use <C-n>i to send <C-i> because <C-i> is same as <tab> when received by vim
+" Check Alacritty bindings for <C-i>
+nnoremap <C-n>i <C-i>
+
 " ┌┐┌┌─┐┬  ┬┬┌─┐┌─┐┌┬┐┬┌─┐┌┐┌
 " │││├─┤└┐┌┘││ ┬├─┤ │ ││ ││││
 " ┘└┘┴ ┴ └┘ ┴└─┘┴ ┴ ┴ ┴└─┘┘└┘
