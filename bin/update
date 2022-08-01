@@ -5,12 +5,24 @@
 # └─┘┴  ─┴┘┴ ┴ ┴ └─┘
 
 cat << EOF
-┬  ┬┬┌┬┐  ┌─┐┬  ┬ ┬┌─┐
-└┐┌┘││││  ├─┘│  │ ││ ┬
- └┘ ┴┴ ┴  ┴  ┴─┘└─┘└─┘
+┌─┐┬ ┌┬┐
+│  │  │
+└─┘┴─┘┴
 EOF
 
-nvim +PlugUpgrade +PlugUpdate +qall && echo "VIM plug and plugins updated!"
+softwareupdate --all --install --force
+xcode-select --install
+
+
+cat << EOF
+┌┐┌┬  ┬┬┌┬┐
+│││└┐┌┘││││
+┘└┘ └┘ ┴┴ ┴
+EOF
+
+nvim +PlugUpgrade +PlugUpdate +CocUpdate +GoUpdateBinaries +qall
+nvim -c "TmuxlineSnapshot! $DOTFILES/config/tmux/colors.conf" +qall
+echo "Vim plugins and extensions were updated!"
 
 
 cat << EOF
@@ -19,7 +31,6 @@ cat << EOF
  ┴ ┴ ┴└─┘┴ └─
 EOF
 
-nvim -c "TmuxlineSnapshot! $DOTFILES/config/tmux/colors.conf" -c qall && echo "Tmuxline snapshot updated!"
 ~/.tmux/plugins/tpm/bin/update_plugins all
 
 
