@@ -1,11 +1,19 @@
 {
+  "codeLens.enable": true,
+  "codeLens.position": "eol",
+  "coc.preferences.formatOnType": true,
   "coc.preferences.formatOnSaveFiletypes": [
-    "css",
+    "c",
+    "go",
+    "python",
     "javascript",
     "javascriptreact",
     "typescript",
     "typescriptreact",
+    "css",
     "json",
-    "graphql"
+    "jsonc",
+    "graphql",
+    "markdown"
   ]
 }
