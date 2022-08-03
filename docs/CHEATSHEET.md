@@ -4,7 +4,7 @@
   - [Steering Focus](#steering-focus)
     - [Spaces & Monitors (Yabai / SKHD)](#spaces--monitors-yabai--skhd)
     - [Terminals (Alacritty)](#terminals-alacritty)
-    - [Editors (VIM / VSCode)](#editors-vim--vscode)
+    - [Editors (VIM / NVIM / VSCode)](#editors-vim--nvim--vscode)
     - [Browsers (Vimium / Vimari)](#browsers-vimium--vimari)
   - [OS Shortcuts (macOS)](#os-shortcuts-macos)
     - [Menubar](#menubar)
@@ -20,20 +20,10 @@
   - [Alacritty](#alacritty)
     - [Tmux bindings](#tmux-bindings)
     - [Vi-mode](#vi-mode)
-  - [Vim](#vim)
+  - [Vim/Neovim](#vimneovim)
     - [Vim Glossary](#vim-glossary)
     - [Vim Commands](#vim-commands)
-      - [General Commands](#general-commands)
-      - [Tab Commands](#tab-commands)
-      - [Buffer Commands](#buffer-commands)
-      - [Normal Mode](#normal-mode)
-        - [Custom Mappings in Normal Mode](#custom-mappings-in-normal-mode)
-      - [Insert Mode](#insert-mode)
-        - [Custom Mappings in Insert Mode](#custom-mappings-in-insert-mode)
-      - [Visual Mode](#visual-mode)
-        - [Custom Mappings in Visual Mode](#custom-mappings-in-visual-mode)
-      - [Visual Selection](#visual-selection)
-      - [Yank/Copy](#yankcopy)
+      - [Custom Mappings](#custom-mappings)
     - [Vim Plugins](#vim-plugins)
       - [Plug](#plug)
       - [CtrlP](#ctrlp)
@@ -69,7 +59,7 @@
 - Jump between Tmux sessions `⌘⇧` + (`←` | `→`)
 - Switch to a tab by number `⌘` + (`1` | `2` | `3` | etc.)
 
-### Editors (VIM / VSCode)
+### Editors (VIM / NVIM / VSCode)
 
 - Resize a pane: `⌃` + (`←` | `↓` | `↑` | `→`)
 - Focus on a pane: `⌃` + (`h` | `j` | `k` | `l`)
@@ -226,20 +216,20 @@ Checkout keyboard [keymaps](../keyboards) to find the key place.
 
 ### Tmux bindings
 
-- `⌘ + :`   Run a tmux command
-- `⌘ + u`   Grab and open any URL from the terminal window
-- `⌘ + p`   Look up in files/directories
-- `⌘⇧ + p`  Show session tree
-- `⌘ + s`   Save environment
-- `⌘⇧ + s`  Restore environment
-- `⌘ + d`   Vertical pane
-- `⌘⇧ + d`  Horizontal pane
-- `⌘ + w`   Close pane/tab
-- `⌘ + t`   Open a new tab
-- `⌘ + r`   Rename a tab
-- `⌘⇧ + r`  Rename a session
-- `⌘ + c`   Start tmux copy mode
-- `⌘ + v`   Paste from clipboard
+- `⌘ + :` Run a tmux command
+- `⌘ + u` Grab and open any URL from the terminal window
+- `⌘ + p` Look up in files/directories
+- `⌘⇧ + p` Show session tree
+- `⌘ + s` Save environment
+- `⌘⇧ + s` Restore environment
+- `⌘ + d` Vertical pane
+- `⌘⇧ + d` Horizontal pane
+- `⌘ + w` Close pane/tab
+- `⌘ + t` Open a new tab
+- `⌘ + r` Rename a tab
+- `⌘⇧ + r` Rename a session
+- `⌘ + c` Start tmux copy mode
+- `⌘ + v` Paste from clipboard
 
 ### Vi-mode
 
@@ -259,7 +249,11 @@ Use `ESC` or `⌃[` to enter Normal mode.
 - `⌃ + e` To the end of the line.
 - `⌃ + a` To the beginning of the line.
 
-## Vim
+## Vim/Neovim
+
+- [Vim Cheat Sheet](https://vim.rtorr.com/)
+- [Neovim](https://neovim.io)
+- [Vim](https://www.vim.org)
 
 ### Vim Glossary
 
@@ -269,88 +263,13 @@ Use `ESC` or `⌃[` to enter Normal mode.
 
 ### Vim Commands
 
-Leader key `,`
+Leader key is `,`
 
-#### General Commands
+#### Custom Mappings
 
-- `:ter[minal]` Open a terminal window
-- `:w[rite]` Write the whole buffer to the current file
-- `:up[date]` Similar to `:w[rite]`, but only write when the buffer has been modified
+**Normal Mode**
 
-#### Tab Commands
-
-- `:tab<tab>` See command
-- `:tabnew [path]`, `:tabe[dit] [path]` Open a new tab with optional path or filename
-- `:tabnext` Next tab
-- `:tabprev` Previous tab
-- `:tabfirst` First tab
-- `:tablast` Last tab
-- `:-tabmove` Move the tab page to the left
-- `:+tabmove` Move the tab page to the right
-
-#### Buffer Commands
-
-- `:e[dit] file` Edit a file in a new buffer
-- `:b<tab>` See commands
-- `:buffer <tab>` Switch to a hidden buffer
-- `:bn[ext]` Go to the next buffer
-- `:bp[revious]` Go to the previous buffer
-- `:bf[irst]` Got to the first buffer
-- `:bl[ast]` Go to the last buffer
-- `:bd[elete]` Delete a buffer (close a file)
-- `:b[uffer]#` Go to a buffer by index #
-- `:b[uffer] file` Go to a buffer by file
-- `:buffers`, `:ls` List all open buffers
-
-#### Normal Mode
-
-- `⌃w>` `⌃w<`, `⌃>` `⌃<` Resize the width of current window
-- `⌃w+`, `⌃w-` Resize the height of current window
-- `⌃wh`, `⌃h` Move cursor to left window
-- `⌃wj`, `⌃j` Move cursor to bottom window
-- `⌃wk`, `⌃k` Move cursor to top window
-- `⌃wl`, `⌃l` Move cursor to left window
-- `⌃wo`, Close other windows
-- `⌃wt` Make the first (top left) window current
-- `⌃ww` Switch windows
-- `⌃wx` Exchange current window with next one
-- `⌃w=` Make all windows equal height & width
-- `⌃wq` Quit a windows
-- `⌃ws`, `:sp[lit] [file]` Create a horizontal window, two viewports on the same file
-- `⌃wv`, `:vs[plit] [file]` Create a vertical window
-- `⌃wn`, `:new [file]` Create a new window and start editing new empty file
-- `:vert[ical] ba[ll]` Edit all buffers as vertical windows
-- `⌃o`, `⌃i` Jump through "jump list", a list of places where the cursor has been
-- `d{motion}` Delete text that {motion} moves over
-- `dd` Delete line
-- `D` Delete characters under the cursor until the end of the line
-- `c{motion}` Delete {motion} text and start insert
-- `cc` Delete line and start insert
-- `C` Delete to the end of the line and start insert
-- `r{char}` Replace the character under the cursor with {char}
-- `R` Enter replace mode: Each character replaces existing one
-- `x` Delete count characters under and after the cursor
-- `X` Delete count characters before the cursor
-- `i` Insert text before the cursor
-- `I` Insert text before the first character in the line
-- `a` Append text after the cursor
-- `A` Append text at the end of the line
-- `o` Insert new command line below the current one
-- `O` Insert new command line above the current one
-- `$` To the end of the line
-- `^` To the first non-blank character of the line
-- `0` To the first character of the line
-- `w` [count] words forward
-- `W` [count] WORDS forward
-- `e` Forward to the end of word [count] inclusive
-- `E` Forward to the end of WORD [count] inclusive
-- `b` [count] words backward
-- `B` [count] WORDS backward
-- `qq` Record a macro
 - `Q` Replay a macro recording
-
-##### Custom Mappings in Normal Mode
-
 - `<tab>`, `<S-tab>` Circle windows
 - `]]` Go to the next function or method
 - `[[` Go to the previous function or method
@@ -373,44 +292,34 @@ Leader key `,`
 - `_` Open Netrw explorer
 - `~` Open NNN explorer
 
-#### Insert Mode
-
-- `⌃ + h` Delete character before the cursor
-- `⌃ + w` Delete word before the cursor
-
-##### Custom Mappings in Insert Mode
+**Insert Mode**
 
 - `⌃ + s` Save
 - `⌃ + q` Quit
 
-#### Visual Mode
-
-##### Custom Mappings in Visual Mode
+**Visual Mode**
 
 - `,y` Copy to the system clipboard
 - `,p` Paste from the system clipboard
 - `⌃ + q` Escape
 
-#### Visual Selection
+**Text Objects**
 
-Use `v` for visual select. `i` is for inner and `a` for around selection.
-
-- `viw` selects an inner word
-- `vi(`,`vib` if the cursor is inside the parenthesis block
-- `vi{`,`viB` for curly block
-- `vi"` for double quotes
-- `vi'` for single quotes
-- `gv` reselect last visual selection
-- `va(` selects around ()
-- `v%` if the cursor is on a starting/ending of parenthesis or curly brace
-
-#### Yank/Copy
-
-- `"*y` yanks selected text to the system clipboard
-- `y` yanks selected text
-- `yy` yanks current line
-- `yiw` yanks an inner word
-- `ya{` yanks around `{}`
+- `:h text-objects` Help
+- `viw` Select inner word
+- `vi(`,`vib` Select inner of round braces
+- `vi{`,`viB` Select inner of curly braces
+- `vi[` Select inner of square brackets
+- `vi"` Select inner of double quotes
+- `vi'` Select inner of single quotes
+- `gv` Select last visual selection
+- `va(` Select outer of round braces
+- `v%` Select while cursor is on starting/ending
+- `"*y` Yank selected text to the system clipboard
+- `y` Yank selected text
+- `yy` Yank current line
+- `yiw` Yank an inner word
+- `ya{` Yank around `{}`
 
 ### Vim Plugins
 
@@ -549,13 +458,11 @@ Use `v` for visual select. `i` is for inner and `a` for around selection.
 
 [preservim/nerdtree](https://github.com/preservim/nerdtree)
 
-- `o` Open in prev window
-- `t` Open in new tab
-- `T` Open in new tab silently
+- `?` Help
 
 #### Netrw
 
-- `:help netrw`, `<F1>` Help
+- `:h netrw` Help
 - `⇧I` Toggle the banner
 - `%` Create new file from netrw
 - `d` Create new directory from netrw
