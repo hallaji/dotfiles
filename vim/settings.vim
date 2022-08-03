@@ -37,7 +37,7 @@ set backspace=indent,eol,start " Make backspace behave like every other editor
 set noerrorbells visualbell t_vb= " No bells
 set hlsearch " Search highlights
 set incsearch
-set shortmess+=c " Don't give ins-completion-menu messages.
+" set shortmess+=c " Don't give ins-completion-menu messages
 set splitbelow " Make splits default to below
 set splitright " And to the right
 
