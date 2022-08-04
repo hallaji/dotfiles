@@ -30,7 +30,6 @@ Plug 'edkolev/tmuxline.vim' " https://github.com/edkolev/tmuxline.vim
 Plug 'tpope/vim-vinegar' " https://github.com/tpope/vim-vinegar
 Plug 'tpope/vim-surround' " https://github.com/tpope/vim-surround
 Plug 'travisjeffery/vim-auto-mkdir' " https://github.com/travisjeffery/vim-auto-mkdir
-Plug 'neoclide/coc.nvim', {'branch': 'release'} " https://github.com/neoclide/coc.nvim
 Plug 'jeffkreeftmeijer/vim-numbertoggle' " https://github.com/jeffkreeftmeijer/vim-numbertoggle
 Plug 'preservim/vimux' " https://github.com/preservim/vimux
 Plug 'tpope/vim-commentary' " https://github.com/tpope/vim-commentary
@@ -67,7 +66,7 @@ Plug 'mcchrish/nnn.vim' " https://github.com/mcchrish/nnn.vim
 " └─┘┴ ┴
 
 Plug 'tpope/vim-fugitive' " https://github.com/tpope/vim-fugitive
-Plug 'tpope/vim-rhubarb' " https://github.com/tpope/vim-rhubarb @FIXME: needs setup
+Plug 'tpope/vim-rhubarb' " https://github.com/tpope/vim-rhubarb
 Plug 'airblade/vim-gitgutter' " https://github.com/airblade/vim-gitgutter
 Plug 'mhinz/vim-signify' " https://github.com/mhinz/vim-signify
 
@@ -75,10 +74,9 @@ Plug 'mhinz/vim-signify' " https://github.com/mhinz/vim-signify
 "  ││├┤ └┐┌┘├┤ │  │ │├─┘│││├┤ │││ │
 " ─┴┘└─┘ └┘ └─┘┴─┘└─┘┴  ┴ ┴└─┘┘└┘ ┴
 
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " https://github.com/neoclide/coc.nvim
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' } " https://github.com/fatih/vim-go
-" @FIXME: Check if I need them:
 Plug 'leafgarland/typescript-vim' " https://github.com/leafgarland/typescript-vim
-Plug 'elixir-editors/vim-elixir' " https://github.com/elixir-editors/vim-elixir
 Plug 'jparise/vim-graphql' " https://github.com/jparise/vim-graphql
 Plug 'pangloss/vim-javascript' " https://github.com/pangloss/vim-javascript
 Plug 'peitalin/vim-jsx-typescript' " https://github.com/peitalin/vim-jsx-typescript
@@ -89,11 +87,12 @@ Plug 'udalov/kotlin-vim' " https://github.com/udalov/kotlin-vim
 " ┴└─┘└─┘┘└┘└─┘
 
 Plug 'ryanoasis/vim-devicons' " https://github.com/ryanoasis/vim-devicons
-Plug 'kyazdani42/nvim-web-devicons' " https://github.com/kyazdani42/nvim-web-devicons @FIXME: Do I need this?
 
 " ┌┐┌┌─┐┌┬┐  ┬┌┐┌  ┬ ┬┌─┐┌─┐
 " ││││ │ │   ││││  │ │└─┐├┤
 " ┘└┘└─┘ ┴   ┴┘└┘  └─┘└─┘└─┘
+
+" Plug 'kyazdani42/nvim-web-devicons' " https://github.com/kyazdani42/nvim-web-devicons
 
 "Plug 'tpope/vim-markdown' " https://github.com/tpope/vim-markdown
 
