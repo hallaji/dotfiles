@@ -9,7 +9,7 @@
 syntax enable
 colorscheme catamaran
 
-set encoding=utf-8
+set encoding=UTF-8 " Use UTF-8 as the default encoding
 set number " Show line numbers
 set ruler " Show the line and column number of the cursor position, separated by a comma
 " set colorcolumn=80,120 " Set a ruler in 80 and 120 by default
