@@ -295,10 +295,7 @@ fresh config/bundler/bundler.conf --file=~/.bundle/config --filter=erb
 # ██████╔╝██║  ██║███████╗╚███╔███╔╝
 # ╚═════╝ ╚═╝  ╚═╝╚══════╝ ╚══╝╚══╝
 
-fresh-options --file=~/.Brewfile
-  fresh config/homebrew/Brewfile
-  fresh config/homebrew/Brewfile.cltrmp
-fresh-options
+fresh config/homebrew/Brewfile --file=~/.Brewfile
 
 
 # ███████╗██╗ ██████╗ ██╗     ███████╗████████╗

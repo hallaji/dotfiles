@@ -4,6 +4,18 @@
 # │ │├─┘ ││├─┤ │ ├┤
 # └─┘┴  ─┴┘┴ ┴ ┴ └─┘
 
+
+cat << EOF
+┌┐ ┬─┐┌─┐┬ ┬┌─┐┬┬  ┌─┐
+├┴┐├┬┘├┤ │││├┤ ││  ├┤
+└─┘┴└─└─┘└┴┘└  ┴┴─┘└─┘
+EOF
+
+cd "$DOTFILES/config/homebrew" && \
+  brew bundle dump -f && \
+  echo "Brew bundle dump was successfull!"
+
+
 cat << EOF
 ┌─┐┬ ┌┬┐
 │  │  │
@@ -20,9 +32,9 @@ cat << EOF
 ┘└┘ └┘ ┴┴ ┴
 EOF
 
-nvim +PlugUpgrade +PlugUpdate +CocUpdate +GoUpdateBinaries +qall
-nvim -c "TmuxlineSnapshot! $DOTFILES/config/tmux/colors.conf" +qall
-echo "Vim plugins and extensions were updated!"
+nvim +PlugUpgrade +PlugUpdate +CocUpdate +GoUpdateBinaries +qall && \
+  nvim -c "TmuxlineSnapshot! $DOTFILES/config/tmux/colors.conf" +qall && \
+  echo "Vim plugins and extensions were updated!"
 
 
 cat << EOF
