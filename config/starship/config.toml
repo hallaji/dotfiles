@@ -5,20 +5,94 @@
 # ███████║   ██║   ██║  ██║██║  ██║███████║██║  ██║██║██║
 # ╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝╚═╝
 
-# @see https://starship.rs
+# https://starship.rs
 
 add_newline = true
 command_timeout = 2000
-
-[aws]
-disabled = false
-symbol = "🅰 "
-format = '[$symbol($profile )(\($region\) )]($style)'
-
-[gcloud]
-disabled = false
-symbol = "🅶 "
-format = '[$symbol$account@*(\($project\))]($style) '
+right_format = """$aws$gcloud""" # $cmd_duration
 
 [line_break]
 disabled = false
+
+[aws]
+disabled = false
+force_display = true
+symbol = " "
+style = "dimmed yellow"
+format = '[$symbol($profile )(\($region\) )]($style)'
+
+[battery]
+format = "[$symbol$percentage]($style) "
+
+[[battery.display]]
+threshold = 15
+style = "red"
+
+[[battery.display]]
+threshold = 40
+style = "yellow"
+
+[buf]
+symbol = " "
+
+[c]
+symbol = " "
+
+[cmd_duration]
+style = "dimmed purple"
+format = "[祥$duration]($style) "
+
+[directory]
+read_only = " "
+
+[docker_context]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[gcloud]
+disabled = false
+symbol = " "
+style = "dimmed blue"
+format = "[$symbol$active]($style) "
+
+[git_branch]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[java]
+symbol = " "
+
+[kotlin]
+symbol = "🅺 "
+
+[memory_usage]
+disabled = false
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[package]
+symbol = " "
+
+[php]
+symbol = " "
+
+[python]
+symbol = " "
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = " "
