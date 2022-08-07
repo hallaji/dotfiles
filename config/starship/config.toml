@@ -58,7 +58,7 @@ symbol = " "
 disabled = false
 symbol = " "
 style = "dimmed blue"
-format = "[$symbol$active]($style) "
+format = '[$symbol($active)( \($project\))]($style)'
 
 [git_branch]
 symbol = " "
