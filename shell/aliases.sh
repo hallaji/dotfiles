@@ -21,6 +21,8 @@ alias ,b="wallpaper set-solid-color $*"
 alias ,a="open --background 'lungo:toggle'" # Toogle computer awake mode (Lungo)
 alias ,h="history"
 alias ,hs="history | grep $* -i"
+alias ,aws="change_aws_profile" # @see shell/functions.sh
+alias ,gcp="change_gcloud_config" # @see shell/functions.sh
 
 # ┌─┐ ┬ ┬┬┌─┐┬┌─  ┌─┐┌┬┐┬┌┬┐
 # │─┼┐│ │││  ├┴┐  ├┤  │││ │
