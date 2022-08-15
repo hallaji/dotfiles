@@ -202,11 +202,12 @@ fresh vim/nvim.vim --file=~/.config/nvim/init.vim --marker='"'
 fresh config/coc/coc-settings.json --file=~/.config/nvim/coc-settings.json
 fresh config/coc/coc-settings.json --file=~/.vim/coc-settings.json
 
-# ┌┬┐┬ ┬┌─┐┌┬┐┌─┐
-#  │ ├─┤├┤ │││├┤
-#  ┴ ┴ ┴└─┘┴ ┴└─┘
+# ┌┬┐┬ ┬┌─┐┌┬┐┌─┐┌─┐
+#  │ ├─┤├┤ │││├┤ └─┐
+#  ┴ ┴ ┴└─┘┴ ┴└─┘└─┘
 
 fresh vim/themes/catamaran.vim --file=~/.vim/colors/catamaran.vim --marker='"'
+fresh vim/themes/airline/catamaran.vim --file=~/.vim/autoload/airline/themes/catamaran.vim --marker='"'
 
 
 #  ██████╗ ██╗████████╗
