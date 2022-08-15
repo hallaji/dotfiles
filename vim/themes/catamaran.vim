@@ -1,3 +1,4 @@
+
 "  ██████╗ █████╗ ████████╗ █████╗ ███╗   ███╗ █████╗ ██████╗  █████╗ ███╗   ██╗
 " ██╔════╝██╔══██╗╚══██╔══╝██╔══██╗████╗ ████║██╔══██╗██╔══██╗██╔══██╗████╗  ██║
 " ██║     ███████║   ██║   ███████║██╔████╔██║███████║██████╔╝███████║██╔██╗ ██║
@@ -5,294 +6,320 @@
 " ╚██████╗██║  ██║   ██║   ██║  ██║██║ ╚═╝ ██║██║  ██║██║  ██║██║  ██║██║ ╚████║
 "  ╚═════╝╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝
 
-" https://robotmoon.com/256-colors/
+" :help syntax
+" :help highlight
+" :help attr-list
 
 let g:colors_name = expand('<sfile>:t:r')
-set background=dark
-hi clear
 
+if !has('gui_running') && &t_Co < 256
+  finish
+endif
+
+hi clear
 if exists('syntax_on')
   syntax reset
 endif
 
-" ┌─┐┌─┐┬  ┌─┐┬─┐┌─┐
-" │  │ ││  │ │├┬┘└─┐
-" └─┘└─┘┴─┘└─┘┴└─└─┘
+hi CatamaranNormal ctermfg=250 guifg=#adbac7
 
-let s:foreground = { 'gui': '#dadada', 'cterm': '253' }
-let s:background = { 'gui': '#26282B', 'cterm': '0' }
+hi ColorColumn cterm=NONE ctermbg=234 ctermfg=NONE guibg=#1f242a guifg=NONE
+hi Cursor ctermbg=140 ctermfg=234 guibg=#a394cd guifg=#1f242a gui=bold,underline
+hi CursorColumn cterm=NONE ctermbg=140 ctermfg=234 guibg=#a394cd guifg=#1f242a
+hi CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE gui=NONE
+hi CursorLineNr cterm=NONE ctermbg=235 ctermfg=238 guibg=#22272e guifg=#3c4552
+hi FoldColumn ctermbg=235 guibg=#22272e
+hi Folded ctermbg=235 ctermfg=245 guibg=#22272e
+hi LineNr ctermbg=235 ctermfg=238 guibg=#22272e guifg=#3c4552
+hi QuickFixLine ctermbg=234 ctermfg=250 guibg=#1f242a guifg=#adbac7
+hi SignColumn ctermbg=235 ctermfg=250 guibg=#22272e guifg=#adbac7
+hi TermCursorNC ctermbg=140 ctermfg=234 guibg=#a394cd guifg=#1f242a
 
-let s:pale = { 'gui': '#444444', 'cterm': '238' }
-let s:line = { 'gui': '#303030', 'cterm': '236' }
-let s:ruler = { 'gui': '#303030', 'cterm': '235' }
-let s:select = { 'gui': '#303030', 'cterm': '236' }
-let s:noise = { 'gui': '#585858', 'cterm': '240' }
-let s:black = { 'gui': '#000000', 'cterm': '16' }
-let s:white = { 'gui': '#FFFFFF', 'cterm': '231' }
+hi Comment ctermfg=238 guifg=#3c4552
 
-let s:color00 = { 'gui': '#26282B', 'cterm': '0' }
-let s:color01 = { 'gui': '#EC2864', 'cterm': '167' }
-let s:color02 = { 'gui': '#2ad3ba', 'cterm': '2' }
-let s:color03 = { 'gui': '#FFB86C', 'cterm': '3' }
-let s:color04 = { 'gui': '#45A9F9', 'cterm': '4' }
-let s:color05 = { 'gui': '#e86db2', 'cterm': '5' }
-let s:color06 = { 'gui': '#2fbca7', 'cterm': '66' }
-let s:color07 = { 'gui': '#c6c8d1', 'cterm': '7' }
+hi Constant ctermfg=32 guifg=#2f97ea
+hi String ctermfg=43 guifg=#2bd2b9
+hi! link Character String
 
-let s:color08 = { 'gui': '#676B79', 'cterm': '8' }
-let s:color09 = { 'gui': '#FF4B82', 'cterm': '9' }
-let s:color10 = { 'gui': '#e9ff5e', 'cterm': '10' }
-let s:color11 = { 'gui': '#FFCC95', 'cterm': '11' }
-let s:color12 = { 'gui': '#6FC1FF', 'cterm': '12' }
-let s:color13 = { 'gui': '#ada0d3', 'cterm': '13' }
-let s:color14 = { 'gui': '#87d7d7', 'cterm': '116' }
-let s:color15 = { 'gui': '#f2f2f2', 'cterm': '249' }
+hi Operator ctermfg=203 guifg=#f47067
+hi! link Conditional Operator
+hi! link Repeat Operator
+hi Statement ctermfg=169 gui=NONE guifg=#e86db2
+hi! link Keyword Statement
+hi! link Exception Statement
+hi! link Label Statement
 
-" ┬ ┬┌┬┐┬┬  ┌─┐
-" │ │ │ ││  └─┐
-" └─┘ ┴ ┴┴─┘└─┘
+hi Function ctermfg=51 guifg=#04f6f6 gui=bold
+hi Identifier ctermfg=140 guifg=#a394cd
 
-fun! s:link (from, to)
-  execute 'hi! link' a:to a:from
-endfun
+hi PreProc ctermfg=222 guifg=#ffcc95
+hi! link Define PreProc
+hi! link Include PreProc
+hi! link Macro PreProc
+hi! link PreCondit PreProc
 
-fun! s:highlight (group, props)
-  execute 'hi' a:group
-    \ 'cterm='   has_key(a:props, 'cterm') ? a:props.cterm    : 'NONE'
-    \ 'gui='     has_key(a:props, 'gui')   ? a:props.gui      : 'NONE'
-    \ 'guisp='   has_key(a:props, 'sp')    ? a:props.sp.gui   : 'NONE'
-    \ 'ctermbg=' has_key(a:props, 'bg')    ? a:props.bg.cterm : 'NONE'
-    \ 'guibg='   has_key(a:props, 'bg')    ? a:props.bg.gui   : 'NONE'
-    \ 'ctermfg=' has_key(a:props, 'fg')    ? a:props.fg.cterm : 'NONE'
-    \ 'guifg='   has_key(a:props, 'fg')    ? a:props.fg.gui   : 'NONE'
-endfun
+hi Type ctermfg=140 gui=NONE guifg=#a394cd
+hi! link StorageClass Type
+hi! link Structure Type
+hi! link Typedef Type
 
-" ┌┐┌┌─┐┬─┐┌┬┐┌─┐┬
-" ││││ │├┬┘│││├─┤│
-" ┘└┘└─┘┴└─┴ ┴┴ ┴┴─┘
+hi DiffAdd ctermbg=NONE ctermfg=43 guibg=NONE guifg=#2bd2b9
+hi DiffChange ctermbg=NONE ctermfg=215 guibg=NONE guifg=#f5b168
+hi DiffDelete ctermbg=NONE ctermfg=203 guibg=NONE guifg=#f47067
+hi DiffText ctermbg=NONE ctermfg=250 guibg=NONE guifg=#adbac7
 
-" jsFuncName -> Function -> Identifier
-" jsFuncCall -> Function -> Identifier
-" jsGlobalObjects -> Constant
+hi IncSearch cterm=reverse ctermfg=NONE gui=reverse guifg=NONE term=reverse
+hi Search ctermbg=238 ctermfg=169 guibg=#3c4552 guifg=#e86db2
 
-call s:highlight ('Normal', { 'bg': s:background, 'fg': s:foreground })
-call s:link ('Normal', 'jsFuncName')
-call s:link ('Normal', 'jsFuncCall')
-call s:link ('Normal', 'jsGlobalObjects')
+hi Directory ctermfg=51 guifg=#04f6f6
+hi EndOfBuffer ctermfg=238 guifg=#3c4552
+hi Error ctermbg=235 ctermfg=203 guibg=#22272e guifg=#f47067
+hi ErrorMsg ctermbg=235 ctermfg=203 guibg=#22272e guifg=#f47067
+hi Ignore ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
+hi MatchParen ctermbg=234 ctermfg=51 guibg=#1f242a guifg=#04f6f6
+hi ModeMsg ctermfg=51 guifg=#04f6f6
+hi MoreMsg ctermfg=51 guifg=#04f6f6
+hi NonText ctermfg=238 gui=NONE guifg=#3c4552
+hi Question ctermfg=140 guifg=#a394cd
+hi Title ctermfg=75 gui=NONE guifg=#6fc1ff
+hi Todo ctermbg=203 ctermfg=234 guibg=#f47067 guifg=#1f242a
+hi Underlined cterm=underline ctermfg=36 gui=underline guifg=#00b196 term=underline
+hi Whitespace ctermfg=235 guifg=#22272e
+hi WarningMsg ctermbg=234 ctermfg=215 guibg=#22272e guifg=#f5b168
 
-" ┌─┐┌─┐┌─┐┬ ┬┌─┐  ┌┬┐┌─┐┌┐┌┬ ┬
-" ├─┘│ │├─┘│ │├─┘  │││├┤ ││││ │
-" ┴  └─┘┴  └─┘┴    ┴ ┴└─┘┘└┘└─┘
+hi FloatBorder ctermbg=234 ctermfg=16 guibg=#1f242a guifg=#000000
+hi Normal ctermbg=235 ctermfg=250 guibg=#22272e guifg=#adbac7
+hi NormalFloat ctermbg=234 ctermfg=250 guibg=#1f242a guifg=#adbac7
+hi Pmenu ctermbg=234 ctermfg=238 guibg=#1f242a guifg=#3c4552
+hi PmenuSbar ctermbg=234 ctermfg=NONE guibg=#1f242a guifg=NONE
+hi PmenuSel ctermbg=51 ctermfg=234 guibg=#04f6f6 guifg=#1f242a
+hi PmenuThumb ctermbg=169 ctermfg=NONE guibg=#e86db2 guifg=NONE
+hi VertSplit ctermbg=234 ctermfg=234 guibg=#1f242a guifg=#1f242a
+hi Visual ctermbg=234 ctermfg=140 guibg=#1f242a guifg=#a394cd
+hi WildMenu ctermbg=234 ctermfg=51 guibg=#22272e guifg=#04f6f6
+hi! link CocMenuSel PmenuSel
+hi! link FzfLuaBorder FloatBorder
+hi! link FzfLuaNormal NormalFloat
+hi! link NnnBorder FloatBorder
+hi! link NnnNormalFloat NormalFloat
+hi! link VisualNOS Visual
+hi! link WinSeparator VertSplit
+hi! link NnnWinSeparator VertSplit
 
-call s:highlight ('Pmenu', { 'bg': s:select, 'fg': s:noise })
-call s:highlight ('PmenuSel', { 'bg': s:select, 'fg': s:color03 })
-call s:highlight ('PmenuSbar', { 'bg': s:select, 'fg': s:color03 })
-call s:highlight ('PmenuThumb', { 'bg': s:color03, 'fg': s:noise })
+hi Special ctermfg=75 guifg=#6fc1ff
+hi! link Debug Special
+hi! link Delimiter Special
+hi! link SpecialChar Special
+hi! link SpecialComment Special
+hi! link SpecialKey Special
+hi! link Tag Special
 
-" ┬  ┬┬┌─┐┬ ┬┌─┐┬
-" └┐┌┘│└─┐│ │├─┤│
-"  └┘ ┴└─┘└─┘┴ ┴┴─┘
+hi DiagnosticFloatingHint ctermbg=234 ctermfg=250 guibg=#1f242a guifg=#adbac7
+hi DiagnosticError ctermfg=204 guifg=#ff4b82
+hi DiagnosticHint ctermfg=103 guifg=#8296aa
+hi DiagnosticInfo ctermfg=75 guifg=#6fc1ff
+hi DiagnosticWarn ctermfg=215 guifg=#f5b168
+hi DiagnosticSignError ctermbg=235 ctermfg=204 guibg=#22272e guifg=#ff4b82
+hi DiagnosticSignHint ctermbg=235 ctermfg=103 guibg=#22272e guifg=#8296aa
+hi DiagnosticSignInfo ctermbg=235 ctermfg=75 guibg=#22272e guifg=#6fc1ff
+hi DiagnosticSignWarn ctermbg=235 ctermfg=215 guibg=#22272e guifg=#f5b168
+hi DiagnosticUnderlineError cterm=underline ctermfg=204 gui=underline guisp=#ff4b82 term=underline
+hi DiagnosticUnderlineHint cterm=underline ctermfg=103 gui=underline guisp=#8296aa term=underline
+hi DiagnosticUnderlineInfo cterm=underline ctermfg=75 gui=underline guisp=#6fc1ff term=underline
+hi DiagnosticUnderlineWarn cterm=underline ctermfg=215 gui=underline guisp=#f5b168 term=underline
+" coc-highlights-diagnostics
+hi! link CocErrorSign DiagnosticError
+hi! link CocHintSign DiagnosticHint
+hi! link CocInfoSign DiagnosticHint
+hi! link CocWarningSign DiagnosticWarn
+hi! link CocFadeOut NonText
 
-call s:highlight ('Visual', { 'bg': s:select, 'fg': s:noise })
+" @TODO:
+" *CocFadeOut* for faded out text, such as for highlighting unnecessary code.
+" *CocErrorSign* for error signs.
+" *CocWarningSign* for warning signs.
+" *CocInfoSign* for information signs.
+" *CocHintSign* for hint signs.
+" *CocErrorVirtualText* for error virtual text.
+" *CocWarningVirtualText* for warning virtual text.
+" *CocInfoVirtualText* for information virtual text.
+" *CocHintVirtualText* for hint virtual text.
+" *CocErrorHighlight* for error code range.
+" *CocWarningHighlight* for warning code range.
+" *CocInfoHighlight* for information code range.
+" *CocHintHighlight* for hint code range.
+" *CocDeprecatedHighlight* for deprecated code range, links to |CocStrikeThrough| by default.
+" *CocUnusedHighlight* for unnecessary code range, links to |CocFadeOut| by default.
+" *CocErrorLine* line highlight of sign which contains error.
+" *CocWarningLine* line highlight of sign which contains warning.
+" *CocInfoLine* line highlight of sign which information.
+" *CocHintLine* line highlight of sign which contains hint.
 
-call s:highlight ('Cursor', { 'bg': s:color03, 'fg': s:black })
-call s:link ('Cursor', 'CursorColumn')
-call s:link ('Cursor', 'CursorIM')
-call s:link ('Cursor', 'TermCursor')
-call s:link ('Cursor', 'TermCursorNC')
+hi SpellBad ctermbg=203 ctermfg=234 gui=undercurl guifg=NONE guisp=#f47067
+hi SpellCap ctermbg=103 ctermfg=234 gui=undercurl guifg=NONE guisp=#8296aa
+hi SpellLocal ctermbg=103 ctermfg=234 gui=undercurl guifg=NONE guisp=#8296aa
+hi SpellRare ctermbg=103 ctermfg=234 gui=undercurl guifg=NONE guisp=#8296aa
 
-call s:highlight ('ErrorMsg', { 'bg': s:color01, 'fg': s:white })
-call s:highlight ('WarningMsg', { 'bg': s:color03, 'fg': s:black })
-
-call s:highlight ('CursorLine', { 'bg': s:background })
-call s:highlight ('CursorLineNr', { 'bg': s:background, 'fg': s:color08 })
-
-call s:highlight ('NnnBorder', { 'bg': s:background, 'fg': s:color05 })
-call s:highlight ('ColorColumn', { 'bg': s:ruler, 'fg': s:ruler })
-" call s:highlight ('NnnNormalFloat', { 'bg': s:ruler, 'fg': s:foreground })
-call s:highlight ('VertSplit', { 'bg': s:background, 'fg': s:line })
-call s:link ('VertSplit', 'WinSeparator')
-call s:link ('VertSplit', 'NnnVertSplit')
-call s:link ('VertSplit', 'NnnWinSeparator')
-
-call s:highlight ('SignColumn', { 'bg': s:background, 'fg': s:pale })
-call s:highlight ('LineNr', { 'bg': s:background, 'fg': s:pale })
-call s:link ('LineNr', 'Folded')
-call s:link ('LineNr', 'FoldColumn')
-
-call s:highlight ('DiffAdd', { 'bg': s:background, 'fg': s:color02 })
-call s:highlight ('DiffChange', { 'bg': s:background, 'fg': s:color03 })
-call s:highlight ('DiffDelete', { 'bg': s:background, 'fg': s:color01 })
-call s:highlight ('DiffText', { 'bg': s:background, 'fg': s:foreground })
-
-call s:highlight ('Search', { 'bg': s:color14, 'fg': s:black })
-call s:highlight ('IncSearch', { 'bg': s:color03, 'fg': s:black })
-" Substitute // @TODO
-
-call s:highlight ('MatchParen', { 'bg': s:color14, 'fg': s:black })
-
-call s:highlight ('EndOfBuffer', { 'bg': s:background, 'fg': s:pale })
-
-" ┌─┐┌─┐┌┐┌┌─┐┌┬┐┌─┐┌┐┌┌┬┐
-" │  │ ││││└─┐ │ ├─┤│││ │
-" └─┘└─┘┘└┘└─┘ ┴ ┴ ┴┘└┘ ┴
-
-" Character
-" jsString -> String -> Constant
-" typescriptStringS -> String -> Constant
-" typescriptBoolean -> Boolean -> Constant
-" typescriptNumber -> Number -> Constant
-
-call s:highlight ('Constant', { 'bg': s:background, 'fg': s:color04 })
-
-" @TODO
-call s:highlight ('jsObjectKey', { 'bg': s:background, 'fg': s:color14 })
-
-call s:highlight ('String', { 'bg': s:background, 'fg': s:color02 })
-call s:link ('String', 'Character')
-"call s:link ('String', 'Directory')
-
-" ┬┌┐┌┌─┐┬  ┬ ┬┌┬┐┌─┐
-" │││││  │  │ │ ││├┤
-" ┴┘└┘└─┘┴─┘└─┘─┴┘└─┘
-
-" typescriptReserved -> Keyword -> Statement
-" jsImport -> Include -> PreProc
-" jsFrom -> Include -> PreProc
-
-" jsConditional -> Conditional -> Statement -> PreProc
-" typescriptConditional -> Conditional -> Statement -> PreProc
-" jsLabel -> Label -> Statement -> PreProc
-" typescriptLabel -> Label -> Statement -> PreProc
-" jsStatement -> Statement -> PreProc
-" jsTry -> Exception -> Statement -> PreProc
-" typescriptBranch -> Conditional -> Statement -> PreProc
-" jsRepeat -> Repeat -> Statement -> PreProc
-" typescriptRepeat -> Repeat -> Statement -> PreProc
-" typescriptExceptions -> Special
-" jsExceptions -> Constant
-
-call s:highlight ('Include', { 'bg': s:background, 'fg': s:color01 })
-call s:link ('Include', 'Statement')
-call s:link ('Include', 'typescriptReserved')
-call s:link ('Include', 'typescriptExceptions')
-call s:link ('Include', 'jsExceptions')
-
-" ┌┐┌┌─┐┬┌─┐┌─┐
-" ││││ ││└─┐├┤
-" ┘└┘└─┘┴└─┘└─┘
-
-" jsModuleBraces -> Noise
-" jsFuncBraces -> Noise
-" jsFuncParens -> Noise
-" jsParensIfElse -> jsParens -> Noise
-" jsNoise -> Noise
-" typescriptParens -> Operator -> Statement -> PreProc
-" typescriptEndColons -> Exception -> Statement -> PreProc // SKIPPED
-" typescriptBraces -> Function -> Identifier
-
-call s:highlight ('Comment', { 'bg': s:background, 'fg': s:color08, 'cterm': 'italic', 'gui': 'italic' })
-call s:highlight ('Noise', { 'bg': s:background, 'fg': s:noise })
-call s:link ('Noise', 'jsIfElseBraces')
-call s:link ('Noise', 'typescriptParens')
-call s:link ('Noise', 'typescriptBraces')
-
-" ┌┬┐┌─┐┌┬┐┌─┐┬  ┌─┐┌┬┐┌─┐
-"  │ ├┤ │││├─┘│  ├─┤ │ ├┤
-"  ┴ └─┘┴ ┴┴  ┴─┘┴ ┴ ┴ └─┘
-
-" jsTemplateBraces -> Noise
-" typescriptInterpolationDelimiter -> Delimiter -> Special
-
-call s:highlight ('jsTemplateBraces', { 'bg': s:background, 'fg': s:color05 })
-call s:link ('jsTemplateBraces', 'typescriptInterpolationDelimiter')
-
-" ┌┬┐┬ ┬┌─┐┌─┐
-"  │ └┬┘├─┘├┤
-"  ┴  ┴ ┴  └─┘
-
-" jsFunction -> Type
-" jsStorageClass -> StorageClass -> Type
-" typescriptStorageClass -> StorageClass -> Type
-" typescriptType -> Type
-" jsArrowFunction -> Type
-" typescriptOpSymbols -> Type
-" typescriptFuncKeyword -> Function -> Identifier
-" typescriptOpSymbols -> Operator -> Statement -> Include
-" jsOperator -> Operator -> Statement -> Include
-" tsxNotOperator -> typescriptEndColons -> Noise
-" typescriptLogicSymbols -> Boolean -> Constant
-" jsGlobalNodeObjects -> Constant // TODO
-
-call s:highlight ('Type', { 'bg': s:background, 'fg': s:color03 })
-call s:link ('Type', 'typescriptFuncKeyword')
-call s:link ('Type', 'typescriptOpSymbols')
-call s:link ('Type', 'jsOperator')
-call s:link ('Type', 'tsxNotOperator')
-call s:link ('Type', 'typescriptLogicSymbols')
-
-" ─┐ ┬┌┬┐┬   ┬ ┬┌┬┐┌┬┐┬
-" ┌┴┬┘││││───├─┤ │ ││││
-" ┴ └─┴ ┴┴─┘ ┴ ┴ ┴ ┴ ┴┴─┘
-
-" tsxTag -> htmlTag -> Function -> Identifier
-" tsxTagName -> xmlTagName
-" tsxCloseTag -> xmlEndTag -> xmlTagName
-" tsxCloseTag -> xmlEndTag
-" htmlEndTag -> Identifier
-" htmlTagName -> htmlStatement -> Statement -> Include
-" htmlSpecialTagName -> Exception -> Statement -> Include
-
-call s:highlight ('htmlTag', { 'bg': s:background, 'fg': s:color05 })
-call s:link ('htmlTag', 'xmlTagName')
-call s:link ('htmlTag', 'xmlEndTag')
-call s:link ('htmlTag', 'htmlEndTag')
-call s:link ('htmlTag', 'htmlTagName')
-call s:link ('htmlTag', 'htmlSpecialTagName')
-
-" tsxAttrib -> htmlArg -> Type
-" tsxEqual -> htmlTag
-" htmlArg -> Type
-call s:highlight ('tsxAttrib', { 'bg': s:background, 'fg': s:color14 })
-call s:link ('tsxAttrib', 'htmlArg')
-
-" ┌┬┐┌─┐┬─┐┬┌─┌┬┐┌─┐┬ ┬┌┐┌
-" │││├─┤├┬┘├┴┐ │││ │││││││
-" ┴ ┴┴ ┴┴└─┴ ┴─┴┘└─┘└┴┘┘└┘
-
-" markdownH2 -> htmlH2 -> htmlH1 -> Title
-" markdownH2Delimiter -> markdownHeadingDelimiter -> Delimiter -> Special
-" markdownCodeDelimiter
-" markdownCode -> markdownCodeDelimiter
-" markdownListMarker -> htmlTagName -> htmlStatement -> Statement -> Include // SKIPPED
-" markdownBoldDelimiter -> markdownBold -> htmlBold
-" markdownItalicDelimiter -> markdownItalic -> htmlItalic
-
-call s:highlight ('Title', { 'bg': s:background, 'fg': s:color01 })
-call s:link ('Title', 'markdownHeadingDelimiter')
-call s:highlight ('markdownCodeDelimiter', { 'bg': s:background, 'fg': s:pale })
-call s:highlight ('markdownCode', { 'bg': s:background, 'fg': s:color08 })
-call s:highlight ('htmlBold', { 'bg': s:background, 'fg': s:color03, 'cterm': 'bold', 'gui': 'bold' })
-call s:highlight ('htmlItalic', { 'bg': s:background, 'fg': s:color03, 'cterm': 'italic', 'gui': 'italic' })
-
-
-" // TODO
-" bold is not applied in cterm
-" italic is not applied in gui
-
-" ┬ ┬┌─┐┌┬┐┬
-" └┬┘├─┤││││
-"  ┴ ┴ ┴┴ ┴┴─┘
-
-" yamlBlockMappingKey -> Identifier
-" dockerfileKeyword
-
-call s:highlight ('yamlBlockMappingKey', { 'bg': s:background, 'fg': s:color01 })
-call s:link ('yamlBlockMappingKey', 'dockerfileKeyword')
-
-
-" dosiniLabel -> Type
-" dosiniHeader
-
-call s:highlight ('dosiniHeader', { 'bg': s:background, 'fg': s:color01 })
-call s:highlight ('dosiniLabel', { 'bg': s:background, 'fg': s:color14 })
+hi! link CtrlPMatch Title
+hi! link CtrlPMode2 StatusLine
+hi! link CtrlPPrtCursor Cursor
+hi! link SignifySignAdd GitGutterAdd
+hi! link SignifySignChange GitGutterChange
+hi! link SignifySignChangeDelete GitGutterChangeDelete
+hi! link SignifySignDelete GitGutterDelete
+hi! link SignifySignDeleteFirstLine SignifySignDelete
+hi! link StartifyBracket Comment
+hi! link StartifyFile Identifier
+hi! link StartifyFooter Constant
+hi! link StartifyHeader Constant
+hi! link StartifyNumber Special
+hi! link StartifyPath Comment
+hi! link StartifySection Statement
+hi! link StartifySlash Comment
+hi! link StartifySpecial CatamaranNormal
+hi! link TSAttribute Special
+hi! link TSBoolean Constant
+hi! link TSCharacter Constant
+hi! link TSComment Comment
+hi! link TSConditional Statement
+hi! link TSConstBuiltin Constant
+hi! link TSConstMacro Constant
+hi! link TSConstant Constant
+hi! link TSConstructor CatamaranNormal
+hi! link TSError Error
+hi! link TSException Statement
+hi! link TSField CatamaranNormal
+hi! link TSFloat Constant
+hi! link TSFuncBuiltin Function
+hi! link TSFuncMacro Function
+hi! link TSFunction Function
+hi! link TSFunctionCall Function
+hi! link TSInclude Statement
+hi! link TSKeyword Statement
+hi! link TSKeywordFunction Function
+hi! link TSLabel Special
+hi! link TSNamespace Statement
+hi! link TSNumber Constant
+hi! link TSOperator CatamaranNormal
+hi! link TSParameter CatamaranNormal
+hi! link TSParameterReference CatamaranNormal
+hi! link TSProperty TSField
+hi! link TSPunctBracket CatamaranNormal
+hi! link TSPunctDelimiter CatamaranNormal
+hi! link TSPunctSpecial Special
+hi! link TSRepeat Statement
+hi! link TSString String
+hi! link TSStringEscape Special
+hi! link TSStringRegex String
+hi! link TSTag htmlTagName
+hi! link TSTagAttribute htmlArg
+hi! link TSTagDelimiter htmlTagName
+hi! link TSText CatamaranNormal
+hi! link TSTitle Title
+hi! link TSType Type
+hi! link TSTypeBuiltin Type
+hi! link TSURI Underlined
+hi! link TSVariable CatamaranNormal
+hi! link TSVariableBuiltin Statement
+hi! link TermCursor Cursor
+hi! link ToolbarButton TabLineSel
+hi! link ToolbarLine TabLineFill
+hi! link cssBraces Delimiter
+hi! link cssClassName Special
+hi! link cssClassNameDot CatamaranNormal
+hi! link cssPseudoClassId Special
+hi! link cssTagName Statement
+hi! link deniteMatched CatamaranNormal
+hi! link deniteMatchedChar Title
+hi! link elixirBlockDefinition Statement
+hi! link elixirDefine Statement
+hi! link elixirDocSigilDelimiter String
+hi! link elixirDocTest String
+hi! link elixirExUnitMacro Statement
+hi! link elixirExceptionDefine Statement
+hi! link elixirFunctionDeclaration Title
+hi! link elixirKeyword Statement
+hi! link elixirModuleDeclaration CatamaranNormal
+hi! link elixirModuleDefine Statement
+hi! link elixirPrivateDefine Statement
+hi! link elixirStringDelimiter String
+hi! link gitmessengerHash Comment
+hi! link gitmessengerHeader Statement
+hi! link gitmessengerHistory Constant
+hi! link graphqlName CatamaranNormal
+hi! link graphqlOperator CatamaranNormal
+hi! link helpHyperTextJump Constant
+hi! link htmlArg Constant
+hi! link htmlEndTag Statement
+hi! link htmlTag Statement
+hi! link jsArrowFunction Operator
+hi! link jsClassDefinition CatamaranNormal
+hi! link jsClassFuncName Title
+hi! link jsExport Statement
+hi! link jsFlowMaybe CatamaranNormal
+hi! link jsFlowObject CatamaranNormal
+hi! link jsFlowType PreProc
+hi! link jsFuncCall CatamaranNormal
+hi! link jsFuncName Title
+hi! link jsFutureKeys Statement
+hi! link jsGlobalObjects Statement
+hi! link jsModuleKeywords Statement
+hi! link jsModuleOperators Statement
+hi! link jsNull Constant
+hi! link jsObjectFuncName Title
+hi! link jsObjectKey Identifier
+hi! link jsSuper Statement
+hi! link jsTemplateBraces Special
+hi! link jsUndefined Constant
+hi! link jsonQuote CatamaranNormal
+hi! link markdownBold Special
+hi! link markdownCode String
+hi! link markdownCodeDelimiter String
+hi! link markdownHeadingDelimiter Comment
+hi! link markdownRule Comment
+hi! link ngxDirective Statement
+hi! link phpVarSelector Identifier
+hi! link plug1 CatamaranNormal
+hi! link plug2 Identifier
+hi! link plugDash Comment
+hi! link plugMessage Special
+hi! link pythonFunction Title
+hi! link rubyDefine Statement
+hi! link rubyFunction Title
+hi! link rubyInterpolationDelimiter String
+hi! link rubySharpBang Comment
+hi! link rubyStringDelimiter String
+hi! link rustFuncCall CatamaranNormal
+hi! link rustFuncName Title
+hi! link rustType Constant
+hi! link sassClass Special
+hi! link shFunction CatamaranNormal
+hi! link svssBraces Delimiter
+hi! link swiftIdentifier CatamaranNormal
+hi! link typescriptAjaxMethods CatamaranNormal
+hi! link typescriptBraces CatamaranNormal
+hi! link typescriptEndColons CatamaranNormal
+hi! link typescriptFuncKeyword Statement
+hi! link typescriptGlobalObjects Statement
+hi! link typescriptHtmlElemProperties CatamaranNormal
+hi! link typescriptIdentifier Statement
+hi! link typescriptMessage CatamaranNormal
+hi! link typescriptNull Constant
+hi! link typescriptParens CatamaranNormal
+hi! link vimContinue Comment
+hi! link vimFuncSID vimFunction
+hi! link vimFuncVar CatamaranNormal
+hi! link vimFunction Title
+hi! link vimGroup Statement
+hi! link vimHiGroup Statement
+hi! link vimHiTerm Identifier
+hi! link vimMapModKey Special
+hi! link vimOption Identifier
+hi! link vimVar CatamaranNormal
+hi! link xmlAttrib Constant
+hi! link xmlAttribPunct Statement
+hi! link xmlEndTag Statement
+hi! link xmlNamespace Statement
+hi! link xmlTag Statement
+hi! link xmlTagName Statement
+hi! link yamlKeyValueDelimiter Delimiter
