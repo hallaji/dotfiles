@@ -33,8 +33,9 @@ Plug 'travisjeffery/vim-auto-mkdir' " https://github.com/travisjeffery/vim-auto-
 Plug 'jeffkreeftmeijer/vim-numbertoggle' " https://github.com/jeffkreeftmeijer/vim-numbertoggle
 Plug 'preservim/vimux' " https://github.com/preservim/vimux
 Plug 'tpope/vim-commentary' " https://github.com/tpope/vim-commentary
-Plug 'preservim/nerdcommenter' " https://github.com/preservim/nerdcommentr
+Plug 'preservim/nerdcommenter' " https://github.com/preservim/nerdcommenter
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' } " https://github.com/iamcco/markdown-preview.nvim
+Plug 'neoclide/jsonc.vim' " https://github.com/neoclide/jsonc.vim
 if has('nvim')
   Plug 'declancm/cinnamon.nvim' " https://github.com/declancm/cinnamon.nvim
 endif
@@ -98,7 +99,6 @@ Plug 'ryanoasis/vim-devicons' " https://github.com/ryanoasis/vim-devicons
 
 "Plug 'arcticicestudio/nord-vim'
 "Plug 'joshdick/onedark.vim'
-"Plug 'cocopon/iceberg.vim'
 "Plug 'flrnd/plastic.vim'
 "Plug 'w0ng/vim-hybrid'
 
