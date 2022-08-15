@@ -199,8 +199,8 @@ fresh vim/nvim.vim --file=~/.config/nvim/init.vim --marker='"'
 # │  │ ││
 # └─┘└─┘└─┘
 
-fresh config/coc/settings.json --file=~/.config/nvim/coc-settings.json
-fresh config/coc/settings.json --file=~/.vim/coc-settings.json
+fresh config/coc/coc-settings.json --file=~/.config/nvim/coc-settings.json
+fresh config/coc/coc-settings.json --file=~/.vim/coc-settings.json
 
 # ┌┬┐┬ ┬┌─┐┌┬┐┌─┐
 #  │ ├─┤├┤ │││├┤
