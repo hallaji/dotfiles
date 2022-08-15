@@ -11,25 +11,25 @@ draw_bold_text_with_bright_colors: false
 colors:
   primary:
     background: '#22272e'
-    foreground: '#dadada'
-    dim_foreground: '#585858'
-    bright_foreground: '#ffffff'
+    foreground: '#adbac7'
+    dim_foreground: '#3c4552'
+    bright_foreground: '#adbac7'
   cursor:
-    text: '#26282B'
-    cursor: '#FF4B82'
+    text: '#1f242a'
+    cursor: '#ff4b82'
   vi_mode_cursor:
-    text: '#26282B'
-    cursor: '#FF4B82'
+    text: '#1f242a'
+    cursor: '#ff4b82'
   search:
     matches:
-      foreground: '#000000'
-      background: '#87d7d7'
+      foreground: '#e86db2'
+      background: '#3c4552'
     focused_match:
-      foreground: '#000000'
-      background: '#b084EB'
+      foreground: '#1f242a'
+      background: '#e86db2'
     bar:
-      background: '#292c30'
-      foreground: '#ffffff'
+      foreground: '#e86db2'
+      background: '#1f242a'
   hints:
     start:
       foreground: '#1d1f21'
@@ -38,29 +38,29 @@ colors:
       foreground: '#e9ff5e'
       background: '#1d1f21'
   line_indicator:
-    foreground: '#585858'
-    background: '#303030'
+    foreground: '#3c4552'
+    background: '#22272e'
   selection:
-    text: '#585858'
-    background: '#303030'
+    text: '#22272e'
+    background: '#04f6f6'
   normal:
-    black:   '#22272e'
-    red:     '#EC2864'
-    green:   '#2ad3ba'
-    yellow:  '#FFB86C'
-    blue:    '#45A9F9'
+    black:   '#1f242a'
+    red:     '#f47067'
+    green:   '#2bd2b9'
+    yellow:  '#f5b168'
+    blue:    '#2f97ea'
     magenta: '#e86db2'
-    cyan:    '#2fbca7'
-    white:   '#c6c8d1'
+    cyan:    '#04f6f6'
+    white:   '#8296aa'
   bright:
-    black:   '#676B79'
-    red:     '#FF4B82'
-    green:   '#e9ff5e'
-    yellow:  '#FFCC95'
-    blue:    '#6FC1FF'
-    magenta: '#ada0d3'
+    black:   '#3c4552'
+    red:     '#ff4b82'
+    green:   '#00b196'
+    yellow:  '#ffcc95'
+    blue:    '#6fc1ff'
+    magenta: '#a394cd'
     cyan:    '#87d7d7'
-    white:   '#f2f2f2'
+    white:   '#9cb6d0'
   # The indexed colors include all colors from 16 to 256.
   # When these are not set, they're filled with sensible defaults.
   # indexed_colors:
