@@ -47,6 +47,6 @@ export GITHUB_REGISTRY_TOKEN=<%= ENV["GITHUB_REGISTRY_TOKEN"] %>
 
 export NNN_PLUG="o:fzopen;f:fzcd;j:autojump;p:preview-tui;v:imgview"
 export NNN_BMS="d:$DOTFILES"
-export NNN_COLORS="4444"
-export NNN_FCOLORS="000005000000000000000000"
+export NNN_COLORS="3456"
+export NNN_FCOLORS="0b0b05060f060e090d030000"
 export NNN_FIFO="/tmp/nnn.fifo"
