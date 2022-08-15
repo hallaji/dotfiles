@@ -41,6 +41,9 @@ nnoremap <leader>w :ToggleWrap<cr>
 " Neovim support showing relative number
 nnoremap <leader>n :set relativenumber!<cr>
 
+" Toggle spell checker
+nnoremap <leader>S :set spell! spelllang=en_au<cr>
+
 " Copy/paste from/to system clipboard in visual/select mode
 vnoremap <leader>y "*y
 vnoremap <leader>p "*p
@@ -69,8 +72,8 @@ nnoremap <C-Up> <C-W>+
 nnoremap <C-Right> <C-W>>
 
 " Circle windows (splits)
-nnoremap <tab>   <c-w>w
-nnoremap <S-tab> <c-w>W
+nnoremap <tab>   <C-w>w
+nnoremap <S-tab> <C-w>W
 
 " Circle buffers
 nnoremap ]b :bnext<cr>
@@ -118,14 +121,14 @@ nnoremap <silent> _ :Explore<cr>
 " │││├┤ ├┬┘ ││ │ ├┬┘├┤ ├┤
 " ┘└┘└─┘┴└──┴┘ ┴ ┴└─└─┘└─┘
 
-nnoremap <silent> ` :NERDTreeFocus<cr>
+nnoremap <silent> ~ :NERDTreeFocus<cr>
 
 " ┌┐┌┌┐┌┌┐┌
 " │││││││││
 " ┘└┘┘└┘┘└┘
 
 nnoremap <silent> - :NnnPicker %:p:h<CR>
-nnoremap <silent> ~ :NnnExplorer<CR>
+nnoremap <silent> ` :NnnExplorer<CR>
 
 " ┌┬┐┌─┐┬─┐┬┌─┌┬┐┌─┐┬ ┬┌┐┌
 " │││├─┤├┬┘├┴┐ │││ │││││││
