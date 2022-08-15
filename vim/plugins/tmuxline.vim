@@ -17,9 +17,9 @@ let g:tmuxline_preset = {
   \'z'       : '#(whoami)',
   \'options' : {'status-justify' : 'left'}}
 
-let g:tmuxline_separators = {
-  \ 'left' : '',
-  \ 'left_alt': '',
-  \ 'right' : '',
-  \ 'right_alt' : '',
-  \ 'space' : ' '}
+" let g:tmuxline_separators = {
+"   \ 'left' : '',
+"   \ 'left_alt': '',
+"   \ 'right' : '',
+"   \ 'right_alt' : '',
+"   \ 'space' : ' '}
