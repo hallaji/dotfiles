@@ -13,7 +13,7 @@ set encoding=UTF-8 " Use UTF-8 as the default encoding
 " set spell spelllang=en_au " Enable spell checker
 set number " Show line numbers
 set ruler " Show the line and column number of the cursor position, separated by a comma
-" set colorcolumn=80,120 " Set a ruler in 80 and 120 by default
+set colorcolumn=80,120 " Set a ruler in 80 and 120 by default
 set foldcolumn=1 " Custom left padding for each window
 set cursorline " Highlight the text line of the cursor with CursorLine
 set cmdheight=1 " Command height under status line
