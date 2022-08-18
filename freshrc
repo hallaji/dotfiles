@@ -29,7 +29,7 @@ fresh so-fancy/diff-so-fancy third_party/build_fatpack/diff-so-fancy --bin=~/bin
 # ██║  ██║███████╗██║  ██║╚██████╗██║  ██║██║   ██║      ██║      ██║
 # ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝   ╚═╝      ╚═╝      ╚═╝
 
-fresh-options --file=~/.config/alacritty/alacritty.yml
+fresh-options --filter=erb --file=~/.config/alacritty/alacritty.yml
   fresh config/alacritty/\*
 fresh-options
 
