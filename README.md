@@ -34,7 +34,7 @@ This command checks for a repository slug in `FRESH_LOCAL_SOURCE` environment va
 ❯ brew bundle --global
 ```
 
-A fresh Brewfile is now symlinked into home directory `~/.Brewfile` and facilitates global dependencies installation.
+Brew can now facilitate dependencies installations because of a fresh Brewfile symlinked into home directory `~/.Brewfile`.
 
 ### 3. Loading Environment Variables
 
