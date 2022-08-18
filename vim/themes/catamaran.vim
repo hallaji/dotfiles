@@ -23,7 +23,7 @@ endif
 
 hi CatamaranNormal ctermfg=250 guifg=#adbac7
 
-hi ColorColumn cterm=NONE ctermbg=234 ctermfg=NONE guibg=#1f242a guifg=NONE
+hi ColorColumn cterm=NONE ctermbg=234 ctermfg=NONE guibg=#22282f guifg=NONE
 hi Cursor ctermbg=140 ctermfg=234 guibg=#a394cd guifg=#1f242a gui=bold,underline
 hi CursorColumn cterm=NONE ctermbg=140 ctermfg=234 guibg=#a394cd guifg=#1f242a
 hi CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE gui=NONE
@@ -87,7 +87,7 @@ hi Underlined cterm=underline ctermfg=36 gui=underline guifg=#00b196 term=underl
 hi Whitespace ctermfg=235 guifg=#22272e
 hi WarningMsg ctermbg=234 ctermfg=215 guibg=#22272e guifg=#f5b168
 
-hi FloatBorder ctermbg=234 ctermfg=16 guibg=#1f242a guifg=#000000
+hi FloatBorder ctermbg=234 ctermfg=16 guibg=#1f242a guifg=#040506
 hi Normal ctermbg=235 ctermfg=250 guibg=#22272e guifg=#adbac7
 hi NormalFloat ctermbg=234 ctermfg=250 guibg=#1f242a guifg=#adbac7
 hi Pmenu ctermbg=234 ctermfg=238 guibg=#1f242a guifg=#3c4552
