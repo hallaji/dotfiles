@@ -7,8 +7,9 @@
 # List of files and directories that are symlinked by fresh
 
 links=(
-  ~/.aws/config
+  ~/.Brewfile
   ~/.asdfrc
+  ~/.aws/config
   ~/.bundle/config
   ~/.config/alacritty/alacritty.yml
   ~/.config/gh-dash/config.yml
@@ -17,21 +18,22 @@ links=(
   ~/.config/pip/pip.conf
   ~/.config/starship.toml
   ~/.ctags
-  ~/.Brewfile
   ~/.figlet/
   ~/.gitconfig
   ~/.gitignore
   ~/.gitmessage
-  ~/.gnupg/gpg.conf
   ~/.gnupg/gpg-agent.conf
+  ~/.gnupg/gpg.conf
+  ~/.netrc
   ~/.npmrc
   ~/.skhdrc
   ~/.ssh/config
   ~/.tmux.conf
   ~/.tmux/plugins/tpm/
-  ~/.vimrc
+  ~/.vim/autoload/airline/themes/catamaran.vim
   ~/.vim/coc-settings.json
   ~/.vim/colors/catamaran.vim
+  ~/.vimrc
   ~/.yabairc
   ~/.zprofile
   ~/.zshenv
