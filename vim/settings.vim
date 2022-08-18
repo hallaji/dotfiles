@@ -52,3 +52,15 @@ if exists('+termguicolors')
   let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
 endif
+
+" Enable fenced code block syntax highlighting in markdown
+let g:markdown_fenced_languages = [
+      \ 'typescript',
+      \ 'javascript',
+      \ 'go',
+      \ 'java',
+      \ 'kotlin',
+      \ 'html',
+      \ 'json',
+      \ 'shell',
+      \ 'bash=sh']
