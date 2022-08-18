@@ -16,6 +16,12 @@
   excludesfile = ~/.gitignore
   pager = diff-so-fancy | less --tabs=4 -RFX
 
+[interactive]
+  diffFilter = diff-so-fancy --patch
+
+[add.interactive]
+  useBuiltin = false
+
 [commit]
   gpgsign = true
   template = ~/.gitmessage
@@ -26,25 +32,31 @@
 [pull]
   rebase = false
 
+[merge]
+  conflictstyle = diff3
+
 [push]
   autoSetupRemote = true
 
 [color]
   ui = true
 
+[color "diff-highlight"]
+  oldNormal = 1
+  oldHighlight = 1 0 bold
+  newNormal = 2
+  newHighlight = 2 0 bold
+
+# https://git-scm.com/docs/git-config#Documentation/git-config.txt-colordiffltslotgt
+[color "diff"]
+  plain = 8
+  meta = 7
+  frag = 6 bold
+  func = 7
+  commit = 3 bold
+  old = 1
+  new = 2
+  whitespace = 1 reverse
+
 [diff-so-fancy]
   useUnicodeRuler = false
-
-[color "diff"]
-  commit = 3
-  meta = 241
-  frag = 241
-  old = 167
-  new = 2
-  whitespace = 167 reverse
-
-[color "diff-highlight"]
-  oldNormal = 167
-  oldHighlight = 167 reverse
-  newNormal = 2
-  newHighlight = 2 reverse
