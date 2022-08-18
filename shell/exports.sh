@@ -47,6 +47,6 @@ export GITHUB_REGISTRY_TOKEN=<%= ENV["GITHUB_REGISTRY_TOKEN"] %>
 
 export NNN_PLUG="o:fzopen;f:fzcd;j:autojump;p:preview-tui;v:imgview"
 export NNN_BMS="d:$DOTFILES"
-export NNN_COLORS="3456"
-export NNN_FCOLORS="0b0b05060f060e090d030000"
+export NNN_COLORS="4356" # Contexts: 1st, 2nd, 3rd, 4th
+export NNN_FCOLORS="0e0b05040d060e0909030708" # BLK, CHR, DIR, EXE, REG, HARDLINK, SYMLINK, MISSING, ORPHAN, FIFO, SOCK, OTHER
 export NNN_FIFO="/tmp/nnn.fifo"
