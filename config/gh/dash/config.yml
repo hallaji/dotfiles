@@ -25,15 +25,15 @@ defaults:
 theme:
   colors:
     text:
-      primary: "#E2E1ED"
-      secondary: "#666CA6"
-      inverted: "#242347"
-      faint: "#3E4057"
-      warning: "#F23D5C"
-      success: "#3DF294"
+      primary: "#adbac7"
+      secondary: "#a394cd"
+      inverted: "#1f242a"
+      faint: "#3c4552"
+      warning: "#f47067"
+      success: "#00b196"
     background:
       selected: "#39386B"
     border:
-      primary: "#383B5B"
+      primary: "#39386B"
       secondary: "#39386B"
       faint: "#2B2B40"
