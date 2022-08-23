@@ -37,6 +37,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' } " https:
 Plug 'neoclide/jsonc.vim' " https://github.com/neoclide/jsonc.vim
 Plug 'nvim-treesitter/nvim-treesitter' " https://github.com/nvim-treesitter/nvim-treesitter
 if has('nvim')
+  Plug 'folke/which-key.nvim' " https://github.com/folke/which-key.nvim
   Plug 'declancm/cinnamon.nvim' " https://github.com/declancm/cinnamon.nvim
 endif
 

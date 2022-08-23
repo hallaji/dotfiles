@@ -185,6 +185,7 @@ fresh-options --file=~/.vimrc --marker='"'
   fresh vim/plugins/nnn.vim
   fresh vim/plugins/startify.vim
   fresh vim/plugins/coc.vim
+  fresh vim/plugins/which-key.vim
   fresh vim/functions.vim
   fresh vim/settings.vim
   fresh vim/commands.vim
