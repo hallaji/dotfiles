@@ -8,8 +8,12 @@
 
 " @see https://github.com/airblade/vim-gitgutter
 
+let g:gitgutter_signs = 0
+let g:gitgutter_map_keys = 0
 let g:gitgutter_highlight_lines = 0
-let g:gitgutter_highlight_linenrs = 1
+let g:gitgutter_highlight_linenrs = 0
+let g:gitgutter_preview_win_floating = 1
+let g:gitgutter_close_preview_on_escape = 1
 
 set foldtext=gitgutter#fold#foldtext()
 

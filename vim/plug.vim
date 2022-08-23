@@ -69,6 +69,7 @@ Plug 'mcchrish/nnn.vim' " https://github.com/mcchrish/nnn.vim
 Plug 'tpope/vim-fugitive' " https://github.com/tpope/vim-fugitive
 Plug 'tpope/vim-rhubarb' " https://github.com/tpope/vim-rhubarb
 Plug 'airblade/vim-gitgutter' " https://github.com/airblade/vim-gitgutter
+Plug 'mhinz/vim-signify' " https://github.com/mhinz/vim-signify
 
 " ┌┬┐┌─┐┬  ┬┌─┐┬  ┌─┐┌─┐┌┬┐┌─┐┌┐┌┌┬┐
 "  ││├┤ └┐┌┘├┤ │  │ │├─┘│││├┤ │││ │
@@ -92,7 +93,6 @@ Plug 'ryanoasis/vim-devicons' " https://github.com/ryanoasis/vim-devicons
 " ││││ │ │   ││││  │ │└─┐├┤
 " ┘└┘└─┘ ┴   ┴┘└┘  └─┘└─┘└─┘
 
-" Plug 'mhinz/vim-signify' " https://github.com/mhinz/vim-signify
 " Plug 'tpope/vim-commentary' " https://github.com/tpope/vim-commentary
 
 " Plug 'arcticicestudio/nord-vim'

@@ -175,6 +175,7 @@ fresh-options --file=~/.vimrc --marker='"'
   fresh vim/plugins/nerdcommenter.vim
   fresh vim/plugins/greplace.vim
   fresh vim/plugins/gitgutter.vim
+  fresh vim/plugins/signify.vim
   fresh vim/plugins/airline.vim
   fresh vim/plugins/tmuxline.vim
   fresh vim/plugins/ctrlsf.vim
