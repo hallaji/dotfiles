@@ -19,7 +19,6 @@ fresh freshshell/fresh contrib/source-build.sh --file=~/.zshrc
 fresh-options --bin
   fresh bin/\*
 fresh-options
-fresh so-fancy/diff-so-fancy third_party/build_fatpack/diff-so-fancy --bin=~/bin/diff-so-fancy
 
 
 #  █████╗ ██╗      █████╗  ██████╗██████╗ ██╗████████╗████████╗██╗   ██╗
