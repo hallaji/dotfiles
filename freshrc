@@ -173,6 +173,7 @@ fresh-options --file=~/.vimrc --marker='"'
   fresh vim/plugins/ctrlp.vim
   fresh vim/plugins/netrw.vim
   fresh vim/plugins/nerdtree.vim
+  fresh vim/plugins/nerdcommenter.vim
   fresh vim/plugins/greplace.vim
   fresh vim/plugins/gitgutter.vim
   fresh vim/plugins/airline.vim
