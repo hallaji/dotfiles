@@ -34,6 +34,7 @@ filetype plugin indent on " use language‐specific plugins for indenting (bette
 set signcolumn=yes " Always show the signcolumn
 set mouse=a " Enable scrolling with the scroll wheel
 set updatetime=100 " Shorter update time - default is 4000 ms
+set timeoutlen=500 " Waiting time for keystorke
 set hidden " Hide buffers instead of closing them
 set nocompatible " Use latest vim settings, not vi
 set backspace=indent,eol,start " Make backspace behave like every other editor
@@ -62,5 +63,4 @@ let g:markdown_fenced_languages = [
       \ 'kotlin',
       \ 'html',
       \ 'json',
-      \ 'shell',
       \ 'bash=sh']
