@@ -32,7 +32,6 @@ Plug 'tpope/vim-surround' " https://github.com/tpope/vim-surround
 Plug 'travisjeffery/vim-auto-mkdir' " https://github.com/travisjeffery/vim-auto-mkdir
 Plug 'jeffkreeftmeijer/vim-numbertoggle' " https://github.com/jeffkreeftmeijer/vim-numbertoggle
 Plug 'preservim/vimux' " https://github.com/preservim/vimux
-Plug 'tpope/vim-commentary' " https://github.com/tpope/vim-commentary
 Plug 'preservim/nerdcommenter' " https://github.com/preservim/nerdcommenter
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' } " https://github.com/iamcco/markdown-preview.nvim
 Plug 'neoclide/jsonc.vim' " https://github.com/neoclide/jsonc.vim
@@ -70,7 +69,6 @@ Plug 'mcchrish/nnn.vim' " https://github.com/mcchrish/nnn.vim
 Plug 'tpope/vim-fugitive' " https://github.com/tpope/vim-fugitive
 Plug 'tpope/vim-rhubarb' " https://github.com/tpope/vim-rhubarb
 Plug 'airblade/vim-gitgutter' " https://github.com/airblade/vim-gitgutter
-Plug 'mhinz/vim-signify' " https://github.com/mhinz/vim-signify
 
 " ┌┬┐┌─┐┬  ┬┌─┐┬  ┌─┐┌─┐┌┬┐┌─┐┌┐┌┌┬┐
 "  ││├┤ └┐┌┘├┤ │  │ │├─┘│││├┤ │││ │
@@ -94,23 +92,22 @@ Plug 'ryanoasis/vim-devicons' " https://github.com/ryanoasis/vim-devicons
 " ││││ │ │   ││││  │ │└─┐├┤
 " ┘└┘└─┘ ┴   ┴┘└┘  └─┘└─┘└─┘
 
-" Plug 'kyazdani42/nvim-web-devicons' " https://github.com/kyazdani42/nvim-web-devicons
+" Plug 'mhinz/vim-signify' " https://github.com/mhinz/vim-signify
+" Plug 'tpope/vim-commentary' " https://github.com/tpope/vim-commentary
 
-"Plug 'tpope/vim-markdown' " https://github.com/tpope/vim-markdown
-
-"Plug 'arcticicestudio/nord-vim'
-"Plug 'joshdick/onedark.vim'
-"Plug 'flrnd/plastic.vim'
-"Plug 'w0ng/vim-hybrid'
-
-"Plug 'jelera/vim-javascript-syntax'
-"Plug 'HerringtonDarkholme/yats.vim'
-"Plug 'MaxMEllon/vim-jsx-pretty'
-"Plug 'junegunn/seoul256.vim'
-"Plug 'junegunn/limelight.vim'
-
-"Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
-"Plug 'flowtype/vim-flow' " https://github.com/flow/vim-flow
-"Plug 'junegunn/gv.vim' " https://github.com/junegunn/gv.vim
+" Plug 'arcticicestudio/nord-vim'
+" Plug 'joshdick/onedark.vim'
+" Plug 'flrnd/plastic.vim'
+" Plug 'w0ng/vim-hybrid'
+"
+" Plug 'jelera/vim-javascript-syntax'
+" Plug 'HerringtonDarkholme/yats.vim'
+" Plug 'MaxMEllon/vim-jsx-pretty'
+" Plug 'junegunn/seoul256.vim'
+" Plug 'junegunn/limelight.vim'
+"
+" Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
+" Plug 'flowtype/vim-flow' " https://github.com/flow/vim-flow
+" Plug 'junegunn/gv.vim' " https://github.com/junegunn/gv.vim
 
 call plug#end()
