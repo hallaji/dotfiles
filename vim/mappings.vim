@@ -8,14 +8,22 @@
 
 " https://neovim.io/doc/user/map.html
 
-let mapleader = ',' " If not set or empty, a backslash is used instead.
+let mapleader = ',' " A prefix key (default is backslash)
+let maplocalleader = '\\' " A prefix key that only take effect for certain types of files
 
 " ┌─┐┌─┐┌┐┌┌─┐┬─┐┌─┐┬
 " │ ┬├┤ │││├┤ ├┬┘├─┤│
 " └─┘└─┘┘└┘└─┘┴└─┴ ┴┴─┘
 
-" Edit my dotfiles in a new tab
-nnoremap <silent> <leader>dot :tabedit $DOTFILES<cr>
+" Open which key
+nnoremap <C-X> :WhichKey<cr>
+
+" Re-copy selected area on paste operation (vim paste has no memory)
+xnoremap p pgvy
+
+" Use <C-n>i to send <C-i> because <C-i> is same as <tab> when received by vim
+" Check Alacritty bindings for <C-i>
+nnoremap <C-n>i <C-i>
 
 " Make Y behave like other capitals
 nnoremap Y y$
@@ -27,7 +35,7 @@ nnoremap Q @q
 nmap <leader><space> :nohlsearch<cr>
 
 " Comment a line
-map <leader>/ :Commentary<cr>
+map <leader>/ <plug>NERDCommenterToggle
 
 " Trim the trailing whitespaces
 nmap <leader>z :TrimWhiteSpaces<cr>
@@ -48,22 +56,42 @@ nnoremap <leader>S :set spell! spelllang=en_au<cr>
 vnoremap <leader>y "*y
 vnoremap <leader>p "*p
 
-" Re-copy selected area on paste operation (vim paste has no memory)
-xnoremap p pgvy
+" Preview a markdown
+nmap <leader>m <Plug>MarkdownPreviewToggle
 
-" Use <C-n>i to send <C-i> because <C-i> is same as <tab> when received by vim
-" Check Alacritty bindings for <C-i>
-nnoremap <C-n>i <C-i>
+lua << EOF
+  local wk = require("which-key")
+  wk.register({
+    Q = { "Replay macro recording" },
+    Y = { "Yank (Copy) to the line break" },
+    ["<C-X>"] = { "Which Key" },
+  })
+  wk.register({
+    ["/"] = { "Comment" },
+    p = { "Put (paste)" },
+    y = { "Yank (copy)" },
+  }, { mode="v", prefix = "<leader>" })
+  wk.register({
+    S = { "Spell check (en_au)" },
+    ["/"] = { "Comment" },
+    ["<space>"] = { "Remove search highlights" },
+    m = { "Preview markdown" },
+    n = { "Relative line numbers" },
+    r = { "Ruler" },
+    w = { "Wrap" },
+    z = { "Trim spaces" },
+  }, { prefix = "<leader>" })
+EOF
 
 " ┌┐┌┌─┐┬  ┬┬┌─┐┌─┐┌┬┐┬┌─┐┌┐┌
 " │││├─┤└┐┌┘││ ┬├─┤ │ ││ ││││
 " ┘└┘┴ ┴ └┘ ┴└─┘┴ ┴ ┴ ┴└─┘┘└┘
 
 " Jump between splits
-nnoremap <C-h> <C-W><C-H>
-nnoremap <C-j> <C-W><C-J>
-nnoremap <C-k> <C-W><C-K>
-nnoremap <C-l> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
 
 " Resize splits
 nnoremap <C-Left> <C-W><
@@ -72,154 +100,299 @@ nnoremap <C-Up> <C-W>+
 nnoremap <C-Right> <C-W>>
 
 " Circle windows (splits)
-nnoremap <tab>   <C-w>w
-nnoremap <S-tab> <C-w>W
+nnoremap <Tab>   <C-W>w
+nnoremap <S-Tab> <C-W>W
 
 " Circle buffers
-nnoremap ]b :bnext<cr>
 nnoremap [b :bprev<cr>
+nnoremap ]b :bnext<cr>
 
 " Circle tabs
-nnoremap ]t :tabn<cr>
 nnoremap [t :tabp<cr>
+nnoremap ]t :tabn<cr>
 
-" Circle hunks in a buffer
-nnoremap <silent> ]h :call GitGutterNextHunkCycle()<cr>
-nnoremap <silent> [h :call GitGutterPrevHunkCycle()<cr>
 
-" Circle hunks in all buffers
-nnoremap <silent> ]c :call GitGutterNextHunkAllBuffers()<cr>
-nnoremap <silent> [c :call GitGutterPrevHunkAllBuffers()<cr>
+lua << EOF
+  local wk = require("which-key")
+  wk.register({
+    ["<C-H>"] = { "Go to the left window" },
+    ["<C-J>"] = { "Go to the down window" },
+    ["<C-K>"] = { "Go to the up window" },
+    ["<C-L>"] = { "Go to the Right window" },
+    ["<C-Left>"] = { "Decrease width" },
+    ["<C-Down>"] = { "Decrease height" },
+    ["<C-Up>"] = { "Increase height" },
+    ["<C-Right>"] = { "Increase width" },
+    ["<Tab>"] = { "Circle window forward" },
+    ["<S-Tab>"] = { "Circle window backward" },
+    ["["] = {
+      b = { " Prev buffer" },
+      t = { " Prev tab" },
+    },
+    ["]"] = {
+      b = { " Next buffer" },
+      t = { " Next tab" },
+    }
+  })
+EOF
 
-" ┌─┐┌─┐┬  ┬┌─┐
-" └─┐├─┤└┐┌┘├┤
-" └─┘┴ ┴ └┘ └─┘
+lua << EOF
+  local wk = require("which-key")
+  wk.register({
+    c = {
+      name = " comment",
+    },
+  }, { prefix = "<leader>" })
+EOF
 
-" @FIXME There's a conflict with COC
-inoremap <C-s> <C-O>:update<cr>
-nnoremap <C-s> :update<cr>
-nnoremap <leader>s :update<cr>
+" ┌┐ ┬ ┬┌─┐┌─┐┌─┐┬─┐
+" ├┴┐│ │├┤ ├┤ ├┤ ├┬┘
+" └─┘└─┘└  └  └─┘┴└─
 
-" ┌─┐ ┬ ┬┬┌┬┐
-" │─┼┐│ ││ │
-" └─┘└└─┘┴ ┴
-
-inoremap <C-q> <esc>:q<cr>
-nnoremap <C-q> :q<cr>
-vnoremap <C-q> <esc>
-nnoremap <leader>q :q<cr>
+inoremap <C-Q> <esc>:q<cr>
+inoremap <C-S> <C-O>:update<cr>
+nnoremap <C-Q> :q<cr>
+nnoremap <C-S> :update<cr>
 nnoremap <leader>Q :qa!<cr>
+nnoremap <leader>bQ :qa!<cr>
+nnoremap <leader>bc :bd<cr>
+nnoremap <leader>bf :bfirst<cr>
+nnoremap <leader>bh :Startify<cr>
+nnoremap <leader>bl :blast<cr>
+nnoremap <leader>bn :bnext<cr>
+nnoremap <leader>bp :bprevious<cr>
+nnoremap <leader>bq :q<cr>
+nnoremap <leader>bs :update<cr>
+vnoremap <C-Q> <esc>
 
-" @TODO: add ,f to search
-" ┌┐┌┌─┐┌┬┐┬─┐┬ ┬
-" │││├┤  │ ├┬┘│││
-" ┘└┘└─┘ ┴ ┴└─└┴┘
+lua << EOF
+  local wk = require("which-key")
+  wk.register({
+    Q = { " Quit all" },
+    b = {
+      name = "﬘ buffer",
+      Q = { " Quit all" },
+      c = { " Close" },
+      f = { " First" },
+      h = { "ﳐ Home" },
+      l = { " Last" },
+      n = { " Next" },
+      p = { " Previous" },
+      q = { " Quit" },
+      s = { " Save" },
+    },
+  }, { prefix = "<leader>" })
+EOF
+
+" ┌─┐┌─┐┌─┐┌┐┌
+" │ │├─┘├┤ │││
+" └─┘┴  └─┘┘└┘
+
+" Edit my dotfiles in a new tab
+nnoremap <silent> <leader>od :tabedit $DOTFILES<cr>
+
+lua << EOF
+  local wk = require("which-key")
+  wk.register({
+    o = {
+      name = " open",
+      d = { "Dotfiles" },
+    },
+  }, { prefix = "<leader>" })
+EOF
+
+" ┌─┐┬┌┐┌┌┬┐
+" ├┤ ││││ ││
+" └  ┴┘└┘─┴┘
+
+inoremap <C-f> <esc>:FzfLua<cr>
+nnoremap <C-f> :FzfLua<cr>
+vnoremap <C-f> <esc>:FzfLua<cr>
+nnoremap <leader>F <Plug>CtrlSFPrompt
+nnoremap <leader>f :FzfLua<cr>
+nnoremap <leader>fb :FzfLua buffers<cr>
+
+lua << EOF
+  local wk = require("which-key")
+  wk.register({
+    ["<C-F>"] = { "Find" },
+  })
+  wk.register({
+    f = {
+      name = " find",
+      b = { "Buffers" },
+    },
+  }, { prefix = "<leader>" })
+EOF
+
+" ┬─┐┌─┐┌─┐┬  ┌─┐┌─┐┌─┐
+" ├┬┘├┤ ├─┘│  ├─┤│  ├┤
+" ┴└─└─┘┴  ┴─┘┴ ┴└─┘└─┘
+
+nnoremap <leader>rc :CtrlSFClearHL<cr>
+nnoremap <leader>rf :CtrlSFFocus<cr>
+nnoremap <leader>rl <Plug>CtrlSFPwordExec
+nnoremap <leader>ro :CtrlSFOpen<cr>
+nnoremap <leader>rp <Plug>CtrlSFPrompt
+nnoremap <leader>rs <Plug>CtrlSFVwordExec
+nnoremap <leader>rt :CtrlSFToggle<cr>
+nnoremap <leader>ru :CtrlSFUpdate<cr>
+nnoremap <leader>rw <Plug>CtrlSFCwordExec
+nnoremap <leader>rz <Plug>CtrlSFCCwordExec
+
+lua << EOF
+  local wk = require("which-key")
+  wk.register({
+    r = {
+      name = " replace",
+      c = { "Clear highlight" },
+      f = { "Focus window" },
+      l = { "Last search" },
+      o = { "Open window" },
+      p = { "Prompt" },
+      s = { "Selected" },
+      t = { "Toggle window" },
+      u = { "Update last results" },
+      w = { "Word" },
+      z = { "Word plus boundary" },
+    },
+  }, { prefix = "<leader>" })
+EOF
+
+" ┌─┐─┐ ┬┌─┐┬  ┌─┐┬─┐┌─┐┬─┐
+" ├┤ ┌┴┬┘├─┘│  │ │├┬┘├┤ ├┬┘
+" └─┘┴ └─┴  ┴─┘└─┘┴└─└─┘┴└─
 
 nnoremap <silent> _ :Explore<cr>
-
-" ┌┐┌┌─┐┬─┐┌┬┐┌┬┐┬─┐┌─┐┌─┐
-" │││├┤ ├┬┘ ││ │ ├┬┘├┤ ├┤
-" ┘└┘└─┘┴└──┴┘ ┴ ┴└─└─┘└─┘
-
 nnoremap <silent> ~ :NERDTreeFocus<cr>
+nnoremap <silent> - :NnnPicker %:p:h<cr>
+nnoremap <silent> ` :NnnExplorer<cr>
 
-" ┌┐┌┌┐┌┌┐┌
-" │││││││││
-" ┘└┘┘└┘┘└┘
+lua << EOF
+  local wk = require("which-key")
+  wk.register({
+    ["_"] = { "NetRW" },
+    ["~"] = { "NERDTree" },
+    ["-"] = { "NNN Picker" },
+    ["`"] = { "NNN Explorer" },
+  })
+EOF
 
-nnoremap <silent> - :NnnPicker %:p:h<CR>
-nnoremap <silent> ` :NnnExplorer<CR>
+" ┌─┐┬┌┬┐
+" │ ┬│ │
+" └─┘┴ ┴
 
-" ┌┬┐┌─┐┬─┐┬┌─┌┬┐┌─┐┬ ┬┌┐┌
-" │││├─┤├┬┘├┴┐ │││ │││││││
-" ┴ ┴┴ ┴┴└─┴ ┴─┴┘└─┘└┴┘┘└┘
+nmap <silent> <leader>vb :Git blame<cr>
+nmap <silent> <leader>vc :GitGutterQuickFixCurrentFile \| :copen<cr>
+nmap <silent> <leader>vd :GitGutterUndoHunk<cr>
+nmap <silent> <leader>vf :GitGutterFold<cr>
+nmap <silent> <leader>vi :GitGutterDiffOrig<cr>
+nmap <silent> <leader>vp :GitGutterPreviewHunk<cr>
+nmap <silent> <leader>vq :GitGutterQuickFix \| :copen<cr>
+nmap <silent> <leader>vs :GitGutterStageHunk<cr>
+nmap <silent> <leader>vt :GitGutterToggle<cr>
+nmap <silent> [c :call GitGutterPrevHunkAllBuffers()<cr>
+nmap <silent> [h :call GitGutterPrevHunkCycle()<cr>
+nmap <silent> ]c :call GitGutterNextHunkAllBuffers()<cr>
+nmap <silent> ]h :call GitGutterNextHunkCycle()<cr>
+nnoremap <silent> <C-G> :Git<cr>
 
-nmap <leader>m <Plug>MarkdownPreviewToggle
-
-" ┌─┐┬ ┬┌─┐┬┌┬┐┬┬  ┬┌─┐
-" ├┤ │ ││ ┬│ │ │└┐┌┘├┤
-" └  └─┘└─┘┴ ┴ ┴ └┘ └─┘
-
-nnoremap <C-g> :Git<cr>
-nnoremap <leader>g :Git<cr>
-
-" ┌─┐┬┌┬┐┌─┐┬ ┬┌┬┐┌┬┐┌─┐┬─┐
-" │ ┬│ │ │ ┬│ │ │  │ ├┤ ├┬┘
-" └─┘┴ ┴ └─┘└─┘ ┴  ┴ └─┘┴└─
-
-nmap <leader>gp <Plug>(GitGutterPreviewHunk)
-nmap <leader>gs <Plug>(GitGutterStageHunk)
-nmap <leader>gd <Plug>(GitGutterUndoHunk)
-nmap <leader>gf <Plug>(GitGutterFold)
+lua << EOF
+  local wk = require("which-key")
+  wk.register({
+    ["<C-G>"] = { "Fugitive" },
+    ["["] = {
+      c = { " Prev hunk (All buffers)" },
+      h = { " Prev hunk (Buffer)" },
+    },
+    ["]"] = {
+      c = { " Next hunk (All buffers)" },
+      h = { " Next hunk (Buffer)" },
+    },
+  })
+  wk.register({
+    v = {
+      name = " git",
+      b = { "Blame" },
+      c = { "Quick fix (Buffer)" },
+      d = { "Discard hunk" },
+      f = { "Fold" },
+      i = { "Diff original" },
+      p = { "Preview hunk" },
+      q = { "Quick fix (All)" },
+      s = { "Stage hunk" },
+      t = { "Toggle" },
+    },
+  }, { prefix = "<leader>" })
+EOF
 
 " ┌─┐┌─┐┌─┐
 " ├┤ ┌─┘├┤
 " └  └─┘└
 
-nmap <leader><tab> <plug>(fzf-maps-n)
-xmap <leader><tab> <plug>(fzf-maps-x)
-omap <leader><tab> <plug>(fzf-maps-o)
-
-nnoremap <leader>bb :Buffers<cr>
-nnoremap <leader>bf :Files<cr>
-nnoremap <leader>bg :GFiles?<cr>
-nnoremap <leader>bt :Tags<cr>
-nnoremap <leader>bw :Windows<cr>
-nnoremap <leader>bc :Commands<cr>
-nnoremap <leader>bh :History:<cr>
-nnoremap <leader>bs :Snippets<cr>
-nnoremap <leader>bg :GV<cr>
-nnoremap <leader>bgc :GV!<cr>
-nnoremap <leader>bgr :GV?<cr>
+" @TODO: fzf mappings
+" nmap <leader><tab> <plug>(fzf-maps-n)
+" xmap <leader><tab> <plug>(fzf-maps-x)
+" omap <leader><tab> <plug>(fzf-maps-o)
 
 " ┌─┐┌─┐┌─┐
 " │  │ ││
 " └─┘└─┘└─┘
 
-" Use tab for trigger completion with characters ahead and navigate.
-" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-" other plugin before putting this into your config.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+" GoTo code navigation
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
-" Use <c-space> to trigger completion.
+" Use `[g` and `]g` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+lua << EOF
+  local wk = require("which-key")
+  wk.register({
+    ["[g"] = { " Prev diagnostic" },
+    ["]g"] = { " Next diagnostic" },
+    g = {
+      d = { " Definition" },
+      y = { " Type definition" },
+      i = { " Implementation" },
+      r = { " Reference" },
+    },
+  })
+EOF
+
+" Insert <tab> when previous text is space, refresh completion if not
+inoremap <silent><expr> <TAB>
+  \ coc#pum#visible() ? coc#pum#next(1):
+  \ <SID>check_back_space() ? "\<Tab>" :
+  \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+" Use <c-space> to trigger completion
 if has('nvim')
   inoremap <silent><expr> <c-space> coc#refresh()
 else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
 
-" Make <CR> auto-select the first completion item and notify coc.nvim to
-" format on enter, <cr> could be remapped by other vim plugin
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+" Use <cr> to confirm completion
+inoremap <expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<CR>"
 
-" Use `[g` and `]g` to navigate diagnostics
-" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-
-" GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-
-" Use K to show documentation in preview window.
-nnoremap <silent> K :call <SID>show_documentation()<CR>
+" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<cr>
 
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
-" Symbol renaming.
+" Symbol renaming
 nmap <leader>rn <Plug>(coc-rename)
 
-" Formatting selected code.
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+" Formatting selected code
+" xmap <leader>f  <Plug>(coc-format-selected)
+" nmap <leader>f  <Plug>(coc-format-selected)
 
 augroup mygroup
   autocmd!
@@ -237,7 +410,7 @@ nmap <leader>a  <Plug>(coc-codeaction-selected)
 " Remap keys for applying codeAction to the current buffer.
 nmap <leader>ac  <Plug>(coc-codeaction)
 " Apply AutoFix to problem on the current line.
-nmap <leader>qf  <Plug>(coc-fix-current)
+" nmap <leader>qf  <Plug>(coc-fix-current)
 
 " Run the Code Lens action on the current line.
 nmap <leader>cl  <Plug>(coc-codelens-action)
@@ -254,19 +427,20 @@ xmap ac <Plug>(coc-classobj-a)
 omap ac <Plug>(coc-classobj-a)
 
 " Remap <C-f> and <C-b> for scroll float windows/popups.
-if has('nvim-0.4.0') || has('patch-8.2.0750')
-  nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-  nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-  inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
-  inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
-  vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-  vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-endif
+" if has('nvim-0.4.0') || has('patch-8.2.0750')
+"   nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+"   nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+"   inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+"   inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+"   vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+"   vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+" endif
 
 " Use CTRL-S for selections ranges.
 " Requires 'textDocument/selectionRange' support of language server.
-nmap <silent> <C-s> <Plug>(coc-range-select)
-xmap <silent> <C-s> <Plug>(coc-range-select)
+" @FIXME: C-s is in use, choose another key
+" nmap <silent> <C-s> <Plug>(coc-range-select)
+" xmap <silent> <C-s> <Plug>(coc-range-select)
 
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocActionAsync('format')
@@ -294,8 +468,8 @@ nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
 " Search workspace symbols.
 nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
 " Do default action for next item.
-nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
+nnoremap <silent><nowait> <space>j  :<C-u>CocNext<cr>
 " Do default action for previous item.
-nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
+nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<cr>
 " Resume latest coc list.
-nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<cr>
