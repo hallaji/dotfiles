@@ -33,7 +33,7 @@ cat << EOF
 EOF
 
 nvim +PlugUpgrade +PlugUpdate +CocUpdate +GoUpdateBinaries +qall && \
-  nvim -c "TmuxlineSnapshot! $DOTFILES/config/tmux/colors.conf" +qall && \
+  nvim -c "TmuxlineSnapshot! ~/.tmux-statusline-colors.conf" +qall && \
   echo "Vim plugins and extensions were updated!"
 
 

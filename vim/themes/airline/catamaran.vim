@@ -106,22 +106,3 @@ call extend(g:airline#themes#catamaran#palette.inactive_modified, s:diagnostic)
 call extend(g:airline#themes#catamaran#palette.commandline, s:diagnostic)
 call extend(g:airline#themes#catamaran#palette.commandline_modified, s:diagnostic)
 call extend(g:airline#themes#catamaran#palette.terminal, s:diagnostic)
-
-" ┌┬┐┌─┐┌┬┐┌─┐  ┌┬┐┌─┐┌─┐
-" ││││ │ ││├┤   │││├─┤├─┘
-" ┴ ┴└─┘─┴┘└─┘  ┴ ┴┴ ┴┴
-
-let g:airline_mode_map = {
-  \ '__' : '--',
-  \ 'n'  : 'N',
-  \ 'i'  : 'I',
-  \ 'R'  : 'R',
-  \ 'c'  : 'C',
-  \ 'v'  : 'V',
-  \ 'V'  : 'V-L',
-  \ '' : 'V-B',
-  \ 's'  : 'S',
-  \ 'S'  : 'S-L',
-  \ '' : 'S-B',
-  \ 't'  : 'T',
-  \ }
