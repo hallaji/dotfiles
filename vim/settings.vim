@@ -43,6 +43,7 @@ set hlsearch " Search highlights
 set incsearch
 set splitbelow " Make splits default to below
 set splitright " And to the right
+set noshowmode " Hide the message on the last line in Insert, Replace or Visual mode
 
 set nobackup " Some lang servers have issues with backup files
 set nowritebackup " Some lang servers have issues with backup files
