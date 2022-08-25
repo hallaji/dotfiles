@@ -1,115 +1,77 @@
-# ███████╗██████╗ ███████╗███████╗██╗  ██╗
-# ██╔════╝██╔══██╗██╔════╝██╔════╝██║  ██║
-# █████╗  ██████╔╝█████╗  ███████╗███████║
-# ██╔══╝  ██╔══██╗██╔══╝  ╚════██║██╔══██║
-# ██║     ██║  ██║███████╗███████║██║  ██║
-# ╚═╝     ╚═╝  ╚═╝╚══════╝╚══════╝╚═╝  ╚═╝
+# ┌─┐┬─┐┌─┐┌─┐┬ ┬
+# ├┤ ├┬┘├┤ └─┐├─┤
+# └  ┴└─└─┘└─┘┴ ┴
 
 fresh freshshell/fresh bin/fresh --bin
 fresh freshshell/fresh contrib/source-build.sh --file=~/.zshrc
 
+fresh_after_build() {
+  cd ~/.fresh/source/jarun/nnn && make O_GITSTATUS=1 O_NERD=1 &>/dev/null && \
+    ln -sf ~/.fresh/source/jarun/nnn/nnn ~/bin/nnn
+  chmod +x ~/.yabairc
+}
 
-# ██████╗ ██╗███╗   ██╗ █████╗ ██████╗ ██╗███████╗███████╗
-# ██╔══██╗██║████╗  ██║██╔══██╗██╔══██╗██║██╔════╝██╔════╝
-# ██████╔╝██║██╔██╗ ██║███████║██████╔╝██║█████╗  ███████╗
-# ██╔══██╗██║██║╚██╗██║██╔══██║██╔══██╗██║██╔══╝  ╚════██║
-# ██████╔╝██║██║ ╚████║██║  ██║██║  ██║██║███████╗███████║
-# ╚═════╝ ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚══════╝╚══════╝
+# ┌┐ ┬┌┐┌┌─┐┬─┐┬┌─┐┌─┐
+# ├┴┐││││├─┤├┬┘│├┤ └─┐
+# └─┘┴┘└┘┴ ┴┴└─┴└─┘└─┘
 
 fresh-options --bin
   fresh bin/\*
 fresh-options
 
-
-#  █████╗ ██╗      █████╗  ██████╗██████╗ ██╗████████╗████████╗██╗   ██╗
-# ██╔══██╗██║     ██╔══██╗██╔════╝██╔══██╗██║╚══██╔══╝╚══██╔══╝╚██╗ ██╔╝
-# ███████║██║     ███████║██║     ██████╔╝██║   ██║      ██║    ╚████╔╝
-# ██╔══██║██║     ██╔══██║██║     ██╔══██╗██║   ██║      ██║     ╚██╔╝
-# ██║  ██║███████╗██║  ██║╚██████╗██║  ██║██║   ██║      ██║      ██║
-# ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝   ╚═╝      ╚═╝      ╚═╝
+# ┌─┐┬  ┌─┐┌─┐┬─┐┬┌┬┐┌┬┐┬ ┬
+# ├─┤│  ├─┤│  ├┬┘│ │  │ └┬┘
+# ┴ ┴┴─┘┴ ┴└─┘┴└─┴ ┴  ┴  ┴
 
 fresh-options --filter=erb --file=~/.config/alacritty/alacritty.yml
   fresh config/alacritty/\*
 fresh-options
 
+# ┌┬┐┌┬┐┬ ┬─┐ ┬
+#  │ ││││ │┌┴┬┘
+#  ┴ ┴ ┴└─┘┴ └─
 
-# ████████╗███╗   ███╗██╗   ██╗██╗  ██╗
-# ╚══██╔══╝████╗ ████║██║   ██║╚██╗██╔╝
-#    ██║   ██╔████╔██║██║   ██║ ╚███╔╝
-#    ██║   ██║╚██╔╝██║██║   ██║ ██╔██╗
-#    ██║   ██║ ╚═╝ ██║╚██████╔╝██╔╝ ██╗
-#    ╚═╝   ╚═╝     ╚═╝ ╚═════╝ ╚═╝  ╚═╝
-
-fresh-options --file=~/.tmux.conf
-  fresh config/tmux/\*
-fresh-options
 fresh tmux-plugins/tpm . --file=~/.tmux/plugins/tpm/
+fresh config/tmux/tmux.conf --file=~/.tmux.conf
 
-
-# ██╗   ██╗ █████╗ ██████╗  █████╗ ██╗
-# ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗██║
-#  ╚████╔╝ ███████║██████╔╝███████║██║
-#   ╚██╔╝  ██╔══██║██╔══██╗██╔══██║██║
-#    ██║   ██║  ██║██████╔╝██║  ██║██║
-#    ╚═╝   ╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝╚═╝
+# ┬ ┬┌─┐┌┐ ┌─┐┬
+# └┬┘├─┤├┴┐├─┤│
+#  ┴ ┴ ┴└─┘┴ ┴┴
 
 fresh config/yabai/yabai.conf --file=~/.yabairc
-chmod +x ~/.yabairc
 
-
-# ███████╗██╗  ██╗██╗  ██╗██████╗
-# ██╔════╝██║ ██╔╝██║  ██║██╔══██╗
-# ███████╗█████╔╝ ███████║██║  ██║
-# ╚════██║██╔═██╗ ██╔══██║██║  ██║
-# ███████║██║  ██╗██║  ██║██████╔╝
-# ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝
+# ┌─┐┬┌─┬ ┬┌┬┐
+# └─┐├┴┐├─┤ ││
+# └─┘┴ ┴┴ ┴─┴┘
 
 fresh config/skhd/skhd.conf --file=~/.skhdrc
 
+# ┌─┐┬ ┬┌─┐┬  ┬
+# └─┐├─┤├┤ │  │
+# └─┘┴ ┴└─┘┴─┘┴─┘
 
-# ███████╗██╗  ██╗███████╗██╗     ██╗
-# ██╔════╝██║  ██║██╔════╝██║     ██║
-# ███████╗███████║█████╗  ██║     ██║
-# ╚════██║██╔══██║██╔══╝  ██║     ██║
-# ███████║██║  ██║███████╗███████╗███████╗
-# ╚══════╝╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝
-
-# ┌─┐┌─┐┌┬┐┌─┐┬  ┌─┐┌┬┐┬┌─┐┌┐┌┌─┐
-# │  │ ││││├─┘│  ├┤  │ ││ ││││└─┐
-# └─┘└─┘┴ ┴┴  ┴─┘└─┘ ┴ ┴└─┘┘└┘└─┘
+# Completions
 
 fresh zsh-users/zsh-completions src --file=completions/
 fresh freshshell/fresh contrib/completion/fresh-completion.zsh --file=completions/_fresh
 fresh alacritty/alacritty extra/completions/_alacritty --file=completions/_alacritty
-fresh docker/cli contrib/completion/zsh/_docker --file=completions/_docker
-fresh docker/compose contrib/completion/zsh/_docker-compose --file=completions/_docker-compose
 
-# ┌─┐┬  ┬ ┬┌─┐┬┌┐┌┌─┐
-# ├─┘│  │ ││ ┬││││└─┐
-# ┴  ┴─┘└─┘└─┘┴┘└┘└─┘
+# Plugins
 
 fresh ohmyzsh/ohmyzsh plugins --file=vendor/ohmyzsh/plugins/
 fresh zsh-users/zsh-syntax-highlighting . --file=vendor/zsh-users/zsh-syntax-highlighting/
 fresh zsh-users/zsh-autosuggestions . --file=vendor/zsh-users/zsh-autosuggestions/
 fresh zdharma/fast-syntax-highlighting . --file=vendor/zdharma/fast-syntax-highlighting/
 
-# ┌─┐┌─┐┬─┐┌─┐┌─┐┬┬  ┌─┐
-# ┌─┘├─┘├┬┘│ │├┤ ││  ├┤
-# └─┘┴  ┴└─└─┘└  ┴┴─┘└─┘
+# Zprofile
 
 fresh shell/zsh/profile.sh --file=~/.zprofile --marker
 
-# ┌─┐┌─┐┬ ┬┌─┐┌┐┌┬  ┬
-# ┌─┘└─┐├─┤├┤ │││└┐┌┘
-# └─┘└─┘┴ ┴└─┘┘└┘ └┘
+# Zshenv
 
-fresh-options --filter=erb --file=~/.zshenv --marker
-  fresh shell/exports.sh
-fresh-options
+fresh shell/exports.sh --filter=erb --file=~/.zshenv --marker
 
-# ┌─┐┌─┐┬ ┬┬─┐┌─┐
-# ┌─┘└─┐├─┤├┬┘│
-# └─┘└─┘┴ ┴┴└─└─┘
+# Zshrc
 
 fresh-options --filter=erb --file=~/.zshrc --marker
   fresh shell/zsh/init.sh
@@ -136,12 +98,6 @@ fresh-options
 
 fresh config/starship/config.toml --file=~/.config/starship.toml
 
-# ┌─┐┬┌─┐
-# ├─┘│├─┘
-# ┴  ┴┴
-
-fresh config/pip/pip.conf --file=~/.config/pip/pip.conf
-
 # ┌─┐┌┬┐┌─┐┌─┐┌─┐
 # │   │ ├─┤│ ┬└─┐
 # └─┘ ┴ ┴ ┴└─┘└─┘
@@ -154,189 +110,112 @@ fresh config/ctags/ctags.conf --file=~/.ctags
 
 fresh config/gh/dash/config.yml --file=~/.config/gh-dash/config.yml
 
+# ┬  ┬┬┌┬┐
+# └┐┌┘││││
+#  └┘ ┴┴ ┴
 
-# ██╗   ██╗██╗███╗   ███╗
-# ██║   ██║██║████╗ ████║
-# ██║   ██║██║██╔████╔██║
-# ╚██╗ ██╔╝██║██║╚██╔╝██║
-#  ╚████╔╝ ██║██║ ╚═╝ ██║
-#   ╚═══╝  ╚═╝╚═╝     ╚═╝
-
-# ┬  ┬┬┌┬┐┬─┐┌─┐
-# └┐┌┘││││├┬┘│
-#  └┘ ┴┴ ┴┴└─└─┘
+# Vimrc
 
 fresh-options --file=~/.vimrc --marker='"'
   fresh vim/plug.vim
-  fresh vim/plugins/editorconfig.vim
-  fresh vim/plugins/ctrlp.vim
-  fresh vim/plugins/netrw.vim
-  fresh vim/plugins/nerdtree.vim
-  fresh vim/plugins/nerdcommenter.vim
-  fresh vim/plugins/greplace.vim
-  fresh vim/plugins/gitgutter.vim
-  fresh vim/plugins/signify.vim
-  fresh vim/plugins/airline.vim
-  fresh vim/plugins/tmuxline.vim
-  fresh vim/plugins/ctrlsf.vim
-  fresh vim/plugins/markdown-preview.vim
-  fresh vim/plugins/vim-go.vim
-  fresh vim/plugins/fzf.vim
-  fresh vim/plugins/nnn.vim
-  fresh vim/plugins/startify.vim
-  fresh vim/plugins/coc.vim
-  fresh vim/plugins/which-key.vim
+  fresh vim/plugins/\*
   fresh vim/functions.vim
   fresh vim/settings.vim
   fresh vim/commands.vim
   fresh vim/mappings.vim
 fresh-options
 
-# ┌┐┌┌─┐┌─┐┬  ┬┬┌┬┐
-# │││├┤ │ │└┐┌┘││││
-# ┘└┘└─┘└─┘ └┘ ┴┴ ┴
+# Neovim
 
 fresh vim/nvim.vim --file=~/.config/nvim/init.vim --marker='"'
 
-# ┌─┐┌─┐┌─┐
-# │  │ ││
-# └─┘└─┘└─┘
+# COC
 
 fresh config/coc/coc-settings.json --file=~/.config/nvim/coc-settings.json
 fresh config/coc/coc-settings.json --file=~/.vim/coc-settings.json
 
-# ┌┬┐┬ ┬┌─┐┌┬┐┌─┐┌─┐
-#  │ ├─┤├┤ │││├┤ └─┐
-#  ┴ ┴ ┴└─┘┴ ┴└─┘└─┘
+# Themes
 
 fresh vim/themes/catamaran.vim --file=~/.vim/colors/catamaran.vim --marker='"'
 fresh vim/themes/airline/catamaran.vim --file=~/.vim/autoload/airline/themes/catamaran.vim --marker='"'
 
-
-#  ██████╗ ██╗████████╗
-# ██╔════╝ ██║╚══██╔══╝
-# ██║  ███╗██║   ██║
-# ██║   ██║██║   ██║
-# ╚██████╔╝██║   ██║
-#  ╚═════╝ ╚═╝   ╚═╝
+# ┌─┐┬┌┬┐
+# │ ┬│ │
+# └─┘┴ ┴
 
 fresh-options --file --filter=erb
   fresh config/git/\*
 fresh-options
 
-
-# ███████╗███████╗██╗  ██╗
-# ██╔════╝██╔════╝██║  ██║
-# ███████╗███████╗███████║
-# ╚════██║╚════██║██╔══██║
-# ███████║███████║██║  ██║
-# ╚══════╝╚══════╝╚═╝  ╚═╝
+# ┌─┐┌─┐┬ ┬
+# └─┐└─┐├─┤
+# └─┘└─┘┴ ┴
 
 fresh-options --file=~/.ssh/config --filter=erb
   fresh config/ssh/cltrmp.conf
   fresh config/ssh/default.conf
 fresh-options
 
-
-#  ██████╗ ██████╗  ██████╗
-# ██╔════╝ ██╔══██╗██╔════╝
-# ██║  ███╗██████╔╝██║  ███╗
-# ██║   ██║██╔═══╝ ██║   ██║
-# ╚██████╔╝██║     ╚██████╔╝
-#  ╚═════╝ ╚═╝      ╚═════╝
+# ┌─┐┌─┐┌─┐
+# │ ┬├─┘│ ┬
+# └─┘┴  └─┘
 
 fresh config/gpg/gpg.conf --file=~/.gnupg/gpg.conf
 fresh config/gpg/gpg-agent.conf --file=~/.gnupg/gpg-agent.conf
 
-
-#  █████╗ ██╗    ██╗███████╗
-# ██╔══██╗██║    ██║██╔════╝
-# ███████║██║ █╗ ██║███████╗
-# ██╔══██║██║███╗██║╚════██║
-# ██║  ██║╚███╔███╔╝███████║
-# ╚═╝  ╚═╝ ╚══╝╚══╝ ╚══════╝
+# ┌─┐┬ ┬┌─┐
+# ├─┤│││└─┐
+# ┴ ┴└┴┘└─┘
 
 fresh-options --file=~/.aws/config --filter=erb
   fresh config/aws/cltrmp.conf
   fresh config/aws/default.conf
 fresh-options
 
-
-#  █████╗ ███████╗██████╗ ███████╗
-# ██╔══██╗██╔════╝██╔══██╗██╔════╝
-# ███████║███████╗██║  ██║█████╗
-# ██╔══██║╚════██║██║  ██║██╔══╝
-# ██║  ██║███████║██████╔╝██║
-# ╚═╝  ╚═╝╚══════╝╚═════╝ ╚═╝
+# ┌─┐┌─┐┌┬┐┌─┐
+# ├─┤└─┐ ││├┤
+# ┴ ┴└─┘─┴┘└
 
 fresh config/asdf/asdf.conf --file=~/.asdfrc
 
-
-# ███╗   ██╗██████╗ ███╗   ███╗
-# ████╗  ██║██╔══██╗████╗ ████║
-# ██╔██╗ ██║██████╔╝██╔████╔██║
-# ██║╚██╗██║██╔═══╝ ██║╚██╔╝██║
-# ██║ ╚████║██║     ██║ ╚═╝ ██║
-# ╚═╝  ╚═══╝╚═╝     ╚═╝     ╚═╝
+# ┌┐┌┌─┐┌┬┐
+# │││├─┘│││
+# ┘└┘┴  ┴ ┴
 
 fresh config/npm/npmrc.conf --file=~/.npmrc --filter=erb
 
+# ┌─┐┬┌─┐
+# ├─┘│├─┘
+# ┴  ┴┴
 
-#  ██████╗██╗   ██╗██████╗ ██╗
-# ██╔════╝██║   ██║██╔══██╗██║
-# ██║     ██║   ██║██████╔╝██║
-# ██║     ██║   ██║██╔══██╗██║
-# ╚██████╗╚██████╔╝██║  ██║███████╗
-#  ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝
+fresh config/pip/pip.conf --file=~/.config/pip/pip.conf
 
-fresh config/curl/netrc.conf --file=~/.netrc --filter=erb
-
-
-# ██████╗ ██╗   ██╗███╗   ██╗██████╗ ██╗     ███████╗██████╗
-# ██╔══██╗██║   ██║████╗  ██║██╔══██╗██║     ██╔════╝██╔══██╗
-# ██████╔╝██║   ██║██╔██╗ ██║██║  ██║██║     █████╗  ██████╔╝
-# ██╔══██╗██║   ██║██║╚██╗██║██║  ██║██║     ██╔══╝  ██╔══██╗
-# ██████╔╝╚██████╔╝██║ ╚████║██████╔╝███████╗███████╗██║  ██║
-# ╚═════╝  ╚═════╝ ╚═╝  ╚═══╝╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═╝
+# ┌┐ ┬ ┬┌┐┌┌┬┐┬  ┌─┐┬─┐
+# ├┴┐│ ││││ │││  ├┤ ├┬┘
+# └─┘└─┘┘└┘─┴┘┴─┘└─┘┴└─
 
 fresh config/bundler/bundler.conf --file=~/.bundle/config --filter=erb
 
+# ┌─┐┬ ┬┬─┐┬
+# │  │ │├┬┘│
+# └─┘└─┘┴└─┴─┘
 
-# ██████╗ ██████╗ ███████╗██╗    ██╗
-# ██╔══██╗██╔══██╗██╔════╝██║    ██║
-# ██████╔╝██████╔╝█████╗  ██║ █╗ ██║
-# ██╔══██╗██╔══██╗██╔══╝  ██║███╗██║
-# ██████╔╝██║  ██║███████╗╚███╔███╔╝
-# ╚═════╝ ╚═╝  ╚═╝╚══════╝ ╚══╝╚══╝
+fresh config/curl/netrc.conf --file=~/.netrc --filter=erb
+
+# ┌┐ ┬─┐┌─┐┬ ┬
+# ├┴┐├┬┘├┤ │││
+# └─┘┴└─└─┘└┴┘
 
 fresh config/homebrew/Brewfile --file=~/.Brewfile
 
-
-# ███████╗██╗ ██████╗ ██╗     ███████╗████████╗
-# ██╔════╝██║██╔════╝ ██║     ██╔════╝╚══██╔══╝
-# █████╗  ██║██║  ███╗██║     █████╗     ██║
-# ██╔══╝  ██║██║   ██║██║     ██╔══╝     ██║
-# ██║     ██║╚██████╔╝███████╗███████╗   ██║
-# ╚═╝     ╚═╝ ╚═════╝ ╚══════╝╚══════╝   ╚═╝
+# ┌─┐┬┌─┐┬  ┌─┐┌┬┐
+# ├┤ ││ ┬│  ├┤  │
+# └  ┴└─┘┴─┘└─┘ ┴
 
 fresh xero/figlet-fonts . --file=~/.figlet/
 
-
-# ███╗   ██╗███╗   ██╗███╗   ██╗
-# ████╗  ██║████╗  ██║████╗  ██║
-# ██╔██╗ ██║██╔██╗ ██║██╔██╗ ██║
-# ██║╚██╗██║██║╚██╗██║██║╚██╗██║
-# ██║ ╚████║██║ ╚████║██║ ╚████║
-# ╚═╝  ╚═══╝╚═╝  ╚═══╝╚═╝  ╚═══╝
+# ┌┐┌┌┐┌┌┐┌
+# │││││││││
+# ┘└┘┘└┘┘└┘
 
 fresh jarun/nnn . --file=vendor/nnn/
-make_nnn() {
-  cd ~/.fresh/source/jarun/nnn && make O_GITSTATUS=1 O_NERD=1 &>/dev/null
-  ln -sf ~/.fresh/source/jarun/nnn/nnn ~/bin/nnn
-}
-
-# ---
-
-fresh_after_build() {
-  make_nnn
-}
