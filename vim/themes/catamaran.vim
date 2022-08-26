@@ -36,6 +36,9 @@ hi SignColumn ctermbg=235 ctermfg=250 guibg=#22272e guifg=#adbac7
 hi TermCursorNC ctermbg=140 ctermfg=234 guibg=#a394cd guifg=#1f242a
 
 hi Comment ctermfg=238 guifg=#3c4552
+hi Conceal ctermbg=NONE ctermfg=237 guibg=NONE guifg=#2e353f
+hi! link CocCodeLens Conceal
+hi! link GitSignsCurrentLineBlame Conceal
 
 hi Constant ctermfg=32 guifg=#2f97ea
 hi String ctermfg=43 guifg=#2bd2b9
@@ -66,10 +69,14 @@ hi! link Typedef Type
 hi DiffAdd ctermbg=NONE ctermfg=43 guibg=NONE guifg=#2bd2b9
 hi DiffChange ctermbg=NONE ctermfg=215 guibg=NONE guifg=#f5b168
 hi DiffDelete ctermbg=NONE ctermfg=203 guibg=NONE guifg=#f47067
-hi DiffText ctermbg=NONE ctermfg=250 guibg=NONE guifg=#adbac7
+hi! link GitSignsAdd DiffAdd
+hi! link GitSignsChange DiffChange
+hi! link GitSignsDelete DiffDelete
+
 
 hi IncSearch cterm=reverse ctermfg=NONE gui=reverse guifg=NONE term=reverse
 hi Search ctermbg=238 ctermfg=169 guibg=#3c4552 guifg=#e86db2
+hi MiniTrailspace ctermbg=204 guibg=#ff4b82
 
 hi Directory ctermfg=51 guifg=#04f6f6
 hi EndOfBuffer ctermfg=238 guifg=#3c4552
@@ -127,12 +134,16 @@ hi DiagnosticUnderlineError cterm=underline ctermfg=204 gui=underline guisp=#ff4
 hi DiagnosticUnderlineHint cterm=underline ctermfg=103 gui=underline guisp=#8296aa term=underline
 hi DiagnosticUnderlineInfo cterm=underline ctermfg=75 gui=underline guisp=#6fc1ff term=underline
 hi DiagnosticUnderlineWarn cterm=underline ctermfg=215 gui=underline guisp=#f5b168 term=underline
-" coc-highlights-diagnostics
+
 hi! link CocErrorSign DiagnosticError
 hi! link CocHintSign DiagnosticHint
 hi! link CocInfoSign DiagnosticHint
 hi! link CocWarningSign DiagnosticWarn
 hi! link CocFadeOut NonText
+hi! link CocInfoVirtualText DiagnosticInfo
+hi! link CocWarningVirtualText DiagnosticWarn
+hi! link CocErrorVirtualText DiagnosticError
+hi! link CocHintVirtualText DiagnosticHint
 
 " @TODO:
 " *CocFadeOut* for faded out text, such as for highlighting unnecessary code.
@@ -140,10 +151,6 @@ hi! link CocFadeOut NonText
 " *CocWarningSign* for warning signs.
 " *CocInfoSign* for information signs.
 " *CocHintSign* for hint signs.
-" *CocErrorVirtualText* for error virtual text.
-" *CocWarningVirtualText* for warning virtual text.
-" *CocInfoVirtualText* for information virtual text.
-" *CocHintVirtualText* for hint virtual text.
 " *CocErrorHighlight* for error code range.
 " *CocWarningHighlight* for warning code range.
 " *CocInfoHighlight* for information code range.
