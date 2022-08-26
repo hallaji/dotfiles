@@ -10,11 +10,7 @@
 " │ ┬├┤ │││├┤ ├┬┘├─┤│
 " └─┘└─┘┘└┘└─┘┴└─┴ ┴┴─┘
 
-command! TrimWhiteSpaces call TrimWhiteSpaces() " A command to trim whitespaces
-command! ToggleRuler call ToggleRuler() " A command to toggle rulers
-command! ToggleWrap call ToggleWrap() " A command to toggle wrapping
-
-autocmd BufWritePre * :call TrimWhiteSpaces() " Automatically trim before writing to the disk
+autocmd BufWritePre * :call v:lua.MiniTrailspace.trim() " Automatically trim before writing to the disk
 autocmd BufWritePost $MYVIMRC source $MYVIMRC | echom "Reloaded $NVIMRC" " Automatically source the vimrc file on save
 autocmd CursorHold,CursorHoldI * checktime " Check if any buffers were changed outside of Vim and trigger when cursor stops moving
 autocmd FocusGained,BufEnter * checktime " Check if any buffers were changed outside of Vim and trigger when buffer changes

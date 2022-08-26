@@ -119,7 +119,6 @@ fresh config/gh/dash/config.yml --file=~/.config/gh-dash/config.yml
 fresh-options --file=~/.vimrc --marker='"'
   fresh vim/plug.vim
   fresh vim/plugins/\*
-  fresh vim/functions.vim
   fresh vim/settings.vim
   fresh vim/commands.vim
   fresh vim/mappings.vim
