@@ -15,9 +15,6 @@ let maplocalleader = '\\' " A prefix key that only take effect for certain types
 " │ ┬├┤ │││├┤ ├┬┘├─┤│
 " └─┘└─┘┘└┘└─┘┴└─┴ ┴┴─┘
 
-" Open which key
-nnoremap <C-X> :WhichKey<cr>
-
 " Re-copy selected area on paste operation (vim paste has no memory)
 xnoremap p pgvy
 
@@ -31,55 +28,53 @@ nnoremap Y y$
 " Replay macro recording with Q
 nnoremap Q @q
 
-" Remove search highlights
-nmap <leader><space> :nohlsearch<cr>
-
-" Comment a line
-map <leader>/ <plug>NERDCommenterToggle
-
-" Trim the trailing whitespaces
-nmap <leader>z :TrimWhiteSpaces<cr>
-
-" Toggle the ruler
-nnoremap <leader>r :ToggleRuler<cr>
-
-" Toggle wrapping
-nnoremap <leader>w :ToggleWrap<cr>
-
-" Neovim support showing relative number
-nnoremap <leader>n :set relativenumber!<cr>
-
-" Toggle spell checker
-nnoremap <leader>S :set spell! spelllang=en_au<cr>
-
 " Copy/paste from/to system clipboard in visual/select mode
-vnoremap <leader>y "*y
 vnoremap <leader>p "*p
+vnoremap <leader>y "*y
 
-" Preview a markdown
+" ┬  ┬┬┌─┐┬ ┬┌─┐┬
+" └┐┌┘│└─┐│ │├─┤│
+"  └┘ ┴└─┘└─┘┴ ┴┴─┘
+
+map <leader>/ <plug>NERDCommenterToggle
+nmap <leader><space> :nohlsearch<cr>
 nmap <leader>m <Plug>MarkdownPreviewToggle
+nmap <leader>t :call v:lua.MiniTrailspace.trim()<cr>
+nmap <leader>z :ZenMode<cr>
+nnoremap <C-X> :WhichKey<cr>
+nnoremap <leader>e :set relativenumber!<cr>
+nnoremap <leader>i :IndentLinesToggle<cr>
+nnoremap <leader>l :Limelight!!<cr>
+nnoremap <leader>n :set norelativenumber \| :set number!<cr>
+nnoremap <leader>r :execute "set colorcolumn=" . (&colorcolumn == "" ? "80,120" : "")<cr>
+nnoremap <leader>s :set spell! spelllang=en_au<cr>
+nnoremap <leader>w :set wrap! wrap?<cr>
 
 lua << EOF
   local wk = require("which-key")
   wk.register({
-    Q = { "Replay macro recording" },
-    Y = { "Yank (Copy) to the line break" },
-    ["<C-X>"] = { "Which Key" },
+    Q = { "菱Replay macro recording" },
+    Y = { " Yank (copy) to the line break" },
+    ["<C-X>"] = { " Which Key" },
   })
   wk.register({
-    ["/"] = { "Comment" },
-    p = { "Put (paste)" },
-    y = { "Yank (copy)" },
+    ["/"] = { " Comment" },
+    p = { " Put (paste)" },
+    y = { " Yank (copy)" },
   }, { mode="v", prefix = "<leader>" })
   wk.register({
-    S = { "Spell check (en_au)" },
-    ["/"] = { "Comment" },
-    ["<space>"] = { "Remove search highlights" },
-    m = { "Preview markdown" },
-    n = { "Relative line numbers" },
-    r = { "Ruler" },
-    w = { "Wrap" },
-    z = { "Trim spaces" },
+    ["/"] = { " Comment" },
+    ["<space>"] = { "Remove highlights" },
+    e = { "陋Toggle relative numbers" },
+    i = { " Toggle indent marks" },
+    l = { "劉Toggle limelight mode" },
+    m = { " Preview markdown" },
+    n = { " Toggle numbers" },
+    r = { " Toggle rulers" },
+    s = { "暈Check spells (en_au)" },
+    t = { " Trim spaces" },
+    w = { "蝹Wrap" },
+    z = { " Toggle zen mode" },
   }, { prefix = "<leader>" })
 EOF
 
@@ -100,7 +95,7 @@ nnoremap <C-Up> <C-W>+
 nnoremap <C-Right> <C-W>>
 
 " Circle windows (splits)
-nnoremap <Tab>   <C-W>w
+nnoremap <Tab> <C-W>w
 nnoremap <S-Tab> <C-W>W
 
 " Circle buffers
@@ -111,14 +106,13 @@ nnoremap ]b :bnext<cr>
 nnoremap [t :tabp<cr>
 nnoremap ]t :tabn<cr>
 
-
 lua << EOF
   local wk = require("which-key")
   wk.register({
-    ["<C-H>"] = { "Go to the left window" },
-    ["<C-J>"] = { "Go to the down window" },
-    ["<C-K>"] = { "Go to the up window" },
-    ["<C-L>"] = { "Go to the Right window" },
+    ["<C-H>"] = { "Go to left window" },
+    ["<C-J>"] = { "Go to down window" },
+    ["<C-K>"] = { "Go to up window" },
+    ["<C-L>"] = { "Go to right window" },
     ["<C-Left>"] = { "Decrease width" },
     ["<C-Down>"] = { "Decrease height" },
     ["<C-Up>"] = { "Increase height" },
@@ -140,7 +134,7 @@ lua << EOF
   local wk = require("which-key")
   wk.register({
     c = {
-      name = " comment",
+      name = " comment",
     },
   }, { prefix = "<leader>" })
 EOF
@@ -215,12 +209,12 @@ nnoremap <leader>fb :FzfLua buffers<cr>
 lua << EOF
   local wk = require("which-key")
   wk.register({
-    ["<C-F>"] = { "Find" },
+    ["<C-F>"] = { "FZF" },
   })
   wk.register({
     f = {
       name = " find",
-      b = { "Buffers" },
+      b = { "﬘ Buffers" },
     },
   }, { prefix = "<leader>" })
 EOF
@@ -271,10 +265,10 @@ nnoremap <silent> ` :NnnExplorer<cr>
 lua << EOF
   local wk = require("which-key")
   wk.register({
-    ["_"] = { "NetRW" },
-    ["~"] = { "NERDTree" },
-    ["-"] = { "NNN Picker" },
-    ["`"] = { "NNN Explorer" },
+    ["_"] = { " Netrw" },
+    ["~"] = { " NERDTree" },
+    ["-"] = { " NNN Picker" },
+    ["`"] = { " NNN Explorer" },
   })
 EOF
 
@@ -282,46 +276,59 @@ EOF
 " │ ┬│ │
 " └─┘┴ ┴
 
-nmap <silent> <leader>vb :Git blame<cr>
-nmap <silent> <leader>vc :GitGutterQuickFixCurrentFile \| :copen<cr>
-nmap <silent> <leader>vd :GitGutterUndoHunk<cr>
-nmap <silent> <leader>vf :GitGutterFold<cr>
-nmap <silent> <leader>vi :GitGutterDiffOrig<cr>
-nmap <silent> <leader>vp :GitGutterPreviewHunk<cr>
-nmap <silent> <leader>vq :GitGutterQuickFix \| :copen<cr>
-nmap <silent> <leader>vs :GitGutterStageHunk<cr>
-nmap <silent> <leader>vt :GitGutterToggle<cr>
-nmap <silent> [c :call GitGutterPrevHunkAllBuffers()<cr>
-nmap <silent> [h :call GitGutterPrevHunkCycle()<cr>
-nmap <silent> ]c :call GitGutterNextHunkAllBuffers()<cr>
-nmap <silent> ]h :call GitGutterNextHunkCycle()<cr>
+nmap <silent> <leader>gR :Gitsigns reset_buffer<cr>
+nmap <silent> <leader>gS :Gitsigns stage_buffer<cr>
+nmap <silent> <leader>gb :Gitsigns blame_line<cr>
+nmap <silent> <leader>gd :Gitsigns diffthis<cr>
+nmap <silent> <leader>gp :Gitsigns preview_hunk<cr>
+nmap <silent> <leader>gq :Gitsigns setqflist<cr>:
+nmap <silent> <leader>gr :Gitsigns reset_hunk<cr>
+nmap <silent> <leader>gs :Gitsigns stage_hunk<cr>
+nmap <silent> <leader>gts :Gitsigns toggle_signs<cr>
+nmap <silent> <leader>gtd :Gitsigns toggle_deleted<cr>
+nmap <silent> <leader>gtb :Gitsigns toggle_current_line_blame<cr>
+nmap <silent> <leader>gtw :Gitsigns toggle_word_diff<cr>
+nmap <silent> <leader>gtl :Gitsigns toggle_linehl<cr>
+nmap <silent> <leader>gtn :Gitsigns toggle_numhl<cr>
+nmap <silent> <leader>gu :Gitsigns undo_stage_hunk<cr>
+nmap <silent> <leader>gv :Gitsigns select_hunk<cr>
+nmap <silent> [h :Gitsigns prev_hunk<cr>
+nmap <silent> ]h :Gitsigns next_hunk<cr>
 nnoremap <silent> <C-G> :Git<cr>
 
 lua << EOF
   local wk = require("which-key")
   wk.register({
-    ["<C-G>"] = { "Fugitive" },
+    ["<C-G>"] = { " Fugitive" },
     ["["] = {
-      c = { " Prev hunk (All buffers)" },
-      h = { " Prev hunk (Buffer)" },
+      h = { " Prev hunk (buffer)" },
     },
     ["]"] = {
-      c = { " Next hunk (All buffers)" },
-      h = { " Next hunk (Buffer)" },
+      h = { " Next hunk (buffer)" },
     },
   })
   wk.register({
-    v = {
+    g = {
       name = " git",
-      b = { "Blame" },
-      c = { "Quick fix (Buffer)" },
-      d = { "Discard hunk" },
-      f = { "Fold" },
-      i = { "Diff original" },
-      p = { "Preview hunk" },
-      q = { "Quick fix (All)" },
-      s = { "Stage hunk" },
-      t = { "Toggle" },
+      R = { "﫧Reset (discard) buffer" },
+      S = { " Stage buffer" },
+      b = { " Blame" },
+      d = { " Diff" },
+      p = { " Preview hunk" },
+      q = { " Quick fix (buffer)" },
+      r = { "﫧Reset (discard) hunk" },
+      s = { " Stage hunk" },
+      t = {
+        name = " Toggle",
+        s = " Signs",
+        d = " Deleted",
+        b = " Blame",
+        w = " Word diff",
+        l = " Line highlight",
+        n = " Number highlight",
+      },
+      u = { " Unstage hunk" },
+      v = { "濾Select hunk" },
     },
   }, { prefix = "<leader>" })
 EOF
