@@ -2,6 +2,7 @@
 *.foreground:   #adbac7
 *.background:   #22272e
 *.ruler:        #22282f
+*.indetline:    #2e353f
 *.border:       #040506
 
 ! black
