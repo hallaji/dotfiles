@@ -36,6 +36,7 @@ Plug 'preservim/nerdcommenter' " https://github.com/preservim/nerdcommenter
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' } " https://github.com/iamcco/markdown-preview.nvim
 Plug 'neoclide/jsonc.vim' " https://github.com/neoclide/jsonc.vim
 Plug 'nvim-treesitter/nvim-treesitter' " https://github.com/nvim-treesitter/nvim-treesitter
+Plug 'Yggdroot/indentLine' " https://github.com/Yggdroot/indentLine
 Plug 'junegunn/limelight.vim' " https://github.com/junegunn/limelight.vim
 Plug 'folke/zen-mode.nvim' " https://github.com/folke/zen-mode.nvim
 if has('nvim')
