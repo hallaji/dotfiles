@@ -42,6 +42,7 @@ Plug 'folke/zen-mode.nvim' " https://github.com/folke/zen-mode.nvim
 if has('nvim')
   Plug 'folke/which-key.nvim' " https://github.com/folke/which-key.nvim
   Plug 'declancm/cinnamon.nvim' " https://github.com/declancm/cinnamon.nvim
+  Plug 'echasnovski/mini.nvim', { 'branch': 'stable' } " https://github.com/echasnovski/mini.nvim
 endif
 
 " ┌─┐┌─┐┌─┐┬─┐┌─┐┬ ┬
@@ -92,26 +93,5 @@ Plug 'udalov/kotlin-vim' " https://github.com/udalov/kotlin-vim
 " ┴└─┘└─┘┘└┘└─┘
 
 Plug 'ryanoasis/vim-devicons' " https://github.com/ryanoasis/vim-devicons
-
-" ┌┐┌┌─┐┌┬┐  ┬┌┐┌  ┬ ┬┌─┐┌─┐
-" ││││ │ │   ││││  │ │└─┐├┤
-" ┘└┘└─┘ ┴   ┴┘└┘  └─┘└─┘└─┘
-
-" Plug 'tpope/vim-commentary' " https://github.com/tpope/vim-commentary
-
-" Plug 'arcticicestudio/nord-vim'
-" Plug 'joshdick/onedark.vim'
-" Plug 'flrnd/plastic.vim'
-" Plug 'w0ng/vim-hybrid'
-"
-" Plug 'jelera/vim-javascript-syntax'
-" Plug 'HerringtonDarkholme/yats.vim'
-" Plug 'MaxMEllon/vim-jsx-pretty'
-" Plug 'junegunn/seoul256.vim'
-" Plug 'junegunn/limelight.vim'
-"
-" Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
-" Plug 'flowtype/vim-flow' " https://github.com/flow/vim-flow
-" Plug 'junegunn/gv.vim' " https://github.com/junegunn/gv.vim
 
 call plug#end()
