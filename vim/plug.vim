@@ -36,6 +36,7 @@ Plug 'preservim/nerdcommenter' " https://github.com/preservim/nerdcommenter
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' } " https://github.com/iamcco/markdown-preview.nvim
 Plug 'neoclide/jsonc.vim' " https://github.com/neoclide/jsonc.vim
 Plug 'nvim-treesitter/nvim-treesitter' " https://github.com/nvim-treesitter/nvim-treesitter
+Plug 'folke/zen-mode.nvim' " https://github.com/folke/zen-mode.nvim
 if has('nvim')
   Plug 'folke/which-key.nvim' " https://github.com/folke/which-key.nvim
   Plug 'declancm/cinnamon.nvim' " https://github.com/declancm/cinnamon.nvim
