@@ -5,6 +5,6 @@
 # ██████╔╝██║  ██║   ██║
 # ╚═════╝ ╚═╝  ╚═╝   ╚═╝
 
-# @see https://github.com/sharkdp/bat
+# https://github.com/sharkdp/bat
 
-export BAT_THEME="Nord"
+export BAT_THEME="Catamaran"
