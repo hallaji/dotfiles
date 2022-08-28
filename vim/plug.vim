@@ -74,6 +74,7 @@ Plug 'mcchrish/nnn.vim' " https://github.com/mcchrish/nnn.vim
 
 Plug 'tpope/vim-fugitive' " https://github.com/tpope/vim-fugitive
 Plug 'tpope/vim-rhubarb' " https://github.com/tpope/vim-rhubarb
+Plug 'codeindulgence/vim-tig' " https://github.com/codeindulgence/vim-tig
 if has('nvim')
   Plug 'lewis6991/gitsigns.nvim' " https://github.com/lewis6991/gitsigns.nvim
 endif

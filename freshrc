@@ -201,6 +201,12 @@ fresh config/bundler/bundler.conf --file=~/.bundle/config --filter=erb
 
 fresh config/curl/netrc.conf --file=~/.netrc --filter=erb
 
+# ┌┬┐┬┌─┐
+#  │ ││ ┬
+#  ┴ ┴└─┘
+
+fresh config/tig/tigrc.conf --file=~/.tigrc
+
 # ┌┐ ┬─┐┌─┐┬ ┬
 # ├┴┐├┬┘├┤ │││
 # └─┘┴└─└─┘└┴┘
