@@ -39,6 +39,7 @@ Plug 'nvim-treesitter/nvim-treesitter' " https://github.com/nvim-treesitter/nvim
 Plug 'Yggdroot/indentLine' " https://github.com/Yggdroot/indentLine
 Plug 'junegunn/limelight.vim' " https://github.com/junegunn/limelight.vim
 Plug 'folke/zen-mode.nvim' " https://github.com/folke/zen-mode.nvim
+Plug 'christoomey/vim-tmux-navigator' " https://github.com/christoomey/vim-tmux-navigator
 if has('nvim')
   Plug 'folke/which-key.nvim' " https://github.com/folke/which-key.nvim
   Plug 'declancm/cinnamon.nvim' " https://github.com/declancm/cinnamon.nvim
