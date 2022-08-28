@@ -72,6 +72,8 @@ hi DiffDelete ctermbg=NONE ctermfg=203 guibg=NONE guifg=#f47067
 hi! link GitSignsAdd DiffAdd
 hi! link GitSignsChange DiffChange
 hi! link GitSignsDelete DiffDelete
+hi! link diffAdded DiffAdd
+hi! link diffRemoved DiffDelete
 
 
 hi IncSearch cterm=reverse ctermfg=NONE gui=reverse guifg=NONE term=reverse
