@@ -55,7 +55,7 @@ lua << EOF
   wk.register({
     Q = { "菱Replay macro recording" },
     Y = { " Yank (copy) to the line break" },
-    ["<C-X>"] = { " Which Key" },
+    ["<C-X>"] = { " Whichkey" },
   })
   wk.register({
     ["/"] = { " Comment" },
@@ -109,16 +109,17 @@ nnoremap ]t :tabn<cr>
 lua << EOF
   local wk = require("which-key")
   wk.register({
-    ["<C-H>"] = { "Go to left window" },
-    ["<C-J>"] = { "Go to down window" },
-    ["<C-K>"] = { "Go to up window" },
-    ["<C-L>"] = { "Go to right window" },
-    ["<C-Left>"] = { "Decrease width" },
-    ["<C-Down>"] = { "Decrease height" },
-    ["<C-Up>"] = { "Increase height" },
-    ["<C-Right>"] = { "Increase width" },
-    ["<Tab>"] = { "Circle window forward" },
-    ["<S-Tab>"] = { "Circle window backward" },
+    ["<C-H>"] = { " Go to left window" },
+    ["<C-J>"] = { " Go to down window" },
+    ["<C-K>"] = { " Go to up window" },
+    ["<C-L>"] = { " Go to right window" },
+    ["<C-\\>"] = { " Previous window" },
+    ["<C-Left>"] = { "ﲕ Resize width" },
+    ["<C-Down>"] = { "ﲖ Resize height" },
+    ["<C-Up>"] = { "ﲗ Resize height" },
+    ["<C-Right>"] = { "ﲔ Resize width" },
+    ["<Tab>"] = { "裡 Circle window forward" },
+    ["<S-Tab>"] = { "裡 Circle window backward" },
     ["["] = {
       b = { " Prev buffer" },
       t = { " Prev tab" },
@@ -209,7 +210,7 @@ nnoremap <leader>fb :FzfLua buffers<cr>
 lua << EOF
   local wk = require("which-key")
   wk.register({
-    ["<C-F>"] = { "FZF" },
+    ["<C-F>"] = { " FZF" },
   })
   wk.register({
     f = {
@@ -279,7 +280,9 @@ EOF
 nmap <silent> <leader>gR :Gitsigns reset_buffer<cr>
 nmap <silent> <leader>gS :Gitsigns stage_buffer<cr>
 nmap <silent> <leader>gb :Gitsigns blame_line<cr>
+nmap <leader>gc :FzfLua git_bcommits<cr>
 nmap <silent> <leader>gd :Gitsigns diffthis<cr>
+nmap <silent> <leader>ge :Tig<cr>
 nmap <silent> <leader>gp :Gitsigns preview_hunk<cr>
 nmap <silent> <leader>gq :Gitsigns setqflist<cr>:
 nmap <silent> <leader>gr :Gitsigns reset_hunk<cr>
@@ -313,7 +316,9 @@ lua << EOF
       R = { "﫧Reset (discard) buffer" },
       S = { " Stage buffer" },
       b = { " Blame" },
+      c = { " Commits (buffer)" },
       d = { " Diff" },
+      e = { " Explorer" },
       p = { " Preview hunk" },
       q = { " Quick fix (buffer)" },
       r = { "﫧Reset (discard) hunk" },
