@@ -23,7 +23,6 @@
   - [Vim/Neovim](#vimneovim)
     - [Vim Glossary](#vim-glossary)
     - [Vim Commands](#vim-commands)
-      - [Custom Mappings](#custom-mappings)
     - [Vim Plugins](#vim-plugins)
       - [Plug](#plug)
       - [CtrlP](#ctrlp)
@@ -42,16 +41,16 @@
 
 ### Spaces & Monitors (Yabai / SKHD)
 
-- Resize a window: `⌃⌥⌘` + (`←` | `↓` | `↑` | `→`)
 - Focus on a window: `⌃⌥⌘` + (`h` | `j` | `k` | `l`)
+- Resize a window: `⌃⌥⌘` + (`←` | `↓` | `↑` | `→`)
 - Move a window: `⌃⌥⌘` + (`home` | `pagedown` | `pageup` | `end`)
 - Focus on a monitor by number `⌃⌥⌘` + (`1` | `2` | `3` | etc.)
 - Focus on the next space `⌃⌥⌘ + Backtick`
 
 ### Terminals (Alacritty)
 
+- Focus on a pane: (`⌘` | `⌃`) + (`h` | `j` | `k` | `l`)
 - Resize a pane: `⌘` + (`←` | `↓` | `↑` | `→`)
-- Focus on a pane: `⌘` + (`h` | `j` | `k` | `l`)
 - Move the cursor in vi-mode: `h` | `l` (left or right)
 - Go through history in vi-mode: `j` | `k` (down or up)
 - Move the cursor in Alacritty vi-mode: `h` | `j` | `k` | `l`
@@ -61,9 +60,10 @@
 
 ### Editors (VIM / NVIM / VSCode)
 
+- Focus on a pane: (`⌘` | `⌃`) + (`h` | `j` | `k` | `l`)
 - Resize a pane: `⌃` + (`←` | `↓` | `↑` | `→`)
-- Focus on a pane: `⌃` + (`h` | `j` | `k` | `l`)
 - Move the cursor: `h` | `j` | `k` | `l`
+- Move to previous pane `⌃` + `\`
 
 ### Browsers (Vimium / Vimari)
 
@@ -206,7 +206,8 @@ Checkout keyboard [keymaps](../keyboards) to find the key place.
 - `tmux detach` Detach latest session
   - `[-s target-session]` Detach all clients currently attached to the `target-session`
   - `[-t target-client]` Detach the current client if bound to a key `target-client`
-- `tmux kill-session [-t target-session]` Destroy the given session and close any windows linked to it
+- `tmux kill-session [-t target-session]` Destroy the given session and close
+  any windows linked to it
 - `tmux kill-server` Kill the tmux server and clients and destroy all sessions
 - `tmux switch -t [target-session]` Switch between sessions
 
@@ -235,7 +236,8 @@ Checkout keyboard [keymaps](../keyboards) to find the key place.
 
 Use `ESC` or `⌃[` to enter Normal mode.
 
-> **Note:** some of these key bindings are set by zsh by default when using a vi-mode keymap.
+> **Note:** some of these key bindings are set by zsh by default when using a
+> vi-mode keymap.
 
 - `⌃ + p` : Change to a directory (Looking up in `~/.Code`)
 - `⌃ + o` : Open a direcotry in editor (looking up in `~/.Code`)
@@ -258,52 +260,13 @@ Use `ESC` or `⌃[` to enter Normal mode.
 ### Vim Glossary
 
 - Buffer is the in-memory text of a file. Use to open up all required files.
-- Window (AKA split or pane) is a viewport on a buffer. Use when you need multiple viewports of buffers.
+- Window (AKA split or pane) is a viewport on a buffer. Use when you need
+  multiple viewports of buffers.
 - Tab is a collection of windows (splits). Make one when working on a different project.
 
 ### Vim Commands
 
-Leader key is `,`
-
-#### Custom Mappings
-
-**Normal Mode**
-
-- `Q` Replay a macro recording
-- `<tab>`, `<S-tab>` Circle windows
-- `]]` Go to the next function or method
-- `[[` Go to the previous function or method
-- `]b`, `[b` Circle buffers
-- `]t`, `[t` Circle tabs
-- `]h`, `[h` Circle hunks in a buffer
-- `]c`, `[c` Circle hunks in all buffers
-- `<leader>dot` Edit dotfiles in a new tab
-- `<leader> ` Clear search highlighting with leader + space
-- `<leader>/` Toggle commeneting a line
-- `<leader>r` Toggle ruler
-- `<leader>z` Toggle white space trimming
-- `<leader>w` Toggle wrap
-- `<leader>n` Toggle relatie number
-- `⌃ + s`, `<leader>s` Save
-- `⌃ + q`, `<leader>q` Quit
-- `<leader>Q` Quit all
-- `Backtick` Open NERDTree explorer
-- `-` Open NNN picker
-- `_` Open Netrw explorer
-- `~` Open NNN explorer
-
-**Insert Mode**
-
-- `⌃ + s` Save
-- `⌃ + q` Quit
-
-**Visual Mode**
-
-- `,y` Copy to the system clipboard
-- `,p` Paste from the system clipboard
-- `⌃ + q` Escape
-
-**Text Objects**
+#### Text Objects
 
 - `:h text-objects` Help
 - `viw` Select inner word
