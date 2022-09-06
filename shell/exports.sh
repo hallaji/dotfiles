@@ -50,3 +50,9 @@ export NNN_BMS="d:$DOTFILES"
 export NNN_COLORS="4356" # Contexts: 1st, 2nd, 3rd, 4th
 export NNN_FCOLORS="0e0b05040d060e0909030708" # BLK, CHR, DIR, EXE, REG, HARDLINK, SYMLINK, MISSING, ORPHAN, FIFO, SOCK, OTHER
 export NNN_FIFO="/tmp/nnn.fifo"
+
+# ┌─┐┬  ┌─┐┌─┐┬┌─
+# └─┐│  ├─┤│  ├┴┐
+# └─┘┴─┘┴ ┴└─┘┴ ┴
+
+export SLACK_COLORS="#1A1D21,#3B3232,#FFC2C0,#1A1D21,#3B3232,#FFE9E8,#FFA95A,#00b196,#1A1D21,#FFC2C0"
