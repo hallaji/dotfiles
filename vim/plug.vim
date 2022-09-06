@@ -73,6 +73,9 @@ endif
 
 Plug 'mhinz/vim-startify' " https://github.com/mhinz/vim-startify
 Plug 'mcchrish/nnn.vim' " https://github.com/mcchrish/nnn.vim
+if has('nvim')
+  Plug 'kyazdani42/nvim-tree.lua' " https://github.com/kyazdani42/nvim-tree.lua
+endif
 
 " ┌─┐┬┌┬┐
 " │ ┬│ │
