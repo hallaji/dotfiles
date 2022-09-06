@@ -47,6 +47,8 @@ Plug 'Yggdroot/indentLine' " https://github.com/Yggdroot/indentLine
 Plug 'junegunn/limelight.vim' " https://github.com/junegunn/limelight.vim
 Plug 'folke/zen-mode.nvim' " https://github.com/folke/zen-mode.nvim
 Plug 'christoomey/vim-tmux-navigator' " https://github.com/christoomey/vim-tmux-navigator
+Plug 'nvim-lua/plenary.nvim' " https://github.com/nvim-lua/plenary.nvim
+Plug 'sindrets/diffview.nvim' " https://github.com/sindrets/diffview.nvim
 if has('nvim')
   Plug 'folke/which-key.nvim' " https://github.com/folke/which-key.nvim
   Plug 'declancm/cinnamon.nvim' " https://github.com/declancm/cinnamon.nvim
@@ -82,7 +84,6 @@ Plug 'codeindulgence/vim-tig' " https://github.com/codeindulgence/vim-tig
 if has('nvim')
   Plug 'lewis6991/gitsigns.nvim' " https://github.com/lewis6991/gitsigns.nvim
 endif
-" Plug 'mhinz/vim-signify' " https://github.com/mhinz/vim-signify
 
 " ┌┬┐┌─┐┬  ┬┌─┐┬  ┌─┐┌─┐┌┬┐┌─┐┌┐┌┌┬┐
 "  ││├┤ └┐┌┘├┤ │  │ │├─┘│││├┤ │││ │
