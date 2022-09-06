@@ -29,7 +29,7 @@ alias ,gcp="change_gcloud_config" # @see shell/functions.sh
 # └─┘└└─┘┴└─┘┴ ┴  └─┘─┴┘┴ ┴
 
 alias ,e="nvim" # https://github.com/neovim/neovim
-alias ,ls="n -eoi" # https://github.com/jarun/nnn
+alias ,ls="n -Aeoi" # https://github.com/jarun/nnn
 alias ,dot="cd $DOTFILES && $EDITOR $DOTFILES"
 
 # ┌─┐┬┌┬┐
