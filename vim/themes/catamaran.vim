@@ -47,7 +47,7 @@ hi! link Character String
 hi Operator ctermfg=203 guifg=#f47067
 hi! link Conditional Operator
 hi! link Repeat Operator
-hi Statement ctermfg=169 gui=NONE guifg=#e86db2
+hi Statement cterm=None ctermbg=None ctermfg=169 gui=None guibg=NONE guifg=#e86db2
 hi! link Keyword Statement
 hi! link Exception Statement
 hi! link Label Statement
@@ -66,15 +66,27 @@ hi! link StorageClass Type
 hi! link Structure Type
 hi! link Typedef Type
 
-hi DiffAdd ctermbg=NONE ctermfg=43 guibg=NONE guifg=#2bd2b9
+hi DiffAdd ctermbg=NONE ctermfg=43 guibg=NONE guifg=#00b196
 hi DiffChange ctermbg=NONE ctermfg=215 guibg=NONE guifg=#f5b168
 hi DiffDelete ctermbg=NONE ctermfg=203 guibg=NONE guifg=#f47067
+hi DiffNew ctermbg=NONE ctermfg=140 guibg=NONE guifg=#a394cd
+
 hi! link GitSignsAdd DiffAdd
 hi! link GitSignsChange DiffChange
 hi! link GitSignsDelete DiffDelete
 hi! link diffAdded DiffAdd
 hi! link diffRemoved DiffDelete
 
+hi! link NvimTreeGitDirty DiffChange
+hi! link NvimTreeGitStaged DiffAdd
+hi! link NvimTreeGitRenamed DiffChange
+hi! link NvimTreeGitNew DiffNew
+hi! link NvimTreeGitDeleted DiffDelete
+hi! link NvimTreeGitIgnored Comment
+
+hi NvimTreeFolderIcon ctermbg=None ctermfg=169 guibg=NONE guifg=#e86db2
+hi! link NvimTreeFolderName NvimTreeFolderIcon
+hi! link NvimTreeOpenedFile Cursor
 
 hi IncSearch cterm=reverse ctermfg=NONE gui=reverse guifg=NONE term=reverse
 hi Search ctermbg=238 ctermfg=169 guibg=#3c4552 guifg=#e86db2
