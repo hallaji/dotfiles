@@ -13,6 +13,7 @@ export GITHUB_REGISTRY_TOKEN="github-registry-pat"
 export PALETTE_FG="#adbac7,fa,250" # Foreground
 export PALETTE_BG="#22272e,eb,235" # Background
 export PALETTE_RR="#22282f,ec,236" # Ruler
+export PALETTE_IL="#2e353f,ec,236" # Indent Line
 export PALETTE_BR="#040506,e8,232" # Border
 export PALETTE_00="#1f242a,00,234"
 export PALETTE_01="#f47067,01,203"
