@@ -20,8 +20,8 @@ set cmdheight=1 " Command height under status line
 set nowrap " No wrap by default
 
 set tabstop=2 " Length of an actual \t character
-set softtabstop=-1 " Length to use when editing text eg. TAB and BS keys (0 for ‘tabstop’, -1 for ‘shiftwidth’)
 set shiftwidth=0 " Length to use when shifting text eg. <<, >> and == commands (0 for ‘tabstop’)
+set softtabstop=-1 " Length to use when editing text eg. TAB and BS keys (0 for ‘tabstop’, -1 for ‘shiftwidth’)
 set shiftround " Round indentation to multiples of 'shiftwidth' when shifting text (so that it behaves like Ctrl-D / Ctrl-T)
 set expandtab " If set, only insert spaces; otherwise insert \t and complete with spaces
 set autoindent " reproduce the indentation of the previous line
@@ -40,7 +40,7 @@ set nocompatible " Use latest vim settings, not vi
 set backspace=indent,eol,start " Make backspace behave like every other editor
 set noerrorbells visualbell t_vb= " No bells
 set hlsearch " Search highlights
-set incsearch
+set incsearch " While typing a search command, show where the pattern, as it was typed so far, matches
 set splitbelow " Make splits default to below
 set splitright " And to the right
 set noshowmode " Hide the message on the last line in Insert, Replace or Visual mode
