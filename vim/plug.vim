@@ -17,6 +17,13 @@ endif
 
 call plug#begin()
 
+" ┬┌─┐┌─┐┌┐┌┌─┐
+" ││  │ ││││└─┐
+" ┴└─┘└─┘┘└┘└─┘
+
+Plug 'kyazdani42/nvim-web-devicons' " https://github.com/kyazdani42/nvim-web-devicons
+Plug 'ryanoasis/vim-devicons' " https://github.com/ryanoasis/vim-devicons
+
 " ┌┬┐┌─┐┌─┐┬  ┌─┐
 "  │ │ ││ ││  └─┐
 "  ┴ └─┘└─┘┴─┘└─┘
@@ -88,11 +95,5 @@ Plug 'jparise/vim-graphql' " https://github.com/jparise/vim-graphql
 Plug 'pangloss/vim-javascript' " https://github.com/pangloss/vim-javascript
 Plug 'peitalin/vim-jsx-typescript' " https://github.com/peitalin/vim-jsx-typescript
 Plug 'udalov/kotlin-vim' " https://github.com/udalov/kotlin-vim
-
-" ┬┌─┐┌─┐┌┐┌┌─┐
-" ││  │ ││││└─┐
-" ┴└─┘└─┘┘└┘└─┘
-
-Plug 'ryanoasis/vim-devicons' " https://github.com/ryanoasis/vim-devicons
 
 call plug#end()
