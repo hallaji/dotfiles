@@ -63,9 +63,6 @@ endif
 " └─┘┴ └─┴  ┴─┘└─┘┴└─└─┘
 
 Plug 'mhinz/vim-startify' " https://github.com/mhinz/vim-startify
-Plug 'preservim/nerdtree' " https://github.com/preservim/nerdtree
-Plug 'Xuyuanp/nerdtree-git-plugin' " https://github.com/Xuyuanp/nerdtree-git-plugin
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight' " https://github.com/tiagofumo/vim-nerdtree-syntax-highlight
 Plug 'mcchrish/nnn.vim' " https://github.com/mcchrish/nnn.vim
 
 " ┌─┐┬┌┬┐
