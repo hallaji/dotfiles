@@ -41,7 +41,7 @@ lua << EOF
     },
     icons = {
       breadcrumb = "  ", -- symbol used in the command line area that shows your active key combo
-      separator = " ", -- symbol used between a key and it's label
+      separator = "  ", -- symbol used between a key and it's label
       group = "", -- symbol prepended to a group
     },
     window = {
@@ -52,7 +52,7 @@ lua << EOF
     },
     layout = {
       -- spacing = 3, -- spacing between columns
-      align = "left", -- align columns left, center or right
+      align = "center", -- align columns left, center or right
     },
     show_help = true, -- show help message on the command line when the popup is visible
     -- ignore_missing = false, -- enable this to hide mappings for which you didn't specify a label
