@@ -37,7 +37,7 @@ vnoremap <leader>y "*y
 "  └┘ ┴└─┘└─┘┴ ┴┴─┘
 
 map <leader>/ <plug>NERDCommenterToggle
-nmap <leader><space> :nohlsearch<cr>
+nmap <leader>d :nohlsearch<cr>
 nmap <leader>m <Plug>MarkdownPreviewToggle
 nmap <leader>t :call v:lua.MiniTrailspace.trim()<cr>
 nmap <leader>z :ZenMode<cr>
@@ -47,7 +47,7 @@ nnoremap <leader>i :IndentLinesToggle<cr>
 nnoremap <leader>l :Limelight!!<cr>
 nnoremap <leader>n :set norelativenumber \| :set number!<cr>
 nnoremap <leader>r :execute "set colorcolumn=" . (&colorcolumn == "" ? "80,120" : "")<cr>
-nnoremap <leader>s :set spell! spelllang=en_au<cr>
+nnoremap <leader>p :set spell! spelllang=en_au<cr>
 nnoremap <leader>w :set wrap! wrap?<cr>
 
 lua << EOF
@@ -58,20 +58,20 @@ lua << EOF
     ["<C-X>"] = { " Whichkey" },
   })
   wk.register({
-    ["/"] = { " Comment" },
+    ["/"] = { " Comment" },
     p = { " Put (paste)" },
     y = { " Yank (copy)" },
   }, { mode="v", prefix = "<leader>" })
   wk.register({
-    ["/"] = { " Comment" },
-    ["<space>"] = { "Remove highlights" },
+    ["/"] = { " Comment" },
+    d = { " Remove search highlights" },
     e = { "陋Toggle relative numbers" },
     i = { " Toggle indent marks" },
     l = { "劉Toggle limelight mode" },
     m = { " Preview markdown" },
     n = { " Toggle numbers" },
     r = { " Toggle rulers" },
-    s = { "暈Check spells (en_au)" },
+    p = { "暈Toggle spell check (en_au)" },
     t = { " Trim spaces" },
     w = { "蝹Wrap" },
     z = { " Toggle zen mode" },
@@ -135,7 +135,7 @@ lua << EOF
   local wk = require("which-key")
   wk.register({
     c = {
-      name = " comment",
+      name = " Comment",
     },
   }, { prefix = "<leader>" })
 EOF
@@ -148,6 +148,7 @@ inoremap <C-Q> <esc>:q<cr>
 inoremap <C-S> <C-O>:update<cr>
 nnoremap <C-Q> :q<cr>
 nnoremap <C-S> :update<cr>
+nnoremap <leader>q :q!<cr>
 nnoremap <leader>Q :qa!<cr>
 nnoremap <leader>bQ :qa!<cr>
 nnoremap <leader>bc :bd<cr>
@@ -163,10 +164,12 @@ vnoremap <C-Q> <esc>
 lua << EOF
   local wk = require("which-key")
   wk.register({
-    Q = { " Quit all" },
+    ["<C-S>"] = { " Save" },
+    ["<C-Q>"] = { " Quit" },
+  })
+  wk.register({
     b = {
-      name = "﬘ buffer",
-      Q = { " Quit all" },
+      name = "﬘ Buffer",
       c = { " Close" },
       f = { " First" },
       h = { "ﳐ Home" },
@@ -174,8 +177,11 @@ lua << EOF
       n = { " Next" },
       p = { " Previous" },
       q = { " Quit" },
+      Q = { " Quit all" },
       s = { " Save" },
     },
+    q = { " Quit" },
+    Q = { " Quit all" },
   }, { prefix = "<leader>" })
 EOF
 
@@ -190,7 +196,7 @@ lua << EOF
   local wk = require("which-key")
   wk.register({
     o = {
-      name = " open",
+      name = "ﴚ Open",
       d = { "Dotfiles" },
     },
   }, { prefix = "<leader>" })
@@ -210,13 +216,14 @@ nnoremap <leader>fb :FzfLua buffers<cr>
 lua << EOF
   local wk = require("which-key")
   wk.register({
-    ["<C-F>"] = { " FZF" },
+    ["<C-F>"] = { " Spotlight" },
   })
   wk.register({
     f = {
-      name = " find",
+      name = " Find",
       b = { "﬘ Buffers" },
     },
+    F = { " Find & replace" },
   }, { prefix = "<leader>" })
 EOF
 
@@ -239,7 +246,7 @@ lua << EOF
   local wk = require("which-key")
   wk.register({
     r = {
-      name = " replace",
+      name = " Find & replace",
       c = { "Clear highlight" },
       f = { "Focus window" },
       l = { "Last search" },
@@ -259,15 +266,15 @@ EOF
 " └─┘┴ └─┴  ┴─┘└─┘┴└─└─┘┴└─
 
 nnoremap <silent> _ :Explore<cr>
-nnoremap <silent> ~ :NERDTreeFocus<cr>
+nnoremap <silent> ~ :NvimTreeFocus<cr>
 nnoremap <silent> - :NnnPicker %:p:h<cr>
-nnoremap <silent> ` :NnnExplorer<cr>
+nnoremap <silent> ` :NnnExplorer %:p:h<cr>
 
 lua << EOF
   local wk = require("which-key")
   wk.register({
     ["_"] = { " Netrw" },
-    ["~"] = { " NERDTree" },
+    ["~"] = { " Nvim Tree" },
     ["-"] = { " NNN Picker" },
     ["`"] = { " NNN Explorer" },
   })
@@ -281,7 +288,12 @@ nmap <silent> <leader>gR :Gitsigns reset_buffer<cr>
 nmap <silent> <leader>gS :Gitsigns stage_buffer<cr>
 nmap <silent> <leader>gb :Gitsigns blame_line<cr>
 nmap <leader>gc :FzfLua git_bcommits<cr>
-nmap <silent> <leader>gd :Gitsigns diffthis<cr>
+nmap <silent> <leader>gdc :DiffviewClose<cr>
+nmap <silent> <leader>gdf :DiffviewToggleFiles<cr>
+nmap <silent> <leader>gdh :DiffviewFileHistory<cr>
+nmap <silent> <leader>gdo :DiffviewOpen<cr>
+nmap <silent> <leader>gdr :DiffviewRefresh<cr>
+nmap <silent> <leader>gdt :Gitsigns diffthis<cr>
 nmap <silent> <leader>ge :Tig<cr>
 nmap <silent> <leader>gp :Gitsigns preview_hunk<cr>
 nmap <silent> <leader>gq :Gitsigns setqflist<cr>:
@@ -312,12 +324,20 @@ lua << EOF
   })
   wk.register({
     g = {
-      name = " git",
+      name = " Git",
       R = { "﫧Reset (discard) buffer" },
       S = { " Stage buffer" },
       b = { " Blame" },
       c = { " Commits (buffer)" },
-      d = { " Diff" },
+      d = {
+        name = " Diff view",
+        c = { " Close" },
+        f = { " Files" },
+        h = { " File history" },
+        o = { " Open" },
+        r = { " Refresh" },
+        t = { " This" },
+      },
       e = { " Explorer" },
       p = { " Preview hunk" },
       q = { " Quick fix (buffer)" },
