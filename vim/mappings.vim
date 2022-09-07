@@ -53,28 +53,28 @@ nnoremap <leader>w :set wrap! wrap?<cr>
 lua << EOF
   local wk = require("which-key")
   wk.register({
-    Q = { "菱Replay macro recording" },
-    Y = { " Yank (copy) to the line break" },
+    Q = { " Replay Macro Recording" },
+    Y = { " Yank to the Line Break" },
     ["<C-X>"] = { " Whichkey" },
   })
   wk.register({
     ["/"] = { " Comment" },
-    p = { " Put (paste)" },
-    y = { " Yank (copy)" },
+    p = { " Paste" },
+    y = { " Yank" },
   }, { mode="v", prefix = "<leader>" })
   wk.register({
     ["/"] = { " Comment" },
-    d = { " Remove search highlights" },
-    e = { "陋Toggle relative numbers" },
-    i = { " Toggle indent marks" },
-    l = { "劉Toggle limelight mode" },
-    m = { " Preview markdown" },
-    n = { " Toggle numbers" },
-    r = { " Toggle rulers" },
-    p = { "暈Toggle spell check (en_au)" },
-    t = { " Trim spaces" },
-    w = { "蝹Wrap" },
-    z = { " Toggle zen mode" },
+    d = { " Remove Search Highlights" },
+    e = { " Toggle Relative Numbers" },
+    i = { " Toggle Indent Marks" },
+    l = { "ﯦ Toggle Limelight Mode" },
+    m = { " Preview Markdown" },
+    n = { " Toggle Numbers" },
+    r = { " Toggle Rulers" },
+    p = { " Toggle Spell Check (en_au)" },
+    t = { " Trim Spaces" },
+    w = { " Wrap" },
+    z = { " Toggle Zen Mode" },
   }, { prefix = "<leader>" })
 EOF
 
@@ -223,7 +223,7 @@ lua << EOF
       name = " Find",
       b = { "﬘ Buffers" },
     },
-    F = { " Find & replace" },
+    F = { " Find/Replace" },
   }, { prefix = "<leader>" })
 EOF
 
@@ -246,17 +246,17 @@ lua << EOF
   local wk = require("which-key")
   wk.register({
     r = {
-      name = " Find & replace",
-      c = { "Clear highlight" },
-      f = { "Focus window" },
-      l = { "Last search" },
-      o = { "Open window" },
+      name = " Find/Replace",
+      c = { "Clear Highlight" },
+      f = { "Focus Window" },
+      l = { "Last Search" },
+      o = { "Open Window" },
       p = { "Prompt" },
       s = { "Selected" },
-      t = { "Toggle window" },
-      u = { "Update last results" },
+      t = { "Toggle Window" },
+      u = { "Update Last Results" },
       w = { "Word" },
-      z = { "Word plus boundary" },
+      z = { "Word Plus Boundary" },
     },
   }, { prefix = "<leader>" })
 EOF
@@ -325,7 +325,7 @@ lua << EOF
   wk.register({
     g = {
       name = " Git",
-      R = { "﫧Reset (discard) buffer" },
+      R = { " Reset buffer" },
       S = { " Stage buffer" },
       b = { " Blame" },
       c = { " Commits (buffer)" },
@@ -341,7 +341,7 @@ lua << EOF
       e = { " Explorer" },
       p = { " Preview hunk" },
       q = { " Quick fix (buffer)" },
-      r = { "﫧Reset (discard) hunk" },
+      r = { " Reset hunk" },
       s = { " Stage hunk" },
       t = {
         name = " Toggle",
