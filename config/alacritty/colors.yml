@@ -27,9 +27,9 @@ colors:
     focused_match:
       foreground: '#1f242a'
       background: '#e86db2'
-    bar:
-      foreground: '#e86db2'
-      background: '#1f242a'
+  footer_bar:
+    foreground: '#e86db2'
+    background: '#1f242a'
   hints:
     start:
       foreground: '#1d1f21'
