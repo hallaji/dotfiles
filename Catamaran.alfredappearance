@@ -1,0 +1,64 @@
+{
+  "alfredtheme" : {
+    "result" : {
+      "textSpacing" : 8,
+      "subtext" : {
+        "size" : 12,
+        "colorSelected" : "#9BB6CFFF",
+        "font" : "System Light",
+        "color" : "#3B4551FF"
+      },
+      "shortcut" : {
+        "size" : 16,
+        "colorSelected" : "#2E97E9FF",
+        "font" : "System",
+        "color" : "#E86CB2FF"
+      },
+      "backgroundSelected" : "#3B455187",
+      "text" : {
+        "size" : 18,
+        "colorSelected" : "#03F6F5FF",
+        "font" : "System",
+        "color" : "#A394CCFF"
+      },
+      "iconPaddingHorizontal" : 7,
+      "roundness" : 4,
+      "paddingVertical" : 8,
+      "iconSize" : 38
+    },
+    "search" : {
+      "backgroundSelected" : "#3B4551FF",
+      "paddingHorizontal" : 8,
+      "spacing" : 8,
+      "text" : {
+        "size" : 32,
+        "colorSelected" : "#E86CB2FF",
+        "font" : "System",
+        "color" : "#E86CB2FF"
+      },
+      "background" : "#21272DFF",
+      "roundness" : 0,
+      "paddingVertical" : 5
+    },
+    "window" : {
+      "color" : "#21272DFF",
+      "paddingHorizontal" : 0,
+      "width" : 700,
+      "borderPadding" : 9,
+      "borderColor" : "#1E2429FF",
+      "blur" : 0,
+      "roundness" : 4,
+      "paddingVertical" : 0
+    },
+    "credit" : "Vahid Hallaji",
+    "separator" : {
+      "color" : "#21272DFF",
+      "thickness" : 0
+    },
+    "scrollbar" : {
+      "color" : "#E86CB2FF",
+      "thickness" : 0
+    },
+    "name" : "Catamaran"
+  }
+}
