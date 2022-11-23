@@ -52,7 +52,7 @@ Plug 'sindrets/diffview.nvim' " https://github.com/sindrets/diffview.nvim
 if has('nvim')
   Plug 'folke/which-key.nvim' " https://github.com/folke/which-key.nvim
   Plug 'declancm/cinnamon.nvim' " https://github.com/declancm/cinnamon.nvim
-  Plug 'echasnovski/mini.nvim', { 'branch': 'stable' } " https://github.com/echasnovski/mini.nvim
+  Plug 'echasnovski/mini.nvim' " https://github.com/echasnovski/mini.nvim
 endif
 
 " ┌─┐┌─┐┌─┐┬─┐┌─┐┬ ┬
