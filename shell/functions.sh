@@ -8,9 +8,13 @@
 
 find_in_directory() {
   dir=$(find $1 -type d -not -path '*/\.*' -maxdepth 2 | fzf)
-  cd $dir
-  if [ ! -z "$2" ] && [ "$2" = "--edit" ]; then
-    eval "$EDITOR ."
+  if [ $? -eq 0 ]; then
+    cd $dir
+    if [ ! -z "$2" ] && [ "$2" = "--edit" ]; then
+      eval "$EDITOR +Startify"
+    fi
+  else
+    echo 'No directory provided!'
   fi
   zle && { zle reset-prompt; zle -R }
 }
@@ -32,20 +36,19 @@ change_aws_profile() {
     if [ "$?" != "0" ]; then
       aws sso login
     fi
-    zle && { zle reset-prompt; zle -R }
   else
-    echo 'no AWS account provided!'
-    exit 1
+    echo 'No AWS account provided!'
   fi
+  zle && { zle reset-prompt; zle -R }
 }
 
 change_gcloud_config() {
   config=$(gcloud config configurations list | cut -d' ' -f1 | sed 1d | fzf)
   if [[ -n $config ]] ; then
+    echo "Switching to $config…"
     gcloud config configurations activate $config
-    zle && { zle reset-prompt; zle -R }
   else
-    echo 'no Gcloud config provided!'
-    exit 1
+    echo 'No GCloud config provided!'
   fi
+  zle && { zle reset-prompt; zle -R }
 }

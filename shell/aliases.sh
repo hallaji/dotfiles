@@ -21,6 +21,8 @@ alias ,b="wallpaper set-solid-color $*"
 alias ,a="open --background 'lungo:toggle'" # Toogle computer awake mode (Lungo)
 alias ,h="history"
 alias ,hs="history | grep $* -i"
+alias ,cd="change_source_directory" # @see shell/functions.sh
+alias ,ed="edit_source_directory" # @see shell/functions.sh
 alias ,aws="change_aws_profile" # @see shell/functions.sh
 alias ,gcp="change_gcloud_config" # @see shell/functions.sh
 
@@ -28,9 +30,9 @@ alias ,gcp="change_gcloud_config" # @see shell/functions.sh
 # │─┼┐│ │││  ├┴┐  ├┤  │││ │
 # └─┘└└─┘┴└─┘┴ ┴  └─┘─┴┘┴ ┴
 
-alias ,e="nvim" # https://github.com/neovim/neovim
+alias ,e="$EDITOR" # https://github.com/neovim/neovim
 alias ,ls="n -Aeoi" # https://github.com/jarun/nnn
-alias ,dot="cd $DOTFILES && $EDITOR $DOTFILES"
+alias ,dot="cd $DOTFILES && $EDITOR"
 
 # ┌─┐┬┌┬┐
 # │ ┬│ │
