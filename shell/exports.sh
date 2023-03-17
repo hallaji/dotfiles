@@ -12,11 +12,9 @@
 
 # for formulae that put executables in /usr/local/sbin - homebrew
 export PATH="/usr/local/sbin:$PATH"
-
+export SHELL="/bin/zsh"
 export LANG=en_AU.UTF-8
-
 export XDG_CONFIG_HOME="$HOME/.config"
-
 export DOTFILES="$HOME/.dotfiles"
 export CODE="$HOME/Code"
 
