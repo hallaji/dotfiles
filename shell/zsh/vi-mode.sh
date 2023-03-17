@@ -5,6 +5,10 @@
 #  ╚████╔╝ ██║      ██║ ╚═╝ ██║╚██████╔╝██████╔╝███████╗
 #   ╚═══╝  ╚═╝      ╚═╝     ╚═╝ ╚═════╝ ╚═════╝ ╚══════╝
 
+# https://zsh.fyi/
+# https://zsh.fyi/meta/zle
+# https://zsh.fyi/zsh-line-editor#zle-builtins
+
 # Vi Mode
 bindkey -v
 
