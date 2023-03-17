@@ -210,6 +210,8 @@ Checkout keyboard [keymaps](../keyboards) to find the key place.
   any windows linked to it
 - `tmux kill-server` Kill the tmux server and clients and destroy all sessions
 - `tmux switch -t [target-session]` Switch between sessions
+- `tmux set status on` Show status line
+- `tmux set status off` Hide status line
 
 ## Alacritty
 
