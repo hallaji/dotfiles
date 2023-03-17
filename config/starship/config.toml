@@ -7,9 +7,11 @@
 
 # https://starship.rs
 
+"$schema" = 'https://starship.rs/config-schema.json'
+
 add_newline = true
 command_timeout = 2000
-right_format = """$aws$gcloud""" # $cmd_duration
+# right_format = """$aws$gcloud$cmd_duration"""
 
 [line_break]
 disabled = false
@@ -40,7 +42,7 @@ symbol = " "
 
 [cmd_duration]
 style = "dimmed purple"
-format = "[祥$duration]($style) "
+format = " [祥$duration]($style) "
 
 [directory]
 read_only = " "
