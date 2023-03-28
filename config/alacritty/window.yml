@@ -1,4 +1,3 @@
-
 # ██╗    ██╗██╗███╗   ██╗██████╗  ██████╗ ██╗    ██╗
 # ██║    ██║██║████╗  ██║██╔══██╗██╔═══██╗██║    ██║
 # ██║ █╗ ██║██║██╔██╗ ██║██║  ██║██║   ██║██║ █╗ ██║
@@ -6,9 +5,8 @@
 # ╚███╔███╔╝██║██║ ╚████║██████╔╝╚██████╔╝╚███╔███╔╝
 #  ╚══╝╚══╝ ╚═╝╚═╝  ╚═══╝╚═════╝  ╚═════╝  ╚══╝╚══╝
 
-live_config_reload: true     # Live config reload (changes require restart)
-working_directory: None      # Startup directory
-alt_send_esc: false          # Send ESC (\x1b) before characters when alt is pressed.
+live_config_reload: true # Live config reload (changes require restart)
+working_directory: None # Startup directory
 
 window:
   opacity: 1.0
@@ -22,7 +20,9 @@ window:
     x: 15
     y: 5
   decorations: buttonless
+  decorations_theme_variant: None
   startup_mode: Windowed
   title: Alacritty
   dynamic_padding: false
   dynamic_title: true
+  option_as_alt: None
