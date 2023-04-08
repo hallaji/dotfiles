@@ -87,6 +87,7 @@ fresh-options --filter=erb --file=~/.zshrc --marker
   type pyenv > /dev/null && fresh shell/zsh/pyenv.sh
   type nnn > /dev/null && fresh shell/zsh/nnn.sh
   type terraform > /dev/null && fresh shell/zsh/terraform.sh
+  type gcloud > /dev/null && fresh shell/zsh/gcloud.sh
   brew --prefix asdf > /dev/null && fresh shell/zsh/asdf.sh
   brew --prefix mongodb-community@4.4 > /dev/null && fresh shell/mongo.sh
   brew --prefix postgresql@13 > /dev/null && fresh shell/psql.sh
