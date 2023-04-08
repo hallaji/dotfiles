@@ -4,20 +4,7 @@
   "codeLens.enable": true,
   "codeLens.position": "eol",
   "coc.preferences.formatOnType": true,
-  "coc.preferences.formatOnSaveFiletypes": [
-    "c",
-    "go",
-    "python",
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact",
-    "css",
-    "json",
-    "jsonc",
-    "graphql",
-    "markdown"
-  ],
+  "coc.preferences.formatOnSave": true,
   "suggest.completionItemKindLabels": {
     "keyword": "\uf1de",
     "variable": "\ue79b",
@@ -46,7 +33,7 @@
     "typeParameter": "\uf728",
     "default": "\uf29c"
   },
-  "colors.filetypes": ["*"],
+  "colors.enable": true,
   "suggest.floatConfig": {
     "border": true,
     "shadow": false
@@ -62,5 +49,8 @@
   "hover.floatConfig": {
     "border": true,
     "shadow": false
+  },
+  "go.goplsOptions": {
+    "buildFlags": ["-tags=integration"]
   }
 }
