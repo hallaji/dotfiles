@@ -6,7 +6,7 @@
       "passKeys": ""
     },
     {
-      "pattern": "https?://excalidraw.com/*",
+      "pattern": "https?://*excalidraw.com/*",
       "passKeys": ""
     },
     {
