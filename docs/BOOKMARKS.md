@@ -2,11 +2,13 @@
 
 ## Apps
 
-- [1Password – Password Manager](https://1password.com)
-- [Bear - Markdown Notes](https://bear.app)
-- [Chand - Realtime Exchange Rates](https://apps.apple.com/au/app/chand/id1524200188)
+- [1Password – Password manager](https://1password.com)
+- [Bear - Markdown notes](https://bear.app)
+- [Chand - Realtime exchange Rates](https://apps.apple.com/au/app/chand/id1524200188)
 - [Epson - Printer ET-2750](http://epson.sn)
+- [Excalidraw - Virtual collaborative whiteboard tool](https://excalidraw.com)
 - [Hey - Email’s new heyday](https://www.hey.com/apps)
+- [Httpie - Making APIs simple and intuitive](https://httpie.io)
 - [Internet Access Policy Viewer - A better view on privacy](https://obdev.at/products/iapviewer)
 - [Logi Options+](https://www.logitech.com/en-au/software/logi-options-plus.html)
 - [Logi Capture](https://www.logitech.com/en-au/software/capture.html)
