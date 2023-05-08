@@ -20,6 +20,14 @@
     {
       "pattern": "https?://app.hey.com/*",
       "passKeys": ""
+    },
+    {
+      "pattern": "https?://www.codewars.com/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://hackertyper.net/*",
+      "passKeys": ""
     }
   ],
   "filterLinkHints": false,
