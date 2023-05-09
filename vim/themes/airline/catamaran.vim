@@ -12,10 +12,10 @@ let g:airline#themes#catamaran#palette = {}
 " ││││ │├┬┘│││├─┤│
 " ┘└┘└─┘┴└─┴ ┴┴ ┴┴─┘
 
-let s:N1 = [ '#1f242a', '#04f6f6', 234, 51  ] " Section A and Z
-let s:N2 = [ '#47535f', '#252B31', 240, 236 ] " Section B and Y
-let s:N3 = [ '#3c4552', '#1f242a', 238, 234 ] " Section C and X
-let s:N4 = [ '#1f242a', '#f47067', 255, 203 ] " Section A (Modified/Paste)
+let s:N1 = [ '#281e1e', '#EEB4B3', 234, 51  ] " Section A and Z
+let s:N2 = [ '#9191a9', '#2D2D34', 240, 236 ] " Section B and Y
+let s:N3 = [ '#475262', '#1f242a', 238, 234 ] " Section C and X
+let s:N4 = [ '#1f242a', '#F4D35E', 255, 203 ] " Section A (Modified/Paste)
 
 let g:airline#themes#catamaran#palette.normal = airline#themes#generate_color_map(s:N1, s:N2, s:N3)
 let g:airline#themes#catamaran#palette.normal_modified = { 'airline_a': s:N4 }
@@ -24,10 +24,10 @@ let g:airline#themes#catamaran#palette.normal_modified = { 'airline_a': s:N4 }
 " ││││└─┐├┤ ├┬┘ │
 " ┴┘└┘└─┘└─┘┴└─ ┴
 
-let s:I1 = [ '#0E3B4F', '#FFF5D9', 17, 45  ]
-let s:I2 = [ '#0E3B4F', '#DDE58E', 255, 27 ]
-let s:I3 = [ '#ffffff', '#9ED47B', 15, 17  ]
-let s:I4 = [ '#ffffff', '#6BAD3F', 255, 53 ]
+let s:I1 = [ '#0E3B4F', '#C1F9CD', 17,  45  ]
+let s:I2 = [ '#0E3B4F', '#8BEFC7', 255, 27  ]
+let s:I3 = [ '#ffffff', '#04BEC3', 15,  17  ]
+let s:I4 = [ '#ffffff', '#008492', 255, 53  ]
 
 let g:airline#themes#catamaran#palette.insert = airline#themes#generate_color_map(s:I1, s:I2, s:I3)
 let g:airline#themes#catamaran#palette.insert_modified = { 'airline_a': s:I4 }
@@ -37,10 +37,10 @@ let g:airline#themes#catamaran#palette.insert_paste = { 'airline_a': s:I4 }
 " ├┬┘├┤ ├─┘│  ├─┤│  ├┤
 " ┴└─└─┘┴  ┴─┘┴ ┴└─┘└─┘
 
-let s:R1 = [ '#0E3B4F', '#C1F9CD', 17,  45  ]
-let s:R2 = [ '#0E3B4F', '#8BEFC7', 255, 27  ]
-let s:R3 = [ '#ffffff', '#04BEC3', 15,  17  ]
-let s:R4 = [ '#ffffff', '#008492', 255, 53  ]
+let s:R1 = [ '#0E3B4F', '#FFF5D9', 17, 45  ]
+let s:R2 = [ '#0E3B4F', '#DDE58E', 255, 27 ]
+let s:R3 = [ '#ffffff', '#9ED47B', 15, 17  ]
+let s:R4 = [ '#ffffff', '#6BAD3F', 255, 53 ]
 
 let g:airline#themes#catamaran#palette.replace = airline#themes#generate_color_map(s:R1, s:R2, s:R3)
 let g:airline#themes#catamaran#palette.replace_modified = { 'airline_a': s:R4 }
