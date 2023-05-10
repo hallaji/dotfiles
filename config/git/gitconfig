@@ -19,9 +19,6 @@
 [interactive]
   diffFilter = diff-so-fancy --patch
 
-[add.interactive]
-  useBuiltin = false
-
 [commit]
   gpgsign = true
   template = ~/.gitmessage
