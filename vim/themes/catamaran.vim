@@ -34,6 +34,7 @@ hi LineNr ctermbg=235 ctermfg=238 guibg=#22272e guifg=#3c4552
 hi QuickFixLine ctermbg=234 ctermfg=250 guibg=#1f242a guifg=#adbac7
 hi SignColumn ctermbg=235 ctermfg=250 guibg=#22272e guifg=#adbac7
 hi TermCursorNC ctermbg=140 ctermfg=234 guibg=#a394cd guifg=#1f242a
+hi CopilotSuggestion ctermfg=140 gui=NONE guifg=#87d7d7
 
 hi Comment ctermfg=238 guifg=#3c4552
 hi Conceal ctermbg=NONE ctermfg=237 guibg=NONE guifg=#2e353f

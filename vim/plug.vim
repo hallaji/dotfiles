@@ -49,6 +49,7 @@ Plug 'folke/zen-mode.nvim' " https://github.com/folke/zen-mode.nvim
 Plug 'christoomey/vim-tmux-navigator' " https://github.com/christoomey/vim-tmux-navigator
 Plug 'nvim-lua/plenary.nvim' " https://github.com/nvim-lua/plenary.nvim
 Plug 'sindrets/diffview.nvim' " https://github.com/sindrets/diffview.nvim
+Plug 'github/copilot.vim' " https://github.com/github/copilot.vim
 if has('nvim')
   Plug 'folke/which-key.nvim' " https://github.com/folke/which-key.nvim
   Plug 'declancm/cinnamon.nvim' " https://github.com/declancm/cinnamon.nvim
