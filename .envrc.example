@@ -9,6 +9,9 @@ export GITHUB_USER="github-user"
 export GITHUB_TOKEN="github-public-pat"
 export GITHUB_REGISTRY_TOKEN="github-registry-pat"
 
+export NOTION_API_KEY="notion-api-key"
+export NOTION_BOOKMARKS_DATABASE_ID="notion-bookmarks-database-id"
+
 # Each export holds a GUI color code, Xterm hex number, and Xterm number respectively
 export PALETTE_FG="#adbac7,fa,250" # Foreground
 export PALETTE_BG="#22272e,eb,235" # Background

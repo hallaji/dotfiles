@@ -226,3 +226,11 @@ fresh xero/figlet-fonts . --file=~/.figlet/
 # ┘└┘┘└┘┘└┘
 
 fresh jarun/nnn . --file=vendor/nnn/
+
+# ┌─┐┬  ┌─┐┬─┐┌─┐┌┬┐
+# ├─┤│  ├┤ ├┬┘├┤  ││
+# ┴ ┴┴─┘└  ┴└─└─┘─┴┘
+
+fresh hallaji/notion-workflow . \
+  --filter=erb \
+  --file=~/.sync/Dropbox/Alfred/Alfred.alfredpreferences/workflows/notion/
