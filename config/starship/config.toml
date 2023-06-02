@@ -19,7 +19,7 @@ disabled = false
 [aws]
 disabled = false
 force_display = true
-symbol = " "
+symbol = "󰸏 "
 style = "dimmed yellow"
 format = '[$symbol($profile )(\($region\) )]($style)'
 
@@ -34,15 +34,12 @@ style = "red"
 threshold = 40
 style = "yellow"
 
-[buf]
-symbol = " "
-
 [c]
 symbol = " "
 
 [cmd_duration]
 style = "dimmed purple"
-format = " [祥$duration]($style) "
+format = " [󰔛 $duration]($style) "
 
 [directory]
 read_only = " "
@@ -52,9 +49,6 @@ symbol = " "
 
 [elixir]
 symbol = " "
-
-[elm]
-symbol = " "
 
 [gcloud]
 disabled = false
@@ -72,29 +66,29 @@ symbol = " "
 symbol = " "
 
 [java]
-symbol = " "
+symbol = "󰬷 "
 
 [kotlin]
-symbol = "🅺 "
+symbol = "󱈙 "
 
 [memory_usage]
 disabled = false
-symbol = " "
+symbol = "󰍛 "
 
 [nodejs]
 symbol = " "
 
 [package]
-symbol = " "
+symbol = " "
 
 [php]
-symbol = " "
+symbol = " "
 
 [python]
-symbol = " "
+symbol = " "
 
 [ruby]
-symbol = " "
+symbol = " "
 
 [rust]
 symbol = " "
