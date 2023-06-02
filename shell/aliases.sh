@@ -25,6 +25,8 @@ alias ,cd="change_source_directory" # @see shell/functions.sh
 alias ,ed="edit_source_directory" # @see shell/functions.sh
 alias ,aws="change_aws_profile" # @see shell/functions.sh
 alias ,gcp="change_gcloud_config" # @see shell/functions.sh
+alias ,cb="cointop price --coin bitcoin --currency aud"
+alias ,ce="cointop price --coin ethereum --currency aud"
 
 # ┌─┐ ┬ ┬┬┌─┐┬┌─  ┌─┐┌┬┐┬┌┬┐
 # │─┼┐│ │││  ├┴┐  ├┤  │││ │
