@@ -47,7 +47,7 @@ nnoremap <leader>i :IndentLinesToggle<cr>
 nnoremap <leader>l :Limelight!!<cr>
 nnoremap <leader>n :set norelativenumber \| :set number!<cr>
 nnoremap <leader>r :execute "set colorcolumn=" . (&colorcolumn == "" ? "80,120" : "")<cr>
-nnoremap <leader>p :set spell! spelllang=en_au<cr>
+nnoremap <leader>s :set spell! spelllang=en_au<cr>
 nnoremap <leader>w :set wrap! wrap?<cr>
 
 lua << EOF
@@ -71,7 +71,7 @@ lua << EOF
     m = { " Preview Markdown" },
     n = { " Toggle Numbers" },
     r = { " Toggle Rulers" },
-    p = { " Toggle Spell Check (en_au)" },
+    s = { " Toggle Spell Check (en_au)" },
     t = { " Trim Spaces" },
     w = { " Wrap" },
     z = { " Toggle Zen Mode" },
@@ -137,6 +137,40 @@ lua << EOF
     c = {
       name = " Comment",
     },
+  }, { prefix = "<leader>" })
+EOF
+
+" ┌─┐┌─┐┌─┐┬┬  ┌─┐┌┬┐
+" │  │ │├─┘││  │ │ │
+" └─┘└─┘┴  ┴┴─┘└─┘ ┴
+
+nnoremap <leader>pi :Copilot setup<cr>
+nnoremap <leader>pa :Copilot panel<cr>
+nnoremap <leader>pe :Copilot enable<cr>
+nnoremap <leader>pd :Copilot disable<cr>
+nnoremap <leader>ps :Copilot status<cr>
+nnoremap <leader>po :Copilot signout<cr>
+nnoremap <leader>pu <Plug>(copilot-suggest)
+nnoremap <leader>pn <Plug>(copilot-next)
+nnoremap <leader>pp <Plug>(copilot-previous)
+nnoremap <leader>pm <Plug>(copilot-dismiss)
+
+lua << EOF
+  local wk = require("which-key")
+  wk.register({
+    p = {
+      name = "󰧑 Copilot",
+      i = { " Setup" },
+      a = { " Panel" },
+      e = { "󱈽 Enable" },
+      d = { "󱈻 Disable" },
+      s = { "󱖫 Status" },
+      o = { " Signout" },
+      u = { " Explicit request" },
+      n = { " Next suggestion" },
+      p = { " Prev suggestion" },
+      m = { "󱗤 Dismiss suggestion" },
+    }
   }, { prefix = "<leader>" })
 EOF
 
