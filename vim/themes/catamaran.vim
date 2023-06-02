@@ -24,7 +24,7 @@ endif
 hi CatamaranNormal ctermfg=250 guifg=#adbac7
 
 hi ColorColumn cterm=NONE ctermbg=234 ctermfg=NONE guibg=#22282f guifg=NONE
-hi Cursor ctermbg=140 ctermfg=234 guibg=#a394cd guifg=#1f242a gui=bold,underline
+hi Cursor ctermbg=51 ctermfg=234 guibg=#00ffff guifg=#1f242a gui=bold,underline
 hi CursorColumn cterm=NONE ctermbg=140 ctermfg=234 guibg=#a394cd guifg=#1f242a
 hi CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE gui=NONE
 hi CursorLineNr cterm=NONE ctermbg=235 ctermfg=238 guibg=#22272e guifg=#3c4552
