@@ -86,8 +86,8 @@ hi! link NvimTreeGitDeleted DiffDelete
 hi! link NvimTreeGitIgnored Comment
 
 hi NvimTreeFolderIcon ctermbg=None ctermfg=169 guibg=NONE guifg=#e86db2
+hi NvimTreeOpenedFile ctermfg=140 guifg=#04f6f6 gui=bold,underline
 hi! link NvimTreeFolderName NvimTreeFolderIcon
-hi! link NvimTreeOpenedFile Cursor
 
 hi IncSearch cterm=reverse ctermfg=NONE gui=reverse guifg=NONE term=reverse
 hi Search ctermbg=238 ctermfg=169 guibg=#3c4552 guifg=#e86db2
