@@ -42,9 +42,9 @@ nmap <leader>m <Plug>MarkdownPreviewToggle
 nmap <leader>t :call v:lua.MiniTrailspace.trim()<cr>
 nmap <leader>z :ZenMode<cr>
 nnoremap <C-X> :WhichKey<cr>
-nnoremap <leader>e :set relativenumber!<cr>
 nnoremap <leader>i :IndentLinesToggle<cr>
 nnoremap <leader>l :Limelight!!<cr>
+nnoremap <leader>e :set relativenumber!<cr>
 nnoremap <leader>n :set norelativenumber \| :set number!<cr>
 nnoremap <leader>r :execute "set colorcolumn=" . (&colorcolumn == "" ? "80,120" : "")<cr>
 nnoremap <leader>s :set spell! spelllang=en_au<cr>
@@ -58,23 +58,23 @@ lua << EOF
     ["<C-X>"] = { " Whichkey" },
   })
   wk.register({
-    ["/"] = { " Comment" },
+    ["/"] = { "󰅺 Comment" },
     p = { " Paste" },
     y = { " Yank" },
   }, { mode="v", prefix = "<leader>" })
   wk.register({
-    ["/"] = { " Comment" },
-    d = { " Remove Search Highlights" },
-    e = { " Toggle Relative Numbers" },
-    i = { " Toggle Indent Marks" },
-    l = { "ﯦ Toggle Limelight Mode" },
-    m = { " Preview Markdown" },
-    n = { " Toggle Numbers" },
-    r = { " Toggle Rulers" },
-    s = { " Toggle Spell Check (en_au)" },
+    ["/"] = { "󰅺 Comment" },
+    d = { "󱟁 Remove Search Highlights" },
+    i = { " Toggle Indent Marks" },
+    l = { "󱟇 Toggle Limelight Mode" },
+    m = { "󰽛 Preview Markdown" },
+    e = { " Toggle Relative Numbers" },
+    n = { " Toggle Numbers" },
+    r = { " Toggle Rulers" },
+    s = { "󰓆 Toggle Spell Check (en_au)" },
     t = { " Trim Spaces" },
-    w = { " Wrap" },
-    z = { " Toggle Zen Mode" },
+    w = { "󰖶 Wrap" },
+    z = { "󰽏 Toggle Zen Mode" },
   }, { prefix = "<leader>" })
 EOF
 
@@ -114,12 +114,12 @@ lua << EOF
     ["<C-K>"] = { " Go to up window" },
     ["<C-L>"] = { " Go to right window" },
     ["<C-\\>"] = { " Previous window" },
-    ["<C-Left>"] = { "ﲕ Resize width" },
-    ["<C-Down>"] = { "ﲖ Resize height" },
-    ["<C-Up>"] = { "ﲗ Resize height" },
-    ["<C-Right>"] = { "ﲔ Resize width" },
-    ["<Tab>"] = { "裡 Circle window forward" },
-    ["<S-Tab>"] = { "裡 Circle window backward" },
+    ["<C-Left>"] = { " Resize width" },
+    ["<C-Down>"] = { " Resize height" },
+    ["<C-Up>"] = { " Resize height" },
+    ["<C-Right>"] = { "  Resize width" },
+    ["<Tab>"] = { "󱞣 Circle window forward" },
+    ["<S-Tab>"] = { "󱞡 Circle window backward" },
     ["["] = {
       b = { " Prev buffer" },
       t = { " Prev tab" },
@@ -135,7 +135,7 @@ lua << EOF
   local wk = require("which-key")
   wk.register({
     c = {
-      name = " Comment",
+      name = "󰅺 Comment",
     },
   }, { prefix = "<leader>" })
 EOF
@@ -199,23 +199,23 @@ lua << EOF
   local wk = require("which-key")
   wk.register({
     ["<C-S>"] = { " Save" },
-    ["<C-Q>"] = { " Quit" },
+    ["<C-Q>"] = { "󰗼 Quit" },
   })
   wk.register({
     b = {
-      name = "﬘ Buffer",
-      c = { " Close" },
+      name = " Buffer",
+      c = { "󰅙 Close" },
       f = { " First" },
-      h = { "ﳐ Home" },
+      h = { "󰟒 Home" },
       l = { " Last" },
       n = { " Next" },
       p = { " Previous" },
-      q = { " Quit" },
-      Q = { " Quit all" },
+      q = { "󰗼 Quit" },
+      Q = { "󰗼 Quit all" },
       s = { " Save" },
     },
-    q = { " Quit" },
-    Q = { " Quit all" },
+    q = { "󰗼 Quit" },
+    Q = { "󰗼 Quit all" },
   }, { prefix = "<leader>" })
 EOF
 
@@ -230,7 +230,7 @@ lua << EOF
   local wk = require("which-key")
   wk.register({
     o = {
-      name = "ﴚ Open",
+      name = " Open",
       d = { "Dotfiles" },
     },
   }, { prefix = "<leader>" })
@@ -250,14 +250,14 @@ nnoremap <leader>fb :FzfLua buffers<cr>
 lua << EOF
   local wk = require("which-key")
   wk.register({
-    ["<C-F>"] = { " Spotlight" },
+    ["<C-F>"] = { " Spotlight" },
   })
   wk.register({
     f = {
       name = " Find",
-      b = { "﬘ Buffers" },
+      b = { " Buffers" },
     },
-    F = { " Find/Replace" },
+    F = { "󰈞 Find/Replace" },
   }, { prefix = "<leader>" })
 EOF
 
@@ -367,15 +367,15 @@ lua << EOF
         name = " Diff view",
         c = { " Close" },
         f = { " Files" },
-        h = { " File history" },
+        h = { "󰋚 File history" },
         o = { " Open" },
         r = { " Refresh" },
         t = { " This" },
       },
       e = { " Explorer" },
-      p = { " Preview hunk" },
-      q = { " Quick fix (buffer)" },
-      r = { " Reset hunk" },
+      p = { " Preview hunk" },
+      q = { "󰁨 Quick fix (buffer)" },
+      r = { "󰝳 Reset hunk" },
       s = { " Stage hunk" },
       t = {
         name = " Toggle",
@@ -387,7 +387,7 @@ lua << EOF
         n = " Number highlight",
       },
       u = { " Unstage hunk" },
-      v = { "濾Select hunk" },
+      v = { "󰒆 Select hunk" },
     },
   }, { prefix = "<leader>" })
 EOF

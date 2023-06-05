@@ -31,17 +31,17 @@ lua << EOF
     },
     key_labels = {
       -- override the label used to display some keys. It doesn't effect WK in any other way.
-      ["<space>"] = "SPC",
-      ["<Tab>"] = "TAB",
-      ["<S-Tab>"] = "וּTAB",
-      ["<CR>"] = "RET",
-      ["<C-X>"] = "דּX",
-      ["<C-G>"] = "דּG",
-      ["<C-F>"] = "דּF",
+      ["<space>"] = "󱁐",
+      ["<Tab>"] = "󰌒",
+      ["<S-Tab>"] = "󰘶 󰌒",
+      ["<CR>"] = "󰌑",
+      ["<C-X>"] = "󰘴X",
+      ["<C-G>"] = "󰘴G",
+      ["<C-F>"] = "󰘴F",
     },
     icons = {
-      breadcrumb = "  ", -- symbol used in the command line area that shows your active key combo
-      separator = "  ", -- symbol used between a key and it's label
+      breadcrumb = "  ", -- symbol used in the command line area that shows your active key combo
+      separator = "  ", -- symbol used between a key and it's label
       group = "", -- symbol prepended to a group
     },
     window = {
