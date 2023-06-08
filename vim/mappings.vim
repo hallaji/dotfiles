@@ -179,20 +179,20 @@ EOF
 " └─┘└─┘└  └  └─┘┴└─
 
 inoremap <C-Q> <esc>:q<cr>
-inoremap <C-S> <C-O>:update<cr>
+inoremap <silent> <C-S> <C-O>:update<cr>
 nnoremap <C-Q> :q<cr>
-nnoremap <C-S> :update<cr>
+nnoremap <silent> <C-S> :update<cr>
 nnoremap <leader>q :q!<cr>
 nnoremap <leader>Q :qa!<cr>
 nnoremap <leader>bQ :qa!<cr>
-nnoremap <leader>bc :bd<cr>
-nnoremap <leader>bf :bfirst<cr>
-nnoremap <leader>bh :Startify<cr>
-nnoremap <leader>bl :blast<cr>
-nnoremap <leader>bn :bnext<cr>
-nnoremap <leader>bp :bprevious<cr>
+nnoremap <silent> <leader>bc :bd<cr>
+nnoremap <silent> <leader>bf :bfirst<cr>
+nnoremap <silent> <leader>bh :Startify<cr>
+nnoremap <silent> <leader>bl :blast<cr>
+nnoremap <silent> <leader>bn :bnext<cr>
+nnoremap <silent> <leader>bp :bprevious<cr>
 nnoremap <leader>bq :q<cr>
-nnoremap <leader>bs :update<cr>
+nnoremap <silent> <leader>bs :update<cr>
 vnoremap <C-Q> <esc>
 
 lua << EOF
