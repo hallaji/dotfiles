@@ -9,6 +9,9 @@
 " https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions#implemented-coc-extensions
 " https://github.com/neoclide/coc.nvim/wiki/Language-servers
 
+" Global configuration file from dotfiles directory
+let g:coc_config_home = "$DOTFILES/config/coc"
+
 " List of COC extensions to install after starting the service
 let g:coc_global_extensions = [
   \ 'coc-tsserver',

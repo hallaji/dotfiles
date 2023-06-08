@@ -130,11 +130,6 @@ fresh-options
 
 fresh vim/nvim.vim --file=~/.config/nvim/init.vim --marker='"'
 
-# COC
-
-fresh config/coc/coc-settings.json --file=~/.config/nvim/coc-settings.json
-fresh config/coc/coc-settings.json --file=~/.vim/coc-settings.json
-
 # Themes
 
 fresh vim/themes/catamaran.vim --file=~/.vim/colors/catamaran.vim --marker='"'
