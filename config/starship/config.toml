@@ -25,13 +25,18 @@ format = '[$symbol($profile )(\($region\) )]($style)'
 
 [battery]
 format = "[$symbol$percentage]($style) "
+full_symbol = "󰁹 "
+charging_symbol = "󰂄 "
+discharging_symbol = "󱧥 "
+unknown_symbol = "󰂑 "
+empty_symbol = "󰂎 "
 
 [[battery.display]]
 threshold = 15
 style = "red"
 
 [[battery.display]]
-threshold = 40
+threshold = 35
 style = "yellow"
 
 [c]
@@ -42,7 +47,7 @@ style = "dimmed purple"
 format = " [󰔛 $duration]($style) "
 
 [directory]
-read_only = " "
+read_only = " 󰌾"
 
 [docker_context]
 symbol = " "
