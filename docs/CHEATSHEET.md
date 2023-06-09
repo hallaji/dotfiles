@@ -97,12 +97,13 @@ Checkout keyboard [keymaps](../keyboards) to find the key place.
 - `⌃⇧⌥⌘ + X` Pause/Resume screen sharing (Zoom)
 - `⌃⇧⌥⌘ + A` Mute/Unmute audio (Zoom)
 - `⌃⇧⌥⌘ + V` Start/Stop video (Zoom)
+- `⌃⇧⌥⌘ + 3` Toggle in-meeting chat (Zoom)
+- `⌃⇧⌥⌘ + 4` Toggle dual monitors (Zoom)
 
 ### Password Manager
 
-- `⌃⇧⌥⌘ + 1` Toggle quick access for password manager (1password)
-- `⌃⇧⌥⌘ + 2` Open password manager (1password)
-- `⌃⇧⌥⌘ + 3` Lock password manager (1password)
+- `⌃⇧⌥⌘ + 1` Show quick access for password manager (1password)
+- `⌃⇧⌥⌘ + 2` Lock password manager (1password)
 
 ### General
 
@@ -112,7 +113,6 @@ Checkout keyboard [keymaps](../keyboards) to find the key place.
 - `⌃⇧⌥⌘ + L` Lock screen [via SKHD]
 - `⌃⇧⌥⌘ + D` Show desktop [via SKHD]
 - `⌃⇧⌥⌘ + T` New terminal in current space [via SKHD]
-- `⌃⇧⌥⌘ + R` New browser in current space [via SKHD]
 
 ## Yabai / SKHD
 

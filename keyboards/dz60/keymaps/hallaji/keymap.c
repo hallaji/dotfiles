@@ -20,13 +20,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         HYPR(KC_GRV), KC_NO, KC_NO, KC_NO, KC_NO, KC_MPRV, KC_MPLY, KC_MNXT, KC_NO, HYPR(KC_E), KC_MUTE, KC_VOLD,
         KC_VOLU, KC_DEL,
         /*------------------------------------------------------------------------------------------------------------*/
-        HYPR(KC_1), HYPR(KC_2), HYPR(KC_3), KC_NO, HYPR(KC_R), HYPR(KC_T), HYPR(KC_Y), HYPR(KC_U), HYPR(KC_I),
+        HYPR(KC_1), HYPR(KC_2), KC_NO, KC_NO, KC_NO, HYPR(KC_T), HYPR(KC_Y), HYPR(KC_U), HYPR(KC_I),
         HYPR(KC_O), HYPR(KC_P), HYPR(KC_LBRC), HYPR(KC_RBRC), HYPR(KC_C),
         /*------------------------------------------------------------------------------------------------------------*/
         KC_NO, HYPR(KC_N), KC_HOME, KC_PGUP, KC_PGDN, KC_END, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, LCAG_T(KC_NO),
         HYPR(KC_QUOT), HYPR(KC_M),
         /*------------------------------------------------------------------------------------------------------------*/
-        KC_TRNS, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, HYPR(KC_X), HYPR(KC_Z),
+        KC_TRNS, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, HYPR(KC_4), HYPR(KC_3), HYPR(KC_X), HYPR(KC_Z),
         /*------------------------------------------------------------------------------------------------------------*/
         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, HYPR(KC_NO), HYPR(KC_L), HYPR(KC_V)
         /*------------------------------------------------------------------------------------------------------------*/
