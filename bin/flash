@@ -14,7 +14,7 @@ BRAND=`echo $1 | cut -d/ -f1`
 case $BRAND in
 "keychron")
   FORK="keychron/qmk_firmware"
-  BRANCH="playground"
+  BRANCH="master"
   BUILD="${1//[\/]/_}_$2.bin"
   ;;
 *)
@@ -27,6 +27,7 @@ esac
 if [ ! -z "$3" ] && [ "$3" = "--build" ]; then
   echo "⌨️ Building the firmware..."
   commands="
+    git config --global http.sslVerify false;
     qmk setup -H ./qmk_firmware -b $BRANCH -y $FORK;
     cp -R /keyboards/* ./qmk_firmware/keyboards;
     qmk compile -kb $1 -km $2;

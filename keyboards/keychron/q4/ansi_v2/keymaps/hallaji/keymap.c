@@ -1,5 +1,4 @@
 #include QMK_KEYBOARD_H
-#include "test.h"
 
 enum layers
 {
@@ -8,38 +7,6 @@ enum layers
     _SECOND,
     _THIRD,
 };
-
-enum custom_keycodes
-{
-    KC_MISSION_CONTROL = SAFE_RANGE,
-    KC_LAUNCHPAD,
-    KC_LOPTN,
-    KC_ROPTN,
-    KC_LCMMD,
-    KC_RCMMD,
-    KC_TASK_VIEW,
-    KC_FILE_EXPLORER,
-    KC_SCREEN_SHOT
-};
-
-#define KC_MCTL KC_MISSION_CONTROL
-#define KC_LPAD KC_LAUNCHPAD
-#define KC_TASK KC_TASK_VIEW
-#define KC_FLXP KC_FILE_EXPLORER
-#define KC_SNAP KC_SCREEN_SHOT
-
-typedef struct PACKED
-{
-    uint8_t len;
-    uint8_t keycode[3];
-} key_combination_t;
-
-key_combination_t key_comb_list[3] = {
-    {2, {KC_LWIN, KC_TAB}},
-    {2, {KC_LWIN, KC_E}},
-    {3, {KC_LSFT, KC_LCMD, KC_4}}};
-
-static uint8_t mac_keycode[4] = {KC_LOPT, KC_ROPT, KC_LCMD, KC_RCMD};
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_BASE] = LAYOUT_ansi_61(
@@ -52,7 +19,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         /*------------------------------------------------------------------------------------------------------------*/
         KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_RSFT,
         /*------------------------------------------------------------------------------------------------------------*/
-        KC_LCTL, KC_LOPTN, KC_LCMMD, KC_SPC, RGUI(KC_SPC), LT(_THIRD, KC_NO), HYPR(KC_D), HYPR(KC_A)
+        KC_LCTL, KC_LOPT, KC_LCMD, KC_SPC, RGUI(KC_SPC), LT(_THIRD, KC_NO), HYPR(KC_D), HYPR(KC_A)
         /*------------------------------------------------------------------------------------------------------------*/
         ),
 
@@ -103,69 +70,3 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_NO, KC_NO, KC_NO
         /*------------------------------------------------------------------------------------------------------------*/
         )};
-
-bool dip_switch_update_user(uint8_t index, bool active)
-{
-    system_switch_state_report(index, active);
-    return true;
-}
-
-bool process_record_user(uint16_t keycode, keyrecord_t *record)
-{
-    switch (keycode)
-    {
-    case KC_MISSION_CONTROL:
-        if (record->event.pressed)
-        {
-            host_consumer_send(0x29F);
-        }
-        else
-        {
-            host_consumer_send(0);
-        }
-        return false; // Skip all further processing of this key
-    case KC_LAUNCHPAD:
-        if (record->event.pressed)
-        {
-            host_consumer_send(0x2A0);
-        }
-        else
-        {
-            host_consumer_send(0);
-        }
-        return false; // Skip all further processing of this key
-    case KC_LOPTN:
-    case KC_ROPTN:
-    case KC_LCMMD:
-    case KC_RCMMD:
-        if (record->event.pressed)
-        {
-            register_code(mac_keycode[keycode - KC_LOPTN]);
-        }
-        else
-        {
-            unregister_code(mac_keycode[keycode - KC_LOPTN]);
-        }
-        return false; // Skip all further processing of this key
-    case KC_TASK:
-    case KC_FLXP:
-    case KC_SNAP:
-        if (record->event.pressed)
-        {
-            for (uint8_t i = 0; i < key_comb_list[keycode - KC_TASK].len; i++)
-            {
-                register_code(key_comb_list[keycode - KC_TASK].keycode[i]);
-            }
-        }
-        else
-        {
-            for (uint8_t i = 0; i < key_comb_list[keycode - KC_TASK].len; i++)
-            {
-                unregister_code(key_comb_list[keycode - KC_TASK].keycode[i]);
-            }
-        }
-        return false; // Skip all further processing of this key
-    default:
-        return true; // Process all other keycodes normally
-    }
-}
