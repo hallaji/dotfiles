@@ -15,11 +15,13 @@ case $BRAND in
 "keychron")
   FORK="keychron/qmk_firmware"
   BRANCH="master"
+  COMMIT="4ae45ca995b1f01b8e7ab3d115efe241c9adfee3" # last successful build (for history)
   BUILD="${1//[\/]/_}_$2.bin"
   ;;
 *)
   FORK="qmk/qmk_firmware"
   BRANCH="master"
+  COMMIT="fb48db4c8f59feb2ad64b41d53d708a0673b0df4" # last successful build (for history)
   BUILD="${1//[\/]/_}_$2.hex"
   ;;
 esac
