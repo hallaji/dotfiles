@@ -48,9 +48,10 @@ set noshowmode " Hide the message on the last line in Insert, Replace or Visual 
 set nobackup " Some lang servers have issues with backup files
 set nowritebackup " Some lang servers have issues with backup files
 
-set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
-  \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
-  \,sm:block-blinkwait175-blinkoff150-blinkon175
+" Enable cursor blink
+" set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
+"   \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
+"   \,sm:block-blinkwait175-blinkoff150-blinkon175
 
 " Enable 24-bit RGB color in the TUI to use gui attributes instead of cterm attributes
 if exists('+termguicolors')
