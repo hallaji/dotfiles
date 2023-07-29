@@ -3,20 +3,31 @@
 ## Apps
 
 - [1Password – Password manager](https://1password.com)
+- [ATEM Software Control](https://www.blackmagicdesign.com/support/)
 - [Bear - Markdown notes](https://bear.app)
+- [Brave Browser](https://brave.com/download/)
 - [Chand - Realtime exchange Rates](https://apps.apple.com/au/app/chand/id1524200188)
+- [Davinci Resolve](https://www.blackmagicdesign.com/products/davinciresolve/)
+- [Ecamm Live](https://www.ecamm.com/mac/ecammlive/download.html)
+- [Elgato Stream Deck](https://www.elgato.com/us/en/s/downloads)
 - [Epson - Printer ET-2750](http://epson.sn)
 - [Excalidraw - Virtual collaborative whiteboard tool](https://excalidraw.com)
 - [Hey - Email’s new heyday](https://www.hey.com/apps)
 - [Httpie - Making APIs simple and intuitive](https://httpie.io)
 - [Internet Access Policy Viewer - A better view on privacy](https://obdev.at/products/iapviewer)
+- [Krisp](https://krisp.ai)
 - [Logi Options+](https://www.logitech.com/en-au/software/logi-options-plus.html)
 - [Logi Capture](https://www.logitech.com/en-au/software/capture.html)
 - [Lungo - Keeps your computer awake](https://sindresorhus.com/lungo)
 - [Magnet - Organise your workspace](https://magnet.crowdcafe.com)
+- [MPV](https://mpv.io)
+- [OBS](https://obsproject.com/download)
 - [System Color Picker - Familiar color picker supercharged](https://sindresorhus.com/system-color-picker)
 - [Velja - Powerful browser picker](https://sindresorhus.com/velja)
+- [VLC](https://www.videolan.org/vlc)
 - [WhatFont - Easiest way to identify fonts on web pages](https://apps.apple.com/us/app/whatfont/id1437138382?mt=12)
+- [Rode Central](https://rode.com/en/software/rode-central)
+- [Samsung Portable SSD App](https://semiconductor.samsung.com/us/consumer-storage/support/tools/)
 
 ## Browser Extensions
 
