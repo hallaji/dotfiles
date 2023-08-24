@@ -7,6 +7,7 @@
 - [Bear - Markdown notes](https://bear.app)
 - [Brave Browser](https://brave.com/download/)
 - [Chand - Realtime exchange Rates](https://apps.apple.com/au/app/chand/id1524200188)
+- [Catalyst Browse](https://www.sonycreativesoftware.com/catalystbrowse)
 - [Davinci Resolve](https://www.blackmagicdesign.com/products/davinciresolve/)
 - [Ecamm Live](https://www.ecamm.com/mac/ecammlive/download.html)
 - [Elgato Stream Deck](https://www.elgato.com/us/en/s/downloads)
