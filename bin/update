@@ -15,17 +15,6 @@ cd "$DOTFILES/config/homebrew" && \
   brew bundle dump -f && \
   echo "Brew bundle dump was successfull!"
 
-
-cat << EOF
-┌─┐┬ ┌┬┐
-│  │  │
-└─┘┴─┘┴
-EOF
-
-softwareupdate --all --install --force
-xcode-select --install
-
-
 cat << EOF
 ┌┐┌┬  ┬┬┌┬┐
 │││└┐┌┘││││
