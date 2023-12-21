@@ -71,3 +71,7 @@ let g:markdown_fenced_languages = [
   \ 'html',
   \ 'json',
   \ 'bash=sh']
+
+" The current directory is searched for the following files, in order of precedence: `.nvim.lua`, `.nvimrc`, `.exrc`
+" https://neovim.io/doc/user/options.html#'exrc'
+set exrc
