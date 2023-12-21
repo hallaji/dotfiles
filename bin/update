@@ -74,6 +74,7 @@ plugins=(
   python
   ruby
   yarn
+  pnpm
 )
 for item in ${plugins[@]}; do
   asdf plugin add $item
