@@ -1,0 +1,105 @@
+#!/bin/bash
+
+# ██████╗  ██████╗ ████████╗███████╗███████╗████████╗██╗   ██╗██████╗
+# ██╔══██╗██╔═══██╗╚══██╔══╝██╔════╝██╔════╝╚══██╔══╝██║   ██║██╔══██╗
+# ██║  ██║██║   ██║   ██║   ███████╗█████╗     ██║   ██║   ██║██████╔╝
+# ██║  ██║██║   ██║   ██║   ╚════██║██╔══╝     ██║   ██║   ██║██╔═══╝
+# ██████╔╝╚██████╔╝   ██║   ███████║███████╗   ██║   ╚██████╔╝██║
+# ╚═════╝  ╚═════╝    ╚═╝   ╚══════╝╚══════╝   ╚═╝    ╚═════╝ ╚═╝
+
+cat << EOF
+┌─┐┌─┐┌┬┐┌─┐  ┌─┐┬  ┬ ┬┌─┐┬┌┐┌┌─┐
+├─┤└─┐ ││├┤   ├─┘│  │ ││ ┬││││└─┐
+┴ ┴└─┘─┴┘└    ┴  ┴─┘└─┘└─┘┴┘└┘└─┘
+EOF
+
+plugins=(
+  direnv # https://github.com/asdf-community/asdf-direnv
+  golang # https://github.com/asdf-community/asdf-golang
+  java # https://github.com/halcyon/asdf-java
+  kotlin # https://github.com/asdf-community/asdf-kotlin
+  lua # https://github.com/Stratus3D/asdf-lua
+  maven # https://github.com/Proemion/asdf-maven
+  mysql # https://github.com/iroddis/asdf-mysql
+  nodejs # https://github.com/asdf-vm/asdf-nodejs
+  php # https://github.com/asdf-community/asdf-php
+  postgres # https://github.com/smashedtoatoms/asdf-postgres
+  python # https://github.com/asdf-community/asdf-python
+  ruby # https://github.com/asdf-vm/asdf-ruby
+  pnpm # https://github.com/jonathanmorley/asdf-pnpm
+)
+
+for item in ${plugins[@]}; do
+  if asdf plugin-list | grep -q "^$item$"; then
+    asdf plugin update $item
+  else
+    asdf plugin add $item
+  fi
+
+  if [ "$item" == "java" ]; then
+    version=$(asdf list-all java | grep "^openjdk-" | tail -n 1)
+    if [ -n "$version" ]; then
+      asdf install java "$version" && asdf global java "$version"
+    fi
+  else
+    asdf install $item latest && asdf global $item latest
+  fi
+done
+
+
+cat << EOF
+┌┐┌┬  ┬┬┌┬┐
+│││└┐┌┘││││
+┘└┘ └┘ ┴┴ ┴
+EOF
+
+nvim +PlugUpgrade +PlugInstall +CocInstall +GoInstallBinaries +PlugUpdate +CocUpdate +GoUpdateBinaries +qall && \
+  nvim -c "TmuxlineSnapshot! ~/.tmux-statusline-colors.conf" +qall && \
+  echo "Vim plugins and extensions successfully installed or updated."
+
+
+cat << EOF
+┌┐ ┬─┐┌─┐┬ ┬┌─┐┬┬  ┌─┐
+├┴┐├┬┘├┤ │││├┤ ││  ├┤
+└─┘┴└─└─┘└┴┘└  ┴┴─┘└─┘
+EOF
+
+cd "$DOTFILES/config/homebrew" && brew bundle dump -fv && \
+  echo "Brew bundle dump completed successfully."
+
+
+cat << EOF
+┌┬┐┌┬┐┬ ┬─┐ ┬
+ │ ││││ │┌┴┬┘
+ ┴ ┴ ┴└─┘┴ └─
+EOF
+
+~/.tmux/plugins/tpm/bin/update_plugins all
+
+
+cat << EOF
+┌─┐┬┌┬┐┬ ┬┬ ┬┌┐   ┌─┐┬  ┬
+│ ┬│ │ ├─┤│ │├┴┐  │  │  │
+└─┘┴ ┴ ┴ ┴└─┘└─┘  └─┘┴─┘┴
+EOF
+
+gh extension upgrade --all
+
+
+cat << EOF
+┌┐┌┌┐┌┌┐┌
+│││││││││
+┘└┘┘└┘┘└┘
+EOF
+
+rm -rf ${XDG_CONFIG_HOME:-$HOME/.config}/nnn/plugins
+curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
+
+
+cat << EOF
+┌─┐┬─┐┌─┐┌─┐┬ ┬
+├┤ ├┬┘├┤ └─┐├─┤
+└  ┴└─└─┘└─┘┴ ┴
+EOF
+
+fresh update
