@@ -155,8 +155,8 @@ fresh-options
 # │ ┬├─┘│ ┬
 # └─┘┴  └─┘
 
-fresh config/gpg/gpg.conf --file=~/.gnupg/gpg.conf
-fresh config/gpg/gpg-agent.conf --file=~/.gnupg/gpg-agent.conf
+fresh config/gpg/gpg.conf --filter=erb --file=~/.gnupg/gpg.conf
+fresh config/gpg/gpg-agent.conf --filter=erb --file=~/.gnupg/gpg-agent.conf
 
 # ┌─┐┬ ┬┌─┐
 # ├─┤│││└─┐
