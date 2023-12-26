@@ -30,6 +30,7 @@ alias ,gcp="change_gcloud_config" # @see shell/functions.sh
 alias ,cb="cointop price --coin bitcoin --currency aud"
 alias ,ce="cointop price --coin ethereum --currency aud"
 alias ,ske="ioreg -l -w 0 | perl -nle 'print $1 if /"kCGSSessionSecureInputPID"=(\d+)/' | uniq | xargs -I{} ps -p {} -o comm=" # https://github.com/koekeishiya/skhd/issues/48
+alias ,rga="gpgconf --kill gpg-agent" # Restart the GPG Agent
 
 # ┌─┐ ┬ ┬┬┌─┐┬┌─  ┌─┐┌┬┐┬┌┬┐
 # │─┼┐│ │││  ├┴┐  ├┤  │││ │
