@@ -11,6 +11,12 @@ fresh_after_build() {
   chmod +x ~/.yabairc
 }
 
+# ┌┬┐┬┬─┐┌─┐┌┐┌┬  ┬
+#  │││├┬┘├┤ │││└┐┌┘
+# ─┴┘┴┴└─└─┘┘└┘ └┘
+
+[ -f .envrc ] && fresh .envrc --file=~/.config/direnv/direnvrc
+
 # ┌┐ ┬┌┐┌┌─┐┬─┐┬┌─┐┌─┐
 # ├┴┐││││├─┤├┬┘│├┤ └─┐
 # └─┘┴┘└┘┴ ┴┴└─┴└─┘└─┘
