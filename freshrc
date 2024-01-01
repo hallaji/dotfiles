@@ -94,8 +94,8 @@ fresh-options --filter=erb --file=~/.zshrc --marker
   type nnn > /dev/null 2>&1 && fresh shell/zsh/nnn.sh
   type terraform > /dev/null 2>&1 && fresh shell/zsh/terraform.sh
   type gcloud > /dev/null 2>&1 && fresh shell/zsh/gcloud.sh
+  brew --prefix icu4c > /dev/null 2>&1 && fresh shell/icu4c.sh
   brew --prefix asdf > /dev/null 2>&1 && fresh shell/zsh/asdf.sh
-  brew --prefix postgresql@13 > /dev/null 2>&1 && fresh shell/psql.sh
   type op > /dev/null 2>&1 && fresh shell/zsh/1password.sh
 fresh-options
 
