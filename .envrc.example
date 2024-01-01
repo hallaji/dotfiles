@@ -1,3 +1,5 @@
+export HOMEBREW_PREFIX=$(brew --prefix)
+
 export USER_SIGNING_KEY="signing-key"
 export USER_NAME="name"
 export USER_EMAIL="email"
