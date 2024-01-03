@@ -78,7 +78,7 @@ Checkout keyboard [keymaps](../keyboards) to find the key place.
 
 ### Menubar
 
-- `⌘ + Space` Toogle search (LaunchBar)
+- `⌘ + Space` Toogle search (Alfred)
 - `⌃⇧⌥⌘ + C` Toggle calendar dropdown (Itsycal)
 - `⌃⇧⌥⌘ + ]` Toggle network monitor (Little Snitch)
 - `⌃⇧⌥⌘ + [` Toggle network dropdown (iStat Menus)
