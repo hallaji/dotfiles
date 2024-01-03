@@ -74,6 +74,7 @@ cat << EOF
  ┴ ┴ ┴└─┘┴ └─
 EOF
 
+~/.tmux/plugins/tpm/bin/install_plugins
 ~/.tmux/plugins/tpm/bin/update_plugins all
 
 
@@ -83,6 +84,12 @@ cat << EOF
 └─┘┴ ┴ ┴ ┴└─┘└─┘  └─┘┴─┘┴
 EOF
 
+gh extension install dlvhdr/gh-dash
+gh extension install jrnxf/gh-eco
+gh extension install mislav/gh-branch
+gh extension install garnertb/gh-gitignore
+gh extension install lakuapik/gh-inspire
+gh extension install mislav/gh-contrib
 gh extension upgrade --all
 
 

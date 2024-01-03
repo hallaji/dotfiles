@@ -59,7 +59,11 @@ alias ,gra='git commit --amend --reset-author'
 
 alias ,ghb="gh browse"
 alias ,ghd="gh dash"
+alias ,ghp="gh eco"
 alias ,ghc="gh contrib --style fisheye"
+alias ,ghbr="gh branch"
+alias ,ghie="gh inspire"
+alias ,ghgi="gh gitignore"
 
 # ┌─┐┬┌─┐┬  ┌─┐┌┬┐
 # ├┤ ││ ┬│  ├┤  │
