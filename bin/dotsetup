@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 # ██████╗  ██████╗ ████████╗███████╗███████╗████████╗██╗   ██╗██████╗
 # ██╔══██╗██╔═══██╗╚══██╔══╝██╔════╝██╔════╝╚══██╔══╝██║   ██║██╔══██╗
@@ -6,6 +7,18 @@
 # ██║  ██║██║   ██║   ██║   ╚════██║██╔══╝     ██║   ██║   ██║██╔═══╝
 # ██████╔╝╚██████╔╝   ██║   ███████║███████╗   ██║   ╚██████╔╝██║
 # ╚═════╝  ╚═════╝    ╚═╝   ╚══════╝╚══════╝   ╚═╝    ╚═════╝ ╚═╝
+
+cat << EOF
+┌┐ ┬─┐┌─┐┬ ┬┌─┐┬┬  ┌─┐
+├┴┐├┬┘├┤ │││├┤ ││  ├┤
+└─┘┴└─└─┘└┴┘└  ┴┴─┘└─┘
+EOF
+
+brew bundle --global && \
+  echo "Brew bundle installation completed successfully."
+cd "$DOTFILES/config/homebrew" && brew bundle dump -fv && \
+  echo "Brew bundle dump completed successfully."
+
 
 cat << EOF
 ┌─┐┌─┐┌┬┐┌─┐  ┌─┐┬  ┬ ┬┌─┐┬┌┐┌┌─┐
@@ -48,6 +61,22 @@ done
 
 
 cat << EOF
+┌─┐┌┐┌┬  ┬
+├┤ │││└┐┌┘
+└─┘┘└┘ └┘
+EOF
+
+if [ ! -f "$DOTFILES/.envrc" ]; then
+  cp "$DOTFILES/.envrc.example" "$DOTFILES/.envrc"
+  if (cd "$DOTFILES" && direnv allow . && fresh); then
+    echo "envrc file created successfully. Ensure to update the file."
+  else
+    echo "Error: Failed to create envrc file."
+  fi
+fi
+
+
+cat << EOF
 ┌┐┌┬  ┬┬┌┬┐
 │││└┐┌┘││││
 ┘└┘ └┘ ┴┴ ┴
@@ -56,16 +85,6 @@ EOF
 nvim +PlugUpgrade +PlugInstall +CocInstall +GoInstallBinaries +PlugUpdate +CocUpdate +GoUpdateBinaries +qall && \
   nvim -c "TmuxlineSnapshot! ~/.tmux-statusline-colors.conf" +qall && \
   echo "Vim plugins and extensions successfully installed or updated."
-
-
-cat << EOF
-┌┐ ┬─┐┌─┐┬ ┬┌─┐┬┬  ┌─┐
-├┴┐├┬┘├┤ │││├┤ ││  ├┤
-└─┘┴└─└─┘└┴┘└  ┴┴─┘└─┘
-EOF
-
-cd "$DOTFILES/config/homebrew" && brew bundle dump -fv && \
-  echo "Brew bundle dump completed successfully."
 
 
 cat << EOF
@@ -89,7 +108,6 @@ gh extension install jrnxf/gh-eco
 gh extension install mislav/gh-branch
 gh extension install garnertb/gh-gitignore
 gh extension install lakuapik/gh-inspire
-gh extension install mislav/gh-contrib
 gh extension upgrade --all
 
 
@@ -110,3 +128,13 @@ cat << EOF
 EOF
 
 fresh update
+
+cat << EOF
+┌─┐┌─┐┬─┐┬  ┬┬┌─┐┌─┐┌─┐
+└─┐├┤ ├┬┘└┐┌┘││  ├┤ └─┐
+└─┘└─┘┴└─ └┘ ┴└─┘└─┘└─┘
+EOF
+
+yabai --restart-service
+skhd --restart-service
+brew services restart sketchybar
