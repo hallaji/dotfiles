@@ -12,6 +12,7 @@ links=(
   ~/.aws/config
   ~/.bundle/config
   ~/.config/alacritty/alacritty.yml
+  ~/.config/direnv/direnvrc
   ~/.config/gh-dash/config.yml
   ~/.config/nvim/coc-settings.json
   ~/.config/nvim/init.vim
@@ -28,6 +29,7 @@ links=(
   ~/.npmrc
   ~/.skhdrc
   ~/.ssh/config
+  ~/.tigrc
   ~/.tmux.conf
   ~/.tmux/plugins/tpm/
   ~/.vim/autoload/airline/themes/catamaran.vim
@@ -38,6 +40,7 @@ links=(
   ~/.zprofile
   ~/.zshenv
   ~/.zshrc
+  ~/bin/
 )
 
 for item in ${links[@]}; do
