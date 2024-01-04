@@ -1,20 +1,55 @@
+# ┌─┐┌─┐┌┐┌┌─┐┬─┐┬┌─┐
+# │ ┬├┤ │││├┤ ├┬┘││
+# └─┘└─┘┘└┘└─┘┴└─┴└─┘
+
+export LANG=en_AU.UTF-8
+export XDG_CONFIG_HOME="$HOME/.config"
 export HOMEBREW_PREFIX=$(brew --prefix)
+export DOTFILES="$HOME/.dotfiles"
+export CODE="$HOME/Code"
+export EDITOR='nvim'
+export THEME="Catamaran"
+export BAT_THEME="$THEME" # https://github.com/sharkdp/bat
+
+# ┬ ┬┌─┐┌─┐┬─┐
+# │ │└─┐├┤ ├┬┘
+# └─┘└─┘└─┘┴└─
 
 export USER_SIGNING_KEY="signing-key"
 export USER_NAME="name"
 export USER_EMAIL="email"
 export USER_EMAIL_CLTRMP="email"
 
-export SSH_IDENTITY_FILE="~/.ssh/path/to/identity/file"
+# ┌─┐┬┌┬┐┬ ┬┬ ┬┌┐
+# │ ┬│ │ ├─┤│ │├┴┐
+# └─┘┴ ┴ ┴ ┴└─┘└─┘
 
 export GITHUB_USER="github-user"
 export GITHUB_TOKEN="github-public-pat"
 export GITHUB_REGISTRY_TOKEN="github-registry-pat"
 
+# ┌┐┌┌─┐┌┬┐┬┌─┐┌┐┌
+# ││││ │ │ ││ ││││
+# ┘└┘└─┘ ┴ ┴└─┘┘└┘
+
 export NOTION_API_KEY="notion-api-key"
 export NOTION_BOOKMARKS_DATABASE_ID="notion-bookmarks-database-id"
 
+# ┌┐┌┌┐┌┌┐┌
+# │││││││││
+# ┘└┘┘└┘┘└┘
+
+export NNN_PLUG="o:fzopen;f:fzcd;j:autojump;p:preview-tui;v:imgview"
+export NNN_BMS="d:$DOTFILES"
+export NNN_COLORS="4356" # Contexts: 1st, 2nd, 3rd, 4th
+export NNN_FCOLORS="0e0b05040d060e0909030708" # BLK, CHR, DIR, EXE, REG, HARDLINK, SYMLINK, MISSING, ORPHAN, FIFO, SOCK, OTHER
+export NNN_FIFO="/tmp/nnn.fifo"
+
+# ┌─┐┌─┐┬  ┌─┐┌┬┐┌┬┐┌─┐
+# ├─┘├─┤│  ├┤  │  │ ├┤
+# ┴  ┴ ┴┴─┘└─┘ ┴  ┴ └─┘
 # Each export holds a GUI color code, Xterm hex number, and Xterm number respectively
+
 export PALETTE_FG="#adbac7,fa,250" # Foreground
 export PALETTE_BG="#22272e,eb,235" # Background
 export PALETTE_RR="#22282f,ec,236" # Ruler

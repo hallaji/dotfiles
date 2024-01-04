@@ -11,11 +11,12 @@ fresh_after_build() {
   chmod +x ~/.yabairc
 }
 
-# ┌┬┐┬┬─┐┌─┐┌┐┌┬  ┬
-#  │││├┬┘├┤ │││└┐┌┘
-# ─┴┘┴┴└─└─┘┘└┘ └┘
+# ┌─┐┌┐┌┬  ┬
+# ├┤ │││└┐┌┘
+# └─┘┘└┘ └┘
 
-[ -f .envrc ] && fresh .envrc --file=~/.config/direnv/direnvrc
+[ -f .envrc ] && fresh .envrc --file=~/.config/direnv/direnvrc --marker
+[ -f .envrc ] && fresh .envrc --file=~/.zshenv --marker
 
 # ┌┐ ┬┌┐┌┌─┐┬─┐┬┌─┐┌─┐
 # ├┴┐││││├─┤├┬┘│├┤ └─┐
@@ -73,17 +74,12 @@ fresh zdharma/fast-syntax-highlighting . --file=vendor/zdharma/fast-syntax-highl
 
 fresh shell/zsh/profile.sh --file=~/.zprofile --marker
 
-# Zshenv
-
-fresh shell/exports.sh --filter=erb --file=~/.zshenv --marker
-
 # Zshrc
 
 fresh-options --filter=erb --file=~/.zshrc --marker
   fresh shell/zsh/init.sh
   fresh shell/zsh/plugins.sh
   fresh shell/zsh/vi-mode.sh
-  fresh shell/bat.sh
   fresh shell/functions.sh
   fresh shell/aliases.sh
   type starship > /dev/null 2>&1 && fresh shell/zsh/starship.sh
