@@ -13,10 +13,8 @@
     - [General](#general)
   - [Yabai / SKHD](#yabai--skhd)
   - [Tmux](#tmux)
-    - [Tmux Glossary](#tmux-glossary)
     - [Tmux Key Bindings](#tmux-key-bindings)
-      - [Custom Key Bindings](#custom-key-bindings)
-    - [Tmux Commands](#tmux-commands)
+      - [Custom Tmux Key Bindings](#custom-tmux-key-bindings)
   - [Alacritty](#alacritty)
     - [Tmux bindings](#tmux-bindings)
     - [Vi-mode](#vi-mode)
@@ -140,78 +138,84 @@ Checkout keyboard [keymaps](../keyboards) to find the key place.
 
 [tmux/tmux](https://github.com/tmux/tmux)
 
-### Tmux Glossary
-
-- Session is a collection of terminals that tmux handles and each session has windows.
-- Window is a tab occupies the entire screen. It can be split into panes.
-
 ### Tmux Key Bindings
 
-- `⌃ + b` + `:` Run a tmux command
-- `⌃ + b` + `t` Show digital clock
-- `⌃ + b` + `s` List sessions
-- `⌃ + b` + `w` List windows
-- `⌃ + b` + `(` Switch to previous session
-- `⌃ + b` + `)` Switch to next session
-- `⌃ + b` + `,` Rename a window
-- `⌃ + b` + `I` Install tmux plugins
-- `⌃ + b` + `U` Update tmux plugins
-- `⌃ + b` + `⌥u` Uninstall/remove tmux plugin
-- `⌃ + b` + `c` Create a window/tab
-- `⌃ + b` + `&` Close a window/tab
-- `⌃ + b` + `%` Split window/tab vertically (create vertical pane)
-- `⌃ + b` + `"` Split window/tab horizontally (create horizontal pane)
-- `⌃ + b` + `x` Close a window/tab or pane
-- `⌃ + b` + `<number>` Jump to specific window/tab
-- `⌃ + b` + `d` Detach current session
-- `⌃ + b` + `[` Start copy mode
+- `⌃b` + `:` Enter command mode
+- `⌃b` + `E` Spread panes out evenly
+- `⌃b` + `s` Show all sessions
+- `⌃b` + `w` Show all windows
+- `⌃b` + `f` Search for a pane
+- `⌃b` + `%` Split current window/tab vertically (create a vertical pane)
+- `⌃b` + `"` Split current window/tab horizontally (create a horizontal pane)
+- `⌃b` + `c` Create a new window/tab
+- `⌃b` + `x` Close current pane
+- `⌃b` + `&` Close current window/tab
+- `⌃b` + `,` Rename current window
+- `⌃b` + `$` Rename current session
+- `⌃b` + `(` Move to previous session
+- `⌃b` + `)` Move to next session
+- `⌃b` + `p` Move to previous window/tab
+- `⌃b` + `n` Move to next window/tab
+- `⌃b` + `1..9` Switch window/tab by number
+- `⌃b` + `[` Enter copy mode
   - `Space` Start selection
   - `Enter` Copy selection
+  - `Esc` Clear selection
   - `q` Quit mode
-- `⌃ + b` + `]` Paste copied text from clipboard
+  - `g` Go to top line
+  - `G` Go to bottom line
+  - `↑` Scroll up
+  - `↓` Scroll down
+  - `h` Move cursor left
+  - `j` Move cursor down
+  - `k` Move cursor up
+  - `l` Move cursor right
+  - `w` Move cursor forward one word at a time
+  - `b` Move cursor backward one word at a time
+  - `/` Search forward
+  - `?` Search backward
+  - `n` Next keyword occurance
+  - `N` Previous keyword occurance
+- `⌃b` + `]` Paste copied text from clipboard
+- `⌃b` + `?` List key bindings
+- `⌃b` + `t` Show digital clock
+- `⌃b` + `d` Detach from session
+- `⌃b` + `l` Toggle last active window/tab
+- `⌃b` + `;` Toggle last active pane
+- `⌃b` + `q` Show pane numbers
+- `⌃b` + `q` + `1..9` Switch pane by number
+- `⌃b` + `o` Switch to next pane
+- `⌃b` + `z` Toggle pane zoom
+- `⌃b` + `!` Convert pane into a window
+- `⌃b` + `{` Move the current pane left
+- `⌃b` + `}` Move the current pane right
+- `⌃b` + `I` Install tmux plugins
+- `⌃b` + `U` Update tmux plugins
+- `⌃b` + `⌥u` Uninstall/remove tmux plugin
 
-#### Custom Key Bindings
+#### Custom Tmux Key Bindings
 
-- `⌃ + b` + `⌃ + r` Reload tmux config file
-- `⌃ + b` + `⌃ + s` Sync panes
-- `⌃ + b` + `S` Save environment
-- `⌃ + b` + `R` Restore environment
-- `⌃ + b` + (`h` | `j` | `k` | `l`) Move between panes
-- `⌃ + b` + (`H` | `J` | `K` | `L`) Resize panes
-- `⌃ + b` + `u` Grab and open any URL from the terminal window
-- `⌃⇧ + ←` Swap current window with left
-- `⌃⇧ + →` Swap current window with right
-- `⌃ + b` + `y`
-  - Copy text from the command line to the clipboard (normal mode)
-  - Copy selection to system clipboard (copy mode)
-- `⌃ + b` + `Y`
-  - Copy current working directory to the clipboard (normal mode)
-  - Copy selection and paste it to the command line (copy mode)
-- `⌃ + b` + `Enter` Enter copy mode
+- `⌃b` + `u` Grab and open any URL from the terminal window
+- `⌃b` + `⌃s` Toggle panes synchronisation
+- `⌃b` + `S` Save environment
+- `⌃b` + `R` Restore environment
+- `⌃b` + (`h` | `j` | `k` | `l`) or (`←` | `↓` | `↑` | `→`) Switch to a pane
+- `⌃b` + (`H` | `J` | `K` | `L`) Resize panes
+- `⌃b` + `⌃r` Reload config file
+- `⌃b` + `b` List buffers that store copied text
+- `⌃b` + `P` Opens a menu to choose a buffer for pasting
+- `⌃⇧←` Swap current window with the left window
+- `⌃⇧→` Swap current window with the right window
+- `⌃b` + `Enter` Enter copy mode
   - `v` Begin selection
   - `V` Select line
   - `y` Copy selection
-- `⌃ + b` + `b` List buffers
-- `⌃ + b` + `P` Choose buffer
-
-### Tmux Commands
-
-- `tmux ls` List all sessions managed by the server
-- `tmux new [-n window-name] [-s session-name] [-t target-session]`
-  - `-n` Specify a window name
-  - `-s` Create a new session with name `session-name`
-  - `-t` Group the new session with `target-session`
-- `tmux attach` Attach latest session
-  - `[-t target-session]` Switch to `target-session`
-- `tmux detach` Detach latest session
-  - `[-s target-session]` Detach all clients currently attached to the `target-session`
-  - `[-t target-client]` Detach the current client if bound to a key `target-client`
-- `tmux kill-session [-t target-session]` Destroy the given session and close
-  any windows linked to it
-- `tmux kill-server` Kill the tmux server and clients and destroy all sessions
-- `tmux switch -t [target-session]` Switch between sessions
-- `tmux set status on` Show status line
-- `tmux set status off` Hide status line
+- `⌃b` + `y`
+  - Copy text from the command line to the clipboard (normal mode)
+  - Copy selection to system clipboard (copy mode)
+- `⌃b` + `Y`
+  - Copy current working directory to the clipboard (normal mode)
+  - Copy selection and paste it to the command line (copy mode)
 
 ## Alacritty
 
