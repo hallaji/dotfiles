@@ -11,7 +11,7 @@ links=(
   ~/.asdfrc
   ~/.aws/config
   ~/.bundle/config
-  ~/.config/alacritty/alacritty.yml
+  ~/.config/alacritty/alacritty.toml
   ~/.config/direnv/direnvrc
   ~/.config/gh-dash/config.yml
   ~/.config/nvim/coc-settings.json
