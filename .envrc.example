@@ -3,11 +3,12 @@
 # └─┘└─┘┘└┘└─┘┴└─┴└─┘
 
 export LANG=en_AU.UTF-8
+export SHELL="/bin/zsh"
 export XDG_CONFIG_HOME="$HOME/.config"
-export HOMEBREW_PREFIX=$(brew --prefix)
+export HOMEBREW_PREFIX="/opt/homebrew"
 export DOTFILES="$HOME/.dotfiles"
 export CODE="$HOME/Code"
-export EDITOR='nvim'
+export EDITOR="nvim"
 export THEME="Catamaran"
 export BAT_THEME="$THEME" # https://github.com/sharkdp/bat
 
