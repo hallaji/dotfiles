@@ -46,10 +46,10 @@ alias ,dot="cd $DOTFILES && $EDITOR"
 
 # https://git-scm.com
 
-alias ,gwho='git config user.name && git config user.email'
-alias ,gme='git config user.email <%= ENV["USER_EMAIL"] %> && ,gwho'
-alias ,gca='git config user.email <%= ENV["USER_EMAIL_CLTRMP"] %> && ,gwho'
-alias ,gra='git commit --amend --reset-author'
+alias ,gwho="git config user.name && git config user.email"
+alias ,gun="git config user.name $*"
+alias ,gue="git config user.email $*"
+alias ,gra="git commit --amend --reset-author"
 
 # ┌─┐┬┌┬┐┬ ┬┬ ┬┌┐   ┌─┐┬  ┬
 # │ ┬│ │ ├─┤│ │├┴┐  │  │  │
