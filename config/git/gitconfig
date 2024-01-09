@@ -9,7 +9,7 @@
 [user]
   name = <%= ENV["USER_NAME"] %>
   signingkey = <%= ENV["USER_SIGNING_KEY"] %>
-  # email = <%= ENV["USER_EMAIL"] %> # Commented. Configure email per repo instead.
+  email = <%= ENV["USER_EMAIL"] %>
 
 [core]
   ignorecase = false

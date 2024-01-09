@@ -19,7 +19,6 @@ export BAT_THEME="$THEME" # https://github.com/sharkdp/bat
 export USER_SIGNING_KEY="signing-key"
 export USER_NAME="name"
 export USER_EMAIL="email"
-export USER_EMAIL_CLTRMP="email"
 
 # ┌─┐┬┌┬┐┬ ┬┬ ┬┌┐
 # │ ┬│ │ ├─┤│ │├┴┐
