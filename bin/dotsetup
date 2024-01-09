@@ -1,5 +1,4 @@
 #!/bin/bash
-set -e
 
 # ██████╗  ██████╗ ████████╗███████╗███████╗████████╗██╗   ██╗██████╗
 # ██╔══██╗██╔═══██╗╚══██╔══╝██╔════╝██╔════╝╚══██╔══╝██║   ██║██╔══██╗
@@ -14,11 +13,7 @@ cat << EOF
 └─┘┴└─└─┘└┴┘└  ┴┴─┘└─┘
 EOF
 
-brew bundle --global && \
-  echo "Brew bundle installation completed successfully."
-cd "$DOTFILES/config/homebrew" && brew bundle dump -fv && \
-  echo "Brew bundle dump completed successfully."
-
+brew bundle check --global || brew bundle --global
 
 cat << EOF
 ┌─┐┌─┐┌┬┐┌─┐  ┌─┐┬  ┬ ┬┌─┐┬┌┐┌┌─┐
