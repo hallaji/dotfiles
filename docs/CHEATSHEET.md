@@ -47,7 +47,7 @@
 
 ### Terminals (Alacritty)
 
-- Focus on a pane: (`⌘` | `⌃`) + (`h` | `j` | `k` | `l`)
+- Focus on a pane: `⌃` + (`h` | `j` | `k` | `l`)
 - Resize a pane: `⌘` + (`←` | `↓` | `↑` | `→`)
 - Move the cursor in vi-mode: `h` | `l` (left or right)
 - Go through history in vi-mode: `j` | `k` (down or up)
@@ -58,7 +58,7 @@
 
 ### Editors (VIM / NVIM / VSCode)
 
-- Focus on a pane: (`⌘` | `⌃`) + (`h` | `j` | `k` | `l`)
+- Focus on a pane: `⌃` + (`h` | `j` | `k` | `l`)
 - Resize a pane: `⌃` + (`←` | `↓` | `↑` | `→`)
 - Move the cursor: `h` | `j` | `k` | `l`
 - Move to previous pane `⌃` + `\`
