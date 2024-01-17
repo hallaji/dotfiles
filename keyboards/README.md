@@ -15,7 +15,7 @@ Unplug the keyboard, hold down the key located at `[0][0]`, plug in your keyboar
 and wait a second before releasing the key.
 
 ```shell
-❯ flash keychron/q4/ansi_v2 hallaji --build
+❯ flash keychron/q4/ansi/v2 hallaji --build
 ```
 
 Read more on [DFU (Bootloader) Mode](https://docs.qmk.fm/#/newbs_flashing?id=put-your-keyboard-into-dfu-bootloader-mode).
