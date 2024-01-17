@@ -35,4 +35,3 @@ done
 
 source ~/.fresh/build/vendor/zsh-users/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.fresh/build/vendor/zsh-users/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.fresh/build/vendor/zdharma/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh

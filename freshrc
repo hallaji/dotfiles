@@ -1,3 +1,11 @@
+
+# ███████╗██████╗ ███████╗███████╗██╗  ██╗██████╗  ██████╗
+# ██╔════╝██╔══██╗██╔════╝██╔════╝██║  ██║██╔══██╗██╔════╝
+# █████╗  ██████╔╝█████╗  ███████╗███████║██████╔╝██║
+# ██╔══╝  ██╔══██╗██╔══╝  ╚════██║██╔══██║██╔══██╗██║
+# ██║     ██║  ██║███████╗███████║██║  ██║██║  ██║╚██████╗
+# ╚═╝     ╚═╝  ╚═╝╚══════╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝
+
 # ┌─┐┬─┐┌─┐┌─┐┬ ┬
 # ├┤ ├┬┘├┤ └─┐├─┤
 # └  ┴└─└─┘└─┘┴ ┴
@@ -73,7 +81,6 @@ fresh alacritty/alacritty extra/completions/_alacritty --file=completions/_alacr
 fresh ohmyzsh/ohmyzsh plugins --file=vendor/ohmyzsh/plugins/
 fresh zsh-users/zsh-syntax-highlighting . --file=vendor/zsh-users/zsh-syntax-highlighting/
 fresh zsh-users/zsh-autosuggestions . --file=vendor/zsh-users/zsh-autosuggestions/
-fresh zdharma/fast-syntax-highlighting . --file=vendor/zdharma/fast-syntax-highlighting/
 
 # Zprofile
 
