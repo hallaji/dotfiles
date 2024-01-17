@@ -20,7 +20,7 @@ case $BRAND in
 "keychron")
   FORK="keychron/qmk_firmware"
   BRANCH="master"
-  COMMIT="4ae45ca995b1f01b8e7ab3d115efe241c9adfee3" # last successful build (for history)
+  COMMIT="b35bac6afbadc88cf6e8e3d1c8cc7494a510bb60" # last successful build (for history)
   BUILD="${1//[\/]/_}_$2.bin"
   ;;
 *)
