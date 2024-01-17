@@ -24,9 +24,11 @@ links=(
   ~/.config/alacritty/alacritty.toml
   ~/.config/direnv/direnvrc
   ~/.config/gh-dash/config.yml
+  ~/.config/gitui/
   ~/.config/nvim/coc-settings.json
   ~/.config/nvim/init.vim
   ~/.config/pip/pip.conf
+  ~/.config/sketchybar/
   ~/.config/starship.toml
   ~/.ctags
   ~/.figlet/

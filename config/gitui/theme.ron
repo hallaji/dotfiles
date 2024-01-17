@@ -1,0 +1,8 @@
+// https://github.com/extrawurst/gitui/blob/master/THEMES.md
+
+(
+  selection_bg: Some(Magenta),
+  selection_fg: Some(Black),
+  cmdbar_bg: Some(Black),
+  cmdbar_extra_lines_bg: Some(Magenta),
+)
