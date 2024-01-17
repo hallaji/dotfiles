@@ -7,10 +7,6 @@
     - [Editors (VIM / NVIM / VSCode)](#editors-vim--nvim--vscode)
     - [Browsers (Vimium / Vimari)](#browsers-vimium--vimari)
   - [OS Shortcuts (macOS)](#os-shortcuts-macos)
-    - [Menubar](#menubar)
-    - [Meetings](#meetings)
-    - [Password Manager](#password-manager)
-    - [General](#general)
   - [Yabai / SKHD](#yabai--skhd)
   - [Tmux](#tmux)
     - [Tmux Key Bindings](#tmux-key-bindings)
@@ -72,45 +68,35 @@
 
 ## OS Shortcuts (macOS)
 
-Checkout keyboard [keymaps](../keyboards) to find the key place.
+Checkout keyboard [keymaps](../keyboards) and [Keycodes](https://github.com/qmk/qmk_firmware/blob/master/docs/keycodes.md).
 
-### Menubar
+- `HYPR` Control, Shift, Alt and GUI = `⌃⇧⌥⌘`
+- `LCAG` Control, Alt and GUI = `⌃⇧⌥`
 
-- `⌘ + Space` Toogle search (Alfred)
-- `⌃⇧⌥⌘ + C` Toggle calendar dropdown (Itsycal)
-- `⌃⇧⌥⌘ + ]` Toggle network monitor (Little Snitch)
-- `⌃⇧⌥⌘ + [` Toggle network dropdown (iStat Menus)
-- `⌃⇧⌥⌘ + P` Toogle battery/power dropdown (iStat Menus)
-- `⌃⇧⌥⌘ + O` Toggle meeting bar (MeetingBar)
-- `⌃⇧⌥⌘ + I` Toggle time dropdown (iStat Menus)
-- `⌃⇧⌥⌘ + U` Toogle computer awake mode (Lungo) [via SKHD]
-- `⌃⇧⌥⌘ + Y` Toogle mic/camera indicator (Micro Snitch)
-
-### Meetings
-
-- `⌃⇧⌥⌘ + M` End current meeting or join the next one otherwise (MeetingBar) [via SKHD]
-- `⌃⇧⌥⌘ + J` Join next meeting (MeetingBar)
-- `⌃⇧⌥⌘ + '` Toggle meeting title visibility (MeetingBar)
-- `⌃⇧⌥⌘ + Z` Start/Stop screen sharing (Zoom)
-- `⌃⇧⌥⌘ + X` Pause/Resume screen sharing (Zoom)
-- `⌃⇧⌥⌘ + A` Mute/Unmute audio (Zoom)
-- `⌃⇧⌥⌘ + V` Start/Stop video (Zoom)
-- `⌃⇧⌥⌘ + 3` Toggle in-meeting chat (Zoom)
-- `⌃⇧⌥⌘ + 4` Toggle dual monitors (Zoom)
-
-### Password Manager
-
-- `⌃⇧⌥⌘ + 1` Show quick access for password manager (1password)
-- `⌃⇧⌥⌘ + 2` Lock password manager (1password)
-
-### General
-
-- `⌃⇧⌥⌘ + E` On/Off microphone (Applescript) [via macOS Shortcuts → Services]
-- `⌃⇧⌥⌘ + N` Show notification centre [via macOS Shortcuts → Mission Control]
-- `⌃⇧⌥⌘ + Backtick` Toggle menu bar
-- `⌃⇧⌥⌘ + L` Lock screen [via SKHD]
-- `⌃⇧⌥⌘ + D` Show desktop [via SKHD]
-- `⌃⇧⌥⌘ + T` New terminal in current space [via SKHD]
+- `⌘ + SPACE` Toogle search (Alfred)
+- `HYPR + BACKTICK` Toggle macOS menu bar (via SKHD)
+- `HYPR + L` Lock screen (via SKHD)
+- `HYPR + D` Show desktop (via SKHD)
+- `HYPR + ENTER` End current meeting or join the next one (via SKHD)
+- `HYPR + \` Toggle calendar dropdown (via Itsycal)
+- `HYPR + ]` Toggle network monitor (via Little Snitch)
+- `HYPR + [` Toggle network dropdown (via iStat Menus)
+- `HYPR + P` Toogle battery/power dropdown (via iStat Menus)
+- `HYPR + O` Toggle meeting bar (via MeetingBar)
+- `HYPR + J` Join next meeting (via MeetingBar)
+- `HYPR + I` Toggle time dropdown (via iStat Menus)
+- `HYPR + U` Toogle computer awake mode (via SKHD)
+- `HYPR + Y` Toggle "Do Not Disturb" [via macOS Shortcuts → Mission Control]
+- `HYPR + W` Show quick access for password manager (via 1password)
+- `HYPR + E` Lock password manager (via 1password)
+- `HYPR + A` Show notification centre [via macOS Shortcuts → Mission Control]
+- `HYPR + N` Toggle to switching minimal window (via Zoom)
+- `HYPR + Z` Start/Stop screen sharing (via Zoom)
+- `HYPR + X` Pause/Resume screen sharing (via Zoom)
+- `HYPR + V` Start/Stop video (via Zoom)
+- `HYPR + M` Mute/Unmute audio (via Zoom)
+- `HYPR + B` Toggle in-meeting chat (via Zoom)
+- `HYPR + N` Switch to minimal window (via Zoom)
 
 ## Yabai / SKHD
 
