@@ -21,6 +21,7 @@ links=(
   ~/.asdfrc
   ~/.aws/config
   ~/.bundle/config
+  ~/.config/1Password/ssh/agent.toml
   ~/.config/alacritty/alacritty.toml
   ~/.config/direnv/direnvrc
   ~/.config/gh-dash/config.yml
