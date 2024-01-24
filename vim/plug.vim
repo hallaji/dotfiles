@@ -50,6 +50,7 @@ Plug 'christoomey/vim-tmux-navigator' " https://github.com/christoomey/vim-tmux-
 Plug 'nvim-lua/plenary.nvim' " https://github.com/nvim-lua/plenary.nvim
 Plug 'sindrets/diffview.nvim' " https://github.com/sindrets/diffview.nvim
 Plug 'github/copilot.vim' " https://github.com/github/copilot.vim
+Plug 'robitx/gp.nvim' " https://github.com/Robitx/gp.nvim
 if has('nvim')
   Plug 'folke/which-key.nvim' " https://github.com/folke/which-key.nvim
   Plug 'declancm/cinnamon.nvim' " https://github.com/declancm/cinnamon.nvim

@@ -131,7 +131,7 @@ fresh config/gh/dash/config.yml --file=~/.config/gh-dash/config.yml
 
 # Vimrc
 
-fresh-options --file=~/.vimrc --marker='"'
+fresh-options --file=~/.vimrc --filter=erb --marker='"'
   fresh vim/plug.vim
   fresh vim/plugins/\*
   fresh vim/settings.vim
