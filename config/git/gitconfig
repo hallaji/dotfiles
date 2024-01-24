@@ -4,8 +4,18 @@
 
 [user]
   name = <%= ENV["USER_NAME"] %>
-  signingkey = <%= ENV["USER_SIGNING_KEY"] %>
   email = <%= ENV["USER_EMAIL"] %>
+  signingkey = <%= ENV["USER_SIGNING_KEY"] %>
+
+[gpg]
+  format = ssh
+
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+
+[commit]
+  gpgsign = true
+  template = ~/.gitmessage
 
 [core]
   ignorecase = false
@@ -14,13 +24,6 @@
 
 [interactive]
   diffFilter = diff-so-fancy --patch
-
-[commit]
-  gpgsign = true
-  template = ~/.gitmessage
-
-[gpg]
-  program = gpg
 
 [pull]
   rebase = false
