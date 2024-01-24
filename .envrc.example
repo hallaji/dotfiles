@@ -16,9 +16,15 @@ export BAT_THEME="$THEME" # https://github.com/sharkdp/bat
 # │ │└─┐├┤ ├┬┘
 # └─┘└─┘└─┘┴└─
 
-export USER_SIGNING_KEY="signing-key"
 export USER_NAME="name"
 export USER_EMAIL="email"
+
+# ┌─┐┬┌─┐┌┐┌┬┌┐┌┌─┐  ┬┌─┌─┐┬ ┬┌─┐
+# └─┐││ ┬││││││││ ┬  ├┴┐├┤ └┬┘└─┐
+# └─┘┴└─┘┘└┘┴┘└┘└─┘  ┴ ┴└─┘ ┴ └─┘
+
+export SIGNING_KEY_SSH="ssh-signing-key"
+export SIGNING_KEY_GPG="gpg-signing-key"
 
 # ┌─┐┬┌┬┐┬ ┬┬ ┬┌┐
 # │ ┬│ │ ├─┤│ │├┴┐

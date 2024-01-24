@@ -1,14 +1,18 @@
 # ╔═╗╦╔╦╗  ╔═╗╔═╗╔╗╔╔═╗╦╔═╗
 # ║ ╦║ ║   ║  ║ ║║║║╠╣ ║║ ╦
 # ╚═╝╩ ╩   ╚═╝╚═╝╝╚╝╚  ╩╚═╝
+# https://git-scm.com/docs/git-config
 
 [user]
   name = <%= ENV["USER_NAME"] %>
   email = <%= ENV["USER_EMAIL"] %>
-  signingkey = <%= ENV["USER_SIGNING_KEY"] %>
+  signingkey = <%= ENV["SIGNING_KEY_SSH"] %> # SIGNING_KEY_SSH OR SIGNING_KEY_GPG
 
 [gpg]
-  format = ssh
+  format = ssh # ssh OR openpgp
+
+[gpg "openpgp"]
+  program = gpg
 
 [gpg "ssh"]
   program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
@@ -24,9 +28,6 @@
 
 [interactive]
   diffFilter = diff-so-fancy --patch
-
-[pull]
-  rebase = false
 
 [merge]
   conflictstyle = diff3
