@@ -14,9 +14,8 @@
 let g:tmuxline_powerline_separators = 0
 let g:tmuxline_preset = {
       \ 'a'       : ' #S',
-      \ 'cwin'    : ['󰓩 #I '],
-      \ 'win'     : ['󰓩 #I'],
-      \ 'x'       : ['%R', '%a'],
+      \ 'cwin'    : [' #I #W'],
+      \ 'win'     : ['󰓩 #I #W'],
       \ 'y'       : [' #P'],
       \ 'z'       : [' #W'],
       \ 'options' : {'status-justify' : 'left'}}
