@@ -13,7 +13,12 @@ vault = "Personal"
 account = "Riverside"
 
 [[ssh-keys]]
+item = "hallaji (RSA)"
+vault = "Personal"
+account = "Riverside"
+
+[[ssh-keys]]
 item = "cultureamp (RSA)"
-vault = "Private"
-account = "Culture Amp"
+vault = "Culture Amp"
+account = "Riverside"
 
