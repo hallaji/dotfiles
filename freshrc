@@ -92,19 +92,19 @@ fresh-options --filter=erb --file=~/.zshrc --marker
   fresh shell/zsh/init.sh
   fresh shell/zsh/plugins.sh
   fresh shell/zsh/vi-mode.sh
-  fresh shell/functions.sh
-  fresh shell/aliases.sh
-  type starship > /dev/null 2>&1 && fresh shell/zsh/starship.sh
-  type direnv > /dev/null 2>&1 && fresh shell/zsh/direnv.sh
-  type jenv > /dev/null 2>&1 && fresh shell/zsh/jenv.sh
-  type jump > /dev/null 2>&1 && fresh shell/zsh/jump.sh
-  type pyenv > /dev/null 2>&1 && fresh shell/zsh/pyenv.sh
-  type nnn > /dev/null 2>&1 && fresh shell/zsh/nnn.sh
-  type terraform > /dev/null 2>&1 && fresh shell/zsh/terraform.sh
-  type gcloud > /dev/null 2>&1 && fresh shell/zsh/gcloud.sh
-  brew --prefix icu4c > /dev/null 2>&1 && fresh shell/icu4c.sh
-  brew --prefix asdf > /dev/null 2>&1 && fresh shell/zsh/asdf.sh
-  type op > /dev/null 2>&1 && fresh shell/zsh/1password.sh
+  fresh shell/zsh/functions.sh
+  fresh shell/zsh/aliases.sh
+  type op > /dev/null 2>&1 && fresh shell/zsh/tools/1password.sh
+  brew --prefix asdf > /dev/null 2>&1 && fresh shell/zsh/tools/asdf.sh
+  type direnv > /dev/null 2>&1 && fresh shell/zsh/tools/direnv.sh
+  type gcloud > /dev/null 2>&1 && fresh shell/zsh/tools/gcloud.sh
+  brew --prefix icu4c > /dev/null 2>&1 && fresh shell/zsh/tools/icu4c.sh
+  type jenv > /dev/null 2>&1 && fresh shell/zsh/tools/jenv.sh
+  type jump > /dev/null 2>&1 && fresh shell/zsh/tools/jump.sh
+  type nnn > /dev/null 2>&1 && fresh shell/zsh/tools/nnn.sh
+  type pyenv > /dev/null 2>&1 && fresh shell/zsh/tools/pyenv.sh
+  type starship > /dev/null 2>&1 && fresh shell/zsh/tools/starship.sh
+  type terraform > /dev/null 2>&1 && fresh shell/zsh/tools/terraform.sh
 fresh-options
 
 # ┌─┐┌┬┐┌─┐┬─┐┌─┐┬ ┬┬┌─┐
