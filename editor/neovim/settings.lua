@@ -28,7 +28,7 @@ vim.cmd('filetype plugin indent on') -- enable filetype detection, plugins, and 
 
 -- Interface
 vim.wo.number = true -- show line numbers
-vim.wo.ruler = true -- show cursor position
+vim.o.ruler = true -- show cursor position
 vim.wo.colorcolumn = "80,120" -- set color column
 vim.wo.foldcolumn = "1" -- set fold column
 vim.wo.cursorline = true -- highlight current line
@@ -52,8 +52,8 @@ vim.o.exrc = true -- enable local configurations (.nvimrc, .exrc, etc.) https://
 
 -- 24-bit RGB color
 if vim.fn.exists('+termguicolors') == 1 then -- check if terminal supports 24-bit RGB color
-  vim.g.t_8f = "\<Esc>[38;2;%lu;%lu;%lum" -- set 24-bit RGB color for foreground
-  vim.g.t_8b = "\<Esc>[48;2;%lu;%lu;%lum" -- set 24-bit RGB color for background
+  vim.g.t_8f = "\\e[38;2;%lu;%lu;%lum" -- set 24-bit RGB color for foreground
+  vim.g.t_8b = "\\e[48;2;%lu;%lu;%lum" -- set 24-bit RGB color for background
   vim.o.termguicolors = true -- enable 24-bit RGB color
 end
 
