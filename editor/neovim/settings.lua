@@ -56,22 +56,3 @@ if vim.fn.exists('+termguicolors') == 1 then -- check if terminal supports 24-bi
   vim.g.t_8b = "\\e[48;2;%lu;%lu;%lum" -- set 24-bit RGB color for background
   vim.o.termguicolors = true -- enable 24-bit RGB color
 end
-
--- Markdown fenced code block syntax highlighting
-vim.g.markdown_fenced_languages = {
-  'bash=sh',
-  'go=golang',
-  'java',
-  'kotlin',
-  'python',
-  'ruby',
-  'php',
-  'ts=typescript',
-  'js=javascript',
-  'html',
-  'json',
-  'css',
-  'yaml',
-  'yml',
-  'toml'
-}

@@ -125,28 +125,36 @@ fresh config/ctags/ctags.conf --file=~/.ctags
 
 fresh config/gh/dash/config.yml --file=~/.config/gh-dash/config.yml
 
-# ┬  ┬┬┌┬┐
-# └┐┌┘││││
-#  └┘ ┴┴ ┴
+# ┌─┐┌┬┐┬┌┬┐┌─┐┬─┐
+# ├┤  │││ │ │ │├┬┘
+# └─┘─┴┘┴ ┴ └─┘┴└─
 
-# Vimrc
+# NEOVIM
 
-fresh-options --file=~/.vimrc --filter=erb --marker='"'
-  fresh vim/plug.vim
-  fresh vim/plugins/\*
-  fresh vim/settings.vim
-  fresh vim/commands.vim
-  fresh vim/mappings.vim
+fresh-options --file=~/.config/nvim/init.lua --filter=erb --marker='--'
+  fresh editor/neovim/settings.lua # settings must be first
+  fresh editor/neovim/lazy.lua
+  fresh editor/neovim/plugins/\*
+  fresh editor/neovim/commands.lua
+  fresh editor/neovim/mappings.lua # mappings must be last
 fresh-options
 
-# Neovim
+fresh editor/themes/catamaran.vim --file=~/.config/nvim/colors/catamaran.vim --marker='"'
+fresh editor/themes/airline/catamaran.vim --file=~/.config/nvim/autoload/airline/themes/catamaran.vim --marker='"'
 
-fresh vim/nvim.vim --file=~/.config/nvim/init.vim --marker='"'
+# VIM
 
-# Themes
+fresh-options --file=~/.vimrc --filter=erb --marker='"'
+  fresh editor/vim/settings.vim #settings must be first
+  fresh editor/vim/plug.vim
+  fresh editor/vim/plugins/\*
+  fresh editor/vim/commands.vim
+  fresh editor/vim/mappings.vim # mappings must be last
+fresh-options
 
-fresh vim/themes/catamaran.vim --file=~/.vim/colors/catamaran.vim --marker='"'
-fresh vim/themes/airline/catamaran.vim --file=~/.vim/autoload/airline/themes/catamaran.vim --marker='"'
+fresh editor/themes/catamaran.vim --file=~/.vim/colors/catamaran.vim --marker='"'
+fresh editor/themes/airline/catamaran.vim --file=~/.vim/autoload/airline/themes/catamaran.vim --marker='"'
+
 
 # ┌─┐┬┌┬┐
 # │ ┬│ │
