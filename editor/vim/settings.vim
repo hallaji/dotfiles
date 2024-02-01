@@ -48,29 +48,12 @@ set noshowmode " Hide the message on the last line in Insert, Replace or Visual 
 set nobackup " Some lang servers have issues with backup files
 set nowritebackup " Some lang servers have issues with backup files
 
-" Enable cursor blink
-" set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
-"   \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
-"   \,sm:block-blinkwait175-blinkoff150-blinkon175
-
 " Enable 24-bit RGB color in the TUI to use gui attributes instead of cterm attributes
 if exists('+termguicolors')
   let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
   let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
 endif
-
-" Enable fenced code block syntax highlighting in markdown
-let g:markdown_fenced_languages = [
-  \ 'typescript',
-  \ 'javascript',
-  \ 'go',
-  \ 'java',
-  \ 'kotlin',
-  \ 'python',
-  \ 'html',
-  \ 'json',
-  \ 'bash=sh']
 
 " The current directory is searched for the following files, in order of precedence: `.nvim.lua`, `.nvimrc`, `.exrc`
 " https://neovim.io/doc/user/options.html#'exrc'

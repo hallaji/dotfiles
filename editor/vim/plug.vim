@@ -82,5 +82,6 @@ Plug 'pangloss/vim-javascript' " https://github.com/pangloss/vim-javascript
 Plug 'peitalin/vim-jsx-typescript' " https://github.com/peitalin/vim-jsx-typescript
 Plug 'udalov/kotlin-vim' " https://github.com/udalov/kotlin-vim
 Plug 'hashivim/vim-terraform' " https://github.com/hashivim/vim-terraform
+Plug 'preservim/vim-markdown', " https://github.com/preservim/vim-markdown
 
 call plug#end()
