@@ -74,15 +74,14 @@ fi
 
 
 cat << EOF
-┌┐┌┬  ┬┬┌┬┐
-│││└┐┌┘││││
-┘└┘ └┘ ┴┴ ┴
+┌─┐┌┬┐┬┌┬┐┌─┐┬─┐  ┌─┐┬  ┬ ┬┌─┐┬┌┐┌┌─┐
+├┤  │││ │ │ │├┬┘  ├─┘│  │ ││ ┬││││└─┐
+└─┘─┴┘┴ ┴ └─┘┴└─  ┴  ┴─┘└─┘└─┘┴┘└┘└─┘
 EOF
 
-nvim +PlugUpgrade +PlugInstall +CocInstall +GoInstallBinaries +PlugUpdate +CocUpdate +GoUpdateBinaries +qall && \
-  nvim -c "TmuxlineSnapshot! ~/.tmux-statusline-colors.conf" +qall && \
-  echo "Vim plugins and extensions successfully installed or updated."
-
+nvim --headless "+Lazy! sync" "+qa"
+nvim "+CocUpdate" "+GoUpdateBinaries" "+TmuxlineSnapshot! ~/.tmux-statusline-colors.conf" "+qa"
+vim "+PlugUpgrade" "+PlugUpdate" "+CocUpdate" "+GoUpdateBinaries" "+qa"
 
 cat << EOF
 ┌┬┐┌┬┐┬ ┬─┐ ┬
@@ -134,4 +133,3 @@ EOF
 
 yabai --restart-service
 skhd --restart-service
-brew services restart sketchybar
