@@ -34,14 +34,14 @@ require("lazy").setup({
   --  ┴ └─┘└─┘┴─┘└─┘
 
   {
-    "folke/which-key.nvim",
+    "folke/which-key.nvim", -- https://github.com/folke/which-key.nvim
     event = "VeryLazy",
     init = function()
       vim.o.timeout = true
       vim.o.timeoutlen = 300
     end,
     opts = {}
-  }, -- https://github.com/folke/which-key.nvim
+  },
 
   "cocopon/colorswatch.vim", -- https://github.com/cocopon/colorswatch.vim
   "cocopon/inspecthi.vim", -- https://github.com/cocopon/inspecthi.vim
@@ -55,9 +55,6 @@ require("lazy").setup({
   "jeffkreeftmeijer/vim-numbertoggle", -- https://github.com/jeffkreeftmeijer/vim-numbertoggle
   "preservim/vimux", -- https://github.com/preservim/vimux
   "preservim/nerdcommenter", -- https://github.com/preservim/nerdcommenter
-  "preservim/vim-markdown", -- https://github.com/preservim/vim-markdown
-  "neoclide/jsonc.vim", -- https://github.com/neoclide/jsonc.vim
-  "nvim-treesitter/nvim-treesitter", -- https://github.com/nvim-treesitter/nvim-treesitter
   "Yggdroot/indentLine", -- https://github.com/Yggdroot/indentLine
   "junegunn/limelight.vim", -- https://github.com/junegunn/limelight.vim
   "folke/zen-mode.nvim", -- https://github.com/folke/zen-mode.nvim
@@ -68,15 +65,15 @@ require("lazy").setup({
   "robitx/gp.nvim", -- https://github.com/Robitx/gp.nvim
   "declancm/cinnamon.nvim", -- https://github.com/declancm/cinnamon.nvim
   {
-    'echasnovski/mini.nvim',
+    'echasnovski/mini.nvim', -- https://github.com/echasnovski/mini.nvim
     version = '*'
-  }, -- https://github.com/echasnovski/mini.nvim
+  },
   {
-    "iamcco/markdown-preview.nvim",
+    "iamcco/markdown-preview.nvim", -- https://github.com/iamcco/markdown-preview.nvim
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
     ft = { "markdown" },
     build = function() vim.fn["mkdp#util#install"]() end,
-  }, -- https://github.com/iamcco/markdown-preview.nvim
+  },
 
   -- ┌─┐┌─┐┌─┐┬─┐┌─┐┬ ┬
   -- └─┐├┤ ├─┤├┬┘│  ├─┤
@@ -87,12 +84,12 @@ require("lazy").setup({
   "junegunn/fzf", -- https://github.com/junegunn/fzf
   "junegunn/fzf.vim", -- https://github.com/junegunn/fzf.vim
   {
-    "ibhagwan/fzf-lua",
+    "ibhagwan/fzf-lua", -- https://github.com/ibhagwan/fzf-lua
     dependencies = { "nvim-tree/nvim-web-devicons" }, -- optional for icon support
     config = function()
       require("fzf-lua").setup({}) -- calling `setup` is optional for customization
     end
-  }, -- https://github.com/ibhagwan/fzf-lua
+  },
 
 
   -- ┌─┐─┐ ┬┌─┐┬  ┌─┐┬─┐┌─┐
@@ -118,15 +115,18 @@ require("lazy").setup({
   -- ─┴┘└─┘ └┘ └─┘┴─┘└─┘┴  ┴ ┴└─┘┘└┘ ┴
 
   {
-    "neoclide/coc.nvim",
+    "neoclide/coc.nvim", -- https://github.com/neoclide/coc.nvim
     branch = "release",
-  }, -- https://github.com/neoclide/coc.nvim
-  "fatih/vim-go", -- { 'do': ':GoUpdateBinaries' } -- https://github.com/fatih/vim-go
-  "leafgarland/typescript-vim", -- https://github.com/leafgarland/typescript-vim
-  "jparise/vim-graphql", -- https://github.com/jparise/vim-graphql
-  "pangloss/vim-javascript", -- https://github.com/pangloss/vim-javascript
-  "peitalin/vim-jsx-typescript", -- https://github.com/peitalin/vim-jsx-typescript
-  "udalov/kotlin-vim", -- https://github.com/udalov/kotlin-vim
-  "hashivim/vim-terraform", -- https://github.com/hashivim/vim-terraform
+  },
+  {
+    "nvim-treesitter/nvim-treesitter", -- https://github.com/nvim-treesitter/nvim-treesitter
+    build = ":TSUpdate"
+  },
+  {
+    "fatih/vim-go", -- https://github.com/fatih/vim-go
+    build = ":GoUpdateBinaries"
+  },
+  "neoclide/jsonc.vim", -- https://github.com/neoclide/jsonc.vim
+  "preservim/vim-markdown", -- https://github.com/preservim/vim-markdown
 
 })
