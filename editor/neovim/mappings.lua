@@ -40,6 +40,9 @@ wk.register({
   ["/"] = { "󰆉 Comment" },
   p = { " Paste" },
   y = { " Yank" },
+  c = {
+    name = "󰅺 Comment",
+  },
 }, { mode="v", prefix = "<Leader>" })
 
 wk.register({
