@@ -74,6 +74,11 @@ require("lazy").setup({
     ft = { "markdown" },
     build = function() vim.fn["mkdp#util#install"]() end,
   },
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {},
+  }, -- https://github.com/folke/todo-comments.nvim
 
   -- ┌─┐┌─┐┌─┐┬─┐┌─┐┬ ┬
   -- └─┐├┤ ├─┤├┬┘│  ├─┤
