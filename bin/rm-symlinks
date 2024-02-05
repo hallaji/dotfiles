@@ -26,6 +26,7 @@ links=(
   ~/.config/direnv/direnvrc
   ~/.config/gh-dash/config.yml
   ~/.config/nvim/coc-settings.json
+  ~/.config/nvim/init.lua
   ~/.config/nvim/init.vim
   ~/.config/pip/pip.conf
   ~/.config/starship.toml
