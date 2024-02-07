@@ -131,36 +131,22 @@ wk.register({
 -- │  │ │├─┘││  │ │ │
 -- └─┘└─┘┴  ┴┴─┘└─┘ ┴
 
-vim.keymap.set('n', '<Leader>pa', ':Copilot panel<CR>')
-vim.keymap.set('n', '<Leader>pd', ':Copilot disable<CR>')
-vim.keymap.set('n', '<Leader>pe', ':Copilot enable<CR>')
-vim.keymap.set('n', '<Leader>pg', '<Plug>(copilot-suggest)')
-vim.keymap.set('n', '<Leader>pi', ':Copilot auth<CR>')
-vim.keymap.set('n', '<Leader>pm', '<Plug>(copilot-dismiss)')
-vim.keymap.set('n', '<Leader>pn', '<Plug>(copilot-next)')
-vim.keymap.set('n', '<Leader>po', ':Copilot signout<CR>')
-vim.keymap.set('n', '<Leader>pp', '<Plug>(copilot-previous)')
-vim.keymap.set('n', '<Leader>pr', ':Copilot restart<CR>')
-vim.keymap.set('n', '<Leader>ps', ':Copilot status<CR>')
-vim.keymap.set('n', '<Leader>pv', ':Copilot version<CR>')
-vim.keymap.set('n', '<Leader>pu', ':Copilot setup<CR>')
-
 wk.register({
   p = {
     name = " Copilot",
-    a = { " Panel" },
-    d = { "󱈻 Disable" },
-    e = { "󱈽 Enable" },
-    g = { "󱐀 Suggest" },
-    i = { " Sign in" },
-    m = { "󱗤 Dismiss suggestion" },
-    n = { " Next suggestion" },
-    o = { " Sign out" },
-    p = { " Previous suggestion" },
-    r = { " Restart" },
-    s = { "󱖫 Status" },
-    v = { " Version" },
-    u = { " Setup" },
+    a = { ":Copilot panel<CR>", " Panel" },
+    d = { ":Copilot disable<CR>", "󱈻 Disable" },
+    e = { ":Copilot enable<CR>", "󱈽 Enable" },
+    g = { "<Plug>(copilot-suggest)", "󱐀 Suggest" },
+    i = { ":Copilot auth<CR>", " Sign in" },
+    m = { "<Plug>(copilot-dismiss)", "󱗤 Dismiss suggestion" },
+    n = { "<Plug>(copilot-next)", " Next suggestion" },
+    o = { ":Copilot signout<CR>", " Sign out" },
+    p = { "<Plug>(copilot-previous)", " Previous suggestion" },
+    r = { ":Copilot restart<CR>", " Restart" },
+    s = { ":Copilot status<CR>", "󱖫 Status" },
+    u = { ":Copilot setup<CR>", " Setup" },
+    v = { ":Copilot version<CR>", " Version" },
   }
 }, { prefix = "<Leader>" })
 
