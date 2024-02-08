@@ -156,7 +156,7 @@ wk.register({
 
 wk.register({
   t = {
-    name = "󰭻 GPT Prompt",
+    name = "󰭻 GPT",
     c = { ":<C-u>'<,'>GpChatNew<CR>", "Visual Chat New" },
     p = { ":<C-u>'<,'>GpChatPaste<CR>", "Visual Chat Paste" },
     t = { ":<C-u>'<,'>GpChatToggle<CR>", "Visual Toggle Chat" },
@@ -207,7 +207,7 @@ wk.register({
 
 wk.register({
     t = {
-    name = "󰭻 GPT Prompt",
+    name = "󰭻 GPT",
     c = { "<CMD>GpChatNew<CR>", "New Chat" },
     t = { "<CMD>GpChatToggle<CR>", "Toggle Chat" },
     f = { "<CMD>GpChatFinder<CR>", "Chat Finder" },
@@ -254,6 +254,55 @@ wk.register({
   noremap = true,
   nowait = true,
 })
+
+-- ┌─┐┬┌┬┐
+-- │ ┬│ │
+-- └─┘┴ ┴
+
+wk.register({
+  ["["] = {
+    h = { ":Gitsigns prev_hunk<CR>", " Prev Hunk (Buffer)" },
+  },
+  ["]"] = {
+    h = { ":Gitsigns next_hunk<CR>", " Next Hunk (Buffer)" },
+  },
+})
+
+wk.register({
+  G = { ":Git<CR>", " Fugitive" },
+  g = {
+    name = " Git",
+    R = { ":Gitsigns reset_buffer<CR>", "Reset Buffer" },
+    S = { ":Gitsigns stage_buffer<CR>", "Stage Buffer" },
+    b = { ":Gitsigns blame_line<CR>", "Blame" },
+    c = { ":FzfLua git_bcommits<CR>", "Commits (Buffer)" },
+    d = {
+      name = " Diff View",
+      c = { ":DiffviewClose<CR>", "Close" },
+      f = { ":DiffviewToggleFiles<CR>", "Files" },
+      h = { ":DiffviewFileHistory<CR>", "File History" },
+      o = { ":DiffviewOpen<CR>", "Open" },
+      r = { ":DiffviewRefresh<CR>", "Refresh" },
+      t = { ":Gitsigns diffthis<CR>", "This" },
+    },
+    e = { ":Tig<CR>", "Explorer" },
+    p = { ":Gitsigns preview_hunk<CR>", "Preview hunk" },
+    q = { ":Gitsigns setqflist<CR>", "Quick Fix (Buffer)" },
+    r = { ":Gitsigns reset_hunk<CR>", "Reset Hunk" },
+    s = { ":Gitsigns stage_hunk<CR>", "Stage Hunk" },
+    t = {
+      name = " Toggle",
+      b = { ":Gitsigns toggle_current_line_blame<CR>", "Blame" },
+      d = { ":Gitsigns toggle_deleted<CR>", "Deleted" },
+      l = { ":Gitsigns toggle_linehl<CR>", "Line Highlight" },
+      n = { ":Gitsigns toggle_numhl<CR>", "Number Highlight" },
+      s = { ":Gitsigns toggle_signs<CR>", "Signs" },
+      w = { ":Gitsigns toggle_word_diff<CR>", "Word Diff" },
+    },
+    u = { ":Gitsigns undo_stage_hunk<CR>", "Unstage Hunk" },
+    v = { ":Gitsigns select_hunk<CR>", "Select Hunk" },
+  },
+}, { prefix = "<Leader>" })
 
 -- ┌┐ ┬ ┬┌─┐┌─┐┌─┐┬─┐
 -- ├┴┐│ │├┤ ├┤ ├┤ ├┬┘
@@ -379,80 +428,6 @@ wk.register({
   ["`"] = { " NNN Explorer" },
 })
 
--- ┌─┐┬┌┬┐
--- │ ┬│ │
--- └─┘┴ ┴
-
-vim.keymap.set('n', '<Leader>gR', ':Gitsigns reset_buffer<CR>') -- Reset buffer with Gitsigns
-vim.keymap.set('n', '<Leader>gS', ':Gitsigns stage_buffer<CR>') -- Stage buffer with Gitsigns
-vim.keymap.set('n', '<Leader>gb', ':Gitsigns blame_line<CR>') -- Blame line with Gitsigns
-vim.keymap.set('n', '<leader>gc', ':FzfLua git_bcommits<CR>') -- Open FzfLua for Git blame commits
-vim.keymap.set('n', '<Leader>gdc', ':DiffviewClose<CR>') -- Close Diffview
-vim.keymap.set('n', '<Leader>gdf', ':DiffviewToggleFiles<CR>') -- Toggle Diffview file list
-vim.keymap.set('n', '<Leader>gdh', ':DiffviewFileHistory<CR>') -- Open Diffview file history
-vim.keymap.set('n', '<Leader>gdo', ':DiffviewOpen<CR>') -- Open Diffview
-vim.keymap.set('n', '<Leader>gdr', ':DiffviewRefresh<CR>') -- Refresh Diffview
-vim.keymap.set('n', '<Leader>gdt', ':Gitsigns diffthis<CR>') -- Gitsigns diffthis
-vim.keymap.set('n', '<Leader>ge', ':Tig<CR>') -- Open Tig
-vim.keymap.set('n', '<Leader>gp', ':Gitsigns preview_hunk<CR>') -- Preview Gitsigns hunk
-vim.keymap.set('n', '<Leader>gq', ':Gitsigns setqflist<CR>:') -- Set Gitsigns quickfix list
-vim.keymap.set('n', '<Leader>gr', ':Gitsigns reset_hunk<CR>') -- Reset Gitsigns hunk
-vim.keymap.set('n', '<Leader>gs', ':Gitsigns stage_hunk<CR>') -- Stage Gitsigns hunk
-vim.keymap.set('n', '<Leader>gts', ':Gitsigns toggle_signs<CR>') -- Toggle Gitsigns signs
-vim.keymap.set('n', '<Leader>gtd', ':Gitsigns toggle_deleted<CR>') -- Toggle Gitsigns deleted signs
-vim.keymap.set('n', '<Leader>gtb', ':Gitsigns toggle_current_line_blame<CR>') -- Toggle Gitsigns current line blame
-vim.keymap.set('n', '<Leader>gtw', ':Gitsigns toggle_word_diff<CR>') -- Toggle Gitsigns word diff
-vim.keymap.set('n', '<Leader>gtl', ':Gitsigns toggle_linehl<CR>') -- Toggle Gitsigns line highlight
-vim.keymap.set('n', '<Leader>gtn', ':Gitsigns toggle_numhl<CR>') -- Toggle Gitsigns number highlight
-vim.keymap.set('n', '<Leader>gu', ':Gitsigns undo_stage_hunk<CR>') -- Undo Gitsigns stage hunk
-vim.keymap.set('n', '<Leader>gv', ':Gitsigns select_hunk<CR>') -- Select Gitsigns hunk
-vim.keymap.set('n', '[h', ':Gitsigns prev_hunk<CR>') -- Go to previous Gitsigns hunk
-vim.keymap.set('n', ']h', ':Gitsigns next_hunk<CR>') -- Go to next Gitsigns hunk
-vim.keymap.set('n', '<C-G>', ':Git<CR>') -- Open Git command line
-
-wk.register({
-  ["<C-G>"] = { " Fugitive" },
-  ["["] = {
-    h = { " Prev hunk (buffer)" },
-  },
-  ["]"] = {
-    h = { " Next hunk (buffer)" },
-  },
-})
-wk.register({
-  g = {
-    name = " Git",
-    R = { " Reset buffer" },
-    S = { " Stage buffer" },
-    b = { " Blame" },
-    c = { " Commits (buffer)" },
-    d = {
-      name = " Diff view",
-      c = { " Close" },
-      f = { " Files" },
-      h = { "󰋚 File history" },
-      o = { " Open" },
-      r = { " Refresh" },
-      t = { " This" },
-    },
-    e = { " Explorer" },
-    p = { " Preview hunk" },
-    q = { "󰁨 Quick fix (buffer)" },
-    r = { "󰝳 Reset hunk" },
-    s = { " Stage hunk" },
-    t = {
-      name = " Toggle",
-      s = " Signs",
-      d = " Deleted",
-      b = " Blame",
-      w = " Word diff",
-      l = " Line highlight",
-      n = " Number highlight",
-    },
-    u = { " Unstage hunk" },
-    v = { "󰒆 Select hunk" },
-  },
-}, { prefix = "<leader>" })
 
 -- ┌─┐┌─┐┌─┐
 -- ├┤ ┌─┘├┤
