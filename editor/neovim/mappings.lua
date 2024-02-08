@@ -157,55 +157,103 @@ wk.register({
 wk.register({
   t = {
     name = "󰭻 GPT Prompt",
-    a = {
-      name = "󰵰 Agent",
-      a = { ":GpAgent<CR>", "󱤅 Display currently used agent" },
-      n = { ":GpNextAgent<CR>", "󰙡 Cycles between available agents" },
+    c = { ":<C-u>'<,'>GpChatNew<CR>", "Visual Chat New" },
+    p = { ":<C-u>'<,'>GpChatPaste<CR>", "Visual Chat Paste" },
+    t = { ":<C-u>'<,'>GpChatToggle<CR>", "Visual Toggle Chat" },
+
+    ["<C-x>"] = { ":<C-u>'<,'>GpChatNew split<CR>", "Visual Chat New split" },
+    ["<C-v>"] = { ":<C-u>'<,'>GpChatNew vsplit<CR>", "Visual Chat New vsplit" },
+    ["<C-t>"] = { ":<C-u>'<,'>GpChatNew tabnew<CR>", "Visual Chat New tabnew" },
+
+    r = { ":<C-u>'<,'>GpRewrite<CR>", "Visual Rewrite" },
+    a = { ":<C-u>'<,'>GpAppend<CR>", "Visual Append (after)" },
+    b = { ":<C-u>'<,'>GpPrepend<CR>", "Visual Prepend (before)" },
+    i = { ":<C-u>'<,'>GpImplement<CR>", "Implement selection" },
+
+    g = {
+      name = "generate into new ..",
+      p = { ":<C-u>'<,'>GpPopup<CR>", "Visual Popup" },
+      e = { ":<C-u>'<,'>GpEnew<CR>", "Visual GpEnew" },
+      n = { ":<C-u>'<,'>GpNew<CR>", "Visual GpNew" },
+      v = { ":<C-u>'<,'>GpVnew<CR>", "Visual GpVnew" },
+      t = { ":<C-u>'<,'>GpTabnew<CR>", "Visual GpTabnew" },
     },
-    c = { ":GpContext<CR>", "󰛿 Provide context per repository" },
-    d = { ":GpChatDelete<CR>", "󰚃 Delete chat" },
-    f = { ":GpChatFinder<CR>", "󰮔 Find chat" },
-    g = { ":GpChatToggle<CR>", "󱠇 Toggle chat" },
-    n = { ":GpChatNew<CR>", "󰐗 New chat" },
-    i = {
-      name = "󰰄 Image commands",
-      p = { ":GpImage<CR>", "󰰄 Prompt for images" },
-    },
-    r = { ":GpChatRespond<CR>", "󱆮 Respond chat" },
-    s = { ":GpStop<CR>", "󰙦 Stop" },
-    t = {
-      name = "󰰥 Text/Code commands",
-      a = { ":GpAppend<CR>", "󰯬 Append after current line" },
-      e = { ":GpEnew<CR>", "󰯯 Add into a new buffer" },
-      h = { ":GpNew<CR>", "󰰁 Add into a new horizontal split window" },
-      o = { ":GpPopup<CR>", "󰰨 Add into a pop-up window" },
-      p = { ":GpPrepend<CR>", "󰰙 Prepend before current line" },
-      t = { ":GpTabnew<CR>", "󰰥 Add into a new tab" },
-      v = { ":GpVnew<CR>", "󰰫 Add into a new vertical split window" },
-      r = { ":GpRewrite<CR>", "󰰟 Replace the current line" },
-    },
+
+    n = { "<CMD>GpNextAgent<CR>", "Next Agent" },
+    s = { "<CMD>GpStop<CR>", "GpStop" },
+    x = { ":<C-u>'<,'>GpContext<CR>", "Visual GpContext" },
+
     w = {
-      name = "󰰢 Speech commands",
-      p = { ":GpWhisper<CR>", "󰰢 Prompt for speech" },
-      a = { ":GpWhisperAppend<CR>", "󰯬 Append after current line" },
-      e = { ":GpWhisperEnew<CR>", "󰯯 Add into a new buffer" },
-      h = { ":GpWhisperNew<CR>", "󰰁 Add into a new horizontal split window" },
-      o = { ":GpWhisperPopup<CR>", "󰰨 Add into a pop-up window" },
-      p = { ":GpWhisperPrepend<CR>", "󰰙 Prepend before current line" },
-      t = { ":GpWhisperTabnew<CR>", "󰰥 Add into a new tab" },
-      v = { ":GpWhisperVnew<CR>", "󰰫 Add into a new vertical split window" },
-      r = { ":GpWhisperRewrite<CR>", "󰰟 Replace the current line" },
+      name = "Whisper",
+      w = { ":<C-u>'<,'>GpWhisper<CR>", "Whisper" },
+      r = { ":<C-u>'<,'>GpWhisperRewrite<CR>", "Whisper Rewrite" },
+      a = { ":<C-u>'<,'>GpWhisperAppend<CR>", "Whisper Append (after)" },
+      b = { ":<C-u>'<,'>GpWhisperPrepend<CR>", "Whisper Prepend (before)" },
+      p = { ":<C-u>'<,'>GpWhisperPopup<CR>", "Whisper Popup" },
+      e = { ":<C-u>'<,'>GpWhisperEnew<CR>", "Whisper Enew" },
+      n = { ":<C-u>'<,'>GpWhisperNew<CR>", "Whisper New" },
+      v = { ":<C-u>'<,'>GpWhisperVnew<CR>", "Whisper Vnew" },
+      t = { ":<C-u>'<,'>GpWhisperTabnew<CR>", "Whisper Tabnew" },
     },
-  }
-}, { prefix = "<Leader>" })
+    },
+}, {
+  mode = "v",
+  prefix = "<Leader>",
+  buffer = nil,
+  silent = true,
+  noremap = true,
+  nowait = true,
+})
 
 wk.register({
-  t = {
+    t = {
     name = "󰭻 GPT Prompt",
-    d = { ":GpImplement<CR>", "󱟜 Develop code from comments" },
-    p = { ":GpChatPaste<CR>", "󱠆 Paste into the latest chat" },
-  }
-}, { prefix = "<Leader>", mode = "v" })
+    c = { "<CMD>GpChatNew<CR>", "New Chat" },
+    t = { "<CMD>GpChatToggle<CR>", "Toggle Chat" },
+    f = { "<CMD>GpChatFinder<CR>", "Chat Finder" },
+
+    ["<C-x>"] = { "<CMD>GpChatNew split<CR>", "New Chat split" },
+    ["<C-v>"] = { "<CMD>GpChatNew vsplit<CR>", "New Chat vsplit" },
+    ["<C-t>"] = { "<CMD>GpChatNew tabnew<CR>", "New Chat tabnew" },
+
+    r = { "<CMD>GpRewrite<CR>", "Inline Rewrite" },
+    a = { "<CMD>GpAppend<CR>", "Append (after)" },
+    b = { "<CMD>GpPrepend<CR>", "Prepend (before)" },
+
+    g = {
+      name = "generate into new ..",
+      p = { "<CMD>GpPopup<CR>", "Popup" },
+      e = { "<CMD>GpEnew<CR>", "GpEnew" },
+      n = { "<CMD>GpNew<CR>", "GpNew" },
+      v = { "<CMD>GpVnew<CR>", "GpVnew" },
+      t = { "<CMD>GpTabnew<CR>", "GpTabnew" },
+    },
+
+    n = { "<CMD>GpNextAgent<CR>", "Next Agent" },
+    s = { "<CMD>GpStop<CR>", "GpStop" },
+    x = { "<CMD>GpContext<CR>", "Toggle GpContext" },
+
+    w = {
+      name = "Whisper",
+      w = { "<CMD>GpWhisper<CR>", "Whisper" },
+      r = { "<CMD>GpWhisperRewrite<CR>", "Whisper Inline Rewrite" },
+      a = { "<CMD>GpWhisperAppend<CR>", "Whisper Append (after)" },
+      b = { "<CMD>GpWhisperPrepend<CR>", "Whisper Prepend (before)" },
+      p = { "<CMD>GpWhisperPopup<CR>", "Whisper Popup" },
+      e = { "<CMD>GpWhisperEnew<CR>", "Whisper Enew" },
+      n = { "<CMD>GpWhisperNew<CR>", "Whisper New" },
+      v = { "<CMD>GpWhisperVnew<CR>", "Whisper Vnew" },
+      t = { "<CMD>GpWhisperTabnew<CR>", "Whisper Tabnew" },
+    },
+  },
+}, {
+  mode = "n",
+  prefix = "<Leader>",
+  buffer = nil,
+  silent = true,
+  noremap = true,
+  nowait = true,
+})
 
 -- ┌┐ ┬ ┬┌─┐┌─┐┌─┐┬─┐
 -- ├┴┐│ │├┤ ├┤ ├┤ ├┬┘
