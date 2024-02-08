@@ -75,12 +75,6 @@ vim.keymap.set('n', '<Leader>w', [[:set wrap! wrap?<CR>]]) -- Toggle line wrap
 -- │││├─┤└┐┌┘││ ┬├─┤ │ ││ ││││
 -- ┘└┘┴ ┴ └┘ ┴└─┘┴ ┴ ┴ ┴└─┘┘└┘
 
--- Jump between splits
-vim.keymap.set('n', '<C-H>', '<C-W><C-H>') -- Move to the left split window using Ctrl+H
-vim.keymap.set('n', '<C-J>', '<C-W><C-J>') -- Move to the bottom split window using Ctrl+J
-vim.keymap.set('n', '<C-K>', '<C-W><C-K>') -- Move to the top split window using Ctrl+K
-vim.keymap.set('n', '<C-L>', '<C-W><C-L>') -- Move to the right split window using Ctrl+L
-
 -- Resize splits
 vim.keymap.set('n', '<C-Left>', '<C-W><')
 vim.keymap.set('n', '<C-Down>', '<C-W>-')
@@ -118,7 +112,7 @@ wk.register({
   ["]"] = {
     b = { " Next buffer" },
     t = { " Next tab" },
-  }
+  },
 })
 
 wk.register({
@@ -126,6 +120,16 @@ wk.register({
     name = "󰅺 Comment",
   },
 }, { prefix = "<Leader>" })
+
+-- ┌─┐─┐ ┬┌─┐┬  ┌─┐┬─┐┌─┐┬─┐
+-- ├┤ ┌┴┬┘├─┘│  │ │├┬┘├┤ ├┬┘
+-- └─┘┴ └─┴  ┴─┘└─┘┴└─└─┘┴└─
+
+wk.register({
+  ["~"] = { ":NvimTreeFocus<CR>", " Nvim Tree" },
+  ["-"] = { ":NnnPicker %:p:h<CR>", " NNN Picker" },
+  ["`"] = { ":NnnExplorer %:p:h<CR>", " NNN Explorer" },
+})
 
 -- ┌─┐┌─┐┌─┐┬┬  ┌─┐┌┬┐
 -- │  │ │├─┘││  │ │ │
@@ -269,7 +273,8 @@ wk.register({
 })
 
 wk.register({
-  G = { ":Git<CR>", " Fugitive" },
+  ["<C-G>"] = { ":Git<CR>", " Fugitive" },
+  ["<C-T>"] = { ":Tig<CR>", " Tig" },
   g = {
     name = " Git",
     R = { ":Gitsigns reset_buffer<CR>", "Reset Buffer" },
@@ -285,7 +290,6 @@ wk.register({
       r = { ":DiffviewRefresh<CR>", "Refresh" },
       t = { ":Gitsigns diffthis<CR>", "This" },
     },
-    e = { ":Tig<CR>", "Explorer" },
     p = { ":Gitsigns preview_hunk<CR>", "Preview hunk" },
     q = { ":Gitsigns setqflist<CR>", "Quick Fix (Buffer)" },
     r = { ":Gitsigns reset_hunk<CR>", "Reset Hunk" },
@@ -308,22 +312,11 @@ wk.register({
 -- ├┴┐│ │├┤ ├┤ ├┤ ├┬┘
 -- └─┘└─┘└  └  └─┘┴└─
 
-vim.keymap.set('i', '<C-Q>', '<Esc>:q<CR>') -- Exit insert mode and close the current buffer
-vim.keymap.set('i', '<C-S>', '<C-O>:update<CR>') -- Save the current buffer
 vim.keymap.set('n', '<C-Q>', ':q<CR>') -- Close the current buffer
-vim.keymap.set('n', '<C-S>', ':update<CR>') -- Save the current buffer
-vim.keymap.set('n', '<Leader>q', ':q!<CR>') -- Forcefully quit (discard changes)
-vim.keymap.set('n', '<Leader>Q', ':qa!<CR>') -- Forcefully quit all (discard changes)
-vim.keymap.set('n', '<Leader>bQ', ':qa!<CR>') -- Forcefully quit all (discard changes)
-vim.keymap.set('n', '<Leader>bc', ':bd<CR>') -- Close the current buffer
-vim.keymap.set('n', '<Leader>bf', ':bfirst<CR>') -- Go to the first buffer
-vim.keymap.set('n', '<Leader>bh', ':Startify<CR>') -- Open Startify
-vim.keymap.set('n', '<Leader>bl', ':blast<CR>') -- Go to the last buffer
-vim.keymap.set('n', '<Leader>bn', ':bnext<CR>') -- Go to the next buffer
-vim.keymap.set('n', '<Leader>bp', ':bprevious<CR>') -- Go to the previous buffer
-vim.keymap.set('n', '<Leader>bq', ':q<CR>') -- Close the current buffer
-vim.keymap.set('n', '<Leader>bs', ':update<CR>') -- Save the current buffer
+vim.keymap.set('i', '<C-Q>', '<Esc>:q<CR>') -- Exit insert mode and close the current buffer
 vim.keymap.set('x', '<C-Q>', '<Esc>') -- Exit visual mode
+vim.keymap.set('i', '<C-S>', '<C-O>:update<CR>') -- Save the current buffer
+vim.keymap.set('n', '<C-S>', ':update<CR>') -- Save the current buffer
 
 wk.register({
   ["<C-S>"] = { " Save" },
@@ -332,36 +325,20 @@ wk.register({
 wk.register({
   b = {
     name = " Buffer",
-    c = { "󰅙 Close" },
-    f = { " First" },
-    h = { "󰟒 Home" },
-    l = { " Last" },
-    n = { " Next" },
-    p = { " Previous" },
-    q = { "󰗼 Quit" },
-    Q = { "󰗼 Quit all" },
-    s = { " Save" },
+    Q = { ":qa<CR>", "Quit all" },
+    c = { ":bd<CR>", "Close" },
+    f = { ":bfirst<CR>", "First" },
+    h = { ":Startify<CR>", "Home" },
+    l = { ":blast<CR>", "Last" },
+    n = { ":bnext<CR>", "Next" },
+    p = { ":bprevious<CR>", "Previous" },
+    q = { ":q<CR>", "Quit" },
+    s = { ":update<CR>", "Save" },
   },
-  q = { "󰗼 Quit" },
-  Q = { "󰗼 Quit all" },
-}, { prefix = "<leader>" })
+  q = { ":q<CR>", "󰗼 Quit" },
+  Q = { ":qa<CR>", "󰗼 Quit all" },
+}, { prefix = "<Leader>" })
 
--- ┌─┐┌─┐┌─┐┌┐┌
--- │ │├─┘├┤ │││
--- └─┘┴  └─┘┘└┘
-
-vim.keymap.set('n', '<Leader>od', ':tabedit $DOTFILES<CR>') -- Open a new tab with the $DOTFILES directory
-
-wk.register({
-  o = {
-    name = " Open",
-    d = { "Dotfiles" },
-  },
-}, { prefix = "<leader>" })
-
--- ┌─┐┬┌┐┌┌┬┐
--- ├┤ ││││ ││
--- └  ┴┘└┘─┴┘
 
 vim.keymap.set('i', '<C-f>', '<Esc>:FzfLua<CR>') -- Open FzfLua in insert mode
 vim.keymap.set('n', '<C-f>', ':FzfLua<CR>') -- Open FzfLua in normal mode
@@ -376,7 +353,7 @@ wk.register({
 wk.register({
   f = {
     name = " Find",
-    b = { " Buffers" },
+    b = { ":FzfLua buffers<CR>", "Buffers" },
   },
   F = { "󰈞 Find/Replace" },
 }, { prefix = "<leader>" })
@@ -411,22 +388,6 @@ wk.register({
     z = { "Word Plus Boundary" },
   },
 }, { prefix = "<leader>" })
-
--- ┌─┐─┐ ┬┌─┐┬  ┌─┐┬─┐┌─┐┬─┐
--- ├┤ ┌┴┬┘├─┘│  │ │├┬┘├┤ ├┬┘
--- └─┘┴ └─┴  ┴─┘└─┘┴└─└─┘┴└─
-
-vim.keymap.set('n', '_', ':Explore<CR>') -- Open Netrw
-vim.keymap.set('n', '~', ':NvimTreeFocus<CR>') -- Focus on NvimTree
-vim.keymap.set('n', '-', ':NnnPicker %:p:h<CR>') -- Open NnnPicker in the current directory
-vim.keymap.set('n', '`', ':NnnExplorer %:p:h<CR>') -- Open NnnExplorer in the current directory
-
-wk.register({
-  ["_"] = { " Netrw" },
-  ["~"] = { " Nvim Tree" },
-  ["-"] = { " NNN Picker" },
-  ["`"] = { " NNN Explorer" },
-})
 
 
 -- ┌─┐┌─┐┌─┐
