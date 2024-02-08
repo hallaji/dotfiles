@@ -150,6 +150,63 @@ wk.register({
   }
 }, { prefix = "<Leader>" })
 
+-- ┌─┐┌─┐┌┬┐  ┌─┐┬─┐┌─┐┌┬┐┌─┐┌┬┐
+-- │ ┬├─┘ │   ├─┘├┬┘│ ││││├─┘ │
+-- └─┘┴   ┴   ┴  ┴└─└─┘┴ ┴┴   ┴
+
+wk.register({
+  t = {
+    name = "󰭻 GPT Prompt",
+    a = {
+      name = "󰵰 Agent",
+      a = { ":GpAgent<CR>", "󱤅 Display currently used agent" },
+      n = { ":GpNextAgent<CR>", "󰙡 Cycles between available agents" },
+    },
+    c = { ":GpContext<CR>", "󰛿 Provide context per repository" },
+    d = { ":GpChatDelete<CR>", "󰚃 Delete chat" },
+    f = { ":GpChatFinder<CR>", "󰮔 Find chat" },
+    g = { ":GpChatToggle<CR>", "󱠇 Toggle chat" },
+    n = { ":GpChatNew<CR>", "󰐗 New chat" },
+    i = {
+      name = "󰰄 Image commands",
+      p = { ":GpImage<CR>", "󰰄 Prompt for images" },
+    },
+    r = { ":GpChatRespond<CR>", "󱆮 Respond chat" },
+    s = { ":GpStop<CR>", "󰙦 Stop" },
+    t = {
+      name = "󰰥 Text/Code commands",
+      a = { ":GpAppend<CR>", "󰯬 Append after current line" },
+      e = { ":GpEnew<CR>", "󰯯 Add into a new buffer" },
+      h = { ":GpNew<CR>", "󰰁 Add into a new horizontal split window" },
+      o = { ":GpPopup<CR>", "󰰨 Add into a pop-up window" },
+      p = { ":GpPrepend<CR>", "󰰙 Prepend before current line" },
+      t = { ":GpTabnew<CR>", "󰰥 Add into a new tab" },
+      v = { ":GpVnew<CR>", "󰰫 Add into a new vertical split window" },
+      r = { ":GpRewrite<CR>", "󰰟 Replace the current line" },
+    },
+    w = {
+      name = "󰰢 Speech commands",
+      p = { ":GpWhisper<CR>", "󰰢 Prompt for speech" },
+      a = { ":GpWhisperAppend<CR>", "󰯬 Append after current line" },
+      e = { ":GpWhisperEnew<CR>", "󰯯 Add into a new buffer" },
+      h = { ":GpWhisperNew<CR>", "󰰁 Add into a new horizontal split window" },
+      o = { ":GpWhisperPopup<CR>", "󰰨 Add into a pop-up window" },
+      p = { ":GpWhisperPrepend<CR>", "󰰙 Prepend before current line" },
+      t = { ":GpWhisperTabnew<CR>", "󰰥 Add into a new tab" },
+      v = { ":GpWhisperVnew<CR>", "󰰫 Add into a new vertical split window" },
+      r = { ":GpWhisperRewrite<CR>", "󰰟 Replace the current line" },
+    },
+  }
+}, { prefix = "<Leader>" })
+
+wk.register({
+  t = {
+    name = "󰭻 GPT Prompt",
+    d = { ":GpImplement<CR>", "󱟜 Develop code from comments" },
+    p = { ":GpChatPaste<CR>", "󱠆 Paste into the latest chat" },
+  }
+}, { prefix = "<Leader>", mode = "v" })
+
 -- ┌┐ ┬ ┬┌─┐┌─┐┌─┐┬─┐
 -- ├┴┐│ │├┤ ├┤ ├┤ ├┬┘
 -- └─┘└─┘└  └  └─┘┴└─
