@@ -134,19 +134,19 @@ wk.register({
 wk.register({
   p = {
     name = " Copilot",
-    a = { ":Copilot panel<CR>", " Panel" },
-    d = { ":Copilot disable<CR>", "󱈻 Disable" },
-    e = { ":Copilot enable<CR>", "󱈽 Enable" },
-    g = { "<Plug>(copilot-suggest)", "󱐀 Suggest" },
-    i = { ":Copilot auth<CR>", " Sign in" },
-    m = { "<Plug>(copilot-dismiss)", "󱗤 Dismiss suggestion" },
-    n = { "<Plug>(copilot-next)", " Next suggestion" },
-    o = { ":Copilot signout<CR>", " Sign out" },
-    p = { "<Plug>(copilot-previous)", " Previous suggestion" },
-    r = { ":Copilot restart<CR>", " Restart" },
-    s = { ":Copilot status<CR>", "󱖫 Status" },
-    u = { ":Copilot setup<CR>", " Setup" },
-    v = { ":Copilot version<CR>", " Version" },
+    a = { ":Copilot panel<CR>", "Panel" },
+    d = { ":Copilot disable<CR>", "Disable" },
+    e = { ":Copilot enable<CR>", "Enable" },
+    g = { "<Plug>(copilot-suggest)", "Suggest" },
+    i = { ":Copilot auth<CR>", "Sign In" },
+    m = { "<Plug>(copilot-dismiss)", "Dismiss Suggestion" },
+    n = { "<Plug>(copilot-next)", "Next Suggestion" },
+    o = { ":Copilot signout<CR>", "Sign Out" },
+    p = { "<Plug>(copilot-previous)", "Previous Suggestion" },
+    r = { ":Copilot restart<CR>", "Restart" },
+    s = { ":Copilot status<CR>", "Status" },
+    u = { ":Copilot setup<CR>", "Setup" },
+    v = { ":Copilot version<CR>", "Version" },
   }
 }, { prefix = "<Leader>" })
 
