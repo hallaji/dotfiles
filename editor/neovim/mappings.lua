@@ -373,11 +373,28 @@ wk.register({
 
 -- Normal mode with leader key
 wk.register({
+  ["<C-O>"] = { ":Telescope<CR>", "󰀶 Telescope" },
   t = {
     name = " ToDo",
     l = { ":TodoLocList<CR>", "Location List" },
     q = { ":TodoQuickFix<CR>", "Quick Fix List" },
     s = { ":TodoTelescope<CR>", "Search with Telescope" },
     t = { ":TodoTrouble<CR>", "Trouble List" },
+  },
+}, { mode = "n", prefix = "<Leader>" })
+
+-- ┌┬┐┬─┐┌─┐┬ ┬┌┐ ┬  ┌─┐
+--  │ ├┬┘│ ││ │├┴┐│  ├┤
+--  ┴ ┴└─└─┘└─┘└─┘┴─┘└─┘
+
+-- Normal mode with leader key
+wk.register({
+  ["<C-L>"] = { ":Trouble<CR>", " Trouble" },
+  i = {
+    name = " Trouble",
+    l = { ":Trouble<CR>", "List" },
+    t = { ":TroubleToggle<CR>", "Toggle" },
+    r = { ":TroubleRefresh<CR>", "Refresh" },
+    c = { ":TroubleClose<CR>", "Close" },
   },
 }, { mode = "n", prefix = "<Leader>" })
