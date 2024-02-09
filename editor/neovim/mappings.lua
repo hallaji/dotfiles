@@ -21,30 +21,30 @@ vim.keymap.set('v', '<Leader>y', '"*y') -- Copy to system clipboard in visual/se
 
 -- Normal mode
 wk.register({
-  Q = { "@q", " Replay macro recording" },
-  Y = { "y$", " Yank to the end of the line" },
+  Q = { "@q", " Replay Macro Recording" },
+  Y = { "y$", " Yank to the End" },
   ["<C-X>"] = { ":WhichKey<CR>", " Whichkey" },
 }, { mode = "n" })
 
 -- Normal mode with leader key
 wk.register({
-  ["<Space>"] = { ":nohlsearch<CR>", "󰸱 Remove search highlights" },
+  ["<Space>"] = { ":nohlsearch<CR>", "󰸱 Clear Search Highlights" },
   ["/"] = { "<Plug>NERDCommenterToggle", "󰆉 Comment" },
-  e = { ":set relativenumber!<CR>", " Toggle relative line numbers" },
-  i = { ":IndentLinesToggle<CR>", " Toggle indent marks" },
-  l = { ":Limelight!!<CR>", "󱟇 Toggle limelight mode" },
-  m = { "<Plug>MarkdownPreviewToggle", "󰽛 Preview markdown" },
-  n = { ":set norelativenumber number!<CR>", " Toggle line numbers" },
-  r = { function() vim.wo.colorcolumn = vim.wo.colorcolumn == "" and "80,120" or "" end, " Toggle rulers" },
-  s = { ":set spell! spelllang=en_au<CR>", "󰓆 Toggle spell check (en_au)" },
-  T = { ":lua MiniTrailspace.trim()<CR>", " Trim trailing spaces" },
-  w = { ":set wrap! wrap?<CR>", "󰖶 Toggle wrap mode" },
-  z = { ":ZenMode<CR>", "󰽏 Toggle zen mode" },
+  e = { ":set relativenumber!<CR>", " Relative Line Numbers" },
+  i = { ":IndentLinesToggle<CR>", " Indent Marks" },
+  l = { ":Limelight!!<CR>", "󱟇 Limelight Mode" },
+  m = { "<Plug>MarkdownPreviewToggle", "󰽛 Markdown Preview" },
+  n = { ":set norelativenumber number!<CR>", " Line Numbers" },
+  r = { function() vim.wo.colorcolumn = vim.wo.colorcolumn == "" and "80,120" or "" end, " Rulers" },
+  s = { ":set spell! spelllang=en_au<CR>", "󰓆 Spell Check" },
+  T = { ":lua MiniTrailspace.trim()<CR>", " Trim Trailing Spaces" },
+  w = { ":set wrap! wrap?<CR>", "󰖶 Wrap Mode" },
+  z = { ":ZenMode<CR>", "󰽏 Zen Mode" },
 }, { mode = "n", prefix = "<Leader>" })
 
 -- Visual or select mode with leader key
 wk.register({
-  ["<Space>"] = { ":nohlsearch<CR>", "󰸱 Remove search highlights" },
+  ["<Space>"] = { ":nohlsearch<CR>", "󰸱 Clear Search Highlights" },
   ["/"] = { "<Plug>NERDCommenterToggle", "󰆉 Comment" },
   p = { " Paste" },
   y = { " Copy" },
@@ -132,7 +132,7 @@ wk.register({
 
 -- Normal mode with leader key
 wk.register({
-  t = {
+  x = {
     name = "󰭻 GPT",
     c = { "<CMD>GpChatNew<CR>", "New Chat" },
     t = { "<CMD>GpChatToggle<CR>", "Toggle Chat" },
@@ -176,7 +176,7 @@ wk.register({
 
 -- Visual or select mode with leader key
 wk.register({
-  t = {
+  x = {
     name = "󰭻 GPT",
     c = { ":<C-u>'<,'>GpChatNew<CR>", "Visual Chat New" },
     p = { ":<C-u>'<,'>GpChatPaste<CR>", "Visual Chat Paste" },
@@ -360,3 +360,24 @@ wk.register({
     r = { "<Plug>(coc-references)", "Go to Reference" },
   },
 }, { mode = "n" })
+
+-- ┌┬┐┌─┐┌┬┐┌─┐  ┌─┐┌─┐┌┬┐┌┬┐┌─┐┌┐┌┌┬┐┌─┐
+--  │ │ │ │││ │  │  │ │││││││├┤ │││ │ └─┐
+--  ┴ └─┘─┴┘└─┘  └─┘└─┘┴ ┴┴ ┴└─┘┘└┘ ┴ └─┘
+
+-- Normal mode
+wk.register({
+  ["[o"] = { function() require("todo-comments").jump_prev() end, " Previous ToDo" },
+  ["]o"] = { function() require("todo-comments").jump_next() end, " Next ToDo" },
+}, { mode = "n" })
+
+-- Normal mode with leader key
+wk.register({
+  t = {
+    name = " ToDo",
+    l = { ":TodoLocList<CR>", "Location List" },
+    q = { ":TodoQuickFix<CR>", "Quick Fix List" },
+    s = { ":TodoTelescope<CR>", "Search with Telescope" },
+    t = { ":TodoTrouble<CR>", "Trouble List" },
+  },
+}, { mode = "n", prefix = "<Leader>" })
