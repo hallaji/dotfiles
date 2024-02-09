@@ -79,6 +79,16 @@ require("lazy").setup({
     dependencies = { "nvim-lua/plenary.nvim" },
     opts = {},
   }, -- https://github.com/folke/todo-comments.nvim
+  {
+    "folke/trouble.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    opts = {},
+  }, -- https://github.com/folke/trouble.nvim
+  {
+    "nvim-telescope/telescope.nvim",
+    tag = "0.1.5",
+    dependencies = { "nvim-lua/plenary.nvim" },
+  }, -- https://github.com/nvim-telescope/telescope.nvim
 
   -- ┌─┐┌─┐┌─┐┬─┐┌─┐┬ ┬
   -- └─┐├┤ ├─┤├┬┘│  ├─┤
