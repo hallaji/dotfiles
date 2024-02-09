@@ -295,7 +295,8 @@ Use `ESC` or `⌃[` to enter Normal mode.
 - `:help ctrlp-options`
 - `⌃p` Toggle CtrlP in file mode
   - `<Tab>` Auto-complete directory names
-  - `⌃f`, `⌃b` Cycle between "files", "buffers", "mru files" (most recently used files) or "mixed" (all three modes at the same time)
+  - `⌃f`, `⌃b` Cycle between "files", "buffers", "mru files" (most recently used
+    files) or "mixed" (all three modes at the same time)
   - `⌃d` Switch to filename only search instead of full path
   - `⌃r` Switch to regexp mode
   - `⌃k`, `⌃j` Navigate up and down in the results
@@ -311,14 +312,16 @@ Use `ESC` or `⌃[` to enter Normal mode.
   - `⌃g`, `⌃c`, `<Esc>` Exit
   - `..<CR>` Go up the directory tree by one or multiple levels
   - `?<CR>` Open mapping help
-  - `foo:<command>` Execute a command while opening the file e.g. `foo:25` jump to the line 25
+  - `foo:<command>` Execute a command while opening the file e.g. `foo:25` jump
+    to the line 25
   - `<F5>`
     - Refresh the match window and purge the cache for the current directory
     - Remove deleted files from the MRU list
   - `<F7>`
     - Bookmarkdir mode: Wipe bookmark list
     - MRU mode: Wipe the list and delete entries marked by `⌃z`
-    - Buffer mode: Delete entry under the cursor or delete multiple entries marked by `⌃z`
+    - Buffer mode: Delete entry under the cursor or delete multiple entries marked
+      by `⌃z`
 
 #### COC
 
@@ -350,7 +353,8 @@ Use `ESC` or `⌃[` to enter Normal mode.
 - `:G`, `⌃g` Bring up summary window
   - `<Enter>` Open the file
   - `<⌃n>` `<⌃p>` Move down an up between file names skipping blank lines in between
-  - `-` Stage or unstage the file or hunk under the cursor and multiple lines can also be selected (`git add`/`git reset`)
+  - `-` Stage or unstage the file or hunk under the cursor and multiple lines can
+    also be selected (`git add`/`git reset`)
   - `s` Stage a file/hunk under the cursor
   - `u` Unstage a file/hunk under the cursor
   - `U` Unstage everything
@@ -383,7 +387,8 @@ Use `ESC` or `⌃[` to enter Normal mode.
   - Delete the buffer afterward
 - `:GRemove` Like `:GDelete`, but keep the (now empty) buffer around
 - `:GMove` Rename the current file and the corresponding vim buffer `git-mv`
-- `:GRename` Like `:GMove` but operates relative to the parent directory of the current file
+- `:GRename` Like `:GMove` but operates relative to the parent directory of the
+  current file
 - `:GBrowse` Open the current file on Github with optional line range
 
 #### Git Gutter
