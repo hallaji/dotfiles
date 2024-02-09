@@ -49,7 +49,6 @@ require("lazy").setup({
   "vim-airline/vim-airline", -- https://github.com/vim-airline/vim-airline
   "vim-airline/vim-airline-themes", -- https://github.com/vim-airline/vim-airline-themes
   "edkolev/tmuxline.vim", -- https://github.com/edkolev/tmuxline.vim
-  "tpope/vim-vinegar", -- https://github.com/tpope/vim-vinegar
   "tpope/vim-surround", -- https://github.com/tpope/vim-surround
   "travisjeffery/vim-auto-mkdir", -- https://github.com/travisjeffery/vim-auto-mkdir
   "jeffkreeftmeijer/vim-numbertoggle", -- https://github.com/jeffkreeftmeijer/vim-numbertoggle
