@@ -312,21 +312,22 @@ wk.register({
 -- ┌─┐┌─┐┌─┐   ┬   ┌─┐┌┬┐┬─┐┬  ┌─┐┌─┐
 -- ├┤ ┌─┘├┤   ┌┼─  │   │ ├┬┘│  └─┐├┤
 -- └  └─┘└    └┘   └─┘ ┴ ┴└─┴─┘└─┘└
+-- https://github.com/dyng/ctrlsf.vim
 
 -- Normal mode with leader key
 wk.register({
   ["<C-F>"] = { ":FzfLua<CR>", "󰀶 Fuzzy Finder" },
   f = {
     name = " Find & Replace",
-    ["<Space>"] = { "<Plug>CtrlSFClearHL", "Clear highlights" },
-    c = { "<Plug>CtrlSFClose", "Close" },
-    f = { "<Plug>CtrlSFFocus", "Focus" },
+    ["<Space>"] = { ":CtrlSFClearHL<CR>", "Clear highlights" },
+    c = { ":CtrlSFClose<CR>", "Close" },
+    f = { ":CtrlSFFocus<CR>", "Focus" },
     l = { "<Plug>CtrlSFPwordPath", "Prompt Last Pattern" },
-    o = { "<Plug>CtrlSFOpen", "Open" },
+    o = { ":CtrlSFOpen<CR>", "Open" },
     p = { "<Plug>CtrlSFPrompt", "Prompt" },
-    s = { "<Plug>CtrlSFStop", "Stop Search" },
-    t = { "<Plug>CtrlSFToggle", "Toggle" },
-    u = { "<Plug>CtrlSFUpdate", "Update Results" },
+    s = { ":CtrlSFStop<CR>", "Stop Search" },
+    t = { ":CtrlSFToggle<CR>", "Toggle" },
+    u = { ":CtrlSFUpdate<CR>", "Update Results" },
     w = { "<Plug>CtrlSFCwordPath", "Prompt Under Cursor" },
     x = { "<Plug>CtrlSFCCwordPath", "Prompt Under Cursor with Boundary" },
   },
@@ -334,7 +335,7 @@ wk.register({
     name = "󰓈 Spotlight",
     b = { ":FzfLua buffers<CR>", "Buffers" },
   },
-}, { mode = "n", prefix = "<Leader>" })
+}, { mode = "n", prefix = "<Leader>", silent = false })
 
 -- Visual or select mode with leader key
 wk.register({
@@ -343,7 +344,7 @@ wk.register({
     e = { "<Plug>CtrlSFVwordExec", "Find Selected Area" },
     v = { "<Plug>CtrlSFVwordPath", "Prompt Selected Area" },
   },
-}, { mode = "v", prefix = "<Leader>" })
+}, { mode = "v", prefix = "<Leader>", silent = false })
 
 -- ┌─┐┌─┐┌─┐
 -- │  │ ││
