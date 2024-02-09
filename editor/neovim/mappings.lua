@@ -36,7 +36,7 @@ wk.register({
   m = { "<Plug>MarkdownPreviewToggle", "󰽛 Markdown Preview" },
   n = { ":set norelativenumber number!<CR>", " Line Numbers" },
   r = { function() vim.wo.colorcolumn = vim.wo.colorcolumn == "" and "80,120" or "" end, " Rulers" },
-  s = { ":set spell! spelllang=en_au<CR>", "󰓆 Spell Check" },
+  S = { ":set spell! spelllang=en_au<CR>", "󰓆 Spell Check" },
   T = { ":lua MiniTrailspace.trim()<CR>", " Trim Trailing Spaces" },
   w = { ":set wrap! wrap?<CR>", "󰖶 Wrap Mode" },
   z = { ":ZenMode<CR>", "󰽏 Zen Mode" },
