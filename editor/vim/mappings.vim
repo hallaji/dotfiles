@@ -187,15 +187,6 @@ nmap <silent> ]h :Gitsigns next_hunk<cr>
 nnoremap <silent> <C-G> :Git<cr>
 
 " ┌─┐┌─┐┌─┐
-" ├┤ ┌─┘├┤
-" └  └─┘└
-
-" @TODO: fzf mappings
-" nmap <leader><tab> <plug>(fzf-maps-n)
-" xmap <leader><tab> <plug>(fzf-maps-x)
-" omap <leader><tab> <plug>(fzf-maps-o)
-
-" ┌─┐┌─┐┌─┐
 " │  │ ││
 " └─┘└─┘└─┘
 
