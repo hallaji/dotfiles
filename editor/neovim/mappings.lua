@@ -64,13 +64,13 @@ wk.register({
   ["<C-J>"] = { " Go to Down Window" },
   ["<C-K>"] = { " Go to Up Window" },
   ["<C-L>"] = { " Go to Right Window" },
+  ["<C-\\>"] = { "󰮳 Go to Recent Window" },
 
   ["<C-Left>"] = { "<C-W><", " Resize Width" },
   ["<C-Down>"] = { "<C-W>-", " Resize Height" },
   ["<C-Up>"] = { "<C-W>+", " Resize Height" },
   ["<C-Right>"] = { "<C-W>>", "  Resize Width" },
 
-  ["<C-\\>"] = { "󰮳 Go to Recent Window" },
   ["<Tab>"] = { "<C-W>w", "󱞣 Circle Window Forward" },
   ["<S-Tab>"] = { "<C-W>W", "󱞡 Circle Window Backward" },
 
