@@ -103,6 +103,7 @@ fresh-options --filter=erb --file=~/.zshrc --marker
   type jump > /dev/null 2>&1 && fresh shell/zsh/tools/jump.sh
   type nnn > /dev/null 2>&1 && fresh shell/zsh/tools/nnn.sh
   type pyenv > /dev/null 2>&1 && fresh shell/zsh/tools/pyenv.sh
+  type pnpm > /dev/null 2>&1 && fresh shell/zsh/tools/pnpm.sh
   type starship > /dev/null 2>&1 && fresh shell/zsh/tools/starship.sh
   type terraform > /dev/null 2>&1 && fresh shell/zsh/tools/terraform.sh
 fresh-options
