@@ -26,7 +26,7 @@ require("lazy").setup({
   -- ││  │ ││││└─┐
   -- ┴└─┘└─┘┘└┘└─┘
 
-  "kyazdani42/nvim-web-devicons", -- https://github.com/kyazdani42/nvim-web-devicons
+  "nvim-tree/nvim-web-devicons", -- https://github.com/nvim-tree/nvim-web-devicons
   "ryanoasis/vim-devicons", -- https://github.com/ryanoasis/vim-devicons
 
   -- ┌┬┐┌─┐┌─┐┬  ┌─┐
