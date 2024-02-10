@@ -5,7 +5,6 @@
 # ██║╚██╗██║██║╚██╗██║██║╚██╗██║
 # ██║ ╚████║██║ ╚████║██║ ╚████║
 # ╚═╝  ╚═══╝╚═╝  ╚═══╝╚═╝  ╚═══╝
-#
 # https://github.com/mcchrish/nnn.vim
 # https://github.com/mcchrish/nnn.vim/blob/master/doc/nnn.txt
 

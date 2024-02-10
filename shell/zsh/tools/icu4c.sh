@@ -5,7 +5,6 @@
 # ██║██║     ██║   ██║╚════██║██║
 # ██║╚██████╗╚██████╔╝     ██║╚██████╗
 # ╚═╝ ╚═════╝ ╚═════╝      ╚═╝ ╚═════╝
-
 # https://icu.unicode.org/home
 
 export PATH="$(brew --prefix)/opt/icu4c/bin:$PATH"
