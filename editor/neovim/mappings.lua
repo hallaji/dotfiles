@@ -349,22 +349,6 @@ wk.register({
   },
 }, { mode = "v", prefix = "<Leader>", silent = false })
 
--- ┌─┐┌─┐┌─┐
--- │  │ ││
--- └─┘└─┘└─┘
-
--- Normal mode
-wk.register({
-  ["[g"] = { "<Plug>(coc-diagnostic-prev)", " Prev Diagnostic" },
-  ["]g"] = { "<Plug>(coc-diagnostic-next)", " Next Diagnostic" },
-  g = {
-    d = { "<Plug>(coc-definition)", "Go to Definition" },
-    y = { "<Plug>(coc-type-definition)", "Got to Type Definition" },
-    i = { "<Plug>(coc-implementation)", "Go to Implementation" },
-    r = { "<Plug>(coc-references)", "Go to Reference" },
-  },
-}, { mode = "n" })
-
 -- ┌┬┐┌─┐┌┬┐┌─┐  ┌─┐┌─┐┌┬┐┌┬┐┌─┐┌┐┌┌┬┐┌─┐
 --  │ │ │ │││ │  │  │ │││││││├┤ │││ │ └─┐
 --  ┴ └─┘─┴┘└─┘  └─┘└─┘┴ ┴┴ ┴└─┘┘└┘ ┴ └─┘
@@ -394,7 +378,7 @@ wk.register({
 -- Normal mode with leader key
 wk.register({
   ["<C-L>"] = { ":Trouble<CR>", " Trouble" },
-  i = {
+  e = {
     name = " Trouble",
     l = { ":Trouble<CR>", "List" },
     t = { ":TroubleToggle<CR>", "Toggle" },
@@ -402,3 +386,92 @@ wk.register({
     c = { ":TroubleClose<CR>", "Close" },
   },
 }, { mode = "n", prefix = "<Leader>" })
+
+-- ┌─┐┌─┐┌─┐
+-- │  │ ││
+-- └─┘└─┘└─┘
+
+-- Normal mode
+wk.register({
+  ["<C-G>"] = { "<Plug>(coc-range-select)" , "Forward Selection Range"},
+  ["[g"] = { "<Plug>(coc-diagnostic-prev)", " Go to Previous Diagnostic" },
+  ["]g"] = { "<Plug>(coc-diagnostic-next)", " Go to Next Diagnostic" },
+  ["<Space>"] = {
+    name = "󰁨 Intellisense",
+    a = { ":<C-U>CocList diagnostics<CR>", "Show All Diagnostics" },
+    c = { ":<C-U>CocList commands<CR>", "Show Commands" },
+    e = { ":<C-U>CocList extensions<CR>", "Manage Extensions" },
+    j = { ":<C-U>CocNext<CR>", "Invoke Default Action for Next Item" },
+    k = { ":<C-U>CocPrev<CR>", "Invoke Default Action for Previous Item" },
+    o = { ":<C-U>CocList outline<CR>", "Find Symbol" },
+    p = { ":<C-U>CocListResume<CR>", "Reopen Last Opened List" },
+    s = { ":<C-U>CocList -I symbols<CR>", "Search Workspace Symbols" },
+  },
+  K = { "<CMD>lua _G.show_docs()<CR>", "Show Documentation" },
+  g = {
+    name = " Goto",
+    d = { "<Plug>(coc-definition)", "Go to Definition" },
+    y = { "<Plug>(coc-type-definition)", "Got to Type Definition" },
+    i = { "<Plug>(coc-implementation)", "Go to Implementation" },
+    r = { "<Plug>(coc-references)", "Go to Reference" },
+  },
+}, { mode = "n" })
+
+
+-- Visual mode
+wk.register({
+  ["<C-G>"] = { "<Plug>(coc-range-select)" , "Forward Selection Range"},
+}, { mode = "x" })
+
+-- Insert mode
+wk.register({
+  ["<C-Space>"] = { "coc#refresh()", "Refresh Completion" },
+  ["<C-J>"] = { "<Plug>(coc-snippets-expand-jump)", "Jump Through Snippets" },
+  ["<CR>"] = { [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], "Confirm Selection / Format" },
+  ["<TAB>"] = { [[coc#pum#visible() ? coc#pum#next(1) : v:lua.check_back_space() ? "<TAB>" : coc#refresh()]], "Go to Next Completion / Refresh" },
+  ["<S-TAB>"] = { [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], "Go to Previous Completion / Backspace" },
+}, { mode = "i", expr = true })
+
+-- Normal mode with leader key
+wk.register({
+  i = {
+    name = "󰁨 Intellisense",
+    a = { "<Plug>(coc-codeaction-selected)", "Run Code Action for Selection" },
+    c = { "<Plug>(coc-codeaction-cursor)", "Run Code Action at Cursor" },
+    e = { "<Plug>(coc-codeaction-refactor-selected)", "Run Refactor Code Action(s) for Selection" },
+    f = { "<Plug>(coc-format-selected)", "Format Code" },
+    l = { "<Plug>(coc-codelens-action)", "Invoke Command from Code Lens" },
+    n = { "<Plug>(coc-rename)", "Rename Symbol" },
+    q = { "<Plug>(coc-fix-current)", "Run Quickfix Preferred Code Action on Line" },
+    r = { "<Plug>(coc-codeaction-refactor)", "Run Refactor Code Action(s)" },
+    s = { "<Plug>(coc-codeaction-source)", "Run Code Action at Current File/Source" },
+  },
+}, { mode = "n", prefix = "<Leader>" })
+
+-- Visual mode with leader key
+wk.register({
+  i = {
+    name = "󰁨 Intellisense",
+    f = { "<Plug>(coc-format-selected)", "Format Selected Code" },
+    a = { "<Plug>(coc-codeaction-selected)", "Run Code Action for Selection" },
+    r = { "<Plug>(coc-codeaction-refactor-selected)", "Run Refactor Code Action(s) for Selection" },
+  },
+}, { mode = "x", prefix = "<Leader>" })
+
+-- Map function and class text objects
+vim.keymap.set("x", "if", "<Plug>(coc-funcobj-i)", { silent = true, nowait = true })
+vim.keymap.set("o", "if", "<Plug>(coc-funcobj-i)", { silent = true, nowait = true })
+vim.keymap.set("x", "af", "<Plug>(coc-funcobj-a)", { silent = true, nowait = true })
+vim.keymap.set("o", "af", "<Plug>(coc-funcobj-a)", { silent = true, nowait = true })
+vim.keymap.set("x", "ic", "<Plug>(coc-classobj-i)", { silent = true, nowait = true })
+vim.keymap.set("o", "ic", "<Plug>(coc-classobj-i)", { silent = true, nowait = true })
+vim.keymap.set("x", "ac", "<Plug>(coc-classobj-a)", { silent = true, nowait = true })
+vim.keymap.set("o", "ac", "<Plug>(coc-classobj-a)", { silent = true, nowait = true })
+
+-- Remap <C-f> and <C-b> to scroll float windows/popups
+vim.keymap.set("n", "<C-F>", 'coc#float#has_scroll() ? coc#float#scroll(1) : "<C-f>"', { silent = true, nowait = true, expr = true })
+vim.keymap.set("n", "<C-B>", 'coc#float#has_scroll() ? coc#float#scroll(0) : "<C-b>"', { silent = true, nowait = true, expr = true })
+vim.keymap.set("i", "<C-F>", 'coc#float#has_scroll() ? "<c-r>=coc#float#scroll(1)<cr>" : "<Right>"', { silent = true, nowait = true, expr = true })
+vim.keymap.set("i", "<C-B>", 'coc#float#has_scroll() ? "<c-r>=coc#float#scroll(0)<cr>" : "<Left>"', { silent = true, nowait = true, expr = true })
+vim.keymap.set("v", "<C-F>", 'coc#float#has_scroll() ? coc#float#scroll(1) : "<C-f>"', { silent = true, nowait = true, expr = true })
+vim.keymap.set("v", "<C-B>", 'coc#float#has_scroll() ? coc#float#scroll(0) : "<C-b>"', { silent = true, nowait = true, expr = true })
