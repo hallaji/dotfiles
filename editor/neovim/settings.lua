@@ -11,10 +11,11 @@ vim.cmd('colorscheme catamaran')  -- set colorscheme
 
 -- General
 vim.o.encoding = "UTF-8" -- set encoding
-vim.opt.spell = true -- enable spell checking
+vim.opt.spell = false -- enable spell checking
 vim.opt.spelllang = "en_au" -- set spell checking language
 vim.g.mapleader = ',' -- set the leader key to comma
 vim.g.maplocalleader = '\\' -- set the local leader key to backslash
+vim.g.conceallevel = 0 -- set conceal level
 
 -- Tab and indentation
 vim.o.tabstop = 2 -- number of visual spaces per TAB
