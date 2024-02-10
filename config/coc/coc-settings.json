@@ -1,4 +1,5 @@
 {
+  "$schema": "https://raw.githubusercontent.com/neoclide/coc.nvim/master/data/schema.json",
   // https://github.com/neoclide/coc.nvim/wiki/Language-servers
   // https://github.com/neoclide/coc.nvim/blob/master/doc/coc-config.txt
   "colors.enable": true,
@@ -6,7 +7,6 @@
   "codeLens.position": "eol",
   "coc.preferences.formatOnType": true,
   "coc.preferences.formatOnSave": true,
-  "prettier.disableLanguages": ["kotlin", "java"],
   "suggest.completionItemKindLabels": {
     "text": "",
     "method": "",
@@ -35,23 +35,29 @@
     "typeParameter": "",
     "default": ""
   },
+  "floatFactory.floatConfig": {
+    "border": true,
+    "shadow": true,
+    "borderhighlight": "CocBorder"
+  },
   "suggest.floatConfig": {
     "border": true,
-    "shadow": false
+    "shadow": true,
+    "borderhighlight": "CocBorder"
   },
   "diagnostic.floatConfig": {
     "border": true,
-    "shadow": false
+    "shadow": true,
+    "borderhighlight": "CocBorder"
   },
   "signature.floatConfig": {
     "border": true,
-    "shadow": false
+    "shadow": true,
+    "borderhighlight": "CocBorder"
   },
   "hover.floatConfig": {
     "border": true,
-    "shadow": false
-  },
-  "go.goplsOptions": {
-    "buildFlags": ["-tags=integration"]
+    "shadow": true,
+    "borderhighlight": "CocBorder"
   }
 }
