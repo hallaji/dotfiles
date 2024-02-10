@@ -120,6 +120,7 @@ hi VertSplit ctermbg=234 ctermfg=234 guibg=#1f242a guifg=#1f242a
 hi Visual ctermbg=234 ctermfg=140 guibg=#1f242a guifg=#a394cd
 hi WildMenu ctermbg=234 ctermfg=51 guibg=#22272e guifg=#04f6f6
 hi! link CocMenuSel PmenuSel
+hi! link CocBorder FloatBorder
 hi! link FzfLuaBorder FloatBorder
 hi! link FzfLuaNormal NormalFloat
 hi! link NnnBorder FloatBorder
