@@ -56,3 +56,11 @@ if vim.fn.exists('+termguicolors') == 1 then -- check if terminal supports 24-bi
   vim.g.t_8b = "\\e[48;2;%lu;%lu;%lum" -- set 24-bit RGB color for background
   vim.o.termguicolors = true -- enable 24-bit RGB color
 end
+
+-- Neovim providers
+vim.g.loaded_perl_provider = 0 -- disable perl provider :help provider-perl
+vim.g.python3_host_prog = '~/.asdf/shims/python3' -- set python3 host program
+
+-- Some servers have issues with backup files https://github.com/neoclide/coc.nvim/issues/649
+vim.opt.backup = false -- disable backup
+vim.opt.writebackup = false -- disable writebackup
