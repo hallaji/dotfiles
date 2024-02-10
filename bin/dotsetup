@@ -74,6 +74,17 @@ fi
 
 
 cat << EOF
+┌┐┌┌─┐┌─┐┬  ┬┬┌┬┐  ┌─┐┬  ┬┌─┐┌┐┌┌┬┐┌─┐
+│││├┤ │ │└┐┌┘││││  │  │  │├┤ │││ │ └─┐
+┘└┘└─┘└─┘ └┘ ┴┴ ┴  └─┘┴─┘┴└─┘┘└┘ ┴ └─┘
+EOF
+
+pip3 install --upgrade pynvim # https://github.com/neovim/pynvim
+pnpm install -g neovim # https://github.com/neovim/node-client
+gem install neovim # https://github.com/neovim/neovim-ruby
+
+
+cat << EOF
 ┌─┐┌┬┐┬┌┬┐┌─┐┬─┐  ┌─┐┬  ┬ ┬┌─┐┬┌┐┌┌─┐
 ├┤  │││ │ │ │├┬┘  ├─┘│  │ ││ ┬││││└─┐
 └─┘─┴┘┴ ┴ └─┘┴└─  ┴  ┴─┘└─┘└─┘┴┘└┘└─┘
