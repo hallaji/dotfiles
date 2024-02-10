@@ -10,11 +10,21 @@
 require("which-key").setup {
   key_labels = {
     -- override the label used to display some keys. It doesn't effect WK in any other way.
+    ["<leader>"] = "󰸣",
     ["<space>"] = "󱁐",
+    ["<Space>"] = "󱁐",
     ["<Tab>"] = "󰌒",
     ["<S-Tab>"] = "󰘶󰌒",
     ["<CR>"] = "󰌑",
     ["<C-Bslash>"] = "󰘴\\",
+    ["<C-Down>"] = "󰘴",
+    ["<C-Up>"] = "󰘴",
+    ["<C-Right>"] = "󰘴",
+    ["<C-Left>"] = "󰘴",
+    ["<PageUp>"] = "󰛼",
+    ["<PageDown>"] = "󰛻",
+    ["<C-B>"] = "󰘴B",
+    ["<C-D>"] = "󰘴D",
     ["<C-F>"] = "󰘴F",
     ["<C-G>"] = "󰘴G",
     ["<C-H>"] = "󰘴H",
@@ -30,7 +40,9 @@ require("which-key").setup {
     ["<C-U>"] = "󰘴U",
     ["<C-V>"] = "󰘴V",
     ["<C-W>"] = "󰘴W",
+    ["<c-w>"] = "󰘴W",
     ["<C-X>"] = "󰘴X",
+    ["<C-Space>"] = "󰘴󱁐",
   },
   icons = {
     breadcrumb = "  ", -- symbol used in the command line area that shows your active key combo

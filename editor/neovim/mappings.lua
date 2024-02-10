@@ -24,6 +24,8 @@ wk.register({
   Q = { "@q", " Replay Macro Recording" },
   Y = { "y$", " Yank to the End" },
   ["<C-X>"] = { ":WhichKey<CR>", " Whichkey" },
+  ["<C-W>"] = { "<C-W>", " Window" },
+  ["<Leader>"] = { name = "󰸥 Leader" },
 }, { mode = "n" })
 
 -- Normal mode with leader key
