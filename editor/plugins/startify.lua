@@ -33,7 +33,7 @@ vim.g.startify_bookmarks = {
   { d = vim.fn.expand("$DOTFILES") }
 }
 vim.g.startify_lists = {
-  { type = 'files', header = {'   MRU'} }, -- Show most recently used files
+  -- { type = 'files', header = {'   MRU'} }, -- Show most recently used files
   { type = 'dir', header = {'   MRU ' .. vim.fn.getcwd()} }, -- Show most recently used files in current directory
   { type = 'sessions', header = {'   Sessions'} }, -- Show sessions
   { type = nerdtreeBookmarks, header = {'   NERDTree Bookmarks'} }, -- Show NERDTree bookmarks
