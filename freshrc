@@ -15,7 +15,7 @@ fresh freshshell/fresh contrib/source-build.sh --file=~/.zshrc
 
 fresh_after_build() {
   [ -n "$DOTFILES" ] && [ -f "$HOME/.Brewfile" ] && \
-    brew bundle dump --force --file="$DOTFILES/config/homebrew/Brewfile" > /dev/null 2>&1
+    brew bundle dump --describe --force --file="$DOTFILES/config/homebrew/Brewfile" > /dev/null 2>&1
 
   cd ~/.fresh/source/jarun/nnn && make O_GITSTATUS=1 O_NERD=1 &>/dev/null && \
     ln -sf ~/.fresh/source/jarun/nnn/nnn ~/bin/nnn
