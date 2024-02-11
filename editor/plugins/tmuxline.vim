@@ -13,16 +13,16 @@
 let g:tmuxline_powerline_separators = 0
 let g:tmuxline_preset = {
       \ 'a'       : ' #S',
-      \ 'cwin'    : [' #I #W'],
-      \ 'win'     : ['󰓩 #I #W'],
+      \ 'cwin'    : ['󰓩 #I', '#W'],
+      \ 'win'     : ['󰓪 #I', '#W'],
       \ 'y'       : [' #P'],
       \ 'z'       : [' #W'],
       \ 'options' : {'status-justify' : 'left'}}
 
 let g:tmuxline_separators = {
       \ 'left' : '',
-      \ 'left_alt': '',
+      \ 'left_alt': '󰁜',
       \ 'right' : '',
-      \ 'right_alt' : '',
+      \ 'right_alt' : '󰁛',
       \ 'space' : ' '
       \ }
