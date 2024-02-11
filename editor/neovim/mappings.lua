@@ -19,13 +19,25 @@ vim.keymap.set('x', 'p', 'pgvy') -- Recopy selected area on paste operation
 vim.keymap.set('v', '<Leader>p', '"*p') -- Paste from system clipboard in visual/select mode
 vim.keymap.set('v', '<Leader>y', '"*y') -- Copy to system clipboard in visual/select mode
 
+-- Insert mode
+wk.register({
+  ["<C-X>"] = { "<C-O>:WhichKey<CR>", " Whichkey" },
+}, { mode = "i" })
+
 -- Normal mode
 wk.register({
-  Q = { "@q", " Replay Macro Recording" },
-  Y = { "y$", " Yank to the End" },
   ["<C-X>"] = { ":WhichKey<CR>", " Whichkey" },
   ["<C-W>"] = { "<C-W>", " Window" },
+  ["<C-U>"] = { "<C-U>", "󰶣 Scroll Up" },
+  ["<C-D>"] = { "<C-D>", "󰶡 Scroll Down" },
+  ["<C-P>"] = { "<Plug>(ctrlp)", "󰀶 CtrlP Finder" },
+  ["["] = { name = "󰮳 Previous" },
+  ["]"] = { name = "󰮱 Next" },
+  ["<"] = { name = "󰉵 Indent Left" },
+  [">"] = { name = "󰉶 Indent Right" },
   ["<Leader>"] = { name = "󰸥 Leader" },
+  Q = { "@q", " Replay Macro Recording" },
+  Y = { "y$", " Yank to the End" },
 }, { mode = "n" })
 
 -- Normal mode with leader key
@@ -108,6 +120,17 @@ wk.register({
 -- ┌─┐┌─┐┌─┐┬┬  ┌─┐┌┬┐
 -- │  │ │├─┘││  │ │ │
 -- └─┘└─┘┴  ┴┴─┘└─┘ ┴
+
+-- Insert mode
+wk.register({
+  ["<C-L>"] = { "<Plug>(copilot-accept-line)", "󰿄 Accept Line Suggestion" },
+  ["<C-H>"] = { "<Plug>(copilot-accept-word)", "󰿄 Accept Word Suggestion" },
+}, { mode = "i" })
+
+-- Insert mode with expression
+wk.register({
+  ["<C-E>"] = { [[copilot#Accept("\\<CR>")]], "󰿄 Accept Copilot Suggestion" },
+}, { mode = "i", expr = true })
 
 -- Normal mode with leader key
 wk.register({
@@ -283,7 +306,7 @@ wk.register({
   ["<C-Q>"] = { ":q<CR>", "󰗼 Quit" },
 }, { mode = "n" })
 
--- insert mode
+-- Insert mode
 wk.register({
   ["<C-S>"] = { "<C-O>:update<CR>", " Save" },
   ["<C-Q>"] = { "<Esc>:q<CR>", "󰗼 Quit" },
@@ -417,7 +440,6 @@ wk.register({
   },
 }, { mode = "n" })
 
-
 -- Visual mode
 wk.register({
   ["<C-G>"] = { "<Plug>(coc-range-select)" , "Forward Selection Range"},
@@ -426,7 +448,7 @@ wk.register({
 -- Insert mode
 wk.register({
   ["<C-Space>"] = { "coc#refresh()", "Refresh Completion" },
-  ["<C-J>"] = { "<Plug>(coc-snippets-expand-jump)", "Jump Through Snippets" },
+  ["<C-F>"] = { "<Plug>(coc-snippets-expand-jump)", "Jump Through Snippets" },
   ["<CR>"] = { [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], "Confirm Selection / Format" },
   ["<TAB>"] = { [[coc#pum#visible() ? coc#pum#next(1) : v:lua.check_back_space() ? "<TAB>" : coc#refresh()]], "Go to Next Completion / Refresh" },
   ["<S-TAB>"] = { [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], "Go to Previous Completion / Backspace" },
