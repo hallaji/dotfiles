@@ -18,6 +18,7 @@ set foldcolumn=1 " Custom left padding for each window
 set cursorline " Highlight the text line of the cursor with CursorLine
 set cmdheight=1 " Command height under status line
 set nowrap " No wrap by default
+set clipboard+=unnamedplus " Use the system clipboard
 
 set tabstop=2 " Length of an actual \t character
 set shiftwidth=0 " Length to use when shifting text eg. <<, >> and == commands (0 for ‘tabstop’)

@@ -16,6 +16,7 @@ vim.opt.spelllang = "en_au" -- set spell checking language
 vim.g.mapleader = ',' -- set the leader key to comma
 vim.g.maplocalleader = '\\' -- set the local leader key to backslash
 vim.g.conceallevel = 0 -- set conceal level
+vim.opt.clipboard:append("unnamedplus") -- set clipboard to system clipboard
 
 -- Tab and indentation
 vim.o.tabstop = 2 -- number of visual spaces per TAB
