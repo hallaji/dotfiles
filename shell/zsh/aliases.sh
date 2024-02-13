@@ -31,7 +31,6 @@ alias ,gcp="change_gcloud_config" # @see shell/functions.sh
 alias ,cb="cointop price --coin bitcoin --currency aud"
 alias ,ce="cointop price --coin ethereum --currency aud"
 alias ,ske="ioreg -l -w 0 | perl -nle 'print $1 if /"kCGSSessionSecureInputPID"=(\d+)/' | uniq | xargs -I{} ps -p {} -o comm=" # https://github.com/koekeishiya/skhd/issues/48
-alias ,rga="gpgconf --kill gpg-agent" # Restart the GPG Agent
 
 # ┌─┐ ┬ ┬┬┌─┐┬┌─  ┌─┐┌┬┐┬┌┬┐
 # │─┼┐│ │││  ├┴┐  ├┤  │││ │
@@ -76,10 +75,11 @@ alias ,flh1="figlet -d ~/.figlet/ -f ANSI\ Shadow $*"
 alias ,flh2="figlet -d ~/.figlet/ -f Calvin\ S $*" # bold version with `-f future`
 alias ,flh3="figlet -d ~/.figlet/ -f wideterm $*"
 
-# ┌─┐┬─┐┌─┐┌┐┌┌┬┐┌─┐┌┬┐
-# │ ┬├┬┘├─┤│││ │ ├┤  ││
-# └─┘┴└─┴ ┴┘└┘ ┴ └─┘─┴┘
+# ┌─┐┌─┐┬─┐┬  ┬┬┌─┐┌─┐┌─┐
+# └─┐├┤ ├┬┘└┐┌┘││  ├┤ └─┐
+# └─┘└─┘┴└─ └┘ ┴└─┘└─┘└─┘
 
-# https://www.granted.dev
-
-alias assume=". assume"
+alias assume=". assume" # https://www.granted.dev
+alias ,rga="gpgconf --kill gpg-agent"
+alias ,ryabai="yabai --restart-service"
+alias ,rskhd="skhd --restart-service"
