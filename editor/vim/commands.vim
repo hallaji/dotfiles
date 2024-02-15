@@ -30,14 +30,3 @@ autocmd BufNewFile,BufRead freshrc set syntax=sh " Set `shell` syntax for freshr
 autocmd BufNewFile,BufRead * if expand('%:t') !~ '\.' | set syntax=sh | endif " Set shell syntax if any file has no extension
 autocmd BufNewFile,BufRead COMMIT_EDITMSG set syntax=gitcommit " Set `gitcommit` syntax for git commit message
 autocmd FileType gitcommit setlocal spell spelllang=en_au " Enable spell check in git commit message
-
-" ┌─┐┌┬┐┌─┐┬─┐┌┬┐┬ ┬┌─┐
-" └─┐ │ ├─┤├┬┘ │ │ │├─┘
-" └─┘ ┴ ┴ ┴┴└─ ┴ └─┘┴
-
-" autocmd VimEnter *
-"   \   if !argc()
-"   \ |   Startify
-"   \ |   NERDTree
-"   \ |   wincmd w
-"   \ | endif

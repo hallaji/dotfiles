@@ -44,11 +44,3 @@ vim.cmd([[autocmd BufNewFile,BufRead COMMIT_EDITMSG set syntax=gitcommit]])
 
 -- Enable spell check in git commit message
 vim.cmd([[autocmd FileType gitcommit setlocal spell spelllang=en_au]])
-
--- ┌─┐┌┬┐┌─┐┬─┐┌┬┐┬ ┬┌─┐
--- └─┐ │ ├─┤├┬┘ │ │ │├─┘
--- └─┘ ┴ ┴ ┴┴└─ ┴ └─┘┴
-
--- vim.cmd([[
---   autocmd VimEnter * if !argc() | Startify | NERDTree | wincmd w | endif
--- ]])
