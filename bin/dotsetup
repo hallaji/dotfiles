@@ -23,6 +23,7 @@ cat << EOF
 ┴ ┴└─┘─┴┘└    ┴  ┴─┘└─┘└─┘┴┘└┘└─┘
 EOF
 
+# https://github.com/asdf-vm/asdf-plugins
 plugins=(
   direnv # https://github.com/asdf-community/asdf-direnv
   golang # https://github.com/asdf-community/asdf-golang
@@ -37,6 +38,7 @@ plugins=(
   python # https://github.com/asdf-community/asdf-python
   ruby # https://github.com/asdf-vm/asdf-ruby
   pnpm # https://github.com/jonathanmorley/asdf-pnpm
+  redis # https://github.com/smashedtoatoms/asdf-redis
 )
 
 for item in ${plugins[@]}; do
