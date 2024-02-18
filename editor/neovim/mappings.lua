@@ -322,6 +322,7 @@ wk.register({
   b = {
     name = " Buffer",
     Q = { ":qa<CR>", "Quit all" },
+    a = { ":b#<CR>", "Alternate" },
     c = { ":bd<CR>", "Close" },
     f = { ":bfirst<CR>", "First" },
     h = { ":Startify<CR>", "Home" },
@@ -345,7 +346,7 @@ wk.register({
   ["<C-F>"] = { ":FzfLua<CR>", "󰀶 Fuzzy Finder" },
   f = {
     name = " Find & Replace",
-    ["<Space>"] = { ":CtrlSFClearHL<CR>", "Clear highlights" },
+    ["<Space>"] = { ":CtrlSFClearHL<CR>", "Clear Highlights" },
     c = { ":CtrlSFClose<CR>", "Close" },
     f = { ":CtrlSFFocus<CR>", "Focus" },
     l = { "<Plug>CtrlSFPwordPath", "Prompt Last Pattern" },
