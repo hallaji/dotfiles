@@ -133,29 +133,29 @@ fresh config/gh/dash/config.yml --file=~/.config/gh-dash/config.yml
 # NEOVIM
 
 fresh-options --file=~/.config/nvim/init.lua --filter=erb --marker='--'
-  fresh editor/neovim/settings.lua
-  fresh editor/neovim/commands.lua
-  fresh editor/themes/lualine/catamaran.lua
-  fresh editor/neovim/lazy.lua
-  fresh editor/plugins/\*.lua
-  fresh editor/neovim/mappings.lua
+  fresh editors/vim/settings.lua
+  fresh editors/vim/commands.lua
+  fresh editors/vim/themes/lualine/catamaran.lua
+  fresh editors/vim/lazy.lua
+  fresh editors/vim/plugins/\*.lua
+  fresh editors/vim/mappings.lua
 fresh-options
 
-fresh editor/themes/catamaran.vim --file=~/.config/nvim/colors/catamaran.vim --marker='"'
-fresh editor/themes/airline/catamaran.vim --file=~/.config/nvim/autoload/airline/themes/catamaran.vim --marker='"'
+fresh editors/vim/themes/catamaran.vim --file=~/.config/nvim/colors/catamaran.vim --marker='"'
+fresh editors/vim/themes/airline/catamaran.vim --file=~/.config/nvim/autoload/airline/themes/catamaran.vim --marker='"'
 
 # VIM
 
 fresh-options --file=~/.vimrc --filter=erb --marker='"'
-  fresh editor/vim/settings.vim
-  fresh editor/vim/commands.vim
-  fresh editor/vim/plug.vim
-  fresh editor/plugins/\*.vim
-  fresh editor/vim/mappings.vim
+  fresh editors/vim/settings.vim
+  fresh editors/vim/commands.vim
+  fresh editors/vim/plug.vim
+  fresh editors/vim/plugins/\*.vim
+  fresh editors/vim/mappings.vim
 fresh-options
 
-fresh editor/themes/catamaran.vim --file=~/.vim/colors/catamaran.vim --marker='"'
-fresh editor/themes/airline/catamaran.vim --file=~/.vim/autoload/airline/themes/catamaran.vim --marker='"'
+fresh editors/vim/themes/catamaran.vim --file=~/.vim/colors/catamaran.vim --marker='"'
+fresh editors/vim/themes/airline/catamaran.vim --file=~/.vim/autoload/airline/themes/catamaran.vim --marker='"'
 
 
 # ┌─┐┬┌┬┐
