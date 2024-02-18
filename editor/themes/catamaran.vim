@@ -89,6 +89,12 @@ hi NvimTreeFolderIcon ctermbg=None ctermfg=169 guibg=NONE guifg=#e86db2
 hi NvimTreeOpenedFile ctermfg=140 guifg=#04f6f6 gui=bold,underline
 hi! link NvimTreeFolderName NvimTreeFolderIcon
 
+hi! link ctrlsfMatch NvimTreeOpenedFile
+hi! link ctrlsfFilename NvimTreeFolderIcon
+hi! link ctrlsfLnumMatch NvimTreeFolderIcon
+hi! link ctrlsfSearching DiffDelete
+hi! link ctrlsfSearchDone DiffAdd
+
 hi IncSearch cterm=reverse ctermfg=NONE gui=reverse guifg=NONE term=reverse
 hi Search ctermbg=238 ctermfg=169 guibg=#3c4552 guifg=#e86db2
 hi MiniTrailspace ctermbg=204 guibg=#ff4b82
@@ -117,7 +123,7 @@ hi PmenuSbar ctermbg=234 ctermfg=NONE guibg=#1f242a guifg=NONE
 hi PmenuSel ctermbg=51 ctermfg=234 guibg=#04f6f6 guifg=#1f242a
 hi PmenuThumb ctermbg=169 ctermfg=NONE guibg=#e86db2 guifg=NONE
 hi VertSplit ctermbg=234 ctermfg=234 guibg=#1f242a guifg=#1f242a
-hi Visual ctermbg=234 ctermfg=140 guibg=#1f242a guifg=#a394cd
+hi Visual ctermbg=234 ctermfg=140 guibg=#a394cd guifg=#1f242a
 hi WildMenu ctermbg=234 ctermfg=51 guibg=#22272e guifg=#04f6f6
 hi! link CocMenuSel PmenuSel
 hi! link CocBorder FloatBorder
