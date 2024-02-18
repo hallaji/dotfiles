@@ -9,8 +9,9 @@
 ╚═════╝  ╚═════╝    ╚═╝   ╚═╝     ╚═╝╚══════╝╚══════╝╚══════╝
 ```
 
-My dotfiles including configurations for both the shell and Vim are managed by [fresh](https://freshshell.com).
-Read [cheat sheet](docs/CHEATSHEET.md) for current key bindings and commands.
+> Disclaimer: The configurations are specifically tailored for my personal use.
+> Feel free to draw inspiration for your dotfiles, but please be advised that it
+> is provided 'as is' without any guarantees or warranty.
 
 ## Prerequisites
 
@@ -32,15 +33,15 @@ brand new machine by simply running the command above.
 
 ### 2. Running Setup Binary
 
-```
+```shell
 dotsetup
 ```
 
-This script is now accessible and automates the process of setting up and configuring
-a development environment. It handles plugin and tool management using the ASDF
-version manager, installs Homebrew packages, installs Vim plugins, GitHub CLI
-extensions, and more such as nnn plugins. Additionally, it initiates specific
-services like yabai, skhd, and sketchybar.
+This script automates the process of setting up and configuring a development
+environment. It handles plugin and tool management using the ASDF version manager,
+installs Homebrew packages, installs Vim plugins, GitHub CLI extensions, and more
+such as nnn plugins. Additionally, it initiates specific services like yabai, skhd,
+etc.
 
 > Note: Brew can facilitate dependencies installations because of a fresh Brewfile
 > symlinked into home directory `~/.Brewfile`.
