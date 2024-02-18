@@ -25,7 +25,7 @@ vim.g.tmuxline_preset = { -- Use the following preset:
   win = {'󰓪 #I #W' },
   y = { ' #P#{window_panes}' },
   z = { ' #W' },
-  options = { ['status-justify'] = 'centre' } -- left, centre, or right
+  options = { ['status-justify'] = 'left' } -- left, centre, or right
 }
 
 vim.g.tmuxline_theme = {
