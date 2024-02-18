@@ -27,8 +27,6 @@ require'nvim-treesitter.configs'.setup {
     "html",
     "java",
     "javascript",
-    "jsdoc",
-    "json",
     "kotlin",
     "lua",
     "php",
@@ -53,7 +51,8 @@ require'nvim-treesitter.configs'.setup {
 
   -- List of parsers to ignore installing (or "all")
   ignore_install = {
-    "jsonc",
+    "json",
+    "jsdoc",
     "markdown",
     "markdown_inline",
   },
