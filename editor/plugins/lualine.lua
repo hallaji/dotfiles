@@ -7,6 +7,10 @@
 -- ╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝╚═╝  ╚═══╝╚══════╝
 -- https://github.com/nvim-lualine/lualine.nvim
 
+local function spell()
+  return vim.wo.spell and "󰓆 [" .. vim.o.spelllang .. "]" or ""
+end
+
 require('lualine').setup {
   options = {
     theme = catamaran,
@@ -15,7 +19,7 @@ require('lualine').setup {
     globalstatus = true,
   },
   sections = {
-    lualine_a = { 'mode' },
+    lualine_a = { 'mode', spell },
     lualine_b = {
       { 'branch', icon = { '' } },
       'diff',
