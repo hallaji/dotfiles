@@ -133,12 +133,12 @@ fresh config/gh/dash/config.yml --file=~/.config/gh-dash/config.yml
 # NEOVIM
 
 fresh-options --file=~/.config/nvim/init.lua --filter=erb --marker='--'
-  fresh editor/neovim/settings.lua # settings must be first
+  fresh editor/neovim/settings.lua
   fresh editor/neovim/commands.lua
   fresh editor/themes/lualine/catamaran.lua
   fresh editor/neovim/lazy.lua
   fresh editor/plugins/\*.lua
-  fresh editor/neovim/mappings.lua # mappings must be last
+  fresh editor/neovim/mappings.lua
 fresh-options
 
 fresh editor/themes/catamaran.vim --file=~/.config/nvim/colors/catamaran.vim --marker='"'
@@ -147,11 +147,11 @@ fresh editor/themes/airline/catamaran.vim --file=~/.config/nvim/autoload/airline
 # VIM
 
 fresh-options --file=~/.vimrc --filter=erb --marker='"'
-  fresh editor/vim/settings.vim #settings must be first
+  fresh editor/vim/settings.vim
+  fresh editor/vim/commands.vim
   fresh editor/vim/plug.vim
   fresh editor/plugins/\*.vim
-  fresh editor/vim/commands.vim
-  fresh editor/vim/mappings.vim # mappings must be last
+  fresh editor/vim/mappings.vim
 fresh-options
 
 fresh editor/themes/catamaran.vim --file=~/.vim/colors/catamaran.vim --marker='"'
