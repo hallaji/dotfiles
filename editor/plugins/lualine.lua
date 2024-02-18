@@ -7,9 +7,14 @@
 -- ╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝╚═╝  ╚═══╝╚══════╝
 -- https://github.com/nvim-lualine/lualine.nvim
 
-local function spell()
-  return vim.wo.spell and "󰓆 [" .. vim.o.spelllang .. "]" or ""
-end
+local function spell() return vim.wo.spell and "󰓆 [" .. vim.o.spelllang .. "]" or "" end
+local function ctrlp() return "ControlP" end
+local function ctrlsf() return "CtrlSF" end
+local function nnn() return "NNN" end
+
+local ControlP = { sections = { lualine_a = { ctrlp } }, filetypes = {'ctrlp'} }
+local ControlSF = { sections = { lualine_a = { 'mode' }, lualine_z = { ctrlsf } }, filetypes = {'ctrlsf'} }
+local Nnn = { sections = { lualine_a = { nnn } }, filetypes = {'nnn'} }
 
 require('lualine').setup {
   options = {
@@ -64,10 +69,12 @@ require('lualine').setup {
           startify = 'Startify',
           TelescopePrompt = 'Telescope',
           fzf = 'FZF',
+          nnn = 'NNN',
+          ctrlsf = "CtrlSF",
         },
         symbols = {
           modified = ' ●',
-          alternate_file = ' ',
+          alternate_file = '󱞫 ',
           directory =  ' ',
         },
       }
@@ -105,5 +112,8 @@ require('lualine').setup {
     'lazy',
     'quickfix',
     'trouble',
+    ControlP,
+    ControlSF,
+    Nnn,
   },
 }
