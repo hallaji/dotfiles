@@ -68,10 +68,10 @@
 
 ## OS Shortcuts (macOS)
 
-Checkout keyboard [keymaps](../keyboards) and [Keycodes](https://github.com/qmk/qmk_firmware/blob/master/docs/keycodes.md).
-
 - `HYPR` Control, Shift, Alt and GUI = `⌃⇧⌥⌘`
 - `LCAG` Control, Alt and GUI = `⌃⇧⌥`
+
+Checkout keyboard [keymaps](../keyboards) and [Keycodes](https://github.com/qmk/qmk_firmware/blob/master/docs/keycodes.md).
 
 - `⌘ + SPACE` Toogle search (Alfred)
 - `HYPR + BACKTICK` Toggle macOS menu bar (via SKHD)
@@ -283,6 +283,34 @@ Use `ESC` or `⌃[` to enter Normal mode.
 [junegunn/vim-plug](https://github.com/junegunn/vim-plug)
 
 - `:Plug<tab>` Choose a command
+
+#### CtrlSF
+
+[dyng/ctrlsf.vim](https://github.com/dyng/ctrlsf.vim?tab=readme-ov-file#key-maps)
+
+In CtrlSF window:
+
+- `Enter`, `o` - Open corresponding file of current line in the window which
+  CtrlSF is launched from.
+- `<C-O>` Like Enter but open file in a horizontal split window.
+- `t` Like Enter but open file in a new tab.
+- `p` Like Enter but open file in a preview window.
+- `P` Like Enter but open file in a preview window and switch focus to it.
+- `O` Like Enter but always leave CtrlSF window opening.
+- `T` Like `t` but focus CtrlSF window instead of new opened tab.
+- `M` Switch result window between normal view and compact view.
+- `q` Quit CtrlSF window.
+- `⌃J` Move cursor to next match.
+- `⌃N` Move cursor to next file's first match.
+- `⌃K` Move cursor to previous match.
+- `⌃P` Move cursor to previous file's first match.
+- `⌃C` Stop a background searching process.
+- `⌃T` (If you have fzf installed) Use fzf for faster navigation. In the fzf
+  window, use `<Enter>` to focus specific match and `⌃O` to open matched file.
+
+In preview window:
+
+- `q` Close preview window.
 
 #### CtrlP
 
