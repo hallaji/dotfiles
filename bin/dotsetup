@@ -93,7 +93,7 @@ cat << EOF
 EOF
 
 nvim --headless "+Lazy! sync" "+qa"
-nvim "+CocUpdate" "+GoUpdateBinaries" "+TmuxlineSnapshot! ~/.tmux-statusline-colors.conf" "+qa"
+nvim "+CocUpdate" "+GoUpdateBinaries" "+Tmuxline" "+TmuxlineSnapshot! ~/.tmux-statusline-colors.conf" "+qa"
 vim "+PlugUpgrade" "+PlugUpdate" "+CocUpdate" "+GoUpdateBinaries" "+qa"
 
 cat << EOF

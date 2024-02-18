@@ -46,8 +46,6 @@ require("lazy").setup({
   "cocopon/colorswatch.vim", -- https://github.com/cocopon/colorswatch.vim
   "cocopon/inspecthi.vim", -- https://github.com/cocopon/inspecthi.vim
   "editorconfig/editorconfig-vim", -- https://github.com/editorconfig/editorconfig-vim
-  "vim-airline/vim-airline", -- https://github.com/vim-airline/vim-airline
-  "vim-airline/vim-airline-themes", -- https://github.com/vim-airline/vim-airline-themes
   "edkolev/tmuxline.vim", -- https://github.com/edkolev/tmuxline.vim
   "tpope/vim-surround", -- https://github.com/tpope/vim-surround
   "travisjeffery/vim-auto-mkdir", -- https://github.com/travisjeffery/vim-auto-mkdir
@@ -88,6 +86,10 @@ require("lazy").setup({
     tag = "0.1.5",
     dependencies = { "nvim-lua/plenary.nvim" },
   }, -- https://github.com/nvim-telescope/telescope.nvim
+  {
+    'nvim-lualine/lualine.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' }
+  }, -- https://github.com/nvim-lualine/lualine.nvim
 
   -- ┌─┐┌─┐┌─┐┬─┐┌─┐┬ ┬
   -- └─┐├┤ ├─┤├┬┘│  ├─┤
