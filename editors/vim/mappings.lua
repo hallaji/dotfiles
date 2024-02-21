@@ -278,6 +278,11 @@ wk.register({
       r = { ":DiffviewRefresh<CR>", "Refresh" },
       t = { ":Gitsigns diffthis<CR>", "This" },
     },
+    l = {
+      name = "󰌷 Link",
+      c = { ":GitLink<CR>", " Copy Code Permalink" },
+      o = { ":GitLink!<CR>", " Open Code Permalink" },
+    },
     p = { ":Gitsigns preview_hunk<CR>", "Preview hunk" },
     q = { ":Gitsigns setqflist<CR>", "Quick Fix (Buffer)" },
     r = { ":Gitsigns reset_hunk<CR>", "Reset Hunk" },
@@ -295,6 +300,18 @@ wk.register({
     v = { ":Gitsigns select_hunk<CR>", "Select Hunk" },
   },
 }, { mode = "n", prefix = "<Leader>" })
+
+-- Visual or select mode with leader key
+wk.register({
+  g = {
+    name = " Git",
+    l = {
+      name = "󰌷 Link",
+      c = { ":<C-u>'<,'>GitLink<CR>", " Copy Code Permalink" },
+      o = { ":<C-u>'<,'>GitLink!<CR>", " Open Code Permalink" },
+    },
+  },
+}, { mode="v", prefix = "<Leader>" })
 
 -- ┌┐ ┬ ┬┌─┐┌─┐┌─┐┬─┐
 -- ├┴┐│ │├┤ ├┤ ├┤ ├┬┘

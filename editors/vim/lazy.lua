@@ -62,8 +62,8 @@ require("lazy").setup({
   "robitx/gp.nvim", -- https://github.com/Robitx/gp.nvim
   "declancm/cinnamon.nvim", -- https://github.com/declancm/cinnamon.nvim
   {
-    'echasnovski/mini.nvim', -- https://github.com/echasnovski/mini.nvim
-    version = '*'
+    "echasnovski/mini.nvim", -- https://github.com/echasnovski/mini.nvim
+    version = "*"
   },
   {
     "iamcco/markdown-preview.nvim", -- https://github.com/iamcco/markdown-preview.nvim
@@ -87,9 +87,17 @@ require("lazy").setup({
     dependencies = { "nvim-lua/plenary.nvim" },
   }, -- https://github.com/nvim-telescope/telescope.nvim
   {
-    'nvim-lualine/lualine.nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons' }
+    "nvim-lualine/lualine.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" }
   }, -- https://github.com/nvim-lualine/lualine.nvim
+  {
+    "linrongbin16/gitlinker.nvim",
+    config = function()
+      require("gitlinker").setup({
+        message = false,
+      })
+    end,
+  }, -- https://github.com/linrongbin16/gitlinker.nvim
 
   -- ┌─┐┌─┐┌─┐┬─┐┌─┐┬ ┬
   -- └─┐├┤ ├─┤├┬┘│  ├─┤
