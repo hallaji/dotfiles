@@ -368,7 +368,7 @@ wk.register({
     f = { ":CtrlSFFocus<CR>", "Focus" },
     l = { "<Plug>CtrlSFPwordPath", "Prompt Last Pattern" },
     o = { ":CtrlSFOpen<CR>", "Open" },
-    p = { "<Plug>CtrlSFPrompt", "Prompt" },
+    p = { ":CtrlSF -hidden ", "Prompt" },
     s = { ":CtrlSFStop<CR>", "Stop Search" },
     t = { ":CtrlSFToggle<CR>", "Toggle" },
     u = { ":CtrlSFUpdate<CR>", "Update Results" },
