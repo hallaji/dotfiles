@@ -255,11 +255,3 @@ fresh config/1password/ssh/agent.toml --file=~/.config/1Password/ssh/agent.toml
 # └─┘└─┘└─┘
 
 fresh config/coc/coc-settings.json --file=~/.config/nvim/coc-settings.json
-
-# ┌─┐┬  ┌─┐┬─┐┌─┐┌┬┐
-# ├─┤│  ├┤ ├┬┘├┤  ││
-# ┴ ┴┴─┘└  ┴└─└─┘─┴┘
-
-fresh hallaji/notion-workflow . \
-  --filter=erb \
-  --file=~/.sync/Dropbox/Alfred/Alfred.alfredpreferences/workflows/notion/
