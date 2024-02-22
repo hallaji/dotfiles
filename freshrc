@@ -21,6 +21,7 @@ fresh_after_build() {
     ln -sf ~/.fresh/source/jarun/nnn/nnn ~/bin/nnn
 
   chmod +x ~/.yabairc
+  chmod +x ~/.config/sketchybar/plugins/*
 }
 
 # ┌─┐┌┐┌┬  ┬
@@ -255,3 +256,18 @@ fresh config/1password/ssh/agent.toml --file=~/.config/1Password/ssh/agent.toml
 # └─┘└─┘└─┘
 
 fresh config/coc/coc-settings.json --file=~/.config/nvim/coc-settings.json
+
+# ┌─┐┬┌─┌─┐┌┬┐┌─┐┬ ┬┬ ┬┌┐ ┌─┐┬─┐
+# └─┐├┴┐├┤  │ │  ├─┤└┬┘├┴┐├─┤├┬┘
+# └─┘┴ ┴└─┘ ┴ └─┘┴ ┴ ┴ └─┘┴ ┴┴└─
+
+fresh config/sketchybar/sketchybarrc --file=~/.config/sketchybar/sketchybarrc
+fresh config/sketchybar/plugins/battery.sh --file=~/.config/sketchybar/plugins/battery.sh
+fresh config/sketchybar/plugins/clock.sh --file=~/.config/sketchybar/plugins/clock.sh
+fresh config/sketchybar/plugins/front_app.sh --file=~/.config/sketchybar/plugins/front_app.sh
+fresh config/sketchybar/plugins/space.sh --file=~/.config/sketchybar/plugins/space.sh
+fresh config/sketchybar/plugins/volume.sh --file=~/.config/sketchybar/plugins/volume.sh
+
+# fresh-options --file=~/.config/sketchybar/plugins/\*
+#   fresh config/sketchybar/plugins/\*
+# fresh-options
