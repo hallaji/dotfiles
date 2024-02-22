@@ -360,7 +360,7 @@ wk.register({
 
 -- Normal mode with leader key
 wk.register({
-  ["<C-F>"] = { ":FzfLua<CR>", "󰀶 Fuzzy Finder" },
+  ["<C-F>"] = { ":CtrlSF -hidden ", " Find & Replace" },
   f = {
     name = " Find & Replace",
     ["<Space>"] = { ":CtrlSFClearHL<CR>", "Clear Highlights" },
