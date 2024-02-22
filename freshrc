@@ -21,7 +21,6 @@ fresh_after_build() {
     ln -sf ~/.fresh/source/jarun/nnn/nnn ~/bin/nnn
 
   chmod +x ~/.yabairc
-  chmod +x ~/.config/sketchybar/plugins/*
 }
 
 # ┌─┐┌┐┌┬  ┬
