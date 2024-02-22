@@ -89,12 +89,6 @@ hi NvimTreeFolderIcon ctermbg=None ctermfg=169 guibg=NONE guifg=#e86db2
 hi NvimTreeOpenedFile ctermfg=140 guifg=#04f6f6 gui=bold,underline
 hi! link NvimTreeFolderName NvimTreeFolderIcon
 
-hi! link ctrlsfMatch NvimTreeOpenedFile
-hi! link ctrlsfFilename NvimTreeFolderIcon
-hi! link ctrlsfLnumMatch NvimTreeFolderIcon
-hi! link ctrlsfSearching DiffDelete
-hi! link ctrlsfSearchDone DiffAdd
-
 hi IncSearch cterm=reverse ctermfg=NONE gui=reverse guifg=NONE term=reverse
 hi Search ctermbg=238 ctermfg=169 guibg=#3c4552 guifg=#e86db2
 hi MiniTrailspace ctermbg=204 guibg=#ff4b82
@@ -121,7 +115,7 @@ hi NormalFloat ctermbg=234 ctermfg=250 guibg=#1f242a guifg=#adbac7
 hi Pmenu ctermbg=234 ctermfg=238 guibg=#1f242a guifg=#3c4552
 hi PmenuSbar ctermbg=234 ctermfg=NONE guibg=#1f242a guifg=NONE
 hi PmenuSel ctermbg=51 ctermfg=234 guibg=#04f6f6 guifg=#1f242a
-hi PmenuThumb ctermbg=169 ctermfg=NONE guibg=#e86db2 guifg=NONE
+hi PmenuThumb ctermbg=169 ctermfg=NONE guibg=#e86db2 guifg=#1f242a
 hi VertSplit ctermbg=234 ctermfg=234 guibg=#1f242a guifg=#1f242a
 hi Visual ctermbg=234 ctermfg=140 guibg=#a394cd guifg=#1f242a
 hi WildMenu ctermbg=234 ctermfg=51 guibg=#22272e guifg=#04f6f6
@@ -156,6 +150,13 @@ hi DiagnosticUnderlineError cterm=underline ctermfg=204 gui=underline guisp=#ff4
 hi DiagnosticUnderlineHint cterm=underline ctermfg=103 gui=underline guisp=#8296aa term=underline
 hi DiagnosticUnderlineInfo cterm=underline ctermfg=75 gui=underline guisp=#6fc1ff term=underline
 hi DiagnosticUnderlineWarn cterm=underline ctermfg=215 gui=underline guisp=#f5b168 term=underline
+
+hi! link ctrlsfMatch NvimTreeOpenedFile
+hi! link ctrlsfFilename NvimTreeFolderIcon
+hi! link ctrlsfLnumMatch NvimTreeFolderIcon
+hi! link ctrlsfSearching DiffDelete
+hi! link ctrlsfSearchDone DiffAdd
+hi! link ctrlsfSelectedLine PmenuThumb
 
 hi! link CocErrorSign DiagnosticError
 hi! link CocHintSign DiagnosticHint
