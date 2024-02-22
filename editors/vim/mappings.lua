@@ -261,7 +261,7 @@ wk.register({
 
 -- Normal mode with leader key
 wk.register({
-  ["<C-G>"] = { ":Git<CR>", " Fugitive" },
+  ["<C-G>"] = { ":vertical Git<CR>", " Fugitive" },
   ["<C-T>"] = { ":Tig<CR>", " Tig" },
   g = {
     name = " Git",
