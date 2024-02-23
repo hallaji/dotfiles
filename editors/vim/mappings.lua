@@ -16,8 +16,6 @@ local wk = require("which-key")
 
 vim.keymap.set('n', '<C-n>i', '<C-i>') -- Use <C-n>i to send <C-i> because <C-i> is same as <tab> when received by vim. Check Alacritty bindings for <C-i>
 vim.keymap.set('x', 'p', 'pgvy') -- Recopy selected area on paste operation
-vim.keymap.set('v', '<Leader>p', '"*p') -- Paste from system clipboard in visual/select mode
-vim.keymap.set('v', '<Leader>y', '"*y') -- Copy to system clipboard in visual/select mode
 
 -- Insert mode
 wk.register({
@@ -158,6 +156,7 @@ wk.register({
 
 -- Normal mode with leader key
 wk.register({
+  ["<C-X>"] = { "<CMD>GpChatNew<CR>", "󰭻 GPT" },
   x = {
     name = "󰭻 GPT",
     c = { "<CMD>GpChatNew<CR>", "New Chat" },
