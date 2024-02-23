@@ -38,7 +38,7 @@ alias ,tls='nvim "+Tmuxline" "+TmuxlineSnapshot! ~/.tmux/statusline-colors.conf"
 # └─┘└└─┘┴└─┘┴ ┴  └─┘─┴┘┴ ┴
 
 alias ,e="$EDITOR" # https://github.com/neovim/neovim
-alias ,ls="n -Aeoi" # https://github.com/jarun/nnn
+alias ,ls="n -AHei" # https://github.com/jarun/nnn
 alias ,dot="cd $DOTFILES && $EDITOR"
 
 # ┌─┐┬┌┬┐
