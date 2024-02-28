@@ -24,14 +24,15 @@ alias ,b="wallpaper set-solid-color $*"
 alias ,a="open --background 'lungo:toggle'" # Toogle computer awake mode (Lungo)
 alias ,h="history"
 alias ,hs="history | grep $* -i"
-alias ,cd="change_source_directory" # @see shell/functions.sh
-alias ,ed="edit_source_directory" # @see shell/functions.sh
-alias ,aws="change_aws_profile" # @see shell/functions.sh
-alias ,gcp="change_gcloud_config" # @see shell/functions.sh
+alias ,cd="change_source_directory"
+alias ,ed="edit_source_directory"
+alias ,aws="change_aws_profile"
+alias ,gcp="change_gcloud_config"
 alias ,cb="cointop price --coin bitcoin --currency aud"
 alias ,ce="cointop price --coin ethereum --currency aud"
 alias ,ske="ioreg -l -w 0 | perl -nle 'print $1 if /"kCGSSessionSecureInputPID"=(\d+)/' | uniq | xargs -I{} ps -p {} -o comm=" # https://github.com/koekeishiya/skhd/issues/48
 alias ,tls='nvim "+Tmuxline" "+TmuxlineSnapshot! ~/.tmux/statusline-colors.conf" "+qa"'
+alias ,ss="shasum -a 256 $* | cut -d ' ' -f 1" # Get SHA256 hash for downloaded file to verify integrity
 
 # ┌─┐ ┬ ┬┬┌─┐┬┌─  ┌─┐┌┬┐┬┌┬┐
 # │─┼┐│ │││  ├┴┐  ├┤  │││ │
