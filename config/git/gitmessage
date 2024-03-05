@@ -7,23 +7,23 @@
 # [optional body]
 # [optional footer(s)]
 #
-# +-----------+----------------------------------------------------------+----------+
-# | Type      |                                                          | Semver   |
-# +-----------+----------------------------------------------------------+----------+
-# | any of    | A commit that has a footer:                              | MAJOR    |
-# | following | BREAKING CHANGE: <description>                           |          |
-# | types     | AND/OR                                                   | BREAKING |
-# |           | A commit that has a `!` before colon `:`                 | CHANGE   |
-# |           | <type>[optional scope]!: <description>                   |          |
-# +-----------+----------------------------------------------------------+----------+
-# | feat      | A new feature, introducing a new feature to the codebase | MINOR    |
-# | fix       | A bug fix, patching a bug in your codebase               | PATCH    |
-# | refactor  | A change that neither fixes a bug nor adds a feature     | -        |
-# | docs      | Documentation only changes                               | -        |
-# | perf      | A code change that improves performance                  | -        |
-# | test      | Adding missing or correcting existing tests              | -        |
-# | chore     | Changes to the build process or auxiliary tools          | -        |
-# | ci        | Changes to the continuous integration                    | -        |
-# | build     | Changes to the build process or code generation          | -        |
-# | style     | Changes that do not affect the meaning of the code       | -        |
-# +-----------+----------------------------------------------------------+----------+
+# +-----------+-------------------------------------------------+----------+
+# | Type      |                                                 | Semver   |
+# +-----------+-------------------------------------------------+----------+
+# | any of    | A commit that has a footer:                     | MAJOR    |
+# | following | BREAKING CHANGE: <description>                  |          |
+# | types     | AND/OR                                          | BREAKING |
+# |           | A commit that has a `!` before colon `:`        | CHANGE   |
+# |           | <type>[optional scope]!: <description>          |          |
+# +-----------+-------------------------------------------------+----------+
+# | feat      | Adds a new feature to the codebase              | MINOR    |
+# | fix       | Fixes a bug in the codebase                     | PATCH    |
+# | refactor  | Code improvement, no feature or bug fix         | -        |
+# | docs      | Documentation updates                           | -        |
+# | perf      | Performance improvement                         | -        |
+# | test      | Adds missing or fixes existing tests            | -        |
+# | chore     | Changes to the build process or auxiliary tools | -        |
+# | ci        | Changes to the continuous integration           | -        |
+# | build     | Changes to the build process or code generation | -        |
+# | style     | Non-functional code style changes               | -        |
+# +-----------+-------------------------------------------------+----------+
