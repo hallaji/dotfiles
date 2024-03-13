@@ -103,15 +103,14 @@ Checkout keyboard [keymaps](../keyboards) and [Keycodes](https://github.com/qmk/
 - `⌃⌥⌘ + r` Rotate windows
 - `⌃⌥⌘ + y` Mirror tree y-axis
 - `⌃⌥⌘ + x` Mirror tree x-axis
-- `⌃⌥⌘ + p` Toggle picture-in-picture
+- `⌃⌥⌘ + a` Toggle float (only on bsp spaces)
+- `⌃⌥⌘ + p` Toggle split vertically or horizontally with parent node
 - `⌃⌥⌘ + e` Toggle layout
 - `⌃⌥⌘ + s` Toggle sticky (show on all spaces)
 - `⌃⌥⌘ + f` Toggle window fullscreen zoom
 - `⌃⌥⌘ + d` Toggle window parent zoom
 - `⌃⌥⌘ + o` Toggle desktop offset
 - `⌃⌥⌘ + w` Destroy space (desktop)
-- `⌃⌥⌘ + c` Move window to previous space
-- `⌃⌥⌘ + z` Move window to next space
 - `⌃⌥⌘ + n` Create a desktop and follow focus
 - `⌃⌥⌘ + m` Create a desktop, move focused window and follow focus
 - `⌃⌥⌘ + 0` Balance size of windows
