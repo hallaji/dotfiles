@@ -17,16 +17,6 @@ vim.g.mapleader = ',' -- set the leader key to comma
 vim.g.maplocalleader = '\\' -- set the local leader key to backslash
 vim.opt.clipboard:append("unnamedplus") -- set clipboard to system clipboard
 
--- Tab and indentation
-vim.o.tabstop = 2 -- number of visual spaces per TAB
-vim.o.shiftwidth = 0 -- number of spaces to use for autoindent, 0 uses tabstop
-vim.o.softtabstop = 0 -- number of spaces in tab when editing, 0 uses tabstop
-vim.o.shiftround = true -- round indent to multiple of shiftwidth
-vim.o.expandtab = true -- use spaces instead of tabs when indenting
-vim.o.autoindent = true -- copy indent from current line when starting a new line
-vim.o.smartindent = true -- smarter indenting for C-like languages
-vim.cmd('filetype plugin indent on') -- enable filetype detection, plugins, and indenting
-
 -- Interface
 vim.wo.number = true -- show line numbers
 vim.o.ruler = true -- show cursor position
