@@ -15,7 +15,6 @@ prSections:
     filters: is:open author:@me draft:true
   - title: Mentions
     filters: is:open mentions:@me sort:created-desc # org:cultureamp
-    limit: 50 # optional limit per section
 issuesSections:
   - title: My Issues
     filters: is:open author:@me
