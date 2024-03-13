@@ -3,10 +3,8 @@ tap "common-fate/granted"
 tap "felixkratz/formulae"
 tap "hashicorp/tap"
 tap "homebrew/bundle"
-tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
-tap "homebrew/core"
 tap "homebrew/services"
 tap "koekeishiya/formulae"
 tap "moncho/dry"
@@ -144,6 +142,8 @@ brew "nghttp2"
 brew "nmap"
 # Manage multiple Node.js versions
 brew "nvm"
+# SSL/TLS VPN implementing OSI layer 2 or 3 secure network extension
+brew "openvpn"
 # Terminal multiplexer
 brew "tmux"
 # Process manager for Procfile-based applications and tmux
@@ -232,6 +232,8 @@ cask "alacritty"
 cask "alfred"
 # Securely stores and accesses AWS credentials in a development environment
 cask "aws-vault"
+# Menu bar icon organiser
+cask "bartender"
 # Automated testing of webapps for Google Chrome
 cask "chromedriver"
 # Universal database tool and SQL client
@@ -303,6 +305,8 @@ cask "monodraw"
 cask "mpv"
 # App to write, plan, collaborate, and get organised
 cask "notion"
+# Client program for the OpenVPN Access Server
+cask "openvpn-connect"
 # GUI client for PostgreSQL databases
 cask "postico"
 # Collaboration platform for API development
