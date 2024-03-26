@@ -52,3 +52,7 @@ change_gcloud_config() {
   fi
   zle && { zle reset-prompt; zle -R }
 }
+
+add_gopath() {
+  export PATH="$PATH:$(go env GOPATH)/bin"
+}
