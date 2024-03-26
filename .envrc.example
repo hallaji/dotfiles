@@ -31,7 +31,7 @@ export SIGNING_KEY_GPG="gpg-signing-key"
 # └─┘┴ ┴ ┴ ┴└─┘└─┘
 
 export GITHUB_USER="github-user"
-export GITHUB_TOKEN="github-public-pat"
+export GITHUB_ACCESS_TOKEN="github-public-pat"
 export GITHUB_REGISTRY_TOKEN="github-registry-pat"
 
 # ┌─┐┌─┐┌─┐┌┐┌┌─┐┬
