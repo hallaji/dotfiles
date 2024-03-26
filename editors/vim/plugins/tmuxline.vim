@@ -21,7 +21,7 @@ let g:tmuxline_preset = {
   \ 'a': [' #S'],
   \ 'b': ['󰓩 #I#(tmux list-windows | wc -l | tr -d " ")'],
   \ 'c': [' #{pane_current_command}'],
-  \ 'cwin': ['󰓩  #W'],
+  \ 'cwin': ['󰓩 #I #W'],
   \ 'win': ['󰓪 #I #W'],
   \ 'y': [' #P#{window_panes}'],
   \ 'z': [' #W'],
