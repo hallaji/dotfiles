@@ -112,6 +112,7 @@ cat << EOF
 └─┘┴ ┴ ┴ ┴└─┘└─┘  └─┘┴─┘┴
 EOF
 
+gh extension install github/gh-copilot
 gh extension install dlvhdr/gh-dash
 gh extension install jrnxf/gh-eco
 gh extension install mislav/gh-branch

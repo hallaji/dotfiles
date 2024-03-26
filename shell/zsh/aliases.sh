@@ -64,8 +64,9 @@ alias ,ghb="gh browse"
 alias ,ghd="gh dash"
 alias ,ghp="gh eco"
 alias ,ghbr="gh branch"
-alias ,ghie="gh inspire"
+alias ,ghi="gh inspire"
 alias ,ghgi="gh gitignore"
+alias ,ghc="gh copilot"
 
 # ┌─┐┬┌─┐┬  ┌─┐┌┬┐
 # ├┤ ││ ┬│  ├┤  │
