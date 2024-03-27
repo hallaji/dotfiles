@@ -49,7 +49,6 @@ require("lazy").setup({
   "edkolev/tmuxline.vim", -- https://github.com/edkolev/tmuxline.vim
   "tpope/vim-surround", -- https://github.com/tpope/vim-surround
   "travisjeffery/vim-auto-mkdir", -- https://github.com/travisjeffery/vim-auto-mkdir
-  "jeffkreeftmeijer/vim-numbertoggle", -- https://github.com/jeffkreeftmeijer/vim-numbertoggle
   "preservim/vimux", -- https://github.com/preservim/vimux
   "preservim/nerdcommenter", -- https://github.com/preservim/nerdcommenter
   "Yggdroot/indentLine", -- https://github.com/Yggdroot/indentLine

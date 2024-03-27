@@ -36,7 +36,6 @@ Plug 'edkolev/tmuxline.vim' " https://github.com/edkolev/tmuxline.vim
 Plug 'tpope/vim-vinegar' " https://github.com/tpope/vim-vinegar
 Plug 'tpope/vim-surround' " https://github.com/tpope/vim-surround
 Plug 'travisjeffery/vim-auto-mkdir' " https://github.com/travisjeffery/vim-auto-mkdir
-Plug 'jeffkreeftmeijer/vim-numbertoggle' " https://github.com/jeffkreeftmeijer/vim-numbertoggle
 Plug 'preservim/vimux' " https://github.com/preservim/vimux
 Plug 'preservim/nerdcommenter' " https://github.com/preservim/nerdcommenter
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' } " https://github.com/iamcco/markdown-preview.nvim

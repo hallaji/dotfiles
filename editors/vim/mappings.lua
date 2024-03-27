@@ -42,12 +42,12 @@ wk.register({
 wk.register({
   ["<Space>"] = { ":nohlsearch<CR>", "󰸱 Clear Search Highlights" },
   ["/"] = { "<Plug>NERDCommenterToggle", "󰆉 Comment" },
-  e = { ":set relativenumber!<CR>", " Relative Line Numbers" },
   h = { ":checkhealth<CR>", "󰩂 Check Health" },
   I = { ":IndentLinesToggle<CR>", " Indent Marks" },
   l = { ":Limelight!!<CR>", "󱟇 Limelight Mode" },
   m = { "<Plug>MarkdownPreviewToggle", "󰽛 Markdown Preview" },
   n = { ":set norelativenumber number!<CR>", " Line Numbers" },
+  N = { ":set relativenumber!<CR>", " Relative Line Numbers" },
   r = { function() vim.wo.colorcolumn = vim.wo.colorcolumn == "" and "80,120" or "" end, " Rulers" },
   S = { ":set spell! spelllang=en_au<CR>", "󰓆 Spell Check" },
   T = { ":lua MiniTrailspace.trim()<CR>", " Trim Trailing Spaces" },

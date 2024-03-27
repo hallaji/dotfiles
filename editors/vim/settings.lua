@@ -19,6 +19,7 @@ vim.opt.clipboard:append("unnamedplus") -- set clipboard to system clipboard
 
 -- Interface
 vim.wo.number = true -- show line numbers
+vim.wo.relativenumber = true -- show relative line numbers
 vim.o.ruler = true -- show cursor position
 vim.wo.colorcolumn = "80,120" -- set color column
 vim.wo.foldcolumn = "1" -- set fold column

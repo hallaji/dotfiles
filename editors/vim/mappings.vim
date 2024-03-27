@@ -43,8 +43,8 @@ nmap <leader>z :ZenMode<cr>
 nnoremap <C-X> :WhichKey<cr>
 nnoremap <leader>i :IndentLinesToggle<cr>
 nnoremap <leader>l :Limelight!!<cr>
-nnoremap <leader>e :set relativenumber!<cr>
 nnoremap <leader>n :set norelativenumber \| :set number!<cr>
+nnoremap <leader>N :set relativenumber!<cr>
 nnoremap <leader>r :execute "set colorcolumn=" . (&colorcolumn == "" ? "80,120" : "")<cr>
 nnoremap <leader>s :set spell! spelllang=en_au<cr>
 nnoremap <leader>w :set wrap! wrap?<cr>
