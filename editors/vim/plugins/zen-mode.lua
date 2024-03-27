@@ -8,7 +8,17 @@
 -- https://github.com/folke/zen-mode.nvim
 
 require("zen-mode").setup {
+  window = {
+    options = {
+      relativenumber = false,
+    },
+  },
   plugins = {
-    tmux = { enabled = true }, -- tmux statusline
+    options = {
+      laststatus = 0,
+    },
+    tmux = {
+      enabled = true,
+    },
   },
 }
