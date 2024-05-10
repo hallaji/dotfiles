@@ -26,8 +26,6 @@ alias ,h="history"
 alias ,hs="history | grep $* -i"
 alias ,cd="change_source_directory"
 alias ,ed="edit_source_directory"
-alias ,aws="change_aws_profile"
-alias ,gcp="change_gcloud_config"
 alias ,cb="cointop price --coin bitcoin --currency aud"
 alias ,ce="cointop price --coin ethereum --currency aud"
 alias ,ske="ioreg -l -w 0 | perl -nle 'print $1 if /"kCGSSessionSecureInputPID"=(\d+)/' | uniq | xargs -I{} ps -p {} -o comm=" # https://github.com/koekeishiya/skhd/issues/48
@@ -83,7 +81,10 @@ alias ,flh3="figlet -d ~/.figlet/ -f wideterm $*"
 # └─┐├┤ ├┬┘└┐┌┘││  ├┤ └─┐
 # └─┘└─┘┴└─ └┘ ┴└─┘└─┘└─┘
 
-alias assume=". assume" # https://www.granted.dev
+alias ,aws=". assume" # https://www.granted.dev
+alias ,awsi="aws sts get-caller-identity"
+alias ,awsc="change_aws_profile"
+alias ,gcpc="change_gcloud_config"
 alias ,rga="gpgconf --kill gpg-agent"
 alias ,ryabai="yabai --restart-service"
 alias ,rskhd="skhd --restart-service"
