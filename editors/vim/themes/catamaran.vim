@@ -190,6 +190,12 @@ hi SpellCap ctermbg=103 ctermfg=234 gui=undercurl guifg=NONE guisp=#8296aa
 hi SpellLocal ctermbg=103 ctermfg=234 gui=undercurl guifg=NONE guisp=#8296aa
 hi SpellRare ctermbg=103 ctermfg=234 gui=undercurl guifg=NONE guisp=#8296aa
 
+" ┌┬┐┌─┐┬  ┌─┐┌─┐┌─┐┌─┐┌─┐┌─┐
+"  │ ├┤ │  ├┤ └─┐│  │ │├─┘├┤
+"  ┴ └─┘┴─┘└─┘└─┘└─┘└─┘┴  └─┘
+
+hi! link TelescopeBorder FloatBorder
+
 hi! link CtrlPMatch Title
 hi! link CtrlPMode2 StatusLine
 hi! link CtrlPPrtCursor Cursor

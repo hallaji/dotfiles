@@ -9,6 +9,7 @@
 -- https://neovim.io/doc/user/lua-guide.html#lua-guide-mappings
 
 local wk = require("which-key")
+local builtin = require('telescope.builtin')
 
 -- ┌─┐┌─┐┌┐┌┌─┐┬─┐┌─┐┬
 -- │ ┬├┤ │││├┤ ├┬┘├─┤│
@@ -376,7 +377,7 @@ wk.register({
   },
   s = {
     name = "󰓈 Spotlight",
-    b = { ":FzfLua buffers<CR>", "Buffers" },
+    b = { ":Telescope buffers<CR>", " Buffers" },
   },
 }, { mode = "n", prefix = "<Leader>", silent = false })
 
