@@ -10,6 +10,10 @@ tap "koekeishiya/formulae"
 tap "moncho/dry"
 tap "osx-cross/arm"
 tap "osx-cross/avr"
+# New file format for still image compression
+brew "jpeg-xl"
+# Codec library for encoding and decoding AV1 video streams
+brew "aom"
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@3"
 # Companion library to apr, the Apache Portable Runtime library
@@ -70,6 +74,8 @@ brew "gnutls"
 brew "harfbuzz"
 # Multi-format archive and compression library
 brew "libarchive"
+# Open Visual Inference And Optimization toolkit for AI inference
+brew "openvino"
 # Framework for layout and rendering of i18n text
 brew "pango"
 # OCR (Optical Character Recognition) engine
@@ -84,6 +90,8 @@ brew "fzf"
 brew "gdk-pixbuf"
 # GitHub command-line tool
 brew "gh"
+# Interpreter for PostScript and PDF
+brew "ghostscript"
 # Distributed revision control system
 brew "git"
 # Passphrase entry dialog utilizing the Assuan protocol
@@ -114,6 +122,8 @@ brew "jo"
 brew "jq"
 # Helps you navigate your file system faster by learning your habits
 brew "jump"
+# Open-source distributed event streaming platform
+brew "kafka"
 # Command-line tool to kill processes listening on a specific port
 brew "killport"
 # Network authentication protocol
@@ -301,8 +311,6 @@ cask "meetingbar"
 cask "miro"
 # Tool to create text-based art
 cask "monodraw"
-# Media player based on MPlayer and mplayer2
-cask "mpv"
 # App to write, plan, collaborate, and get organised
 cask "notion"
 # Client program for the OpenVPN Access Server
@@ -321,8 +329,6 @@ cask "robo-3t"
 cask "safari-technology-preview"
 # MySQL/MariaDB database management platform
 cask "sequel-pro"
-# Digital design and prototyping platform
-cask "sketch"
 # Video chat, voice call and instant messaging application
 cask "skype"
 # Team communication and collaboration software
@@ -333,6 +339,8 @@ cask "soundsource"
 cask "spotify"
 # Video game digital distribution service
 cask "steam"
+# Media player based on MPlayer and mplayer2
+cask "stolendata-mpv"
 # Unpacks archive files
 cask "the-unarchiver"
 # Open-source code editor
@@ -399,7 +407,9 @@ vscode "redhat.vscode-commons"
 vscode "redhat.vscode-xml"
 vscode "redhat.vscode-yaml"
 vscode "shopify.ruby-lsp"
+vscode "stylelint.vscode-stylelint"
 vscode "techer.open-in-browser"
+vscode "timonwong.shellcheck"
 vscode "tinkertrain.theme-panda"
 vscode "twxs.cmake"
 vscode "unifiedjs.vscode-mdx"
