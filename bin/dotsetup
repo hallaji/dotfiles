@@ -145,5 +145,6 @@ cat << EOF
 └─┘└─┘┴└─ └┘ ┴└─┘└─┘└─┘
 EOF
 
-yabai --restart-service
-skhd --restart-service
+yabai --restart-service # https://github.com/koekeishiya/yabai
+skhd --restart-service # https://github.com/koekeishiya/skhd
+brew services restart borders # https://github.com/FelixKratz/JankyBorders
