@@ -20,7 +20,8 @@ fresh_after_build() {
   cd ~/.fresh/source/jarun/nnn && make O_GITSTATUS=1 O_NERD=1 &>/dev/null && \
     ln -sf ~/.fresh/source/jarun/nnn/nnn ~/bin/nnn
 
-  chmod +x ~/.yabairc
+  # chmod +x ~/.yabairc
+  type aerospace > /dev/null 2>&1 && aerospace reload-config --no-gui
 }
 
 # ┌─┐┌┐┌┬  ┬
@@ -53,17 +54,29 @@ fresh-options
 fresh tmux-plugins/tpm . --file=~/.tmux/plugins/tpm/
 fresh config/tmux/tmux.conf --file=~/.tmux.conf
 
+# ┌─┐┌─┐┬─┐┌─┐  ┌─┐┌─┐┌─┐┌─┐┌─┐
+# ├─┤├┤ ├┬┘│ │  └─┐├─┘├─┤│  ├┤
+# ┴ ┴└─┘┴└─└─┘  └─┘┴  ┴ ┴└─┘└─┘
+
+fresh config/aerospace/aerospace.toml --file=~/.aerospace.toml
+
 # ┬ ┬┌─┐┌┐ ┌─┐┬
 # └┬┘├─┤├┴┐├─┤│
 #  ┴ ┴ ┴└─┘┴ ┴┴
 
-fresh config/yabai/yabai.conf --file=~/.yabairc
+# fresh config/yabai/yabai.conf --file=~/.yabairc
 
 # ┌─┐┬┌─┬ ┬┌┬┐
 # └─┐├┴┐├─┤ ││
 # └─┘┴ ┴┴ ┴─┴┘
 
 fresh config/skhd/skhd.conf --file=~/.skhdrc
+
+# ┌┐ ┌─┐┬─┐┌┬┐┌─┐┬─┐┌─┐
+# ├┴┐│ │├┬┘ ││├┤ ├┬┘└─┐
+# └─┘└─┘┴└──┴┘└─┘┴└─└─┘
+
+fresh config/borders/bordersrc --file=~/.config/borders/bordersrc
 
 # ┌─┐┬ ┬┌─┐┬  ┬
 # └─┐├─┤├┤ │  │

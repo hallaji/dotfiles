@@ -1,0 +1,89 @@
+# ╔═╗╔═╗╦═╗╔═╗  ╔═╗╔═╗╔═╗╔═╗╔═╗
+# ╠═╣║╣ ╠╦╝║ ║  ╚═╗╠═╝╠═╣║  ║╣
+# ╩ ╩╚═╝╩╚═╚═╝  ╚═╝╩  ╩ ╩╚═╝╚═╝
+# https://github.com/nikitabobko/AeroSpace
+# https://nikitabobko.github.io/AeroSpace/config-examples
+
+after-login-command = []
+after-startup-command = []
+start-at-login = false
+
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
+accordion-padding = 30
+
+default-root-container-layout = "tiles" # tiles|accordion
+default-root-container-orientation = "auto" # horizontal|vertical|auto
+key-mapping.preset = "qwerty" # qwerty|dvorak
+
+[gaps]
+inner.horizontal = 24
+inner.vertical =   24
+outer.left =       18
+outer.bottom =     18
+outer.top =        18
+outer.right =      18
+
+[exec]
+inherit-env-vars = true
+
+[exec.env-vars]
+PATH = "/opt/homebrew/bin:/opt/homebrew/sbin:${PATH}"
+
+# [workspace-to-monitor-force-assignment]
+# 1 = "main"
+# 6 = "secondary"
+
+[mode.main.binding]
+alt-ctrl-cmd-m = "mode move"
+alt-ctrl-cmd-s = "mode service"
+alt-ctrl-cmd-1 = "workspace 1"
+alt-ctrl-cmd-2 = "workspace 2"
+alt-ctrl-cmd-3 = "workspace 3"
+alt-ctrl-cmd-4 = "workspace 4"
+alt-ctrl-cmd-5 = "workspace 5"
+alt-ctrl-cmd-6 = "workspace 6"
+alt-slash = "layout tiles horizontal vertical"
+alt-comma = "layout accordion horizontal vertical"
+alt-ctrl-cmd-0 = "flatten-workspace-tree"
+alt-ctrl-cmd-minus = "resize smart -100"
+alt-ctrl-cmd-equal = "resize smart +100"
+alt-ctrl-cmd-w = "close"
+alt-ctrl-cmd-q = "close-all-windows-but-current"
+alt-ctrl-cmd-d = "macos-native-minimize"
+alt-ctrl-cmd-f = "fullscreen"
+alt-ctrl-cmd-space = "macos-native-fullscreen"
+alt-ctrl-cmd-esc = "macos-native-fullscreen off"
+alt-ctrl-cmd-r = "layout horizontal vertical"
+alt-ctrl-cmd-backtick = "focus-monitor next --wrap-around"
+alt-ctrl-cmd-h = "focus --boundaries all-monitors-outer-frame --boundaries-action stop left"
+alt-ctrl-cmd-j = "focus --boundaries all-monitors-outer-frame --boundaries-action stop down"
+alt-ctrl-cmd-k = "focus --boundaries all-monitors-outer-frame --boundaries-action stop up"
+alt-ctrl-cmd-l = "focus --boundaries all-monitors-outer-frame --boundaries-action stop right"
+alt-ctrl-cmd-right = "workspace --wrap-around next"
+alt-ctrl-cmd-left = "workspace --wrap-around prev"
+alt-ctrl-cmd-tab = "workspace-back-and-forth"
+
+[mode.move.binding]
+esc = "mode main"
+alt-ctrl-cmd-esc = "mode main"
+alt-ctrl-cmd-h= ["move left", "mode main"]
+alt-ctrl-cmd-j = ["move down", "mode main"]
+alt-ctrl-cmd-k = ["move up", "mode main"]
+alt-ctrl-cmd-l = ["move right", "mode main"]
+alt-ctrl-cmd-1 = ["move-node-to-workspace 1", "workspace 1", "mode main"]
+alt-ctrl-cmd-2 = ["move-node-to-workspace 2", "workspace 2", "mode main"]
+alt-ctrl-cmd-3 = ["move-node-to-workspace 3", "workspace 3", "mode main"]
+alt-ctrl-cmd-4 = ["move-node-to-workspace 4", "workspace 4", "mode main"]
+alt-ctrl-cmd-5 = ["move-node-to-workspace 5", "workspace 5", "mode main"]
+alt-ctrl-cmd-6 = ["move-node-to-workspace 6", "workspace 6", "mode main"]
+alt-ctrl-cmd-n = ["move-node-to-workspace --wrap-around next", "mode main"]
+alt-ctrl-cmd-p = ["move-node-to-workspace --wrap-around prev", "mode main"]
+alt-ctrl-cmd-backtick = ["move-workspace-to-monitor --wrap-around next", "mode main"]
+
+[mode.service.binding]
+esc = ["reload-config", "mode main"]
+alt-ctrl-cmd-esc = ["reload-config", "mode main"]
+r = ["flatten-workspace-tree", "mode main"] # Reset layout
+f = ["layout floating tiling", "mode main"] # Toggle between floating and tiling layout
+backspace = ["close-all-windows-but-current", "mode main"]

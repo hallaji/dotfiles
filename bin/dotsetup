@@ -145,6 +145,6 @@ cat << EOF
 └─┘└─┘┴└─ └┘ ┴└─┘└─┘└─┘
 EOF
 
-yabai --restart-service # https://github.com/koekeishiya/yabai
 skhd --restart-service # https://github.com/koekeishiya/skhd
 brew services restart borders # https://github.com/FelixKratz/JankyBorders
+aerospace reload-config --no-gui # https://github.com/nikitabobko/AeroSpace

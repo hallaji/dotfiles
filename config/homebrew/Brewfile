@@ -8,6 +8,7 @@ tap "homebrew/cask-versions"
 tap "homebrew/services"
 tap "koekeishiya/formulae"
 tap "moncho/dry"
+tap "nikitabobko/tap"
 tap "osx-cross/arm"
 tap "osx-cross/avr"
 # New file format for still image compression
@@ -64,8 +65,6 @@ brew "dooit"
 brew "exercism"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
-# GNU compiler collection
-brew "gcc"
 # Validating, recursive, caching DNS resolver
 brew "unbound"
 # GNU Transport Layer Security (TLS) Library
@@ -74,8 +73,6 @@ brew "gnutls"
 brew "harfbuzz"
 # Multi-format archive and compression library
 brew "libarchive"
-# Open Visual Inference And Optimization toolkit for AI inference
-brew "openvino"
 # Framework for layout and rendering of i18n text
 brew "pango"
 # OCR (Optical Character Recognition) engine
@@ -86,6 +83,8 @@ brew "ffmpeg"
 brew "figlet"
 # Command-line fuzzy finder written in Go
 brew "fzf"
+# GNU compiler collection
+brew "gcc"
 # Toolkit for image loading and pixel buffer manipulation
 brew "gdk-pixbuf"
 # GitHub command-line tool
@@ -152,6 +151,8 @@ brew "nghttp2"
 brew "nmap"
 # Manage multiple Node.js versions
 brew "nvm"
+# Open Visual Inference And Optimization toolkit for AI inference
+brew "openvino"
 # SSL/TLS VPN implementing OSI layer 2 or 3 secure network extension
 brew "openvpn"
 # Terminal multiplexer
@@ -230,12 +231,12 @@ brew "felixkratz/formulae/sketchybar"
 brew "hashicorp/tap/terraform"
 # Simple hotkey-daemon for macOS.
 brew "koekeishiya/formulae/skhd"
-# A tiling window manager for macOS based on binary space partitioning.
-brew "koekeishiya/formulae/yabai"
 # a Docker manager for the terminal
 brew "moncho/dry/dry"
 # Command-line interface for 1Password
 cask "1password-cli"
+# AeroSpace is an i3-like tiling window manager for macOS
+cask "aerospace"
 # GPU-accelerated terminal emulator
 cask "alacritty"
 # Application launcher and productivity software
