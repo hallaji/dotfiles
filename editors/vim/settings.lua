@@ -31,7 +31,6 @@ vim.o.mouse = "a" -- enable mouse support
 vim.o.updatetime = 100 -- faster completion (default is 4000)
 vim.o.timeoutlen = 500 -- faster completion (default is 1000)
 vim.o.hidden = true -- enable background buffers (keep hidden buffers open)
-vim.o.nocompatible = true -- disable vi compatibility mode
 vim.o.backspace = "indent,eol,start" -- allow backspacing over everything in insert mode
 vim.o.errorbells = false -- disable error bells (beeping)
 vim.o.visualbell = true -- enable visual bell (flash screen instead of beeping)
