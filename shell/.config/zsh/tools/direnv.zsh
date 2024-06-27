@@ -5,8 +5,7 @@
 # ██║  ██║██║██╔══██╗██╔══╝  ██║╚██╗██║╚██╗ ██╔╝
 # ██████╔╝██║██║  ██║███████╗██║ ╚████║ ╚████╔╝
 # ╚═════╝ ╚═╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═══╝  ╚═══╝
-
-# @see https://direnv.net
-# @see https://github.com/direnv/direnv
+# https://direnv.net
+# https://github.com/direnv/direnv
 
 eval "$(direnv hook zsh)"

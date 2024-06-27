@@ -64,6 +64,8 @@ globally through the `direnvrc` and `.zshenv` file.
 
 ```shell
 fresh
+cp shell/.zshenv.example shell/.zshenv
+stow shell
 ```
 
 The `fresh` or `fresh install` command is available globally and will build shell

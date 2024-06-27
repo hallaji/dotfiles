@@ -1,16 +1,21 @@
+
 # ┌─┐┌─┐┌┐┌┌─┐┬─┐┬┌─┐
 # │ ┬├┤ │││├┤ ├┬┘││
 # └─┘└─┘┘└┘└─┘┴└─┴└─┘
 
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CACHE_HOME="$HOME/.local/cache"
+export XDG_STATE_HOME="$HOME/.local/state"
+export XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:=/tmp}"
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export LANG=en_AU.UTF-8
 export SHELL="/bin/zsh"
-export XDG_CONFIG_HOME="$HOME/.config"
-export HOMEBREW_PREFIX="/opt/homebrew" # OR "/usr/local"
 export DOTFILES="$HOME/.dotfiles"
 export CODE="$HOME/Code"
 export EDITOR="nvim"
 export THEME="Catamaran"
-export BAT_THEME="$THEME" # https://github.com/sharkdp/bat
+export BAT_THEME="Catamaran" # https://github.com/sharkdp/bat
 
 # ┬ ┬┌─┐┌─┐┬─┐
 # │ │└─┐├┤ ├┬┘

@@ -191,6 +191,8 @@ brew "sox"
 brew "sqlc"
 # Cross-shell prompt for astronauts
 brew "starship"
+# Organize software neatly under a single directory tree (e.g. /usr/local)
+brew "stow"
 # Version control system designed to be a better CVS
 brew "subversion"
 # Generate clients, server stubs, and docs from an OpenAPI spec
@@ -259,20 +261,13 @@ cask "fantastical"
 cask "firefox"
 # Web browser
 cask "firefox-developer-edition"
-# Free monospaced font with programming ligatures
 cask "font-fira-code"
-# Developer targeted fonts with a high number of glyphs
 cask "font-fira-code-nerd-font"
-# Developer targeted fonts with a high number of glyphs
 cask "font-hack-nerd-font"
-# Typeface made for developers
 cask "font-jetbrains-mono"
-# Developer targeted fonts with a high number of glyphs
 cask "font-jetbrains-mono-nerd-font"
-# Font with a mechanical skeleton and the forms are largely geometric
 cask "font-roboto"
 cask "font-roboto-mono"
-# Developer targeted fonts with a high number of glyphs
 cask "font-roboto-mono-nerd-font"
 # GIT client
 cask "fork"

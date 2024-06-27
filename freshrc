@@ -11,7 +11,6 @@
 # └  ┴└─└─┘└─┘┴ ┴
 
 fresh freshshell/fresh bin/fresh --bin
-fresh freshshell/fresh contrib/source-build.sh --file=~/.zshrc
 
 fresh_after_build() {
   [ -n "$DOTFILES" ] && [ -f "$HOME/.Brewfile" ] && \
@@ -24,12 +23,22 @@ fresh_after_build() {
   type aerospace > /dev/null 2>&1 && aerospace reload-config --no-gui
 }
 
-# ┌─┐┌┐┌┬  ┬
-# ├┤ │││└┐┌┘
-# └─┘┘└┘ └┘
+# ┌─┐┬ ┬┌─┐┬  ┬
+# └─┐├─┤├┤ │  │
+# └─┘┴ ┴└─┘┴─┘┴─┘
 
-[ -f .envrc ] && fresh .envrc --file=~/.config/direnv/direnvrc --marker
-[ -f .envrc ] && fresh .envrc --file=~/.zshenv --marker
+# Completions
+
+fresh zsh-users/zsh-completions src --file=completions/
+fresh ohmyzsh/ohmyzsh plugins/terraform/_terraform --file=completions/_terraform
+fresh freshshell/fresh contrib/completion/fresh-completion.zsh --file=completions/_fresh
+fresh alacritty/alacritty extra/completions/_alacritty --file=completions/_alacritty
+
+# Plugins
+
+fresh ohmyzsh/ohmyzsh plugins --file=vendor/ohmyzsh/plugins/
+fresh zsh-users/zsh-syntax-highlighting . --file=vendor/zsh-users/zsh-syntax-highlighting/
+fresh zsh-users/zsh-autosuggestions . --file=vendor/zsh-users/zsh-autosuggestions/
 
 # ┌┐ ┬┌┐┌┌─┐┬─┐┬┌─┐┌─┐
 # ├┴┐││││├─┤├┬┘│├┤ └─┐
@@ -77,54 +86,6 @@ fresh config/skhd/skhd.conf --file=~/.skhdrc
 # └─┘└─┘┴└──┴┘└─┘┴└─└─┘
 
 fresh config/borders/bordersrc --file=~/.config/borders/bordersrc
-
-# ┌─┐┬ ┬┌─┐┬  ┬
-# └─┐├─┤├┤ │  │
-# └─┘┴ ┴└─┘┴─┘┴─┘
-
-# Completions
-
-fresh zsh-users/zsh-completions src --file=completions/
-fresh freshshell/fresh contrib/completion/fresh-completion.zsh --file=completions/_fresh
-fresh alacritty/alacritty extra/completions/_alacritty --file=completions/_alacritty
-
-# Plugins
-
-fresh ohmyzsh/ohmyzsh plugins --file=vendor/ohmyzsh/plugins/
-fresh zsh-users/zsh-syntax-highlighting . --file=vendor/zsh-users/zsh-syntax-highlighting/
-fresh zsh-users/zsh-autosuggestions . --file=vendor/zsh-users/zsh-autosuggestions/
-
-# Zprofile
-
-fresh shell/zsh/profile.sh --file=~/.zprofile --marker
-
-# Zshrc
-
-fresh-options --filter=erb --file=~/.zshrc --marker
-  fresh shell/zsh/init.sh
-  fresh shell/zsh/plugins.sh
-  fresh shell/zsh/vi-mode.sh
-  fresh shell/zsh/functions.sh
-  fresh shell/zsh/aliases.sh
-  type op > /dev/null 2>&1 && fresh shell/zsh/tools/1password.sh
-  brew --prefix asdf > /dev/null 2>&1 && fresh shell/zsh/tools/asdf.sh
-  type direnv > /dev/null 2>&1 && fresh shell/zsh/tools/direnv.sh
-  type gcloud > /dev/null 2>&1 && fresh shell/zsh/tools/gcloud.sh
-  brew --prefix icu4c > /dev/null 2>&1 && fresh shell/zsh/tools/icu4c.sh
-  type jenv > /dev/null 2>&1 && fresh shell/zsh/tools/jenv.sh
-  type jump > /dev/null 2>&1 && fresh shell/zsh/tools/jump.sh
-  type nnn > /dev/null 2>&1 && fresh shell/zsh/tools/nnn.sh
-  type pyenv > /dev/null 2>&1 && fresh shell/zsh/tools/pyenv.sh
-  type pnpm > /dev/null 2>&1 && fresh shell/zsh/tools/pnpm.sh
-  type starship > /dev/null 2>&1 && fresh shell/zsh/tools/starship.sh
-  type terraform > /dev/null 2>&1 && fresh shell/zsh/tools/terraform.sh
-fresh-options
-
-# ┌─┐┌┬┐┌─┐┬─┐┌─┐┬ ┬┬┌─┐
-# └─┐ │ ├─┤├┬┘└─┐├─┤│├─┘
-# └─┘ ┴ ┴ ┴┴└─└─┘┴ ┴┴┴
-
-fresh config/starship/config.toml --file=~/.config/starship.toml
 
 # ┌─┐┌┬┐┌─┐┌─┐┌─┐
 # │   │ ├─┤│ ┬└─┐

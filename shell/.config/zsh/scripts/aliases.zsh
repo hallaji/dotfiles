@@ -10,28 +10,28 @@
 # │ ┬├┤ │││├┤ ├┬┘││
 # └─┘└─┘┘└┘└─┘┴└─┴└─┘
 
-alias ,c="clear"
-alias ,r="exec $SHELL -l"
-alias ,q="exit"
+alias ,c="clear" # Clear the terminal
+alias ,r="exec $SHELL -l" # Reload the shell
+alias ,q="exit" # Quit the shell
 alias ,s="pmset sleepnow" # Mac-specific sleep
-alias ,i="ping 8.8.8.8"
-alias ,w="curl wttr.in/Melbourne,AU"
+alias ,i="ping 8.8.8.8" # Check internet connection
+alias ,w="curl wttr.in/Melbourne,AU" # Check the weather
 alias ,fp='f() { lsof -nP -iTCP:"$1" -sTCP:LISTEN };f' # Find a port number in use
 alias ,lp="lsof -P -i TCP -s TCP:LISTEN" # List all port numbers in use
 alias ,kp='f() { killport "$1" };f' # Kill a port number
-alias ,l="curl ipinfo.io/json"
-alias ,b="wallpaper set-solid-color $*"
+alias ,l="curl ipinfo.io/json" # Get the public IP address
+alias ,b="wallpaper set-solid-color $*" # Set a solid color wallpaper
 alias ,a="open --background 'lungo:toggle'" # Toogle computer awake mode (Lungo)
-alias ,h="history"
-alias ,hs="history | grep $* -i"
-alias ,cd="change_source_directory"
-alias ,ed="edit_source_directory"
-alias ,cb="cointop price --coin bitcoin --currency aud"
-alias ,ce="cointop price --coin ethereum --currency aud"
+alias ,h="history" # Show command history
+alias ,hs="history | grep $* -i" # Search command history
+alias ,cd="change_source_directory" # Change to source directory
+alias ,ed="edit_source_directory" # Edit source directory
+alias ,cb="cointop price --coin bitcoin --currency aud" # Check the price of Bitcoin
+alias ,ce="cointop price --coin ethereum --currency aud" # Check the price of Ethereum
 alias ,ske="ioreg -l -w 0 | perl -nle 'print $1 if /"kCGSSessionSecureInputPID"=(\d+)/' | uniq | xargs -I{} ps -p {} -o comm=" # https://github.com/koekeishiya/skhd/issues/48
-alias ,tls='nvim "+Tmuxline" "+TmuxlineSnapshot! ~/.tmux/statusline-colors.conf" "+qa"'
+alias ,tls='nvim "+Tmuxline" "+TmuxlineSnapshot! ~/.tmux/statusline-colors.conf" "+qa"' # Generate tmuxline colorscheme
 alias ,ss="shasum -a 256 $* | cut -d ' ' -f 1" # Get SHA256 hash for downloaded file to verify integrity
-alias ,gopath="add_gopath"
+alias ,gopath="add_gopath" # Add a new GOPATH
 
 # ┌─┐ ┬ ┬┬┌─┐┬┌─  ┌─┐┌┬┐┬┌┬┐
 # │─┼┐│ │││  ├┴┐  ├┤  │││ │
@@ -44,7 +44,6 @@ alias ,dot="cd $DOTFILES && $EDITOR"
 # ┌─┐┬┌┬┐
 # │ ┬│ │
 # └─┘┴ ┴
-
 # https://git-scm.com
 
 alias ,gwho="git config user.name && git config user.email"
@@ -55,7 +54,6 @@ alias ,gra="git commit --amend --reset-author"
 # ┌─┐┬┌┬┐┬ ┬┬ ┬┌┐   ┌─┐┬  ┬
 # │ ┬│ │ ├─┤│ │├┴┐  │  │  │
 # └─┘┴ ┴ ┴ ┴└─┘└─┘  └─┘┴─┘┴
-
 # https://cli.github.com
 
 alias ,ghb="gh browse"
@@ -65,17 +63,6 @@ alias ,ghbr="gh branch"
 alias ,ghi="gh inspire"
 alias ,ghgi="gh gitignore"
 alias ,ghc="gh copilot"
-
-# ┌─┐┬┌─┐┬  ┌─┐┌┬┐
-# ├┤ ││ ┬│  ├┤  │
-# └  ┴└─┘┴─┘└─┘ ┴
-
-# http://www.figlet.org
-
-alias ,fl="figlet -d ~/.figlet/ $*"
-alias ,flh1="figlet -d ~/.figlet/ -f ANSI\ Shadow $*"
-alias ,flh2="figlet -d ~/.figlet/ -f Calvin\ S $*" # bold version with `-f future`
-alias ,flh3="figlet -d ~/.figlet/ -f wideterm $*"
 
 # ┌─┐┌─┐┬─┐┬  ┬┬┌─┐┌─┐┌─┐
 # └─┐├┤ ├┬┘└┐┌┘││  ├┤ └─┐
@@ -88,3 +75,20 @@ alias ,gcpc="change_gcloud_config"
 alias ,rga="gpgconf --kill gpg-agent"
 alias ,ryabai="yabai --restart-service"
 alias ,rskhd="skhd --restart-service"
+
+# ┌─┐┬┌─┐┬  ┌─┐┌┬┐
+# ├┤ ││ ┬│  ├┤  │
+# └  ┴└─┘┴─┘└─┘ ┴
+# http://www.figlet.org
+
+alias ,flfonts='for font in ~/.figlet/*.flf; do fontname=$(basename "$font"); echo "$fontname"; figlet -d ~/.figlet/ -f "$fontname" FONT; echo ""; done'
+alias ,fl="figlet -d ~/.figlet/ $*"
+alias ,flh1a="figlet -d ~/.figlet/ -f DOS\ Rebel $*"
+alias ,flh1b="figlet -d ~/.figlet/ -f ANSI\ Shadow $*"
+alias ,flh1c="figlet -d ~/.figlet/ -f ANSI\ Regular $*"
+alias ,flh1d="figlet -d ~/.figlet/ -f Block $*"
+alias ,flh1e="figlet -d ~/.figlet/ -f Doom $*"
+alias ,flh2a="figlet -d ~/.figlet/ -f halfiwi $*"
+alias ,flh2b="figlet -d ~/.figlet/ -f Calvin\ S $*"
+alias ,flh3="figlet -d ~/.figlet/ -f wideterm $*"
+
