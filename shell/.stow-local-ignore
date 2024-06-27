@@ -1,2 +1,3 @@
+\.DS_Store
 \.gitignore
-\.zshenv.example
+\.envrc.example

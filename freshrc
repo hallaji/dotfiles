@@ -40,14 +40,6 @@ fresh ohmyzsh/ohmyzsh plugins --file=vendor/ohmyzsh/plugins/
 fresh zsh-users/zsh-syntax-highlighting . --file=vendor/zsh-users/zsh-syntax-highlighting/
 fresh zsh-users/zsh-autosuggestions . --file=vendor/zsh-users/zsh-autosuggestions/
 
-# ┌┐ ┬┌┐┌┌─┐┬─┐┬┌─┐┌─┐
-# ├┴┐││││├─┤├┬┘│├┤ └─┐
-# └─┘┴┘└┘┴ ┴┴└─┴└─┘└─┘
-
-fresh-options --bin
-  fresh bin/\*
-fresh-options
-
 # ┌─┐┬  ┌─┐┌─┐┬─┐┬┌┬┐┌┬┐┬ ┬
 # ├─┤│  ├─┤│  ├┬┘│ │  │ └┬┘
 # ┴ ┴┴─┘┴ ┴└─┘┴└─┴ ┴  ┴  ┴

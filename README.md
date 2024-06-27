@@ -63,9 +63,9 @@ globally through the `direnvrc` and `.zshenv` file.
 ### 4. Freshing Dotfiles
 
 ```shell
-fresh
 cp shell/.zshenv.example shell/.zshenv
 stow shell
+fresh
 ```
 
 The `fresh` or `fresh install` command is available globally and will build shell

@@ -1,14 +1,21 @@
 
-# ┌─┐┌─┐┌┐┌┌─┐┬─┐┬┌─┐
-# │ ┬├┤ │││├┤ ├┬┘││
-# └─┘└─┘┘└┘└─┘┴└─┴└─┘
+# ┌┐ ┌─┐┌─┐┌─┐  ┌─┐┌─┐┌┬┐┬ ┬┌─┐
+# ├┴┐├─┤└─┐├┤   ├─┘├─┤ │ ├─┤└─┐
+# └─┘┴ ┴└─┘└─┘  ┴  ┴ ┴ ┴ ┴ ┴└─┘
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.local/cache"
 export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:=/tmp}"
+export XDG_BIN_HOME="$HOME/.local/bin"
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+export PATH="$XDG_BIN_HOME:$PATH"
+
+# ┌─┐┌─┐┌┐┌┌─┐┬─┐┬┌─┐
+# │ ┬├┤ │││├┤ ├┬┘││
+# └─┘└─┘┘└┘└─┘┴└─┴└─┘
+
 export LANG=en_AU.UTF-8
 export SHELL="/bin/zsh"
 export DOTFILES="$HOME/.dotfiles"
