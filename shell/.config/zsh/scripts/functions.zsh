@@ -56,3 +56,12 @@ change_gcloud_config() {
 add_gopath() {
   export PATH="$PATH:$(go env GOPATH)/bin"
 }
+
+fl_fonts() {
+  for font in ~/.figlet/*.flf; do
+    fontname=$(basename "$font")
+    echo "$fontname"
+    figlet -d ~/.figlet/ -f "$fontname" "$1"
+    echo ""
+  done
+}

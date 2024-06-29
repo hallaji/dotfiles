@@ -81,7 +81,7 @@ alias ,rskhd="skhd --restart-service"
 # └  ┴└─┘┴─┘└─┘ ┴
 # http://www.figlet.org
 
-alias ,flfonts='for font in ~/.figlet/*.flf; do fontname=$(basename "$font"); echo "$fontname"; figlet -d ~/.figlet/ -f "$fontname" FONT; echo ""; done'
+alias ,fls="fl_fonts"
 alias ,fl="figlet -d ~/.figlet/ $*"
 alias ,flh1a="figlet -d ~/.figlet/ -f DOS\ Rebel $*"
 alias ,flh1b="figlet -d ~/.figlet/ -f ANSI\ Shadow $*"
