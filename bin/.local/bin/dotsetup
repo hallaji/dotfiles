@@ -65,6 +65,7 @@ cat << EOF
 └─┘┘└┘ └┘
 EOF
 
+# @FIXME: envrc paths is not correct
 if [ ! -f "$DOTFILES/.envrc" ]; then
   cp "$DOTFILES/.envrc.example" "$DOTFILES/.envrc"
   if (cd "$DOTFILES" && direnv allow . && fresh); then

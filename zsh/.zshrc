@@ -6,15 +6,13 @@
 # ███████╗███████║██║  ██║██║  ██║╚██████╗
 # ╚══════╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝
 
-ZSHRC_DIR="$(dirname "${(%):-%x}")"
+source ~/.config/zsh/init.zsh
+source ~/.config/zsh/completions.zsh
+source ~/.config/zsh/history.zsh
+source ~/.config/zsh/extensions.zsh
+source ~/.config/zsh/functions.zsh
 
-source "$ZSHRC_DIR/scripts/init.zsh"
-source "$ZSHRC_DIR/scripts/completions.zsh"
-source "$ZSHRC_DIR/scripts/history.zsh"
-source "$ZSHRC_DIR/scripts/extensions.zsh"
-source "$ZSHRC_DIR/scripts/functions.zsh"
+for tool in ~/.config/zsh/tools/*.zsh; do source "$tool"; done
 
-for tool in "$ZSHRC_DIR/tools"/*.zsh; do source "$tool"; done
-
-source "$ZSHRC_DIR/scripts/keybindings.zsh"
-source "$ZSHRC_DIR/scripts/aliases.zsh"
+source ~/.config/zsh/keybindings.zsh
+source ~/.config/zsh/aliases.zsh
