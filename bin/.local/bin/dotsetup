@@ -66,9 +66,9 @@ cat << EOF
 EOF
 
 # @FIXME: envrc paths is not correct
-if [ ! -f "$DOTFILES/.envrc" ]; then
-  cp "$DOTFILES/.envrc.example" "$DOTFILES/.envrc"
-  if (cd "$DOTFILES" && direnv allow . && fresh); then
+if [ ! -f "$DOTFILES_HOME/.envrc" ]; then
+  cp "$DOTFILES_HOME/.envrc.example" "$DOTFILES_HOME/.envrc"
+  if (cd "$DOTFILES_HOME" && direnv allow . && fresh); then
     echo "envrc file created successfully. Ensure to update the file."
   else
     echo "Error: Failed to create envrc file."

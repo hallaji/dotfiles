@@ -33,7 +33,7 @@ return {
 
     vim.g.startify_fortune_use_unicode = 1 -- Use unicode characters
     vim.g.startify_bookmarks = {
-      { d = vim.fn.expand("$DOTFILES") }
+      { d = vim.fn.expand("$DOTFILES_HOME") }
     }
     vim.g.startify_lists = {
       -- { type = 'files', header = {'   MRU'} }, -- Show most recently used files

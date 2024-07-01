@@ -9,7 +9,7 @@
 " https://github.com/neoclide/coc.nvim/wiki/Language-servers
 
 " Global configuration file from dotfiles directory
-let g:coc_config_home = "$DOTFILES/config/coc"
+let g:coc_config_home = "$DOTFILES_HOME/config/coc"
 
 " List of COC extensions to install after starting the service
 let g:coc_global_extensions = [

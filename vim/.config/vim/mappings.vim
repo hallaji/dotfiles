@@ -118,7 +118,7 @@ vnoremap <C-Q> <esc>
 " └─┘┴  └─┘┘└┘
 
 " Edit my dotfiles in a new tab
-nnoremap <silent> <leader>od :tabedit $DOTFILES<cr>
+nnoremap <silent> <leader>od :tabedit $DOTFILES_HOME<cr>
 
 " ┌─┐┬┌┐┌┌┬┐
 " ├┤ ││││ ││

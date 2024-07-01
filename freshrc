@@ -13,8 +13,8 @@
 fresh freshshell/fresh bin/fresh --bin
 
 fresh_after_build() {
-  [ -n "$DOTFILES" ] && [ -f "$HOME/.Brewfile" ] && \
-    brew bundle dump --describe --force --file="$DOTFILES/config/homebrew/Brewfile" > /dev/null 2>&1
+  [ -n "$DOTFILES_HOME" ] && [ -f "$HOME/.Brewfile" ] && \
+    brew bundle dump --describe --force --file="$DOTFILES_HOME/config/homebrew/Brewfile" > /dev/null 2>&1
 
   cd ~/.fresh/source/jarun/nnn && make O_GITSTATUS=1 O_NERD=1 &>/dev/null && \
     ln -sf ~/.fresh/source/jarun/nnn/nnn ~/bin/nnn

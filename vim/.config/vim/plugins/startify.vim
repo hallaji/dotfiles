@@ -23,7 +23,7 @@ function! s:gitUntracked()
     return map(files, "{'line': v:val, 'path': v:val}")
 endfunction
 
-let g:startify_bookmarks = [ {'d': "$DOTFILES"} ]
+let g:startify_bookmarks = [ {'d': "$DOTFILES_HOME"} ]
 let g:startify_lists = [
   \ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
   \ { 'type': 'sessions',  'header': ['   Sessions']       },

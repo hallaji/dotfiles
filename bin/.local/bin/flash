@@ -43,12 +43,12 @@ if [ ! -z "$3" ] && [ "$3" = "--build" ]; then
   "
   docker run --rm -it \
     -w "/qmk" \
-    -v "$DOTFILES/keyboards:/keyboards" \
+    -v "$DOTFILES_HOME/keyboards:/keyboards" \
     qmkfm/qmk_cli \
     sh -c "$commands"
 fi
 
-FILE="$DOTFILES/keyboards/.build/$BUILD"
+FILE="$DOTFILES_HOME/keyboards/.build/$BUILD"
 if [ ! -f "$FILE" ]; then
   echo "⚠ There is no build. Use \`--build\` option to build and flash the firmware."
   exit 2

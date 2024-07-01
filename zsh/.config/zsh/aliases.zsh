@@ -39,7 +39,7 @@ alias ,gopath="add_gopath" # Add a new GOPATH
 
 alias ,e="$EDITOR" # https://github.com/neovim/neovim
 alias ,ls="n -AHei" # https://github.com/jarun/nnn
-alias ,dot="cd $DOTFILES && $EDITOR"
+alias ,dot="cd $DOTFILES_HOME && $EDITOR"
 
 # ┌─┐┬┌┬┐
 # │ ┬│ │
