@@ -1,0 +1,4 @@
+--dir=./config
+--target=~
+--no-folding
+--dotfiles

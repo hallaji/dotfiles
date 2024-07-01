@@ -1,0 +1,62 @@
+#  ██████╗ ██╗████████╗     ██████╗ ██████╗ ███╗   ██╗███████╗██╗ ██████╗
+# ██╔════╝ ██║╚══██╔══╝    ██╔════╝██╔═══██╗████╗  ██║██╔════╝██║██╔════╝
+# ██║  ███╗██║   ██║       ██║     ██║   ██║██╔██╗ ██║█████╗  ██║██║  ███╗
+# ██║   ██║██║   ██║       ██║     ██║   ██║██║╚██╗██║██╔══╝  ██║██║   ██║
+# ╚██████╔╝██║   ██║       ╚██████╗╚██████╔╝██║ ╚████║██║     ██║╚██████╔╝
+#  ╚═════╝ ╚═╝   ╚═╝        ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝     ╚═╝ ╚═════╝
+# https://git-scm.com/docs/git-config
+
+[user]
+  name = ${USER_NAME}
+  email = ${USER_EMAIL}
+  signingkey = ${SIGNING_KEY_SSH}
+
+[gpg]
+  format = ssh # ssh OR openpgp
+
+[gpg "openpgp"]
+  program = gpg
+
+[gpg "ssh"]
+  program = ${GPG_SSH_PROGRAM}
+
+[commit]
+  gpgsign = true
+  template = ~/.gitmessage
+
+[core]
+  ignorecase = false
+  excludesfile = ~/.gitignore.global
+  pager = diff-so-fancy | less --tabs=4 -RFX
+
+[interactive]
+  diffFilter = diff-so-fancy --patch
+
+[merge]
+  conflictstyle = diff3
+
+[push]
+  autoSetupRemote = true
+
+[color]
+  ui = true
+
+[color "diff-highlight"]
+  oldNormal = 1
+  oldHighlight = 1 0 bold
+  newNormal = 2
+  newHighlight = 2 0 bold
+
+# https://git-scm.com/docs/git-config#Documentation/git-config.txt-colordiffltslotgt
+[color "diff"]
+  plain = 8
+  meta = 7
+  frag = 6 bold
+  func = 7
+  commit = 3 bold
+  old = 1
+  new = 2
+  whitespace = 1 reverse
+
+[diff-so-fancy]
+  useUnicodeRuler = false

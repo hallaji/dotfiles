@@ -1,0 +1,134 @@
+#!/bin/bash
+# ██████╗  ██████╗ ████████╗███████╗███████╗████████╗██╗   ██╗██████╗
+# ██╔══██╗██╔═══██╗╚══██╔══╝██╔════╝██╔════╝╚══██╔══╝██║   ██║██╔══██╗
+# ██║  ██║██║   ██║   ██║   ███████╗█████╗     ██║   ██║   ██║██████╔╝
+# ██║  ██║██║   ██║   ██║   ╚════██║██╔══╝     ██║   ██║   ██║██╔═══╝
+# ██████╔╝╚██████╔╝   ██║   ███████║███████╗   ██║   ╚██████╔╝██║
+# ╚═════╝  ╚═════╝    ╚═╝   ╚══════╝╚══════╝   ╚═╝    ╚═════╝ ╚═╝
+# Usage❯ dotsetup
+
+cat << EOF
+┌┐ ┬─┐┌─┐┬ ┬┌─┐┬┬  ┌─┐
+├┴┐├┬┘├┤ │││├┤ ││  ├┤
+└─┘┴└─└─┘└┴┘└  ┴┴─┘└─┘
+EOF
+
+brew bundle check --global || brew bundle --global
+
+
+cat << EOF
+┌─┐┌─┐┌┬┐┌─┐  ┌─┐┬  ┬ ┬┌─┐┬┌┐┌┌─┐
+├─┤└─┐ ││├┤   ├─┘│  │ ││ ┬││││└─┐
+┴ ┴└─┘─┴┘└    ┴  ┴─┘└─┘└─┘┴┘└┘└─┘
+EOF
+
+# https://github.com/asdf-vm/asdf-plugins
+ASDF_PLUGINS=(
+  direnv # https://github.com/asdf-community/asdf-direnv
+  golang # https://github.com/asdf-community/asdf-golang
+  java # https://github.com/halcyon/asdf-java
+  kotlin # https://github.com/asdf-community/asdf-kotlin
+  lua # https://github.com/Stratus3D/asdf-lua
+  maven # https://github.com/Proemion/asdf-maven
+  mysql # https://github.com/iroddis/asdf-mysql
+  nodejs # https://github.com/asdf-vm/asdf-nodejs
+  php # https://github.com/asdf-community/asdf-php
+  postgres # https://github.com/smashedtoatoms/asdf-postgres
+  python # https://github.com/asdf-community/asdf-python
+  ruby # https://github.com/asdf-vm/asdf-ruby
+  pnpm # https://github.com/jonathanmorley/asdf-pnpm
+  redis # https://github.com/smashedtoatoms/asdf-redis
+)
+
+for item in "${ASDF_PLUGINS[@]}"; do
+  if asdf plugin-list | grep -q "^$item$"; then
+    asdf plugin update "$item"
+  else
+    asdf plugin add "$item"
+  fi
+  if [ "$item" == "java" ]; then
+    version=$(asdf list-all java | grep "^openjdk-" | tail -n 1)
+    if [ -n "$version" ]; then
+      asdf install java "$version" && asdf global java "$version"
+    fi
+  else
+    asdf install "$item" latest && asdf global "$item" latest
+  fi
+done
+
+
+cat << EOF
+┌┐┌┌─┐┌─┐┬  ┬┬┌┬┐  ┌─┐┬  ┬┌─┐┌┐┌┌┬┐┌─┐
+│││├┤ │ │└┐┌┘││││  │  │  │├┤ │││ │ └─┐
+┘└┘└─┘└─┘ └┘ ┴┴ ┴  └─┘┴─┘┴└─┘┘└┘ ┴ └─┘
+EOF
+
+pip3 install --upgrade pynvim # https://github.com/neovim/pynvim
+pnpm install -g neovim # https://github.com/neovim/node-client
+gem install neovim # https://github.com/neovim/neovim-ruby
+
+
+cat << EOF
+┌─┐┌┬┐┬┌┬┐┌─┐┬─┐  ┌─┐┬  ┬ ┬┌─┐┬┌┐┌┌─┐
+├┤  │││ │ │ │├┬┘  ├─┘│  │ ││ ┬││││└─┐
+└─┘─┴┘┴ ┴ └─┘┴└─  ┴  ┴─┘└─┘└─┘┴┘└┘└─┘
+EOF
+
+nvim --headless "+Lazy! sync" "+qa"
+nvim "+CocUpdate" "+GoUpdateBinaries" "+Tmuxline" "+TmuxlineSnapshot! ~/.tmux/statusline-colors.conf" "+qa"
+vim "+PlugUpgrade" "+PlugUpdate" "+qa"
+
+
+cat << EOF
+┌┬┐┌┬┐┬ ┬─┐ ┬
+ │ ││││ │┌┴┬┘
+ ┴ ┴ ┴└─┘┴ └─
+EOF
+
+~/.tmux/plugins/tpm/bin/install_plugins
+~/.tmux/plugins/tpm/bin/update_plugins all
+
+
+cat << EOF
+┌─┐┬┌┬┐┬ ┬┬ ┬┌┐   ┌─┐┬  ┬
+│ ┬│ │ ├─┤│ │├┴┐  │  │  │
+└─┘┴ ┴ ┴ ┴└─┘└─┘  └─┘┴─┘┴
+EOF
+
+gh extension install github/gh-copilot
+gh extension install dlvhdr/gh-dash
+gh extension install jrnxf/gh-eco
+gh extension install mislav/gh-branch
+gh extension install garnertb/gh-gitignore
+gh extension install lakuapik/gh-inspire
+gh extension upgrade --all
+
+
+cat << EOF
+┌┐┌┌┐┌┌┐┌
+│││││││││
+┘└┘┘└┘┘└┘
+EOF
+
+rm -rf "${XDG_CONFIG_HOME:-$HOME/.config}"/nnn/plugins
+curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
+
+
+cat << EOF
+┌─┐┬─┐┌─┐┌─┐┬ ┬
+├┤ ├┬┘├┤ └─┐├─┤
+└  ┴└─└─┘└─┘┴ ┴
+EOF
+
+fresh update
+
+
+cat << EOF
+┌─┐┌─┐┬─┐┬  ┬┬┌─┐┌─┐┌─┐
+└─┐├┤ ├┬┘└┐┌┘││  ├┤ └─┐
+└─┘└─┘┴└─ └┘ ┴└─┘└─┘└─┘
+EOF
+
+skhd --restart-service # https://github.com/koekeishiya/skhd
+brew services restart borders # https://github.com/FelixKratz/JankyBorders
+aerospace reload-config --no-gui # https://github.com/nikitabobko/AeroSpace

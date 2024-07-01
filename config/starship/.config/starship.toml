@@ -1,0 +1,98 @@
+# ███████╗████████╗ █████╗ ██████╗ ███████╗██╗  ██╗██╗██████╗
+# ██╔════╝╚══██╔══╝██╔══██╗██╔══██╗██╔════╝██║  ██║██║██╔══██╗
+# ███████╗   ██║   ███████║██████╔╝███████╗███████║██║██████╔╝
+# ╚════██║   ██║   ██╔══██║██╔══██╗╚════██║██╔══██║██║██╔═══╝
+# ███████║   ██║   ██║  ██║██║  ██║███████║██║  ██║██║██║
+# ╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝╚═╝
+# https://starship.rs
+
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = true
+command_timeout = 2000
+# right_format = """$aws$gcloud$cmd_duration"""
+
+[line_break]
+disabled = false
+
+[aws]
+disabled = false
+force_display = true
+symbol = "󰸏 "
+style = "dimmed yellow"
+format = '[$symbol($profile )(\($region\) )]($style)'
+
+[battery]
+format = "[$symbol$percentage]($style) "
+full_symbol = "󰁹 "
+charging_symbol = "󰂄 "
+discharging_symbol = "󱧥 "
+unknown_symbol = "󰂑 "
+empty_symbol = "󰂎 "
+
+[[battery.display]]
+threshold = 15
+style = "red"
+
+[[battery.display]]
+threshold = 35
+style = "yellow"
+
+[c]
+symbol = " "
+
+[cmd_duration]
+style = "dimmed purple"
+format = " [󰔛 $duration]($style) "
+
+[directory]
+read_only = " 󰌾"
+
+[docker_context]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[gcloud]
+disabled = false
+symbol = " "
+style = "dimmed blue"
+format = '[$symbol($active)( \($project\))]($style)'
+
+[git_branch]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[java]
+symbol = "󰬷 "
+
+[kotlin]
+symbol = "󱈙 "
+
+[memory_usage]
+disabled = false
+symbol = "󰍛 "
+
+[nodejs]
+symbol = " "
+
+[package]
+symbol = " "
+
+[php]
+symbol = " "
+
+[python]
+symbol = " "
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = " "

@@ -1,7 +1,0 @@
-# ╔═╗╦ ╦╔═╗╦  ╦
-# ╚═╗╠═╣║╣ ║  ║
-# ╚═╝╩ ╩╚═╝╩═╝╩═╝
-
-[shell]
-args = ["-l", "-c", "tmux attach || tmux"]
-program = "/bin/zsh"

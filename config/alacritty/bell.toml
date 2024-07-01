@@ -1,9 +1,0 @@
-# ╔╗ ╔═╗╦  ╦
-# ╠╩╗║╣ ║  ║
-# ╚═╝╚═╝╩═╝╩═╝
-
-[bell]
-animation = "EaseOut"
-duration = 50
-color = "#e86db2"
-command = "None"

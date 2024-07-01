@@ -1,0 +1,52 @@
+#  ██████╗ ██╗  ██╗      ██████╗  █████╗ ███████╗██╗  ██╗
+# ██╔════╝ ██║  ██║      ██╔══██╗██╔══██╗██╔════╝██║  ██║
+# ██║  ███╗███████║█████╗██║  ██║███████║███████╗███████║
+# ██║   ██║██╔══██║╚════╝██║  ██║██╔══██║╚════██║██╔══██║
+# ╚██████╔╝██║  ██║      ██████╔╝██║  ██║███████║██║  ██║
+#  ╚═════╝ ╚═╝  ╚═╝      ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝
+# https://github.com/dlvhdr/gh-dash
+# https://docs.github.com/en/search-github/searching-on-github/searching-issues-and-pull-requests
+
+prSections:
+  - title: My Open PRs
+    filters: is:open author:@me
+  - title: My Closed PRs
+    filters: is:closed author:@me
+  - title: Needs Review
+    filters: is:open review-requested:@me
+  - title: Drafts
+    filters: is:open author:@me draft:true
+  - title: Mentions
+    filters: is:open mentions:@me sort:created-desc # org:cultureamp
+issuesSections:
+  - title: My Issues
+    filters: is:open author:@me
+  - title: Assigned
+    filters: is:open assignee:@me
+defaults:
+  preview:
+    open: true
+    width: 50
+  prsLimit: 20
+  issuesLimit: 20
+  refetchIntervalMinutes: 5 # minutes
+repoPaths: # configure where to locate repos when checking out PRs
+  default_path: ~/Code # fallback value if none of the other paths match
+theme:
+  ui:
+    table:
+      showSeparator: true
+  colors:
+    text:
+      primary: "#adbac7"
+      secondary: "#a394cd"
+      inverted: "#1f242a"
+      faint: "#8b97a2"
+      warning: "#f47067"
+      success: "#00b196"
+    background:
+      selected: "#39386B"
+    border:
+      primary: "#39386B"
+      secondary: "#39386B"
+      faint: "#2B2B40"

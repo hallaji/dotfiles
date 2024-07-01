@@ -1,0 +1,70 @@
+#!/bin/bash -e
+# ███████╗██╗      █████╗ ███████╗██╗  ██╗
+# ██╔════╝██║     ██╔══██╗██╔════╝██║  ██║
+# █████╗  ██║     ███████║███████╗███████║
+# ██╔══╝  ██║     ██╔══██║╚════██║██╔══██║
+# ██║     ███████╗██║  ██║███████║██║  ██║
+# ╚═╝     ╚══════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝
+# Usage❯ flash <keyboard> <keymap> [--build]
+
+if [ "$#" -ne 2 ] && [ "$#" -ne 3 ]; then
+  echo "⚠ Usage❯ $(basename "$0") <keyboard> <keymap> [--build]" >&2
+  exit 1
+fi
+
+BRAND=$(echo $1 | cut -d/ -f1)
+
+case $BRAND in
+"keychron")
+  FORK="keychron/qmk_firmware"
+  BRANCH="master"
+  COMMIT="b35bac6afbadc88cf6e8e3d1c8cc7494a510bb60" # last successful build (for history)
+  BUILD="${1//[\/]/_}_$2.bin"
+  ;;
+*)
+  FORK="qmk/qmk_firmware"
+  BRANCH="master"
+  COMMIT="fb48db4c8f59feb2ad64b41d53d708a0673b0df4" # last successful build (for history)
+  BUILD="${1//[\/]/_}_$2.hex"
+  ;;
+esac
+
+if [ ! -z "$3" ] && [ "$3" = "--build" ]; then
+  echo "⌨️ Building the firmware..."
+  commands="
+    git config --global http.sslVerify false;
+    qmk setup -H ./qmk_firmware -b $BRANCH -y $FORK;
+    cp -R /keyboards/* ./qmk_firmware/keyboards;
+    qmk compile -kb $1 -km $2;
+    mkdir -p /keyboards/.build;
+    cp ./qmk_firmware/$BUILD /keyboards/.build;
+  "
+  docker run --rm -it \
+    -w "/qmk" \
+    -v "$DOTFILES_HOME/keyboards:/keyboards" \
+    qmkfm/qmk_cli \
+    sh -c "$commands"
+fi
+
+FILE="$DOTFILES_HOME/keyboards/.build/$BUILD"
+if [ ! -f "$FILE" ]; then
+  echo "⚠ There is no build. Use \`--build\` option to build and flash the firmware."
+  exit 2
+fi
+
+echo "⌨️ Flashing..."
+
+sleep 1
+
+case $BRAND in
+"keychron")
+  dfu-util -a 0 -d 0483:DF11 -s 0x8000000:leave -D "$FILE"
+  ;;
+*)
+  dfu-programmer atmega32u4 erase --force
+  dfu-programmer atmega32u4 flash "$FILE"
+  dfu-programmer atmega32u4 reset
+  ;;
+esac
+
+echo "⌨️ Done! $FORK fork on $BRANCH branch / keyboard:$1 / keymap:$2"

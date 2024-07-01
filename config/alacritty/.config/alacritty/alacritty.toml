@@ -1,0 +1,385 @@
+#  █████╗ ██╗      █████╗  ██████╗██████╗ ██╗████████╗████████╗██╗   ██╗
+# ██╔══██╗██║     ██╔══██╗██╔════╝██╔══██╗██║╚══██╔══╝╚══██╔══╝╚██╗ ██╔╝
+# ███████║██║     ███████║██║     ██████╔╝██║   ██║      ██║    ╚████╔╝
+# ██╔══██║██║     ██╔══██║██║     ██╔══██╗██║   ██║      ██║     ╚██╔╝
+# ██║  ██║███████╗██║  ██║╚██████╗██║  ██║██║   ██║      ██║      ██║
+# ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝   ╚═╝      ╚═╝      ╚═╝
+# https://alacritty.org
+# https://github.com/alacritty/alacritty
+
+# ┌┐ ┌─┐┬  ┬
+# ├┴┐├┤ │  │
+# └─┘└─┘┴─┘┴─┘
+
+[bell]
+animation = "EaseOut"
+duration = 50
+color = "#e86db2"
+command = "None"
+
+# ┌─┐┌─┐┬  ┌─┐┬─┐┌─┐
+# │  │ ││  │ │├┬┘└─┐
+# └─┘└─┘┴─┘└─┘┴└─└─┘
+
+[colors]
+draw_bold_text_with_bright_colors = false
+
+[colors.normal]
+black = "#1f242a"
+blue = "#2f97ea"
+cyan = "#04f6f6"
+green = "#2bd2b9"
+magenta = "#e86db2"
+red = "#f47067"
+white = "#8296aa"
+yellow = "#f5b168"
+
+[colors.bright]
+black = "#3c4552"
+blue = "#6fc1ff"
+cyan = "#87d7d7"
+green = "#00b196"
+magenta = "#a394cd"
+red = "#ff4b82"
+white = "#9cb6d0"
+yellow = "#ffcc95"
+
+[colors.cursor]
+cursor = "#F4D35E"
+text = "#1f242a"
+
+[colors.footer_bar]
+background = "#1f242a"
+foreground = "#e86db2"
+
+[colors.hints.end]
+background = "#1d1f21"
+foreground = "#e9ff5e"
+
+[colors.hints.start]
+background = "#e9ff5e"
+foreground = "#1d1f21"
+
+[colors.line_indicator]
+background = "#22272e"
+foreground = "#3c4552"
+
+[colors.primary]
+background = "#22272e"
+bright_foreground = "#adbac7"
+dim_foreground = "#3c4552"
+foreground = "#adbac7"
+
+[colors.search.focused_match]
+background = "#e86db2"
+foreground = "#1f242a"
+
+[colors.search.matches]
+background = "#3c4552"
+foreground = "#e86db2"
+
+[colors.selection]
+background = "#04f6f6"
+text = "#22272e"
+
+[colors.vi_mode_cursor]
+cursor = "#e9ff5e"
+text = "#1f242a"
+
+# ┌─┐┬ ┬┬─┐┌─┐┌─┐┬─┐
+# │  │ │├┬┘└─┐│ │├┬┘
+# └─┘└─┘┴└─└─┘└─┘┴└─
+
+[cursor]
+blink_interval = 750
+thickness = 0.15
+unfocused_hollow = true
+vi_mode_style = "None"
+
+[cursor.style]
+blinking = "Always"
+shape = "Block"
+
+# ┌┬┐┌─┐┌┐ ┬ ┬┌─┐
+#  ││├┤ ├┴┐│ ││ ┬
+# ─┴┘└─┘└─┘└─┘└─┘
+
+[debug]
+log_level = "Info"
+persistent_logging = false
+print_events = false
+render_timer = false
+
+# ┌─┐┌─┐┌┐┌┌┬┐
+# ├┤ │ ││││ │
+# └  └─┘┘└┘ ┴
+
+[font]
+size = 15.5
+
+[font.bold]
+family = "JetBrainsMono Nerd Font"
+style = "Bold"
+
+[font.bold_italic]
+family = "JetBrainsMono Nerd Font"
+style = "Bold Italic"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font"
+style = "Italic"
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style = "Regular"
+
+[font.offset]
+x = 1
+y = 14
+
+[font.glyph_offset]
+x = 0
+y = 7
+
+# ┬┌─┌─┐┬ ┬┌┐ ┌─┐┌─┐┬─┐┌┬┐
+# ├┴┐├┤ └┬┘├┴┐│ │├─┤├┬┘ ││
+# ┴ ┴└─┘ ┴ └─┘└─┘┴ ┴┴└──┴┘
+
+[[keyboard.bindings]] # Enter tmux command mode `⌃b` + `:`
+chars = "\u0002:"
+key = "Semicolon"
+mods = "Command"
+
+[[keyboard.bindings]] # Spread panes out evenly `⌃b` + `E`
+chars = "\u0002E"
+key = "E"
+mods = "Command"
+
+[[keyboard.bindings]] # Toggle panes synchronisation `⌃b` + `⌃s`
+chars = "\u0002\u0013"
+key = "E"
+mods = "Command|Shift"
+
+[[keyboard.bindings]] # Grab and open any URL from the terminal window `⌃b` + `u`
+chars = "\u0002u"
+key = "U"
+mods = "Command"
+
+[[keyboard.bindings]] # Show all windows `⌃b` + `w`
+chars = "\u0002w" # \x02\x77
+key = "P"
+mods = "Command"
+
+[[keyboard.bindings]] # Show all sessions `⌃b` + `s`
+chars = "\u0002s" # \x10
+key = "P"
+mods = "Command|Shift"
+
+[[keyboard.bindings]] # Search for a pane `⌃b` + `f`
+chars = "\u0002f"
+key = "F"
+mods = "Command|Shift"
+
+[[keyboard.bindings]] # Save environment `⌃b` + `S`
+chars = "\u0002S"
+key = "S"
+mods = "Command"
+
+[[keyboard.bindings]] # Restore environment `⌃b` + `R`
+chars = "\u0002R" # \x02\x52
+key = "S"
+mods = "Command|Shift"
+
+[[keyboard.bindings]] # Create a vertical pane `⌃b` + `%`
+chars = "\u0002%"
+key = "D"
+mods = "Command"
+
+[[keyboard.bindings]] # Create a horizontal pane `⌃b` + `"`
+chars = "\u0002\""
+key = "D"
+mods = "Command|Shift"
+
+[[keyboard.bindings]] # Create a new window/tab
+chars = "\u0002c"
+key = "T"
+mods = "Command"
+
+[[keyboard.bindings]] # Close current pane `⌃b` + `x`
+chars = "\u0002x"
+key = "W"
+mods = "Command"
+
+[[keyboard.bindings]] # Close current window/tab `⌃b` + `&`
+chars = "\u0002&"
+key = "W"
+mods = "Command|Shift"
+
+[[keyboard.bindings]] # Rename current window/tab `⌃b` + `,`
+chars = "\u0002,"
+key = "R"
+mods = "Command"
+
+[[keyboard.bindings]] # Rename current session `⌃b` + `$`
+chars = "\u0002$"
+key = "R"
+mods = "Command|Shift"
+
+[[keyboard.bindings]] # Move to previous session `⌃b` + `(`
+chars = "\u0002("
+key = "Left"
+mods = "Command|Shift"
+
+[[keyboard.bindings]] # Move to next session `⌃b` + `)`
+chars = "\u0002)"
+key = "Right"
+mods = "Command|Shift"
+
+[[keyboard.bindings]] # Move to previous window/tab `⌃b` + `p`
+chars = "\u0002p"
+key = "H"
+mods = "Command|Shift"
+
+[[keyboard.bindings]] # Move to next window/tab `⌃b` + `n`
+chars = "\u0002n"
+key = "L"
+mods = "Command|Shift"
+
+[[keyboard.bindings]] # Resize current pane to left `⌃b` + `H`
+chars = "\u0002H"
+key = "Left"
+mods = "Command"
+
+[[keyboard.bindings]] # Resize current pane to down `⌃b` + `J`
+chars = "\u0002J"
+key = "Down"
+mods = "Command"
+
+[[keyboard.bindings]] # Resize current pane to up `⌃b` + `K`
+chars = "\u0002K"
+key = "Up"
+mods = "Command"
+
+[[keyboard.bindings]] # Resize current pane to right `⌃b` + `L`
+chars = "\u0002L"
+key = "Right"
+mods = "Command"
+
+[[keyboard.bindings]] # Switch to window/tab #1 `⌃b` + `1`
+chars = "\u00021"
+key = "Key1"
+mods = "Command"
+
+[[keyboard.bindings]] # Switch to window/tab #2 `⌃b` + `2`
+chars = "\u00022"
+key = "Key2"
+mods = "Command"
+
+[[keyboard.bindings]] # Switch to window/tab #3 `⌃b` + `3`
+chars = "\u00023"
+key = "Key3"
+mods = "Command"
+
+[[keyboard.bindings]] # Switch to window/tab #4 `⌃b` + `4`
+chars = "\u00024"
+key = "Key4"
+mods = "Command"
+
+[[keyboard.bindings]] # Switch to window/tab #5 `⌃b` + `5`
+chars = "\u00025"
+key = "Key5"
+mods = "Command"
+
+[[keyboard.bindings]] # Switch to window/tab #6 `⌃b` + `6`
+chars = "\u00026"
+key = "Key6"
+mods = "Command"
+
+[[keyboard.bindings]] # Switch to window/tab #7 `⌃b` + `7`
+chars = "\u00027"
+key = "Key7"
+mods = "Command"
+
+[[keyboard.bindings]] # Switch to window/tab #8 `⌃b` + `8`
+chars = "\u00028"
+key = "Key8"
+mods = "Command"
+
+[[keyboard.bindings]] # Switch to window/tab #9 `⌃b` + `9`
+chars = "\u00029"
+key = "Key9"
+mods = "Command"
+
+[[keyboard.bindings]] # Start tmux copy mode
+chars = "\u0002["
+key = "C"
+mods = "Command"
+
+[[keyboard.bindings]] # Send `<C-q>` https://github.com/alacritty/alacritty/issues/1359
+chars = "\u0011"
+key = "Q"
+mods = "Control"
+
+[[keyboard.bindings]] # Send `<C-n>i` and map it `<C-i>` in VIM # https://github.com/neoclide/coc.nvim/issues/1089
+chars = "\u000Ei"
+key = "I"
+mods = "Control"
+
+# ┌┬┐┌─┐┬ ┬┌─┐┌─┐
+# ││││ ││ │└─┐├┤
+# ┴ ┴└─┘└─┘└─┘└─┘
+
+[mouse]
+hide_when_typing = false
+
+[[mouse.bindings]]
+action = "PasteSelection"
+mouse = "Middle"
+
+# ┌─┐┌─┐┬─┐┌─┐┬  ┬  ┬┌┐┌┌─┐
+# └─┐│  ├┬┘│ ││  │  │││││ ┬
+# └─┘└─┘┴└─└─┘┴─┘┴─┘┴┘└┘└─┘
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+# ┌─┐┌─┐┬  ┌─┐┌─┐┌┬┐┬┌─┐┌┐┌
+# └─┐├┤ │  ├┤ │   │ ││ ││││
+# └─┘└─┘┴─┘└─┘└─┘ ┴ ┴└─┘┘└┘
+
+[selection]
+save_to_clipboard = true
+
+# ┌─┐┬ ┬┌─┐┬  ┬
+# └─┐├─┤├┤ │  │
+# └─┘┴ ┴└─┘┴─┘┴─┘
+
+[shell]
+# args = ["-l", "-c", "tmux attach || tmux"]
+program = "/bin/zsh"
+
+# ┬ ┬┬┌┐┌┌┬┐┌─┐┬ ┬
+# │││││││ │││ ││││
+# └┴┘┴┘└┘─┴┘└─┘└┴┘
+
+[window]
+decorations = "buttonless"
+decorations_theme_variant = "Dark"
+dynamic_padding = false
+dynamic_title = true
+opacity = 1.0
+option_as_alt = "None"
+startup_mode = "Windowed"
+
+[window.dimensions]
+columns = 120
+lines = 26
+
+[window.padding]
+x = 15
+y = 5
+
+[window.position]
+x = 0
+y = 0
