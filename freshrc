@@ -65,7 +65,7 @@ fresh config/aerospace/aerospace.toml --file=~/.aerospace.toml
 # └┬┘├─┤├┴┐├─┤│
 #  ┴ ┴ ┴└─┘┴ ┴┴
 
-# fresh config/yabai/yabai.conf --file=~/.yabairc
+fresh config/yabai/yabai.conf --file=~/.yabairc
 
 # ┌─┐┬┌─┬ ┬┌┬┐
 # └─┐├┴┐├─┤ ││
@@ -90,38 +90,6 @@ fresh config/ctags/ctags.conf --file=~/.ctags
 # └─┘┴ ┴ ┴ ┴└─┘└─┘  └─┘┴─┘┴
 
 fresh config/gh/dash/config.yml --file=~/.config/gh-dash/config.yml
-
-# ┌─┐┌┬┐┬┌┬┐┌─┐┬─┐
-# ├┤  │││ │ │ │├┬┘
-# └─┘─┴┘┴ ┴ └─┘┴└─
-
-# NEOVIM
-
-fresh-options --file=~/.config/nvim/init.lua --filter=erb --marker='--'
-  fresh editors/vim/settings.lua
-  fresh editors/vim/commands.lua
-  fresh editors/vim/themes/lualine/catamaran.lua
-  fresh editors/vim/lazy.lua
-  fresh editors/vim/plugins/\*.lua
-  fresh editors/vim/mappings.lua
-fresh-options
-
-fresh editors/vim/themes/catamaran.vim --file=~/.config/nvim/colors/catamaran.vim --marker='"'
-fresh editors/vim/themes/airline/catamaran.vim --file=~/.config/nvim/autoload/airline/themes/catamaran.vim --marker='"'
-
-# VIM
-
-fresh-options --file=~/.vimrc --filter=erb --marker='"'
-  fresh editors/vim/settings.vim
-  fresh editors/vim/commands.vim
-  fresh editors/vim/plug.vim
-  fresh editors/vim/plugins/\*.vim
-  fresh editors/vim/mappings.vim
-fresh-options
-
-fresh editors/vim/themes/catamaran.vim --file=~/.vim/colors/catamaran.vim --marker='"'
-fresh editors/vim/themes/airline/catamaran.vim --file=~/.vim/autoload/airline/themes/catamaran.vim --marker='"'
-
 
 # ┌─┐┬┌┬┐
 # │ ┬│ │
