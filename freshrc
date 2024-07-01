@@ -11,31 +11,25 @@
 # └  ┴└─└─┘└─┘┴ ┴
 
 fresh freshshell/fresh bin/fresh --bin
+fresh freshshell/fresh contrib/completion/fresh-completion.zsh --file=completions/_fresh
 
 fresh_after_build() {
-  [ -n "$DOTFILES_HOME" ] && [ -f "$HOME/.Brewfile" ] && \
-    brew bundle dump --describe --force --file="$DOTFILES_HOME/config/homebrew/Brewfile" > /dev/null 2>&1
+  # Dump Brewfile
+  [ -f "~/.Brewfile" ] && brew bundle dump --file=~/.Brewfile --force --describe
 
+  # Build NNN
   cd ~/.fresh/source/jarun/nnn && make O_GITSTATUS=1 O_NERD=1 &>/dev/null && \
     ln -sf ~/.fresh/source/jarun/nnn/nnn ~/bin/nnn
 
-  # chmod +x ~/.yabairc
+  # Reload Aerospace config
   type aerospace > /dev/null 2>&1 && aerospace reload-config --no-gui
 }
 
-# ┌─┐┬ ┬┌─┐┬  ┬
-# └─┐├─┤├┤ │  │
-# └─┘┴ ┴└─┘┴─┘┴─┘
-
-# Completions
+# ┌─┐┌─┐┬ ┬
+# ┌─┘└─┐├─┤
+# └─┘└─┘┴ ┴
 
 fresh zsh-users/zsh-completions src --file=completions/
-fresh ohmyzsh/ohmyzsh plugins/terraform/_terraform --file=completions/_terraform
-fresh freshshell/fresh contrib/completion/fresh-completion.zsh --file=completions/_fresh
-fresh alacritty/alacritty extra/completions/_alacritty --file=completions/_alacritty
-
-# Plugins
-
 fresh ohmyzsh/ohmyzsh plugins --file=vendor/ohmyzsh/plugins/
 fresh zsh-users/zsh-syntax-highlighting . --file=vendor/zsh-users/zsh-syntax-highlighting/
 fresh zsh-users/zsh-autosuggestions . --file=vendor/zsh-users/zsh-autosuggestions/
@@ -47,6 +41,7 @@ fresh zsh-users/zsh-autosuggestions . --file=vendor/zsh-users/zsh-autosuggestion
 fresh-options --filter=erb --file=~/.config/alacritty/alacritty.toml
   fresh config/alacritty/\*
 fresh-options
+fresh alacritty/alacritty extra/completions/_alacritty --file=completions/_alacritty
 
 # ┌┬┐┌┬┐┬ ┬─┐ ┬
 #  │ ││││ │┌┴┬┘
@@ -160,12 +155,6 @@ fresh config/curl/netrc.conf --file=~/.netrc --filter=erb
 
 fresh config/tig/tigrc.conf --file=~/.tigrc
 
-# ┌┐ ┬─┐┌─┐┬ ┬
-# ├┴┐├┬┘├┤ │││
-# └─┘┴└─└─┘└┴┘
-
-fresh config/homebrew/Brewfile --file=~/.Brewfile
-
 # ┌─┐┬┌─┐┬  ┌─┐┌┬┐
 # ├┤ ││ ┬│  ├┤  │
 # └  ┴└─┘┴─┘└─┘ ┴
@@ -177,6 +166,7 @@ fresh xero/figlet-fonts . --file=~/.figlet/
 # ┘└┘┘└┘┘└┘
 
 fresh jarun/nnn . --file=vendor/nnn/
+fresh jarun/nnn misc/auto-completion/zsh/_nnn --file=completions/_nnn
 
 # ┌─┐┌┐┌┌─┐  ┌─┐┌─┐┌─┐┌─┐┬ ┬┌─┐┬─┐┌┬┐
 # │ ││││├┤   ├─┘├─┤└─┐└─┐││││ │├┬┘ ││
@@ -189,3 +179,9 @@ fresh config/1password/ssh/agent.toml --file=~/.config/1Password/ssh/agent.toml
 # └─┘└─┘└─┘
 
 fresh config/coc/coc-settings.json --file=~/.config/nvim/coc-settings.json
+
+# ┌┬┐┌─┐┬─┐┬─┐┌─┐┌─┐┌─┐┬─┐┌┬┐
+#  │ ├┤ ├┬┘├┬┘├─┤├┤ │ │├┬┘│││
+#  ┴ └─┘┴└─┴└─┴ ┴└  └─┘┴└─┴ ┴
+
+fresh ohmyzsh/ohmyzsh plugins/terraform/_terraform --file=completions/_terraform
