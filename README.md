@@ -67,7 +67,7 @@ plugins, GitHub CLI extensions, and NNN plugins.
 
 ---
 
-> _Reload your terminal. Your dot files are now `fresh`._
+> _Reload your terminal. The dotfiles are now fresh!_
 
 <a href="https://hallaji.com">
   <img src="https://hallaji.com/assets/fav/fav.svg" widht="48" height="48">
