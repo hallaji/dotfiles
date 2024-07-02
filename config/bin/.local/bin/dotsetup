@@ -8,18 +8,24 @@
 # Usage❯ dotsetup
 
 cat << EOF
-┌┐ ┬─┐┌─┐┬ ┬┌─┐┬┬  ┌─┐
-├┴┐├┬┘├┤ │││├┤ ││  ├┤
-└─┘┴└─└─┘└┴┘└  ┴┴─┘└─┘
+┬ ┬┌─┐┌┬┐┌─┐┌┐ ┬─┐┌─┐┬ ┬
+├─┤│ ││││├┤ ├┴┐├┬┘├┤ │││
+┴ ┴└─┘┴ ┴└─┘└─┘┴└─└─┘└┴┘
 EOF
 
-brew bundle check --global || brew bundle --global
+if type brew &> /dev/null; then
+  # Dump Brewfile
+  [ -f "~/.Brewfile" ] && brew bundle dump --file=~/.Brewfile --force --describe
+
+  # Install Homebrew packages
+  brew bundle check --global || brew bundle --global
+fi
 
 
 cat << EOF
-┌─┐┌─┐┌┬┐┌─┐  ┌─┐┬  ┬ ┬┌─┐┬┌┐┌┌─┐
-├─┤└─┐ ││├┤   ├─┘│  │ ││ ┬││││└─┐
-┴ ┴└─┘─┴┘└    ┴  ┴─┘└─┘└─┘┴┘└┘└─┘
+┌─┐┌─┐┌┬┐┌─┐
+├─┤└─┐ ││├┤
+┴ ┴└─┘─┴┘└
 EOF
 
 # https://github.com/asdf-vm/asdf-plugins
@@ -40,40 +46,37 @@ ASDF_PLUGINS=(
   redis # https://github.com/smashedtoatoms/asdf-redis
 )
 
-for item in "${ASDF_PLUGINS[@]}"; do
-  if asdf plugin-list | grep -q "^$item$"; then
-    asdf plugin update "$item"
-  else
-    asdf plugin add "$item"
-  fi
-  if [ "$item" == "java" ]; then
-    version=$(asdf list-all java | grep "^openjdk-" | tail -n 1)
-    if [ -n "$version" ]; then
-      asdf install java "$version" && asdf global java "$version"
+if type asdf &> /dev/null; then
+  for item in "${ASDF_PLUGINS[@]}"; do
+    if asdf plugin-list | grep -q "^$item$"; then
+      asdf plugin update "$item"
+    else
+      asdf plugin add "$item"
     fi
-  else
-    asdf install "$item" latest && asdf global "$item" latest
-  fi
-done
+    if [ "$item" == "java" ]; then
+      version=$(asdf list-all java | grep "^openjdk-" | tail -n 1)
+      if [ -n "$version" ]; then
+        asdf install java "$version" && asdf global java "$version"
+      fi
+    else
+      asdf install "$item" latest && asdf global "$item" latest
+    fi
+  done
+fi
 
 
 cat << EOF
-┌┐┌┌─┐┌─┐┬  ┬┬┌┬┐  ┌─┐┬  ┬┌─┐┌┐┌┌┬┐┌─┐
-│││├┤ │ │└┐┌┘││││  │  │  │├┤ │││ │ └─┐
-┘└┘└─┘└─┘ └┘ ┴┴ ┴  └─┘┴─┘┴└─┘┘└┘ ┴ └─┘
+┬  ┬┬┌┬┐   ┬   ┌┐┌┌─┐┌─┐┬  ┬┬┌┬┐
+└┐┌┘││││  ┌┼─  │││├┤ │ │└┐┌┘││││
+ └┘ ┴┴ ┴  └┘   ┘└┘└─┘└─┘ └┘ ┴┴ ┴
 EOF
 
+# Neovim clients
 pip3 install --upgrade pynvim # https://github.com/neovim/pynvim
 pnpm install -g neovim # https://github.com/neovim/node-client
 gem install neovim # https://github.com/neovim/neovim-ruby
 
-
-cat << EOF
-┌─┐┌┬┐┬┌┬┐┌─┐┬─┐  ┌─┐┬  ┬ ┬┌─┐┬┌┐┌┌─┐
-├┤  │││ │ │ │├┬┘  ├─┘│  │ ││ ┬││││└─┐
-└─┘─┴┘┴ ┴ └─┘┴└─  ┴  ┴─┘└─┘└─┘┴┘└┘└─┘
-EOF
-
+# Vim and Neovim plugins
 nvim --headless "+Lazy! sync" "+qa"
 nvim "+CocUpdate" "+GoUpdateBinaries" "+Tmuxline" "+TmuxlineSnapshot! ~/.tmux/statusline-colors.conf" "+qa"
 vim "+PlugUpgrade" "+PlugUpdate" "+qa"
@@ -95,13 +98,15 @@ cat << EOF
 └─┘┴ ┴ ┴ ┴└─┘└─┘  └─┘┴─┘┴
 EOF
 
-gh extension install github/gh-copilot
-gh extension install dlvhdr/gh-dash
-gh extension install jrnxf/gh-eco
-gh extension install mislav/gh-branch
-gh extension install garnertb/gh-gitignore
-gh extension install lakuapik/gh-inspire
-gh extension upgrade --all
+type gh > /dev/null 2>&1 && {
+  gh extension install github/gh-copilot
+  gh extension install dlvhdr/gh-dash
+  gh extension install jrnxf/gh-eco
+  gh extension install mislav/gh-branch
+  gh extension install garnertb/gh-gitignore
+  gh extension install lakuapik/gh-inspire
+  gh extension upgrade --all
+}
 
 
 cat << EOF
@@ -110,17 +115,24 @@ cat << EOF
 ┘└┘┘└┘┘└┘
 EOF
 
+# Build NNN
+cd ~/.fresh/source/jarun/nnn && make O_GITSTATUS=1 O_NERD=1 &>/dev/null && \
+  ln -sf ~/.fresh/source/jarun/nnn/nnn ~/bin/nnn
+
+# Install NNN plugins
 rm -rf "${XDG_CONFIG_HOME:-$HOME/.config}"/nnn/plugins
 curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
 
 
 cat << EOF
-┌─┐┬─┐┌─┐┌─┐┬ ┬
-├┤ ├┬┘├┤ └─┐├─┤
-└  ┴└─└─┘└─┘┴ ┴
+┌─┐┌─┐┬─┐┌─┐┌─┐┌─┐┌─┐┌─┐┌─┐
+├─┤├┤ ├┬┘│ │└─┐├─┘├─┤│  ├┤
+┴ ┴└─┘┴└─└─┘└─┘┴  ┴ ┴└─┘└─┘
 EOF
 
-fresh update
+# Reload AeroSpace configuration
+# https://github.com/nikitabobko/AeroSpace
+type aerospace > /dev/null 2>&1 && aerospace reload-config --no-gui
 
 
 cat << EOF
@@ -129,6 +141,8 @@ cat << EOF
 └─┘└─┘┴└─ └┘ ┴└─┘└─┘└─┘
 EOF
 
-skhd --restart-service # https://github.com/koekeishiya/skhd
-brew services restart borders # https://github.com/FelixKratz/JankyBorders
-aerospace reload-config --no-gui # https://github.com/nikitabobko/AeroSpace
+# https://github.com/koekeishiya/skhd
+type skhd > /dev/null 2>&1 && skhd --restart-service
+
+# https://github.com/FelixKratz/JankyBorders
+type brew > /dev/null 2>&1 && brew services restart borders

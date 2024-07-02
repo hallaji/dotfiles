@@ -11,15 +11,7 @@
 # └  ┴└─└─┘└─┘┴ ┴
 
 fresh_after_build() {
-  # Dump Brewfile
-  [ -f "~/.Brewfile" ] && brew bundle dump --file=~/.Brewfile --force --describe
-
-  # Build NNN
-  cd ~/.fresh/source/jarun/nnn && make O_GITSTATUS=1 O_NERD=1 &>/dev/null && \
-    ln -sf ~/.fresh/source/jarun/nnn/nnn ~/bin/nnn
-
-  # Reload Aerospace config
-  type aerospace > /dev/null 2>&1 && aerospace reload-config --no-gui
+  command -v dotsetup >/dev/null 2>&1 && dotsetup
 }
 
 fresh freshshell/fresh bin/fresh --bin
