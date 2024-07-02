@@ -10,8 +10,8 @@
 ```
 
 > Disclaimer: The configurations are specifically tailored for my personal use.
-> Feel free to draw inspiration for your dotfiles, but please be advised that it
-> is provided 'as is' without any guarantees or warranty.
+> Feel free to use them as a reference or inspiration for creating your own
+> dotfiles.
 
 ## Prerequisites
 
@@ -48,27 +48,29 @@ values with your own.
 stow env
 
 # Optional packages
-stow 1password aerospace alacritty asdf aws bin borders bundler ctags curl gh \
-  git gpg homebrew neovim npm pip skhd stow ssh starship tig tmux vim yabai zsh
+stow 1password aerospace alacritty asdf aws bin borders bundler \
+     ctags curl gh git gpg homebrew neovim npm pip skhd stow \
+     ssh starship tig tmux vim yabai zsh
 ```
 
 The [GNU Stow](https://www.gnu.org/software/stow/manual/stow.html) is a symlink
 manager that facilitates the creation of symbolic links from the `config`
 directory to target directories (typically the home directory).
 
-### 4. Running Setup Binary
+### 4. Running Setup
 
 ```shell
 dotsetup
 ```
 
-The [script](config/bin/.local/bin/dotsetup) installs Homebrew packages, ASDF plugins, Vim, Neovim and Tmux
-plugins, GitHub CLI extensions, and NNN plugins.
+The [script](config/bin/.local/bin/dotsetup) installs Homebrew packages, ASDF,
+Vim, Neovim, Tmux and NNN plugins, GitHub CLI extensions, and refreshes
+external configurations.
 
 ---
 
 > _Reload your terminal. The dotfiles are now fresh!_
 
 <a href="https://hallaji.com">
-  <img src="https://hallaji.com/assets/fav/fav.svg" widht="48" height="48">
+  <img src="https://hallaji.com/assets/fav/fav.svg" widht="24" height="24">
 </a>
