@@ -24,3 +24,7 @@ for file in "${TEMPLATE_FILES[@]}"; do
     fi
   fi
 done
+
+if [ ! -f ~/.env ] && [ -f ~/.env.example ]; then
+  cp ~/.env.example ~/.env
+fi
