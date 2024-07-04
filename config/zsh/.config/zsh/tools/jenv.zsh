@@ -7,5 +7,9 @@
 # http://www.jenv.be
 # https://github.com/jenv/jenv
 
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
+
+type jenv &>/dev/null && eval "$(jenv init -)"
+
+if [ -d "$HOME/.jenv" ]; then
+  export PATH="$HOME/.jenv/bin:$PATH"
+fi

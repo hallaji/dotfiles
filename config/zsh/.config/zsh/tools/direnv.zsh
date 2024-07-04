@@ -7,4 +7,4 @@
 # https://direnv.net
 # https://github.com/direnv/direnv
 
-eval "$(direnv hook zsh)"
+type direnv &>/dev/null && eval "$(direnv hook zsh)"

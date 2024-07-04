@@ -6,4 +6,4 @@
 # ╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝╚═╝
 # https://starship.rs
 
-eval "$(starship init zsh)"
+type starship &>/dev/null && eval "$(starship init zsh)"

@@ -6,4 +6,4 @@
 #  ╚════╝  ╚═════╝ ╚═╝     ╚═╝╚═╝
 # https://github.com/gsamokovarov/jump
 
-eval "$(jump shell)"
+type jump &>/dev/null && eval "$(jump shell)"
