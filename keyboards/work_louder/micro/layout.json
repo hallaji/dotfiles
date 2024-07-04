@@ -1,0 +1,93 @@
+{
+  "name": "Creator Micro",
+  "vendorProductId": 1464657635,
+  "macros": ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+  "layers": [
+    [
+      "KC_MPLY",
+      "KC_NO",
+      "KC_NO",
+      "KC_NO",
+      "KC_NO",
+      "KC_NO",
+      "KC_NO",
+      "HYPR(KC_ENT)",
+      "KC_NO",
+      "KC_NO",
+      "KC_NO",
+      "KC_NO",
+      "RGB_TOG",
+      "HYPR(KC_V)",
+      "HYPR(KC_M)",
+      "TO(1)"
+    ],
+    [
+      "KC_TRNS",
+      "KC_NO",
+      "KC_NO",
+      "KC_TRNS",
+      "KC_NO",
+      "KC_NO",
+      "KC_NO",
+      "KC_NO",
+      "KC_NO",
+      "KC_NO",
+      "KC_NO",
+      "KC_NO",
+      "KC_TRNS",
+      "KC_NO",
+      "KC_NO",
+      "TO(2)"
+    ],
+    [
+      "KC_TRNS",
+      "KC_NO",
+      "KC_NO",
+      "KC_TRNS",
+      "KC_NO",
+      "KC_NO",
+      "KC_NO",
+      "KC_NO",
+      "KC_NO",
+      "KC_NO",
+      "KC_NO",
+      "KC_NO",
+      "KC_TRNS",
+      "KC_NO",
+      "KC_NO",
+      "TO(3)"
+    ],
+    [
+      "KC_TRNS",
+      "KC_NO",
+      "KC_NO",
+      "KC_TRNS",
+      "CUSTOM(0)",
+      "CUSTOM(1)",
+      "CUSTOM(3)",
+      "CUSTOM(5)",
+      "KC_NO",
+      "CUSTOM(2)",
+      "CUSTOM(4)",
+      "CUSTOM(6)",
+      "KC_TRNS",
+      "KC_NO",
+      "KC_NO",
+      "TO(0)"
+    ]
+  ],
+  "encoders": [
+    [
+      ["KC_VOLD", "KC_VOLU"],
+      ["KC_TRNS", "KC_TRNS"],
+      ["KC_TRNS", "KC_TRNS"],
+      ["KC_TRNS", "KC_TRNS"]
+    ],
+    [
+      ["C(KC_Z)", "C(KC_Y)"],
+      ["KC_TRNS", "KC_TRNS"],
+      ["KC_TRNS", "KC_TRNS"],
+      ["KC_TRNS", "KC_TRNS"]
+    ]
+  ]
+}
