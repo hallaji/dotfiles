@@ -18,4 +18,12 @@ and wait a second before releasing the key.
 flash keychron/q4/ansi/v2 hallaji --build
 ```
 
+## Creator Micro
+
+Hold down the horizontal encoder (top left) and plug in the keyboard.
+
+```shell
+flash work_louder/micro hallaji --build
+```
+
 [DFU (Bootloader) Mode](https://docs.qmk.fm/#/newbs_flashing?id=put-your-keyboard-into-dfu-bootloader-mode).
