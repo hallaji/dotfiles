@@ -9,14 +9,13 @@
 ╚═════╝  ╚═════╝    ╚═╝   ╚═╝     ╚═╝╚══════╝╚══════╝╚══════╝
 ```
 
-> Disclaimer: The configurations are specifically tailored for my personal use.
-> Feel free to use them as a reference or inspiration for creating your own
-> dotfiles.
+> These configurations are heavily tailored for my personal use.
 
 ## Prerequisites
 
-- Ensure that there are no [pre-existing dotfiles](config/bin/.local/bin/rm-symlinks).
-- Install [Freshshell](https://freshshell.com), [Homebrew](https://brew.sh) and [GNU Stow](https://www.gnu.org/software/stow/manual/stow.html).
+Install [Freshshell](https://freshshell.com), [Homebrew](https://brew.sh), and
+[GNU Stow](https://www.gnu.org/software/stow/). Make sure there are no
+[existing dotfiles](config/bin/.local/bin/rm-symlinks).
 
 ```shell
 bash -c "$(curl -sL https://get.freshshell.com)"
@@ -42,7 +41,7 @@ example file and replace values with your own.
 stow env
 
 # Essential packages
-stow bin fresh homebrew stow
+stow bin freshshell gnustow homebrew
 
 # Optional packages
 stow 1password aerospace alacritty asdf aws borders bundler \
