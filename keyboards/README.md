@@ -8,7 +8,7 @@ Hold down the horizontal encoder (top left) and plug in the keyboard.
 flash work_louder/micro hallaji --build
 ```
 
-## [KEYCHRON Q4](https://github.com/Keychron/qmk_firmware/tree/master/keyboards/keychron/q4)
+## [Keychron Q4](https://github.com/Keychron/qmk_firmware/tree/master/keyboards/keychron/q4)
 
 Hold down the key located at `[0][0]` (top left) and plug in the keyboard.
 
@@ -16,7 +16,7 @@ Hold down the key located at `[0][0]` (top left) and plug in the keyboard.
 flash keychron/q4/ansi/v2 hallaji --build
 ```
 
-## [KBDFANS DZ60](https://github.com/qmk/qmk_firmware/tree/master/keyboards/dz60)
+## [KBDFans DZ60](https://github.com/qmk/qmk_firmware/tree/master/keyboards/dz60)
 
 Hold down `Space + B` and plug in the keyboard.
 
