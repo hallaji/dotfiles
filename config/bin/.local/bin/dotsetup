@@ -56,9 +56,11 @@ if type asdf &> /dev/null; then
     if [ "$item" == "java" ]; then
       version=$(asdf list-all java | grep "^openjdk-" | tail -n 1)
       if [ -n "$version" ]; then
+        echo "Installing latest $item..."
         asdf install java "$version" && asdf global java "$version"
       fi
     else
+      echo "Installing latest $item..."
       asdf install "$item" latest && asdf global "$item" latest
     fi
   done
