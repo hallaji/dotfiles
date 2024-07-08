@@ -43,6 +43,8 @@ brew "calc"
 brew "chezmoi"
 # Interactive terminal based UI application for tracking cryptocurrencies
 brew "cointop"
+# Configurable talking characters in ASCII art
+brew "cowsay"
 # Reimplementation of ctags(1)
 brew "ctags"
 # Top-like interface for container metrics
@@ -81,6 +83,8 @@ brew "tesseract"
 brew "ffmpeg"
 # Banner-like program prints strings as ASCII art
 brew "figlet"
+# Infamous electronic fortune-cookie generator
+brew "fortune"
 # Command-line fuzzy finder written in Go
 brew "fzf"
 # GNU compiler collection
@@ -137,6 +141,8 @@ brew "libraqm"
 brew "librsvg"
 # Lynx-like WWW browser that supports tables, menus, etc.
 brew "links"
+# Rainbows and unicorns in your console!
+brew "lolcat"
 # Java-based project management
 brew "maven"
 # Scalable distributed version control system
@@ -373,6 +379,8 @@ vscode "fabiospampinato.vscode-open-in-github"
 vscode "foxundermoon.shell-format"
 vscode "fwcd.kotlin"
 vscode "gamunu.vscode-yarn"
+vscode "github.copilot"
+vscode "github.copilot-chat"
 vscode "github.vscode-github-actions"
 vscode "golang.go"
 vscode "jeff-hykin.better-cpp-syntax"

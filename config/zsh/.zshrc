@@ -6,6 +6,7 @@
 # ╚══════╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝
 
 source ~/.config/zsh/init.zsh
+source ~/.config/zsh/quotes.zsh
 source ~/.config/zsh/completions.zsh
 source ~/.config/zsh/history.zsh
 source ~/.config/zsh/extensions.zsh
