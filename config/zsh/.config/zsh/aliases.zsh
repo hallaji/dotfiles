@@ -12,7 +12,6 @@
 alias ,c="clear" # Clear the terminal
 alias ,r="exec $SHELL -l" # Reload the shell
 alias ,q="exit" # Quit the shell
-alias ,s="pmset sleepnow" # Mac-specific sleep
 alias ,i="ping 8.8.8.8" # Check internet connection
 alias ,w="curl wttr.in/Melbourne,AU" # Check the weather
 alias ,fp='f() { lsof -nP -iTCP:"$1" -sTCP:LISTEN };f' # Find a port number in use
@@ -32,13 +31,15 @@ alias ,tls='nvim "+Tmuxline" "+TmuxlineSnapshot! ~/.tmux/statusline-colors.conf"
 alias ,ss="shasum -a 256 $* | cut -d ' ' -f 1" # Get SHA256 hash for downloaded file to verify integrity
 alias ,gopath="add_gopath" # Add a new GOPATH
 
-# ┌─┐ ┬ ┬┬┌─┐┬┌─  ┌─┐┌┬┐┬┌┬┐
-# │─┼┐│ │││  ├┴┐  ├┤  │││ │
-# └─┘└└─┘┴└─┘┴ ┴  └─┘─┴┘┴ ┴
+# ┌─┐ ┬ ┬┬┌─┐┬┌─  ┌─┐┌─┐┌┬┐┬┌─┐┌┐┌┌─┐
+# │─┼┐│ │││  ├┴┐  ├─┤│   │ ││ ││││└─┐
+# └─┘└└─┘┴└─┘┴ ┴  ┴ ┴└─┘ ┴ ┴└─┘┘└┘└─┘
 
 alias ,e="$EDITOR" # https://github.com/neovim/neovim
-alias ,ls="n -AHei" # https://github.com/jarun/nnn
 alias ,dot="cd $DOTFILES_HOME && $EDITOR"
+alias ,ls="n -AHei" # https://github.com/jarun/nnn
+alias ,f="fresh"
+alias ,s="stow_dotfiles"
 
 # ┌─┐┬┌┬┐
 # │ ┬│ │

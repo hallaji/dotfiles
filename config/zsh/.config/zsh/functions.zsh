@@ -56,6 +56,15 @@ add_gopath() {
   export PATH="$PATH:$(go env GOPATH)/bin"
 }
 
+stow_dotfiles() {
+  packages=($(basename -a "$DOTFILES_HOME"/config/*/))
+  cd "$DOTFILES_HOME"
+  for package in "${packages[@]}"; do
+    stow -R "$package"
+  done
+  cd "$OLDPWD"
+}
+
 fl_fonts() {
   for font in ~/.figlet/*.flf; do
     fontname=$(basename "$font")
