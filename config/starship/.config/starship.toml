@@ -10,14 +10,31 @@
 
 add_newline = true
 command_timeout = 2000
-# right_format = """$aws$gcloud$cmd_duration"""
+format = '$all$character'
+
+[character]
+format = '$symbol '
+success_symbol = '[󰘍](bold cyan)'
+error_symbol = '[󰘍](bold red)'
+vimcmd_symbol = '[󰘌](bold blue)'
+vimcmd_replace_one_symbol = '[󰘌](bold purple)'
+vimcmd_replace_symbol = '[󰘌](bold purple)'
+vimcmd_visual_symbol = '[󰘌](bold yellow)'
+
+[nix_shell]
+style = 'bold blue'
+symbol = '󱄅 '
+format = 'via [$symbol$state( \($name\))]($style) '
+impure_msg = '[impure shell](bold red)'
+pure_msg = '[pure shell](bold green)'
+unknown_msg = '[unknown shell](bold yellow)'
 
 [line_break]
 disabled = false
 
 [aws]
 disabled = false
-force_display = true
+force_display = false
 symbol = "󰸏 "
 style = "dimmed yellow"
 format = '[$symbol($profile )(\($region\) )]($style)'
@@ -55,7 +72,7 @@ symbol = " "
 symbol = " "
 
 [gcloud]
-disabled = false
+disabled = true
 symbol = " "
 style = "dimmed blue"
 format = '[$symbol($active)( \($project\))]($style)'
