@@ -15,7 +15,7 @@ EOF
 
 if type brew &> /dev/null; then
   # Dump Brewfile
-  [ -f "~/.Brewfile" ] && brew bundle dump --file=~/.Brewfile --force --describe
+  [ -f "$HOME/.Brewfile" ] && brew bundle dump --file=~/.Brewfile --force --describe
 
   # Install Homebrew packages
   brew bundle check --global || brew bundle --global
@@ -74,7 +74,7 @@ cat << EOF
 EOF
 
 # Neovim clients
-pip3 install --upgrade pynvim # https://github.com/neovim/pynvim
+pip3 install --upgrade setuptools pynvim # https://github.com/neovim/pynvim
 pnpm install -g neovim # https://github.com/neovim/node-client
 gem install neovim # https://github.com/neovim/neovim-ruby
 

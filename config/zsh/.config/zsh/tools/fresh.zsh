@@ -6,5 +6,5 @@
 # ╚═╝     ╚═╝  ╚═╝╚══════╝╚══════╝╚═╝  ╚═╝
 
 if [[ -f ~/.fresh/build/shell.sh ]]; then
-  type fresh &>/dev/null && source ~/.fresh/build/shell.sh
+  source ~/.fresh/build/shell.sh
 fi
