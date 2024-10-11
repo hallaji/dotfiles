@@ -15,5 +15,6 @@ return {
       -- useful to not show trailing whitespace where it usually doesn't matter.
       only_in_normal_buffers = true,
     }
+    require('mini.icons').setup()
   end,
 }
