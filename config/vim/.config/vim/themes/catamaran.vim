@@ -136,6 +136,11 @@ hi! link SpecialComment Special
 hi! link SpecialKey Special
 hi! link Tag Special
 
+hi WhichKeyIcon guifg=#2f97ea
+hi WhichKeyDesc guifg=#a394cd
+hi WhichKeyGroup guifg=#e86db2
+hi! link WhichKeyBorder FloatBorder
+
 hi DiagnosticFloatingHint ctermbg=234 ctermfg=250 guibg=#1f242a guifg=#adbac7
 hi DiagnosticError ctermfg=204 guifg=#ff4b82
 hi DiagnosticHint ctermfg=103 guifg=#8296aa
