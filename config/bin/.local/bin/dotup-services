@@ -1,0 +1,22 @@
+#!/bin/bash
+# ██████╗  ██████╗ ████████╗███████╗███████╗████████╗██╗   ██╗██████╗
+# ██╔══██╗██╔═══██╗╚══██╔══╝██╔════╝██╔════╝╚══██╔══╝██║   ██║██╔══██╗
+# ██║  ██║██║   ██║   ██║   ███████╗█████╗     ██║   ██║   ██║██████╔╝
+# ██║  ██║██║   ██║   ██║   ╚════██║██╔══╝     ██║   ██║   ██║██╔═══╝
+# ██████╔╝╚██████╔╝   ██║   ███████║███████╗   ██║   ╚██████╔╝██║
+# ╚═════╝  ╚═════╝    ╚═╝   ╚══════╝╚══════╝   ╚═╝    ╚═════╝ ╚═╝
+
+cat << EOF
+┌─┐┌─┐┬─┐┬  ┬┬┌─┐┌─┐┌─┐
+└─┐├┤ ├┬┘└┐┌┘││  ├┤ └─┐
+└─┘└─┘┴└─ └┘ ┴└─┘└─┘└─┘
+EOF
+
+# https://github.com/nikitabobko/AeroSpace
+type aerospace > /dev/null 2>&1 && aerospace reload-config --no-gui
+
+# https://github.com/koekeishiya/skhd
+type skhd > /dev/null 2>&1 && skhd --restart-service
+
+# https://github.com/FelixKratz/JankyBorders
+type brew > /dev/null 2>&1 && brew services restart borders

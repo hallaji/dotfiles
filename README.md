@@ -62,7 +62,7 @@ fresh
 The [Freshshell](https://freshshell.com) tool is used to fetch and integrate
 external configurations such as completions, plugins, fonts, and more from
 online repositories. During the build process, the [setup
-script](config/bin/.local/bin/dotsetup) installs or updates tools, packages,
+script](config/bin/.local/bin/dotup) installs or updates tools, packages,
 plugins, as well as CLI extensions.
 
 ---

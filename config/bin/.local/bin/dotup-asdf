@@ -1,0 +1,51 @@
+#!/bin/bash
+# ██████╗  ██████╗ ████████╗███████╗███████╗████████╗██╗   ██╗██████╗
+# ██╔══██╗██╔═══██╗╚══██╔══╝██╔════╝██╔════╝╚══██╔══╝██║   ██║██╔══██╗
+# ██║  ██║██║   ██║   ██║   ███████╗█████╗     ██║   ██║   ██║██████╔╝
+# ██║  ██║██║   ██║   ██║   ╚════██║██╔══╝     ██║   ██║   ██║██╔═══╝
+# ██████╔╝╚██████╔╝   ██║   ███████║███████╗   ██║   ╚██████╔╝██║
+# ╚═════╝  ╚═════╝    ╚═╝   ╚══════╝╚══════╝   ╚═╝    ╚═════╝ ╚═╝
+
+cat << EOF
+┌─┐┌─┐┌┬┐┌─┐
+├─┤└─┐ ││├┤
+┴ ┴└─┘─┴┘└
+EOF
+
+# https://github.com/asdf-vm/asdf-plugins
+ASDF_PLUGINS=(
+  direnv # https://github.com/asdf-community/asdf-direnv
+  golang # https://github.com/asdf-community/asdf-golang
+  java # https://github.com/halcyon/asdf-java
+  kotlin # https://github.com/asdf-community/asdf-kotlin
+  lua # https://github.com/Stratus3D/asdf-lua
+  maven # https://github.com/Proemion/asdf-maven
+  mysql # https://github.com/iroddis/asdf-mysql
+  nodejs # https://github.com/asdf-vm/asdf-nodejs
+  php # https://github.com/asdf-community/asdf-php
+  postgres # https://github.com/smashedtoatoms/asdf-postgres
+  python # https://github.com/asdf-community/asdf-python
+  ruby # https://github.com/asdf-vm/asdf-ruby
+  pnpm # https://github.com/jonathanmorley/asdf-pnpm
+  redis # https://github.com/smashedtoatoms/asdf-redis
+)
+
+if type asdf &> /dev/null; then
+  for item in "${ASDF_PLUGINS[@]}"; do
+    if asdf plugin-list | grep -q "^$item$"; then
+      asdf plugin update "$item"
+    else
+      asdf plugin add "$item"
+    fi
+    if [ "$item" == "java" ]; then
+      version=$(asdf list-all java | grep "^openjdk-" | tail -n 1)
+      if [ -n "$version" ]; then
+        echo "Installing latest $item..."
+        asdf install java "$version" && asdf global java "$version"
+      fi
+    else
+      echo "Installing latest $item..."
+      asdf install "$item" latest && asdf global "$item" latest
+    fi
+  done
+fi

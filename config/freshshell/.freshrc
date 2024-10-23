@@ -11,7 +11,7 @@
 # └  ┴└─└─┘└─┘┴ ┴
 
 fresh_after_build() {
-  command -v dotsetup >/dev/null 2>&1 && dotsetup
+  command -v dotup >/dev/null 2>&1 && dotup
 }
 
 fresh freshshell/fresh bin/fresh --bin
