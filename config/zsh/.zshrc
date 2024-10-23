@@ -22,7 +22,6 @@ source ~/.config/zsh/tools/icu4c.zsh
 source ~/.config/zsh/tools/jenv.zsh
 source ~/.config/zsh/tools/jump.zsh
 source ~/.config/zsh/tools/nnn.zsh
-source ~/.config/zsh/tools/pnpm.zsh
 source ~/.config/zsh/tools/pyenv.zsh
 source ~/.config/zsh/tools/rancher.zsh
 
