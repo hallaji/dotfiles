@@ -41,6 +41,23 @@ change_aws_profile() {
   zle && { zle reset-prompt; zle -R }
 }
 
+start_ec2_session() {
+  INSTANCE_ID=$(
+    aws ec2 describe-instances \
+      --query "Reservations[*].Instances[*].[InstanceId, State.Name, Tags[?Key=='Name'].Value | [0]]" \
+      --output table |
+    fzf --header "Select an EC2 Instance" |
+    awk '{print $2}' |
+    sed 's/|$//'
+  )
+  if [ -n "$INSTANCE_ID" ]; then
+    echo "Starting SSM session with instance ID: $INSTANCE_ID"
+    aws ssm start-session --target "$INSTANCE_ID"
+  else
+    echo "No instance selected."
+  fi
+}
+
 change_gcloud_config() {
   config=$(gcloud config configurations list | cut -d' ' -f1 | sed 1d | fzf)
   if [[ -n $config ]] ; then

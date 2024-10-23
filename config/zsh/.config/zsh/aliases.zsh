@@ -68,9 +68,11 @@ alias ,ghc="gh copilot"
 # └─┐├┤ ├┬┘└┐┌┘││  ├┤ └─┐
 # └─┘└─┘┴└─ └┘ ┴└─┘└─┘└─┘
 
+alias assume=". assume"
 alias ,aws=". assume" # https://www.granted.dev
 alias ,awsi="aws sts get-caller-identity"
 alias ,awsc="change_aws_profile"
+alias ,awss="start_ec2_session"
 alias ,gcpc="change_gcloud_config"
 alias ,rga="gpgconf --kill gpg-agent"
 alias ,ryabai="yabai --restart-service"
