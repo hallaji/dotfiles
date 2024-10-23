@@ -23,8 +23,6 @@ brew "apr-util"
 brew "coreutils"
 # Extendable version manager with support for Ruby, Node.js, Erlang & more
 brew "asdf"
-# C/C++ and Java libraries for Unicode and globalization
-brew "icu4c"
 # Platform built on V8 to build network applications
 brew "node"
 # AWS Cloud Development Kit - framework for defining AWS infra as code
@@ -59,6 +57,8 @@ brew "dfu-util"
 brew "diff-so-fancy"
 # Load/unload environment variables based on $PWD
 brew "direnv"
+# Pack, ship and run any application as a lightweight container
+brew "docker", link: false
 # Tool for creating isolated virtual python environments
 brew "virtualenv"
 # TUI todo manager
@@ -73,8 +73,8 @@ brew "unbound"
 brew "gnutls"
 # OpenType text shaping engine
 brew "harfbuzz"
-# Multi-format archive and compression library
-brew "libarchive"
+# C/C++ and Java libraries for Unicode and globalization
+brew "icu4c"
 # Framework for layout and rendering of i18n text
 brew "pango"
 # OCR (Optical Character Recognition) engine
@@ -155,8 +155,12 @@ brew "neovim"
 brew "nghttp2"
 # Port scanning utility for large networks
 brew "nmap"
+# Package for scientific computing with Python
+brew "numpy"
 # Manage multiple Node.js versions
 brew "nvm"
+# Tools and libraries for smart cards
+brew "opensc"
 # Open Visual Inference And Optimization toolkit for AI inference
 brew "openvino"
 # SSL/TLS VPN implementing OSI layer 2 or 3 secure network extension
@@ -266,7 +270,7 @@ cask "fantastical"
 # Web browser
 cask "firefox"
 # Web browser
-cask "firefox-developer-edition"
+cask "firefox@developer-edition"
 cask "font-fira-code"
 cask "font-fira-code-nerd-font"
 cask "font-hack-nerd-font"
@@ -284,7 +288,7 @@ cask "github"
 # Web browser
 cask "google-chrome"
 # Web browser
-cask "google-chrome-canary"
+cask "google-chrome@canary"
 # Set of tools to manage resources and applications hosted on Google Cloud
 cask "google-cloud-sdk"
 # Tools to protect your emails and files
@@ -331,6 +335,8 @@ cask "robo-3t"
 cask "safari-technology-preview"
 # MySQL/MariaDB database management platform
 cask "sequel-pro"
+# Plugin for AWS CLI to start and end sessions that connect to managed instances
+cask "session-manager-plugin"
 # Video chat, voice call and instant messaging application
 cask "skype"
 # Team communication and collaboration software
@@ -386,8 +392,10 @@ vscode "golang.go"
 vscode "jeff-hykin.better-cpp-syntax"
 vscode "kumar-harsh.graphql-for-vscode"
 vscode "mikestead.dotenv"
+vscode "mkhl.direnv"
 vscode "mrmlnc.vscode-scss"
 vscode "ms-azuretools.vscode-docker"
+vscode "ms-playwright.playwright"
 vscode "ms-python.debugpy"
 vscode "ms-python.isort"
 vscode "ms-python.python"
@@ -411,12 +419,15 @@ vscode "redhat.vscode-commons"
 vscode "redhat.vscode-xml"
 vscode "redhat.vscode-yaml"
 vscode "shopify.ruby-lsp"
+vscode "snyk-security.snyk-vulnerability-scanner"
 vscode "stylelint.vscode-stylelint"
 vscode "techer.open-in-browser"
+vscode "testdouble.vscode-standard-ruby"
 vscode "timonwong.shellcheck"
 vscode "tinkertrain.theme-panda"
 vscode "twxs.cmake"
 vscode "unifiedjs.vscode-mdx"
+vscode "vayan.haml"
 vscode "vscode-icons-team.vscode-icons"
 vscode "vscodevim.vim"
 vscode "vsls-contrib.codetour"
