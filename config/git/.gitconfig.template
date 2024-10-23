@@ -29,6 +29,9 @@
   excludesfile = ~/.gitignore.global
   pager = diff-so-fancy | less --tabs=4 -RFX
 
+[url "ssh://git@github.com/"]
+  insteadOf = https://github.com/
+
 [interactive]
   diffFilter = diff-so-fancy --patch
 
