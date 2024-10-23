@@ -45,10 +45,9 @@ start_ec2_session() {
   INSTANCE_ID=$(
     aws ec2 describe-instances \
       --query "Reservations[*].Instances[*].[InstanceId, State.Name, Tags[?Key=='Name'].Value | [0]]" \
-      --output table |
+      --output text |
     fzf --header "Select an EC2 Instance" |
-    awk '{print $2}' |
-    sed 's/|$//'
+    awk '{print $1}'
   )
   if [ -n "$INSTANCE_ID" ]; then
     echo "Starting SSM session with instance ID: $INSTANCE_ID"
