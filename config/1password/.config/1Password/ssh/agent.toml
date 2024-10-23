@@ -19,9 +19,3 @@ account = "Riverside"
 item = "hallaji (RSA)"
 vault = "Personal"
 account = "Riverside"
-
-[[ssh-keys]]
-item = "cultureamp (RSA)"
-vault = "Culture Amp"
-account = "Riverside"
-
