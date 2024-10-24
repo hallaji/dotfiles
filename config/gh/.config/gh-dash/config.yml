@@ -24,16 +24,28 @@ issuesSections:
   - title: Assigned
     filters: is:open assignee:@me
 defaults:
+  layout:
+    prs:
+      repo:
+        grow: true,
+        width: 10
+        hidden: false
+    # issues: same structure as prs
+  prsLimit: 20 # global limit
+  issuesLimit: 20 # global limit
   preview:
-    open: true
-    width: 50
-  prsLimit: 20
-  issuesLimit: 20
-  refetchIntervalMinutes: 5 # minutes
+    open: true # whether to have the preview pane open by default
+    width: 60 # width in columns
+  refetchIntervalMinutes: 30 # will re-fetch all sections every 30 minutes
 repoPaths: # configure where to locate repos when checking out PRs
-  default_path: ~/Code # fallback value if none of the other paths match
+  :owner/:repo: ~/code/:owner/:repo
+keybindings:
+pager:
+  diff: less # or delta for example
+confirmQuit: false # show prompt on quit or not
 theme:
   ui:
+    sectionsShowCount: true
     table:
       showSeparator: true
   colors:
@@ -42,8 +54,9 @@ theme:
       secondary: "#a394cd"
       inverted: "#1f242a"
       faint: "#8b97a2"
-      warning: "#f47067"
+      warning: "#f5b168"
       success: "#00b196"
+      error: "#ff4b82"
     background:
       selected: "#39386B"
     border:
