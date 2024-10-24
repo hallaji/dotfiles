@@ -46,7 +46,7 @@ stow bin freshshell gnustow homebrew
 # Optional packages
 stow 1password aerospace alacritty asdf aws borders bundler \
      ctags curl gh git gpg neovim npm pip skhd ssh starship \
-     tig tmux vim yabai zsh
+     tig tmux vim yabai zsh granted
 ```
 
 The [GNU Stow](https://www.gnu.org/software/stow/manual/stow.html) is a symlink

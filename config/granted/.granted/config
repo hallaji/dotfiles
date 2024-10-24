@@ -1,0 +1,17 @@
+#  ██████╗ ██████╗  █████╗ ███╗   ██╗████████╗███████╗██████╗
+# ██╔════╝ ██╔══██╗██╔══██╗████╗  ██║╚══██╔══╝██╔════╝██╔══██╗
+# ██║  ███╗██████╔╝███████║██╔██╗ ██║   ██║   █████╗  ██║  ██║
+# ██║   ██║██╔══██╗██╔══██║██║╚██╗██║   ██║   ██╔══╝  ██║  ██║
+# ╚██████╔╝██║  ██║██║  ██║██║ ╚████║   ██║   ███████╗██████╔╝
+#  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝   ╚═╝   ╚══════╝╚═════╝
+# https://www.granted.dev
+
+DefaultBrowser = "FIREFOX"
+CustomBrowserPath = "/opt/homebrew/bin/firefox"
+CustomSSOBrowserPath = ""
+Ordering = "Alphabetical"
+ExportCredentialSuffix = ""
+DefaultExportAllEnvVar = true
+
+[Keyring]
+  Backend = "keychain"

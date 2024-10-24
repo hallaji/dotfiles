@@ -64,12 +64,21 @@ alias ,ghi="gh inspire"
 alias ,ghgi="gh gitignore"
 alias ,ghc="gh copilot"
 
+# ┌─┐┬─┐┌─┐┌┐┌┌┬┐┌─┐┌┬┐
+# │ ┬├┬┘├─┤│││ │ ├┤  ││
+# └─┘┴└─┴ ┴┘└┘ ┴ └─┘─┴┘
+# https://www.granted.dev
+
+alias assume=". assume"
+alias ,gd="assume" # Assume a role
+alias ,gdb="assume -c" # Open a web console to the role
+alias ,gdo="assume -ar" # Open console using active role
+alias ,gdr="granted sso populate --sso-region us-west-2 https://cultureamp.awsapps.com/start"
+
 # ┌─┐┌─┐┬─┐┬  ┬┬┌─┐┌─┐┌─┐
 # └─┐├┤ ├┬┘└┐┌┘││  ├┤ └─┐
 # └─┘└─┘┴└─ └┘ ┴└─┘└─┘└─┘
 
-alias assume=". assume"
-alias ,aws=". assume" # https://www.granted.dev
 alias ,awsi="aws sts get-caller-identity"
 alias ,awsc="change_aws_profile"
 alias ,awss="start_ec2_session"
