@@ -6,12 +6,12 @@
 # ╚══════╝╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝╚══════╝
 
 TEMPLATE_FILES=(
-  ~/.netrc.template
+  ~/.bundle/config.template
   ~/.gitconfig.template
   ~/.gitmessage.template
   ~/.gnupg/gpg-agent.conf.template
   ~/.gnupg/gpg.conf.template
-  ~/.bundle/config.template
+  ~/.netrc.template
 )
 
 # Replace placeholders for environment variables in template files
