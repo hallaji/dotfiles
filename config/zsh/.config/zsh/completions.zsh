@@ -15,4 +15,5 @@ if type fresh &>/dev/null; then
   FPATH=~/.fresh/build/completions:$FPATH
 fi
 
-autoload -Uz compinit; compinit
+autoload -Uz compinit
+compinit
