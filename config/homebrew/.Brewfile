@@ -321,6 +321,8 @@ cask "monodraw"
 cask "notion"
 # Client program for the OpenVPN Access Server
 cask "openvpn-connect"
+# Replacement for Docker Desktop
+cask "orbstack"
 # GUI client for PostgreSQL databases
 cask "postico"
 # Collaboration platform for API development
