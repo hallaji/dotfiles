@@ -45,7 +45,7 @@ white = "#9cb6d0"
 yellow = "#ffcc95"
 
 [colors.cursor]
-cursor = "#F4D35E"
+cursor = "#ff4b82"
 text = "#1f242a"
 
 [colors.footer_bar]
@@ -65,10 +65,10 @@ background = "#22272e"
 foreground = "#3c4552"
 
 [colors.primary]
-background = "#22272e"
-bright_foreground = "#adbac7"
+background = "#22272d"
+bright_foreground = "#e1e4e8"
 dim_foreground = "#3c4552"
-foreground = "#adbac7"
+foreground = "#e1e4e8"
 
 [colors.search.focused_match]
 background = "#e86db2"
