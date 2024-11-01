@@ -5,6 +5,4 @@
 # ██║     ██║  ██║███████╗███████║██║  ██║
 # ╚═╝     ╚═╝  ╚═╝╚══════╝╚══════╝╚═╝  ╚═╝
 
-if [[ -f ~/.fresh/build/shell.sh ]]; then
-  source ~/.fresh/build/shell.sh
-fi
+source ~/.fresh/build/shell.sh 2>/dev/null || :
