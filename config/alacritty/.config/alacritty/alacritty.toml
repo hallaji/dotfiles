@@ -115,7 +115,7 @@ render_timer = false
 # └  └─┘┘└┘ ┴
 
 [font]
-size = 15.5
+size = 17
 
 [font.bold]
 family = "JetBrainsMono Nerd Font"
