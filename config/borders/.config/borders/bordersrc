@@ -8,10 +8,10 @@
 
 options=(
 	style=round
-	width=9.0
+	width=11.0
 	hidpi=off
-	active_color=0xffa394cc
-	inactive_color=0xff1f1d25
+	active_color=0xff87d7d7
+	inactive_color=0xff18161d
   order=above
 )
 
