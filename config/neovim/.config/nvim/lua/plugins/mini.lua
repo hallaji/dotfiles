@@ -8,6 +8,7 @@
 
 return {
   "echasnovski/mini.nvim",
+  cond = not vim.g.vscode,
   version = "*",
   config = function()
     require("mini.trailspace").setup {

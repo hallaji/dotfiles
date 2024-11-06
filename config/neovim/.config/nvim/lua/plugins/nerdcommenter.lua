@@ -14,6 +14,7 @@
 
 return {
   "preservim/nerdcommenter",
+  cond = not vim.g.vscode,
   config = function()
     vim.g.NERDCreateDefaultMappings = 1 -- Create default mappings
     vim.g.NERDSpaceDelims = 1 -- Space delimiters

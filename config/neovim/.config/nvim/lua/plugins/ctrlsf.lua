@@ -9,6 +9,7 @@
 
 return {
   "dyng/ctrlsf.vim",
+  cond = not vim.g.vscode,
   config = function()
     vim.g.ctrlsf_default_view_mode = 'normal' -- Default view mode (normal, compact)
     vim.g.ctrlsf_position = 'left' -- Default position (left, right, top, bottom)

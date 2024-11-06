@@ -14,6 +14,7 @@
 
 return {
   "editorconfig/editorconfig-vim",
+  cond = not vim.g.vscode,
   config = function()
     vim.g.EditorConfig_exclude_patterns = {'fugitive://.*'} -- Ignore fugitive buffers
   end,

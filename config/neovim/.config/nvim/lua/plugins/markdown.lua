@@ -10,6 +10,7 @@
 return {
   {
     "iamcco/markdown-preview.nvim",
+    cond = not vim.g.vscode,
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
     ft = { "markdown" },
     build = function()
@@ -23,6 +24,7 @@ return {
   },
   {
     "preservim/vim-markdown",
+    cond = not vim.g.vscode,
     config = function()
       vim.g.vim_markdown_folding_disabled = 1 -- disable folding
       vim.g.vim_markdown_frontmatter = 1 -- enable YAML frontmatter

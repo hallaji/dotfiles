@@ -8,6 +8,7 @@
 
 return {
   "fatih/vim-go",
+  cond = not vim.g.vscode,
   build = ":GoUpdateBinaries",
   config = function()
     vim.g.go_highlight_build_constraints = 1 -- Highlight build constraints

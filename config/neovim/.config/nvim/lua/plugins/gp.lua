@@ -8,6 +8,7 @@
 
 return {
   "robitx/gp.nvim",
+  cond = not vim.g.vscode,
   config = function()
     require("gp").setup({
       chat_user_prefix = "》", -- chat user prompt prefix

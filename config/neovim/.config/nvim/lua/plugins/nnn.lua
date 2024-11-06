@@ -9,6 +9,7 @@
 
 return {
   "mcchrish/nnn.vim",
+  cond = not vim.g.vscode,
   config = function()
     vim.g.nnn_set_default_mappings = 0 -- Disable default mappings
     vim.g.nnn_command = 'nnn -AHei' -- Use the default nnn command with the following flags

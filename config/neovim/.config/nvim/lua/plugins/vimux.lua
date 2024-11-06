@@ -8,4 +8,5 @@
 
 return {
   "preservim/vimux",
+  cond = not vim.g.vscode,
 }

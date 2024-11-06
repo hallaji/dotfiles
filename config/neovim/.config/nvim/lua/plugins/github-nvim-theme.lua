@@ -14,6 +14,7 @@
 -- https://github.com/projekt0n/github-nvim-theme
 
 return {
-  'projekt0n/github-nvim-theme',
+  "projekt0n/github-nvim-theme",
+  cond = not vim.g.vscode,
   name = 'github-theme'
 }

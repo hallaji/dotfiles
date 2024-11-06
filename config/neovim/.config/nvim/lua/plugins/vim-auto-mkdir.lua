@@ -8,4 +8,5 @@
 
 return {
   "travisjeffery/vim-auto-mkdir",
+  cond = not vim.g.vscode,
 }

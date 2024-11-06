@@ -8,6 +8,7 @@
 
 return {
   "kyazdani42/nvim-tree.lua",
+  cond = not vim.g.vscode,
   config = function()
     require("nvim-tree").setup({
       view = {

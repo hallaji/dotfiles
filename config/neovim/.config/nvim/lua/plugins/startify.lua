@@ -9,6 +9,7 @@
 
 return {
   "mhinz/vim-startify",
+  cond = not vim.g.vscode,
   config = function()
     -- Generates a Startify table from a shell command
     local function commandToStartify(command)

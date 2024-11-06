@@ -8,4 +8,5 @@
 
 return {
   "codeindulgence/vim-tig",
+  cond = not vim.g.vscode,
 }

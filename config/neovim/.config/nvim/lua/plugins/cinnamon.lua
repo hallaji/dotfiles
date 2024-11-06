@@ -8,6 +8,7 @@
 
 return {
   "declancm/cinnamon.nvim",
+  cond = not vim.g.vscode,
   config = function()
     require('cinnamon').setup {
       disabled = false,

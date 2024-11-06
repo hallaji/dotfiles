@@ -8,6 +8,7 @@
 
 return {
   "folke/zen-mode.nvim",
+  cond = not vim.g.vscode,
   config = function()
     require("zen-mode").setup {
       window = {

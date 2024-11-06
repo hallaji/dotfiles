@@ -14,4 +14,5 @@
 
 return {
   "cocopon/colorswatch.vim",
+  cond = not vim.g.vscode,
 }

@@ -8,4 +8,5 @@
 
 return {
   "cocopon/inspecthi.vim",
+  cond = not vim.g.vscode,
 }

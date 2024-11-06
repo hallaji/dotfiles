@@ -8,6 +8,7 @@
 
 return {
   "edkolev/tmuxline.vim",
+  cond = not vim.g.vscode,
   config = function()
     vim.g.tmuxline_powerline_separators = 0
 

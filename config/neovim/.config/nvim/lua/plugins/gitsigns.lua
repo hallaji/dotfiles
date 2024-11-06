@@ -8,6 +8,7 @@
 
 return {
   "lewis6991/gitsigns.nvim",
+  cond = not vim.g.vscode,
   config = function()
     require('gitsigns').setup {
       numhl = true, -- Toggle with `:Gitsigns toggle_numhl`

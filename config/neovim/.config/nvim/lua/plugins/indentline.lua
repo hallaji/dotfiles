@@ -14,6 +14,7 @@
 
 return {
   "Yggdroot/indentLine",
+  cond = not vim.g.vscode,
   config = function()
     vim.g.indentLine_enabled = 1 -- Enable indentLine
     vim.g.indentLine_setColors = 0 -- Disable default colors
