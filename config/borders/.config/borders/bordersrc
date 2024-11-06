@@ -10,7 +10,7 @@ options=(
 	style=round
 	width=11.0
 	hidpi=off
-	active_color=0xff87d7d7
+	active_color=0xffff4b82
 	inactive_color=0xff18161d
   order=above
 )
