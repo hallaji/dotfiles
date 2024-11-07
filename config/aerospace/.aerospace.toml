@@ -22,10 +22,10 @@ key-mapping.preset = "qwerty" # qwerty|dvorak
 [gaps]
 inner.horizontal = 24
 inner.vertical =   24
-outer.left =       18
-outer.bottom =     18
-outer.top =        18
-outer.right =      18
+outer.left =       20
+outer.bottom =     20
+outer.top =        20
+outer.right =      20
 
 [exec]
 inherit-env-vars = true
