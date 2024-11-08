@@ -46,6 +46,10 @@ if type asdf &> /dev/null; then
     else
       echo "Installing latest $item..."
       asdf install "$item" latest && asdf global "$item" latest
+      if [ "$item" == "python" ]; then
+        echo "Installing addintional Python requirements..."
+        pip3 install --upgrade pip setuptools
+      fi
     fi
   done
 fi
