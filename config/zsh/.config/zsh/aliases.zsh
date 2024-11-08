@@ -30,6 +30,7 @@ alias ,ske="ioreg -l -w 0 | perl -nle 'print $1 if /"kCGSSessionSecureInputPID"=
 alias ,tls='nvim "+Tmuxline" "+TmuxlineSnapshot! ~/.tmux/statusline-colors.conf" "+qa"' # Generate tmuxline colorscheme
 alias ,ss="shasum -a 256 $* | cut -d ' ' -f 1" # Get SHA256 hash for downloaded file to verify integrity
 alias ,gopath="add_gopath" # Add a new GOPATH
+alias ,os="uname | tr '[:upper:]' '[:lower:]'" # OS name in lowercase letters
 
 # ┌─┐ ┬ ┬┬┌─┐┬┌─  ┌─┐┌─┐┌┬┐┬┌─┐┌┐┌┌─┐
 # │─┼┐│ │││  ├┴┐  ├─┤│   │ ││ ││││└─┐
@@ -102,4 +103,3 @@ alias ,flh1e="figlet -d ~/.figlet/ -f Doom $*"
 alias ,flh2a="figlet -d ~/.figlet/ -f halfiwi $*"
 alias ,flh2b="figlet -d ~/.figlet/ -f Calvin\ S $*"
 alias ,flh3="figlet -d ~/.figlet/ -f wideterm $*"
-
