@@ -26,13 +26,17 @@ OHMYZSH_PLUGINS=(
   z
 )
 
-for plugin in ${OHMYZSH_PLUGINS[@]}; do
-  source ~/.fresh/build/vendor/ohmyzsh/plugins/$plugin/$plugin.plugin.zsh
-done
+if [ -d ~/.fresh/build/vendor/ohmyzsh ]; then
+  for plugin in ${OHMYZSH_PLUGINS[@]}; do
+    source ~/.fresh/build/vendor/ohmyzsh/plugins/$plugin/$plugin.plugin.zsh
+  done
+fi
 
 # ┌─┐┌┬┐┬ ┬┌─┐┬─┐┌─┐
 # │ │ │ ├─┤├┤ ├┬┘└─┐
 # └─┘ ┴ ┴ ┴└─┘┴└─└─┘
 
-source ~/.fresh/build/vendor/zsh-users/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.fresh/build/vendor/zsh-users/zsh-autosuggestions/zsh-autosuggestions.zsh
+if [ -d ~/.fresh/build/vendor/zsh-users ]; then
+  source ~/.fresh/build/vendor/zsh-users/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  source ~/.fresh/build/vendor/zsh-users/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
