@@ -7,8 +7,8 @@
 # https://developer.1password.com/docs/ssh/agent/config
 
 # By default, all keys in your Private vault(s) are enabled.
-# Test the result by running:
-# SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock ssh-add -l
+# Ensure the SSH_AUTH_SOCK environment variable is set
+# Test the result by running: ssh-add -l
 
 [[ssh-keys]]
 item = "hallaji (Ed25519)"
