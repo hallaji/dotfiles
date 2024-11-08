@@ -6,6 +6,8 @@
 # ██████╔╝╚██████╔╝   ██║   ███████║███████╗   ██║   ╚██████╔╝██║
 # ╚═════╝  ╚═════╝    ╚═╝   ╚══════╝╚══════╝   ╚═╝    ╚═════╝ ╚═╝
 
+set -e
+
 cat << EOF
 ┌─┐┌─┐┬─┐┬  ┬┬┌─┐┌─┐┌─┐
 └─┐├┤ ├┬┘└┐┌┘││  ├┤ └─┐
@@ -22,4 +24,6 @@ type skhd > /dev/null 2>&1 && skhd --restart-service
 type brew > /dev/null 2>&1 && brew services restart borders
 
 # https://docs.commonfate.io/granted/configuration/#zsh
-type granted > /dev/null 2>&1 && granted completion --shell zsh
+if type granted > /dev/null 2>&1; then
+  granted completion --shell zsh
+fi
