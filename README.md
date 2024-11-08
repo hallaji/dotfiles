@@ -13,9 +13,14 @@
 
 ## Prerequisites
 
-Install [Freshshell](https://freshshell.com), [Homebrew](https://brew.sh), and
-[GNU Stow](https://www.gnu.org/software/stow/). Make sure there are no
-[existing dotfiles](config/bin/.local/bin/rm-symlinks).
+### arch
+
+```shell
+sudo bash -c "$(curl -sL https://get.freshshell.com)"
+sudo pacman -S stow
+```
+
+### macOS
 
 ```shell
 bash -c "$(curl -sL https://get.freshshell.com)"

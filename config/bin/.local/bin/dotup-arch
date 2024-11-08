@@ -5,15 +5,40 @@
 # ██║  ██║██║   ██║   ██║   ╚════██║██╔══╝     ██║   ██║   ██║██╔═══╝
 # ██████╔╝╚██████╔╝   ██║   ███████║███████╗   ██║   ╚██████╔╝██║
 # ╚═════╝  ╚═════╝    ╚═╝   ╚══════╝╚══════╝   ╚═╝    ╚═════╝ ╚═╝
-# Usage❯ dotup
 
 set -e
 
-dotup-arch
-dotup-homebrew
-dotup-asdf
-dotup-vim
-dotup-tmux
-dotup-cli
-dotup-nnn
-dotup-services
+cat << EOF
+┌─┐┬─┐┌─┐┬ ┬
+├─┤├┬┘│  ├─┤
+┴ ┴┴└─└─┘┴ ┴
+EOF
+
+if ! grep -q "Arch Linux" /etc/os-release; then
+  exit 0
+fi
+
+sudo pacman -Syy
+
+sudo pacman -S --needed \
+  git \
+  base-devel \
+  stow \
+  zsh \
+  cowsay lolcat \
+  direnv \
+  alacritty \
+  neovim \
+  tmux ncurses\
+  github-cli \
+  ttf-jetbrains-mono-nerd \
+  figlet \
+  tk \
+  diff-so-fancy less
+
+mkdir -p ~/Apps && cd ~/Apps
+
+git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
+git clone https://aur.archlinux.org/asdf-vm.git && cd asdf-vm && makepkg -si
+
+yay -S visual-studio-code-bin
