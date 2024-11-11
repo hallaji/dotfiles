@@ -32,43 +32,48 @@ brew install stow
 
 ### 1. Environment Variables
 
+The `config/env` package contains environment variables used by tools. Copy the
+example file and replace values with your own.
+
 ```shell
 cp config/env/.env.example config/env/.env
 ```
 
-The `config/env` package contains environment variables used by tools. Copy the
-example file and replace values with your own.
-
 ### 2. Stowing Configurations
+
+The [GNU Stow](https://www.gnu.org/software/stow/manual/stow.html) is a symlink
+manager that facilitates the creation of symbolic links from the `config`
+directory to target directories (typically the home directory).
 
 ```shell
 # Required package
 stow env
 
 # Essential packages
-stow bin freshshell gnustow homebrew
+stow bin freshshell gnustow
 
-# Optional packages
-stow 1password aerospace alacritty asdf aws borders bundler \
-     ctags curl gh git gpg neovim npm pip skhd ssh starship \
-     tig tmux vim yabai zsh granted
+# Mac-specific
+stow homebrew aerospace borders yabai skhd
+
+# Linux-specific
+stow hyprland
+
+# Other packages
+stow 1password alacritty asdf aws bundler ctags curl gh git \
+     gpg neovim npm pip ssh starship tig tmux vim zsh granted
 ```
-
-The [GNU Stow](https://www.gnu.org/software/stow/manual/stow.html) is a symlink
-manager that facilitates the creation of symbolic links from the `config`
-directory to target directories (typically the home directory).
 
 ### 3. Freshing Dependencies
-
-```shell
-fresh
-```
 
 The [Freshshell](https://freshshell.com) tool is used to fetch and integrate
 external configurations such as completions, plugins, fonts, and more from
 online repositories. During the build process, the [setup
 script](config/bin/.local/bin/dotup) installs or updates tools, packages,
 plugins, as well as CLI extensions.
+
+```shell
+fresh
+```
 
 ---
 
