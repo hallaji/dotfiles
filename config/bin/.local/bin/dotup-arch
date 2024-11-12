@@ -35,21 +35,43 @@ sudo pacman -S --needed \
   figlet \
   tk \
   diff-so-fancy less \
-  xclip
+  xclip \
+  i3 dmenu \
+  neofetch \
+  wofi hyprland \
+  dolphin \
+  firefox
 
 mkdir -p ~/Apps && cd ~/Apps
 
 git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 git clone https://aur.archlinux.org/asdf-vm.git && cd asdf-vm && makepkg -si
 
-yay -S visual-studio-code-bin
+git clone https://aur.archlinux.org/snapd.git && cd snapd && makepkg -si
+sudo systemctl enable --now snapd.socket
+sudo systemctl enable --now snapd.apparmor.service
+sudo ln -s /var/lib/snapd/snap /snap
 
-# Install 1Password CLI
-ARCH="amd64" && \
-wget "https://cache.agilebits.com/dist/1P/op2/pkg/v2.30.3/op_linux_${ARCH}_v2.30.3.zip" -O op.zip && \
-unzip -d op op.zip && \
-sudo mv op/op /usr/local/bin/ && \
-rm -r op.zip op && \
-sudo groupadd -f onepassword-cli && \
-sudo chgrp onepassword-cli /usr/local/bin/op && \
-sudo chmod g+s /usr/local/bin/op
+sudo snap install hey-mail
+sudo snap install spotify
+sudo snap install code --classic
+
+# yay -S visual-studio-code-bin
+
+# ┌─┐┌┐┌┌─┐  ┌─┐┌─┐┌─┐┌─┐┬ ┬┌─┐┬─┐┌┬┐
+# │ ││││├┤   ├─┘├─┤└─┐└─┐││││ │├┬┘ ││
+# └─┘┘└┘└─┘  ┴  ┴ ┴└─┘└─┘└┴┘└─┘┴└──┴┘
+# https://developer.1password.com/docs/cli/get-started/#step-1-install-1password-cli
+
+if ! type op > /dev/null 2>&1; then
+  ARCH="amd64" && \
+  wget "https://cache.agilebits.com/dist/1P/op2/pkg/v2.30.3/op_linux_${ARCH}_v2.30.3.zip" -O op.zip && \
+  unzip -d op op.zip && \
+  sudo mv op/op /usr/local/bin/ && \
+  rm -r op.zip op && \
+  sudo groupadd -f onepassword-cli && \
+  sudo chgrp onepassword-cli /usr/local/bin/op && \
+  sudo chmod g+s /usr/local/bin/op
+else
+  op update
+fi
