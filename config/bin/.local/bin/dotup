@@ -10,10 +10,10 @@
 set -e
 
 dotup-arch
-dotup-homebrew
 dotup-asdf
-dotup-vim
-dotup-tmux
 dotup-cli
+dotup-mac
 dotup-nnn
 dotup-services
+dotup-tmux
+dotup-vim
