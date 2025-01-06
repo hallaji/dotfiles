@@ -33,6 +33,8 @@ brew "awscli"
 brew "bat"
 # Collection of portable C++ source libraries
 brew "boost"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.13"
 # Core application library for C
 brew "glib"
 # Arbitrary precision calculator
@@ -41,7 +43,7 @@ brew "calc"
 brew "chezmoi"
 # Interactive terminal based UI application for tracking cryptocurrencies
 brew "cointop"
-# Configurable talking characters in ASCII art
+# Apjanke's fork of the classic cowsay project
 brew "cowsay"
 # Reimplementation of ctags(1)
 brew "ctags"
@@ -59,10 +61,10 @@ brew "diff-so-fancy"
 brew "direnv"
 # Pack, ship and run any application as a lightweight container
 brew "docker", link: false
-# Tool for creating isolated virtual python environments
-brew "virtualenv"
 # TUI todo manager
 brew "dooit"
+# Terminal application to manage Docker and Docker Swarm
+brew "dry"
 # Command-line tool to interact with exercism.io
 brew "exercism"
 # Simple, fast and user-friendly alternative to find
@@ -73,8 +75,6 @@ brew "unbound"
 brew "gnutls"
 # OpenType text shaping engine
 brew "harfbuzz"
-# C/C++ and Java libraries for Unicode and globalization
-brew "icu4c"
 # Framework for layout and rendering of i18n text
 brew "pango"
 # OCR (Optical Character Recognition) engine
@@ -101,6 +101,8 @@ brew "git"
 brew "pinentry"
 # GNU Pretty Good Privacy (PGP) package
 brew "gnupg"
+# Open source programming language to build simple/reliable/efficient software
+brew "go"
 # Generate introspection data for GObject libraries
 brew "gobject-introspection"
 # Fast linters runner for Go
@@ -129,6 +131,8 @@ brew "jump"
 brew "kafka"
 # Command-line tool to kill processes listening on a specific port
 brew "killport"
+# Statically typed programming language for the JVM
+brew "kotlin"
 # Network authentication protocol
 brew "krb5"
 # Anti-bikeshedding Kotlin linter with built-in formatter
@@ -169,8 +173,6 @@ brew "openvpn"
 brew "tmux"
 # Process manager for Procfile-based applications and tmux
 brew "overmind"
-# Tool Command Language
-brew "tcl-tk"
 # Friendly PIL fork (Python Imaging Library)
 brew "pillow"
 # Pinentry for GPG on Mac
@@ -191,6 +193,8 @@ brew "python@3.9"
 brew "reattach-to-user-namespace"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Powerful, clean, object-oriented scripting language
+brew "ruby"
 # Simple keystroke visualizer
 brew "showkey"
 # Ruby language server
@@ -207,6 +211,8 @@ brew "stow"
 brew "subversion"
 # Generate clients, server stubs, and docs from an OpenAPI spec
 brew "swagger-codegen"
+# Tool Command Language
+brew "tcl-tk"
 # Code-search similar to ack
 brew "the_silver_searcher"
 # Text interface for Git repositories
@@ -223,6 +229,8 @@ brew "typescript"
 brew "urlview"
 # Vi 'workalike' with many additional features
 brew "vim"
+# Tool for creating isolated virtual python environments
+brew "virtualenv"
 # Manage the desktop wallpaper
 brew "wallpaper"
 # Executes a program periodically, showing output fullscreen
@@ -243,8 +251,6 @@ brew "felixkratz/formulae/sketchybar"
 brew "hashicorp/tap/terraform"
 # Simple hotkey-daemon for macOS.
 brew "koekeishiya/formulae/skhd"
-# a Docker manager for the terminal
-brew "moncho/dry/dry"
 # Command-line interface for 1Password
 cask "1password-cli"
 # AeroSpace is an i3-like tiling window manager for macOS
@@ -364,37 +370,37 @@ cask "zoom"
 vscode "aaron-bond.better-comments"
 vscode "alefragnani.bookmarks"
 vscode "alefragnani.project-manager"
-vscode "bierner.github-markdown-preview"
-vscode "bierner.markdown-checkbox"
-vscode "bierner.markdown-emoji"
-vscode "bierner.markdown-footnotes"
-vscode "bierner.markdown-mermaid"
-vscode "bierner.markdown-preview-github-styles"
-vscode "bierner.markdown-yaml-preamble"
+vscode "asvetliakov.vscode-neovim"
+vscode "bradlc.vscode-tailwindcss"
 vscode "christian-kohler.npm-intellisense"
 vscode "christian-kohler.path-intellisense"
-vscode "codesandbox-io.codesandbox-projects"
 vscode "cschlosser.doxdocgen"
 vscode "davidanson.vscode-markdownlint"
 vscode "dbaeumer.vscode-eslint"
 vscode "donjayamanne.githistory"
+vscode "dracula-theme.theme-dracula"
 vscode "dsznajder.es7-react-js-snippets"
 vscode "eamodio.gitlens"
 vscode "ecmel.vscode-html-css"
 vscode "editorconfig.editorconfig"
+vscode "equinusocio.vsc-material-theme"
+vscode "equinusocio.vsc-material-theme-icons"
+vscode "esafirm.kotlin-formatter"
 vscode "esbenp.prettier-vscode"
 vscode "fabiospampinato.vscode-open-in-github"
 vscode "foxundermoon.shell-format"
-vscode "fwcd.kotlin"
-vscode "gamunu.vscode-yarn"
 vscode "github.copilot"
 vscode "github.copilot-chat"
+vscode "github.github-vscode-theme"
 vscode "github.vscode-github-actions"
+vscode "github.vscode-pull-request-github"
 vscode "golang.go"
+vscode "jacano.vscode-pnpm"
 vscode "jeff-hykin.better-cpp-syntax"
 vscode "kumar-harsh.graphql-for-vscode"
+vscode "linbudu.pnpm-vscode-helper"
+vscode "mathiasfrohlich.kotlin"
 vscode "mikestead.dotenv"
-vscode "mkhl.direnv"
 vscode "mrmlnc.vscode-scss"
 vscode "ms-azuretools.vscode-docker"
 vscode "ms-playwright.playwright"
@@ -408,7 +414,6 @@ vscode "ms-vscode-remote.remote-ssh-edit"
 vscode "ms-vscode.cmake-tools"
 vscode "ms-vscode.cpptools"
 vscode "ms-vscode.cpptools-extension-pack"
-vscode "ms-vscode.cpptools-themes"
 vscode "ms-vscode.makefile-tools"
 vscode "ms-vscode.remote-explorer"
 vscode "ms-vsliveshare.vsliveshare"
@@ -417,22 +422,23 @@ vscode "naumovs.color-highlight"
 vscode "pflannery.vscode-versionlens"
 vscode "pkief.material-icon-theme"
 vscode "pnp.polacode"
+vscode "premparihar.gotestexplorer"
 vscode "redhat.vscode-commons"
 vscode "redhat.vscode-xml"
 vscode "redhat.vscode-yaml"
+vscode "shopify.ruby-extensions-pack"
 vscode "shopify.ruby-lsp"
-vscode "snyk-security.snyk-vulnerability-scanner"
+vscode "sorbet.sorbet-vscode-extension"
 vscode "stylelint.vscode-stylelint"
 vscode "techer.open-in-browser"
 vscode "testdouble.vscode-standard-ruby"
 vscode "timonwong.shellcheck"
-vscode "tinkertrain.theme-panda"
 vscode "twxs.cmake"
 vscode "unifiedjs.vscode-mdx"
 vscode "vayan.haml"
 vscode "vscode-icons-team.vscode-icons"
-vscode "vscodevim.vim"
 vscode "vsls-contrib.codetour"
 vscode "wayou.vscode-todo-highlight"
+vscode "xadillax.viml"
 vscode "yzhang.markdown-all-in-one"
 vscode "zignd.html-css-class-completion"

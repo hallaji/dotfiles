@@ -8,16 +8,137 @@
 
 set -e
 
+if ! command -v brew &> /dev/null; then
+  exit 0
+fi
+
 cat << EOF
-┬ ┬┌─┐┌┬┐┌─┐┌┐ ┬─┐┌─┐┬ ┬
-├─┤│ ││││├┤ ├┴┐├┬┘├┤ │││
-┴ ┴└─┘┴ ┴└─┘└─┘┴└─└─┘└┴┘
+┌┬┐┌─┐┌─┐
+│││├─┤│
+┴ ┴┴ ┴└─┘
 EOF
 
-if type brew &> /dev/null; then
-  # Dump Brewfile
-  [ -f "$HOME/.Brewfile" ] && brew bundle dump --file=~/.Brewfile --force --describe
 
-  # Install Homebrew packages
-  brew bundle check --global || brew bundle --global
-fi
+# Install Homebrew packages
+# brew bundle check --global || brew bundle --global
+
+# Core Taps
+brew install \
+  asdf \
+  aws-cdk \
+  awscli \
+  bat \
+  cowsay \
+  ctags \
+  ctop \
+  ddgr \
+  dfu-programmer \
+  dfu-util \
+  diff-so-fancy \
+  direnv \
+  docker \
+  dry \
+  fd \
+  ffmpeg \
+  figlet \
+  fzf \
+  gh \
+  git \
+  gnupg \
+  go \
+  gradle \
+  htop \
+  httpie \
+  imagemagick \
+  jo \
+  jpeg-xl \
+  jq \
+  jump \
+  kafka \
+  killport \
+  kotlin \
+  lazygit \
+  lolcat \
+  neovim \
+  nmap \
+  node \
+  pinentry \
+  pinentry-mac \
+  poetry \
+  pyenv \
+  python \
+  reattach-to-user-namespace \
+  ripgrep \
+  ruby \
+  showkey \
+  solargraph \
+  starship \
+  stow \
+  the_silver_searcher \
+  tig \
+  tldr \
+  tmux \
+  tmuxinator \
+  tree \
+  tree-sitter \
+  typescript \
+  unbound \
+  urlview \
+  vim \
+  virtualenv \
+  wallpaper \
+  watch \
+  wget \
+  zsh
+
+# Third-party Taps
+brew install \
+  common-fate/granted/granted \
+  felixkratz/formulae/borders \
+  felixkratz/formulae/sketchybar \
+  hashicorp/tap/terraform \
+  koekeishiya/formulae/skhd
+
+# Core Casks
+brew install --cask \
+  1password-cli \
+  alacritty \
+  alfred \
+  chromedriver \
+  discord \
+  docker \
+  firefox \
+  font-fira-code \
+  font-fira-code-nerd-font \
+  font-hack-nerd-font \
+  font-jetbrains-mono \
+  font-jetbrains-mono-nerd-font \
+  font-roboto \
+  font-roboto-mono \
+  font-roboto-mono-nerd-font \
+  fork \
+  gifox \
+  github \
+  google-cloud-sdk \
+  itsycal \
+  jetbrains-toolbox \
+  little-snitch \
+  monodraw \
+  notion \
+  orbstack \
+  postico \
+  postman \
+  qmk-toolbox \
+  remarkable \
+  session-manager-plugin \
+  slack \
+  visual-studio-code \
+  yubico-yubikey-manager \
+  zoom
+
+# Third-party Casks
+brew install --cask \
+  nikitabobko/tap/aerospace
+
+# Dump Brewfile
+[ -f "$HOME/.Brewfile" ] && brew bundle dump --file=~/.Brewfile --force

@@ -8,59 +8,67 @@
 
 set -e
 
+if ! grep -q "Arch Linux" /etc/os-release &> /dev/null; then
+  exit 0
+fi
+
 cat << EOF
 ┌─┐┬─┐┌─┐┬ ┬
 ├─┤├┬┘│  ├─┤
 ┴ ┴┴└─└─┘┴ ┴
 EOF
 
-if ! grep -q "Arch Linux" /etc/os-release; then
-  exit 0
-fi
+# Pacman packages
+# https://wiki.archlinux.org/title/Pacman
 
 sudo pacman -Syy
 
 sudo pacman -S --needed \
-  git \
-  base-devel \
-  stow \
-  zsh \
-  cowsay lolcat \
-  direnv \
   alacritty \
-  neovim \
-  tmux \
-  github-cli \
-  ttf-jetbrains-mono-nerd \
-  figlet \
-  tk \
-  diff-so-fancy less \
-  xclip \
-  i3 dmenu \
-  neofetch \
-  wofi hyprland \
+  base-devel \
+  cowsay \
+  diff-so-fancy \
+  direnv \
+  dmenu \
   dolphin \
-  firefox
+  figlet \
+  firefox \
+  git \
+  github-cli \
+  hyprland \
+  i3 \
+  less \
+  lolcat \
+  neofetch \
+  neovim \
+  stow \
+  tk \
+  tmux \
+  ttf-jetbrains-mono-nerd \
+  wofi \
+  xclip \
+  zsh
+
+# Building AUR packages
+# https://aur.archlinux.org
 
 mkdir -p ~/Apps && cd ~/Apps
-
 git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 git clone https://aur.archlinux.org/asdf-vm.git && cd asdf-vm && makepkg -si
-
 git clone https://aur.archlinux.org/snapd.git && cd snapd && makepkg -si
+
 sudo systemctl enable --now snapd.socket
 sudo systemctl enable --now snapd.apparmor.service
 sudo ln -s /var/lib/snapd/snap /snap
+
+# Snap on Arch Linux
+# https://snapcraft.io/docs/installing-snap-on-arch-linux
 
 sudo snap install hey-mail
 sudo snap install spotify
 sudo snap install code --classic
 
-# yay -S visual-studio-code-bin
-
-# ┌─┐┌┐┌┌─┐  ┌─┐┌─┐┌─┐┌─┐┬ ┬┌─┐┬─┐┌┬┐
-# │ ││││├┤   ├─┘├─┤└─┐└─┐││││ │├┬┘ ││
-# └─┘┘└┘└─┘  ┴  ┴ ┴└─┘└─┘└┴┘└─┘┴└──┴┘
+# 1Pssword CLI
 # https://developer.1password.com/docs/cli/get-started/#step-1-install-1password-cli
 
 if ! type op > /dev/null 2>&1; then
