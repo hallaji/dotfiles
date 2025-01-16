@@ -71,6 +71,7 @@ brew install \
   reattach-to-user-namespace \
   ripgrep \
   ruby \
+  shortcat \
   showkey \
   solargraph \
   starship \
