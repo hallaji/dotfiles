@@ -356,7 +356,7 @@ save_to_clipboard = true
 # └─┘┴ ┴└─┘┴─┘┴─┘
 
 [terminal.shell]
-# args = ["-l", "-c", "tmux attach || tmux"]
+args = ["-l", "-c", "tmux attach || tmux"]
 program = "/bin/zsh"
 
 # ┬ ┬┬┌┐┌┌┬┐┌─┐┬ ┬
