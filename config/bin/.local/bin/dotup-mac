@@ -66,6 +66,7 @@ brew install \
   pinentry-mac \
   poetry \
   pyenv \
+  pyenv-virtualenv \
   python \
   reattach-to-user-namespace \
   ripgrep \
@@ -105,9 +106,6 @@ brew install --cask \
   alacritty \
   alfred \
   chromedriver \
-  discord \
-  docker \
-  firefox \
   font-fira-code \
   font-fira-code-nerd-font \
   font-hack-nerd-font \
@@ -122,14 +120,11 @@ brew install --cask \
   google-cloud-sdk \
   itsycal \
   jetbrains-toolbox \
-  little-snitch \
   monodraw \
-  notion \
   orbstack \
   postico \
   postman \
   qmk-toolbox \
-  remarkable \
   session-manager-plugin \
   slack \
   visual-studio-code \
