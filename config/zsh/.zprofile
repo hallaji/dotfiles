@@ -12,6 +12,7 @@ TEMPLATE_FILES=(
   ~/.gnupg/gpg-agent.conf.template
   ~/.gnupg/gpg.conf.template
   ~/.netrc.template
+  ~/.npmrc.template
   ~/.ssh/config.template
 )
 
