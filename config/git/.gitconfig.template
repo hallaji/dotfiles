@@ -23,6 +23,7 @@
 [commit]
   gpgsign = true
   template = ~/.gitmessage
+  verbose = true
 
 [core]
   ignorecase = false
@@ -36,16 +37,46 @@
   diffFilter = diff-so-fancy --patch
 
 [merge]
-  conflictstyle = diff3
+  conflictstyle = zdiff3
+
+[fetch]
+  all = true
 
 [push]
+  default = simple
+  followTags = true
   autoSetupRemote = true
 
 [pull]
   rebase = true
 
+[init]
+  defaultBranch = main
+
+[branch]
+  sort = -committerdate
+
+[tag]
+  sort = version:refname
+
+[help]
+  autocorrect = prompt
+
+[rerere]
+  enabled = true
+  autoupdate = true
+
 [color]
   ui = true
+
+[column]
+  ui = auto
+
+[diff]
+  algorithm = histogram
+  colorMoved = plain
+  mnemonicPrefix = true
+  renames = true
 
 [color "diff-highlight"]
   oldNormal = 1
@@ -57,7 +88,6 @@
 [color "diff"]
   plain = 8
   meta = 7
-  frag = 6 bold
   func = 7
   commit = 3 bold
   old = 1
