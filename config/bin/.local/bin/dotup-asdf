@@ -25,29 +25,30 @@ ASDF_PLUGINS=(
   mysql # https://github.com/iroddis/asdf-mysql
   nodejs # https://github.com/asdf-vm/asdf-nodejs
   php # https://github.com/asdf-community/asdf-php
+  pnpm # https://github.com/jonathanmorley/asdf-pnpm
   postgres # https://github.com/smashedtoatoms/asdf-postgres
   python # https://github.com/asdf-community/asdf-python
-  ruby # https://github.com/asdf-vm/asdf-ruby
-  pnpm # https://github.com/jonathanmorley/asdf-pnpm
   redis # https://github.com/smashedtoatoms/asdf-redis
+  ruby # https://github.com/asdf-vm/asdf-ruby
+  terraform # https://github.com/asdf-community/asdf-hashicorp.git
 )
 
 if type asdf &> /dev/null; then
   for item in "${ASDF_PLUGINS[@]}"; do
-    if asdf plugin-list | grep -q "^$item$"; then
+    if asdf plugin list | grep -q "^$item$"; then
       asdf plugin update "$item"
     else
       asdf plugin add "$item"
     fi
     if [ "$item" == "java" ]; then
-      version=$(asdf list-all java | grep "^openjdk-" | tail -n 1)
+      version=$(asdf list all java | grep "^openjdk-" | tail -n 1)
       if [ -n "$version" ]; then
         echo "Installing latest $item..."
-        asdf install java "$version" && asdf global java "$version"
+        asdf install java "$version" && asdf set --home java "$version"
       fi
     else
       echo "Installing latest $item..."
-      asdf install "$item" latest && asdf global "$item" latest
+      asdf install "$item" latest && asdf set --home "$item" latest
       if [ "$item" == "python" ]; then
         echo "Installing addintional Python requirements..."
         pip3 install --upgrade pip setuptools
