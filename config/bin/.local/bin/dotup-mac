@@ -78,7 +78,6 @@ brew install \
   stow \
   the_silver_searcher \
   tig \
-  tldr \
   tmux \
   tmuxinator \
   tree \
@@ -98,7 +97,6 @@ brew install \
   common-fate/granted/granted \
   felixkratz/formulae/borders \
   felixkratz/formulae/sketchybar \
-  hashicorp/tap/terraform \
   koekeishiya/formulae/skhd
 
 # Core Casks
@@ -127,10 +125,8 @@ brew install --cask \
   postman \
   qmk-toolbox \
   session-manager-plugin \
-  slack \
   visual-studio-code \
-  yubico-yubikey-manager \
-  zoom
+  yubico-yubikey-manager
 
 # Third-party Casks
 brew install --cask \
