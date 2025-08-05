@@ -16,7 +16,6 @@ EOF
 
 # https://github.com/asdf-vm/asdf-plugins
 ASDF_PLUGINS=(
-  direnv # https://github.com/asdf-community/asdf-direnv
   golang # https://github.com/asdf-community/asdf-golang
   java # https://github.com/halcyon/asdf-java
   kotlin # https://github.com/asdf-community/asdf-kotlin
