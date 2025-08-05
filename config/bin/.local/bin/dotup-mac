@@ -74,6 +74,7 @@ brew install \
   shortcat \
   showkey \
   solargraph \
+  sqlc \
   starship \
   stow \
   the_silver_searcher \
