@@ -18,12 +18,7 @@ EOF
 type aerospace > /dev/null 2>&1 && aerospace reload-config --no-gui
 
 # https://github.com/koekeishiya/skhd
-type skhd > /dev/null 2>&1 && skhd --restart-service
+type skhd > /dev/null 2>&1 && skhd --start-service
 
 # https://github.com/FelixKratz/JankyBorders
 type brew > /dev/null 2>&1 && brew services restart borders
-
-# https://docs.commonfate.io/granted/configuration/#zsh
-if type granted > /dev/null 2>&1; then
-  granted completion --shell zsh
-fi

@@ -5,14 +5,20 @@
 # ╚██████╗██║ ╚═╝ ██║██║     ███████╗██║   ██║ ╚████║███████║
 #  ╚═════╝╚═╝     ╚═╝╚═╝     ╚══════╝╚═╝   ╚═╝  ╚═══╝╚══════╝
 
-# Add homebrew completions
 if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+  fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
 fi
 
-# Add completions provided by fresh
 if type fresh &>/dev/null; then
-  FPATH=~/.fresh/build/completions:$FPATH
+  fpath=(~/.fresh/build/completions $fpath)
+fi
+
+if type assume &>/dev/null; then
+  fpath=(~/.granted/zsh_autocomplete/assume/ $fpath)
+fi
+
+if type granted &>/dev/null; then
+  fpath=(~/.granted/zsh_autocomplete/granted/ $fpath)
 fi
 
 autoload -Uz compinit
