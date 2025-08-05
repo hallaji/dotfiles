@@ -59,8 +59,9 @@ stow homebrew aerospace borders yabai skhd
 stow hyprland
 
 # Other packages
-stow 1password alacritty asdf aws bundler ctags curl gh git \
-     gpg neovim npm pip ssh starship tig tmux vim zsh granted
+stow alacritty asdf aws bundler ctags curl gh git gradle granted gpg \
+     neovim npm pip ssh starship tig tmux vim zsh 1password
+
 ```
 
 ### 3. Freshing Dependencies

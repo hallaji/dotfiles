@@ -11,6 +11,7 @@ TEMPLATE_FILES=(
   ~/.gitmessage.template
   ~/.gnupg/gpg-agent.conf.template
   ~/.gnupg/gpg.conf.template
+  ~/.gradle/gradle.properties.template
   ~/.netrc.template
   ~/.npmrc.template
   ~/.ssh/config.template
