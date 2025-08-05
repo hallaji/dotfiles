@@ -117,7 +117,7 @@ brew install --cask \
   fork \
   gifox \
   github \
-  google-cloud-sdk \
+  gcloud-cli \
   itsycal \
   jetbrains-toolbox \
   monodraw \
