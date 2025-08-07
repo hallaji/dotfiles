@@ -20,8 +20,6 @@ return {
       vim.g.coc_global_extensions = { -- List of COC extensions to install after starting the service
         'coc-tsserver',
         'coc-go',
-        'coc-java',
-        'coc-kotlin',
         'coc-solargraph',
         'coc-pyright',
         'coc-json',

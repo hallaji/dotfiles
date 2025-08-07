@@ -57,6 +57,8 @@ brew install \
   kafka \
   killport \
   kotlin \
+  kotlin-language-server \
+  ktlint \
   lazygit \
   lolcat \
   neovim \

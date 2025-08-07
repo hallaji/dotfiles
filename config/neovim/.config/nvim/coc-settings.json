@@ -59,5 +59,13 @@
     "border": true,
     "shadow": true,
     "borderhighlight": "CocBorder"
+  },
+  "languageserver": {
+    "kotlin": {
+      "command": "/opt/homebrew/bin/kotlin-language-server",
+      "filetypes": ["kotlin"],
+      "rootPatterns": ["build.gradle", "build.gradle.kts", "settings.gradle", "settings.gradle.kts"],
+      "initializationOptions": {}
+    }
   }
 }
