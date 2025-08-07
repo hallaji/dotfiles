@@ -72,9 +72,9 @@ alias ,ghc="gh copilot"
 
 alias assume=". assume"
 alias ,gd="assume" # Assume a role
-alias ,gdb="assume -c" # Open a web console to the role
-alias ,gdo="assume -ar" # Open console using active role
-alias ,gdr="granted sso populate --sso-region us-west-2 https://cultureamp.awsapps.com/start"
+alias ,gdw="assume -c" # Open a web console to the role
+alias ,gdc="assume -ar" # Open console using active role
+alias ,gdp="granted sso populate --sso-region us-west-2 https://cultureamp.awsapps.com/start"
 
 # ┌─┐┌─┐┬─┐┬  ┬┬┌─┐┌─┐┌─┐
 # └─┐├┤ ├┬┘└┐┌┘││  ├┤ └─┐
