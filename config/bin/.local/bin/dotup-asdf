@@ -17,6 +17,7 @@ EOF
 # https://github.com/asdf-vm/asdf-plugins
 ASDF_PLUGINS=(
   golang # https://github.com/asdf-community/asdf-golang
+  gradle # https://github.com/rfrancis/asdf-gradle.git
   java # https://github.com/halcyon/asdf-java
   kotlin # https://github.com/asdf-community/asdf-kotlin
   lua # https://github.com/Stratus3D/asdf-lua
