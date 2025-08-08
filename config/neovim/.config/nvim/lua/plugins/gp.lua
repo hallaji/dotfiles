@@ -38,7 +38,7 @@ return {
 			    provider = "anthropic",
 			    name = "Claude Sonnet 4",
 			    chat = true,
-			    command = false,
+			    command = true,
 			    model = { model = "claude-sonnet-4-20250514", temperature = 0.8, top_p = 1 },
           system_prompt = require("gp.defaults").chat_system_prompt,
 		    },
