@@ -27,8 +27,21 @@ return {
 			    endpoint = "https://generativelanguage.googleapis.com/v1beta/models/{{model}}:streamGenerateContent?key={{secret}}",
 			    secret = { "op", "read", "--account", "my.1password.com", os.getenv("GOOGLEAI_API_KEY_REFERENCE") },
 		    },
+        anthropic = {
+          disable = false,
+			    endpoint = "https://api.anthropic.com/v1/messages",
+			    secret = { "op", "read", "--account", "my.1password.com", os.getenv("ANTHROPIC_API_KEY_REFERENCE") },
+		    },
       },
       agents = {
+        {
+			    provider = "anthropic",
+			    name = "Claude Sonnet 4",
+			    chat = true,
+			    command = false,
+			    model = { model = "claude-sonnet-4-20250514", temperature = 0.8, top_p = 1 },
+          system_prompt = require("gp.defaults").chat_system_prompt,
+		    },
         {
           provider = "openai",
           name = "ChatGPT4o",
