@@ -11,7 +11,7 @@
 
 return {
   "folke/noice.nvim",
-
+  cond = not vim.g.vscode,
   dependencies = {
     "MunifTanjim/nui.nvim",
     { "smjonas/inc-rename.nvim", opts = {}, },
@@ -22,7 +22,6 @@ return {
       }
     },
   },
-
   event = "VeryLazy",
   opts = {
     lsp = {

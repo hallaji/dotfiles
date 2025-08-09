@@ -11,13 +11,12 @@
 
 return {
   "hrsh7th/nvim-cmp",
-
+  cond = not vim.g.vscode,
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",     -- LSP completions
     "L3MON4D3/LuaSnip",         -- Snippet engine
     "saadparwaiz1/cmp_luasnip", -- Registers LuaSnip as a completion source
   },
-
   config = function()
     local cmp = require("cmp")
 
