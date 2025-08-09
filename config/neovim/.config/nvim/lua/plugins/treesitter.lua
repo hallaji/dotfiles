@@ -30,6 +30,7 @@ return {
         "php",
         "python",
         "query",
+        "regex",
         "ruby",
         "sql",
         "toml",

@@ -68,7 +68,7 @@ hi NormalFloat guibg=#1f242a guifg=#adbac7
 hi NvimTreeFolderIcon guibg=NONE guifg=#e86db2
 hi NvimTreeOpenedFile guifg=#04f6f6 gui=bold,underline
 hi Operator guifg=#f97684
-hi Pmenu guibg=#1f242a guifg=#3c4552
+hi Pmenu guibg=#1f242a guifg=#04f6f6
 hi PmenuSbar guibg=#1f242a guifg=NONE
 hi PmenuSel guibg=#04f6f6 guifg=#1f242a
 hi PmenuThumb guibg=#e86db2 guifg=#1f242a
@@ -98,6 +98,7 @@ hi WhichKeyIcon guifg=#2f97ea
 hi Whitespace guifg=#22272e
 hi WildMenu guibg=#22272e guifg=#04f6f6
 
+hi! link CmpItemKind Comment
 hi! link Character String
 hi! link Conditional Operator
 hi! link CtrlPMatch Title

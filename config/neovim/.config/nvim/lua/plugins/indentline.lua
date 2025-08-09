@@ -19,7 +19,7 @@ return {
     vim.g.indentLine_enabled = 1 -- Enable indentLine
     vim.g.indentLine_setColors = 0 -- Disable default colors
     vim.g.indentLine_char = '' -- Use a thin vertical bar as the indent character
-    vim.g.indentLine_fileTypeExclude = {'text', 'startify'} -- Disable indentLine for text and startify buffers
+    vim.g.indentLine_fileTypeExclude = {'text', 'startify', 'noice'} -- Disable indentLine for text and startify buffers
     vim.g.indentLine_bufTypeExclude = {'help', 'terminal'} -- Disable indentLine for help and terminal buffers
     vim.g.indentLine_leadingSpaceEnabled = 1 -- Enable leading space
     vim.g.indentLine_leadingSpaceChar = '┈' -- Use a thin vertical bar as the leading space character

@@ -348,13 +348,21 @@ wk.add({
 -- ┴─┘└─┘┴
 
 wk.add({
-  { "g", group = "LSP Go to" },
-  { "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", desc = "Go to Definition" },
-  { "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", desc = "Go to Declaration" },
-  { "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>", desc = "Go to Implementation" },
-  { "gr", "<cmd>lua vim.lsp.buf.references()<cr>", desc = "Go to References" },
-  { "K", "<cmd>lua vim.lsp.buf.hover()<cr>", desc = "Hover Documentation" },
-  { "<leader>l", group = "LSP" },
-  { "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", desc = "Rename" },
-  { "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", desc = "Code Action" },
+  -- LSP Go to mappings
+  { "g", group = "Go to", icon = "󰮫", },
+  { "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", desc = "Go to Definition", icon = "󰊕", },
+  { "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", desc = "Go to Declaration", icon = "󰙴", },
+  { "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>", desc = "Go to Implementation", icon = "󰡱", },
+  { "gr", "<cmd>lua vim.lsp.buf.references()<cr>", desc = "Go to References", icon = "󰌹", },
+  { "gt", "<cmd>lua vim.lsp.buf.type_definition()<cr>", desc = "Go to Type Definition", icon = "󰜁", },
+  { "K", "<cmd>lua vim.lsp.buf.hover()<cr>", desc = "Hover Documentation", icon = "󰋖", },
+  { "gK", "<cmd>lua vim.lsp.buf.signature_help()<cr>", desc = "Signature Help", icon = "󰘦", },
+
+  -- Inc-rename (if using inc-rename.nvim)
+  { "<leader>rn", function() return ":IncRename " .. vim.fn.expand("<cword>") end, desc = "Rename", expr = true, icon = "󰑕", },
+
+  -- Document highlighting
+  { "<leader>lh", group = "Highlight", icon = "󰸱", },
+  { "<leader>lhh", "<cmd>lua vim.lsp.buf.document_highlight()<cr>", desc = "Document Highlight", icon = "󰸱", },
+  { "<leader>lhc", "<cmd>lua vim.lsp.buf.clear_references()<cr>", desc = "Clear Highlights", icon = "󰇙", },
 })
