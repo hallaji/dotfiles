@@ -2,7 +2,7 @@
 
 - [Cheat Sheet](#cheat-sheet)
   - [Steering Focus](#steering-focus)
-    - [Spaces & Monitors (Yabai / SKHD)](#spaces--monitors-yabai--skhd)
+    - [Spaces \& Monitors (Yabai / SKHD)](#spaces--monitors-yabai--skhd)
     - [Terminals (Alacritty)](#terminals-alacritty)
     - [Editors (VIM / NVIM / VSCode)](#editors-vim--nvim--vscode)
     - [Browsers (Vimium / Vimari)](#browsers-vimium--vimari)
@@ -17,10 +17,11 @@
   - [Vim/Neovim](#vimneovim)
     - [Vim Glossary](#vim-glossary)
     - [Vim Commands](#vim-commands)
+      - [Text Objects](#text-objects)
     - [Vim Plugins](#vim-plugins)
       - [Plug](#plug)
+      - [CtrlSF](#ctrlsf)
       - [CtrlP](#ctrlp)
-      - [COC](#coc)
       - [Fugitive](#fugitive)
       - [Git Gutter](#git-gutter)
       - [GV](#gv)
@@ -347,27 +348,6 @@ In preview window:
     - MRU mode: Wipe the list and delete entries marked by `⌃z`
     - Buffer mode: Delete entry under the cursor or delete multiple entries marked
       by `⌃z`
-
-#### COC
-
-[neoclide/coc.nvim)](https://github.com/neoclide/coc.nvim)
-
-- `:checkhealth` Check and see if the coc.nvim service is running
-- `:CocDiagnostics` Get all diagnostics of current buffer in location list
-- `:CocInfo` Get some useful information after starting the server
-- `[g`, `]g` Navigate through diagnostics
-- `gd` Go to definition
-- `gy` Go to type definition
-- `gi` Go to implementation
-- `gr` Go to references
-- `K` Show documentation in preview mode
-- `,rn` Rename a symbol
-- `,f` Format selectd code
-- `<space>a` Show all diagnostics
-- `<space>e` Manage extensions
-- `<space>c` Show commands
-- `<space>o` Find symbol of current document
-- `<space>s` Search workspace symbol
 
 #### Fugitive
 

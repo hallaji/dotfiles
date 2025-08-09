@@ -99,18 +99,6 @@ hi Whitespace guifg=#22272e
 hi WildMenu guibg=#22272e guifg=#04f6f6
 
 hi! link Character String
-hi! link CocBorder FloatBorder
-hi! link CocCodeLens Conceal
-hi! link CocErrorSign DiagnosticError
-hi! link CocErrorVirtualText DiagnosticError
-hi! link CocFadeOut NonText
-hi! link CocHintSign DiagnosticHint
-hi! link CocHintVirtualText DiagnosticHint
-hi! link CocInfoSign DiagnosticHint
-hi! link CocInfoVirtualText DiagnosticInfo
-hi! link CocMenuSel PmenuSel
-hi! link CocWarningSign DiagnosticWarn
-hi! link CocWarningVirtualText DiagnosticWarn
 hi! link Conditional Operator
 hi! link CtrlPMatch Title
 hi! link CtrlPMode2 StatusLine

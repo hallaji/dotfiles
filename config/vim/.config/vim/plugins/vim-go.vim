@@ -20,6 +20,3 @@ let g:go_def_mapping_enabled = 1
 let g:go_fmt_command = "goimports"              " Auto import dependencies
 let g:go_def_mode='gopls'                       " Go language server
 let g:go_info_mode='gopls'                      " Go language server
-
-" Auto-format code and add missing imports using COC. Runs this automatically on save.
-" autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')

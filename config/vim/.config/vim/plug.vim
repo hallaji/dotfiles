@@ -72,7 +72,6 @@ Plug 'codeindulgence/vim-tig' " https://github.com/codeindulgence/vim-tig
 "  ││├┤ └┐┌┘├┤ │  │ │├─┘│││├┤ │││ │
 " ─┴┘└─┘ └┘ └─┘┴─┘└─┘┴  ┴ ┴└─┘┘└┘ ┴
 
-Plug 'neoclide/coc.nvim', {'branch': 'release'} " https://github.com/neoclide/coc.nvim
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' } " https://github.com/fatih/vim-go
 Plug 'leafgarland/typescript-vim' " https://github.com/leafgarland/typescript-vim
 Plug 'jparise/vim-graphql' " https://github.com/jparise/vim-graphql

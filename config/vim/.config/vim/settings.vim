@@ -46,9 +46,6 @@ set splitbelow " Make splits default to below
 set splitright " And to the right
 set noshowmode " Hide the message on the last line in Insert, Replace or Visual mode
 
-set nobackup " Some lang servers have issues with backup files
-set nowritebackup " Some lang servers have issues with backup files
-
 " Enable 24-bit RGB color in the TUI to use gui attributes instead of cterm attributes
 if exists('+termguicolors')
   let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"

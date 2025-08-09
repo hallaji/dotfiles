@@ -20,7 +20,7 @@ gem install neovim # https://github.com/neovim/neovim-ruby
 
 # Vim and Neovim plugins
 nvim --headless "+Lazy! sync" "+qa"
-nvim "+CocUpdate" "+GoUpdateBinaries" "+qa"
+nvim "+GoUpdateBinaries" "+qa"
 vim "+PlugUpgrade" "+PlugUpdate" "+qa"
 
 # Save tmux statusline colors to a file

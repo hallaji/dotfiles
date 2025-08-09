@@ -25,12 +25,5 @@ return {
     vim.g.go_fmt_command = "goimports" -- Use goimports to format
     vim.g.go_def_mode = 'gopls' -- Use gopls to go to definition
     vim.g.go_info_mode = 'gopls' -- Use gopls to show info
-
-    vim.api.nvim_create_autocmd("BufWritePre", { -- Format on save
-      pattern = "*.go",
-      callback = function()
-        vim.fn.CocAction('runCommand', 'editor.action.organizeImport')
-      end
-    })
   end,
 }

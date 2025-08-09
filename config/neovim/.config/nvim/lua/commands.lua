@@ -15,13 +15,6 @@ vim.cmd([[autocmd CursorHold,CursorHoldI * checktime]])
 -- Check if any buffers were changed outside of Vim and trigger when buffer changes
 vim.cmd([[autocmd FocusGained,BufEnter * checktime]])
 
--- ┌─┐┌─┐┌─┐
--- │  │ ││
--- └─┘└─┘└─┘
-
--- Define a command to run Prettier formatter using Coc.nvim
-vim.cmd([[command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')]])
-
 -- ┌─┐┬ ┬┌┐┌┌┬┐┌─┐─┐ ┬
 -- └─┐└┬┘│││ │ ├─┤┌┴┬┘
 -- └─┘ ┴ ┘└┘ ┴ ┴ ┴┴ └─

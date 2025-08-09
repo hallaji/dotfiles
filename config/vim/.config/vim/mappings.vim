@@ -184,18 +184,3 @@ nmap <silent> <leader>gv :Gitsigns select_hunk<cr>
 nmap <silent> [h :Gitsigns prev_hunk<cr>
 nmap <silent> ]h :Gitsigns next_hunk<cr>
 nnoremap <silent> <C-G> :Git<cr>
-
-" ┌─┐┌─┐┌─┐
-" │  │ ││
-" └─┘└─┘└─┘
-
-" GoTo code navigation
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-
-" Use `[g` and `]g` to navigate diagnostics
-" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)

@@ -13,12 +13,6 @@ autocmd BufWritePost $MYVIMRC source $MYVIMRC | echom "Reloaded $NVIMRC" " Autom
 autocmd CursorHold,CursorHoldI * checktime " Check if any buffers were changed outside of Vim and trigger when cursor stops moving
 autocmd FocusGained,BufEnter * checktime " Check if any buffers were changed outside of Vim and trigger when buffer changes
 
-" ┌─┐┌─┐┌─┐
-" │  │ ││
-" └─┘└─┘└─┘
-
-command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile') " A command to run prettier formatter
-
 " ┌─┐┬ ┬┌┐┌┌┬┐┌─┐─┐ ┬
 " └─┐└┬┘│││ │ ├─┤┌┴┬┘
 " └─┘ ┴ ┘└┘ ┴ ┴ ┴┴ └─

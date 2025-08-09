@@ -25,7 +25,6 @@ LINKS=(
   ~/.config/borders/bordersrc
   ~/.config/direnv/direnvrc
   ~/.config/gh-dash/config.yml
-  ~/.config/nvim/coc-settings.json
   ~/.config/nvim/init.lua
   ~/.config/nvim/init.vim
   ~/.config/pip/pip.conf
@@ -45,7 +44,6 @@ LINKS=(
   ~/.tmux.conf
   ~/.tmux/plugins/tpm/
   ~/.vim/autoload/airline/themes/catamaran.vim
-  ~/.vim/coc-settings.json
   ~/.vim/colors/catamaran.vim
   ~/.vimrc
   ~/.yabairc
