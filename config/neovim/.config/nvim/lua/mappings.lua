@@ -342,3 +342,19 @@ wk.add({
     { "<Leader>et", ":TroubleToggle<CR>", desc = "Toggle" },
   }
 })
+
+-- ┬  ┌─┐┌─┐
+-- │  └─┐├─┘
+-- ┴─┘└─┘┴
+
+wk.add({
+  { "g", group = "LSP Go to" },
+  { "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", desc = "Go to Definition" },
+  { "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", desc = "Go to Declaration" },
+  { "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>", desc = "Go to Implementation" },
+  { "gr", "<cmd>lua vim.lsp.buf.references()<cr>", desc = "Go to References" },
+  { "K", "<cmd>lua vim.lsp.buf.hover()<cr>", desc = "Hover Documentation" },
+  { "<leader>l", group = "LSP" },
+  { "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", desc = "Rename" },
+  { "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", desc = "Code Action" },
+})
