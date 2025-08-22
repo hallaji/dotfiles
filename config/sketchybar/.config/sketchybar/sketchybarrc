@@ -33,10 +33,10 @@ default=(
 sketchybar --default "${default[@]}"
 
 separator=(
-	icon=
+  icon=
   icon.color=0xfff47067
-	background.padding_left=-2
-	background.padding_right=-2
+  background.padding_left=-2
+  background.padding_right=-2
 )
 
 # ┬  ┌─┐┌─┐┌┬┐
@@ -46,19 +46,20 @@ separator=(
 sketchybar --add event aerospace_workspace_change
 
 aerospace=(
-	icon=""
-	script="$PLUGIN_DIR/aerospace.sh"
+  icon=""
+  label.padding_right=8
+  label.font="Hack Nerd Font:Regular:24.0"
+  script="$PLUGIN_DIR/aerospace.sh"
 )
 
 front_app=(
-	icon="󰣆"
-	script="$PLUGIN_DIR/front-app.sh"
+  icon="󰣆"
+  script="$PLUGIN_DIR/front-app.sh"
 )
 
 sketchybar \
   --add item aerospace left --set aerospace "${aerospace[@]}" --subscribe aerospace aerospace_workspace_change \
-
-sketchybar \
+  --add item separator-aerospace left --set separator-aerospace "${separator[@]}" \
   --add item front_app left --set front_app "${front_app[@]}" --subscribe front_app front_app_switched
 
 # ┌─┐┌─┐┌┐┌┌┬┐┌─┐┬─┐
@@ -66,42 +67,42 @@ sketchybar \
 # └─┘└─┘┘└┘ ┴ └─┘┴└─
 
 cpu=(
-	icon=""
-	update_freq=2
-	script="$PLUGIN_DIR/cpu.sh"
+  icon=""
+  update_freq=2
+  script="$PLUGIN_DIR/cpu.sh"
 )
 
 memory=(
-	icon=""
-	update_freq=15
-	script="$PLUGIN_DIR/memory.sh"
+  icon=""
+  update_freq=15
+  script="$PLUGIN_DIR/memory.sh"
 )
 
 disk=(
-	icon=""
-	update_freq=60
-	script="$PLUGIN_DIR/disk.sh"
+  icon=""
+  update_freq=60
+  script="$PLUGIN_DIR/disk.sh"
 )
 
 network_down=(
   y_offset=-5
-	background.padding_right=-67
-	label.font="Hack Nerd Font:Regular:9.0"
+  background.padding_right=-67
+  label.font="Hack Nerd Font:Regular:9.0"
   icon.font="Hack Nerd Font:Regular:10.0"
   icon.highlight_color=0xfff5b168
-	icon=""
-	update_freq=1
+  icon=""
+  update_freq=1
   script="$PLUGIN_DIR/network.sh"
 )
 
 network_up=(
-	y_offset=5
-	icon=""
-	label.font="Hack Nerd Font:Regular:9.0"
+  y_offset=5
+  icon=""
+  label.font="Hack Nerd Font:Regular:9.0"
   icon.font="Hack Nerd Font:Regular:10.0"
   icon.highlight_color=0xffe86db2
-	update_freq=1
-	script="$PLUGIN_DIR/network.sh"
+  update_freq=1
+  script="$PLUGIN_DIR/network.sh"
 )
 
 sketchybar \
@@ -119,30 +120,30 @@ sketchybar \
 # ┴└─┴└─┘┴ ┴ ┴
 
 clock=(
-	icon=""
-	update_freq=10
-	script="$PLUGIN_DIR/clock.sh"
+  icon=""
+  update_freq=10
+  script="$PLUGIN_DIR/clock.sh"
 )
 
 date=(
-	icon="󰭧"
-	update_freq=60
-	script="$PLUGIN_DIR/date.sh"
+  icon="󰭧"
+  update_freq=60
+  script="$PLUGIN_DIR/date.sh"
 )
 
 week=(
-	icon="󱨱"
-	update_freq=3600
-	script="$PLUGIN_DIR/week.sh"
+  icon="󱨱"
+  update_freq=3600
+  script="$PLUGIN_DIR/week.sh"
 )
 
 battery=(
-	update_freq=120
-	script="$PLUGIN_DIR/battery.sh"
+  update_freq=120
+  script="$PLUGIN_DIR/battery.sh"
 )
 
 volume=(
-	script="$PLUGIN_DIR/volume.sh"
+  script="$PLUGIN_DIR/volume.sh"
 )
 
 sketchybar \
