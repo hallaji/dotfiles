@@ -7,6 +7,10 @@
 -- https://neovim.io/doc/user/map.html
 -- https://neovim.io/doc/user/lua-guide.html#lua-guide-mappings
 
+if vim.g.vscode then
+  return
+end
+
 local wk = require("which-key")
 
 -- ┌─┐┌─┐┌┐┌┌─┐┬─┐┌─┐┬
