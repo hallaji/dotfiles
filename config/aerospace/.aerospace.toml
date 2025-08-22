@@ -24,13 +24,14 @@ default-root-container-layout = "tiles" # tiles|accordion
 default-root-container-orientation = "auto" # horizontal|vertical|auto
 key-mapping.preset = "qwerty" # qwerty|dvorak
 
+# Note: `outer.top` is updated through an alias that toggles SketchyBar.
 [gaps]
 inner.horizontal = 24
-inner.vertical =   24
-outer.left =       20
-outer.bottom =     20
-outer.top =        46
-outer.right =      20
+inner.vertical = 24
+outer.left = 20
+outer.bottom = 20
+outer.top = 46
+outer.right = 20
 
 [exec]
 inherit-env-vars = true

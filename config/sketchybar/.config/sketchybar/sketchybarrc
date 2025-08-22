@@ -14,6 +14,7 @@ PLUGIN_DIR="$CONFIG_DIR/plugins"
 sketchybar --bar \
   position=top \
   height=36 \
+  notch_offset=36 \
   sticky=on \
   color=0x00000000
 

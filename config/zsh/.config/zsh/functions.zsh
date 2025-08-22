@@ -89,3 +89,19 @@ fl_fonts() {
     echo ""
   done
 }
+
+toggle_sketchybar() {
+  local config_file="$DOTFILES_HOME/config/aerospace/.aerospace.toml"
+
+  if sketchybar --query bar | grep -q '"hidden": "off"'; then
+    echo "Turning off SketchyBar…"
+    sketchybar --bar hidden=on
+    sed -i '' 's/outer\.top[[:space:]]*=[[:space:]]*.*/outer.top = 20/' "$config_file"
+    aerospace reload-config
+  else
+    echo "Turning on SketchyBar…"
+    sketchybar --bar hidden=off
+    sed -i '' 's/outer\.top[[:space:]]*=[[:space:]]*.*/outer.top = 46/' "$config_file"
+    aerospace reload-config
+  fi
+}

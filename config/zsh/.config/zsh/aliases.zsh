@@ -87,6 +87,7 @@ alias ,gcpc="change_gcloud_config"
 alias ,rga="gpgconf --kill gpg-agent"
 alias ,ryabai="yabai --restart-service"
 alias ,rskhd="skhd --restart-service"
+alias ,sb="toggle_sketchybar"
 
 # ┌─┐┬┌─┐┬  ┌─┐┌┬┐
 # ├┤ ││ ┬│  ├┤  │
