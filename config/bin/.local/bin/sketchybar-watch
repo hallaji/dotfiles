@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# ███████╗██╗  ██╗████████╗ ██████╗██╗  ██╗██╗   ██╗██████╗ ██████╗
+# ██╔════╝██║ ██╔╝╚══██╔══╝██╔════╝██║  ██║╚██╗ ██╔╝██╔══██╗██╔══██╗
+# ███████╗█████╔╝    ██║   ██║     ███████║ ╚████╔╝ ██████╔╝██████╔╝
+# ╚════██║██╔═██╗    ██║   ██║     ██╔══██║  ╚██╔╝  ██╔══██╗██╔══██╗
+# ███████║██║  ██╗   ██║   ╚██████╗██║  ██║   ██║   ██████╔╝██║  ██║
+# ╚══════╝╚═╝  ╚═╝   ╚═╝    ╚═════╝╚═╝  ╚═╝   ╚═╝   ╚═════╝ ╚═╝  ╚═╝
+
+set -e
+
+CONFIG_FILE="$HOME/.config/sketchybar/sketchybarrc"
+
+echo "󰻂 Watching sketchybar config: $CONFIG_FILE"
+
+fswatch "$CONFIG_FILE" | while read -r; do
+  echo "󱍷 Config changed, restarting sketchybar..."
+  if brew services restart sketchybar 2>/dev/null; then
+    echo "󰗠 Sketchybar restarted successfully"
+  else
+    echo "󰅙 Failed to restart sketchybar"
+  fi
+done

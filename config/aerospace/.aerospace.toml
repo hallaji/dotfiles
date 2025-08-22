@@ -5,11 +5,16 @@
 # ██║  ██║███████╗██║  ██║╚██████╔╝███████║██║     ██║  ██║╚██████╗███████╗
 # ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝     ╚═╝  ╚═╝ ╚═════╝╚══════╝
 # https://github.com/nikitabobko/AeroSpace
-# https://nikitabobko.github.io/AeroSpace/config-examples
+# https://nikitabobko.github.io/AeroSpace/guide#config-samples
 
 after-login-command = []
-after-startup-command = []
-start-at-login = false
+after-startup-command = ['exec-and-forget sketchybar']
+start-at-login = true
+
+# Notify SketchyBar about workspace change
+exec-on-workspace-change = ["/bin/bash", "-c",
+  "sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE"
+]
 
 enable-normalization-flatten-containers = true
 enable-normalization-opposite-orientation-for-nested-containers = true
@@ -24,7 +29,7 @@ inner.horizontal = 24
 inner.vertical =   24
 outer.left =       20
 outer.bottom =     20
-outer.top =        20
+outer.top =        46
 outer.right =      20
 
 [exec]
@@ -46,6 +51,9 @@ alt-ctrl-cmd-3 = "workspace 3"
 alt-ctrl-cmd-4 = "workspace 4"
 alt-ctrl-cmd-5 = "workspace 5"
 alt-ctrl-cmd-6 = "workspace 6"
+alt-ctrl-cmd-7 = "workspace 7"
+alt-ctrl-cmd-8 = "workspace 8"
+alt-ctrl-cmd-9 = "workspace 9"
 alt-slash = "layout tiles horizontal vertical"
 alt-comma = "layout accordion horizontal vertical"
 alt-ctrl-cmd-0 = "flatten-workspace-tree"

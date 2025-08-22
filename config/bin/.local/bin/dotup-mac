@@ -41,6 +41,7 @@ brew install \
   fd \
   ffmpeg \
   figlet \
+  fswatch \
   fzf \
   gh \
   git \
@@ -49,6 +50,7 @@ brew install \
   gradle \
   htop \
   httpie \
+  ifstat \
   imagemagick \
   jo \
   jpeg-xl \

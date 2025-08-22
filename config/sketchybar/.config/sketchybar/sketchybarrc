@@ -1,0 +1,156 @@
+#!/bin/bash
+
+# ███████╗██╗  ██╗████████╗ ██████╗██╗  ██╗██╗   ██╗██████╗ ██████╗
+# ██╔════╝██║ ██╔╝╚══██╔══╝██╔════╝██║  ██║╚██╗ ██╔╝██╔══██╗██╔══██╗
+# ███████╗█████╔╝    ██║   ██║     ███████║ ╚████╔╝ ██████╔╝██████╔╝
+# ╚════██║██╔═██╗    ██║   ██║     ██╔══██║  ╚██╔╝  ██╔══██╗██╔══██╗
+# ███████║██║  ██╗   ██║   ╚██████╗██║  ██║   ██║   ██████╔╝██║  ██║
+# ╚══════╝╚═╝  ╚═╝   ╚═╝    ╚═════╝╚═╝  ╚═╝   ╚═╝   ╚═════╝ ╚═╝  ╚═╝
+# https://github.com/FelixKratz/SketchyBar
+# https://felixkratz.github.io/SketchyBar/setup
+
+PLUGIN_DIR="$CONFIG_DIR/plugins"
+
+sketchybar --bar \
+  position=top \
+  height=36 \
+  sticky=on \
+  color=0x00000000
+
+default=(
+  padding_left=2
+  padding_right=2
+  icon.font="Hack Nerd Font:Bold:15.0"
+  label.font="Hack Nerd Font:Regular:13.0"
+  icon.color=0xff04f6f6
+  label.color=0xffffffff
+  icon.padding_left=4
+  icon.padding_right=2
+  label.padding_left=4
+  label.padding_right=4
+)
+sketchybar --default "${default[@]}"
+
+separator=(
+	icon=
+  icon.color=0xfff47067
+	background.padding_left=-2
+	background.padding_right=-2
+)
+
+# ┬  ┌─┐┌─┐┌┬┐
+# │  ├┤ ├┤  │
+# ┴─┘└─┘└   ┴
+
+sketchybar --add event aerospace_workspace_change
+
+aerospace=(
+	icon=""
+	script="$PLUGIN_DIR/aerospace.sh"
+)
+
+front_app=(
+	icon="󰣆"
+	script="$PLUGIN_DIR/front-app.sh"
+)
+
+sketchybar \
+  --add item aerospace left --set aerospace "${aerospace[@]}" --subscribe aerospace aerospace_workspace_change \
+
+sketchybar \
+  --add item front_app left --set front_app "${front_app[@]}" --subscribe front_app front_app_switched
+
+# ┌─┐┌─┐┌┐┌┌┬┐┌─┐┬─┐
+# │  ├┤ │││ │ ├┤ ├┬┘
+# └─┘└─┘┘└┘ ┴ └─┘┴└─
+
+cpu=(
+	icon=""
+	update_freq=2
+	script="$PLUGIN_DIR/cpu.sh"
+)
+
+memory=(
+	icon=""
+	update_freq=15
+	script="$PLUGIN_DIR/memory.sh"
+)
+
+disk=(
+	icon=""
+	update_freq=60
+	script="$PLUGIN_DIR/disk.sh"
+)
+
+network_down=(
+  y_offset=-5
+	background.padding_right=-67
+	label.font="Hack Nerd Font:Regular:9.0"
+  icon.font="Hack Nerd Font:Regular:10.0"
+  icon.highlight_color=0xfff5b168
+	icon=""
+	update_freq=1
+  script="$PLUGIN_DIR/network.sh"
+)
+
+network_up=(
+	y_offset=5
+	icon=""
+	label.font="Hack Nerd Font:Regular:9.0"
+  icon.font="Hack Nerd Font:Regular:10.0"
+  icon.highlight_color=0xffe86db2
+	update_freq=1
+	script="$PLUGIN_DIR/network.sh"
+)
+
+sketchybar \
+  --add item separator-cpu center --set separator-cpu "${separator[@]}" \
+  --add item cpu center --set cpu "${cpu[@]}" \
+  --add item memory center --set memory "${memory[@]}" \
+  --add item disk center --set disk "${disk[@]}" \
+  --add item separator-disk center --set separator-disk "${separator[@]}" \
+  --add item network.down center --set network.down "${network_down[@]}" \
+  --add item network.up center --set network.up "${network_up[@]}" \
+  --add item separator-network center --set separator-network "${separator[@]}"
+
+# ┬─┐┬┌─┐┬ ┬┌┬┐
+# ├┬┘││ ┬├─┤ │
+# ┴└─┴└─┘┴ ┴ ┴
+
+clock=(
+	icon=""
+	update_freq=10
+	script="$PLUGIN_DIR/clock.sh"
+)
+
+date=(
+	icon="󰭧"
+	update_freq=60
+	script="$PLUGIN_DIR/date.sh"
+)
+
+week=(
+	icon="󱨱"
+	update_freq=3600
+	script="$PLUGIN_DIR/week.sh"
+)
+
+battery=(
+	update_freq=120
+	script="$PLUGIN_DIR/battery.sh"
+)
+
+volume=(
+	script="$PLUGIN_DIR/volume.sh"
+)
+
+sketchybar \
+  --add item clock right --set clock "${clock[@]}" \
+  --add item date right --set date "${date[@]}" \
+  --add item week right --set week "${week[@]}" \
+  --add item separator-week right --set separator-week "${separator[@]}" \
+  --add item battery right --set battery "${battery[@]}" --subscribe battery system_woke power_source_change \
+  --add item volume right --set volume "${volume[@]}" --subscribe volume volume_change
+
+# Force all scripts to run the first time (never do this in a script)
+sketchybar --update

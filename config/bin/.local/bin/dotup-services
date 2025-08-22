@@ -21,4 +21,7 @@ type aerospace > /dev/null 2>&1 && aerospace reload-config --no-gui
 type skhd > /dev/null 2>&1 && skhd --start-service
 
 # https://github.com/FelixKratz/JankyBorders
-type brew > /dev/null 2>&1 && brew services restart borders
+type borders > /dev/null 2>&1 && brew services start borders
+
+# https://github.com/FelixKratz/SketchyBar
+type sketchybar > /dev/null 2>&1 && brew services start sketchybar
