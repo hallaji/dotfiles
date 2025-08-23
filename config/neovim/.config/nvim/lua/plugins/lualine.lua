@@ -11,36 +11,40 @@ return {
   cond = not vim.g.vscode,
   dependencies = { "nvim-tree/nvim-web-devicons" },
   config = function()
+    local theme = require('themes.catamaran')
+    local p = theme.palette
+    local l = theme.lualine
+
     local catamaran = {
       normal = {
-        a = { bg = '#EEB4B3', fg = '#22272e', gui = 'bold' },
-        b = { bg = '#2E303E', fg = '#6C6F93' },
-        c = { bg = '#1f242a', fg = '#475262' },
+        a = { bg = l.normal, fg = p.bg_primary, gui = 'bold' },
+        b = { bg = l.section_b_bg, fg = l.section_b_fg },
+        c = { bg = l.section_c_bg, fg = l.section_c_fg },
       },
       insert = {
-        a = { bg = '#F4D35E', fg = '#22272e', gui = 'bold' },
-        b = { bg = '#2E303E', fg = '#6C6F93' },
-        c = { bg = '#1f242a', fg = '#475262' },
+        a = { bg = l.insert, fg = p.bg_primary, gui = 'bold' },
+        b = { bg = l.section_b_bg, fg = l.section_b_fg },
+        c = { bg = l.section_c_bg, fg = l.section_c_fg },
       },
       visual = {
-        a = { bg = '#E95678', fg = '#fafafa', gui = 'bold' },
-        b = { bg = '#2E303E', fg = '#6C6F93' },
-        c = { bg = '#1f242a', fg = '#475262' },
+        a = { bg = l.visual, fg = p.fg_primary, gui = 'bold' },
+        b = { bg = l.section_b_bg, fg = l.section_b_fg },
+        c = { bg = l.section_c_bg, fg = l.section_c_fg },
       },
       replace = {
-        a = { bg = '#9ED47B', fg = '#22272e', gui = 'bold' },
-        b = { bg = '#2E303E', fg = '#6C6F93' },
-        c = { bg = '#1f242a', fg = '#475262' },
+        a = { bg = l.replace, fg = p.bg_primary, gui = 'bold' },
+        b = { bg = l.section_b_bg, fg = l.section_b_fg },
+        c = { bg = l.section_c_bg, fg = l.section_c_fg },
       },
       command = {
-        a = { bg = '#04BEC3', fg = '#fafafa', gui = 'bold' },
-        b = { bg = '#2E303E', fg = '#6C6F93' },
-        c = { bg = '#1f242a', fg = '#475262' },
+        a = { bg = l.command, fg = p.fg_primary, gui = 'bold' },
+        b = { bg = l.section_b_bg, fg = l.section_b_fg },
+        c = { bg = l.section_c_bg, fg = l.section_c_fg },
       },
       inactive = {
-        a = { bg = '#2E303E', fg = '#6C6F93', gui = 'bold'},
-        b = { bg = '#1f242a', fg = '#475262' },
-        c = { bg = '#1f242a', fg = '#475262' },
+        a = { bg = l.inactive, fg = p.bg_primary },
+        b = { bg = l.section_b_bg, fg = l.section_b_fg },
+        c = { bg = l.section_c_bg, fg = l.section_c_fg },
       },
     }
 
