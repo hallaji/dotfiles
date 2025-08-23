@@ -39,13 +39,7 @@ vim.o.splitbelow = true -- open horizontal splits below current window
 vim.o.splitright = true -- open vertical splits to the right of current window
 vim.o.showmode = false -- don't show mode in command line
 vim.o.exrc = true -- enable local configurations (.nvimrc, .exrc, etc.) https://neovim.io/doc/user/options.html#'exrc'
-
--- 24-bit RGB color
-if vim.fn.exists('+termguicolors') == 1 then -- check if terminal supports 24-bit RGB color
-  vim.g.t_8f = "\\e[38;2;%lu;%lu;%lum" -- set 24-bit RGB color for foreground
-  vim.g.t_8b = "\\e[48;2;%lu;%lu;%lum" -- set 24-bit RGB color for background
-  vim.o.termguicolors = true -- enable 24-bit RGB color
-end
+vim.o.termguicolors = true -- enable 24-bit RGB color
 
 -- Neovim providers
 vim.g.loaded_perl_provider = 0 -- disable perl provider :help provider-perl
