@@ -11,69 +11,80 @@ return {
   cond = not vim.g.vscode,
   dependencies = { "nvim-tree/nvim-web-devicons" },
   config = function()
-    local function setup_lualine()
-      local colorscheme = vim.g.colors_name or "default"
-      local ok, theme = pcall(require, "themes." .. colorscheme)
-
-      local t = "auto"
-      if ok then
-        local p = theme.palette
-        local l = theme.lualine
-
-        t = {
-          normal = {
-            a = { bg = l.normal, fg = p.base.bg_primary, gui = 'bold' },
-            b = { bg = l.section_b_bg, fg = l.section_b_fg },
-            c = { bg = l.section_c_bg, fg = l.section_c_fg },
-          },
-          insert = {
-            a = { bg = l.insert, fg = p.base.bg_primary, gui = 'bold' },
-            b = { bg = l.section_b_bg, fg = l.section_b_fg },
-            c = { bg = l.section_c_bg, fg = l.section_c_fg },
-          },
-          visual = {
-            a = { bg = l.visual, fg = p.base.fg_primary, gui = 'bold' },
-            b = { bg = l.section_b_bg, fg = l.section_b_fg },
-            c = { bg = l.section_c_bg, fg = l.section_c_fg },
-          },
-          replace = {
-            a = { bg = l.replace, fg = p.base.bg_primary, gui = 'bold' },
-            b = { bg = l.section_b_bg, fg = l.section_b_fg },
-            c = { bg = l.section_c_bg, fg = l.section_c_fg },
-          },
-          command = {
-            a = { bg = l.command, fg = p.base.fg_primary, gui = 'bold' },
-            b = { bg = l.section_b_bg, fg = l.section_b_fg },
-            c = { bg = l.section_c_bg, fg = l.section_c_fg },
-          },
-          inactive = {
-            a = { bg = l.inactive, fg = p.base.bg_primary },
-            b = { bg = l.section_b_bg, fg = l.section_b_fg },
-            c = { bg = l.section_c_bg, fg = l.section_c_fg },
-          },
-        }
-      else
-        vim.notify("No lualine theme for " .. colorscheme .. ", falling back to 'auto'", vim.log.levels.WARN)
+    local function get_theme()
+      local colorscheme = vim.g.colors_name
+      if not colorscheme then
+        return "auto"
       end
 
-      local function spell() return vim.wo.spell and "󰓆 [" .. vim.o.spelllang .. "]" or "" end
-      local function ctrlp() return "ControlP" end
-      local function ctrlsf() return "CtrlSF" end
-      local function nnn() return "NNN" end
+      local ok, theme = pcall(require, "themes." .. colorscheme)
+      if not ok or not theme.lualine then
+        return "auto"
+      end
 
-      local ControlP = { sections = { lualine_a = { ctrlp } }, filetypes = {'ctrlp'} }
-      local ControlSF = { sections = { lualine_a = { 'mode' }, lualine_z = { ctrlsf } }, filetypes = {'ctrlsf'} }
-      local Nnn = { sections = { lualine_a = { nnn } }, filetypes = {'nnn'} }
+      local p, l = theme.palette, theme.lualine
+      local function create_mode(bg, fg, gui)
+        return { bg = bg, fg = fg or p.base.bg_primary, gui = gui }
+      end
 
-      require('lualine').setup {
+      local common_b = { bg = l.section_b_bg, fg = l.section_b_fg }
+      local common_c = { bg = l.section_c_bg, fg = l.section_c_fg }
+
+      return {
+        normal = {
+          a = create_mode(l.normal, nil, "bold"),
+          b = common_b,
+          c = common_c
+        },
+        insert = {
+          a = create_mode(l.insert, nil, "bold"),
+          b = common_b,
+          c = common_c
+        },
+        visual = {
+          a = create_mode(l.visual, p.base.fg_primary, "bold"),
+          b = common_b,
+          c = common_c
+        },
+        replace = {
+          a = create_mode(l.replace, nil, "bold"),
+          b = common_b,
+          c = common_c
+        },
+        command = {
+          a = create_mode(l.command, p.base.fg_primary, "bold"),
+          b = common_b,
+          c = common_c
+        },
+        inactive = {
+          a = { bg = l.inactive, fg = p.base.bg_primary },
+          b = common_b,
+          c = common_c
+        },
+      }
+    end
+
+    local components = {
+      spell = function() return vim.wo.spell and "󰓆 [" .. vim.o.spelllang .. "]" or "" end,
+    }
+
+    local custom_extensions = {
+      { sections = { lualine_a = { function() return "ControlP" end } }, filetypes = { "ctrlp" } },
+      { sections = { lualine_a = { "mode" }, lualine_z = { function() return "CtrlSF" end } }, filetypes = { "ctrlsf" } },
+      { sections = { lualine_a = { function() return "NNN" end } }, filetypes = { "nnn" } },
+    }
+
+    local function setup_lualine()
+
+      require("lualine").setup({
         options = {
-          theme = t,
+          theme = get_theme(),
           section_separators = { left = '', right = '' },
           component_separators = { left = '', right = '' },
           globalstatus = true,
         },
         sections = {
-          lualine_a = { 'mode', spell },
+          lualine_a = { "mode", components.spell },
           lualine_b = {
             { 'branch', icon = { '' } },
             'diff',
@@ -155,23 +166,18 @@ return {
           lualine_y = {},
           lualine_z = {},
         },
-        extensions = {
-          'nvim-tree',
-          'fugitive',
-          'lazy',
-          'quickfix',
-          'trouble',
-          ControlP,
-          ControlSF,
-          Nnn,
-        },
-      }
+        extensions = vim.list_extend({
+          "nvim-tree",
+          "fugitive",
+          "lazy",
+          "quickfix",
+          "trouble",
+        }, custom_extensions),
+      })
     end
 
-    -- run once at startup
     setup_lualine()
 
-    -- re-run when colorscheme changes
     vim.api.nvim_create_autocmd("ColorScheme", {
       callback = setup_lualine,
     })
