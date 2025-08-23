@@ -45,7 +45,7 @@ white = "#9cb6d0"
 yellow = "#ffcc95"
 
 [colors.cursor]
-cursor = "#ff4b82"
+cursor = "#F4D35E"
 text = "#1f242a"
 
 [colors.footer_bar]
