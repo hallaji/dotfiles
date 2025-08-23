@@ -6,8 +6,6 @@ function M.get_color(env_var, fallback)
 end
 
 function M.apply(p, name)
-  vim.g.colors_name = name
-
   -- Clear existing highlights and set color scheme name
   vim.cmd('hi clear')
   if vim.fn.exists('syntax_on') == 1 then
@@ -61,6 +59,8 @@ function M.apply(p, name)
     Search = { bg = p.search.bg, fg = p.search.fg }, -- Search matches
 
     -- Tabs and status
+    StatusLine = { fg = p.base.fg_secondary }, -- Status line
+    StatusLineNC = { fg = p.base.fg_tertiary }, -- Inactive status line
     TabLine = { bg = p.base.bg_secondary, fg = p.base.fg_secondary }, -- Inactive tab pages
     TabLineFill = { bg = p.base.bg_primary }, -- Tab line background
     TabLineSel = { bg = p.semantic.primary, fg = p.base.bg_secondary }, -- Active tab page
@@ -254,6 +254,8 @@ function M.apply(p, name)
   for group, target in pairs(links) do
     vim.api.nvim_set_hl(0, group, { link = target })
   end
+
+  vim.g.colors_name = name -- keep at the end
 end
 
 return M
