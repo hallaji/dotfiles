@@ -11,38 +11,39 @@ return {
   cond = not vim.g.vscode,
   dependencies = { "nvim-tree/nvim-web-devicons" },
   config = function()
-    local theme = require('themes.catamaran')
+    local colorscheme = "catamaran"
+    local theme = require('themes.' .. colorscheme)
     local p = theme.palette
     local l = theme.lualine
 
     local catamaran = {
       normal = {
-        a = { bg = l.normal, fg = p.bg_primary, gui = 'bold' },
+        a = { bg = l.normal, fg = p.base.bg_primary, gui = 'bold' },
         b = { bg = l.section_b_bg, fg = l.section_b_fg },
         c = { bg = l.section_c_bg, fg = l.section_c_fg },
       },
       insert = {
-        a = { bg = l.insert, fg = p.bg_primary, gui = 'bold' },
+        a = { bg = l.insert, fg = p.base.bg_primary, gui = 'bold' },
         b = { bg = l.section_b_bg, fg = l.section_b_fg },
         c = { bg = l.section_c_bg, fg = l.section_c_fg },
       },
       visual = {
-        a = { bg = l.visual, fg = p.fg_primary, gui = 'bold' },
+        a = { bg = l.visual, fg = p.base.fg_primary, gui = 'bold' },
         b = { bg = l.section_b_bg, fg = l.section_b_fg },
         c = { bg = l.section_c_bg, fg = l.section_c_fg },
       },
       replace = {
-        a = { bg = l.replace, fg = p.bg_primary, gui = 'bold' },
+        a = { bg = l.replace, fg = p.base.bg_primary, gui = 'bold' },
         b = { bg = l.section_b_bg, fg = l.section_b_fg },
         c = { bg = l.section_c_bg, fg = l.section_c_fg },
       },
       command = {
-        a = { bg = l.command, fg = p.fg_primary, gui = 'bold' },
+        a = { bg = l.command, fg = p.base.fg_primary, gui = 'bold' },
         b = { bg = l.section_b_bg, fg = l.section_b_fg },
         c = { bg = l.section_c_bg, fg = l.section_c_fg },
       },
       inactive = {
-        a = { bg = l.inactive, fg = p.bg_primary },
+        a = { bg = l.inactive, fg = p.base.bg_primary },
         b = { bg = l.section_b_bg, fg = l.section_b_fg },
         c = { bg = l.section_c_bg, fg = l.section_c_fg },
       },

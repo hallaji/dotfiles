@@ -16,126 +16,126 @@ function M.apply(p, name)
 
   local highlights = {
     -- Text and visual guides
-    ColorColumn = { bg = p.ruler }, -- Column width ruler
-    Comment = { fg = p.comment }, -- Code comments
-    Conceal = { fg = p.indent_line }, -- Hidden/concealed text
-    Constant = { fg = p.constant }, -- Constants and literals
-    CopilotSuggestion = { fg = p.hint }, -- AI code suggestions
+    ColorColumn = { bg = p.ui.ruler }, -- Column width ruler
+    Comment = { fg = p.syntax.comment }, -- Code comments
+    Conceal = { fg = p.ui.indent_line }, -- Hidden/concealed text
+    Constant = { fg = p.syntax.constant }, -- Constants and literals
+    CopilotSuggestion = { fg = p.semantic.hint }, -- AI code suggestions
 
     -- Cursor highlights
-    Cursor = { bg = p.cursor, fg = p.bg_secondary, bold = true }, -- Main cursor
-    CursorColumn = { bg = p.focus, fg = p.bg_secondary }, -- Current column highlight
+    Cursor = { bg = p.ui.cursor, fg = p.base.bg_secondary, bold = true }, -- Main cursor
+    CursorColumn = { bg = p.semantic.focus, fg = p.base.bg_secondary }, -- Current column highlight
     CursorLine = {}, -- Current line highlight
-    CursorLineNr = { fg = p.focus }, -- Line number on cursor line
+    CursorLineNr = { fg = p.semantic.focus }, -- Line number on cursor line
 
     -- Diff and Git highlights
-    DiffAdd = { fg = p.success }, -- Added lines in diffs
-    DiffChange = { fg = p.warning }, -- Changed lines in diffs
-    DiffDelete = { fg = p.error }, -- Deleted lines in diffs
-    DiffNew = { fg = p.success }, -- New files in diffs
+    DiffAdd = { fg = p.semantic.success }, -- Added lines in diffs
+    DiffChange = { fg = p.semantic.warning }, -- Changed lines in diffs
+    DiffDelete = { fg = p.semantic.error }, -- Deleted lines in diffs
+    DiffNew = { fg = p.semantic.success }, -- New files in diffs
 
     -- General UI
-    Directory = { fg = p.primary }, -- Directory names in file explorers
-    EndOfBuffer = { fg = p.bg_tertiary }, -- ~ lines after end of buffer
-    Error = { bg = p.bg_primary, fg = p.error }, -- General error highlights
-    ErrorMsg = { bg = p.bg_primary, fg = p.error }, -- Error messages in command line
-    FloatBorder = { bg = p.bg_secondary, fg = p.border }, -- Borders around floating windows
-    FoldColumn = { fg = p.focus, bold = true }, -- Fold markers column (+/-)
-    Folded = { fg = p.focus, italic = true }, -- Folded text lines
-    Function = { fg = p.func, bold = true }, -- Function names
-    Identifier = { fg = p.identifier }, -- Variable names
-    LineNr = { bg = p.bg_primary, fg = p.bg_tertiary }, -- Line numbers
-    MatchParen = { bg = p.bg_secondary, fg = p.primary }, -- Matching parentheses
-    MiniTrailspace = { bg = p.error }, -- Trailing whitespace
-    ModeMsg = { fg = p.primary }, -- Mode messages (-- INSERT --, etc.)
-    MoreMsg = { fg = p.primary }, -- "Press ENTER" prompts
-    NonText = { fg = p.bg_tertiary }, -- Invisible characters (@, ~, etc.)
-    Normal = { fg = p.fg_primary }, -- Default text
-    NormalFloat = { bg = p.bg_secondary, fg = p.fg_secondary }, -- Text in floating windows
-    Question = { fg = p.identifier }, -- "Press ENTER" and similar prompts
-    QuickFixLine = { bg = p.bg_secondary, fg = p.fg_secondary }, -- Current line in quickfix window
-    SignColumn = { bg = p.bg_primary, fg = p.fg_secondary }, -- Sign column for git/diagnostic signs
+    Directory = { fg = p.semantic.primary }, -- Directory names in file explorers
+    EndOfBuffer = { fg = p.base.bg_tertiary }, -- ~ lines after end of buffer
+    Error = { bg = p.base.bg_primary, fg = p.semantic.error }, -- General error highlights
+    ErrorMsg = { bg = p.base.bg_primary, fg = p.semantic.error }, -- Error messages in command line
+    FloatBorder = { bg = p.base.bg_secondary, fg = p.ui.border }, -- Borders around floating windows
+    FoldColumn = { fg = p.semantic.focus, bold = true }, -- Fold markers column (+/-)
+    Folded = { fg = p.semantic.focus, italic = true }, -- Folded text lines
+    Function = { fg = p.syntax.func, bold = true }, -- Function names
+    Identifier = { fg = p.syntax.identifier }, -- Variable names
+    LineNr = { bg = p.base.bg_primary, fg = p.base.bg_tertiary }, -- Line numbers
+    MatchParen = { bg = p.base.bg_secondary, fg = p.semantic.primary }, -- Matching parentheses
+    MiniTrailspace = { bg = p.semantic.error }, -- Trailing whitespace
+    ModeMsg = { fg = p.semantic.primary }, -- Mode messages (-- INSERT --, etc.)
+    MoreMsg = { fg = p.semantic.primary }, -- "Press ENTER" prompts
+    NonText = { fg = p.base.bg_tertiary }, -- Invisible characters (@, ~, etc.)
+    Normal = { fg = p.base.fg_primary }, -- Default text
+    NormalFloat = { bg = p.base.bg_secondary, fg = p.base.fg_secondary }, -- Text in floating windows
+    Question = { fg = p.syntax.identifier }, -- "Press ENTER" and similar prompts
+    QuickFixLine = { bg = p.base.bg_secondary, fg = p.base.fg_secondary }, -- Current line in quickfix window
+    SignColumn = { bg = p.base.bg_primary, fg = p.base.fg_secondary }, -- Sign column for git/diagnostic signs
 
     -- Search and navigation
     IncSearch = { reverse = true }, -- Incremental search highlighting
-    Search = { bg = p.search_bg, fg = p.search }, -- Search matches
+    Search = { bg = p.search.bg, fg = p.search.fg }, -- Search matches
 
     -- Tabs and status
-    TabLine = { bg = p.bg_secondary, fg = p.fg_secondary }, -- Inactive tab pages
-    TabLineFill = { bg = p.bg_primary }, -- Tab line background
-    TabLineSel = { bg = p.primary, fg = p.bg_secondary }, -- Active tab page
+    TabLine = { bg = p.base.bg_secondary, fg = p.base.fg_secondary }, -- Inactive tab pages
+    TabLineFill = { bg = p.base.bg_primary }, -- Tab line background
+    TabLineSel = { bg = p.semantic.primary, fg = p.base.bg_secondary }, -- Active tab page
 
     -- Plugin-specific
-    NvimTreeFolderIcon = { fg = p.secondary }, -- Folder icons in nvim-tree
-    NvimTreeOpenedFile = { fg = p.primary, bold = true, underline = true }, -- Currently opened files
+    NvimTreeFolderIcon = { fg = p.semantic.secondary }, -- Folder icons in nvim-tree
+    NvimTreeOpenedFile = { fg = p.semantic.primary, bold = true, underline = true }, -- Currently opened files
 
     -- Syntax elements
-    Operator = { fg = p.operator }, -- Operators (+, -, *, etc.)
-    PreProc = { fg = p.preprocessor }, -- Preprocessor directives (#include, #define)
-    Special = { fg = p.special }, -- Special characters and symbols
-    Statement = { fg = p.keyword }, -- Keywords (if, for, while, return)
-    String = { fg = p.string }, -- String literals
-    Title = { fg = p.info }, -- Titles and headings
-    Todo = { bg = p.error, fg = p.bg_secondary }, -- To do comments
-    Type = { fg = p.identifier }, -- Data types (int, string, etc.)
-    Underlined = { underline = true, fg = p.underline }, -- Underlined text
-    VertSplit = { bg = p.bg_secondary, fg = p.bg_secondary }, -- Vertical window separators
-    Visual = { bg = p.identifier, fg = p.bg_secondary }, -- Visual mode selection
-    WarningMsg = { bg = p.bg_primary, fg = p.warning }, -- Warning messages
-    Whitespace = { fg = p.bg_primary }, -- Visible whitespace characters
-    WildMenu = { bg = p.bg_primary, fg = p.primary }, -- Command completion menu
+    Operator = { fg = p.syntax.operator }, -- Operators (+, -, *, etc.)
+    PreProc = { fg = p.syntax.preprocessor }, -- Preprocessor directives (#include, #define)
+    Special = { fg = p.syntax.special }, -- Special characters and symbols
+    Statement = { fg = p.syntax.keyword }, -- Keywords (if, for, while, return)
+    String = { fg = p.syntax.string }, -- String literals
+    Title = { fg = p.semantic.info }, -- Titles and headings
+    Todo = { bg = p.semantic.error, fg = p.base.bg_secondary }, -- To do comments
+    Type = { fg = p.syntax.identifier }, -- Data types (int, string, etc.)
+    Underlined = { underline = true, fg = p.ui.underline }, -- Underlined text
+    VertSplit = { bg = p.base.bg_secondary, fg = p.base.bg_secondary }, -- Vertical window separators
+    Visual = { bg = p.syntax.identifier, fg = p.base.bg_secondary }, -- Visual mode selection
+    WarningMsg = { bg = p.base.bg_primary, fg = p.semantic.warning }, -- Warning messages
+    Whitespace = { fg = p.base.bg_primary }, -- Visible whitespace characters
+    WildMenu = { bg = p.base.bg_primary, fg = p.semantic.primary }, -- Command completion menu
 
     -- Popup menu
-    Pmenu = { bg = p.bg_secondary, fg = p.primary }, -- Popup menu background
-    PmenuSbar = { bg = p.bg_secondary }, -- Popup menu scrollbar
-    PmenuSel = { bg = p.primary, fg = p.bg_secondary }, -- Selected popup menu item
-    PmenuThumb = { bg = p.secondary, fg = p.bg_secondary }, -- Popup menu scrollbar thumb
+    Pmenu = { bg = p.base.bg_secondary, fg = p.semantic.primary }, -- Popup menu background
+    PmenuSbar = { bg = p.base.bg_secondary }, -- Popup menu scrollbar
+    PmenuSel = { bg = p.semantic.primary, fg = p.base.bg_secondary }, -- Selected popup menu item
+    PmenuThumb = { bg = p.semantic.secondary, fg = p.base.bg_secondary }, -- Popup menu scrollbar thumb
 
     -- Spell checking
-    SpellBad = { undercurl = true, sp = p.error }, -- Misspelled words
-    SpellCap = { undercurl = true, sp = p.fg_tertiary }, -- Words needing capitalization
-    SpellLocal = { undercurl = true, sp = p.fg_tertiary }, -- Words flagged by local dictionary
-    SpellRare = { undercurl = true, sp = p.fg_tertiary }, -- Rare words
+    SpellBad = { undercurl = true, sp = p.semantic.error }, -- Misspelled words
+    SpellCap = { undercurl = true, sp = p.base.fg_tertiary }, -- Words needing capitalization
+    SpellLocal = { undercurl = true, sp = p.base.fg_tertiary }, -- Words flagged by local dictionary
+    SpellRare = { undercurl = true, sp = p.base.fg_tertiary }, -- Rare words
 
     -- Terminal
-    TermCursorNC = { bg = p.identifier, fg = p.bg_secondary }, -- Terminal cursor when not focused
+    TermCursorNC = { bg = p.syntax.identifier, fg = p.base.bg_secondary }, -- Terminal cursor when not focused
 
     -- WhichKey
-    WhichKeyDesc = { fg = p.identifier }, -- Key binding descriptions
-    WhichKeyGroup = { fg = p.secondary }, -- Key binding group names
-    WhichKeyIcon = { fg = p.constant }, -- Icons in which-key menu
+    WhichKeyDesc = { fg = p.syntax.identifier }, -- Key binding descriptions
+    WhichKeyGroup = { fg = p.semantic.secondary }, -- Key binding group names
+    WhichKeyIcon = { fg = p.syntax.constant }, -- Icons in which-key menu
 
     -- Diagnostic text highlights (inline diagnostic messages)
-    DiagnosticError = { fg = p.error }, -- Error text
-    DiagnosticWarn = { fg = p.warning }, -- Warning text
-    DiagnosticInfo = { fg = p.info }, -- Info text
-    DiagnosticHint = { fg = p.hint }, -- Hint text
+    DiagnosticError = { fg = p.semantic.error }, -- Error text
+    DiagnosticWarn = { fg = p.semantic.warning }, -- Warning text
+    DiagnosticInfo = { fg = p.semantic.info }, -- Info text
+    DiagnosticHint = { fg = p.semantic.hint }, -- Hint text
 
     -- Diagnostic underlines
-    DiagnosticUnderlineError = { undercurl = true, fg = p.error }, -- Error underline
-    DiagnosticUnderlineWarn = { undercurl = true, fg = p.warning }, -- Warning underline
-    DiagnosticUnderlineInfo = { undercurl = true, fg = p.info }, -- Info underline
-    DiagnosticUnderlineHint = { undercurl = true, fg = p.hint }, -- Hint underline
-    DiagnosticUnnecessary = { fg = p.comment, undercurl = true, italic = true }, -- Unused/unnecessary
+    DiagnosticUnderlineError = { undercurl = true, fg = p.semantic.error }, -- Error underline
+    DiagnosticUnderlineWarn = { undercurl = true, fg = p.semantic.warning }, -- Warning underline
+    DiagnosticUnderlineInfo = { undercurl = true, fg = p.semantic.info }, -- Info underline
+    DiagnosticUnderlineHint = { undercurl = true, fg = p.semantic.hint }, -- Hint underline
+    DiagnosticUnnecessary = { fg = p.syntax.comment, undercurl = true, italic = true }, -- Unused/unnecessary
     DiagnosticDeprecated = { undercurl = true, strikethrough = true }, -- Deprecated code
 
     -- Diagnostic signs
-    DiagnosticSignError = { bg = p.bg_primary, fg = p.error }, -- Error signs (E) in gutter
-    DiagnosticSignWarn = { bg = p.bg_primary, fg = p.warning }, -- Warning signs (W) in gutter
-    DiagnosticSignInfo = { bg = p.bg_primary, fg = p.info }, -- Info signs (I) in gutter
-    DiagnosticSignHint = { bg = p.bg_primary, fg = p.hint }, -- Hint signs (H) in gutter
+    DiagnosticSignError = { bg = p.base.bg_primary, fg = p.semantic.error }, -- Error signs (E) in gutter
+    DiagnosticSignWarn = { bg = p.base.bg_primary, fg = p.semantic.warning }, -- Warning signs (W) in gutter
+    DiagnosticSignInfo = { bg = p.base.bg_primary, fg = p.semantic.info }, -- Info signs (I) in gutter
+    DiagnosticSignHint = { bg = p.base.bg_primary, fg = p.semantic.hint }, -- Hint signs (H) in gutter
 
     -- Floating diagnostic windows
-    DiagnosticFloatingError = { fg = p.error }, -- Error in floating window
-    DiagnosticFloatingWarn = { fg = p.warning }, -- Warning in floating window
-    DiagnosticFloatingInfo = { fg = p.info }, -- Info in floating window
-    DiagnosticFloatingHint = { fg = p.hint }, -- Hint in floating window
+    DiagnosticFloatingError = { fg = p.semantic.error }, -- Error in floating window
+    DiagnosticFloatingWarn = { fg = p.semantic.warning }, -- Warning in floating window
+    DiagnosticFloatingInfo = { fg = p.semantic.info }, -- Info in floating window
+    DiagnosticFloatingHint = { fg = p.semantic.hint }, -- Hint in floating window
 
     -- Virtual text (inline diagnostic text)
-    DiagnosticVirtualTextError = { fg = p.error, italic = true }, -- Error virtual text
-    DiagnosticVirtualTextWarn = { fg = p.warning, italic = true }, -- Warning virtual text
-    DiagnosticVirtualTextInfo = { fg = p.info, italic = true }, -- Info virtual text
-    DiagnosticVirtualTextHint = { fg = p.hint, italic = true }, -- Hint virtual text
+    DiagnosticVirtualTextError = { fg = p.semantic.error, italic = true }, -- Error virtual text
+    DiagnosticVirtualTextWarn = { fg = p.semantic.warning, italic = true }, -- Warning virtual text
+    DiagnosticVirtualTextInfo = { fg = p.semantic.info, italic = true }, -- Info virtual text
+    DiagnosticVirtualTextHint = { fg = p.semantic.hint, italic = true }, -- Hint virtual text
   }
 
   local links = {
