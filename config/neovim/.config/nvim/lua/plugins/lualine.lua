@@ -17,7 +17,7 @@ return {
         return "auto"
       end
 
-      local ok, palette = pcall(require, "themes." .. colorscheme)
+      local ok, palette = pcall(require, "palettes." .. colorscheme)
       if not ok or not palette.lualine then
         return "auto"
       end
