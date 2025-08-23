@@ -8,5 +8,5 @@
 local name = "catamaran"
 
 local theme = require('theme')
-local colors = require('themes.' .. name)
-theme.apply(colors.palette, name)
+local palette = require('themes.' .. name)
+theme.apply(palette, name)

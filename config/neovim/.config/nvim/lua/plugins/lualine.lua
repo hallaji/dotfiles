@@ -17,14 +17,14 @@ return {
         return "auto"
       end
 
-      local ok, theme = pcall(require, "themes." .. colorscheme)
-      if not ok or not theme.lualine then
+      local ok, palette = pcall(require, "themes." .. colorscheme)
+      if not ok or not palette.lualine then
         return "auto"
       end
 
-      local p, l = theme.palette, theme.lualine
+      local l = palette.lualine
       local function create_mode(bg, fg, gui)
-        return { bg = bg, fg = fg or p.base.bg_primary, gui = gui }
+        return { bg = bg, fg = fg or palette.base.bg_primary, gui = gui }
       end
 
       local common_b = { bg = l.section_b_bg, fg = l.section_b_fg }
@@ -42,7 +42,7 @@ return {
           c = common_c
         },
         visual = {
-          a = create_mode(l.visual, p.base.fg_primary, "bold"),
+          a = create_mode(l.visual, palette.base.fg_primary, "bold"),
           b = common_b,
           c = common_c
         },
@@ -52,12 +52,12 @@ return {
           c = common_c
         },
         command = {
-          a = create_mode(l.command, p.base.fg_primary, "bold"),
+          a = create_mode(l.command, palette.base.fg_primary, "bold"),
           b = common_b,
           c = common_c
         },
         inactive = {
-          a = { bg = l.inactive, fg = p.base.bg_primary },
+          a = { bg = l.inactive, fg = palette.base.bg_primary },
           b = common_b,
           c = common_c
         },
