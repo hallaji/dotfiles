@@ -21,8 +21,8 @@ function M.apply(p, name)
     CopilotSuggestion = { fg = p.semantic.hint }, -- AI code suggestions
 
     -- Cursor highlights
-    Cursor = { bg = p.ui.cursor, fg = p.base.bg_secondary, bold = true }, -- Main cursor
-    CursorColumn = { bg = p.semantic.focus, fg = p.base.bg_secondary }, -- Current column highlight
+    Cursor = { bg = p.ui.cursor, fg = p.base.secondary_bg, bold = true }, -- Main cursor
+    CursorColumn = { bg = p.semantic.focus, fg = p.base.secondary_bg }, -- Current column highlight
     CursorLine = {}, -- Current line highlight
     CursorLineNr = { fg = p.semantic.focus }, -- Line number on cursor line
 
@@ -34,36 +34,36 @@ function M.apply(p, name)
 
     -- General UI
     Directory = { fg = p.semantic.primary }, -- Directory names in file explorers
-    EndOfBuffer = { fg = p.base.bg_tertiary }, -- ~ lines after end of buffer
-    Error = { bg = p.base.bg_primary, fg = p.semantic.error }, -- General error highlights
-    ErrorMsg = { bg = p.base.bg_primary, fg = p.semantic.error }, -- Error messages in command line
-    FloatBorder = { bg = p.base.bg_secondary, fg = p.ui.border }, -- Borders around floating windows
+    EndOfBuffer = { fg = p.base.tertiary_bg }, -- ~ lines after end of buffer
+    Error = { bg = p.base.primary_bg, fg = p.semantic.error }, -- General error highlights
+    ErrorMsg = { bg = p.base.primary_bg, fg = p.semantic.error }, -- Error messages in command line
+    FloatBorder = { bg = p.base.secondary_bg, fg = p.ui.border }, -- Borders around floating windows
     FoldColumn = { fg = p.semantic.focus, bold = true }, -- Fold markers column (+/-)
     Folded = { fg = p.semantic.focus, italic = true }, -- Folded text lines
     Function = { fg = p.syntax.func, bold = true }, -- Function names
     Identifier = { fg = p.syntax.identifier }, -- Variable names
-    LineNr = { bg = p.base.bg_primary, fg = p.base.bg_tertiary }, -- Line numbers
-    MatchParen = { bg = p.base.bg_secondary, fg = p.semantic.primary }, -- Matching parentheses
+    LineNr = { bg = p.base.primary_bg, fg = p.base.tertiary_bg }, -- Line numbers
+    MatchParen = { bg = p.base.secondary_bg, fg = p.semantic.primary }, -- Matching parentheses
     MiniTrailspace = { bg = p.semantic.error }, -- Trailing whitespace
     ModeMsg = { fg = p.semantic.primary }, -- Mode messages (-- INSERT --, etc.)
     MoreMsg = { fg = p.semantic.primary }, -- "Press ENTER" prompts
-    NonText = { fg = p.base.bg_tertiary }, -- Invisible characters (@, ~, etc.)
-    Normal = { fg = p.base.fg_primary }, -- Default text
-    NormalFloat = { bg = p.base.bg_secondary, fg = p.base.fg_secondary }, -- Text in floating windows
+    NonText = { fg = p.base.tertiary_bg }, -- Invisible characters (@, ~, etc.)
+    Normal = { fg = p.base.primary_fg }, -- Default text
+    NormalFloat = { bg = p.base.secondary_bg, fg = p.base.secondary_fg }, -- Text in floating windows
     Question = { fg = p.syntax.identifier }, -- "Press ENTER" and similar prompts
-    QuickFixLine = { bg = p.base.bg_secondary, fg = p.base.fg_secondary }, -- Current line in quickfix window
-    SignColumn = { bg = p.base.bg_primary, fg = p.base.fg_secondary }, -- Sign column for git/diagnostic signs
+    QuickFixLine = { bg = p.base.secondary_bg, fg = p.base.secondary_fg }, -- Current line in quickfix window
+    SignColumn = { bg = p.base.primary_bg, fg = p.base.secondary_fg }, -- Sign column for git/diagnostic signs
 
     -- Search and navigation
-    IncSearch = { reverse = true }, -- Incremental search highlighting
-    Search = { bg = p.search.bg, fg = p.search.fg }, -- Search matches
+    IncSearch = { bg=p.semantic.secondary, fg = p.base.primary_bg, undercurl = true, bold = true }, -- Incremental search highlighting
+    Search = { bg=p.semantic.focus, fg = p.base.primary_bg, undercurl = true, bold = true }, -- Search matches
 
     -- Tabs and status
-    StatusLine = { fg = p.base.fg_secondary }, -- Status line
-    StatusLineNC = { fg = p.base.fg_tertiary }, -- Inactive status line
-    TabLine = { bg = p.base.bg_secondary, fg = p.base.fg_secondary }, -- Inactive tab pages
-    TabLineFill = { bg = p.base.bg_primary }, -- Tab line background
-    TabLineSel = { bg = p.semantic.primary, fg = p.base.bg_secondary }, -- Active tab page
+    StatusLine = { fg = p.base.secondary_fg }, -- Status line
+    StatusLineNC = { fg = p.base.tertiary_fg }, -- Inactive status line
+    TabLine = { bg = p.base.secondary_bg, fg = p.base.secondary_fg }, -- Inactive tab pages
+    TabLineFill = { bg = p.base.primary_bg }, -- Tab line background
+    TabLineSel = { bg = p.semantic.primary, fg = p.base.secondary_bg }, -- Active tab page
 
     -- Plugin-specific
     NvimTreeFolderIcon = { fg = p.semantic.secondary }, -- Folder icons in nvim-tree
@@ -76,29 +76,29 @@ function M.apply(p, name)
     Statement = { fg = p.syntax.keyword }, -- Keywords (if, for, while, return)
     String = { fg = p.syntax.string }, -- String literals
     Title = { fg = p.semantic.info }, -- Titles and headings
-    Todo = { bg = p.semantic.error, fg = p.base.bg_secondary }, -- To do comments
+    Todo = { bg = p.semantic.error, fg = p.base.secondary_bg }, -- To do comments
     Type = { fg = p.syntax.identifier }, -- Data types (int, string, etc.)
     Underlined = { underline = true, fg = p.ui.underline }, -- Underlined text
-    VertSplit = { bg = p.base.bg_secondary, fg = p.base.bg_secondary }, -- Vertical window separators
-    Visual = { bg = p.syntax.identifier, fg = p.base.bg_secondary }, -- Visual mode selection
-    WarningMsg = { bg = p.base.bg_primary, fg = p.semantic.warning }, -- Warning messages
-    Whitespace = { fg = p.base.bg_primary }, -- Visible whitespace characters
-    WildMenu = { bg = p.base.bg_primary, fg = p.semantic.primary }, -- Command completion menu
+    VertSplit = { bg = p.base.secondary_bg, fg = p.base.secondary_bg }, -- Vertical window separators
+    Visual = { bg = p.syntax.identifier, fg = p.base.secondary_bg }, -- Visual mode selection
+    WarningMsg = { bg = p.base.primary_bg, fg = p.semantic.warning }, -- Warning messages
+    Whitespace = { fg = p.base.primary_bg }, -- Visible whitespace characters
+    WildMenu = { bg = p.base.primary_bg, fg = p.semantic.primary }, -- Command completion menu
 
     -- Popup menu
-    Pmenu = { bg = p.base.bg_secondary, fg = p.semantic.primary }, -- Popup menu background
-    PmenuSbar = { bg = p.base.bg_secondary }, -- Popup menu scrollbar
-    PmenuSel = { bg = p.semantic.primary, fg = p.base.bg_secondary }, -- Selected popup menu item
-    PmenuThumb = { bg = p.semantic.secondary, fg = p.base.bg_secondary }, -- Popup menu scrollbar thumb
+    Pmenu = { bg = p.base.secondary_bg, fg = p.semantic.primary }, -- Popup menu background
+    PmenuSbar = { bg = p.base.secondary_bg }, -- Popup menu scrollbar
+    PmenuSel = { bg = p.semantic.primary, fg = p.base.secondary_bg }, -- Selected popup menu item
+    PmenuThumb = { bg = p.semantic.secondary, fg = p.base.secondary_bg }, -- Popup menu scrollbar thumb
 
     -- Spell checking
     SpellBad = { undercurl = true, sp = p.semantic.error }, -- Misspelled words
-    SpellCap = { undercurl = true, sp = p.base.fg_tertiary }, -- Words needing capitalization
-    SpellLocal = { undercurl = true, sp = p.base.fg_tertiary }, -- Words flagged by local dictionary
-    SpellRare = { undercurl = true, sp = p.base.fg_tertiary }, -- Rare words
+    SpellCap = { undercurl = true, sp = p.base.tertiary_fg }, -- Words needing capitalization
+    SpellLocal = { undercurl = true, sp = p.base.tertiary_fg }, -- Words flagged by local dictionary
+    SpellRare = { undercurl = true, sp = p.base.tertiary_fg }, -- Rare words
 
     -- Terminal
-    TermCursorNC = { bg = p.syntax.identifier, fg = p.base.bg_secondary }, -- Terminal cursor when not focused
+    TermCursorNC = { bg = p.syntax.identifier, fg = p.base.secondary_bg }, -- Terminal cursor when not focused
 
     -- WhichKey
     WhichKeyDesc = { fg = p.syntax.identifier }, -- Key binding descriptions
@@ -120,10 +120,10 @@ function M.apply(p, name)
     DiagnosticDeprecated = { undercurl = true, strikethrough = true }, -- Deprecated code
 
     -- Diagnostic signs
-    DiagnosticSignError = { bg = p.base.bg_primary, fg = p.semantic.error }, -- Error signs (E) in gutter
-    DiagnosticSignWarn = { bg = p.base.bg_primary, fg = p.semantic.warning }, -- Warning signs (W) in gutter
-    DiagnosticSignInfo = { bg = p.base.bg_primary, fg = p.semantic.info }, -- Info signs (I) in gutter
-    DiagnosticSignHint = { bg = p.base.bg_primary, fg = p.semantic.hint }, -- Hint signs (H) in gutter
+    DiagnosticSignError = { bg = p.base.primary_bg, fg = p.semantic.error }, -- Error signs (E) in gutter
+    DiagnosticSignWarn = { bg = p.base.primary_bg, fg = p.semantic.warning }, -- Warning signs (W) in gutter
+    DiagnosticSignInfo = { bg = p.base.primary_bg, fg = p.semantic.info }, -- Info signs (I) in gutter
+    DiagnosticSignHint = { bg = p.base.primary_bg, fg = p.semantic.hint }, -- Hint signs (H) in gutter
 
     -- Floating diagnostic windows
     DiagnosticFloatingError = { fg = p.semantic.error }, -- Error in floating window

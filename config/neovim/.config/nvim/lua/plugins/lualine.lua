@@ -24,7 +24,7 @@ return {
 
       local l = palette.lualine
       local function create_mode(bg, fg, gui)
-        return { bg = bg, fg = fg or palette.base.bg_primary, gui = gui }
+        return { bg = bg, fg = fg or palette.base.primary_bg, gui = gui }
       end
 
       local common_b = { bg = l.section_b_bg, fg = l.section_b_fg }
@@ -42,7 +42,7 @@ return {
           c = common_c
         },
         visual = {
-          a = create_mode(l.visual, palette.base.fg_primary, "bold"),
+          a = create_mode(l.visual, palette.base.primary_fg, "bold"),
           b = common_b,
           c = common_c
         },
@@ -52,12 +52,12 @@ return {
           c = common_c
         },
         command = {
-          a = create_mode(l.command, palette.base.fg_primary, "bold"),
+          a = create_mode(l.command, palette.base.primary_fg, "bold"),
           b = common_b,
           c = common_c
         },
         inactive = {
-          a = { bg = l.inactive, fg = palette.base.bg_primary },
+          a = { bg = l.inactive, fg = palette.base.primary_bg },
           b = common_b,
           c = common_c
         },
