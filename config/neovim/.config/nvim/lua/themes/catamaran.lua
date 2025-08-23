@@ -2,12 +2,9 @@
 -- │  ├┤ │││ │ ├┬┘├─┤│  │┌─┘├┤  ││  │  │ ││  │ │├┬┘  │││├─┤│││├─┤│ ┬├┤ ├┬┘
 -- └─┘└─┘┘└┘ ┴ ┴└─┴ ┴┴─┘┴└─┘└─┘─┴┘  └─┘└─┘┴─┘└─┘┴└─  ┴ ┴┴ ┴┘└┘┴ ┴└─┘└─┘┴└─
 
+local theme = require('theme')
+local get_color = theme.get_color
 local M = {}
-
--- Helper to get env var with fallback
-local function get_color(env_var, fallback)
-  return vim.env[env_var] or fallback
-end
 
 -- Core theme colors
 M.palette = {
