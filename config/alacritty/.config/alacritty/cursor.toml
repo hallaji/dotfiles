@@ -1,0 +1,9 @@
+[cursor]
+blink_interval = 750
+thickness = 0.15
+unfocused_hollow = true
+vi_mode_style = "None"
+
+[cursor.style]
+blinking = "Always"
+shape = "Block"
