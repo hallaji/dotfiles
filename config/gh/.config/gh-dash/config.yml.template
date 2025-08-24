@@ -47,19 +47,20 @@ theme:
   ui:
     sectionsShowCount: true
     table:
+      compact: false
       showSeparator: true
   colors:
     text:
-      primary: "#adbac7"
-      secondary: "#a394cd"
-      inverted: "#1f242a"
-      faint: "#8b97a2"
-      warning: "#f5b168"
-      success: "#00b196"
-      error: "#ff4b82"
+      primary: "${PALETTE_BA_PRIMARY_FG}"
+      secondary: "${PALETTE_SE_FOCUS}"
+      inverted: "${PALETTE_BA_SECONDARY_BG}"
+      faint: "${PALETTE_SE_HINT}"
+      warning: "${PALETTE_SE_WARNING}"
+      success: "${PALETTE_SE_SUCCESS}"
+      error: "${PALETTE_SE_ERROR}"
     background:
-      selected: "#39386B"
+      selected: "${PALETTE_LL_SECTION_C_BG}"
     border:
-      primary: "#39386B"
-      secondary: "#39386B"
-      faint: "#2B2B40"
+      faint: "${PALETTE_BA_SECONDARY_BG}"
+      primary: "${PALETTE_BA_TERTIARY_BG}"
+      secondary: "${PALETTE_LL_SECTION_C_BG}"
