@@ -17,6 +17,8 @@ return {
         return "auto"
       end
 
+      -- Clear module cache to reload updated palettes
+      package.loaded["palettes." .. colorscheme] = nil
       local ok, palette = pcall(require, "palettes." .. colorscheme)
       if not ok or not palette.lualine then
         return "auto"
