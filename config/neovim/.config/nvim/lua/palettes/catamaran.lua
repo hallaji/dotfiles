@@ -42,7 +42,7 @@ return {
     ruler = get_color('PALETTE_UI_RULER', '#22282f'),
     border = get_color('PALETTE_UI_BORDER', '#a394cd'),
     indent_line = get_color('PALETTE_UI_INDENT_LINE', '#2e353f'),
-    cursor = get_color('PALETTE_UI_CURSOR', '#F4D35E'),
+    cursor = get_color('PALETTE_UI_CURSOR', '#FF6B35'),
     underline = get_color('PALETTE_UI_UNDERLINE', '#00b196'),
   },
   lualine = {

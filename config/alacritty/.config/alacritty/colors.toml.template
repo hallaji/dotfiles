@@ -1,0 +1,64 @@
+[bell]
+color = "${PALETTE_SE_ERROR}"
+
+[colors.normal]
+black = "${PALETTE_BA_SECONDARY_BG}"
+blue = "${PALETTE_SY_CONSTANT}"
+cyan = "${PALETTE_SE_PRIMARY}"
+green = "${PALETTE_SY_STRING}"
+magenta = "${PALETTE_SE_SECONDARY}"
+red = "${PALETTE_SE_ERROR}"
+white = "${PALETTE_BA_TERTIARY_FG}"
+yellow = "${PALETTE_SE_WARNING}"
+
+[colors.bright]
+black = "${PALETTE_BA_TERTIARY_BG}"
+blue = "${PALETTE_SE_INFO}"
+cyan = "${PALETTE_SE_PRIMARY}"
+green = "${PALETTE_SE_SUCCESS}"
+magenta = "${PALETTE_SE_FOCUS}"
+red = "${PALETTE_SE_ERROR}"
+white = "${PALETTE_BA_SECONDARY_FG}"
+yellow = "${PALETTE_SY_PREPROCESSOR}"
+
+[colors.cursor]
+cursor = "${PALETTE_UI_CURSOR}"
+text = "${PALETTE_BA_SECONDARY_BG}"
+
+[colors.footer_bar]
+background = "${PALETTE_BA_SECONDARY_BG}"
+foreground = "${PALETTE_SE_SECONDARY}"
+
+[colors.hints.end]
+background = "${PALETTE_BA_SECONDARY_BG}"
+foreground = "${PALETTE_LL_INSERT}"
+
+[colors.hints.start]
+background = "${PALETTE_LL_INSERT}"
+foreground = "${PALETTE_BA_SECONDARY_BG}"
+
+[colors.line_indicator]
+background = "${PALETTE_BA_PRIMARY_BG}"
+foreground = "${PALETTE_BA_TERTIARY_BG}"
+
+[colors.primary]
+background = "${PALETTE_BA_PRIMARY_BG}"
+bright_foreground = "${PALETTE_BA_PRIMARY_FG}"
+dim_foreground = "${PALETTE_BA_TERTIARY_BG}"
+foreground = "${PALETTE_BA_PRIMARY_FG}"
+
+[colors.search.focused_match]
+background = "${PALETTE_SE_SECONDARY}"
+foreground = "${PALETTE_BA_SECONDARY_BG}"
+
+[colors.search.matches]
+background = "${PALETTE_BA_TERTIARY_BG}"
+foreground = "${PALETTE_SE_SECONDARY}"
+
+[colors.selection]
+background = "${PALETTE_SE_PRIMARY}"
+text = "${PALETTE_BA_PRIMARY_BG}"
+
+[colors.vi_mode_cursor]
+cursor = "${PALETTE_LL_INSERT}"
+text = "${PALETTE_BA_SECONDARY_BG}"
