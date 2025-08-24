@@ -369,4 +369,116 @@ wk.add({
   { "<leader>lh", group = "Highlight", icon = "󰸱", },
   { "<leader>lhh", "<cmd>lua vim.lsp.buf.document_highlight()<cr>", desc = "Document Highlight", icon = "󰸱", },
   { "<leader>lhc", "<cmd>lua vim.lsp.buf.clear_references()<cr>", desc = "Clear Highlights", icon = "󰇙", },
+
+  -- -- LSP main actions
+  -- { "<leader>l", group = "󰒋 LSP" },
+  -- { "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", desc = "󰌵 Code Action", mode = { "n", "v" } },
+  -- { "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", desc = "󰑕 Rename" },
+  -- { "<leader>lf", "<cmd>lua vim.lsp.buf.format({ async = true })<cr>", desc = "󰉢 Format Document", mode = { "n", "v" } },
+  -- { "<leader>li", "<cmd>LspInfo<cr>", desc = "󰉒 LSP Info" },
+  -- { "<leader>lI", "<cmd>LspInstallInfo<cr>", desc = "󰤚 LSP Install Info" },
+  -- { "<leader>lR", "<cmd>LspRestart<cr>", desc = "󰑓 Restart LSP" },
+  -- { "<leader>lS", "<cmd>LspStart<cr>", desc = "󰐥 Start LSP" },
+  -- { "<leader>lT", "<cmd>LspStop<cr>", desc = "󰙦 Stop LSP" },
+
+  -- -- Diagnostics
+  -- { "<leader>ld", group = "󰉪 Diagnostics" },
+  -- { "<leader>ldd", "<cmd>lua vim.diagnostic.open_float()<cr>", desc = "󰌶 Show Line Diagnostics" },
+  -- { "<leader>ldl", "<cmd>lua vim.diagnostic.setloclist()<cr>", desc = "󰂛 Diagnostics to Location List" },
+  -- { "<leader>ldq", "<cmd>lua vim.diagnostic.setqflist()<cr>", desc = "󰁨 Diagnostics to Quickfix" },
+  -- { "<leader>ldt", "<cmd>lua vim.diagnostic.toggle()<cr>", desc = "󰄭 Toggle Diagnostics" },
+  -- { "]d", "<cmd>lua vim.diagnostic.goto_next()<cr>", desc = "Next Diagnostic" },
+  -- { "[d", "<cmd>lua vim.diagnostic.goto_prev()<cr>", desc = "Previous Diagnostic" },
+  -- { "]e", "<cmd>lua vim.diagnostic.goto_next({severity = vim.diagnostic.severity.ERROR})<cr>", desc = "Next Error" },
+  -- { "[e", "<cmd>lua vim.diagnostic.goto_prev({severity = vim.diagnostic.severity.ERROR})<cr>", desc = "Previous Error" },
+  -- { "]w", "<cmd>lua vim.diagnostic.goto_next({severity = vim.diagnostic.severity.WARN})<cr>", desc = "Next Warning" },
+  -- { "[w", "<cmd>lua vim.diagnostic.goto_prev({severity = vim.diagnostic.severity.WARN})<cr>", desc = "Previous Warning" },
+
+  -- -- Workspace management
+  -- { "<leader>lw", group = "󰇄 Workspace" },
+  -- { "<leader>lwa", "<cmd>lua vim.lsp.buf.add_workspace_folder()<cr>", desc = "󰀸 Add Workspace Folder" },
+  -- { "<leader>lwr", "<cmd>lua vim.lsp.buf.remove_workspace_folder()<cr>", desc = "󰤄 Remove Workspace Folder" },
+  -- { "<leader>lwl", function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end, desc = "󰈙 List Workspace Folders" },
+  -- { "<leader>lws", "<cmd>lua require('telescope.builtin').lsp_dynamic_workspace_symbols()<cr>", desc = "󰒕 Workspace Symbols" },
+
+  -- -- Symbols and navigation
+  -- { "<leader>ls", group = "󰒕 Symbols" },
+  -- { "<leader>lso", "<cmd>lua require('telescope.builtin').lsp_document_symbols()<cr>", desc = "󰈙 Document Symbols" },
+  -- { "<leader>lsw", "<cmd>lua require('telescope.builtin').lsp_dynamic_workspace_symbols()<cr>", desc = "󰇄 Workspace Symbols" },
+  -- { "<leader>lsi", "<cmd>lua require('telescope.builtin').lsp_implementations()<cr>", desc = "󰴽 Implementations" },
+  -- { "<leader>lsr", "<cmd>lua require('telescope.builtin').lsp_references()<cr>", desc = "󰈙 References" },
+  -- { "<leader>lsd", "<cmd>lua require('telescope.builtin').lsp_definitions()<cr>", desc = "󰊕 Definitions" },
+  -- { "<leader>lst", "<cmd>lua require('telescope.builtin').lsp_type_definitions()<cr>", desc = "󰗀 Type Definitions" },
+
+  -- -- Call hierarchy
+  -- { "<leader>lc", group = "󰗀 Call Hierarchy" },
+  -- { "<leader>lci", "<cmd>lua vim.lsp.buf.incoming_calls()<cr>", desc = "󰸙 Incoming Calls" },
+  -- { "<leader>lco", "<cmd>lua vim.lsp.buf.outgoing_calls()<cr>", desc = "󰸖 Outgoing Calls" },
+
+
+  -- -- LSP-specific plugin integrations
+  -- -- Trouble.nvim integration (if installed)
+  -- { "<leader>lt", group = "󰔫 Trouble" },
+  -- { "<leader>ltt", "<cmd>TroubleToggle<cr>", desc = "󰔫 Toggle Trouble" },
+  -- { "<leader>ltd", "<cmd>TroubleToggle document_diagnostics<cr>", desc = "󰉪 Document Diagnostics" },
+  -- { "<leader>ltw", "<cmd>TroubleToggle workspace_diagnostics<cr>", desc = "󰇄 Workspace Diagnostics" },
+  -- { "<leader>ltr", "<cmd>TroubleToggle lsp_references<cr>", desc = "󰈙 LSP References" },
+  -- { "<leader>ltl", "<cmd>TroubleToggle loclist<cr>", desc = "󰂛 Location List" },
+  -- { "<leader>ltq", "<cmd>TroubleToggle quickfix<cr>", desc = "󰁨 Quickfix" },
+
+  -- -- LSP Saga integration (if installed)
+  -- { "<leader>lg", group = "󰒋 LSP Saga" },
+  -- { "<leader>lgd", "<cmd>Lspsaga peek_definition<cr>", desc = "󰊕 Peek Definition" },
+  -- { "<leader>lgr", "<cmd>Lspsaga lsp_finder<cr>", desc = "󰈙 LSP Finder" },
+  -- { "<leader>lga", "<cmd>Lspsaga code_action<cr>", desc = "󰌵 Code Action" },
+  -- { "<leader>lgn", "<cmd>Lspsaga rename<cr>", desc = "󰑕 Rename" },
+  -- { "<leader>lgh", "<cmd>Lspsaga hover_doc<cr>", desc = "󰈙 Hover Doc" },
+  -- { "<leader>lgo", "<cmd>Lspsaga outline<cr>", desc = "󰘦 Outline" },
+
+  -- -- Additional useful LSP mappings
+  -- { "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<cr>", desc = "Signature Help", mode = "i" },
+  -- { "<C-h>", "<cmd>lua vim.lsp.buf.hover()<cr>", desc = "Hover Info", mode = "i" },
+
+  -- -- Mason integration (if using mason.nvim)
+  -- { "<leader>lm", group = "󰏗 Mason" },
+  -- { "<leader>lmm", "<cmd>Mason<cr>", desc = "󰏗 Mason" },
+  -- { "<leader>lmi", "<cmd>MasonInstall<cr>", desc = "󰏗 Mason Install" },
+  -- { "<leader>lmu", "<cmd>MasonUninstall<cr>", desc = "󰏗 Mason Uninstall" },
+  -- { "<leader>lmU", "<cmd>MasonUpdate<cr>", desc = "󰏗 Mason Update" },
+  -- { "<leader>lml", "<cmd>MasonLog<cr>", desc = "󰏗 Mason Log" },
+
+  -- -- Inlay hints (Neovim 0.10+)
+  -- { "<leader>lI", group = "󰉧 Inlay Hints" },
+  -- { "<leader>lIt", function()
+  --   vim.lsp.inlay_hint.enable(0, not vim.lsp.inlay_hint.is_enabled())
+  -- end, desc = "󰉧 Toggle Inlay Hints" },
+  -- { "<leader>lIe", function()
+  --   vim.lsp.inlay_hint.enable(0, true)
+  -- end, desc = "󰉧 Enable Inlay Hints" },
+  -- { "<leader>lId", function()
+  --   vim.lsp.inlay_hint.enable(0, false)
+  -- end, desc = "󰉧 Disable Inlay Hints" },
+
+  -- -- Quick actions
+  -- { "<leader>q", group = "󰗇 Quick Actions" },
+  -- { "<leader>qf", "<cmd>lua vim.lsp.buf.code_action()<cr>", desc = "󰌵 Quick Fix", mode = { "n", "v" } },
+  -- { "<leader>qr", "<cmd>lua vim.lsp.buf.rename()<cr>", desc = "󰑕 Quick Rename" },
+  -- { "<leader>qh", "<cmd>lua vim.lsp.buf.hover()<cr>", desc = "󰈙 Quick Hover" },
+
+  -- -- Search and navigation shortcuts
+  -- { "<leader>/", group = "󰍉 Search" },
+  -- { "<leader>/s", "<cmd>lua require('telescope.builtin').lsp_document_symbols()<cr>", desc = "󰒕 Search Symbols" },
+  -- { "<leader>/w", "<cmd>lua require('telescope.builtin').lsp_dynamic_workspace_symbols()<cr>", desc = "󰇄 Search Workspace" },
+  -- { "<leader>/r", "<cmd>lua require('telescope.builtin').lsp_references()<cr>", desc = "󰈙 Search References" },
+  -- { "<leader>/d", "<cmd>lua require('telescope.builtin').diagnostics()<cr>", desc = "󰉪 Search Diagnostics" },
+
+  -- -- Toggle features
+  -- { "<leader>t", group = "󰔡 Toggle" },
+  -- { "<leader>td", function()
+  --   vim.diagnostic.enable(not vim.diagnostic.is_enabled())
+  -- end, desc = "󰉪 Toggle Diagnostics" },
+  -- { "<leader>tf", function()
+  --   vim.g.format_on_save = not vim.g.format_on_save
+  --   print("Format on save: " .. (vim.g.format_on_save and "enabled" or "disabled"))
+  -- end, desc = "󰉢 Toggle Format on Save" },
 })
