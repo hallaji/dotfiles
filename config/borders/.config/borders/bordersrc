@@ -5,14 +5,16 @@
 # ██████╔╝╚██████╔╝██║  ██║██████╔╝███████╗██║  ██║███████║
 # ╚═════╝  ╚═════╝ ╚═╝  ╚═╝╚═════╝ ╚══════╝╚═╝  ╚═╝╚══════╝
 # https://github.com/FelixKratz/JankyBorders
+# Note: defaults may be overridden via dotup-services
 
 options=(
-	style=round
-	width=8.0
-	hidpi=off
-	active_color=0xff04f6f6
-	inactive_color=0xff051015
-  order=above
+  active_color="0xff04f6f6"
+  order="above"
+  blacklist=""
+  hidpi="off"
+  inactive_color="0xff3c4552"
+  style="round"
+  width="8.0"
 )
 
 borders "${options[@]}"
