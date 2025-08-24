@@ -31,16 +31,39 @@ return {
       options = { ['status-justify'] = 'left' } -- left, centre, or right
     }
 
-    vim.g.tmuxline_theme = {
-      a =    { '#22272e', '#EEB4B3', 'bold' }, -- 'fg', 'bg', 'comma-separated attributes'
-      b =    { '#6C6F93', '#2E303E' },
-      c =    { '#3b3d51', '#6C6F93' },
-      x =    { '#475262', '#1f242a' },
-      y =    { '#6C6F93', '#2E303E' },
-      z =    { '#22272e', '#EEB4B3', 'bold' },
-      win =  { '#475262', '#1f242a' },
-      cwin = { '#6C6F93', '#2E303E' },
-      bg =   { '#2E303E', '#1f242a' }
-    }
+    local function setup_tmuxline_theme()
+      local colorscheme = vim.g.colors_name
+      if not colorscheme then return end
+
+      -- Clear module cache to reload updated palettes
+      package.loaded["palettes." .. colorscheme] = nil
+      local ok, palette = pcall(require, "palettes." .. colorscheme)
+      if not ok or not palette.lualine then return end
+
+      local l = palette.lualine
+      vim.g.tmuxline_theme = {
+        a =    { palette.base.primary_bg, l.normal, 'bold' },
+        b =    { l.section_b_fg, l.section_b_bg },
+        c =    { l.section_c_fg, l.section_c_bg },
+        x =    { l.section_c_fg, l.section_c_bg },
+        y =    { l.section_b_fg, l.section_b_bg },
+        z =    { palette.base.primary_bg, l.normal, 'bold' },
+        win =  { l.section_c_fg, l.section_c_bg },
+        cwin = { l.section_b_fg, l.section_b_bg },
+        bg =   { l.section_b_bg, l.section_c_bg }
+      }
+    end
+
+    setup_tmuxline_theme()
+
+    vim.api.nvim_create_autocmd("ColorScheme", {
+      callback = function()
+        -- Update tmuxline
+        setup_tmuxline_theme()
+        -- Update tmux statusline colors
+        vim.cmd('Tmuxline')
+        vim.cmd('TmuxlineSnapshot! ~/.tmux/statusline-colors.conf')
+      end,
+    })
   end,
 }
