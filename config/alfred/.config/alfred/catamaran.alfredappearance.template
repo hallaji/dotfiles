@@ -4,22 +4,22 @@
       "textSpacing" : 8,
       "subtext" : {
         "size" : 12,
-        "colorSelected" : "#9BB6CFFF",
+        "colorSelected" : "${PALETTE_BA_SECONDARY_FG}FF",
         "font" : "System Light",
-        "color" : "#3B4551FF"
+        "color" : "${PALETTE_BA_TERTIARY_BG}FF"
       },
       "shortcut" : {
         "size" : 16,
-        "colorSelected" : "#2E97E9FF",
+        "colorSelected" : "${PALETTE_SY_CONSTANT}FF",
         "font" : "System",
-        "color" : "#E86CB2FF"
+        "color" : "${PALETTE_SE_SECONDARY}FF"
       },
-      "backgroundSelected" : "#3B455187",
+      "backgroundSelected" : "${PALETTE_BA_TERTIARY_BG}87",
       "text" : {
         "size" : 18,
-        "colorSelected" : "#03F6F5FF",
+        "colorSelected" : "${PALETTE_SE_PRIMARY}FF",
         "font" : "System",
-        "color" : "#A394CCFF"
+        "color" : "${PALETTE_SE_FOCUS}FF"
       },
       "iconPaddingHorizontal" : 7,
       "roundness" : 4,
@@ -27,36 +27,36 @@
       "iconSize" : 38
     },
     "search" : {
-      "backgroundSelected" : "#3B4551FF",
+      "backgroundSelected" : "${PALETTE_BA_TERTIARY_BG}FF",
       "paddingHorizontal" : 8,
       "spacing" : 8,
       "text" : {
         "size" : 32,
-        "colorSelected" : "#E86CB2FF",
+        "colorSelected" : "${PALETTE_SE_SECONDARY}FF",
         "font" : "System",
-        "color" : "#E86CB2FF"
+        "color" : "${PALETTE_SE_SECONDARY}FF"
       },
-      "background" : "#21272DFF",
+      "background" : "${PALETTE_BA_PRIMARY_BG}FF",
       "roundness" : 0,
       "paddingVertical" : 5
     },
     "window" : {
-      "color" : "#21272DFF",
+      "color" : "${PALETTE_BA_PRIMARY_BG}FF",
       "paddingHorizontal" : 0,
       "width" : 700,
       "borderPadding" : 9,
-      "borderColor" : "#1E2429FF",
+      "borderColor" : "${PALETTE_BA_SECONDARY_BG}FF",
       "blur" : 0,
       "roundness" : 4,
       "paddingVertical" : 0
     },
     "credit" : "Vahid Hallaji",
     "separator" : {
-      "color" : "#21272DFF",
+      "color" : "${PALETTE_BA_PRIMARY_BG}FF",
       "thickness" : 0
     },
     "scrollbar" : {
-      "color" : "#E86CB2FF",
+      "color" : "${PALETTE_SE_SECONDARY}FF",
       "thickness" : 0
     },
     "name" : "Catamaran"

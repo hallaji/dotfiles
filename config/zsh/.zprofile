@@ -8,6 +8,7 @@
 TEMPLATE_FILES=(
   ~/.bundle/config.template
   ~/.config/alacritty/colors.toml.template
+  ~/.config/alfred/catamaran.alfredappearance.template
   ~/.gitconfig.template
   ~/.gitmessage.template
   ~/.gnupg/gpg-agent.conf.template
