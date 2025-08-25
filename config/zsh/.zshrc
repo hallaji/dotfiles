@@ -26,6 +26,7 @@ source ~/.config/zsh/tools/pnpm.zsh
 source ~/.config/zsh/tools/pyenv.zsh
 source ~/.config/zsh/tools/rancher.zsh
 source ~/.config/zsh/tools/orbstack.zsh
+source ~/.config/zsh/tools/devbox.zsh
 
 # Ensure ASDF path export is after homebrew to take precedence over installed binaries
 source ~/.config/zsh/tools/asdf.zsh
