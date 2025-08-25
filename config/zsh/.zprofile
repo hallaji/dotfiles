@@ -5,6 +5,10 @@
 # ███████╗██║     ██║  ██║╚██████╔╝██║     ██║███████╗███████╗
 # ╚══════╝╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝╚══════╝
 
+if [ ! -f ~/.env ] && [ -f ~/.env.example ]; then
+  cp ~/.env.example ~/.env
+fi
+
 TEMPLATE_FILES=(
   ~/.bundle/config.template
   ~/.config/alacritty/colors.toml.template
@@ -26,11 +30,14 @@ for file in "${TEMPLATE_FILES[@]}"; do
     if type envsubst >/dev/null 2>&1; then
       envsubst <"$file" >"${file%.template}"
     else
-      cat "$file" >"${file%.template}"
+      awk '{
+        while(match($0, /\$\{[^}]+\}/)) {
+          var = substr($0, RSTART+2, RLENGTH-3)
+          val = ENVIRON[var]
+          $0 = substr($0, 1, RSTART-1) val substr($0, RSTART+RLENGTH)
+        }
+        print
+      }' "$file" > "${file%.template}"
     fi
   fi
 done
-
-if [ ! -f ~/.env ] && [ -f ~/.env.example ]; then
-  cp ~/.env.example ~/.env
-fi
