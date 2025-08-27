@@ -38,16 +38,16 @@ return {
       -- Clear module cache to reload updated palettes
       package.loaded["palettes." .. colorscheme] = nil
       local ok, palette = pcall(require, "palettes." .. colorscheme)
-      if not ok or not palette.lualine then return end
+      if not ok or not palette.status then return end
 
-      local l = palette.lualine
+      local l = palette.status
       vim.g.tmuxline_theme = {
-        a =    { palette.base.primary_bg, l.normal, 'bold' },
+        a =    { palette.base.primary_bg, l.tmux, 'bold' },
         b =    { l.section_b_fg, l.section_b_bg },
         c =    { l.section_c_fg, l.section_c_bg },
         x =    { l.section_c_fg, l.section_c_bg },
         y =    { l.section_b_fg, l.section_b_bg },
-        z =    { palette.base.primary_bg, l.normal, 'bold' },
+        z =    { palette.base.primary_bg, l.tmux, 'bold' },
         win =  { l.section_c_fg, l.section_c_bg },
         cwin = { l.section_b_fg, l.section_b_bg },
         bg =   { l.section_b_bg, l.section_c_bg }

@@ -20,11 +20,11 @@ return {
       -- Clear module cache to reload updated palettes
       package.loaded["palettes." .. colorscheme] = nil
       local ok, palette = pcall(require, "palettes." .. colorscheme)
-      if not ok or not palette.lualine then
+      if not ok or not palette.status then
         return "auto"
       end
 
-      local l = palette.lualine
+      local l = palette.status
       local function create_mode(bg, fg, gui)
         return { bg = bg, fg = fg or palette.base.primary_bg, gui = gui }
       end
@@ -59,7 +59,7 @@ return {
           c = common_c
         },
         inactive = {
-          a = { bg = l.inactive, fg = palette.base.primary_bg },
+          a = { bg = l.inactive, fg = l.section_b_fg },
           b = common_b,
           c = common_c
         },

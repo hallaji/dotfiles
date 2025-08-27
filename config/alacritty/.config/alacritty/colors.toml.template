@@ -31,10 +31,10 @@ foreground = "${PALETTE_SE_SECONDARY}"
 
 [colors.hints.end]
 background = "${PALETTE_BA_SECONDARY_BG}"
-foreground = "${PALETTE_LL_INSERT}"
+foreground = "${PALETTE_SL_INSERT}"
 
 [colors.hints.start]
-background = "${PALETTE_LL_INSERT}"
+background = "${PALETTE_SL_INSERT}"
 foreground = "${PALETTE_BA_SECONDARY_BG}"
 
 [colors.line_indicator]
@@ -60,5 +60,5 @@ background = "${PALETTE_SE_PRIMARY}"
 text = "${PALETTE_BA_PRIMARY_BG}"
 
 [colors.vi_mode_cursor]
-cursor = "${PALETTE_LL_INSERT}"
+cursor = "${PALETTE_SL_INSERT}"
 text = "${PALETTE_BA_SECONDARY_BG}"

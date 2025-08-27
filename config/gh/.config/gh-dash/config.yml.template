@@ -59,8 +59,8 @@ theme:
       success: "${PALETTE_SE_SUCCESS}"
       error: "${PALETTE_SE_ERROR}"
     background:
-      selected: "${PALETTE_LL_SECTION_C_BG}"
+      selected: "${PALETTE_SL_SECTION_C_BG}"
     border:
       faint: "${PALETTE_BA_SECONDARY_BG}"
       primary: "${PALETTE_BA_TERTIARY_BG}"
-      secondary: "${PALETTE_LL_SECTION_C_BG}"
+      secondary: "${PALETTE_SL_SECTION_C_BG}"

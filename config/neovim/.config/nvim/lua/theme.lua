@@ -21,9 +21,8 @@ function M.apply(p, name)
 
   local highlights = {
     -- Text and visual guides
-    ColorColumn = { bg = p.ui.ruler }, -- Column width ruler
     Comment = { fg = p.syntax.comment }, -- Code comments
-    Conceal = { fg = p.ui.indent_line }, -- Hidden/concealed text
+    Conceal = { fg = p.ui.indent }, -- Hidden/concealed text
     Constant = { fg = p.syntax.constant }, -- Constants and literals
     CopilotSuggestion = { fg = p.semantic.hint }, -- AI code suggestions
 
@@ -31,7 +30,7 @@ function M.apply(p, name)
     Cursor = { bg = p.ui.cursor, fg = p.base.secondary_bg, bold = true }, -- Main cursor
     CursorColumn = { bg = p.semantic.focus, fg = p.base.secondary_bg }, -- Current column highlight
     CursorLine = {}, -- Current line highlight
-    CursorLineNr = { fg = p.semantic.focus }, -- Line number on cursor line
+    CursorLineNr = { bg = p.base.primary_bg, fg = p.semantic.focus }, -- Line number on cursor line
 
     -- Diff and Git highlights
     DiffAdd = { fg = p.semantic.success }, -- Added lines in diffs
@@ -40,37 +39,38 @@ function M.apply(p, name)
     DiffNew = { fg = p.semantic.success }, -- New files in diffs
 
     -- General UI
+    ColorColumn = { bg = p.ui.ruler, fg = p.ui.ruler }, -- Column width ruler
+    LineNr = { bg = p.base.primary_bg, fg = p.base.tertiary_bg }, -- Line numbers
+    FoldColumn = { bg = p.base.primary_bg, fg = p.semantic.focus, bold = true }, -- Fold markers column (+/-)
+    SignColumn = { bg = p.base.primary_bg, fg = p.base.secondary_fg }, -- Sign column for git/diagnostic signs
+    VertSplit = { bg = p.ui.separator, fg = p.ui.separator }, -- Vertical window separators
+    StatusLine = { bg = p.ui.separator, fg = p.base.primary_fg }, -- Status line
+    StatusLineNC = { bg = p.ui.separator, fg = p.base.primary_fg }, -- Inactive status line
+
+    FloatBorder = { bg = p.ui.separator, fg = p.ui.border }, -- Borders around floating windows
+    NormalFloat = { bg = p.ui.separator, fg = p.base.secondary_fg }, -- Text in floating windows
+
     Directory = { fg = p.semantic.primary }, -- Directory names in file explorers
     EndOfBuffer = { fg = p.base.tertiary_bg }, -- ~ lines after end of buffer
     Error = { bg = p.base.primary_bg, fg = p.semantic.error }, -- General error highlights
     ErrorMsg = { bg = p.base.primary_bg, fg = p.semantic.error }, -- Error messages in command line
-    FloatBorder = { bg = p.base.secondary_bg, fg = p.ui.border }, -- Borders around floating windows
-    FoldColumn = { fg = p.semantic.focus, bold = true }, -- Fold markers column (+/-)
+
     Folded = { fg = p.semantic.focus, italic = true }, -- Folded text lines
     Function = { fg = p.syntax.func, bold = true }, -- Function names
     Identifier = { fg = p.syntax.identifier }, -- Variable names
-    LineNr = { bg = p.base.primary_bg, fg = p.base.tertiary_bg }, -- Line numbers
     MatchParen = { bg = p.base.secondary_bg, fg = p.semantic.primary }, -- Matching parentheses
     MiniTrailspace = { bg = p.semantic.error }, -- Trailing whitespace
     ModeMsg = { fg = p.semantic.primary }, -- Mode messages (-- INSERT --, etc.)
     MoreMsg = { fg = p.semantic.primary }, -- "Press ENTER" prompts
     NonText = { fg = p.base.tertiary_bg }, -- Invisible characters (@, ~, etc.)
     Normal = { fg = p.base.primary_fg }, -- Default text
-    NormalFloat = { bg = p.base.secondary_bg, fg = p.base.secondary_fg }, -- Text in floating windows
+
     Question = { fg = p.syntax.identifier }, -- "Press ENTER" and similar prompts
     QuickFixLine = { bg = p.base.secondary_bg, fg = p.base.secondary_fg }, -- Current line in quickfix window
-    SignColumn = { bg = p.base.primary_bg, fg = p.base.secondary_fg }, -- Sign column for git/diagnostic signs
 
     -- Search and navigation
     IncSearch = { bg=p.semantic.secondary, fg = p.base.primary_bg, undercurl = true, bold = true }, -- Incremental search highlighting
     Search = { bg=p.semantic.focus, fg = p.base.primary_bg, undercurl = true, bold = true }, -- Search matches
-
-    -- Tabs and status
-    StatusLine = { fg = p.base.secondary_fg }, -- Status line
-    StatusLineNC = { fg = p.base.tertiary_fg }, -- Inactive status line
-    TabLine = { bg = p.base.secondary_bg, fg = p.base.secondary_fg }, -- Inactive tab pages
-    TabLineFill = { bg = p.base.primary_bg }, -- Tab line background
-    TabLineSel = { bg = p.semantic.primary, fg = p.base.secondary_bg }, -- Active tab page
 
     -- Plugin-specific
     NvimTreeFolderIcon = { fg = p.semantic.secondary }, -- Folder icons in nvim-tree
@@ -86,7 +86,6 @@ function M.apply(p, name)
     Todo = { bg = p.semantic.error, fg = p.base.secondary_bg }, -- To do comments
     Type = { fg = p.syntax.identifier }, -- Data types (int, string, etc.)
     Underlined = { underline = true, fg = p.ui.underline }, -- Underlined text
-    VertSplit = { bg = p.base.secondary_bg, fg = p.base.secondary_bg }, -- Vertical window separators
     Visual = { bg = p.syntax.identifier, fg = p.base.secondary_bg }, -- Visual mode selection
     WarningMsg = { bg = p.base.primary_bg, fg = p.semantic.warning }, -- Warning messages
     Whitespace = { fg = p.base.primary_bg }, -- Visible whitespace characters
@@ -127,10 +126,10 @@ function M.apply(p, name)
     DiagnosticDeprecated = { undercurl = true, strikethrough = true }, -- Deprecated code
 
     -- Diagnostic signs
-    DiagnosticSignError = { bg = p.base.primary_bg, fg = p.semantic.error }, -- Error signs (E) in gutter
-    DiagnosticSignWarn = { bg = p.base.primary_bg, fg = p.semantic.warning }, -- Warning signs (W) in gutter
-    DiagnosticSignInfo = { bg = p.base.primary_bg, fg = p.semantic.info }, -- Info signs (I) in gutter
-    DiagnosticSignHint = { bg = p.base.primary_bg, fg = p.semantic.hint }, -- Hint signs (H) in gutter
+    DiagnosticSignError = { bg = p.ui.separator, fg = p.semantic.error }, -- Error signs (E) in gutter
+    DiagnosticSignWarn = { bg = p.ui.separator, fg = p.semantic.warning }, -- Warning signs (W) in gutter
+    DiagnosticSignInfo = { bg = p.ui.separator, fg = p.semantic.info }, -- Info signs (I) in gutter
+    DiagnosticSignHint = { bg = p.ui.separator, fg = p.semantic.hint }, -- Hint signs (H) in gutter
 
     -- Floating diagnostic windows
     DiagnosticFloatingError = { fg = p.semantic.error }, -- Error in floating window
