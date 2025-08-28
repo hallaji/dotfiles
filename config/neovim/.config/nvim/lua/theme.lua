@@ -126,10 +126,10 @@ function M.apply(p, name)
     DiagnosticDeprecated = { undercurl = true, strikethrough = true }, -- Deprecated code
 
     -- Diagnostic signs
-    DiagnosticSignError = { bg = p.ui.separator, fg = p.semantic.error }, -- Error signs (E) in gutter
-    DiagnosticSignWarn = { bg = p.ui.separator, fg = p.semantic.warning }, -- Warning signs (W) in gutter
-    DiagnosticSignInfo = { bg = p.ui.separator, fg = p.semantic.info }, -- Info signs (I) in gutter
-    DiagnosticSignHint = { bg = p.ui.separator, fg = p.semantic.hint }, -- Hint signs (H) in gutter
+    DiagnosticSignError = { bg = p.base.primary_bg, fg = p.semantic.error }, -- Error signs (E) in gutter
+    DiagnosticSignWarn = { bg = p.base.primary_bg, fg = p.semantic.warning }, -- Warning signs (W) in gutter
+    DiagnosticSignInfo = { bg = p.base.primary_bg, fg = p.semantic.info }, -- Info signs (I) in gutter
+    DiagnosticSignHint = { bg = p.base.primary_bg, fg = p.semantic.hint }, -- Hint signs (H) in gutter
 
     -- Floating diagnostic windows
     DiagnosticFloatingError = { fg = p.semantic.error }, -- Error in floating window
