@@ -372,9 +372,9 @@ wk.add({
 
   -- -- LSP main actions
   -- { "<leader>l", group = "󰒋 LSP" },
-  -- { "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", desc = "󰌵 Code Action", mode = { "n", "v" } },
-  -- { "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", desc = "󰑕 Rename" },
-  -- { "<leader>lf", "<cmd>lua vim.lsp.buf.format({ async = true })<cr>", desc = "󰉢 Format Document", mode = { "n", "v" } },
+  { "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", desc = "󰌵 Code Action", mode = { "n", "v" } },
+  { "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", desc = "󰑕 Rename" },
+  { "<leader>lf", "<cmd>lua vim.lsp.buf.format({ async = true })<cr>", desc = "󰉢 Format Document", mode = { "n", "v" } },
   -- { "<leader>li", "<cmd>LspInfo<cr>", desc = "󰉒 LSP Info" },
   -- { "<leader>lI", "<cmd>LspInstallInfo<cr>", desc = "󰤚 LSP Install Info" },
   -- { "<leader>lR", "<cmd>LspRestart<cr>", desc = "󰑓 Restart LSP" },
