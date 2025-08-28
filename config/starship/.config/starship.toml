@@ -10,7 +10,16 @@
 
 add_newline = true
 command_timeout = 2000
-format = '$all$character'
+format = """
+${custom.quote}
+$all$character
+"""
+
+[custom.quote]
+command = "quote" # from binaries in bin directory
+when = true
+format = " [$output]($style) "
+style = "italic purple"
 
 [character]
 format = '$symbol '
