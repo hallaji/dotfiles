@@ -18,8 +18,28 @@ EOF
 pnpm install -g neovim # https://github.com/neovim/node-client
 gem install neovim # https://github.com/neovim/neovim-ruby
 
+# Mason packages
+packages=(
+  "bash-language-server"
+  "black"
+  "eslint_d"
+  "gopls"
+  "kotlin-language-server"
+  "ktlint"
+  "lua-language-server"
+  "prettier"
+  "python-lsp-server"
+  "rubocop"
+  "solargraph"
+  "stylua"
+  "tailwindcss-language-server"
+  "typescript-language-server"
+)
+package_list=$(IFS=' '; echo "${packages[*]}")
+
 # Vim and Neovim plugins
 nvim --headless "+Lazy! sync" "+qa"
+nvim --headless "+MasonInstall $package_list" "+qa"
 nvim "+GoUpdateBinaries" "+qa"
 vim "+PlugUpgrade" "+PlugUpdate" "+qa"
 
