@@ -87,6 +87,7 @@ brew install \
   tmuxinator \
   tree \
   tree-sitter \
+  tree-sitter-cli \
   typescript \
   unbound \
   urlview \
