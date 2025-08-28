@@ -41,7 +41,7 @@ return {
   ui = {
     ruler = get_color('PALETTE_UI_RULER', '#222831'),
     separator = get_color('PALETTE_UI_SEPARATOR', '#1d232b'),
-    border = get_color('PALETTE_UI_BORDER', '#242a34'),
+    border = get_color('PALETTE_UI_BORDER', '#a394cd'),
     indent = get_color('PALETTE_UI_INDENT', '#3a4555'),
     cursor = get_color('PALETTE_UI_CURSOR', '#FF6B35'),
     underline = get_color('PALETTE_UI_UNDERLINE', '#009ebc'),
