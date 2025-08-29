@@ -18,10 +18,6 @@ cat << EOF
 ┴ ┴┴ ┴└─┘
 EOF
 
-
-# Install Homebrew packages
-# brew bundle check --global || brew bundle --global
-
 # Core Taps
 brew install \
   asdf \
@@ -41,6 +37,7 @@ brew install \
   fd \
   ffmpeg \
   figlet \
+  fortune \
   fswatch \
   fzf \
   gh \
@@ -83,6 +80,7 @@ brew install \
   stow \
   the_silver_searcher \
   tig \
+  tldr \
   tmux \
   tmuxinator \
   tree \
@@ -138,5 +136,15 @@ brew install --cask \
 brew install --cask \
   nikitabobko/tap/aerospace
 
-# Dump Brewfile
-[ -f "$HOME/.Brewfile" ] && brew bundle dump --file=~/.Brewfile --force
+if [[ "$PROFILE" == "CLTRMP" ]]; then
+  # https://github.com/cultureamp/silk
+  # https://github.com/cultureamp/wilma
+  brew tap cultureamp/tap
+  brew install \
+    silk-cli \
+    wilma
+
+  # https://github.com/cultureamp/hotel
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/cultureamp/devbox-extras/main/scripts/github_auth.rb)"
+  hotel setup ensure
+fi
