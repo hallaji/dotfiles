@@ -23,6 +23,8 @@ function M.apply(p, name)
     -- Text and visual guides
     Comment = { fg = p.syntax.comment }, -- Code comments
     Conceal = { fg = p.ui.indent }, -- Hidden/concealed text
+    SnacksIndentScope = { fg = p.semantic.primary }, -- Scope indent
+    SnacksIndentChunk = { fg = p.semantic.secondary }, -- Chunk indent
     Constant = { fg = p.syntax.constant }, -- Constants and literals
     CopilotSuggestion = { fg = p.semantic.hint }, -- AI code suggestions
 
