@@ -53,7 +53,7 @@ stow env
 stow bin freshshell gnustow
 
 # Mac-specific
-stow aerospace borders homebrew skhd sketchybar yabai
+stow aerospace borders skhd sketchybar yabai
 
 # Linux-specific
 stow hyprland
