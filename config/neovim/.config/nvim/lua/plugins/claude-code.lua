@@ -4,15 +4,25 @@
 -- ██║     ██║     ██╔══██║██║   ██║██║  ██║██╔══╝
 -- ╚██████╗███████╗██║  ██║╚██████╔╝██████╔╝███████╗
 --  ╚═════╝╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚═════╝ ╚══════╝
--- https://github.com/greggh/claude-code.nvim
+-- https://github.com/coder/claudecode.nvim
 
 return {
-  "greggh/claude-code.nvim",
+  "coder/claudecode.nvim",
   cond = not vim.g.vscode,
-  dependencies = {
-    "nvim-lua/plenary.nvim", -- Required for git operations
+  dependencies = { "folke/snacks.nvim" },
+  config = true,
+  opts = {
+    -- Terminal Configuration
+    terminal = {
+      split_side = "right", -- "left" or "right"
+      split_width_percentage = 0.40,
+      provider = "auto",    -- "auto", "snacks", "native", "external", or custom provider table
+      auto_close = true,
+
+      -- Provider-specific options
+      provider_opts = {
+        external_terminal_cmd = "alacritty -e %s",
+      },
+    },
   },
-  config = function()
-    require("claude-code").setup()
-  end
 }
