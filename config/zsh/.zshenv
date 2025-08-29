@@ -6,3 +6,12 @@
 # ╚══════╝╚══════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═══╝  ╚═══╝
 
 [ -f ~/.env ] && source ~/.env
+
+case "$(hostname)" in
+  vhallaji-41NW96)
+    export PROFILE="CLTRMP"
+    ;;
+  *)
+    export PROFILE="PRSNL"
+    ;;
+esac

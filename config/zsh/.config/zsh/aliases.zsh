@@ -130,7 +130,7 @@ alias assume=". assume"
 alias ,gd="assume" # Assume a role
 alias ,gdw="assume -c" # Open a web console to the role
 alias ,gdc="assume -ar" # Open console using active role
-alias ,gdp="granted sso populate --sso-region us-west-2 https://cultureamp.awsapps.com/start" # Populate SSO profiles
+[[ "$PROFILE" == "CLTRMP" ]] && alias ,gdp="granted sso populate --sso-region us-west-2 https://cultureamp.awsapps.com/start" # Populate SSO profiles
 
 # ┌─┐┬┌─┐┬  ┌─┐┌┬┐
 # ├┤ ││ ┬│  ├┤  │
