@@ -9,6 +9,7 @@
 
 return {
   "mhinz/vim-startify",
+  enabled = true,
   cond = not vim.g.vscode,
   config = function()
     -- Generates a Startify table from a shell command
@@ -33,17 +34,38 @@ return {
 
     vim.g.startify_fortune_use_unicode = 1 -- Use unicode characters
     vim.g.startify_bookmarks = {
-      { d = vim.fn.expand("$DOTFILES_HOME") }
+      { d = vim.fn.expand("$DOTFILES_HOME") },
     }
     vim.g.startify_lists = {
       -- { type = 'files', header = {'   MRU'} }, -- Show most recently used files
-      { type = 'dir', header = {'   MRU ' .. vim.fn.getcwd()} }, -- Show most recently used files in current directory
-      { type = 'sessions', header = {'   Sessions'} }, -- Show sessions
-      { type = nerdtreeBookmarks, header = {'   NERDTree Bookmarks'} }, -- Show NERDTree bookmarks
-      { type = 'bookmarks', header = {'   Bookmarks'} }, -- Show bookmarks
-      { type = commandToStartify("git ls-files -m"), header = {'   Git modified'} }, -- SHow modified files in git
-      { type = commandToStartify("git ls-files -o --exclude-standard"), header = {'   Git untracked'} }, -- Show untracked files in git
-      { type = 'commands', header = {'   Commands'} }, -- Show commands
+      {
+        type = "dir",
+        header = { "   MRU " .. vim.fn.getcwd() },
+      }, -- Show most recently used files in current directory
+      {
+        type = "sessions",
+        header = { "   Sessions" },
+      }, -- Show sessions
+      {
+        type = nerdtreeBookmarks,
+        header = { "   NERDTree Bookmarks" },
+      }, -- Show NERDTree bookmarks
+      {
+        type = "bookmarks",
+        header = { "   Bookmarks" },
+      }, -- Show bookmarks
+      {
+        type = commandToStartify("git ls-files -m"),
+        header = { "   Git modified" },
+      }, -- SHow modified files in git
+      {
+        type = commandToStartify("git ls-files -o --exclude-standard"),
+        header = { "   Git untracked" },
+      }, -- Show untracked files in git
+      {
+        type = "commands",
+        header = { "   Commands" },
+      }, -- Show commands
     }
-  end
+  end,
 }
