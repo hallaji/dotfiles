@@ -59,7 +59,7 @@ stow aerospace borders skhd sketchybar yabai
 stow hyprland
 
 # Other packages
-stow alacritty asdf aws bundler ctags curl gh git gradle granted gpg \
+stow alacritty asdf aws bundler ctags curl devbox gh git gradle granted gpg \
      neovim nix npm pip ssh starship tig tmux vim zsh 1password
 ```
 

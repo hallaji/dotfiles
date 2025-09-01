@@ -139,18 +139,23 @@ brew install --cask \
 brew install --cask \
   nikitabobko/tap/aerospace
 
-# Nix package manager
+# Installing Nix
 # https://nix.dev/install-nix#install-nix
 curl -L https://nixos.org/nix/install | sh
 
-# Profile-specific installs
+# Installing Devbox
+# https://www.jetify.com/docs/devbox/installing_devbox
+curl -fsSL https://get.jetify.com/devbox | bash
+
+# Profile-specific installations
 if [[ "$PROFILE" == "CLTRMP" ]]; then
-  # https://github.com/cultureamp/silk
-  # https://github.com/cultureamp/wilma
   brew tap cultureamp/tap
-  brew install \
-    silk-cli \
-    wilma
+
+  # https://github.com/cultureamp/silk
+  brew install silk-cli
+
+  # https://github.com/cultureamp/wilma
+  brew install wilma
 
   # https://github.com/cultureamp/hotel
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/cultureamp/devbox-extras/main/scripts/github_auth.rb)"

@@ -6,4 +6,4 @@
 # ╚═════╝ ╚══════╝  ╚═══╝  ╚═════╝  ╚═════╝ ╚═╝  ╚═╝
 # https://www.jetify.com/docs/devbox/cli_reference/devbox_global/
 
-type devbox &>/dev/null && eval "$(devbox global shellenv)"
+type devbox &>/dev/null && eval "$(devbox global shellenv --init-hook)"
