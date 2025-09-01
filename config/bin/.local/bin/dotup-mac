@@ -139,6 +139,11 @@ brew install --cask \
 brew install --cask \
   nikitabobko/tap/aerospace
 
+# Nix package manager
+# https://nix.dev/install-nix#install-nix
+curl -L https://nixos.org/nix/install | sh
+
+# Profile-specific installs
 if [[ "$PROFILE" == "CLTRMP" ]]; then
   # https://github.com/cultureamp/silk
   # https://github.com/cultureamp/wilma

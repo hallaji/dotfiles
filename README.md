@@ -60,8 +60,7 @@ stow hyprland
 
 # Other packages
 stow alacritty asdf aws bundler ctags curl gh git gradle granted gpg \
-     neovim npm pip ssh starship tig tmux vim zsh 1password
-
+     neovim nix npm pip ssh starship tig tmux vim zsh 1password
 ```
 
 ### 3. Freshing Dependencies
