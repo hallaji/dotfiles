@@ -13,44 +13,48 @@ return {
     vim.g.tmuxline_powerline_separators = 0
 
     vim.g.tmuxline_separators = { -- Use the following separators:
-      left = '',
-      left_alt = '',
-      right = '',
-      right_alt = '',
-      space = ' '
+      left = "",
+      left_alt = "",
+      right = "",
+      right_alt = "",
+      space = " ",
     }
 
     vim.g.tmuxline_preset = { -- Use the following preset:
-      a = { ' #S' },
+      a = { " #S" },
       b = { '󰓩 #I#(tmux list-windows | wc -l | tr -d " ")' },
-      c = { ' #{pane_current_command}' },
-      cwin = { '󰓩 #I #W' },
-      win = {'󰓪 #I #W' },
-      y = { ' #P#{window_panes}' },
-      z = { ' #W' },
-      options = { ['status-justify'] = 'left' } -- left, centre, or right
+      c = { " #{pane_current_command}" },
+      cwin = { "󰓩 #I #W" },
+      win = { "󰓪 #I #W" },
+      y = { " #P#{window_panes}" },
+      z = { " #W" },
+      options = { ["status-justify"] = "left" }, -- left, centre, or right
     }
 
     local function setup_tmuxline_theme()
       local colorscheme = vim.g.colors_name
-      if not colorscheme then return end
+      if not colorscheme then
+        return
+      end
 
       -- Clear module cache to reload updated palettes
       package.loaded["palettes." .. colorscheme] = nil
       local ok, palette = pcall(require, "palettes." .. colorscheme)
-      if not ok or not palette.status then return end
+      if not ok or not palette.status then
+        return
+      end
 
       local l = palette.status
       vim.g.tmuxline_theme = {
-        a =    { palette.base.primary_bg, l.tmux, 'bold' },
-        b =    { l.section_b_fg, l.section_b_bg },
-        c =    { l.section_c_fg, l.section_c_bg },
-        x =    { l.section_c_fg, l.section_c_bg },
-        y =    { l.section_b_fg, l.section_b_bg },
-        z =    { palette.base.primary_bg, l.tmux, 'bold' },
-        win =  { l.section_c_fg, l.section_c_bg },
+        a = { palette.base.primary_bg, l.tmux, "bold" },
+        b = { l.section_b_fg, l.section_b_bg },
+        c = { l.section_c_fg, l.section_c_bg },
+        x = { l.section_c_fg, l.section_c_bg },
+        y = { l.section_b_fg, l.section_b_bg },
+        z = { palette.base.primary_bg, l.tmux, "bold" },
+        win = { l.section_c_fg, l.section_c_bg },
         cwin = { l.section_b_fg, l.section_b_bg },
-        bg =   { l.section_b_bg, l.section_c_bg }
+        bg = { l.section_b_bg, l.section_c_bg },
       }
     end
 
@@ -61,8 +65,8 @@ return {
         -- Update tmuxline
         setup_tmuxline_theme()
         -- Update tmux statusline colors
-        vim.cmd('Tmuxline')
-        vim.cmd('TmuxlineSnapshot! ~/.tmux/statusline-colors.conf')
+        vim.cmd("Tmuxline")
+        vim.cmd("TmuxlineSnapshot! ~/.tmux/statusline-colors.conf")
       end,
     })
   end,
