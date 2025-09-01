@@ -102,6 +102,7 @@ brew install \
 # Third-party Taps
 brew install \
   common-fate/granted/granted \
+  f1bonacc1/tap/process-compose \
   felixkratz/formulae/borders \
   felixkratz/formulae/sketchybar \
   koekeishiya/formulae/skhd
