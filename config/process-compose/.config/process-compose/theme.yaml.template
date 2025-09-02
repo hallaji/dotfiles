@@ -1,0 +1,33 @@
+style:
+  body:
+    fgColor: '${PALETTE_BA_PRIMARY_FG}'
+    bgColor: '${PALETTE_BA_PRIMARY_BG}'
+    secondaryTextColor: '${PALETTE_SE_PRIMARY}'
+    tertiaryTextColor: '${PALETTE_SE_SECONDARY}'
+    borderColor: '${PALETTE_UI_BORDER}'
+  stat_table:
+    keyFgColor: '${PALETTE_SE_SECONDARY}'
+    valueFgColor: '${PALETTE_SE_FOCUS}'
+    logoColor: '${PALETTE_SE_PRIMARY}'
+  proc_table:
+    fgColor: '${PALETTE_SE_HINT}'
+    fgWarning: '${PALETTE_SE_WARNING}'
+    fgPending: '${PALETTE_SE_SECONDARY}'
+    fgCompleted: '${PALETTE_SE_SUCCESS}'
+    fgError: '${PALETTE_SE_ERROR}'
+    headerFgColor: '${PALETTE_SE_FOCUS}'
+  help:
+    fgColor: '${PALETTE_SY_COMMENT}'
+    keyColor: '${PALETTE_BA_PRIMARY_FG}'
+    hlColor: '${PALETTE_BA_SECONDARY_BG}'
+    categoryFgColor: '${PALETTE_SE_INFO}'
+  dialog:
+    fgColor: '${PALETTE_BA_PRIMARY_FG}'
+    bgColor: '${PALETTE_BA_SECONDARY_BG}'
+    buttonFgColor: '${PALETTE_BA_TERTIARY_FG}'
+    buttonBgColor: '${PALETTE_BA_TERTIARY_BG}'
+    buttonFocusFgColor: '${PALETTE_BA_PRIMARY_BG}'
+    buttonFocusBgColor: '${PALETTE_SE_PRIMARY}'
+    labelFgColor: '${PALETTE_BA_TERTIARY_FG}'
+    fieldFgColor: '${PALETTE_BA_SECONDARY_FG}'
+    fieldBgColor: '${PALETTE_BA_SECONDARY_BG}'

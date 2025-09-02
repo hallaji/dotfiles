@@ -14,6 +14,7 @@ TEMPLATE_FILES=(
   ~/.config/alacritty/colors.toml.template
   ~/.config/alfred/catamaran.alfredappearance.template
   ~/.config/gh-dash/config.yml.template
+  ~/.config/process-compose/theme.yaml.template
   ~/.gitconfig.template
   ~/.gitmessage.template
   ~/.gnupg/gpg-agent.conf.template
