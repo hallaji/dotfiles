@@ -18,6 +18,16 @@ cat << EOF
 ┴ ┴┴└─└─┘┴ ┴
 EOF
 
+# Installing Nix
+# https://nix.dev/install-nix#install-nix
+
+type nix &>/dev/null || curl -L https://nixos.org/nix/install | sh -s -- --daemon
+
+# Installing Devbox
+# https://www.jetify.com/docs/devbox/installing_devbox
+
+type devbox &>/dev/null || curl -fsSL https://get.jetify.com/devbox | bash
+
 # Pacman packages
 # https://wiki.archlinux.org/title/Pacman
 
@@ -56,7 +66,6 @@ mkdir -p ~/Apps && cd ~/Apps
 git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 git clone https://aur.archlinux.org/asdf-vm.git && cd asdf-vm && makepkg -si
 git clone https://aur.archlinux.org/snapd.git && cd snapd && makepkg -si
-
 sudo systemctl enable --now snapd.socket
 sudo systemctl enable --now snapd.apparmor.service
 sudo ln -s /var/lib/snapd/snap /snap
@@ -83,12 +92,3 @@ if ! type op > /dev/null 2>&1; then
 else
   op update
 fi
-
-# Installing Nix
-# https://nix.dev/install-nix#install-nix
-curl -L https://nixos.org/nix/install | sh -s -- --daemon
-
-# Installing Devbox
-# https://www.jetify.com/docs/devbox/installing_devbox
-curl -fsSL https://get.jetify.com/devbox | bash
-

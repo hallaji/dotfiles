@@ -18,7 +18,22 @@ cat << EOF
 ┴ ┴┴ ┴└─┘
 EOF
 
-# Core Taps
+# Installing Nix
+# https://nix.dev/install-nix#install-nix
+
+type nix &>/dev/null || curl -L https://nixos.org/nix/install | sh
+
+# Installing Devbox
+# https://www.jetify.com/docs/devbox/installing_devbox
+
+type devbox &>/dev/null || curl -fsSL https://get.jetify.com/devbox | bash
+
+# Installing Homebrew
+# https://brew.sh
+
+type brew &>/dev/null || curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
+
+# Core packages
 brew install \
   asdf \
   aws-cdk \
@@ -99,7 +114,7 @@ brew install \
   wget \
   zsh
 
-# Third-party Taps
+# Third-party packages
 brew install \
   common-fate/granted/granted \
   f1bonacc1/tap/process-compose \
@@ -107,7 +122,7 @@ brew install \
   felixkratz/formulae/sketchybar \
   koekeishiya/formulae/skhd
 
-# Core Casks
+# Core casks
 brew install --cask \
   1password-cli \
   alacritty \
@@ -136,19 +151,12 @@ brew install --cask \
   visual-studio-code \
   yubico-yubikey-manager
 
-# Third-party Casks
+# Third-party casks
 brew install --cask \
   nikitabobko/tap/aerospace
 
-# Installing Nix
-# https://nix.dev/install-nix#install-nix
-curl -L https://nixos.org/nix/install | sh
-
-# Installing Devbox
-# https://www.jetify.com/docs/devbox/installing_devbox
-curl -fsSL https://get.jetify.com/devbox | bash
-
 # Profile-specific installations
+
 if [[ "$PROFILE" == "CLTRMP" ]]; then
   brew tap cultureamp/tap
 
