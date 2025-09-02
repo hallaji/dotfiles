@@ -42,7 +42,7 @@ function M.apply(p, name)
     DiffNew = { fg = p.semantic.success }, -- New files in diffs
 
     -- General UI
-    ColorColumn = { bg = p.ui.ruler, fg = p.ui.ruler }, -- Column width ruler
+    ColorColumn = { bg = p.ui.ruler, fg = p.base.primary_fg }, -- Column width ruler
     LineNr = { bg = p.base.primary_bg, fg = p.base.tertiary_bg }, -- Line numbers
     FoldColumn = { bg = p.base.primary_bg, fg = p.semantic.focus, bold = true }, -- Fold markers column (+/-)
     SignColumn = { bg = p.base.primary_bg, fg = p.base.secondary_fg }, -- Sign column for git/diagnostic signs
