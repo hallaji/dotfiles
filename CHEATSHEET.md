@@ -14,6 +14,10 @@
   - [Alacritty](#alacritty)
     - [Tmux bindings](#tmux-bindings)
     - [Vi-mode](#vi-mode)
+      - [Insert-mode shortcuts](#insert-mode-shortcuts)
+      - [Normal-mode commands](#normal-mode-commands)
+      - [Movement](#movement)
+      - [Search](#search)
   - [Vim/Neovim](#vimneovim)
     - [Vim Glossary](#vim-glossary)
     - [Vim Commands](#vim-commands)
@@ -224,22 +228,61 @@ Checkout keyboard [keymaps](../keyboards) and [Keycodes](https://github.com/qmk/
 
 ### Vi-mode
 
-Use `ESC` or `⌃[` to enter Normal mode.
+Use `ESC` or `⌃[` to enter **Normal mode**.
+Use `i`, `I`, `a`, or `A` to return to **Insert mode**.
 
-> **Note:** some of these key bindings are set by zsh by default when using a
-> vi-mode keymap.
+#### Insert-mode shortcuts
 
-- `⌃ + p` : Change to a directory (Looking up in `~/.Code`)
-- `⌃ + o` : Open a direcotry in editor (looking up in `~/.Code`)
-- `⌃ + k` Previous command in history.
-- `⌃ + j` Next command in history.
-- `/` Search backward in history.
-- `n` Repeat the last backward search.
-- `⌃ + r` Search backward in history.
-- `⌃ + s` Search forward in history.
-- `vv` : Edit current command line in vim
-- `⌃ + e` To the end of the line.
-- `⌃ + a` To the beginning of the line.
+- `⌃ + P` : Change to a directory (searching `~/.Code`)
+- `⌃ + O` : Open a directory in editor (searching `~/.Code`)
+- `⌃ + R` : Multi-word history search
+- `⌃ + T` : Search backward in history
+- `⌃ + Y` : Search forward in history
+- `⌃ + A` : Move to beginning of line
+- `⌃ + E` : Move to end of line
+- `⌃ + W` : Delete previous word
+- `⌃ + U` : Delete whole line
+- ↑ / ↓ : Navigate through history
+
+#### Normal-mode commands
+
+- `vv` : Edit current command line in `$EDITOR`
+- `dd` : Delete entire line
+- `D` : Delete from cursor to end of line
+- `x` : Delete character under cursor
+- `X` : Delete character before cursor
+- `r` : Replace single character
+- `R` : Enter replace mode
+- `s` : Substitute character
+- `S` : Substitute entire line
+- `u` : Undo last change
+- `^R` : Redo last undone change
+
+#### Movement
+
+- `h` : Move left
+- `l` : Move right
+- `0` / `^` : Beginning of line
+- `$` : End of line
+- `w` / `W` : Move forward by word
+- `b` / `B` : Move backward by word
+- `e` / `E` : Move to end of word
+- `gg` : Go to first line in history
+- `G` : Go to last line in history
+- `j` : Previous command in history
+- `k` : Next command in history
+
+#### Search
+
+- `/` : Search backward in history
+- `n` : Next search result
+- `N` : Previous search result
+- `f{char}` : Find character forward
+- `F{char}` : Find character backward
+- `t{char}` : Move before character forward
+- `T{char}` : Move before character backward
+- `;` : Repeat last `f/F/t/T`
+- `,` : Repeat last `f/F/t/T` in opposite direction
 
 ## Vim/Neovim
 
