@@ -51,6 +51,7 @@ brew install \
   direnv \
   docker \
   dry \
+  eza \
   fd \
   ffmpeg \
   figlet \
