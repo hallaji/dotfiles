@@ -49,6 +49,7 @@ alias ,kp='f() { killport "$1" };f' # Kill a port number
 # ├┤ ││  ├┤ └─┐
 # └  ┴┴─┘└─┘└─┘
 
+alias ls="ls --color"
 alias ,cd="change_source_directory" # Change to source directory
 alias ,ed="edit_source_directory" # Edit source directory
 alias ,gopath="add_gopath" # Add a new GOPATH
