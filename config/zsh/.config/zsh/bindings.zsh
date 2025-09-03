@@ -5,29 +5,27 @@
 # ██████╔╝██║██║ ╚████║██████╔╝██║██║ ╚████║╚██████╔╝███████║
 # ╚═════╝ ╚═╝╚═╝  ╚═══╝╚═════╝ ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝
 
-# Vi Mode
-bindkey -v
+export KEYTIMEOUT=20 # Reduce the lag but also slow enough to press `vv`
 
-# Reduce the lag but also slow enough to press `vv`
-export KEYTIMEOUT=20
-
-# See functions.sh
 zle -N edit_source_directory
 zle -N change_source_directory
-bindkey "^o" edit_source_directory
-bindkey "^p" change_source_directory
 
-# Navigate history
+# Vi mode
+bindkey -v
+
+# Change or edit directory
+bindkey "^O" edit_source_directory
+bindkey "^P" change_source_directory
+
+# History search
+bindkey "^R" history-search-multi-word
+bindkey '^T' history-search-backward
+bindkey '^Y' history-search-forward
 bindkey '^[[A' up-history
 bindkey '^[[B' down-history
 
-# History search (incremental)
-bindkey '^r' history-incremental-search-backward
-bindkey '^t' history-incremental-search-forward
-
-# Emacs-style navigation
-bindkey '^a' beginning-of-line
-bindkey '^e' end-of-line
-bindkey '^w' backward-kill-word
-bindkey '^u' kill-whole-line
-
+# Navigation
+bindkey '^A' beginning-of-line
+bindkey '^E' end-of-line
+bindkey '^W' backward-kill-word
+bindkey '^U' kill-whole-line

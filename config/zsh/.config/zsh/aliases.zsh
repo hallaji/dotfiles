@@ -21,6 +21,7 @@ alias ,ss="shasum -a 256 $* | cut -d ' ' -f 1" # Get SHA256 hash for downloaded 
 alias ,b="wallpaper set-solid-color $*" # Set a solid color wallpaper
 alias ,a="open --background 'lungo:toggle'" # Toogle computer awake mode (Lungo)
 alias ,ske="ioreg -l -w 0 | perl -nle 'print $1 if /"kCGSSessionSecureInputPID"=(\d+)/' | uniq | xargs -I{} ps -p {} -o comm=" # https://github.com/koekeishiya/skhd/issues/48
+alias ,path="echo $PATH | tr ':' '\n'"
 
 # ┬ ┬┬┌─┐┌┬┐┌─┐┬─┐┬ ┬
 # ├─┤│└─┐ │ │ │├┬┘└┬┘

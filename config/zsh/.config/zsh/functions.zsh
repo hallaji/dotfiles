@@ -5,6 +5,7 @@
 # ██║     ╚██████╔╝██║ ╚████║╚██████╗   ██║   ██║╚██████╔╝██║ ╚████║███████║
 # ╚═╝      ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
 
+# Find and navigate to directories with fzf, optionally opening editor
 find_in_directory() {
   dir=$(find $1 -type d -not -path '*/\.*' -maxdepth 2 | fzf)
   if [ $? -eq 0 ]; then
@@ -18,14 +19,17 @@ find_in_directory() {
   zle && { zle reset-prompt; zle -R }
 }
 
+# Navigate to a directory within the CODE path
 change_source_directory() {
   find_in_directory $CODE
 }
 
+# Navigate to a directory within CODE path and open editor
 edit_source_directory() {
   find_in_directory $CODE --edit
 }
 
+# Switch AWS profile using fzf selection from config file
 change_aws_profile() {
   profile=$(grep -E '\[profile .+]' ~/.aws/config | sed -E 's/\[profile (.+)\]/\1/g' | sort | fzf)
   if [[ -n $profile ]] ; then
@@ -39,8 +43,10 @@ change_aws_profile() {
     echo 'No AWS account provided!'
   fi
   zle && { zle reset-prompt; zle -R }
+  p10k display -a
 }
 
+# Start AWS SSM session with selected EC2 instance
 start_ec2_session() {
   INSTANCE_ID=$(
     aws ec2 describe-instances \
@@ -57,6 +63,7 @@ start_ec2_session() {
   fi
 }
 
+# Switch Google Cloud configuration using fzf selection
 change_gcloud_config() {
   config=$(gcloud config configurations list | cut -d' ' -f1 | sed 1d | fzf)
   if [[ -n $config ]] ; then
@@ -66,12 +73,15 @@ change_gcloud_config() {
     echo 'No GCloud config provided!'
   fi
   zle && { zle reset-prompt; zle -R }
+  p10k display -a
 }
 
+# Add Go binaries path to PATH environment variable
 add_gopath() {
   export PATH="$PATH:$(go env GOPATH)/bin"
 }
 
+# Restow all dotfile packages using GNU Stow
 stow_dotfiles() {
   packages=($(basename -a "$DOTFILES_HOME"/config/*/))
   cd "$DOTFILES_HOME"
@@ -81,6 +91,7 @@ stow_dotfiles() {
   cd "$OLDPWD"
 }
 
+# Display text in all available figlet fonts
 fl_fonts() {
   for font in ~/.figlet/*.flf; do
     fontname=$(basename "$font")
@@ -90,6 +101,7 @@ fl_fonts() {
   done
 }
 
+# Toggle SketchyBar visibility and adjust aerospace window margins
 toggle_sketchybar() {
   local config_file="$DOTFILES_HOME/config/aerospace/.aerospace.toml"
 
