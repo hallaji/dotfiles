@@ -113,6 +113,7 @@ brew install \
   wallpaper \
   watch \
   wget \
+  zoxide \
   zsh
 
 # Third-party packages

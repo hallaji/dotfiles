@@ -57,6 +57,7 @@ sudo pacman -S --needed \
   ttf-jetbrains-mono-nerd \
   wofi \
   xclip \
+  zoxide \
   zsh
 
 # Building AUR packages
