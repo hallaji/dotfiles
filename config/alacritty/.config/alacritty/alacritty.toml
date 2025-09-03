@@ -4,7 +4,7 @@
 # ██╔══██║██║     ██╔══██║██║     ██╔══██╗██║   ██║      ██║     ╚██╔╝
 # ██║  ██║███████╗██║  ██║╚██████╗██║  ██║██║   ██║      ██║      ██║
 # ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝   ╚═╝      ╚═╝      ╚═╝
-# https://alacritty.org
+# https://alacritty.org/config-alacritty.html
 # https://github.com/alacritty/alacritty
 
 [general]
