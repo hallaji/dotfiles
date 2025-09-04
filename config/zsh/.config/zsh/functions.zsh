@@ -5,28 +5,24 @@
 # ██║     ╚██████╔╝██║ ╚████║╚██████╗   ██║   ██║╚██████╔╝██║ ╚████║███████║
 # ╚═╝      ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
 
-# Find and navigate to directories with fzf, optionally opening editor
-find_in_directory() {
-  dir=$(find $1 -type d -not -path '*/\.*' -maxdepth 2 | fzf)
-  if [ $? -eq 0 ]; then
-    cd $dir
-    if [ ! -z "$2" ] && [ "$2" = "--edit" ]; then
-      eval "$EDITOR +Startify"
-    fi
-  else
-    echo 'No directory provided!'
+# Find a directory with fzf
+function ,f() {
+  local selected_dir
+  selected_dir=$(
+    find "$CODE" -type d -not -path "*/\.*" -maxdepth 2 \
+      | sed "s|^$HOME|~|" \
+      | fzf --with-nth=1 \
+      | sed "s|^~|$HOME|"
+  )
+
+  if [[ -n "$selected_dir" ]]; then
+    cd "$selected_dir" && zoxide add "$(pwd)"
   fi
-  zle && { zle reset-prompt; zle -R }
 }
 
-# Navigate to a directory within the CODE path
-change_source_directory() {
-  find_in_directory $CODE
-}
-
-# Navigate to a directory within CODE path and open editor
-edit_source_directory() {
-  find_in_directory $CODE --edit
+# Find a directory with fzf and open in the editor
+function ,o() {
+  ,f && $EDITOR
 }
 
 # Switch AWS profile using fzf selection from config file
