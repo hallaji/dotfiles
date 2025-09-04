@@ -19,16 +19,15 @@ alias ,q="exit" # Quit the shell
 alias ,os="uname | tr '[:upper:]' '[:lower:]'" # OS name in lowercase letters
 alias ,ss="shasum -a 256 $* | cut -d ' ' -f 1" # Get SHA256 hash for downloaded file to verify integrity
 alias ,b="wallpaper set-solid-color $*" # Set a solid color wallpaper
-alias ,a="open --background 'lungo:toggle'" # Toogle computer awake mode (Lungo)
+alias ,a="open --background 'lungo:toggle'" # Toggle computer awake mode (Lungo)
 alias ,ske="ioreg -l -w 0 | perl -nle 'print $1 if /"kCGSSessionSecureInputPID"=(\d+)/' | uniq | xargs -I{} ps -p {} -o comm=" # https://github.com/koekeishiya/skhd/issues/48
-alias ,path="echo $PATH | tr ':' '\n'"
+alias ,path="echo $PATH | tr ':' '\n'" # Display PATH environment variable
 
 # ┬ ┬┬┌─┐┌┬┐┌─┐┬─┐┬ ┬
 # ├─┤│└─┐ │ │ │├┬┘└┬┘
 # ┴ ┴┴└─┘ ┴ └─┘┴└─ ┴
 
 alias ,h="history" # Show command history
-alias ,hs="history | grep $* -i" # Search command history
 
 # ┌┐┌┌─┐┌┬┐┬ ┬┌─┐┬─┐┬┌─
 # │││├┤  │ ││││ │├┬┘├┴┐
@@ -50,12 +49,12 @@ alias ,kp='f() { killport "$1" };f' # Kill a port number
 # ├┤ ││  ├┤ └─┐
 # └  ┴┴─┘└─┘└─┘
 
-alias ls="ls --color"
-alias ,cd="change_source_directory" # Change to source directory
-alias ,ed="edit_source_directory" # Edit source directory
+alias ls="ls --color" # Enable colors for `ls` command
+alias ,e="$EDITOR" # Edit current directory
+alias ,z='cd "$(zoxide query -l | fzf)"' # Change directory using zoxide and fzf
+alias ,ls="n -AHei" # NNN file manager https://github.com/jarun/nnn
 alias ,gopath="add_gopath" # Add a new GOPATH
-alias ,e="$EDITOR" # https://github.com/neovim/neovim
-alias ,ls="n -AHei" # https://github.com/jarun/nnn
+
 
 # ┌─┐┬─┐┬ ┬┌─┐┌┬┐┌─┐
 # │  ├┬┘└┬┘├─┘ │ │ │
@@ -70,80 +69,79 @@ alias ,ce="cointop price --coin ethereum --currency aud" # Check the price of Et
 
 alias ,r="exec $SHELL -l" # Reload the shell
 alias ,rtl='nvim "+Tmuxline" "+TmuxlineSnapshot! ~/.tmux/statusline-colors.conf" "+qa"' # Generate tmuxline colorscheme
-alias ,rga="gpgconf --kill gpg-agent"
-alias ,ryabai="yabai --restart-service"
-alias ,rskhd="skhd --restart-service"
+alias ,rga="gpgconf --kill gpg-agent" # Restart GPG agent
+alias ,ryabai="yabai --restart-service" # Restart Yabai
+alias ,rskhd="skhd --restart-service" # Restart Skhd
 
 # ┌┬┐┌─┐┌─┐┌─┐┬  ┌─┐
 #  │ │ ││ ┬│ ┬│  ├┤
 #  ┴ └─┘└─┘└─┘┴─┘└─┘
 
-alias ,tsb="toggle_sketchybar"
+alias ,tsb="toggle_sketchybar" # Toggle SketchyBar
 
 # ┌┬┐┌─┐┌┬┐┌─┐┬┬  ┌─┐┌─┐
 #  │││ │ │ ├┤ ││  ├┤ └─┐
 # ─┴┘└─┘ ┴ └  ┴┴─┘└─┘└─┘
 
-alias ,dot="cd $DOTFILES_HOME && $EDITOR"
-alias ,f="fresh"
-alias ,s="stow_dotfiles"
+alias ,dot="cd $DOTFILES_HOME && $EDITOR" # Navigate to dotfiles and open editor
+alias ,s="stow_dotfiles" # Stow all dotfiles configurations
 
 # ┌─┐┬┌┬┐
 # │ ┬│ │
 # └─┘┴ ┴
 
-alias ,gwho="git config user.name && git config user.email"
-alias ,gun="git config user.name $*"
-alias ,gue="git config user.email $*"
-alias ,gra="git commit --amend --reset-author"
+alias ,gwho="git config user.name && git config user.email" # Show current git user name and email
+alias ,gun="git config user.name $*" # Set git user name
+alias ,gue="git config user.email $*" # Set git user email
+alias ,gra="git commit --amend --reset-author" # Amend git commit and reset author
 
 # ┌─┐┬┌┬┐┬ ┬┬ ┬┌┐   ┌─┐┬  ┬
 # │ ┬│ │ ├─┤│ │├┴┐  │  │  │
 # └─┘┴ ┴ ┴ ┴└─┘└─┘  └─┘┴─┘┴
 
-alias ,ghb="gh browse"
-alias ,ghd="gh dash"
-alias ,ghbr="gh branch"
-alias ,ghp="gh eco"
-alias ,ghi="gh inspire"
-alias ,ghgi="gh gitignore"
-alias ,ghc="gh copilot"
+alias ,ghb="gh browse" # Open a repository in browser
+alias ,ghd="gh dash" # Open the dashboard for issues and pull requests
+alias ,ghbr="gh branch" # Show branches information
+alias ,ghp="gh eco" # Check a GitHub profile
+alias ,ghi="gh inspire" # Show an inspiration
+alias ,ghgi="gh gitignore" # Load gitignore files into a project
+alias ,ghc="gh copilot" # GitHub command line copilot
 
 # ┌─┐┬ ┬┌─┐
 # ├─┤│││└─┐
 # ┴ ┴└┴┘└─┘
 
-alias ,awsi="aws sts get-caller-identity"
-alias ,awsc="change_aws_profile"
-alias ,awss="start_ec2_session"
+alias ,awsi="aws sts get-caller-identity" # Get AWS caller identity
+alias ,awsc="change_aws_profile" # Change AWS profile
+alias ,awss="start_ec2_session" # Start EC2 session
 
 # ┌─┐┌─┐┌─┐
 # │ ┬│  ├─┘
 # └─┘└─┘┴
 
-alias ,gcpc="change_gcloud_config"
+alias ,gcpc="change_gcloud_config" # Change Google Cloud config
 
 # ┌─┐┬─┐┌─┐┌┐┌┌┬┐┌─┐┌┬┐
 # │ ┬├┬┘├─┤│││ │ ├┤  ││
 # └─┘┴└─┴ ┴┘└┘ ┴ └─┘─┴┘
 # https://www.granted.dev
 
-alias assume=". assume"
+alias assume=". assume" # Assume a role
 alias ,gd="assume" # Assume a role
 alias ,gdw="assume -c" # Open a web console to the role
 alias ,gdc="assume -ar" # Open console using active role
-[[ "$PROFILE" == "CLTRMP" ]] && alias ,gdp="granted sso populate --sso-region us-west-2 https://cultureamp.awsapps.com/start" # Populate SSO profiles
+[[ "$PROFILE" == "CLTRMP" ]] && alias ,gdp="granted sso populate --sso-region us-west-2 https://cultureamp.awsapps.com/start" # Populate SSO profiles (CLTRMP profile only)
 
 # ┌─┐┬┌─┐┬  ┌─┐┌┬┐
 # ├┤ ││ ┬│  ├┤  │
 # └  ┴└─┘┴─┘└─┘ ┴
 # http://www.figlet.org
 
-alias ,fig="figlet -d ~/.figlet/ $*"
-alias ,fig1a="figlet -d ~/.figlet/ -f ANSI\ Shadow $*"
-alias ,fig1b="figlet -d ~/.figlet/ -f ANSI\ Regular $*"
-alias ,fig1c="figlet -d ~/.figlet/ -f Block $*"
-alias ,fig1d="figlet -d ~/.figlet/ -f Doom $*"
-alias ,fig2a="figlet -d ~/.figlet/ -f halfiwi $*"
-alias ,fig2b="figlet -d ~/.figlet/ -f Calvin\ S $*"
-alias ,fig3="figlet -d ~/.figlet/ -f wideterm $*"
+alias ,fig="figlet -d ~/.figlet/ $*" # Print with selected figlet font
+alias ,fig1a="figlet -d ~/.figlet/ -f ANSI\ Shadow $*" # Print with ANSI Shadow font
+alias ,fig1b="figlet -d ~/.figlet/ -f ANSI\ Regular $*" # Print with ANSI Regular font
+alias ,fig1c="figlet -d ~/.figlet/ -f Block $*" # Print with Block font
+alias ,fig1d="figlet -d ~/.figlet/ -f Doom $*" # Print with Doom font
+alias ,fig2a="figlet -d ~/.figlet/ -f halfiwi $*" # Print with Halfiwi font
+alias ,fig2b="figlet -d ~/.figlet/ -f Calvin\ S $*" # Print with Calvin S font
+alias ,fig3="figlet -d ~/.figlet/ -f wideterm $*" # Print with Wideterm font
