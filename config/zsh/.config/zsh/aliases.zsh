@@ -107,18 +107,13 @@ alias ,ghi="gh inspire" # Show an inspiration
 alias ,ghgi="gh gitignore" # Load gitignore files into a project
 alias ,ghc="gh copilot" # GitHub command line copilot
 
-# ┌─┐┬ ┬┌─┐
-# ├─┤│││└─┐
-# ┴ ┴└┴┘└─┘
+# ┬┌─┐┌─┐┌─┐
+# │├─┤├─┤└─┐
+# ┴┴ ┴┴ ┴└─┘
 
 alias ,awsi="aws sts get-caller-identity" # Get AWS caller identity
 alias ,awsc="change_aws_profile" # Change AWS profile
 alias ,awss="start_ec2_session" # Start EC2 session
-
-# ┌─┐┌─┐┌─┐
-# │ ┬│  ├─┘
-# └─┘└─┘┴
-
 alias ,gcpc="change_gcloud_config" # Change Google Cloud config
 
 # ┌─┐┬─┐┌─┐┌┐┌┌┬┐┌─┐┌┬┐
@@ -132,16 +127,9 @@ alias ,gdw="assume -c" # Open a web console to the role
 alias ,gdc="assume -ar" # Open console using active role
 [[ "$PROFILE" == "CLTRMP" ]] && alias ,gdp="granted sso populate --sso-region us-west-2 https://cultureamp.awsapps.com/start" # Populate SSO profiles (CLTRMP profile only)
 
-# ┌─┐┬┌─┐┬  ┌─┐┌┬┐
-# ├┤ ││ ┬│  ├┤  │
-# └  ┴└─┘┴─┘└─┘ ┴
-# http://www.figlet.org
+# ┌─┐┬─┐┬┌┐┌┌┬┐┌─┐
+# ├─┘├┬┘││││ │ └─┐
+# ┴  ┴└─┴┘└┘ ┴ └─┘
 
-alias ,fig="figlet -d ~/.figlet/ $*" # Print with selected figlet font
-alias ,fig1a="figlet -d ~/.figlet/ -f ANSI\ Shadow $*" # Print with ANSI Shadow font
-alias ,fig1b="figlet -d ~/.figlet/ -f ANSI\ Regular $*" # Print with ANSI Regular font
-alias ,fig1c="figlet -d ~/.figlet/ -f Block $*" # Print with Block font
-alias ,fig1d="figlet -d ~/.figlet/ -f Doom $*" # Print with Doom font
-alias ,fig2a="figlet -d ~/.figlet/ -f halfiwi $*" # Print with Halfiwi font
-alias ,fig2b="figlet -d ~/.figlet/ -f Calvin\ S $*" # Print with Calvin S font
-alias ,fig3="figlet -d ~/.figlet/ -f wideterm $*" # Print with Wideterm font
+alias ,fig="figlet_show" # Display text in a selected figlet font
+alias ,qt="quote" # Display a random quote

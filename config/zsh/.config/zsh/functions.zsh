@@ -5,13 +5,45 @@
 # ██║     ╚██████╔╝██║ ╚████║╚██████╗   ██║   ██║╚██████╔╝██║ ╚████║███████║
 # ╚═╝      ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
 
-# Find a directory with fzf
+# ┌─┐┬┌─┐┬  ┌─┐┌┬┐
+# ├┤ ││ ┬│  ├┤  │
+# └  ┴└─┘┴─┘└─┘ ┴
+# http://www.figlet.org
+
+# Display text in a selected figlet font
+figlet_show() {
+  local favorites=(
+    "ANSI Shadow"
+    "ANSI Regular"
+    "Calvin S"
+    "halfiwi"
+    "wideterm"
+  )
+  local all_fonts=$(ls ~/.figlet/*.flf | sed 's|.*/||; s|\.flf$||')
+  local other_fonts=$(echo "$all_fonts" | grep -vxF -f <(printf '%s\n' "${favorites[@]}"))
+  local font=$(
+    {
+      printf '%s\n' "${favorites[@]}"
+      echo "$other_fonts"
+    } | fzf --prompt="Select font: "
+  )
+
+  if [[ -n "$font" ]]; then
+    echo ""
+    figlet -d ~/.figlet/ -f "$font" "$@"
+  fi
+}
+
+# ┌─┐┬┬  ┌─┐┌─┐
+# ├┤ ││  ├┤ └─┐
+# └  ┴┴─┘└─┘└─┘
+
+# Find a code directory
 function ,f() {
-  local selected_dir
-  selected_dir=$(
+  local selected_dir=$(
     find "$CODE" -type d -not -path "*/\.*" -maxdepth 2 \
       | sed "s|^$HOME|~|" \
-      | fzf --with-nth=1 \
+      | fzf --prompt="Select directory: " --with-nth=1 \
       | sed "s|^~|$HOME|"
   )
 
@@ -20,10 +52,29 @@ function ,f() {
   fi
 }
 
-# Find a directory with fzf and open in the editor
+# Find a code directory and open in the default editor
 function ,o() {
   ,f && $EDITOR
 }
+
+# Restow all dotfile packages using GNU Stow
+stow_dotfiles() {
+  packages=($(basename -a "$DOTFILES_HOME"/config/*/))
+  cd "$DOTFILES_HOME"
+  for package in "${packages[@]}"; do
+    stow -R "$package"
+  done
+  cd "$OLDPWD"
+}
+
+# Add Go binaries path to PATH environment variable
+add_gopath() {
+  export PATH="$PATH:$(go env GOPATH)/bin"
+}
+
+# ┌─┐┬ ┬┌─┐
+# ├─┤│││└─┐
+# ┴ ┴└┴┘└─┘
 
 # Switch AWS profile using fzf selection from config file
 change_aws_profile() {
@@ -59,6 +110,10 @@ start_ec2_session() {
   fi
 }
 
+# ┌─┐┌─┐┌─┐
+# │ ┬│  ├─┘
+# └─┘└─┘┴
+
 # Switch Google Cloud configuration using fzf selection
 change_gcloud_config() {
   config=$(gcloud config configurations list | cut -d' ' -f1 | sed 1d | fzf)
@@ -72,30 +127,9 @@ change_gcloud_config() {
   p10k display -a
 }
 
-# Add Go binaries path to PATH environment variable
-add_gopath() {
-  export PATH="$PATH:$(go env GOPATH)/bin"
-}
-
-# Restow all dotfile packages using GNU Stow
-stow_dotfiles() {
-  packages=($(basename -a "$DOTFILES_HOME"/config/*/))
-  cd "$DOTFILES_HOME"
-  for package in "${packages[@]}"; do
-    stow -R "$package"
-  done
-  cd "$OLDPWD"
-}
-
-# Display text in all available figlet fonts
-fl_fonts() {
-  for font in ~/.figlet/*.flf; do
-    fontname=$(basename "$font")
-    echo "$fontname"
-    figlet -d ~/.figlet/ -f "$fontname" "$1"
-    echo ""
-  done
-}
+# ┌─┐┬ ┬┌─┐┌┬┐┌─┐┌┬┐
+# └─┐└┬┘└─┐ │ ├┤ │││
+# └─┘ ┴ └─┘ ┴ └─┘┴ ┴
 
 # Toggle SketchyBar visibility and adjust aerospace window margins
 toggle_sketchybar() {
