@@ -111,6 +111,9 @@
   # Blue current directory.
   typeset -g POWERLEVEL9K_DIR_FOREGROUND=$blue
 
+  # Show only directory name, not full path
+  # typeset -g POWERLEVEL9K_SHORTEN_STRATEGY=truncate_to_last
+
   # Context format when root: user@host. The first part white, the rest grey.
   typeset -g POWERLEVEL9K_CONTEXT_ROOT_TEMPLATE="%F{$white}%n%f%F{$grey}@%m%f"
   # Context format when not root: user@host. The whole thing grey.
@@ -198,6 +201,12 @@
   # If p10k is already loaded, reload configuration.
   # This works even with POWERLEVEL9K_DISABLE_HOT_RELOAD=true.
   (( ! $+functions[p10k] )) || p10k reload
+}
+
+# Run commands when p10k initializes
+function p10k-on-init() {
+  # Only run quote once per session
+  [[ -z "${_P10K_QUOTE_SHOWN:-}" ]] && quote 2>/dev/null && export _P10K_QUOTE_SHOWN=1
 }
 
 # Tell `p10k configure` which file it should overwrite.
