@@ -13,10 +13,10 @@ return {
     vim.g.tmuxline_powerline_separators = 0
 
     vim.g.tmuxline_separators = { -- Use the following separators:
-      left = "",
-      left_alt = "",
-      right = "",
-      right_alt = "",
+      left = "",
+      left_alt = "",
+      right = "",
+      right_alt = "",
       space = " ",
     }
 
