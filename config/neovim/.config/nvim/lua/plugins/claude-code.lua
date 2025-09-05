@@ -14,14 +14,14 @@ return {
   opts = {
     -- Terminal Configuration
     terminal = {
-      split_side = "right", -- "left" or "right"
+      split_side = "right",  -- "left" or "right"
       split_width_percentage = 0.40,
-      provider = "auto",    -- "auto", "snacks", "native", "external", or custom provider table
+      provider = "external", -- "auto", "snacks", "native", "external", or custom provider table
       auto_close = true,
 
       -- Provider-specific options
       provider_opts = {
-        external_terminal_cmd = "alacritty -e %s",
+        external_terminal_cmd = "alacritty --working-directory " .. vim.fn.getcwd() .. " -e %s",
       },
     },
   },
