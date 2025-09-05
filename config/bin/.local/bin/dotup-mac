@@ -79,6 +79,7 @@ brew install \
   ktlint \
   lazygit \
   lolcat \
+  neofetch \
   neovim \
   nmap \
   node \
