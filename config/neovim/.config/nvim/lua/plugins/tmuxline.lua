@@ -22,12 +22,13 @@ return {
 
     vim.g.tmuxline_preset = { -- Use the following preset:
       a = { " #S" },
-      b = { '󰓩 #I#(tmux list-windows | wc -l | tr -d " ")' },
+      b = { "󰓩 #I#(tmux list-windows | wc -l | tr -d ' ')" },
       c = { " #{pane_current_command}" },
       cwin = { "󰓩 #I #W" },
       win = { "󰓪 #I #W" },
+      x = { "#(quote)" },
       y = { " #P#{window_panes}" },
-      z = { " #W" },
+      z = { " #W" },
       options = { ["status-justify"] = "left" }, -- left, centre, or right
     }
 
@@ -53,7 +54,7 @@ return {
         y = { l.section_b_fg, l.section_b_bg },
         z = { palette.base.primary_bg, l.tmux, "bold" },
         win = { l.section_c_fg, l.section_c_bg },
-        cwin = { l.section_b_fg, l.section_b_bg },
+        cwin = { l.section_b_fg, l.section_c_bg, "bold" },
         bg = { l.section_b_bg, l.section_c_bg },
       }
     end
