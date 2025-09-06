@@ -12,7 +12,7 @@ return {
   config = function()
     require("nvim-tree").setup({
       view = {
-        width = 34,
+        width = 30,
       },
       renderer = {
         add_trailing = false,
