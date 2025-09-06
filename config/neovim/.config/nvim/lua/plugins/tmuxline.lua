@@ -24,11 +24,11 @@ return {
       a = { " #S" },
       b = { "󰓩 #I#(tmux list-windows | wc -l | tr -d ' ') " },
       c = { " #{pane_current_command}" },
-      cwin = { "󰓩 #I #W" },
-      win = { "󰓪 #I #W" },
+      cwin = { "󰓩 #I #W " },
+      win = { "󰓪 #I #W " },
       x = { "#(quote)" },
       y = { "  #P#{window_panes}" },
-      z = { " #W"  },
+      z = { " #W" },
       options = { ["status-justify"] = "left" }, -- left, centre, or right
     }
 
@@ -49,13 +49,13 @@ return {
       vim.g.tmuxline_theme = {
         a = { palette.base.primary_bg, l.tmux, "bold" },
         b = { l.section_b_fg, l.section_b_bg },
-        c = { l.section_c_fg, l.section_c_bg },
-        x = { l.section_c_fg, l.section_c_bg },
+        c = { l.section_c_fg, palette.base.primary_bg },
+        x = { l.section_c_fg, palette.base.primary_bg },
         y = { l.section_b_fg, l.section_b_bg },
         z = { palette.base.primary_bg, l.tmux, "bold" },
-        win = { l.section_c_fg, l.section_c_bg },
-        cwin = { l.section_b_fg, l.section_c_bg, "bold" },
-        bg = { l.section_b_bg, l.section_c_bg },
+        win = { l.section_c_fg, palette.base.primary_bg },
+        cwin = { palette.syntax.identifier, palette.base.primary_bg, "bold" },
+        bg = { l.section_b_bg, palette.base.primary_bg },
       }
     end
 

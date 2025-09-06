@@ -30,7 +30,7 @@ return {
       end
 
       local common_b = { bg = l.section_b_bg, fg = l.section_b_fg }
-      local common_c = { bg = l.section_c_bg, fg = l.section_c_fg }
+      local common_c = { bg = palette.base.primary_bg, fg = l.section_c_fg }
 
       return {
         normal = {
@@ -113,6 +113,7 @@ return {
     local function setup_lualine()
       require("lualine").setup({
         options = {
+          always_show_tabline = false,
           theme = get_theme(),
           section_separators = { left = "", right = "" },
           component_separators = { left = "", right = "" },
@@ -140,6 +141,13 @@ return {
             "progress",
           },
           lualine_z = {
+            {
+              "windows",
+              mode = 0,
+              icons_enabled = true,
+              show_modified_status = true,
+              disabled_buftypes = { "quickfix", "prompt", "nofile", "help", "terminal" },
+            },
           },
         },
         inactive_sections = {
@@ -171,7 +179,7 @@ return {
                 directory = " ",
               },
               buffers_color = {
-                active = "lualine_a_normal",
+                active = "lualine_b_normal",
                 inactive = "lualine_c_inactive",
               },
             },
