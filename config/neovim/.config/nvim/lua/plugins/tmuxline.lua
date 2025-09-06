@@ -23,10 +23,10 @@ return {
     vim.g.tmuxline_preset = { -- Use the following preset:
       a = { " #S" },
       b = { "󰓩 #I#(tmux list-windows | wc -l | tr -d ' ') " },
-      c = { " #{pane_current_command}" },
-      cwin = { "󰓩 #I #W " },
-      win = { "󰓪 #I #W " },
-      x = { "#(quote)" },
+      c = { "" },
+      cwin = { "󰓩 #I #W" },
+      win = { "󰓪 #I #W" },
+      x = { " #{pane_current_command}" },
       y = { "  #P#{window_panes}" },
       z = { " #W" },
       options = { ["status-justify"] = "left" }, -- left, centre, or right
