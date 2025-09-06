@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# ████████╗███╗   ███╗██╗   ██╗██╗  ██╗
+# ╚══██╔══╝████╗ ████║██║   ██║╚██╗██╔╝
+#    ██║   ██╔████╔██║██║   ██║ ╚███╔╝
+#    ██║   ██║╚██╔╝██║██║   ██║ ██╔██╗
+#    ██║   ██║ ╚═╝ ██║╚██████╔╝██╔╝ ██╗
+#    ╚═╝   ╚═╝     ╚═╝ ╚═════╝ ╚═╝  ╚═╝
+
+# Returns ordinal/total based on creation time for the session associated with the status render
+cur="$(tmux display -p -t "${TMUX_PANE:-}" '#S')"
+tmux list-sessions -F '#{session_created} #{session_name}' \
+  | sort -n \
+  | cut -d' ' -f2- \
+  | awk -v cur="$cur" '{ names[++n]=$0 } END { for (i=1;i<=n;i++) if (names[i]==cur) print i"/"n }'
