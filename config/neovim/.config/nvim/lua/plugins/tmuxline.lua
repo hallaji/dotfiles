@@ -21,15 +21,33 @@ return {
     }
 
     vim.g.tmuxline_preset = { -- Use the following preset:
-      a = { " #S" },
-      b = { "󰓩 #I#(tmux list-windows | wc -l | tr -d ' ') " },
-      c = { "" },
-      cwin = { "󰓩 #I #W" },
-      win = { "󰓪 #I #W" },
-      x = { " #{pane_current_command}" },
-      y = { "  #P#{window_panes}" },
-      z = { " #W" },
-      options = { ["status-justify"] = "left" }, -- left, centre, or right
+      a = {
+        " #S",
+      },
+      b = {
+        " #(tmux-session-ordinal)",
+      },
+      c = {
+        "󰓩 #I#(tmux list-windows | wc -l | tr -d ' ')",
+      },
+      cwin = {
+        "󰓩 #I #W",
+      },
+      win = {
+        "󰓪 #I #W",
+      },
+      x = {
+        "#(quote)",
+      },
+      y = {
+        "#{?pane_in_mode, COPY, #P#{window_panes}}",
+      },
+      z = {
+        " #{pane_current_command}",
+      },
+      options = {
+        ["status-justify"] = "left", -- left, centre, or right
+      },
     }
 
     local function setup_tmuxline_theme()
@@ -54,7 +72,7 @@ return {
         y = { l.section_b_fg, l.section_b_bg },
         z = { palette.base.primary_bg, l.tmux, "bold" },
         win = { l.section_c_fg, palette.base.primary_bg },
-        cwin = { palette.syntax.identifier, palette.base.primary_bg, "bold" },
+        cwin = { palette.base.primary_bg, palette.syntax.identifier, "bold" },
         bg = { l.section_b_bg, palette.base.primary_bg },
       }
     end
