@@ -1,18 +1,22 @@
 #!/bin/sh
 
-FOCUSED_WORKSPACE=$(aerospace list-workspaces --focused)
+get_symbol() {
+  case $1 in
+    1) echo "󰬺" ;;
+    2) echo "󰬻" ;;
+    3) echo "󰬼" ;;
+    4) echo "󰬽" ;;
+    5) echo "󰬾" ;;
+    6) echo "󰬿" ;;
+    7) echo "󰭀" ;;
+    8) echo "󰭁" ;;
+    9) echo "󰭂" ;;
+    *) echo "$1" ;;
+  esac
+}
 
-case $FOCUSED_WORKSPACE in
-    1) SYMBOL="󰬺" ;;
-    2) SYMBOL="󰬻" ;;
-    3) SYMBOL="󰬼" ;;
-    4) SYMBOL="󰬽" ;;
-    5) SYMBOL="󰬾" ;;
-    6) SYMBOL="󰬿" ;;
-    7) SYMBOL="󰭀" ;;
-    8) SYMBOL="󰭁" ;;
-    9) SYMBOL="󰭂" ;;
-    *) SYMBOL="$FOCUSED_WORKSPACE" ;;
-esac
+FOCUSED=$(get_symbol $(aerospace list-workspaces --focused))
+ACTIVE=$(get_symbol $(aerospace list-workspaces --monitor 1 --empty no --count))
+TOTAL=$(get_symbol $(aerospace list-workspaces --all --count))
 
-sketchybar --set "$NAME" label="$SYMBOL"
+sketchybar --set "$NAME" label="$FOCUSED/$TOTAL"
