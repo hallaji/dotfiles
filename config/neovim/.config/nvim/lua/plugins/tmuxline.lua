@@ -72,7 +72,7 @@ return {
         y = { l.section_b_fg, l.section_b_bg },
         z = { palette.base.primary_bg, l.tmux, "bold" },
         win = { l.section_c_fg, palette.base.primary_bg },
-        cwin = { palette.base.primary_bg, palette.syntax.identifier, "bold" },
+        cwin = { palette.base.primary_bg, l.tab, "bold" },
         bg = { l.section_b_bg, palette.base.primary_bg },
       }
     end

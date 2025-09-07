@@ -55,6 +55,7 @@ return {
     command = get_color("PALETTE_SL_COMMAND", "#766b95"),
     inactive = get_color("PALETTE_SL_INACTIVE", "#1b2839"),
     tmux = get_color("PALETTE_SL_TMUX", "#02d9fe"),
+    tab = get_color("PALETTE_SL_TAB", "#fdaccb"),
     section_b_bg = get_color("PALETTE_SL_SECTION_B_BG", "#202f42"),
     section_b_fg = get_color("PALETTE_SL_SECTION_B_FG", "#599ac8"),
     section_c_bg = get_color("PALETTE_SL_SECTION_C_BG", "#1d232b"),
