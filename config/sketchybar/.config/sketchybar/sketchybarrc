@@ -53,7 +53,7 @@ host=(
 
 aerospace=(
   icon=""
-  label.padding_right=8
+  label.padding_right=10
   label.font="Hack Nerd Font:Regular:24.0"
   script="$PLUGIN_DIR/aerospace.sh"
 )
@@ -67,7 +67,6 @@ sketchybar \
   --add item host left --set host "${host[@]}" \
   --add item separator-host left --set separator-host "${separator[@]}" \
   --add item aerospace left --set aerospace "${aerospace[@]}" --subscribe aerospace aerospace_workspace_change \
-  --add item separator-aerospace left --set separator-aerospace "${separator[@]}" \
   --add item front_app left --set front_app "${front_app[@]}" --subscribe front_app front_app_switched
 
 # ┌─┐┌─┐┌┐┌┌┬┐┌─┐┬─┐
@@ -93,7 +92,7 @@ disk=(
 )
 
 network_down=(
-  y_offset=-5
+  y_offset=-4
   background.padding_right=-67
   label.font="Hack Nerd Font:Regular:9.0"
   icon.font="Hack Nerd Font:Regular:10.0"
@@ -114,14 +113,12 @@ network_up=(
 )
 
 sketchybar \
-  --add item separator-cpu center --set separator-cpu "${separator[@]}" \
   --add item cpu center --set cpu "${cpu[@]}" \
   --add item memory center --set memory "${memory[@]}" \
   --add item disk center --set disk "${disk[@]}" \
   --add item separator-disk center --set separator-disk "${separator[@]}" \
   --add item network.down center --set network.down "${network_down[@]}" \
   --add item network.up center --set network.up "${network_up[@]}" \
-  --add item separator-network center --set separator-network "${separator[@]}"
 
 # ┬─┐┬┌─┐┬ ┬┌┬┐
 # ├┬┘││ ┬├─┤ │
