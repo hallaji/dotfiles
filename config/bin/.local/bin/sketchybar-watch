@@ -15,9 +15,9 @@ echo "󰻂 Watching sketchybar config: $CONFIG_FILE"
 
 fswatch "$CONFIG_FILE" | while read -r; do
   echo "󱍷 Config changed, restarting sketchybar..."
-  if brew services restart sketchybar 2>/dev/null; then
-    echo "󰗠 Sketchybar restarted successfully"
+  if sketchybar --reload 2>/dev/null; then
+    echo "󰗠 Sketchybar reloaded successfully"
   else
-    echo "󰅙 Failed to restart sketchybar"
+    echo "󰅙 Failed to reloaded sketchybar"
   fi
 done
