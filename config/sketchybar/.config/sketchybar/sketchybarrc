@@ -34,7 +34,7 @@ default=(
 sketchybar --default "${default[@]}"
 
 separator=(
-  icon=
+  icon=""
   icon.color=0xfff47067
   background.padding_left=-2
   background.padding_right=-2
@@ -46,8 +46,13 @@ separator=(
 
 sketchybar --add event aerospace_workspace_change
 
+host=(
+  icon=""
+  script="$PLUGIN_DIR/host.sh"
+)
+
 aerospace=(
-  icon=""
+  icon=""
   label.padding_right=8
   label.font="Hack Nerd Font:Regular:24.0"
   script="$PLUGIN_DIR/aerospace.sh"
@@ -59,6 +64,8 @@ front_app=(
 )
 
 sketchybar \
+  --add item host left --set host "${host[@]}" \
+  --add item separator-host left --set separator-host "${separator[@]}" \
   --add item aerospace left --set aerospace "${aerospace[@]}" --subscribe aerospace aerospace_workspace_change \
   --add item separator-aerospace left --set separator-aerospace "${separator[@]}" \
   --add item front_app left --set front_app "${front_app[@]}" --subscribe front_app front_app_switched
