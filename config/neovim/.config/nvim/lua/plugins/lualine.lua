@@ -115,7 +115,7 @@ return {
         options = {
           always_show_tabline = false,
           theme = get_theme(),
-          section_separators = { left = "", right = "" },
+          section_separators = { left = "", right = "" },
           component_separators = { left = "", right = "" },
           globalstatus = true,
         },

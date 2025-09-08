@@ -13,9 +13,9 @@ return {
     vim.g.tmuxline_powerline_separators = 0
 
     vim.g.tmuxline_separators = { -- Use the following separators:
-      left = "",
+      left = "",
       left_alt = "",
-      right = "",
+      right = "",
       right_alt = "",
       space = " ",
     }
@@ -25,10 +25,10 @@ return {
         " #S",
       },
       b = {
-        " #(tmux-session-ordinal)",
+        " #{b:pane_current_path}",
       },
       c = {
-        "󰓩 #I#(tmux list-windows | wc -l | tr -d ' ')",
+        " #(tmux-session-ordinal)",
       },
       cwin = {
         "󰓩 #I #W",
@@ -37,10 +37,11 @@ return {
         "󰓪 #I #W",
       },
       x = {
-        "#(quote)",
+        "󰓩 #{window_index}/#{session_windows}",
+        "#{?pane_in_mode, COPY, #P/#{window_panes}}",
       },
       y = {
-        "#{?pane_in_mode, COPY, #P#{window_panes}}",
+        "󰋦 #(whoami)"
       },
       z = {
         " #{pane_current_command}",
@@ -71,8 +72,8 @@ return {
         x = { l.section_c_fg, palette.base.primary_bg },
         y = { l.section_b_fg, l.section_b_bg },
         z = { palette.base.primary_bg, l.tmux, "bold" },
-        win = { l.section_c_fg, palette.base.primary_bg },
-        cwin = { palette.base.primary_bg, l.tab, "bold" },
+        win = { l.section_c_fg, l.section_c_bg },
+        cwin = { palette.base.primary_bg, l.tab },
         bg = { l.section_b_bg, palette.base.primary_bg },
       }
     end
