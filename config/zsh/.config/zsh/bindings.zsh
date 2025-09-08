@@ -11,7 +11,7 @@ bindkey -v
 # History search
 bindkey "^R" history-search-multi-word
 bindkey '^P' history-search-backward
-bindkey '^N' history-search-forward
+bindkey '^O' history-search-forward
 bindkey '^[[A' up-history
 bindkey '^[[B' down-history
 
