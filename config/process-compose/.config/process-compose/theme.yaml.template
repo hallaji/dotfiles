@@ -10,7 +10,7 @@ style:
     valueFgColor: '${PALETTE_SE_FOCUS}'
     logoColor: '${PALETTE_SE_PRIMARY}'
   proc_table:
-    fgColor: '${PALETTE_SE_HINT}'
+    fgColor: '${PALETTE_SE_FOCUS}'
     fgWarning: '${PALETTE_SE_WARNING}'
     fgPending: '${PALETTE_SE_SECONDARY}'
     fgCompleted: '${PALETTE_SE_SUCCESS}'
