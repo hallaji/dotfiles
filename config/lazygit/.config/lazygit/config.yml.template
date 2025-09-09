@@ -1,0 +1,23 @@
+# ██╗      █████╗ ███████╗██╗   ██╗ ██████╗ ██╗████████╗
+# ██║     ██╔══██╗╚══███╔╝╚██╗ ██╔╝██╔════╝ ██║╚══██╔══╝
+# ██║     ███████║  ███╔╝  ╚████╔╝ ██║  ███╗██║   ██║
+# ██║     ██╔══██║ ███╔╝    ╚██╔╝  ██║   ██║██║   ██║
+# ███████╗██║  ██║███████╗   ██║   ╚██████╔╝██║   ██║
+# ╚══════╝╚═╝  ╚═╝╚══════╝   ╚═╝    ╚═════╝ ╚═╝   ╚═╝
+# https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md
+
+os:
+  editPreset: 'nvim'
+gui:
+  showRandomTip: true
+  showCommandLog: true
+  commandLogSize: 2
+  theme:
+    activeBorderColor:
+      - "${PALETTE_SL_TMUX}"
+    inactiveBorderColor:
+      - "${PALETTE_UI_BORDER}"
+    selectedLineBgColor:
+      - "${PALETTE_SL_SECTION_B_BG}"
+    defaultFgColor:
+      - "${PALETTE_BA_PRIMARY_FG}"
