@@ -11,7 +11,7 @@ os:
 gui:
   showRandomTip: true
   showCommandLog: true
-  commandLogSize: 2
+  commandLogSize: 4
   theme:
     activeBorderColor:
       - "${PALETTE_SL_TMUX}"
