@@ -25,7 +25,7 @@ return {
         " #S",
       },
       b = {
-        " #{b:pane_current_path}",
+        " #{?#{==:#{pane_current_command},nvim},#{@nvim_buffer_dir},#{b:pane_current_path}}",
       },
       c = {
         " #(tmux-session-ordinal)",
@@ -41,7 +41,7 @@ return {
         "#{?pane_in_mode, COPY, #P/#{window_panes}}",
       },
       y = {
-        "󰋦 #(whoami)"
+        "󰋦 #(whoami)",
       },
       z = {
         " #{pane_current_command}",
@@ -87,6 +87,23 @@ return {
         -- Update tmux statusline colors
         vim.cmd("Tmuxline")
         vim.cmd("TmuxlineSnapshot! ~/.tmux/statusline-colors.conf")
+      end,
+    })
+
+    -- Update tmux status when buffer changes to show current directory
+    vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
+      callback = function()
+        if vim.env.TMUX then
+          local current_file = vim.fn.expand("%:p")
+          if current_file and current_file ~= "" then
+            local buffer_dir = vim.fn.fnamemodify(current_file, ":h")
+            local buffer_dirname = vim.fn.fnamemodify(buffer_dir, ":t")
+            -- Set tmux user variable with the current buffer's directory name
+            vim.fn.system("tmux set-option -g @nvim_buffer_dir '" .. buffer_dirname .. "'")
+          end
+          -- Regenerate tmux status line to pick up changes
+          vim.cmd("Tmuxline")
+        end
       end,
     })
   end,
