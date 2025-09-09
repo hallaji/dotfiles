@@ -204,8 +204,7 @@ wk.add({
 wk.add({
   {
     mode = "n",
-    { "<Leader><C-G>", ":vertical Git<CR>", desc = "Fugitive", icon = "" },
-    { "<Leader><C-T>", ":Tig<CR>", desc = "Tig", icon = "" },
+    { "<Leader><C-G>", ":Neogit<CR>", desc = "Neogit", icon = "" },
     { "<Leader>g", group = "Git", icon = "" },
     { "<Leader>gR", ":Gitsigns reset_buffer<CR>", desc = "Reset Buffer" },
     { "<Leader>gS", ":Gitsigns stage_buffer<CR>", desc = "Stage Buffer" },
