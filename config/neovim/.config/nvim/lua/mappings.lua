@@ -25,7 +25,7 @@ wk.add({
     mode = "n",
     { "<C-X>", ":WhichKey<CR>", desc = "Whichkey", icon = "" },
 
-    { "<C-P>", ":FzfLua files<CR>", desc = "Finder", icon = "󰀶" },
+    { "<C-P>", ":FzfLua git_files<CR>", desc = "Finder", icon = "󰀶" },
     { "<C-G>", ":FzfLua buffers<CR>", desc = "Buffers", icon = "" },
     { "<C-F>", ":CtrlSF -hidden ", desc = "Find & Replace", icon = "", silent = false },
     { "<C-W>", "<C-W>", desc = "Window", icon = "" },
