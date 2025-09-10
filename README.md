@@ -59,9 +59,9 @@ stow aerospace borders skhd sketchybar yabai
 stow hyprland
 
 # Other packages
-stow alacritty asdf aws bundler ctags curl devbox gh git gradle granted gpg \
-     lazygit neovim nix npm p10k pip process-compose ssh starship tig tmux vim \
-     zsh 1password
+stow alacritty asdf aws bundler claude ctags curl devbox gh git gradle granted \
+     gpg lazygit neovim nix npm p10k pip process-compose ssh starship tig tmux \
+     vim zsh 1password
 ```
 
 ### 3. Freshing Dependencies
