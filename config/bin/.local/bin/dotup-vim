@@ -42,7 +42,3 @@ nvim --headless "+Lazy! sync" "+qa"
 nvim --headless "+MasonInstall $package_list" "+qa"
 nvim "+GoUpdateBinaries" "+qa"
 vim "+PlugUpgrade" "+PlugUpdate" "+qa"
-
-# Save tmux statusline colors to a file
-# Snapshot must be executed within a tmux session
-tmux new-session -d -s nvim_session "nvim '+Tmuxline' '+TmuxlineSnapshot! ~/.tmux/statusline-colors.conf' '+qa'; exit"

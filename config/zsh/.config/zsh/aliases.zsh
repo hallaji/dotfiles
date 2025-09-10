@@ -68,7 +68,6 @@ alias ,ce="cointop price --coin ethereum --currency aud" # Check the price of Et
 # ┴└─└─┘└─┘ ┴ ┴ ┴┴└─ ┴
 
 alias ,r="exec $SHELL -l" # Reload the shell
-alias ,rtl='nvim "+Tmuxline" "+TmuxlineSnapshot! ~/.tmux/statusline-colors.conf" "+qa"' # Generate tmuxline colorscheme
 alias ,rga="gpgconf --kill gpg-agent" # Restart GPG agent
 alias ,ryabai="yabai --restart-service" # Restart Yabai
 alias ,rskhd="skhd --restart-service" # Restart Skhd

@@ -36,3 +36,18 @@ vim.cmd([[autocmd BufNewFile,BufRead COMMIT_EDITMSG set syntax=gitcommit]])
 
 -- Enable spell check in git commit message
 vim.cmd([[autocmd FileType gitcommit setlocal spell spelllang=en_au]])
+
+-- Show current buffer's directory name in tmux status line when inside tmux
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
+  callback = function()
+    if vim.env.TMUX then
+      local current_file = vim.fn.expand("%:p")
+      if current_file and current_file ~= "" then
+        local buffer_dir = vim.fn.fnamemodify(current_file, ":h")
+        local buffer_dirname = vim.fn.fnamemodify(buffer_dir, ":t")
+        -- Set tmux user variable with the current buffer's directory name
+        vim.fn.system("tmux set-option -g @nvim_buffer_dir '" .. buffer_dirname .. "'")
+      end
+    end
+  end,
+})
