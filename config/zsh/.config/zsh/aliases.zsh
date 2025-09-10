@@ -90,7 +90,7 @@ alias ,s="stow_dotfiles" # Stow all dotfiles configurations
 # │ ┬│ │
 # └─┘┴ ┴
 
-alias ,groot="cd $(git rev-parse --show-toplevel)" # Change directory to the git repository root
+alias ,groot='cd $(git rev-parse --show-toplevel)' # Change directory to the git repository root
 alias ,gwho="git config user.name && git config user.email" # Show current git user name and email
 alias ,gun="git config user.name $*" # Set git user name
 alias ,gue="git config user.email $*" # Set git user email
