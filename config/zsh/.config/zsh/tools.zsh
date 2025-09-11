@@ -52,7 +52,7 @@ export FZF_DEFAULT_OPTS="
   --color=marker:$PALETTE_SE_SUCCESS
   --color=spinner:$PALETTE_SE_WARNING
   --color=header:$PALETTE_SE_FOCUS
-  --color=border:$PALETTE_UI_SEPARATOR
+  --color=border:$PALETTE_UI_BORDER
   --layout=reverse
   --border=rounded
 "
