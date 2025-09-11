@@ -23,7 +23,7 @@ function M.apply(p, name)
     -- General text
     Normal = { fg = p.base.primary_fg },     -- Default text
     NonText = { fg = p.base.secondary_bg },  -- Invisible characters (@, ~, etc.)
-    Conceal = { fg = p.ui.indent },          -- Hidden/concealed text
+    Conceal = { fg = p.ui.mute },          -- Hidden/concealed text
     MoreMsg = { fg = p.semantic.primary },   -- Prompt messages
     ModeMsg = { fg = p.semantic.secondary }, -- Mode messages (-- INSERT --, etc.)
 
