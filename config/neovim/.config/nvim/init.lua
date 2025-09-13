@@ -12,7 +12,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("settings")
-require("commands")
-require("lazy").setup("plugins")
-require("mappings")
+require("config.settings")
+require("config.commands")
+require("config.lazy")
+require("config.mappings")
