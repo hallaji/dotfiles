@@ -23,7 +23,7 @@ function M.apply(p, name)
     -- General text
     Normal = { fg = p.base.primary_fg },     -- Default text
     NonText = { fg = p.base.secondary_bg },  -- Invisible characters (@, ~, etc.)
-    Conceal = { fg = p.ui.mute },          -- Hidden/concealed text
+    Conceal = { fg = p.ui.mute },            -- Concealed text
     MoreMsg = { fg = p.semantic.primary },   -- Prompt messages
     ModeMsg = { fg = p.semantic.secondary }, -- Mode messages (-- INSERT --, etc.)
 
@@ -79,8 +79,8 @@ function M.apply(p, name)
     Underlined = { underline = true, fg = p.ui.underline },   -- Underlined text
 
     -- Popup menu
-    Pmenu = { bg = p.ui.separator, fg = p.base.primary_fg }, -- Popup menu background
     PmenuThumb = { bg = p.semantic.secondary },              -- Popup menu scrollbar thumb
+    -- highlight Pmenu guibg=red guifg=whitePmenu = { bg = p.ui.separator, fg = p.base.primary_fg }, -- Popup menu background
     -- PmenuSel = { bg = p.semantic.primary, fg = p.base.primary_bg }, -- Selected popup menu item
     -- PmenuSbar = { bg = p.base.secondary_bg }, -- Popup menu scrollbar
     -- PmenuKind = { fg = p.syntax.comment }, -- Popup menu item kind
@@ -135,6 +135,10 @@ function M.apply(p, name)
   }
 
   local links = {
+    -- Terminal - Built-in terminal
+    TermCursor = "Cursor",   -- Terminal cursor
+    TermCursorNC = "Cursor", -- Non-current terminal cursor
+
     -- Snacks - Indentation guides
     SnacksIndent = "Conceal",      -- Normal indent
     SnacksIndentScope = "Conceal", -- Scope indent
@@ -186,6 +190,14 @@ function M.apply(p, name)
     -- Window - General window elements
     WinSeparator = "VertSplit", -- Window separators
 
+    -- Nvim-cmp - Autocompletion plugin
+    CmpItemMenu = "Pmenu",             -- Menu field's highlight group
+    CmpItemKind = "Comment",           -- Kind of the field
+    CmpItemAbbr = "Normal",            -- Unmatched characters of each completion field
+    CmpItemAbbrDeprecated = "Comment", -- Unmatched characters of each deprecated completion field
+    CmpItemAbbrMatch = "Special",      -- Matched characters of each completion field
+    CmpItemAbbrMatchFuzzy = "Special", -- Fuzzy-matched characters of each completion field
+
     -- CtrlSF - Search and replace tool
     ctrlsfFilename = "NvimTreeFolderIcon",  -- File names
     ctrlsfLnumMatch = "NvimTreeFolderIcon", -- Line numbers
@@ -222,18 +234,6 @@ function M.apply(p, name)
     mkdSnippetSHELL = "String",            -- Shell code snippets
     htmlItalic = "Identifier",             -- HTML italic in markdown
     htmlBold = "Special",                  -- HTML bold in markdown
-
-    -- Completions
-    CmpItemMenu = "Pmenu",             -- Source labels
-    CmpItemKind = "Comment",           -- Item type indicators
-    CmpItemAbbr = "Normal",            -- Main completion text
-    CmpItemAbbrDeprecated = "Comment", -- Deprecated items
-    CmpItemAbbrMatch = "Special",      -- Matched characters
-    CmpItemAbbrMatchFuzzy = "Special", -- Fuzzy matched characters
-
-    -- Terminal - Built-in terminal
-    TermCursor = "Cursor",   -- Terminal cursor
-    TermCursorNC = "Cursor", -- Non-current terminal cursor
 
     -- Diff - File differences
     diffAdded = "DiffAdd",      -- Added lines
