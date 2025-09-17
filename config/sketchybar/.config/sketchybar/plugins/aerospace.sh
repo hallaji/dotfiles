@@ -18,6 +18,6 @@ get_symbol() {
 FOCUSED=$(get_symbol $(aerospace list-workspaces --focused))
 ACTIVE=$(get_symbol $(aerospace list-workspaces --monitor 1 --empty no --count))
 TOTAL=$(get_symbol $(aerospace list-workspaces --all --count))
-SEPARATOR="↠"
+SEPARATOR="↞" # ↞↠
 
 sketchybar --set "$NAME" label="$FOCUSED$SEPARATOR$TOTAL"
