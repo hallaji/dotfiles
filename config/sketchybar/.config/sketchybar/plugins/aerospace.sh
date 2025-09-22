@@ -11,6 +11,7 @@ get_symbol() {
     7) echo "󰭀" ;;
     8) echo "󰭁" ;;
     9) echo "󰭂" ;;
+    10) echo "󰿩" ;;
     *) echo "$1" ;;
   esac
 }
