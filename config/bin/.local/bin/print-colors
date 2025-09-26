@@ -8,7 +8,7 @@
 # Usage❯ colors
 
 for i in {0..255}; do
-  tput setab $i && echo -n " $i "
+  tput setab "$i"; echo -n " $i "
 done
 
 tput sgr0

@@ -5,7 +5,7 @@
 # ██╔══╝  ██║     ██╔══██║╚════██║██╔══██║
 # ██║     ███████╗██║  ██║███████║██║  ██║
 # ╚═╝     ╚══════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝
-# Usage❯ flash <keyboard> <keymap> [--build]
+# Usage❯ flash-keyboard <keyboard> <keymap> [--build]
 
 if [ "$#" -ne 2 ] && [ "$#" -ne 3 ]; then
   echo "⚠ Usage❯ $(basename "$0") <keyboard> <keymap> [--build]" >&2
