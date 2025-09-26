@@ -24,14 +24,6 @@ type op &>/dev/null && eval "$(op completion zsh)"; compdef _op op
 type direnv &>/dev/null && eval "$(direnv hook zsh)"
 
 
-# ┌─┐┬─┐┌─┐┌─┐┬ ┬  ┌─┐┬ ┬┌─┐┬  ┬
-# ├┤ ├┬┘├┤ └─┐├─┤  └─┐├─┤├┤ │  │
-# └  ┴└─└─┘└─┘┴ ┴  └─┘┴ ┴└─┘┴─┘┴─┘
-# https://freshshell.com/
-
-source ~/.fresh/build/shell.sh 2>/dev/null || :
-
-
 # ┌─┐┌─┐┌─┐
 # ├┤ ┌─┘├┤
 # └  └─┘└
