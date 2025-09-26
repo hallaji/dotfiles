@@ -90,3 +90,31 @@ setopt hist_beep # Beep when accessing non-existent history entry
 setopt hist_fcntl_lock # Use fcntl for file locking (safer)
 setopt hist_no_functions # Don't save function definitions to history
 setopt hist_no_store # Remove 'history' command from history
+
+# ┌─┐┬  ┌─┐┌┐┌┌─┐┌─┐
+# │  │  │ ││││├┤ └─┐
+# └─┘┴─┘└─┘┘└┘└─┘└─┘
+
+# https://github.com/jarun/nnn
+zinit ice \
+  as"program" \
+  atclone"make O_NERD=1 O_GITSTATUS=1 O_FZFMOVE=1 && mkdir -p \$HOME/.config/nnn && ln -sfn \$PWD/plugins \$HOME/.config/nnn/plugins" \
+  atpull"%atclone" \
+  pick"nnn"
+zinit load jarun/nnn
+
+# https://github.com/tmux-plugins/tpm
+zinit ice \
+  as"null" \
+  atclone"mkdir -p \$HOME/.tmux/plugins && ln -sfn \$PWD \$HOME/.tmux/plugins/tpm && \$HOME/.tmux/plugins/tpm/bin/install_plugins" \
+  atpull"%atclone && \$HOME/.tmux/plugins/tpm/bin/update_plugins all" \
+  pick"/dev/null"
+zinit load tmux-plugins/tpm
+
+# https://github.com/xero/figlet-fonts
+zinit ice \
+  as"null" \
+  atclone"ln -sfn \$PWD \$HOME/.config/figlet" \
+  atpull"%atclone" \
+  pick"/dev/null"
+zinit load xero/figlet-fonts
