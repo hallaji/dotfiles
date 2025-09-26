@@ -19,7 +19,7 @@ figlet_show() {
     "halfiwi"
     "wideterm"
   )
-  local all_fonts=$(ls ~/.figlet/*.flf | sed 's|.*/||; s|\.flf$||')
+  local all_fonts=$(ls ~/.config/figlet/*.flf | sed 's|.*/||; s|\.flf$||')
   local other_fonts=$(echo "$all_fonts" | grep -vxF -f <(printf '%s\n' "${favorites[@]}"))
   local font=$(
     {
@@ -30,7 +30,7 @@ figlet_show() {
 
   if [[ -n "$font" ]]; then
     echo ""
-    figlet -d ~/.figlet/ -f "$font" "$@"
+    figlet -d ~/.config/figlet/ -f "$font" "$@"
   fi
 }
 
@@ -147,3 +147,25 @@ toggle_sketchybar() {
     aerospace reload-config
   fi
 }
+
+# ┌┬┐┌─┐┌┬┐┬ ┬┌─┐
+#  │││ │ │ │ │├─┘
+# ─┴┘└─┘ ┴ └─┘┴
+
+# Completion for dotup command
+# config/bin/.local/bin/dotup
+_dotup_completion() {
+  local -a options
+  options=(
+    'arch:Arch-specific installations'
+    'asdf:ASDF plugins'
+    'cli:CLI tools'
+    'mac:MacOS-specific installations'
+    'services:System services'
+    'shell:Shell installations'
+    'vim:Vim/Neovim installations'
+  )
+  _describe 'Dotup options' options
+}
+
+compdef _dotup_completion dotup

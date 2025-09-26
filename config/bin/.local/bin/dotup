@@ -1,19 +1,15 @@
 #!/bin/bash
-# ██████╗  ██████╗ ████████╗███████╗███████╗████████╗██╗   ██╗██████╗
-# ██╔══██╗██╔═══██╗╚══██╔══╝██╔════╝██╔════╝╚══██╔══╝██║   ██║██╔══██╗
-# ██║  ██║██║   ██║   ██║   ███████╗█████╗     ██║   ██║   ██║██████╔╝
-# ██║  ██║██║   ██║   ██║   ╚════██║██╔══╝     ██║   ██║   ██║██╔═══╝
-# ██████╔╝╚██████╔╝   ██║   ███████║███████╗   ██║   ╚██████╔╝██║
-# ╚═════╝  ╚═════╝    ╚═╝   ╚══════╝╚══════╝   ╚═╝    ╚═════╝ ╚═╝
-# Usage❯ dotup
 
-set -e
+# Usage: dotup [arch|asdf|cli|mac|services|shell|vim]
 
-dotup-arch
-dotup-asdf
-dotup-cli
-dotup-mac
-dotup-nnn
-dotup-services
-dotup-tmux
-dotup-vim
+if [ $# -eq 1 ]; then
+    dotup-"$1"
+else
+    dotup-arch
+    dotup-asdf
+    dotup-cli
+    dotup-mac
+    dotup-services
+    dotup-shell
+    dotup-vim
+fi
