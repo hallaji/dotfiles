@@ -17,3 +17,8 @@ type gh > /dev/null 2>&1 && {
   gh extension install lakuapik/gh-inspire
   gh extension upgrade --all
 }
+
+type npm > /dev/null 2>&1 && {
+  npm install -g @github/copilot
+  npm install -g @anthropic-ai/claude-code
+}
