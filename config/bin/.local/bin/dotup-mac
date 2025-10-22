@@ -117,7 +117,8 @@ brew install \
   f1bonacc1/tap/process-compose \
   felixkratz/formulae/borders \
   felixkratz/formulae/sketchybar \
-  koekeishiya/formulae/skhd
+  koekeishiya/formulae/skhd \
+  supabase/tap/supabase
 
 # Core casks
 brew install --cask \
