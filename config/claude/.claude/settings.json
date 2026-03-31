@@ -1,6 +1,24 @@
 {
+  "awsAuthRefresh": "FORCE_NO_ALIAS=true assume -t \"${CULTUREAMP_PROFILE}\"",
+  "awsCredentialExport": "echo '{ \"Credentials\": ' \u0026\u0026 granted credential-process --profile \"${CULTUREAMP_PROFILE}\" 2\u003e /dev/null \u0026\u0026 echo '}'",
+  "env": {
+    "ANTHROPIC_MODEL": "arn:aws:bedrock:us-west-2:529105607725:application-inference-profile/4umdx1tmbi5t",
+    "ANTHROPIC_SMALL_FAST_MODEL": "arn:aws:bedrock:us-west-2:529105607725:application-inference-profile/blba88b3pfv3",
+    "AWS_ACCESS_KEY_ID": "",
+    "AWS_PROFILE": "",
+    "AWS_REGION": "us-west-2",
+    "AWS_SECRET_ACCESS_KEY": "",
+    "AWS_SESSION_TOKEN": "",
+    "CLAUDE_CODE_USE_BEDROCK": "1",
+    "CULTUREAMP_PROFILE": "cultureamp-sandbox/BedrockDevTools",
+    "DISABLE_ERROR_REPORTING": "1",
+    "DISABLE_TELEMETRY": "1",
+    "WILMA_MODEL": "us.anthropic.claude-sonnet-4-5-20250929-v1:0",
+    "WILMA_SMALL_FAST_MODEL": "us.anthropic.claude-3-5-haiku-20241022-v1:0"
+  },
+  "model": "sonnet",
   "statusLine": {
-    "type": "command",
-    "command": "~/.claude/statusline.sh"
+    "command": "~/.claude/statusline.sh",
+    "type": "command"
   }
 }
