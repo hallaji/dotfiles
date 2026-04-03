@@ -18,7 +18,7 @@
   },
   "model": "sonnet",
   "statusLine": {
-    "command": "~/.claude/statusline.sh",
-    "type": "command"
+    "type": "command",
+    "command": "~/.claude/statusline.sh"
   }
 }
