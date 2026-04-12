@@ -137,6 +137,7 @@ brew install --cask \
   font-roboto-mono-nerd-font \
   fork \
   gifox \
+  gitbutler \
   github \
   gcloud-cli \
   itsycal \
