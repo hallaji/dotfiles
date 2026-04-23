@@ -12,6 +12,11 @@ cat << EOF
 ┴ ┴┴└─└─┘┴ ┴
 EOF
 
+# Pacman packages
+# https://wiki.archlinux.org/title/Pacman
+
+sudo pacman -Syu
+
 # Installing Nix
 # https://nix.dev/install-nix#install-nix
 
@@ -21,11 +26,6 @@ type nix &>/dev/null || curl -L https://nixos.org/nix/install | sh -s -- --daemo
 # https://www.jetify.com/docs/devbox/installing_devbox
 
 type devbox &>/dev/null || curl -fsSL https://get.jetify.com/devbox | bash
-
-# Pacman packages
-# https://wiki.archlinux.org/title/Pacman
-
-sudo pacman -Syy
 
 sudo pacman -S --needed \
   alacritty \
@@ -39,11 +39,12 @@ sudo pacman -S --needed \
   firefox \
   git \
   github-cli \
+  go \
   hyprland \
+  inetutils \
   i3 \
   less \
   lolcat \
-  neofetch \
   neovim \
   stow \
   tk \
@@ -57,13 +58,23 @@ sudo pacman -S --needed \
 # Building AUR packages
 # https://aur.archlinux.org
 
-mkdir -p ~/Apps && cd ~/Apps
-git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
-git clone https://aur.archlinux.org/asdf-vm.git && cd asdf-vm && makepkg -si
-git clone https://aur.archlinux.org/snapd.git && cd snapd && makepkg -si
+# https://github.com/Jguer/yay
+sudo rm -rf /tmp/yay && \
+  git clone https://aur.archlinux.org/yay.git /tmp/yay && \
+  cd /tmp/yay && \
+  makepkg -si --noconfirm
+
+# https://asdf-vm.com/guide/getting-started.html#_1-install-asdf
+yay -S asdf-vm
+
+# https://snapcraft.io/docs/tutorials/install-the-daemon/arch-linux/
+sudo rm -rf /tmp/snapd && \
+  git clone https://aur.archlinux.org/snapd.git /tmp/snapd && \
+  cd /tmp/snapd && \
+  makepkg -si --noconfirm
 sudo systemctl enable --now snapd.socket
 sudo systemctl enable --now snapd.apparmor.service
-sudo ln -s /var/lib/snapd/snap /snap
+[ -e /snap ] || sudo ln -s /var/lib/snapd/snap /snap
 
 # Snap on Arch Linux
 # https://snapcraft.io/docs/installing-snap-on-arch-linux
@@ -71,19 +82,14 @@ sudo ln -s /var/lib/snapd/snap /snap
 sudo snap install hey-mail
 sudo snap install spotify
 sudo snap install code --classic
+sudo snap refresh
 
 # 1Pssword CLI
 # https://developer.1password.com/docs/cli/get-started/#step-1-install-1password-cli
-
-if ! type op > /dev/null 2>&1; then
-  ARCH="amd64" && \
-  wget "https://cache.agilebits.com/dist/1P/op2/pkg/v2.30.3/op_linux_${ARCH}_v2.30.3.zip" -O op.zip && \
-  unzip -d op op.zip && \
-  sudo mv op/op /usr/local/bin/ && \
-  rm -r op.zip op && \
-  sudo groupadd -f onepassword-cli && \
-  sudo chgrp onepassword-cli /usr/local/bin/op && \
-  sudo chmod g+s /usr/local/bin/op
-else
-  op update
-fi
+wget "https://cache.agilebits.com/dist/1P/op2/pkg/v2.33.1/op_linux_amd64_v2.33.1.zip" -O op.zip && \
+unzip -d op op.zip && \
+sudo mv op/op /usr/local/bin/ && \
+rm -r op.zip op && \
+sudo groupadd -f onepassword-cli && \
+sudo chgrp onepassword-cli /usr/local/bin/op && \
+sudo chmod g+s /usr/local/bin/op
