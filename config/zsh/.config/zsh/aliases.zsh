@@ -116,6 +116,19 @@ alias ,awsc="change_aws_profile" # Change AWS profile
 alias ,awss="start_ec2_session" # Start EC2 session
 alias ,gcpc="change_gcloud_config" # Change Google Cloud config
 
+# ┌─┐┬─┐┬┌┐┌┌┬┐┌─┐
+# ├─┘├┬┘││││ │ └─┐
+# ┴  ┴└─┴┘└┘ ┴ └─┘
+
+alias ,fig="figlet_show" # Display text in a selected figlet font
+alias ,qt="quote" # Display a random quote
+
+# ┌┬┐┌─┐┬  ┬┌┐ ┌─┐─┐ ┬
+#  ││├┤ └┐┌┘├┴┐│ │┌┴┬┘
+# ─┴┘└─┘ └┘ └─┘└─┘┴ └─
+
+alias ,dxgc="nix-collect-garbage -d" # Delete old generations and free up disk space used by Nix
+
 # ┌─┐┬─┐┌─┐┌┐┌┌┬┐┌─┐┌┬┐
 # │ ┬├┬┘├─┤│││ │ ├┤  ││
 # └─┘┴└─┴ ┴┘└┘ ┴ └─┘─┴┘
@@ -126,10 +139,3 @@ alias ,gd="assume" # Assume a role
 alias ,gdw="assume -c" # Open a web console to the role
 alias ,gdc="assume -ar" # Open console using active role
 [[ "$PROFILE" == "CLTRMP" ]] && alias ,gdp="granted sso populate --sso-region us-west-2 https://cultureamp.awsapps.com/start" # Populate SSO profiles (CLTRMP profile only)
-
-# ┌─┐┬─┐┬┌┐┌┌┬┐┌─┐
-# ├─┘├┬┘││││ │ └─┐
-# ┴  ┴└─┴┘└┘ ┴ └─┘
-
-alias ,fig="figlet_show" # Display text in a selected figlet font
-alias ,qt="quote" # Display a random quote
