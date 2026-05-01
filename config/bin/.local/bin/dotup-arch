@@ -46,6 +46,7 @@ sudo pacman -S --needed \
   less \
   lolcat \
   neovim \
+  pi-coding-agent \
   stow \
   tk \
   tmux \

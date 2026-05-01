@@ -80,6 +80,7 @@ brew install \
   node \
   pinentry \
   pinentry-mac \
+  pi-coding-agent \
   poetry \
   pyenv \
   pyenv-virtualenv \
