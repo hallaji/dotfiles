@@ -110,6 +110,16 @@ start_ec2_session() {
   fi
 }
 
+# Generate AWS config from Granted SSO
+generate_aws_config() {
+  granted sso generate --sso-region us-west-2 https://cultureamp.awsapps.com/start \
+    | sed -e '/^\[profile.*-eu\// s/$/\nregion = eu-west-1/g' \
+          -e '/^\[profile.*-au\// s/$/\nregion = ap-southeast-2/g' \
+          -e '/^\[profile.*-production/ s/$/\ngranted_icon = dollar/g' \
+     > ~/.aws/config
+  echo "CLTRMP AWS config generated at ~/.aws/config"
+}
+
 # ┌─┐┌─┐┌─┐
 # │ ┬│  ├─┘
 # └─┘└─┘┴

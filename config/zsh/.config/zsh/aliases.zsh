@@ -138,4 +138,4 @@ alias assume=". assume" # Assume a role
 alias ,gd="assume" # Assume a role
 alias ,gdw="assume -c" # Open a web console to the role
 alias ,gdc="assume -ar" # Open console using active role
-[[ "$PROFILE" == "CLTRMP" ]] && alias ,gdp="granted sso populate --sso-region us-west-2 https://cultureamp.awsapps.com/start" # Populate SSO profiles (CLTRMP profile only)
+[[ "$PROFILE" == "CLTRMP" ]] && alias ,gdp="generate_aws_config" # Generate AWS config (CLTRMP profile only)
