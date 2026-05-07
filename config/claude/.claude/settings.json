@@ -1,5 +1,6 @@
 {
   "model": "sonnet",
+  "theme": "dark",
   "statusLine": {
     "type": "command",
     "command": "~/.claude/statusline.sh"
