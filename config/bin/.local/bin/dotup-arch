@@ -44,8 +44,10 @@ sudo pacman -S --needed \
   inetutils \
   i3 \
   less \
+  libfido2 \
   lolcat \
   neovim \
+  pam-u2f \
   pi-coding-agent \
   stow \
   tk \
@@ -53,6 +55,7 @@ sudo pacman -S --needed \
   ttf-jetbrains-mono-nerd \
   wofi \
   xclip \
+  yubikey-manager \
   zoxide \
   zsh
 
