@@ -39,6 +39,10 @@ key-mapping.preset = "qwerty" # qwerty|dvorak
 [exec.env-vars]
   PATH = "/opt/homebrew/bin:/opt/homebrew/sbin:${PATH}"
 
+# https://nikitabobko.github.io/AeroSpace/guide#on-window-detected-callback
+# Print the list of running applications that appears in the Dock and may have a user interface:
+# > aerospace list-apps
+
 [[on-window-detected]]
   if.app-id = "company.thebrowser.Browser"
   run = "move-node-to-workspace 1"
@@ -58,6 +62,10 @@ key-mapping.preset = "qwerty" # qwerty|dvorak
 [[on-window-detected]]
   if.app-id = "com.tinyspeck.slackmacgap"
   run = "move-node-to-workspace 4"
+
+[[on-window-detected]]
+  if.app-id = "com.hey.app.desktop"
+  run = "move-node-to-workspace 6"
 
 [[on-window-detected]]
   if.app-id = "notion.id"
