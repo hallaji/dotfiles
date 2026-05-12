@@ -4,5 +4,9 @@
     "type": "command",
     "command": "~/.claude/statusline.sh"
   },
-  "theme": "dark"
+  "enabledPlugins": {
+    "gopls-lsp@claude-plugins-official": true
+  },
+  "theme": "dark-daltonized",
+  "editorMode": "vim"
 }
