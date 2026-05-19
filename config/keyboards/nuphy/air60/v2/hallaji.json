@@ -65,7 +65,7 @@
       "KC_J",
       "KC_K",
       "KC_L",
-      "MT(MOD_LCTL | MOD_LALT | MOD_LGUI,KC_SCLN)",
+      "MT(MOD_LCTL | MOD_LSFT | MOD_LALT,KC_SCLN)",
       "KC_QUOT",
       "KC_NO",
       "KC_ENT",
