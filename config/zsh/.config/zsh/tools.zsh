@@ -12,7 +12,17 @@
 # └─┘┘└┘└─┘  ┴  ┴ ┴└─┘└─┘└┴┘└─┘┴└──┴┘
 # https://developer.1password.com/docs/cli/
 
-type op &>/dev/null && eval "$(op completion zsh)"; compdef _op op
+if type op &>/dev/null; then
+  _op_completion="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/op_completion.zsh"
+  # Cache completion to disk; only regenerate when op binary is newer than the cache
+  if [[ ! -f "$_op_completion" || "$commands[op]" -nt "$_op_completion" ]]; then
+    mkdir -p "${_op_completion:h}"
+    op completion zsh >| "$_op_completion"
+  fi
+  source "$_op_completion"
+  compdef _op op
+  unset _op_completion
+fi
 
 
 # ┌┬┐┬┬─┐┌─┐┌┐┌┬  ┬
