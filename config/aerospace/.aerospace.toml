@@ -64,14 +64,6 @@ key-mapping.preset = "qwerty" # qwerty|dvorak
   run = "move-node-to-workspace 4"
 
 [[on-window-detected]]
-  if.app-id = "com.hey.app.desktop"
-  run = "move-node-to-workspace 6"
-
-[[on-window-detected]]
-  if.app-id = "notion.id"
-  run = "move-node-to-workspace 7"
-
-[[on-window-detected]]
   if.app-id = "com.cron.electron"
   run = "move-node-to-workspace 8"
 
