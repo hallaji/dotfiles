@@ -1,5 +1,4 @@
 {
-  "model": "sonnet",
   "statusLine": {
     "type": "command",
     "command": "~/.claude/statusline.sh"
@@ -7,6 +6,6 @@
   "enabledPlugins": {
     "gopls-lsp@claude-plugins-official": true
   },
-  "theme": "dark-daltonized",
+  "theme": "light-ansi",
   "editorMode": "vim"
 }
