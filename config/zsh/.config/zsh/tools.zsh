@@ -177,8 +177,9 @@ fi
 # ├┬┘├─┤││││  ├─┤├┤ ├┬┘
 # ┴└─┴ ┴┘└┘└─┘┴ ┴└─┘┴└─
 # https://rancherdesktop.io
+# https://github.com/rancher-sandbox/rancher-desktop
 
-export PATH="$HOME/.rd/bin:$PATH"
+[[ -d "$HOME/.rd/bin" ]] && export PATH="$HOME/.rd/bin:$PATH"
 
 
 # ┌─┐┌┬┐┌─┐┬─┐┌─┐┬ ┬┬┌─┐
@@ -238,11 +239,3 @@ fi
 # https://www.jetify.com/docs/devbox/
 
 type devbox &>/dev/null && eval "$(devbox global shellenv --init-hook)"
-
-
-# ┬─┐┌─┐┌┐┌┌─┐┬ ┬┌─┐┬─┐
-# ├┬┘├─┤││││  ├─┤├┤ ├┬┘
-# ┴└─┴ ┴┘└┘└─┘┴ ┴└─┘┴└─
-# https://github.com/rancher-sandbox/rancher-desktop
-
-[[ -d "$HOME/.rd/bin" ]] && export PATH="$HOME/.rd/bin:$PATH"
