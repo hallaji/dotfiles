@@ -64,12 +64,16 @@ key-mapping.preset = "qwerty" # qwerty|dvorak
   run = "move-node-to-workspace 4"
 
 [[on-window-detected]]
+  if.app-id = "com.hey.app.desktop"
+  run = "move-node-to-workspace 7"
+
+[[on-window-detected]]
   if.app-id = "com.cron.electron"
-  run = "move-node-to-workspace 8"
+  run = "move-node-to-workspace 9"
 
 [[on-window-detected]]
   if.app-id = "com.anthropic.claudefordesktop"
-  run = "move-node-to-workspace 9"
+  run = "move-node-to-workspace 0"
 
 [mode.main.binding]
   alt-shift-ctrl-s = "mode service"
