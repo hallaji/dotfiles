@@ -2,6 +2,7 @@
 
 | Keyboard | VIA | QMK | Flashing Mode | Flash Command |
 |----|----|----|----|----|
+| [ZSA Voyager](https://www.zsa.io/voyager) | | [QMK](https://github.com/zsa/qmk_firmware/tree/firmware25/keyboards/zsa/voyager) | Reset button | ```flash-keyboard zsa/voyager hallaji --build ``` |
 | [NuPhy Air60 V2](https://nuphy.com) | [VIA](keyboards/nuphy/air60/v2/via.json) | | Key `[0][0]` (top left) | |
 | [Work Louder Creator Micro](https://worklouder.cc) | [VIA](keyboards/work_louder/micro/keymaps/hallaji/via.json) | [QMK](https://github.com/qmk/qmk_firmware/tree/master/keyboards/work_louder/micro) | Horizontal encoder key (top left) | |
 | [Keychron Q4](https://www.keychron.com) | | [QMK](https://github.com/Keychron/qmk_firmware/tree/master/keyboards/keychron/q4) | Key `[0][0]` (top left) | ```flash-keyboard keychron/q4/ansi/v2 hallaji --build ``` |

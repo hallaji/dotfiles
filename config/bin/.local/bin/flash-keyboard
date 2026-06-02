@@ -12,13 +12,24 @@ if [ "$#" -ne 2 ] && [ "$#" -ne 3 ]; then
   exit 1
 fi
 
-BRAND=$(echo $1 | cut -d/ -f1)
+if [ -z "$DOTFILES_HOME" ]; then
+  echo "⚠ DOTFILES_HOME is not set." >&2
+  exit 1
+fi
+
+BRAND=$(echo "$1" | cut -d/ -f1)
 
 case $BRAND in
 "keychron")
   FORK="keychron/qmk_firmware"
   BRANCH="master"
   COMMIT="b35bac6afbadc88cf6e8e3d1c8cc7494a510bb60" # last successful build (for history)
+  BUILD="${1//[\/]/_}_$2.bin"
+  ;;
+"zsa")
+  FORK="zsa/qmk_firmware"
+  BRANCH="firmware25"
+  COMMIT="f94ba44621d10b4d8549e5ad235f173963d3b89e" # last successful build (for history)
   BUILD="${1//[\/]/_}_$2.bin"
   ;;
 *)
@@ -29,7 +40,12 @@ case $BRAND in
   ;;
 esac
 
-if [ ! -z "$3" ] && [ "$3" = "--build" ]; then
+if [ -n "$3" ] && [ "$3" != "--build" ]; then
+  echo "⚠ Unknown option: $3. Did you mean --build?" >&2
+  exit 1
+fi
+
+if [ -n "$3" ] && [ "$3" = "--build" ]; then
   echo "⌨️ Building the firmware..."
   commands="
     git config --global http.sslVerify false;
@@ -59,6 +75,9 @@ sleep 1
 case $BRAND in
 "keychron")
   dfu-util -a 0 -d 0483:DF11 -s 0x8000000:leave -D "$FILE"
+  ;;
+"zsa")
+  dfu-util -a 0 -d 3297:0791 -s 0x08002000:leave -D "$FILE"
   ;;
 *)
   dfu-programmer atmega32u4 erase --force
