@@ -136,8 +136,14 @@ date=(
   script="$PLUGIN_DIR/date.sh"
 )
 
-week=(
+weekday=(
   icon="󱨱"
+  update_freq=3600
+  script="$PLUGIN_DIR/weekday.sh"
+)
+
+week=(
+  icon="󱨴"
   update_freq=3600
   script="$PLUGIN_DIR/week.sh"
 )
@@ -153,7 +159,9 @@ volume=(
 
 sketchybar \
   --add item clock right --set clock "${clock[@]}" \
+  --add item separator-clock right --set separator-clock "${separator[@]}" \
   --add item date right --set date "${date[@]}" \
+  --add item weekday right --set weekday "${weekday[@]}" \
   --add item week right --set week "${week[@]}" \
   --add item separator-week right --set separator-week "${separator[@]}" \
   --add item battery right --set battery "${battery[@]}" --subscribe battery system_woke power_source_change \
