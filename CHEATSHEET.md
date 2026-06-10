@@ -220,9 +220,11 @@ Checkout keyboard [keymaps](../keyboards) and [Keycodes](https://github.com/qmk/
 - `⌘ + d` Vertical pane
 - `⌘⇧ + d` Horizontal pane
 - `⌘ + w` Close pane/tab
+- `⌘⌥ + w` Kill current session
 - `⌘ + t` Open a new tab
 - `⌘ + r` Rename a tab
 - `⌘⇧ + r` Rename a session
+- `⌘⌥ + r` Reload tmux config
 - `⌘ + c` Start tmux copy mode
 - `⌘ + v` Paste from clipboard
 

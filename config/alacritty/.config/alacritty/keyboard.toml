@@ -83,6 +83,16 @@ chars = "\u0002$"
 key = "R"
 mods = "Command|Shift"
 
+[[keyboard.bindings]] # Reload tmux config `⌃b` + `⌃r`
+chars = "\u0002\u0012"
+key = "R"
+mods = "Command|Alt"
+
+[[keyboard.bindings]] # Kill current session `⌃b` + `Q`
+chars = "\u0002Q"
+key = "W"
+mods = "Command|Alt"
+
 [[keyboard.bindings]] # Move to previous session `⌃b` + `(`
 chars = "\u0002("
 key = "Left"
