@@ -53,7 +53,7 @@
 - Move the cursor in vi-mode: `h` | `l` (left or right)
 - Go through history in vi-mode: `j` | `k` (down or up)
 - Move the cursor in Alacritty vi-mode: `h` | `j` | `k` | `l`
-- Jump between Tmux tabs `⌘⇧` + (`h` | `l`)
+- Jump between Tmux tabs `⌃⇧Tab` (previous) | `⌃Tab` (next)
 - Jump between Tmux sessions `⌘⇧` + (`←` | `→`)
 - Switch to a tab by number `⌘` + (`1` | `2` | `3` | etc.)
 
@@ -222,6 +222,8 @@ Checkout keyboard [keymaps](../keyboards) and [Keycodes](https://github.com/qmk/
 - `⌘ + w` Close pane/tab
 - `⌘⌥ + w` Kill current session
 - `⌘ + t` Open a new tab
+- `⌃⇧Tab` Previous tab
+- `⌃Tab` Next tab
 - `⌘ + r` Rename a tab
 - `⌘⇧ + r` Rename a session
 - `⌘⌥ + r` Reload tmux config

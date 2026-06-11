@@ -105,13 +105,13 @@ mods = "Command|Shift"
 
 [[keyboard.bindings]] # Move to previous window/tab `⌃b` + `p`
 chars = "\u0002p"
-key = "H"
-mods = "Command|Shift"
+key = "Tab"
+mods = "Control|Shift"
 
 [[keyboard.bindings]] # Move to next window/tab `⌃b` + `n`
 chars = "\u0002n"
-key = "L"
-mods = "Command|Shift"
+key = "Tab"
+mods = "Control"
 
 [[keyboard.bindings]] # Resize current pane to left `⌃b` + `H`
 chars = "\u0002H"
