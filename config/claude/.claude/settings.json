@@ -6,6 +6,11 @@
   "enabledPlugins": {
     "gopls-lsp@claude-plugins-official": true
   },
-  "theme": "light-ansi",
-  "editorMode": "vim"
+  "voice": {
+    "enabled": true,
+    "mode": "hold"
+  },
+  "theme": "dark-ansi",
+  "editorMode": "vim",
+  "voiceEnabled": true
 }
