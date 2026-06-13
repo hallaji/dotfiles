@@ -2,7 +2,6 @@
     "modules": [
         "zsa/oryx",
         "zsa/mousejiggler",
-        "zsa/doubleclick",
         "zsa/navigator_trackpad",
         "zsa/defaults"
     ]
