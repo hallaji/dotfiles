@@ -78,6 +78,7 @@ brew install \
   neovim \
   nmap \
   node \
+  pgcli \
   pinentry \
   pinentry-mac \
   pi-coding-agent \
