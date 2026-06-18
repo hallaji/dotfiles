@@ -45,6 +45,7 @@ separator=(
 # ┴─┘└─┘└   ┴
 
 sketchybar --add event aerospace_workspace_change
+sketchybar --add event aerospace_mode_change
 
 host=(
   icon=""
@@ -63,10 +64,22 @@ front_app=(
   script="$PLUGIN_DIR/front-app.sh"
 )
 
+# Mode glyph; toggled instantly by aerospace.sh on aerospace_mode_change.
+mode_indicator=(
+  drawing=off
+  label.font="Hack Nerd Font:Bold:18.0"
+  icon.padding_left=0
+  icon.padding_right=0
+  label.padding_left=0
+  label.padding_right=0
+  background.padding_left=-6
+)
+
 sketchybar \
   --add item host left --set host "${host[@]}" \
   --add item separator-host left --set separator-host "${separator[@]}" \
-  --add item aerospace left --set aerospace "${aerospace[@]}" --subscribe aerospace aerospace_workspace_change \
+  --add item aerospace left --set aerospace "${aerospace[@]}" --subscribe aerospace aerospace_workspace_change aerospace_mode_change \
+  --add item mode_indicator left --set mode_indicator "${mode_indicator[@]}" \
   --add item front_app left --set front_app "${front_app[@]}" --subscribe front_app front_app_switched
 
 # ┌─┐┌─┐┌┐┌┌┬┐┌─┐┬─┐
