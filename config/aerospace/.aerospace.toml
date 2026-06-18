@@ -132,8 +132,7 @@ key-mapping.preset = "qwerty" # qwerty|dvorak
   alt-shift-ctrl-q = "close-all-windows-but-current"
   alt-shift-ctrl-d = "macos-native-minimize"
   alt-shift-ctrl-f = "fullscreen"
-  alt-shift-ctrl-space = "macos-native-fullscreen"
-  alt-shift-ctrl-backspace = "macos-native-fullscreen"
+  alt-shift-ctrl-enter = "macos-native-fullscreen"
   alt-shift-ctrl-esc = "macos-native-fullscreen off"
   alt-shift-ctrl-backtick = "focus-monitor next --wrap-around"
   alt-shift-ctrl-h = "exec-and-forget $HOME/.config/aerospace/focus-or-workspace.sh left"
@@ -142,8 +141,9 @@ key-mapping.preset = "qwerty" # qwerty|dvorak
   alt-shift-ctrl-l = "exec-and-forget $HOME/.config/aerospace/focus-or-workspace.sh right"
   alt-shift-ctrl-right = "workspace --wrap-around next"
   alt-shift-ctrl-left = "workspace --wrap-around prev"
-  alt-shift-ctrl-up = "workspace-back-and-forth"
-  alt-shift-ctrl-down = "focus-back-and-forth"
+  alt-shift-ctrl-semicolon = "focus-back-and-forth"
+  alt-shift-ctrl-space = "workspace-back-and-forth"
+  alt-shift-ctrl-backspace = "workspace-back-and-forth"
 
 [mode.move.binding]
   alt-shift-ctrl-esc = ["mode main", "exec-and-forget sketchybar --trigger aerospace_mode_change MODE=main"]
