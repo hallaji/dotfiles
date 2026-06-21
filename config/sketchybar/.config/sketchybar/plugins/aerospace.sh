@@ -34,16 +34,20 @@ if [ "$SENDER" = "aerospace_mode_change" ]; then
   # Recolor the focused-window border to mark the active mode (instant; talks to
   # the running borders daemon). Border reset color = borders' default active.
   borders active_color="$BORDER" 2>/dev/null
-  sketchybar --set "$NAME" label.color="$COLOR" \
+  sketchybar --set aerospace label.color="$COLOR" \
+             --set window_count label.color="$COLOR" \
              --set mode_indicator drawing="$DRAWING" label="$GLYPH" label.color="$COLOR"
   exit 0
 fi
 
-# Workspace/refresh: update the symbols only. Don't set label.color here so the
-# active mode color (if any) is preserved across workspace changes.
-FOCUSED=$(get_symbol $(aerospace list-workspaces --focused))
-ACTIVE=$(get_symbol $(aerospace list-workspaces --monitor 1 --empty no --count))
-TOTAL=$(get_symbol $(aerospace list-workspaces --all --count))
+# Workspace/refresh: rebuild the aerospace label and window count. Don't set
+# label.color here so the active mode color (if any) is preserved across
+# workspace changes.
+FOCUSED=$(get_symbol "$(aerospace list-workspaces --focused)")
+ACTIVE=$(get_symbol "$(aerospace list-workspaces --monitor 1 --empty no --count)")
+TOTAL=$(get_symbol "$(aerospace list-workspaces --all --count)")
+WINDOWS=$(aerospace list-windows --workspace focused --count 2>/dev/null)
 SEPARATOR="↠" # ↞↠
 
-sketchybar --set "$NAME" label="$FOCUSED$SEPARATOR$TOTAL"
+sketchybar --set aerospace label="$FOCUSED$SEPARATOR$TOTAL" \
+           --set window_count label="${WINDOWS:-0}"
