@@ -1,7 +1,8 @@
 #!/bin/sh
 
-PERCENTAGE="$(pmset -g batt | grep -Eo "\d+%" | cut -d% -f1)"
-CHARGING="$(pmset -g batt | grep 'AC Power')"
+BATT=$(pmset -g batt)
+PERCENTAGE=$(echo "$BATT" | grep -Eo "\d+%" | cut -d% -f1)
+CHARGING=$(echo "$BATT" | grep 'AC Power')
 
 if [ "$PERCENTAGE" = "" ]; then
   exit 0
@@ -23,4 +24,7 @@ if [ "$CHARGING" != "" ]; then
   ICON=""
 fi
 
-sketchybar --set "$NAME" icon="$ICON" label="${PERCENTAGE}%"
+TIME=$(echo "$BATT" | grep "discharging" | grep -Eo "[0-9]+:[0-9]+ remaining" | cut -d' ' -f1)
+LABEL="${PERCENTAGE}%${TIME:+ $TIME}"
+
+sketchybar --set "$NAME" icon="$ICON" label="$LABEL"

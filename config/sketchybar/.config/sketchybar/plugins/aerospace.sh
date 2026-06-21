@@ -11,8 +11,7 @@ get_symbol() {
     7) echo "󰭀" ;;
     8) echo "󰭁" ;;
     9) echo "󰭂" ;;
-    10) echo "󰿩" ;;
-    0) echo "󰿩" ;;
+    0|10) echo "󰿩" ;;
     *) echo "󰿫" ;;
   esac
 }
@@ -44,7 +43,6 @@ fi
 # label.color here so the active mode color (if any) is preserved across
 # workspace changes.
 FOCUSED=$(get_symbol "$(aerospace list-workspaces --focused)")
-ACTIVE=$(get_symbol "$(aerospace list-workspaces --monitor 1 --empty no --count)")
 TOTAL=$(get_symbol "$(aerospace list-workspaces --all --count)")
 WINDOWS=$(aerospace list-windows --workspace focused --count 2>/dev/null)
 SEPARATOR="↠" # ↞↠

@@ -1,3 +1,3 @@
 #!/bin/sh
 
-sketchybar -m --set "$NAME" label="$(memory_pressure | grep "System-wide memory free percentage:" | awk '{ printf("%02.0f\n", 100-$5"%") }')%"
+sketchybar --set "$NAME" label="$(memory_pressure | awk '/System-wide memory free percentage:/ { printf "%02.0f%%\n", 100-$5 }')"
