@@ -1,4 +1,6 @@
-#!/bin/sh
+#!/bin/bash
+
+source "$CONFIG_DIR/colors.sh"
 
 get_symbol() {
   case $1 in
@@ -25,9 +27,9 @@ if [ "$SENDER" = "aerospace_mode_change" ]; then
   # order, which would leave the border stuck. `mode main`/`mode move` run
   # synchronously in the binding before the trigger, so this is authoritative.
   case "$(aerospace list-modes --current 2>/dev/null)" in
-    move)    GLYPH="󰰏"; COLOR=0xfff47067; BORDER=0xfff47067; DRAWING=on ;;
-    service) GLYPH="󰰡"; COLOR=0xfff5b168; BORDER=0xfff5b168; DRAWING=on ;;
-    *)       GLYPH="";  COLOR=0xffffffff; BORDER=0xff04f6f6; DRAWING=off ;;
+    move)    GLYPH="󰰏"; COLOR=$PALETTE_SE_ERROR;    BORDER=$PALETTE_SE_ERROR;    DRAWING=on ;;
+    service) GLYPH="󰰡"; COLOR=$PALETTE_SE_WARNING; BORDER=$PALETTE_SE_WARNING; DRAWING=on ;;
+    *)       GLYPH="";  COLOR=$PALETTE_BA_PRIMARY_FG;  BORDER=$PALETTE_SE_PRIMARY; DRAWING=off ;;
   esac
 
   # Recolor the focused-window border to mark the active mode (instant; talks to

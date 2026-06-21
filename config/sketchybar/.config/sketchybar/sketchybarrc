@@ -12,20 +12,23 @@
 
 PLUGIN_DIR="$CONFIG_DIR/plugins"
 
+source "$CONFIG_DIR/colors.sh"
+source "$CONFIG_DIR/fonts.sh"
+
 sketchybar --bar \
   position=top \
   height=36 \
   notch_offset=36 \
   sticky=on \
-  color=0x00000000 # transparent
+  color=$TRANSPARENT
 
 default=(
   padding_left=2
   padding_right=2
-  icon.font="Hack Nerd Font:Bold:15.0"
-  label.font="Hack Nerd Font:Regular:13.0"
-  icon.color=0xff04f6f6
-  label.color=0xffffffff
+  icon.font="$FONT_ICON"
+  label.font="$FONT_LABEL"
+  icon.color=$PALETTE_SE_PRIMARY
+  label.color=$PALETTE_BA_PRIMARY_FG
   icon.padding_left=4
   icon.padding_right=2
   label.padding_left=4
@@ -35,7 +38,7 @@ sketchybar --default "${default[@]}"
 
 separator=(
   icon=""
-  icon.color=0xfff47067
+  icon.color=$PALETTE_SE_ERROR
   background.padding_left=-2
   background.padding_right=-2
 )
@@ -55,7 +58,7 @@ host=(
 aerospace=(
   icon=""
   label.padding_right=4
-  label.font="Hack Nerd Font:Regular:24.0"
+  label.font="$FONT_WORKSPACE"
   update_freq=5
   script="$PLUGIN_DIR/aerospace.sh"
 )
@@ -63,7 +66,7 @@ aerospace=(
 window_count=(
   icon.drawing=off
   padding_left=0
-  label.font="Hack Nerd Font:Regular:10.0"
+  label.font="$FONT_WINDOW_COUNT"
   label.padding_left=2
   label.padding_right=8
   update_freq=5
@@ -78,7 +81,7 @@ front_app=(
 # Mode glyph; toggled instantly by aerospace.sh on aerospace_mode_change.
 mode_indicator=(
   drawing=off
-  label.font="Hack Nerd Font:Bold:18.0"
+  label.font="$FONT_MODE"
   icon.padding_left=0
   icon.padding_right=0
   label.padding_left=0
@@ -119,9 +122,9 @@ disk=(
 network_down=(
   y_offset=-4
   background.padding_right=-67
-  label.font="Hack Nerd Font:Regular:9.0"
-  icon.font="Hack Nerd Font:Regular:10.0"
-  icon.highlight_color=0xfff5b168
+  label.font="$FONT_NET_LABEL"
+  icon.font="$FONT_NET_ICON"
+  icon.highlight_color=$PALETTE_SE_ERROR
   icon=""
   update_freq=1
   script="$PLUGIN_DIR/network.sh"
@@ -130,9 +133,9 @@ network_down=(
 network_up=(
   y_offset=5
   icon=""
-  label.font="Hack Nerd Font:Regular:9.0"
-  icon.font="Hack Nerd Font:Regular:10.0"
-  icon.highlight_color=0xffe86db2
+  label.font="$FONT_NET_LABEL"
+  icon.font="$FONT_NET_ICON"
+  icon.highlight_color=$PALETTE_SE_ERROR
   update_freq=1
   script="$PLUGIN_DIR/network.sh"
 )
