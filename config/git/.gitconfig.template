@@ -7,8 +7,8 @@
 # https://git-scm.com/docs/git-config
 
 [user]
-  name = ${USER_NAME}
-  email = ${USER_EMAIL}
+  name = ${GIT_USER_NAME}
+  email = ${GIT_USER_EMAIL}
   signingkey = ${SIGNING_KEY_SSH}
 
 [gpg]

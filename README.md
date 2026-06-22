@@ -13,9 +13,7 @@
 
 ## Prerequisites
 
-The [GNU Stow](https://www.gnu.org/software/stow/manual/stow.html) is a symlink
-manager that facilitates the creation of symbolic links from the `config`
-directory to target directories (typically the home directory).
+Install [GNU Stow](https://www.gnu.org/software/stow/manual/stow.html), a symlink manager used to link configuration packages into the home directory.
 
 ```shell
 sudo pacman -S stow # arch
@@ -25,19 +23,12 @@ brew install stow # mac
 
 ## Setup
 
-### 1. Environment Variables
+### 1. Symlink Packages
 
-The `config/env` package contains environment variables used by tools. Copy the
-example file and replace values with your own.
-
-```shell
-cp config/env/.env.example config/env/.env
-```
-
-### 2. Stowing Configurations
+Use `stow` to symlink configuration packages into the home directory.
 
 ```shell
-# Essential packages
+# Essential packages (required)
 stow env bin gnustow
 
 # Mac-specific
@@ -52,13 +43,28 @@ stow alacritty asdf aws bundler claude ctags curl devbox gh git gradle granted \
      vim zsh 1password
 ```
 
-### 3. Setup
+### 2. Configure Personal Settings
 
-The `dotup` command installs and updates tools and configurations.
+The `config/env` package contains base environment variables covering paths, editor
+preferences, platform detection, and tool configuration. Run `dotup personal` to
+interactively configure personal settings including tokens, signing keys, and user
+information, stored outside the repo at `~/.local/personal/env`.
 
-```shell
-dotup [arch|asdf|cli|mac|services|shell|vim]
-```
+### 3. Provision Tools
+
+The `dotup` command handles both fresh installs and ongoing maintenance of tools and configurations.
+
+| Command           | Description                    |
+| ----------------- | ------------------------------ |
+| `dotup`           | Run all                        |
+| `dotup arch`      | Arch-specific installations    |
+| `dotup asdf`      | ASDF plugins                   |
+| `dotup cli`       | CLI tools                      |
+| `dotup mac`       | macOS-specific installations   |
+| `dotup personal`  | Personal settings              |
+| `dotup services`  | System services                |
+| `dotup shell`     | Shell installations            |
+| `dotup vim`       | Vim/Neovim installations       |
 
 ---
 

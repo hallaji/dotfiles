@@ -6,6 +6,7 @@
 # ╚══════╝╚══════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═══╝  ╚═══╝
 
 [ -f ~/.env ] && source ~/.env
+[ -f "${XDG_PERSONAL_HOME}/env" ] && source "${XDG_PERSONAL_HOME}/env"
 
 # Set profile based on hostname
 case "$(hostname)" in

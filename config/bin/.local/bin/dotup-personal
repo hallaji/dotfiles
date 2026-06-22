@@ -1,0 +1,157 @@
+#!/bin/bash
+# shellcheck disable=SC1090,SC1091
+
+set -e
+
+cat << 'EOF'
+┌─┐┌─┐┬─┐┌─┐┌─┐┌┐┌┌─┐┬
+├─┘├┤ ├┬┘└─┐│ ││││├─┤│
+┴  └─┘┴└─└─┘└─┘┘└┘┴ ┴┴─┘
+EOF
+
+[ -f ~/.env ] && source ~/.env
+XDG_PERSONAL_HOME="${XDG_PERSONAL_HOME:-${HOME}/.local/personal}"
+PERSONAL_ENV_FILE="${XDG_PERSONAL_HOME}/env"
+
+mkdir -p "$XDG_PERSONAL_HOME"
+chmod 700 "$XDG_PERSONAL_HOME"
+
+BOLD_CYAN='\033[1;36m'
+RED='\033[0;31m'
+RESET='\033[0m'
+
+VARS=(
+  GITHUB_ACCESS_TOKEN:secret
+  GITHUB_REGISTRY_TOKEN:secret
+  GITHUB_USER
+  OP_SERVICE_ACCOUNT_TOKEN:secret
+  SIGNING_KEY_GPG
+  SIGNING_KEY_SSH
+  GIT_USER_EMAIL
+  GIT_USER_NAME
+)
+
+# Read a secret value echoing * per character, supports backspace and paste
+read_secret() {
+  local prompt="$1" _outvar="$2" _value="" char="" old_stty
+  printf '%s' "$prompt"
+  old_stty="$(stty -g </dev/tty 2>/dev/null)"
+  stty -echo </dev/tty 2>/dev/null
+  trap 'stty "$old_stty" </dev/tty 2>/dev/null' INT TERM EXIT
+  while IFS= read -r -s -n1 char </dev/tty; do
+    if [[ -z "$char" ]]; then
+      break
+    elif [[ "$char" == $'\177' || "$char" == $'\010' ]]; then
+      if [[ -n "$_value" ]]; then
+        _value="${_value%?}"
+        printf '\b \b'
+      fi
+    else
+      _value+="$char"
+      printf '*'
+    fi
+  done
+  stty "$old_stty" </dev/tty 2>/dev/null
+  trap - INT TERM EXIT
+  echo
+  printf -v "$_outvar" '%s' "$_value"
+}
+
+# Read a saved value directly from the file (not the live environment)
+saved_value() {
+  grep -m1 "^export ${1}=" "$PERSONAL_ENV_FILE" 2>/dev/null | cut -d'"' -f2
+}
+
+# Check if a key exists in the file regardless of value
+key_exists() {
+  grep -q "^export ${1}=" "$PERSONAL_ENV_FILE" 2>/dev/null
+}
+
+# Load existing saved values as defaults so unchanged ones are preserved
+if [ -f "$PERSONAL_ENV_FILE" ]; then
+  for entry in "${VARS[@]}"; do
+    var="${entry%%:*}"
+    printf -v "$var" '%s' "$(saved_value "$var")"
+  done
+fi
+
+if command -v fzf &>/dev/null; then
+  entries=""
+  for entry in "${VARS[@]}"; do
+    var="${entry%%:*}"
+    if [[ -n "$(saved_value "$var")" ]]; then
+      entries+="$(printf '%b%s %b' "$BOLD_CYAN" "$var" "$RESET")\n"
+    elif key_exists "$var"; then
+      entries+="$(printf '%s ' "$var")\n"
+    else
+      entries+="$(printf '%b%s %b' "$RED" "$var" "$RESET")\n"
+    fi
+  done
+
+  selected_vars=()
+  while IFS= read -r line; do
+    [[ -z "$line" ]] && continue
+    selected_vars+=("$(awk '{print $1}' <<< "$line")")
+  done < <(printf "%b" "$entries" \
+    | fzf --multi --ansi \
+        --prompt="Select to update (Tab/Space=select, Enter=confirm): " \
+        --bind 'space:toggle') || true
+
+  for var in "${selected_vars[@]}"; do
+    entry=""
+    for e in "${VARS[@]}"; do
+      [[ "${e%%:*}" == "$var" ]] && entry="$e" && break
+    done
+    if [[ "$entry" == *:secret ]]; then
+      read_secret "${var}: " value
+    else
+      read -r -p "${var}: " value </dev/tty
+    fi
+    printf -v "$var" '%s' "$value"
+  done
+else
+  ask() {
+    local var="$1"
+    local secret="${2:-false}"
+    read -r -p "Update ${var}? [y/N] " answer </dev/tty
+    if [[ "$answer" =~ ^[Yy]$ ]]; then
+      if [[ "$secret" == "true" ]]; then
+        read_secret "${var}: " value
+      else
+        read -r -p "${var}: " value </dev/tty
+      fi
+      printf -v "$var" '%s' "$value"
+    fi
+  }
+
+  for entry in "${VARS[@]}"; do
+    var="${entry%%:*}"
+    if [[ "$entry" == *:secret ]]; then
+      ask "$var" true
+    else
+      ask "$var"
+    fi
+  done
+fi
+
+{
+  for entry in "${VARS[@]}"; do
+    var="${entry%%:*}"
+    printf 'export %s="%s"\n' "$var" "${!var}"
+  done
+} > "$PERSONAL_ENV_FILE"
+
+chmod 600 "$PERSONAL_ENV_FILE"
+
+# https://www.1password.dev/service-accounts/use-with-1password-cli
+if command -v op &>/dev/null; then
+  export OP_SERVICE_ACCOUNT_TOKEN
+  account_json="$(op user get --me --format json 2>/dev/null)" || true
+  account_type="$(printf '%s' "$account_json" | grep -o '"type": *"[^"]*"' | cut -d'"' -f4)" || true
+  account_name="$(printf '%s' "$account_json" | grep -o '"name": *"[^"]*"' | cut -d'"' -f4)" || true
+  if [[ "$account_type" == "SERVICE_ACCOUNT" && "$account_name" == "CLI" ]]; then
+    echo " 1Password service account verified."
+  else
+    echo " 1Password service account check failed. Ensure OP_SERVICE_ACCOUNT_TOKEN is set."
+  fi
+fi

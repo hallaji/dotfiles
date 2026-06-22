@@ -1,15 +1,16 @@
 #!/bin/bash
 
-# Usage: dotup [arch|asdf|cli|mac|services|shell|vim]
+# Usage: dotup [arch|asdf|cli|mac|personal|services|shell|vim]
 
 if [ $# -eq 1 ]; then
-    dotup-"$1"
+  dotup-"$1"
 else
-    dotup-arch
-    dotup-asdf
-    dotup-cli
-    dotup-mac
-    dotup-services
-    dotup-shell
-    dotup-vim
+  dotup-personal
+  dotup-arch
+  dotup-asdf
+  dotup-cli
+  dotup-mac
+  dotup-services
+  dotup-shell
+  dotup-vim
 fi

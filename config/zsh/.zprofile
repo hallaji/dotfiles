@@ -5,10 +5,6 @@
 # ███████╗██║     ██║  ██║╚██████╔╝██║     ██║███████╗███████╗
 # ╚══════╝╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝╚══════╝
 
-if [ ! -f ~/.env ] && [ -f ~/.env.example ]; then
-  cp ~/.env.example ~/.env
-fi
-
 TEMPLATE_FILES=(
   ~/.bundle/config.template
   ~/.config/alacritty/colors.toml.template

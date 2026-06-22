@@ -4,8 +4,11 @@
 # ██║  ██║██║██╔══██╗██╔══╝  ██║╚██╗██║╚██╗ ██╔╝
 # ██████╔╝██║██║  ██║███████╗██║ ╚████║ ╚████╔╝
 # ╚═════╝ ╚═╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═══╝  ╚═══╝
+# shellcheck shell=bash
+# shellcheck disable=SC1090,SC1091
 
 [ -f ~/.env ] && source ~/.env
+[ -f "${XDG_PERSONAL_HOME}/env" ] && source "${XDG_PERSONAL_HOME}/env"
 
 # https://github.com/nix-community/nix-direnv?tab=readme-ov-file#with-nix-profile
 if [ -f "$HOME/.nix-profile/share/nix-direnv/direnvrc" ]; then
