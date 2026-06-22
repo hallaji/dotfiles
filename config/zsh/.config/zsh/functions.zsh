@@ -171,7 +171,7 @@ _dotup_completion() {
     'asdf:ASDF plugins'
     'cli:CLI tools'
     'mac:MacOS-specific installations'
-    'personal:Manage personal local config'
+    'personal:Manage personal settings'
     'services:System services'
     'shell:Shell installations'
     'vim:Vim/Neovim installations'
