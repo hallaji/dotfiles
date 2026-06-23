@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Shared color palette. Sourced by sketchybarrc and any plugin that recolors
+# items at runtime (e.g. aerospace.sh mode handling).
+#
+# This .template is rendered to colors.sh at login by ~/.zprofile (envsubst +
+# a #rrggbb -> 0xffrrggbb pass), so SketchyBar gets the 0xAARRGGBB form it needs
+# while the single source of truth stays the palette in config/env/.env. Edit
+# colors there, not in the rendered colors.sh.
+
+export TRANSPARENT=0x00000000           # no palette equivalent — bar background
+export PALETTE_BA_PRIMARY_FG=${PALETTE_BA_PRIMARY_FG} # default label color
+export PALETTE_SE_PRIMARY=${PALETTE_SE_PRIMARY}       # default icon color, normal-mode border
+export PALETTE_SE_ERROR=${PALETTE_SE_ERROR}           # separators, move mode, network highlight
+export PALETTE_SE_WARNING=${PALETTE_SE_WARNING}       # service mode

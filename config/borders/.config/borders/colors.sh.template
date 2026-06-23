@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Border colors, rendered to colors.sh at login by ~/.zprofile (envsubst +
+# #rrggbb -> 0xffrrggbb). Single source of truth: the palette in config/env/.env.
+
+export ACTIVE_COLOR=${PALETTE_SE_PRIMARY}
+export INACTIVE_COLOR=${PALETTE_BA_TERTIARY_BG}

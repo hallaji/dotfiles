@@ -15,15 +15,11 @@ type aerospace > /dev/null 2>&1 && aerospace reload-config --no-gui
 type skhd > /dev/null 2>&1 && skhd --start-service
 
 # https://github.com/FelixKratz/JankyBorders
+# Colors come from bordersrc (rendered from config/env/.env into colors.sh).
 type borders > /dev/null 2>&1 && \
-  brew services start borders && \
-  borders \
-  active_color="0xff${PALETTE_SE_PRIMARY#\#}" \
-  inactive_color="0xff${PALETTE_BA_TERTIARY_BG#\#}"
+  brew services start borders
 
 # https://github.com/FelixKratz/SketchyBar
+# Colors come from sketchybarrc (rendered from config/env/.env into colors.sh).
 type sketchybar > /dev/null 2>&1 && \
-  brew services start sketchybar && \
-  sketchybar --default \
-  icon.color="0xff${PALETTE_SE_PRIMARY#\#}" \
-  label.color="0xff${PALETTE_BA_PRIMARY_FG#\#}"
+  brew services start sketchybar
