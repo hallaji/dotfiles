@@ -12,5 +12,7 @@
   },
   "theme": "dark-ansi",
   "editorMode": "vim",
-  "voiceEnabled": true
+  "voiceEnabled": true,
+  "agentPushNotifEnabled": true,
+  "inputNeededNotifEnabled": true
 }
