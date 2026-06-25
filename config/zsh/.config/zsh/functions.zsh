@@ -10,7 +10,7 @@
 # └  ┴└─┘┴─┘└─┘ ┴
 # http://www.figlet.org
 
-# Display text in a selected figlet font
+# Pick a figlet font via fzf (favorites first) and render the given text in it
 figlet_show() {
   local favorites=(
     "ANSI Shadow"
@@ -38,13 +38,15 @@ figlet_show() {
 # ├┤ ││  ├┤ └─┐
 # └  ┴┴─┘└─┘└─┘
 
-# Find a code directory
+# List candidate code directories under $CODE (tilde-abbreviated)
+code_dirs() {
+  find "$CODE" -type d -not -path "*/\.*" -maxdepth 2 | sed "s|^$HOME|~|"
+}
+
+# Select a directory under $CODE via fzf (args seed the query), cd into it, and add to zoxide
 function ,f() {
   local selected_dir=$(
-    find "$CODE" -type d -not -path "*/\.*" -maxdepth 2 \
-      | sed "s|^$HOME|~|" \
-      | fzf --prompt="Select directory: " --with-nth=1 \
-      | sed "s|^~|$HOME|"
+    code_dirs | fzf --prompt="Select directory: " --with-nth=1 --query="$*" | sed "s|^~|$HOME|"
   )
 
   if [[ -n "$selected_dir" ]]; then
@@ -52,12 +54,19 @@ function ,f() {
   fi
 }
 
-# Find a code directory and open in the default editor
+# Open the best fuzzy match for the args in $EDITOR (no picker); falls back to ,f when ambiguous
 function ,o() {
-  ,f && $EDITOR
+  local dir=""
+  (( $# )) && dir=$(code_dirs | fzf --filter="$*" | head -1 | sed "s|^~|$HOME|")
+
+  if [[ -n "$dir" ]]; then
+    cd "$dir" && zoxide add "$(pwd)" && $EDITOR
+  else
+    ,f "$@" && $EDITOR
+  fi
 }
 
-# Restow all dotfile packages using GNU Stow
+# Restow every package under $DOTFILES_HOME/config with GNU Stow (stow -R)
 stow_dotfiles() {
   packages=($(basename -a "$DOTFILES_HOME"/config/*/))
   cd "$DOTFILES_HOME"
@@ -67,7 +76,7 @@ stow_dotfiles() {
   cd "$OLDPWD"
 }
 
-# Add Go binaries path to PATH environment variable
+# Append Go's $GOPATH/bin to PATH
 add_gopath() {
   export PATH="$PATH:$(go env GOPATH)/bin"
 }
@@ -76,9 +85,15 @@ add_gopath() {
 # ├─┤│││└─┐
 # ┴ ┴└┴┘└─┘
 
-# Switch AWS profile using fzf selection from config file
+# Print sorted profile names from an AWS config file (arg, default ~/.aws/config)
+aws_profile_names() {
+  local config="${1:-$HOME/.aws/config}"
+  grep -E '\[profile .+]' "$config" | sed -E 's/\[profile (.+)\]/\1/g' | sort
+}
+
+# Select an AWS profile via fzf, export AWS_PROFILE, and sso-login if the session is invalid
 change_aws_profile() {
-  profile=$(grep -E '\[profile .+]' ~/.aws/config | sed -E 's/\[profile (.+)\]/\1/g' | sort | fzf)
+  profile=$(aws_profile_names | fzf)
   if [[ -n $profile ]] ; then
     export AWS_PROFILE=$profile
     echo "Switching to $profile…"
@@ -93,7 +108,7 @@ change_aws_profile() {
   p10k display -a
 }
 
-# Start AWS SSM session with selected EC2 instance
+# Select an EC2 instance via fzf and open an AWS SSM session to it
 start_ec2_session() {
   INSTANCE_ID=$(
     aws ec2 describe-instances \
@@ -110,13 +125,18 @@ start_ec2_session() {
   fi
 }
 
-# Generate AWS config from Granted SSO
+# Decorate a granted SSO config (stdin) with CLTRMP region/icon lines (stdout)
+aws_config_decorate() {
+  sed -e '/^\[profile.*-eu\// s/$/\nregion = eu-west-1/g' \
+      -e '/^\[profile.*-au\// s/$/\nregion = ap-southeast-2/g' \
+      -e '/^\[profile.*-production/ s/$/\ngranted_icon = dollar/g'
+}
+
+# Generate ~/.aws/config from Granted SSO, decorated with CLTRMP regions/icons
 generate_aws_config() {
   granted sso generate --sso-region us-west-2 https://cultureamp.awsapps.com/start \
-    | sed -e '/^\[profile.*-eu\// s/$/\nregion = eu-west-1/g' \
-          -e '/^\[profile.*-au\// s/$/\nregion = ap-southeast-2/g' \
-          -e '/^\[profile.*-production/ s/$/\ngranted_icon = dollar/g' \
-     > ~/.aws/config
+    | aws_config_decorate \
+    > ~/.aws/config
   echo "CLTRMP AWS config generated at ~/.aws/config"
 }
 
@@ -124,7 +144,7 @@ generate_aws_config() {
 # │ ┬│  ├─┘
 # └─┘└─┘┴
 
-# Switch Google Cloud configuration using fzf selection
+# Select a gcloud configuration via fzf and activate it
 change_gcloud_config() {
   config=$(gcloud config configurations list | cut -d' ' -f1 | sed 1d | fzf)
   if [[ -n $config ]] ; then
@@ -141,7 +161,7 @@ change_gcloud_config() {
 # └─┐└┬┘└─┐ │ ├┤ │││
 # └─┘ ┴ └─┘ ┴ └─┘┴ ┴
 
-# Toggle SketchyBar visibility and adjust aerospace window margins
+# Toggle SketchyBar and match the aerospace top gap (46 shown / 20 hidden), then reload
 toggle_sketchybar() {
   local config_file="$DOTFILES_HOME/config/aerospace/.aerospace.toml"
 
@@ -162,8 +182,7 @@ toggle_sketchybar() {
 #  │││ │ │ │ │├─┘
 # ─┴┘└─┘ ┴ └─┘┴
 
-# Completion for dotup command
-# config/bin/.local/bin/dotup
+# Tab-completion for dotup subcommands (see config/bin/.local/bin/dotup)
 _dotup_completion() {
   local -a options
   options=(
