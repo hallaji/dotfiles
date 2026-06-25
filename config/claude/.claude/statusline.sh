@@ -2,16 +2,17 @@
 
 input=$(cat)
 
-CURRENT_DIR=$(echo "$input" | jq -r '.workspace.current_dir')
-PROJECT_DIR=$(echo "$input" | jq -r '.workspace.project_dir')
-MODEL_DISPLAY=$(echo "$input" | jq -r '.model.display_name')
+# Parse all fields in one jq pass; @tsv turns missing/null fields into empty strings
+IFS=$'\t' read -r CURRENT_DIR MODEL_DISPLAY < <(
+  jq -r '[.workspace.current_dir, .model.display_name] | @tsv' <<< "$input"
+)
 
-GIT_BRANCH="No branch"
-if git rev-parse --git-dir > /dev/null 2>&1; then
-  BRANCH=$(git branch --show-current 2>/dev/null)
-  if [ -n "$BRANCH" ]; then
-    GIT_BRANCH="$BRANCH"
-  fi
+# Resolve the branch in the directory we're displaying, not the script's cwd
+if git -C "$CURRENT_DIR" rev-parse --git-dir > /dev/null 2>&1; then
+  BRANCH=$(git -C "$CURRENT_DIR" branch --show-current 2>/dev/null)
+  GIT_BRANCH="${BRANCH:-detached}"
+else
+  GIT_BRANCH="No branch"
 fi
 
 echo " ${CURRENT_DIR##*/}  $GIT_BRANCH  $MODEL_DISPLAY"
