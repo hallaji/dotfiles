@@ -46,7 +46,6 @@ zinit snippet OMZP::brew
 zinit snippet OMZP::colored-man-pages
 zinit snippet OMZP::common-aliases
 zinit snippet OMZP::git
-zinit snippet OMZP::vi-mode
 zinit snippet OMZP::command-not-found
 
 zinit cdreplay -q

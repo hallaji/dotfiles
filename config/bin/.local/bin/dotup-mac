@@ -86,7 +86,6 @@ brew install \
   pyenv \
   pyenv-virtualenv \
   python \
-  reattach-to-user-namespace \
   ripgrep \
   ruby \
   shortcat \

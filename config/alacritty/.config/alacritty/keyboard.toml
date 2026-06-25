@@ -178,10 +178,15 @@ chars = "\u00029"
 key = "Key9"
 mods = "Command"
 
-[[keyboard.bindings]] # Start tmux copy mode
-chars = "\u0002["
+[[keyboard.bindings]] # Copy selection to the system clipboard `⌘` + `c`
+action = "Copy"
 key = "C"
 mods = "Command"
+
+[[keyboard.bindings]] # Start tmux copy mode `⌃b` + `[`
+chars = "\u0002["
+key = "C"
+mods = "Command|Shift"
 
 [[keyboard.bindings]] # Send `<C-q>` https://github.com/alacritty/alacritty/issues/1359
 chars = "\u0011"
