@@ -20,6 +20,7 @@ return {
     "hrsh7th/cmp-path",         -- Path completions
     "L3MON4D3/LuaSnip",         -- Snippet engine
     "saadparwaiz1/cmp_luasnip", -- Registers LuaSnip as a completion source
+    "f3fora/cmp-spell",         -- Spell suggestions (active when 'spell' is on)
   },
   config = function()
     local cmp = require("cmp")
@@ -49,6 +50,7 @@ return {
         { name = "luasnip" },
         { name = "buffer" },
         { name = "path" },
+        { name = "spell" },
       }),
     })
 
@@ -57,6 +59,7 @@ return {
       sources = cmp.config.sources({
         { name = "buffer" },
         { name = "path" },
+        { name = "spell" },
       })
     })
   end,
