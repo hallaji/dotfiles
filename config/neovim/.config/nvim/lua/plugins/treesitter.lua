@@ -8,6 +8,7 @@
 
 return {
   "nvim-treesitter/nvim-treesitter",
+  branch = "main",
   cond = not vim.g.vscode,
   build = ":TSUpdate",
   config = function()
