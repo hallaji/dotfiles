@@ -16,16 +16,16 @@ return {
   {
     "nvim-telescope/telescope-ui-select.nvim",
     cond = not vim.g.vscode,
-    config  = function()
-      require("telescope").setup {
+    config = function()
+      require("telescope").setup({
         extensions = {
           ["ui-select"] = {
-            require("telescope.themes").get_dropdown {
+            require("telescope.themes").get_dropdown({
               -- even more opts
-            }
-          }
-        }
-      }
+            }),
+          },
+        },
+      })
       require("telescope").load_extension("ui-select")
     end,
   },

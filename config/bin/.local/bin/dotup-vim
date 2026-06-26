@@ -2,15 +2,15 @@
 
 set -e
 
-cat << EOF
-┬  ┬┬┌┬┐   ┬   ┌┐┌┌─┐┌─┐┬  ┬┬┌┬┐
-└┐┌┘││││  ┌┼─  │││├┤ │ │└┐┌┘││││
- └┘ ┴┴ ┴  └┘   ┘└┘└─┘└─┘ └┘ ┴┴ ┴
+cat <<EOF
+┌┐┌┌─┐┌─┐┬  ┬┬┌┬┐   ┬   ┬  ┬┬┌┬┐
+│││├┤ │ │└┐┌┘││││  ┌┼─  └┐┌┘││││
+┘└┘└─┘└─┘ └┘ ┴┴ ┴  └┘    └┘ ┴┴ ┴
 EOF
 
 # Neovim clients
 pnpm install -g neovim # https://github.com/neovim/node-client
-gem install neovim # https://github.com/neovim/neovim-ruby
+gem install neovim     # https://github.com/neovim/neovim-ruby
 
 # Mason packages
 packages=(
@@ -29,7 +29,10 @@ packages=(
   "tailwindcss-language-server"
   "typescript-language-server"
 )
-package_list=$(IFS=' '; echo "${packages[*]}")
+package_list=$(
+  IFS=' '
+  echo "${packages[*]}"
+)
 
 # Vim and Neovim plugins
 nvim --headless "+Lazy! sync" "+qa"

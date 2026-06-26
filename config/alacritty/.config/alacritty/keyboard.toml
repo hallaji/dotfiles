@@ -29,7 +29,7 @@ key = "P"
 mods = "Command"
 
 [[keyboard.bindings]] # Show all sessions `⌃b` + `s`
-chars = "\u0002s" # \x10
+chars = "\u0002s"      # \x10
 key = "P"
 mods = "Command|Shift"
 
@@ -44,7 +44,7 @@ key = "S"
 mods = "Command"
 
 [[keyboard.bindings]] # Restore environment `⌃b` + `R`
-chars = "\u0002R" # \x02\x52
+chars = "\u0002R"      # \x02\x52
 key = "S"
 mods = "Command|Shift"
 

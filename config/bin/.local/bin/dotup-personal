@@ -3,7 +3,7 @@
 
 set -e
 
-cat << 'EOF'
+cat <<EOF
 ┌─┐┌─┐┬─┐┌─┐┌─┐┌┐┌┌─┐┬
 ├─┘├┤ ├┬┘└─┐│ ││││├─┤│
 ┴  └─┘┴└─└─┘└─┘┘└┘┴ ┴┴─┘
@@ -91,11 +91,11 @@ if command -v fzf &>/dev/null; then
   selected_vars=()
   while IFS= read -r line; do
     [[ -z "$line" ]] && continue
-    selected_vars+=("$(awk '{print $1}' <<< "$line")")
-  done < <(printf "%b" "$entries" \
-    | fzf --multi --ansi \
-        --prompt="Select to update (Tab/Space=select, Enter=confirm): " \
-        --bind 'space:toggle') || true
+    selected_vars+=("$(awk '{print $1}' <<<"$line")")
+  done < <(printf "%b" "$entries" |
+    fzf --multi --ansi \
+      --prompt="Select to update (Tab/Space=select, Enter=confirm): " \
+      --bind 'space:toggle') || true
 
   for var in "${selected_vars[@]}"; do
     entry=""
@@ -139,7 +139,7 @@ fi
     var="${entry%%:*}"
     printf 'export %s="%s"\n' "$var" "${!var}"
   done
-} > "$PERSONAL_ENV_FILE"
+} >"$PERSONAL_ENV_FILE"
 
 chmod 600 "$PERSONAL_ENV_FILE"
 

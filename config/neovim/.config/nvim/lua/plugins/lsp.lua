@@ -12,7 +12,7 @@ return {
   "neovim/nvim-lspconfig",
   cond = not vim.g.vscode,
   dependencies = {
-    { "mason-org/mason.nvim",           opts = {} },
+    { "mason-org/mason.nvim", opts = {} },
     { "mason-org/mason-lspconfig.nvim", opts = {} },
   },
 }

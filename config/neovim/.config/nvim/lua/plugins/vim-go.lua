@@ -23,7 +23,7 @@ return {
     vim.g.go_auto_sameids = 1 -- Automatically rename same ids
     vim.g.go_def_mapping_enabled = 1 -- Enable mapping to go to definition
     vim.g.go_fmt_command = "goimports" -- Use goimports to format
-    vim.g.go_def_mode = 'gopls' -- Use gopls to go to definition
-    vim.g.go_info_mode = 'gopls' -- Use gopls to show info
+    vim.g.go_def_mode = "gopls" -- Use gopls to go to definition
+    vim.g.go_info_mode = "gopls" -- Use gopls to show info
   end,
 }

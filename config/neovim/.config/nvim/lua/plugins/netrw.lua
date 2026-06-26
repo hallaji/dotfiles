@@ -16,7 +16,7 @@ return {
     vim.g.netrw_banner = 0 -- Disable the banner
     vim.g.netrw_keepdir = 0 -- Don't keep the directory open when opening a file
     vim.g.netrw_liststyle = 0 -- Use the default list style
-    vim.g.netrw_sort_options = 'i' -- Sort files by name
+    vim.g.netrw_sort_options = "i" -- Sort files by name
     vim.g.netrw_browse_split = 0 -- Don't open the file in a split window
     vim.g.netrw_hide = 1 -- Hide the buffer when browsing
   end,

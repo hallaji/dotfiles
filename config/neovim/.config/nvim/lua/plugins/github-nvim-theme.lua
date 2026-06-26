@@ -16,5 +16,5 @@
 return {
   "projekt0n/github-nvim-theme",
   cond = not vim.g.vscode,
-  name = 'github-theme'
+  name = "github-theme",
 }

@@ -15,12 +15,12 @@ return {
   "hrsh7th/nvim-cmp",
   cond = not vim.g.vscode,
   dependencies = {
-    "hrsh7th/cmp-nvim-lsp",     -- LSP completions
-    "hrsh7th/cmp-buffer",       -- Buffer completions
-    "hrsh7th/cmp-path",         -- Path completions
-    "L3MON4D3/LuaSnip",         -- Snippet engine
+    "hrsh7th/cmp-nvim-lsp", -- LSP completions
+    "hrsh7th/cmp-buffer", -- Buffer completions
+    "hrsh7th/cmp-path", -- Path completions
+    "L3MON4D3/LuaSnip", -- Snippet engine
     "saadparwaiz1/cmp_luasnip", -- Registers LuaSnip as a completion source
-    "f3fora/cmp-spell",         -- Spell suggestions (active when 'spell' is on)
+    "f3fora/cmp-spell", -- Spell suggestions (active when 'spell' is on)
   },
   config = function()
     local cmp = require("cmp")
@@ -55,12 +55,12 @@ return {
     })
 
     -- Enable completion in git commit buffers
-    cmp.setup.filetype('gitcommit', {
+    cmp.setup.filetype("gitcommit", {
       sources = cmp.config.sources({
         { name = "buffer" },
         { name = "path" },
         { name = "spell" },
-      })
+      }),
     })
   end,
 }

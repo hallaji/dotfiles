@@ -146,7 +146,7 @@ sketchybar \
   --add item disk center --set disk "${disk[@]}" \
   --add item separator-disk center --set separator-disk "${separator[@]}" \
   --add item network.down center --set network.down "${network_down[@]}" \
-  --add item network.up center --set network.up "${network_up[@]}" \
+  --add item network.up center --set network.up "${network_up[@]}"
 
 # ┬─┐┬┌─┐┬ ┬┌┬┐
 # ├┬┘││ ┬├─┤ │

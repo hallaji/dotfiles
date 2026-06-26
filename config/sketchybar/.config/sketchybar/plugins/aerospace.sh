@@ -4,17 +4,17 @@ source "$CONFIG_DIR/colors.sh"
 
 get_symbol() {
   case $1 in
-    1) echo "󰬺" ;;
-    2) echo "󰬻" ;;
-    3) echo "󰬼" ;;
-    4) echo "󰬽" ;;
-    5) echo "󰬾" ;;
-    6) echo "󰬿" ;;
-    7) echo "󰭀" ;;
-    8) echo "󰭁" ;;
-    9) echo "󰭂" ;;
-    0|10) echo "󰿩" ;;
-    *) echo "󰿫" ;;
+  1) echo "󰬺" ;;
+  2) echo "󰬻" ;;
+  3) echo "󰬼" ;;
+  4) echo "󰬽" ;;
+  5) echo "󰬾" ;;
+  6) echo "󰬿" ;;
+  7) echo "󰭀" ;;
+  8) echo "󰭁" ;;
+  9) echo "󰭂" ;;
+  0 | 10) echo "󰿩" ;;
+  *) echo "󰿫" ;;
   esac
 }
 
@@ -27,17 +27,32 @@ if [ "$SENDER" = "aerospace_mode_change" ]; then
   # order, which would leave the border stuck. `mode main`/`mode move` run
   # synchronously in the binding before the trigger, so this is authoritative.
   case "$(aerospace list-modes --current 2>/dev/null)" in
-    move)    GLYPH="󰰏"; COLOR=$PALETTE_SE_ERROR;    BORDER=$PALETTE_SE_ERROR;    DRAWING=on ;;
-    service) GLYPH="󰰡"; COLOR=$PALETTE_SE_WARNING; BORDER=$PALETTE_SE_WARNING; DRAWING=on ;;
-    *)       GLYPH="";  COLOR=$PALETTE_BA_PRIMARY_FG;  BORDER=$PALETTE_SE_PRIMARY; DRAWING=off ;;
+  move)
+    GLYPH="󰰏"
+    COLOR=$PALETTE_SE_ERROR
+    BORDER=$PALETTE_SE_ERROR
+    DRAWING=on
+    ;;
+  service)
+    GLYPH="󰰡"
+    COLOR=$PALETTE_SE_WARNING
+    BORDER=$PALETTE_SE_WARNING
+    DRAWING=on
+    ;;
+  *)
+    GLYPH=""
+    COLOR=$PALETTE_BA_PRIMARY_FG
+    BORDER=$PALETTE_SE_PRIMARY
+    DRAWING=off
+    ;;
   esac
 
   # Recolor the focused-window border to mark the active mode (instant; talks to
   # the running borders daemon). Border reset color = borders' default active.
   borders active_color="$BORDER" 2>/dev/null
   sketchybar --set aerospace label.color="$COLOR" \
-             --set window_count label.color="$COLOR" \
-             --set mode_indicator drawing="$DRAWING" label="$GLYPH" label.color="$COLOR"
+    --set window_count label.color="$COLOR" \
+    --set mode_indicator drawing="$DRAWING" label="$GLYPH" label.color="$COLOR"
   exit 0
 fi
 
@@ -50,4 +65,4 @@ WINDOWS=$(aerospace list-windows --workspace focused --count 2>/dev/null)
 SEPARATOR="↠" # ↞↠
 
 sketchybar --set aerospace label="$FOCUSED$SEPARATOR$TOTAL" \
-           --set window_count label="${WINDOWS:-0}"
+  --set window_count label="${WINDOWS:-0}"

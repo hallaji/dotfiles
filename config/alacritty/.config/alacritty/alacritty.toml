@@ -19,6 +19,5 @@ import = [
   "scrolling.toml",
   "selection.toml",
   "terminal.toml",
-  "window.toml"
+  "window.toml",
 ]
-

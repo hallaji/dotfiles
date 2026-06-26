@@ -2,7 +2,7 @@
 
 set -e
 
-cat << EOF
+cat <<EOF
 ┌─┐┌─┐┌┬┐┌─┐
 ├─┤└─┐ ││├┤
 ┴ ┴└─┘─┴┘└
@@ -10,24 +10,24 @@ EOF
 
 # https://github.com/asdf-vm/asdf-plugins
 ASDF_PLUGINS=(
-  golang # https://github.com/asdf-community/asdf-golang
-  gradle # https://github.com/rfrancis/asdf-gradle.git
-  java # https://github.com/halcyon/asdf-java
-  kotlin # https://github.com/asdf-community/asdf-kotlin
-  lua # https://github.com/Stratus3D/asdf-lua
-  maven # https://github.com/Proemion/asdf-maven
-  mysql # https://github.com/iroddis/asdf-mysql
-  nodejs # https://github.com/asdf-vm/asdf-nodejs
-  php # https://github.com/asdf-community/asdf-php
-  pnpm # https://github.com/jonathanmorley/asdf-pnpm
-  postgres # https://github.com/smashedtoatoms/asdf-postgres
-  python # https://github.com/asdf-community/asdf-python
-  redis # https://github.com/smashedtoatoms/asdf-redis
-  ruby # https://github.com/asdf-vm/asdf-ruby
+  golang    # https://github.com/asdf-community/asdf-golang
+  gradle    # https://github.com/rfrancis/asdf-gradle.git
+  java      # https://github.com/halcyon/asdf-java
+  kotlin    # https://github.com/asdf-community/asdf-kotlin
+  lua       # https://github.com/Stratus3D/asdf-lua
+  maven     # https://github.com/Proemion/asdf-maven
+  mysql     # https://github.com/iroddis/asdf-mysql
+  nodejs    # https://github.com/asdf-vm/asdf-nodejs
+  php       # https://github.com/asdf-community/asdf-php
+  pnpm      # https://github.com/jonathanmorley/asdf-pnpm
+  postgres  # https://github.com/smashedtoatoms/asdf-postgres
+  python    # https://github.com/asdf-community/asdf-python
+  redis     # https://github.com/smashedtoatoms/asdf-redis
+  ruby      # https://github.com/asdf-vm/asdf-ruby
   terraform # https://github.com/asdf-community/asdf-hashicorp.git
 )
 
-if type asdf &> /dev/null; then
+if type asdf &>/dev/null; then
   for item in "${ASDF_PLUGINS[@]}"; do
     if asdf plugin list | grep -q "^$item$"; then
       asdf plugin update "$item"

@@ -16,7 +16,7 @@ $all$character
 """
 
 [custom.quote]
-command = "quote" # from binaries in bin directory
+command = "quote"            # from binaries in bin directory
 when = true
 format = "[$output]($style)"
 style = "italic purple"

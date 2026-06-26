@@ -19,4 +19,4 @@ DOWN_FORMAT=$(format_speed "$DOWN")
 UP_FORMAT=$(format_speed "$UP")
 
 sketchybar --set network.down label="$DOWN_FORMAT" icon.highlight="$(highlight "$DOWN")" \
-           --set network.up   label="$UP_FORMAT"   icon.highlight="$(highlight "$UP")"
+  --set network.up label="$UP_FORMAT" icon.highlight="$(highlight "$UP")"

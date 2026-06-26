@@ -1,8 +1,8 @@
 {
-    "modules": [
-        "zsa/oryx",
-        "zsa/mousejiggler",
-        "zsa/navigator_trackpad",
-        "zsa/defaults"
-    ]
+  "modules": [
+    "zsa/oryx",
+    "zsa/mousejiggler",
+    "zsa/navigator_trackpad",
+    "zsa/defaults"
+  ]
 }

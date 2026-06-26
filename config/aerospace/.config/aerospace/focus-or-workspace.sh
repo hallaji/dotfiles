@@ -19,7 +19,7 @@ after="$(aerospace list-windows --focused --format '%{window-id}' 2>/dev/null ||
 # Focus didn't move -> we were at the edge -> switch workspace.
 if [[ "$before" == "$after" ]]; then
   case "$dir" in
-    left)  aerospace workspace --no-stdin --wrap-around prev ;;
-    right) aerospace workspace --no-stdin --wrap-around next ;;
+  left) aerospace workspace --no-stdin --wrap-around prev ;;
+  right) aerospace workspace --no-stdin --wrap-around next ;;
   esac
 fi

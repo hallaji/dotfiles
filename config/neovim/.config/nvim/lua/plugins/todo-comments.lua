@@ -12,7 +12,7 @@
 --  ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚═╝     ╚═╝╚══════╝╚═╝  ╚═══╝   ╚═╝   ╚══════╝
 -- https://github.com/folke/todo-comments.nvim
 
-return   {
+return {
   "folke/todo-comments.nvim",
   cond = not vim.g.vscode,
   dependencies = { "nvim-lua/plenary.nvim" },

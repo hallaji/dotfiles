@@ -2,24 +2,24 @@
 
 set -e
 
-cat << EOF
+cat <<EOF
 ┌─┐┌─┐┬─┐┬  ┬┬┌─┐┌─┐┌─┐
 └─┐├┤ ├┬┘└┐┌┘││  ├┤ └─┐
 └─┘└─┘┴└─ └┘ ┴└─┘└─┘└─┘
 EOF
 
 # https://github.com/nikitabobko/AeroSpace
-type aerospace > /dev/null 2>&1 && aerospace reload-config --no-gui
+type aerospace >/dev/null 2>&1 && aerospace reload-config --no-gui
 
 # https://github.com/koekeishiya/skhd
-type skhd > /dev/null 2>&1 && skhd --start-service
+type skhd >/dev/null 2>&1 && skhd --start-service
 
 # https://github.com/FelixKratz/JankyBorders
 # Colors come from bordersrc (rendered from config/env/.env into colors.sh).
-type borders > /dev/null 2>&1 && \
+type borders >/dev/null 2>&1 &&
   brew services start borders
 
 # https://github.com/FelixKratz/SketchyBar
 # Colors come from sketchybarrc (rendered from config/env/.env into colors.sh).
-type sketchybar > /dev/null 2>&1 && \
+type sketchybar >/dev/null 2>&1 &&
   brew services start sketchybar

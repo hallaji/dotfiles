@@ -10,10 +10,10 @@ return {
   "lewis6991/gitsigns.nvim",
   cond = not vim.g.vscode,
   config = function()
-    require('gitsigns').setup {
+    require("gitsigns").setup({
       numhl = true, -- Toggle with `:Gitsigns toggle_numhl`
       current_line_blame = true, -- Toggle with `:Gitsigns toggle_current_line_blame`
-      current_line_blame_formatter = '    (<author>, <author_time:%R>) <summary>',
-    }
+      current_line_blame_formatter = "    (<author>, <author_time:%R>) <summary>",
+    })
   end,
 }

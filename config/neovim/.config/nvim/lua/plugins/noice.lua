@@ -14,12 +14,12 @@ return {
   cond = not vim.g.vscode,
   dependencies = {
     "MunifTanjim/nui.nvim",
-    { "smjonas/inc-rename.nvim", opts = {}, },
+    { "smjonas/inc-rename.nvim", opts = {} },
     {
       "rcarriga/nvim-notify",
       opts = {
         background_colour = "#000000",
-      }
+      },
     },
   },
   event = "VeryLazy",

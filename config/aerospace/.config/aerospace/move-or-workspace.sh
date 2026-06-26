@@ -33,7 +33,7 @@ has_vertical_neighbor() {
     aerospace focus --boundaries workspace --boundaries-action stop "$d" 2>/dev/null || true
     cur="$(aerospace list-windows --focused --format '%{window-id}' 2>/dev/null || true)"
     if [ -n "$cur" ] && [ "$cur" != "$wid" ]; then
-      aerospace focus --window-id "$wid" 2>/dev/null || true   # restore focus
+      aerospace focus --window-id "$wid" 2>/dev/null || true # restore focus
       return 0
     fi
   done
@@ -48,12 +48,12 @@ fi
 
 # 3) Already a full-height column at the edge -> move it to the adjacent workspace.
 case "$dir" in
-  left)
-    aerospace move-node-to-workspace --no-stdin --focus-follows-window --wrap-around prev
-    ;;
-  right)
-    aerospace move-node-to-workspace --no-stdin --focus-follows-window --wrap-around next
-    # Appended as last; push to the left end so it lands first in the next workspace.
-    while aerospace move --boundaries workspace --boundaries-action fail left 2>/dev/null; do :; done
-    ;;
+left)
+  aerospace move-node-to-workspace --no-stdin --focus-follows-window --wrap-around prev
+  ;;
+right)
+  aerospace move-node-to-workspace --no-stdin --focus-follows-window --wrap-around next
+  # Appended as last; push to the left end so it lands first in the next workspace.
+  while aerospace move --boundaries workspace --boundaries-action fail left 2>/dev/null; do :; done
+  ;;
 esac

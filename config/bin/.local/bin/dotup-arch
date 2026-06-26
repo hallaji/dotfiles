@@ -2,11 +2,11 @@
 
 set -e
 
-if ! grep -q "Arch Linux" /etc/os-release &> /dev/null; then
+if ! grep -q "Arch Linux" /etc/os-release &>/dev/null; then
   exit 0
 fi
 
-cat << EOF
+cat <<EOF
 ┌─┐┬─┐┌─┐┬ ┬
 ├─┤├┬┘│  ├─┤
 ┴ ┴┴└─└─┘┴ ┴
@@ -63,18 +63,18 @@ sudo pacman -S --needed \
 # https://aur.archlinux.org
 
 # https://github.com/Jguer/yay
-sudo rm -rf /tmp/yay && \
-  git clone https://aur.archlinux.org/yay.git /tmp/yay && \
-  cd /tmp/yay && \
+sudo rm -rf /tmp/yay &&
+  git clone https://aur.archlinux.org/yay.git /tmp/yay &&
+  cd /tmp/yay &&
   makepkg -si --noconfirm
 
 # https://asdf-vm.com/guide/getting-started.html#_1-install-asdf
 yay -S asdf-vm
 
 # https://snapcraft.io/docs/tutorials/install-the-daemon/arch-linux/
-sudo rm -rf /tmp/snapd && \
-  git clone https://aur.archlinux.org/snapd.git /tmp/snapd && \
-  cd /tmp/snapd && \
+sudo rm -rf /tmp/snapd &&
+  git clone https://aur.archlinux.org/snapd.git /tmp/snapd &&
+  cd /tmp/snapd &&
   makepkg -si --noconfirm
 sudo systemctl enable --now snapd.socket
 sudo systemctl enable --now snapd.apparmor.service
@@ -90,10 +90,10 @@ sudo snap refresh
 
 # 1Pssword CLI
 # https://developer.1password.com/docs/cli/get-started/#step-1-install-1password-cli
-wget "https://cache.agilebits.com/dist/1P/op2/pkg/v2.33.1/op_linux_amd64_v2.33.1.zip" -O op.zip && \
-unzip -d op op.zip && \
-sudo mv op/op /usr/local/bin/ && \
-rm -r op.zip op && \
-sudo groupadd -f onepassword-cli && \
-sudo chgrp onepassword-cli /usr/local/bin/op && \
-sudo chmod g+s /usr/local/bin/op
+wget "https://cache.agilebits.com/dist/1P/op2/pkg/v2.33.1/op_linux_amd64_v2.33.1.zip" -O op.zip &&
+  unzip -d op op.zip &&
+  sudo mv op/op /usr/local/bin/ &&
+  rm -r op.zip op &&
+  sudo groupadd -f onepassword-cli &&
+  sudo chgrp onepassword-cli /usr/local/bin/op &&
+  sudo chmod g+s /usr/local/bin/op

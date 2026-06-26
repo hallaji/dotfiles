@@ -14,4 +14,3 @@
 #define COMBO_COUNT 4
 
 #define RGB_MATRIX_STARTUP_SPD 60
-

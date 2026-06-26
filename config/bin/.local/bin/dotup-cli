@@ -2,13 +2,13 @@
 
 set -e
 
-cat << EOF
+cat <<EOF
 ┌─┐┬  ┬
 │  │  │
 └─┘┴─┘┴
 EOF
 
-type gh > /dev/null 2>&1 && {
+type gh >/dev/null 2>&1 && {
   gh extension install dlvhdr/gh-dash
   gh extension install jrnxf/gh-eco
   gh extension install mislav/gh-branch
@@ -17,7 +17,7 @@ type gh > /dev/null 2>&1 && {
   gh extension upgrade --all
 }
 
-type npm > /dev/null 2>&1 && {
+type npm >/dev/null 2>&1 && {
   npm install -g @github/copilot
   npm install -g @anthropic-ai/claude-code
 }

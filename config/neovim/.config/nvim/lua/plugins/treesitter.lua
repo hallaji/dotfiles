@@ -12,7 +12,7 @@ return {
   cond = not vim.g.vscode,
   build = ":TSUpdate",
   config = function()
-    require'nvim-treesitter'.setup {
+    require("nvim-treesitter").setup({
       -- A list of parser names, or "all" (the five listed parsers should always be installed)
       ensure_installed = {
         "bash",
@@ -61,6 +61,6 @@ return {
         enable = true,
         disable = { "markdown", "markdown_inline" },
       },
-    }
+    })
   end,
 }

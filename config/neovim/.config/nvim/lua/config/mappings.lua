@@ -17,8 +17,8 @@ local wk = require("which-key")
 -- │ ┬├┤ │││├┤ ├┬┘├─┤│
 -- └─┘└─┘┘└┘└─┘┴└─┴ ┴┴─┘
 
-vim.keymap.set('n', '<C-n>i', '<C-i>') -- Use <C-n>i to send <C-i> because <C-i> is same as <tab> when received by vim. Check Alacritty bindings for <C-i>
-vim.keymap.set('x', 'p', 'pgvy') -- Recopy selected area on paste operation
+vim.keymap.set("n", "<C-n>i", "<C-i>") -- Use <C-n>i to send <C-i> because <C-i> is same as <tab> when received by vim. Check Alacritty bindings for <C-i>
+vim.keymap.set("x", "p", "pgvy") -- Recopy selected area on paste operation
 
 wk.add({
   {
@@ -56,9 +56,9 @@ wk.add({
     { "]b", ":bnext<CR>", desc = "Next Buffer", icon = "" },
     { "]t", ":tabn<CR>", desc = "Next Tab", icon = "" },
 
-    { "-", ":NnnPicker %:p:h<CR>", desc = "NNN Picker", icon = "", },
-    { "~", ":NnnExplorer %:p:h<CR>", desc = "NNN Explorer", icon = "", },
-    { "`", ":NvimTreeFocus<CR>", desc = "Nvim Tree", icon = "", },
+    { "-", ":NnnPicker %:p:h<CR>", desc = "NNN Picker", icon = "" },
+    { "~", ":NnnExplorer %:p:h<CR>", desc = "NNN Explorer", icon = "" },
+    { "`", ":NvimTreeFocus<CR>", desc = "Nvim Tree", icon = "" },
 
     { "<Leader>", group = "Leader", icon = "󰸥" },
     { "<Leader>/", "<Plug>NERDCommenterToggle", desc = "Comment", icon = "󰆉" },
@@ -69,12 +69,19 @@ wk.add({
     { "<Leader>P", ":Inspecthi<CR>", desc = "Inspect Highlight", icon = "" },
     { "<Leader>S", ":set spell! spelllang=en_au<CR>", desc = "Spell Check", icon = "󰓆" },
     { "<Leader>T", ":lua MiniTrailspace.trim()<CR>", desc = "Trim Trailing Spaces", icon = "" },
-    { "<Leader>c", group = "Comment", icon = "󰅺", },
+    { "<Leader>c", group = "Comment", icon = "󰅺" },
     { "<Leader>h", ":checkhealth<CR>", desc = "Check Health", icon = "󰩂" },
     { "<Leader>l", ":Limelight!!<CR>", desc = "Limelight Mode", icon = "󱟇" },
     { "<Leader>m", "<Plug>MarkdownPreviewToggle", desc = "Markdown Preview", icon = "󰽛" },
     { "<Leader>n", ":set norelativenumber number!<CR>", desc = "Line Numbers", icon = "" },
-    { "<Leader>r", function() vim.wo.colorcolumn = vim.wo.colorcolumn == "" and "80,120" or "" end, desc = "Rulers", icon = "", },
+    {
+      "<Leader>r",
+      function()
+        vim.wo.colorcolumn = vim.wo.colorcolumn == "" and "80,120" or ""
+      end,
+      desc = "Rulers",
+      icon = "",
+    },
     { "<Leader>w", ":set wrap! wrap?<CR>", desc = "Wrap Mode", icon = "󰖶" },
     { "<Leader>z", ":ZenMode<CR>", desc = "Zen Mode", icon = "󰽏" },
   },
@@ -89,7 +96,7 @@ wk.add({
     { "<Leader>c", group = "Comment", icon = "󰅺" },
     { "<Leader>p", desc = "Paste", icon = "" },
     { "<Leader>y", desc = "Copy", icon = "" },
-  }
+  },
 })
 
 -- ┌─┐┌─┐┌─┐┬┬  ┌─┐┌┬┐
@@ -116,7 +123,13 @@ wk.add({
   },
   {
     mode = "i",
-    { "<C-J>", "copilot#Accept('')", desc = "Accept Suggestion", expr = true, replace_keycodes = false },
+    {
+      "<C-J>",
+      "copilot#Accept('')",
+      desc = "Accept Suggestion",
+      expr = true,
+      replace_keycodes = false,
+    },
     { "<C-K>", "<Plug>(copilot-accept-word)", desc = "Accept Word Suggestion" },
     { "<C-L>", "<Plug>(copilot-accept-line)", desc = "Accept Line Suggestion" },
     { "<C-N>", "<Plug>(copilot-next)", desc = "Next Suggestion" },
@@ -196,7 +209,7 @@ wk.add({
     { "<Leader>xwv", ":<C-u>'<,'>GpWhisperVnew<CR>", desc = "Whisper Vnew" },
     { "<Leader>xww", ":<C-u>'<,'>GpWhisper<CR>", desc = "Whisper" },
     { "<Leader>xx", ":<C-u>'<,'>GpContext<CR>", desc = "Visual GpContext" },
-  }
+  },
 })
 
 -- ┌─┐┬┌┬┐
@@ -235,7 +248,7 @@ wk.add({
     { "<Leader>gtw", ":Gitsigns toggle_word_diff<CR>", desc = "Word Diff" },
     { "<Leader>gu", ":Gitsigns undo_stage_hunk<CR>", desc = "Unstage Hunk" },
     { "<Leader>gv", ":Gitsigns select_hunk<CR>", desc = "Select Hunk" },
-    { "[h", ":Gitsigns prev_hunk<CR>", desc = "Prev Hunk (Buffer)", icon ="" },
+    { "[h", ":Gitsigns prev_hunk<CR>", desc = "Prev Hunk (Buffer)", icon = "" },
     { "]h", ":Gitsigns next_hunk<CR>", desc = "Next Hunk (Buffer)", icon = "" },
   },
   {
@@ -244,7 +257,7 @@ wk.add({
     { "<Leader>gl", group = "Link", icon = "󰌷" },
     { "<Leader>glc", ":<C-u>'<,'>GitLink<CR>", desc = "Copy Code Permalink", icon = "" },
     { "<Leader>glo", ":<C-u>'<,'>GitLink!<CR>", desc = "Open Code Permalink", icon = "" },
-  }
+  },
 })
 
 -- ┌┐ ┬ ┬┌─┐┌─┐┌─┐┬─┐
@@ -279,7 +292,7 @@ wk.add({
   {
     mode = "v",
     { "<C-Q>", "<Esc>", desc = "Quit", icon = "󰗼" },
-  }
+  },
 })
 
 -- ┌─┐┌─┐┌─┐   ┬   ┌─┐┌┬┐┬─┐┬  ┌─┐┌─┐
@@ -302,7 +315,12 @@ wk.add({
     { "<Leader>ft", ":CtrlSFToggle<CR>", desc = "Toggle", silent = false },
     { "<Leader>fu", ":CtrlSFUpdate<CR>", desc = "Update Results", silent = false },
     { "<Leader>fw", "<Plug>CtrlSFCwordPath", desc = "Prompt Under Cursor", silent = false },
-    { "<Leader>fx", "<Plug>CtrlSFCCwordPath", desc = "Prompt Under Cursor with Boundary", silent = false },
+    {
+      "<Leader>fx",
+      "<Plug>CtrlSFCCwordPath",
+      desc = "Prompt Under Cursor with Boundary",
+      silent = false,
+    },
     { "<Leader>s", group = "󰓈 Spotlight", silent = false },
     { "<Leader>sb", ":Telescope buffers<CR>", desc = "Buffers", icon = "", silent = false },
   },
@@ -311,7 +329,7 @@ wk.add({
     { "<Leader>f", group = "Find & Replace", icon = "", silent = false },
     { "<Leader>fe", "<Plug>CtrlSFVwordExec", desc = "Find Selected Area", silent = false },
     { "<Leader>fv", "<Plug>CtrlSFVwordPath", desc = "Prompt Selected Area", silent = false },
-  }
+  },
 })
 
 -- ┌┬┐┌─┐┌┬┐┌─┐  ┌─┐┌─┐┌┬┐┌┬┐┌─┐┌┐┌┌┬┐┌─┐
@@ -327,9 +345,23 @@ wk.add({
     { "<Leader>tq", ":TodoQuickFix<CR>", desc = "Quick Fix List" },
     { "<Leader>ts", ":TodoTelescope<CR>", desc = "Search with Telescope" },
     { "<Leader>tt", ":TodoTrouble<CR>", desc = "Trouble List" },
-    { "[o", function() require("todo-comments").jump_prev() end, desc = "Previous ToDo", icon = "" },
-    { "]o", function() require("todo-comments").jump_next() end, desc = "Next ToDo", icon = "" },
-  }
+    {
+      "[o",
+      function()
+        require("todo-comments").jump_prev()
+      end,
+      desc = "Previous ToDo",
+      icon = "",
+    },
+    {
+      "]o",
+      function()
+        require("todo-comments").jump_next()
+      end,
+      desc = "Next ToDo",
+      icon = "",
+    },
+  },
 })
 
 -- ┌┬┐┬─┐┌─┐┬ ┬┌┐ ┬  ┌─┐
@@ -345,7 +377,7 @@ wk.add({
     { "<Leader>el", ":Trouble<CR>", desc = "List" },
     { "<Leader>er", ":TroubleRefresh<CR>", desc = "Refresh" },
     { "<Leader>et", ":TroubleToggle<CR>", desc = "Toggle" },
-  }
+  },
 })
 
 -- ┬  ┌─┐┌─┐
@@ -354,28 +386,66 @@ wk.add({
 
 wk.add({
   -- LSP Go to mappings
-  { "g", group = "Go to", icon = "󰮫", },
-  { "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", desc = "Go to Definition", icon = "󰊕", },
-  { "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", desc = "Go to Declaration", icon = "󰙴", },
-  { "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>", desc = "Go to Implementation", icon = "󰡱", },
-  { "gr", "<cmd>lua vim.lsp.buf.references()<cr>", desc = "Go to References", icon = "󰌹", },
-  { "gt", "<cmd>lua vim.lsp.buf.type_definition()<cr>", desc = "Go to Type Definition", icon = "󰜁", },
-  { "K", "<cmd>lua vim.lsp.buf.hover()<cr>", desc = "Hover Documentation", icon = "󰋖", },
-  { "gK", "<cmd>lua vim.lsp.buf.signature_help()<cr>", desc = "Signature Help", icon = "󰘦", },
+  { "g", group = "Go to", icon = "󰮫" },
+  { "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", desc = "Go to Definition", icon = "󰊕" },
+  { "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", desc = "Go to Declaration", icon = "󰙴" },
+  {
+    "gi",
+    "<cmd>lua vim.lsp.buf.implementation()<cr>",
+    desc = "Go to Implementation",
+    icon = "󰡱",
+  },
+  { "gr", "<cmd>lua vim.lsp.buf.references()<cr>", desc = "Go to References", icon = "󰌹" },
+  {
+    "gt",
+    "<cmd>lua vim.lsp.buf.type_definition()<cr>",
+    desc = "Go to Type Definition",
+    icon = "󰜁",
+  },
+  { "K", "<cmd>lua vim.lsp.buf.hover()<cr>", desc = "Hover Documentation", icon = "󰋖" },
+  { "gK", "<cmd>lua vim.lsp.buf.signature_help()<cr>", desc = "Signature Help", icon = "󰘦" },
 
   -- Inc-rename (if using inc-rename.nvim)
-  { "<leader>rn", function() return ":IncRename " .. vim.fn.expand("<cword>") end, desc = "Rename", expr = true, icon = "󰑕", },
+  {
+    "<leader>rn",
+    function()
+      return ":IncRename " .. vim.fn.expand("<cword>")
+    end,
+    desc = "Rename",
+    expr = true,
+    icon = "󰑕",
+  },
 
   -- Document highlighting
-  { "<leader>lh", group = "Highlight", icon = "󰸱", },
-  { "<leader>lhh", "<cmd>lua vim.lsp.buf.document_highlight()<cr>", desc = "Document Highlight", icon = "󰸱", },
-  { "<leader>lhc", "<cmd>lua vim.lsp.buf.clear_references()<cr>", desc = "Clear Highlights", icon = "󰇙", },
+  { "<leader>lh", group = "Highlight", icon = "󰸱" },
+  {
+    "<leader>lhh",
+    "<cmd>lua vim.lsp.buf.document_highlight()<cr>",
+    desc = "Document Highlight",
+    icon = "󰸱",
+  },
+  {
+    "<leader>lhc",
+    "<cmd>lua vim.lsp.buf.clear_references()<cr>",
+    desc = "Clear Highlights",
+    icon = "󰇙",
+  },
 
   -- -- LSP main actions
   -- { "<leader>l", group = "󰒋 LSP" },
-  { "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", desc = "󰌵 Code Action", mode = { "n", "v" } },
+  {
+    "<leader>la",
+    "<cmd>lua vim.lsp.buf.code_action()<cr>",
+    desc = "󰌵 Code Action",
+    mode = { "n", "v" },
+  },
   { "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", desc = "󰑕 Rename" },
-  { "<leader>lf", "<cmd>lua require('conform').format({ async = true, lsp_format = 'fallback' })<cr>", desc = "󰉢 Format Document", mode = { "n", "v" } },
+  {
+    "<leader>lf",
+    "<cmd>lua require('conform').format({ async = true, lsp_format = 'fallback' })<cr>",
+    desc = "󰉢 Format Document",
+    mode = { "n", "v" },
+  },
   -- { "<leader>li", "<cmd>LspInfo<cr>", desc = "󰉒 LSP Info" },
   -- { "<leader>lI", "<cmd>LspInstallInfo<cr>", desc = "󰤚 LSP Install Info" },
   -- { "<leader>lR", "<cmd>LspRestart<cr>", desc = "󰑓 Restart LSP" },
@@ -415,7 +485,6 @@ wk.add({
   -- { "<leader>lc", group = "󰗀 Call Hierarchy" },
   -- { "<leader>lci", "<cmd>lua vim.lsp.buf.incoming_calls()<cr>", desc = "󰸙 Incoming Calls" },
   -- { "<leader>lco", "<cmd>lua vim.lsp.buf.outgoing_calls()<cr>", desc = "󰸖 Outgoing Calls" },
-
 
   -- -- LSP-specific plugin integrations
   -- -- Trouble.nvim integration (if installed)

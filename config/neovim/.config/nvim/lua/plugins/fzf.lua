@@ -17,7 +17,7 @@ return {
     "junegunn/fzf",
     cond = not vim.g.vscode,
     config = function()
-      vim.g.fzf_tags_command = 'ctags -R' -- Generate tags for the current project
+      vim.g.fzf_tags_command = "ctags -R" -- Generate tags for the current project
       -- vim.g.fzf_command_prefix = '' -- Use the default prefix
     end,
   },

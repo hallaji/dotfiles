@@ -29,10 +29,10 @@ return {
               untracked = "󰓏",
               deleted = "󰚃",
               ignored = "",
-            }
-          }
-        }
-      }
+            },
+          },
+        },
+      },
     })
   end,
 }
