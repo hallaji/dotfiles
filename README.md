@@ -61,17 +61,17 @@ information, stored outside the repo at `~/.local/personal/env`.
 
 The `dotup` command handles both fresh installs and ongoing maintenance of tools and configurations.
 
-| Command           | Description                    |
-| ----------------- | ------------------------------ |
-| `dotup`           | Run all                        |
-| `dotup arch`      | Arch-specific installations    |
-| `dotup asdf`      | ASDF plugins                   |
-| `dotup cli`       | CLI tools                      |
-| `dotup mac`       | macOS-specific installations   |
-| `dotup personal`  | Personal settings              |
-| `dotup services`  | System services                |
-| `dotup shell`     | Shell installations            |
-| `dotup vim`       | Vim/Neovim installations       |
+| Command          | Description                  |
+| ---------------- | ---------------------------- |
+| `dotup`          | Run all                      |
+| `dotup arch`     | Arch-specific installations  |
+| `dotup asdf`     | ASDF plugins                 |
+| `dotup cli`      | CLI tools                    |
+| `dotup mac`      | macOS-specific installations |
+| `dotup personal` | Personal settings            |
+| `dotup services` | System services              |
+| `dotup shell`    | Shell installations          |
+| `dotup vim`      | Vim/Neovim installations     |
 
 ---
 
