@@ -1,0 +1,39 @@
+repos:
+  - repo: local
+    hooks:
+      - id: editorconfig-checker
+        name: editorconfig-checker
+        entry: editorconfig-checker
+        language: system
+        types: [text]
+
+      - id: shfmt
+        name: shfmt (check)
+        entry: shfmt -i 2 -d
+        language: system
+        types: [shell]
+        exclude_types: [zsh]
+
+      - id: stylua
+        name: stylua (check)
+        entry: stylua --check
+        language: system
+        types: [lua]
+
+      - id: taplo
+        name: taplo fmt (check)
+        entry: taplo fmt --check
+        language: system
+        types: [toml]
+
+      - id: yamllint
+        name: yamllint
+        entry: yamllint --strict
+        language: system
+        types: [yaml]
+
+      - id: prettier
+        name: prettier (check)
+        entry: prettier --check --ignore-unknown
+        language: system
+        types_or: [json]

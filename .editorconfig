@@ -8,6 +8,19 @@ charset = utf-8
 indent_style = space
 indent_size = 2
 
-[*.c]
-indent_style = space
-indent_size = 4
+[*.{c,h}]
+indent_size = unset
+
+[{Makefile,*.mk}]
+indent_style = tab
+
+[{*.go,go.mod}]
+indent_style = tab
+
+[{*.tmTheme,*.tmTheme.template}]
+indent_style = unset
+indent_size = unset
+
+[*.md]
+trim_trailing_whitespace = false
+indent_size = unset
