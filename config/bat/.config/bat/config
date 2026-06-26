@@ -1,0 +1,12 @@
+# ██████╗  █████╗ ████████╗
+# ██╔══██╗██╔══██╗╚══██╔══╝
+# ██████╔╝███████║   ██║
+# ██╔══██╗██╔══██║   ██║
+# ██████╔╝██║  ██║   ██║
+# ╚═════╝ ╚═╝  ╚═╝   ╚═╝
+# https://github.com/sharkdp/bat
+# bat cache --build
+
+--theme="Catamaran"
+--style="numbers,changes,header"
+--italic-text=always
