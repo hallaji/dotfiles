@@ -14,6 +14,19 @@ repos:
         types: [shell]
         exclude_types: [zsh]
 
+      - id: shellcheck
+        name: shellcheck
+        entry: shellcheck
+        language: system
+        types: [shell]
+        exclude_types: [zsh]
+
+      - id: zsh-syntax
+        name: zsh -n (syntax)
+        entry: bash scripts/zsh-syntax-check.sh
+        language: system
+        types: [zsh]
+
       - id: stylua
         name: stylua (check)
         entry: stylua --check

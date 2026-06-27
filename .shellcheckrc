@@ -1,0 +1,3 @@
+# Sourced files (plugins, ~/.env, runtime configs) are resolved at run time, not
+# at lint time, so don't flag shellcheck's inability to follow them.
+disable=SC1090,SC1091

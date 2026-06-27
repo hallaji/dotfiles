@@ -5,7 +5,6 @@
 # ██████╔╝██║██║  ██║███████╗██║ ╚████║ ╚████╔╝
 # ╚═════╝ ╚═╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═══╝  ╚═══╝
 # shellcheck shell=bash
-# shellcheck disable=SC1090,SC1091
 
 [ -f ~/.env ] && source ~/.env
 [ -f "${XDG_PERSONAL_HOME}/env" ] && source "${XDG_PERSONAL_HOME}/env"
