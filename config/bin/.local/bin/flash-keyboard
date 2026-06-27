@@ -23,19 +23,19 @@ case $BRAND in
 "keychron")
   FORK="keychron/qmk_firmware"
   BRANCH="master"
-  COMMIT="b35bac6afbadc88cf6e8e3d1c8cc7494a510bb60" # last successful build (for history)
+  COMMIT="b35bac6afbadc88cf6e8e3d1c8cc7494a510bb60" # pinned build commit (known-good)
   BUILD="${1//[\/]/_}_$2.bin"
   ;;
 "zsa")
   FORK="zsa/qmk_firmware"
   BRANCH="firmware25"
-  COMMIT="f94ba44621d10b4d8549e5ad235f173963d3b89e" # last successful build (for history)
+  COMMIT="f94ba44621d10b4d8549e5ad235f173963d3b89e" # pinned build commit (known-good)
   BUILD="${1//[\/]/_}_$2.bin"
   ;;
 *)
   FORK="qmk/qmk_firmware"
   BRANCH="master"
-  COMMIT="fb48db4c8f59feb2ad64b41d53d708a0673b0df4" # last successful build (for history)
+  COMMIT="fb48db4c8f59feb2ad64b41d53d708a0673b0df4" # pinned build commit (known-good)
   BUILD="${1//[\/]/_}_$2.hex"
   ;;
 esac
@@ -50,6 +50,8 @@ if [ -n "$3" ] && [ "$3" = "--build" ]; then
   commands="
     git config --global http.sslVerify false;
     qmk setup -H ./qmk_firmware -b $BRANCH -y $FORK;
+    git -C ./qmk_firmware checkout $COMMIT;
+    git -C ./qmk_firmware submodule update --init --recursive;
     cp -R /keyboards/* ./qmk_firmware/keyboards;
     qmk compile -kb $1 -km $2;
     mkdir -p /keyboards/.build;
