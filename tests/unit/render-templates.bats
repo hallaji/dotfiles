@@ -15,7 +15,7 @@ teardown() {
 
 @test "substitutes \${VAR} placeholders in a normal template" {
   mkdir -p "$HOME/.gnupg"
-  printf 'pinentry-program ${GPG_PIN}\n' >"$HOME/.gnupg/gpg.conf.template"
+  printf "pinentry-program \${GPG_PIN}\n" >"$HOME/.gnupg/gpg.conf.template"
 
   GPG_PIN="/usr/bin/pinentry" bash "$RENDER"
 
@@ -35,7 +35,7 @@ teardown() {
 
 @test ":hex template converts literal and substituted #rrggbb to 0xff" {
   mkdir -p "$HOME/.config/sketchybar"
-  printf 'bg=#1a2b3c\nfg=${ACCENT}\n' >"$HOME/.config/sketchybar/colors.sh.template"
+  printf "bg=#1a2b3c\nfg=\${ACCENT}\n" >"$HOME/.config/sketchybar/colors.sh.template"
 
   ACCENT="#ffaa00" bash "$RENDER"
 

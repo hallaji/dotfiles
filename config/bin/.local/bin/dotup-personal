@@ -56,9 +56,16 @@ read_secret() {
   printf -v "$_outvar" '%s' "$_value"
 }
 
-# Read a saved value directly from the file (not the live environment)
+# Read a saved value directly from the file (not the live environment).
+# Warns if the stored value spans multiple lines (not supported) and returns
+# only the first line so the rest of the script can continue safely.
 saved_value() {
-  grep -m1 "^export ${1}=" "$PERSONAL_ENV_FILE" 2>/dev/null | cut -d'"' -f2
+  local line
+  line=$(grep -m1 "^export ${1}=" "$PERSONAL_ENV_FILE" 2>/dev/null) || return 0
+  if ! printf '%s' "$line" | grep -q '"[^"]*"'; then
+    printf "${RED}Warning: %s contains a multi-line value — only the first line will be kept. Re-enter to fix.${RESET}\n" "$1" >&2
+  fi
+  printf '%s' "$line" | cut -d'"' -f2
 }
 
 # Check if a key exists in the file regardless of value

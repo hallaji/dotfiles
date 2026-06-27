@@ -6,6 +6,8 @@
 
 setup() {
   FUNCTIONS_ZSH="$BATS_TEST_DIRNAME/../../config/zsh/.config/zsh/functions.zsh"
+  STUB="$BATS_TEST_TMPDIR/stubs"
+  mkdir -p "$STUB"
 }
 
 @test "sourcing defines the logic-bearing functions" {
@@ -36,4 +38,38 @@ setup() {
   [[ "$output" == *"region = eu-west-1"* ]]
   [[ "$output" == *"region = ap-southeast-2"* ]]
   [[ "$output" == *"granted_icon = dollar"* ]]
+}
+
+# --- Tier B: branch logic via stubbed external tools ---
+
+@test "change_gcloud_config reports when nothing is selected" {
+  printf '#!/bin/sh\nprintf "%%s\\n" NAME foo bar\n' >"$STUB/gcloud"
+  printf '#!/bin/sh\nexit 0\n' >"$STUB/fzf"  # no selection
+  printf '#!/bin/sh\nexit 0\n' >"$STUB/p10k" # prompt refresh no-op
+  chmod +x "$STUB/gcloud" "$STUB/fzf" "$STUB/p10k"
+
+  run env PATH="$STUB:$PATH" zsh -c "source '$FUNCTIONS_ZSH' 2>/dev/null; change_gcloud_config"
+  [[ "$output" == *"No GCloud config provided"* ]]
+}
+
+@test "toggle_sketchybar takes the hide branch when the bar is visible" {
+  [[ "$OSTYPE" == darwin* ]] || skip "macOS-only (sketchybar/aerospace)"
+
+  # Override DOTFILES_HOME so the function's sed targets a throwaway toml,
+  # never the real ~/.dotfiles aerospace config.
+  export DOTFILES_HOME="$BATS_TEST_TMPDIR/dot"
+  mkdir -p "$DOTFILES_HOME/config/aerospace"
+  printf 'outer.top = 46\n' >"$DOTFILES_HOME/config/aerospace/.aerospace.toml"
+
+  cat >"$STUB/sketchybar" <<'SB'
+#!/bin/sh
+case "$*" in
+  "--query bar") printf '%s\n' '{"hidden": "off"}' ;;
+esac
+SB
+  printf '#!/bin/sh\nexit 0\n' >"$STUB/aerospace"
+  chmod +x "$STUB/sketchybar" "$STUB/aerospace"
+
+  run env PATH="$STUB:$PATH" zsh -c "source '$FUNCTIONS_ZSH' 2>/dev/null; toggle_sketchybar"
+  [[ "$output" == *"Turning off SketchyBar"* ]]
 }
