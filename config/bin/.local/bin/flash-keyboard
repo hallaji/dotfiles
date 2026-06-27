@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash
 # ███████╗██╗      █████╗ ███████╗██╗  ██╗
 # ██╔════╝██║     ██╔══██╗██╔════╝██║  ██║
 # █████╗  ██║     ███████║███████╗███████║
@@ -7,62 +7,71 @@
 # ╚═╝     ╚══════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝
 # Usage❯ flash-keyboard <keyboard> <keymap> [--build]
 
+set -euo pipefail
+
 if [ "$#" -ne 2 ] && [ "$#" -ne 3 ]; then
   echo "⚠ Usage❯ $(basename "$0") <keyboard> <keymap> [--build]" >&2
   exit 1
 fi
 
-if [ -z "$DOTFILES_HOME" ]; then
+if [ -z "${DOTFILES_HOME:-}" ]; then
   echo "⚠ DOTFILES_HOME is not set." >&2
   exit 1
 fi
 
-BRAND=$(echo "$1" | cut -d/ -f1)
+BRAND="${1%%/*}"
 
 case $BRAND in
 "keychron")
   FORK="keychron/qmk_firmware"
   BRANCH="master"
   COMMIT="b35bac6afbadc88cf6e8e3d1c8cc7494a510bb60" # pinned build commit (known-good)
-  BUILD="${1//[\/]/_}_$2.bin"
+  BUILD="${1//\//_}_$2.bin"
   ;;
 "zsa")
   FORK="zsa/qmk_firmware"
   BRANCH="firmware25"
   COMMIT="f94ba44621d10b4d8549e5ad235f173963d3b89e" # pinned build commit (known-good)
-  BUILD="${1//[\/]/_}_$2.bin"
+  BUILD="${1//\//_}_$2.bin"
   ;;
 *)
   FORK="qmk/qmk_firmware"
   BRANCH="master"
   COMMIT="fb48db4c8f59feb2ad64b41d53d708a0673b0df4" # pinned build commit (known-good)
-  BUILD="${1//[\/]/_}_$2.hex"
+  BUILD="${1//\//_}_$2.hex"
   ;;
 esac
 
-if [ -n "$3" ] && [ "$3" != "--build" ]; then
-  echo "⚠ Unknown option: $3. Did you mean --build?" >&2
-  exit 1
-fi
-
-if [ -n "$3" ] && [ "$3" = "--build" ]; then
+case "${3:-}" in
+"") ;;
+"--build")
   echo "⌨️ Building the firmware..."
-  commands="
-    git config --global http.sslVerify false;
-    qmk setup -H ./qmk_firmware -b $BRANCH -y $FORK;
-    git -C ./qmk_firmware checkout $COMMIT;
-    git -C ./qmk_firmware submodule update --init --recursive;
-    cp -R /keyboards/* ./qmk_firmware/keyboards;
-    qmk compile -kb $1 -km $2;
-    mkdir -p /keyboards/.build;
-    cp ./qmk_firmware/$BUILD /keyboards/.build;
-  "
-  docker run --rm -it \
+  # Single-quoted so $1..$6 stay literal; values are passed as positional args
+  # to sh (not interpolated), so a keyboard/keymap can't inject shell.
+  # shellcheck disable=SC2016 # literal $1..$6 are intentional — the inner sh expands them
+  build_script='
+    set -e
+    keyboard=$1 keymap=$2 branch=$3 fork=$4 commit=$5 build=$6
+    git config --global http.sslVerify false
+    qmk setup -H ./qmk_firmware -b "$branch" -y "$fork"
+    git -C ./qmk_firmware checkout "$commit"
+    git -C ./qmk_firmware submodule update --init --recursive
+    cp -R /keyboards/* ./qmk_firmware/keyboards
+    qmk compile -kb "$keyboard" -km "$keymap"
+    mkdir -p /keyboards/.build
+    cp "./qmk_firmware/$build" /keyboards/.build
+  '
+  docker run --rm -t \
     -w "/qmk" \
     -v "$DOTFILES_HOME/config/keyboards:/keyboards" \
     qmkfm/qmk_cli \
-    sh -c "$commands"
-fi
+    sh -c "$build_script" flash-keyboard "$1" "$2" "$BRANCH" "$FORK" "$COMMIT" "$BUILD"
+  ;;
+*)
+  echo "⚠ Unknown option: $3. Did you mean --build?" >&2
+  exit 1
+  ;;
+esac
 
 FILE="$DOTFILES_HOME/config/keyboards/.build/$BUILD"
 if [ ! -f "$FILE" ]; then
@@ -72,7 +81,7 @@ fi
 
 echo "⌨️ Flashing..."
 
-sleep 1
+sleep 1 # let the device settle into bootloader mode
 
 case $BRAND in
 "keychron")
