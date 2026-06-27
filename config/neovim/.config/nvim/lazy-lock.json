@@ -13,7 +13,6 @@
   "ctrlp.vim": { "branch": "master", "commit": "3739dcd638f457559d5a1ae1e398276175694e4b" },
   "ctrlsf.vim": { "branch": "master", "commit": "39db9af4d26a91a8a6261c66ffb624f8b3d29114" },
   "diffview.nvim": { "branch": "main", "commit": "4516612fe98ff56ae0415a259ff6361a89419b0a" },
-  "editorconfig-vim": { "branch": "master", "commit": "c0227885a06b155d5aa5465e08b9800e8c939f70" },
   "fzf": { "branch": "master", "commit": "f2e451596c5d23de0069cdc51ea3fec73b7fe835" },
   "fzf-lua": { "branch": "main", "commit": "b6f0392fe1645973c795b5bbbd8d6db466a5a25a" },
   "fzf.vim": { "branch": "master", "commit": "d2a59a992a2455f609c0fde2ebd84427ea8f919a" },
