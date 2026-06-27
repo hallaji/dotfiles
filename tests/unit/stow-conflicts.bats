@@ -50,7 +50,7 @@ is_ignored() {
       rel="${file#"$pkg"}"
 
       is_ignored "$rel" "$global_ignore" && continue
-      is_ignored "$rel" "$local_ignore"  && continue
+      is_ignored "$rel" "$local_ignore" && continue
 
       # Simulate --dotfiles: any path component starting with dot- becomes .
       target=$(printf '%s' "$rel" | sed 's|/dot-|/.|g; s|^dot-|.|')
