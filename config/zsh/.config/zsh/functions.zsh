@@ -182,13 +182,16 @@ toggle_sketchybar() {
 #  │││ │ │ │ │├─┘
 # ─┴┘└─┘ ┴ └─┘┴
 
-# Tab-completion for dotup subcommands (see config/bin/.local/bin/dotup)
+# Tab-completion for dotup subcommands (see config/bin/.local/bin/dotup).
+# Keep these options in sync with the dotup dispatcher and the README table;
+# tests/unit/dotup-sync.bats enforces it.
 _dotup_completion() {
   local -a options
   options=(
     'arch:Arch-specific installations'
     'asdf:ASDF plugins'
     'cli:CLI tools'
+    'doctor:Health checks'
     'mac:MacOS-specific installations'
     'personal:Manage personal settings'
     'services:System services'

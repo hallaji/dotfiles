@@ -37,12 +37,14 @@ sudo pacman -S --needed \
   dolphin \
   figlet \
   firefox \
+  fzf \
   git \
   github-cli \
   go \
   hyprland \
   inetutils \
   i3 \
+  jq \
   less \
   libfido2 \
   lolcat \

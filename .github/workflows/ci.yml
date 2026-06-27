@@ -19,6 +19,16 @@ jobs:
           enable-cache: true
       - run: devbox run lint
 
+  build:
+    name: Doctor (build, vet, test)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: jetify-com/devbox-install-action@v0.15.0
+        with:
+          enable-cache: true
+      - run: devbox run -- sh -c "cd tools/doctor && go build ./... && go vet ./... && go test ./..."
+
   test:
     name: Unit tests / ${{ matrix.os }}
     runs-on: ${{ matrix.os }}

@@ -12,7 +12,8 @@
     "jq@1.8.1",
     "prettier@3.8.3",
     "bats@1.12.0",
-    "zsh@5.9.1"
+    "zsh@5.9.1",
+    "go@1.26.3"
   ],
   "shell": {
     "init_hook": [
@@ -27,6 +28,9 @@
       ],
       "test": [
         "bats tests/unit"
+      ],
+      "doctor": [
+        "(cd tools/doctor && go run .)"
       ]
     }
   }

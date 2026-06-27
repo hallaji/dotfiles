@@ -27,10 +27,12 @@ is_ignored() {
   local base="${rel##*/}"
   while IFS= read -r pat || [ -n "$pat" ]; do
     [ -z "$pat" ] && continue
+    # Stow anchors patterns to the whole segment, so e.g. \.git matches the
+    # .git dir exactly, not .gitconfig. Anchor to mirror that.
     if [[ "$pat" == ^/* ]]; then
-      [[ "/$rel" =~ $pat ]] && return 0
+      [[ "/$rel" =~ ${pat}$ ]] && return 0
     else
-      [[ "$base" =~ $pat ]] && return 0
+      [[ "$base" =~ ^(${pat})$ ]] && return 0
     fi
   done <"$ignore_file"
   return 1

@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+# Build (or reuse) a per-machine dotfiles-doctor binary and run it.
+#
+# The doctor is Go (tools/doctor). A compiled binary is platform-specific, so
+# rather than commit one, each machine builds its own into the cache and reuses
+# it until a *.go source file changes. Falls back with a clear error if Go is
+# missing. For repo-local use, `devbox run doctor` runs it with the pinned Go.
+
+set -euo pipefail
+
+DOTFILES_HOME="${DOTFILES_HOME:-$HOME/.dotfiles}"
+src="$DOTFILES_HOME/tools/doctor"
+bin="${XDG_CACHE_HOME:-$HOME/.cache}/dotfiles/dotup-doctor"
+
+if ! command -v go >/dev/null 2>&1; then
+  echo "dotup-doctor: Go is not installed; run 'dotup' to provision it." >&2
+  exit 1
+fi
+
+# Rebuild when the binary is missing or any source file is newer than it.
+if [ ! -x "$bin" ] || find "$src" -name '*.go' -newer "$bin" | grep -q .; then
+  mkdir -p "$(dirname "$bin")"
+  (cd "$src" && go build -o "$bin" .)
+fi
+
+exec "$bin" "$@"

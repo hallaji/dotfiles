@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Apply formatters in place: shell (excluding zsh), Lua, and TOML.
+# Apply formatters in place: shell (excluding zsh), Lua, TOML, JSON, and Go.
 # Run via `devbox run fmt` so the devbox-pinned tools are on PATH.
 set -euo pipefail
 
@@ -21,3 +21,7 @@ toml_files=$(git ls-files -- '*.toml')
 # JSON: prettier honors .prettierignore (skips tool/app-managed files).
 json_files=$(git ls-files -- '*.json')
 [ -n "$json_files" ] && printf '%s\n' "$json_files" | xargs prettier --write --ignore-unknown
+
+# Go: gofmt the tracked Go sources in place.
+go_files=$(git ls-files -- '*.go')
+[ -n "$go_files" ] && printf '%s\n' "$go_files" | xargs gofmt -w

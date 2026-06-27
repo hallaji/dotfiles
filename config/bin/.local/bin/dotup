@@ -1,6 +1,10 @@
 #!/bin/bash
 
-# Usage: dotup [arch|asdf|cli|mac|personal|services|shell|vim]
+# Usage: dotup [arch|asdf|cli|doctor|mac|personal|services|shell|vim]
+#
+# Subcommands map to dotup-* files in this directory. Keep this list in sync
+# with the _dotup_completion helper (config/zsh/.config/zsh/functions.zsh) and
+# the README table; tests/unit/dotup-sync.bats enforces it.
 
 if [ $# -eq 1 ]; then
   dotup-"$1"
@@ -13,4 +17,5 @@ else
   dotup-services
   dotup-shell
   dotup-vim
+  dotup-doctor
 fi

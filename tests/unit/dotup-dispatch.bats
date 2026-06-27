@@ -6,7 +6,7 @@ setup() {
   DOTUP="$BATS_TEST_DIRNAME/../../config/bin/.local/bin/dotup"
   STUB="$BATS_TEST_TMPDIR/stubs"
   mkdir -p "$STUB"
-  for sub in arch asdf cli mac personal services shell vim; do
+  for sub in arch asdf cli doctor mac personal services shell vim; do
     printf '#!/bin/sh\necho %s\n' "$sub" >"$STUB/dotup-$sub"
     chmod +x "$STUB/dotup-$sub"
   done
@@ -25,6 +25,6 @@ run_dotup() {
 @test "dotup with no args runs the full chain in order" {
   run_dotup
   [ "$status" -eq 0 ]
-  expected=$'personal\narch\nasdf\ncli\nmac\nservices\nshell\nvim'
+  expected=$'personal\narch\nasdf\ncli\nmac\nservices\nshell\nvim\ndoctor'
   [ "$output" = "$expected" ]
 }

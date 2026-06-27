@@ -50,3 +50,9 @@ repos:
         entry: prettier --check --ignore-unknown
         language: system
         types_or: [json]
+
+      - id: gofmt
+        name: gofmt (check)
+        entry: bash scripts/gofmt-check.sh
+        language: system
+        types: [go]
