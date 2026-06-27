@@ -19,7 +19,7 @@ repos:
         entry: shellcheck
         language: system
         types: [shell]
-        exclude_types: [zsh]
+        exclude_types: [zsh, bats] # bats tests use intentional literals/run wrappers; validated by running them
 
       - id: zsh-syntax
         name: zsh -n (syntax)
