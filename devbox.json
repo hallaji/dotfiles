@@ -16,9 +16,6 @@
     "go@1.26.3"
   ],
   "shell": {
-    "init_hook": [
-      "echo 'devbox: dotfiles toolchain ready — run `devbox run lint` or `devbox run fmt`' >&2"
-    ],
     "scripts": {
       "lint": [
         "pre-commit run --all-files --color never"
