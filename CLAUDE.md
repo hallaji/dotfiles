@@ -136,6 +136,8 @@ manual convention — when you touch a keybinding or shortcut, update its doc.
 `docs/CLIPBOARD.md` documents the clipboard flow across tmux/zsh/Alacritty, and
 `README.md`'s command table tracks `dotup` subcommands (see "Adding a dotup
 subcommand"). Keep both current when the relevant behavior changes.
+`docs/ARCHITECTURE.md` (stow → templates → provisioning → doctor lifecycle, with
+a Mermaid diagram) must be refreshed when that flow changes.
 
 macOS window management is **AeroSpace** (launched by `dotup-services` alongside
 skhd, borders, sketchybar). The `yabai` package is legacy and is no longer
