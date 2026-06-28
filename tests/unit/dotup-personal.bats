@@ -3,9 +3,12 @@
 #
 # Runs end-to-end against a sandbox HOME/XDG_PERSONAL_HOME with fzf stubbed.
 # read_secret (the interactive /dev/tty path) is only reached on a non-empty fzf
-# selection, so a no-op fzf stub keeps the whole run non-interactive — that path
-# is intentionally out of scope (needs a pty). The var list is read from the real
-# repo spec (config/env/.env.personal.spec) via DOTFILES_HOME.
+# selection, so a no-op fzf stub keeps most of the run non-interactive. The
+# *masked echo* behaviour needs a pty and stays out of scope, but the no-tty
+# degradation is covered below: bats (like CI) runs without a controlling
+# terminal, which is exactly the condition that used to abort the script. The
+# var list is read from the real repo spec (config/env/.env.personal.spec) via
+# DOTFILES_HOME.
 
 setup() {
   SANDBOX="$(mktemp -d)"
@@ -141,6 +144,20 @@ EOF
   [[ "$output" != *"Personal settings saved"* ]]
   # The existing env file must be left untouched.
   grep -q '^export GITHUB_ACCESS_TOKEN="keep-me"' "$ENV_FILE"
+}
+
+@test "secret-var entry degrades gracefully without a controlling tty" {
+  # Regression: read_secret uses stty and </dev/tty, whose errors are hidden by
+  # 2>/dev/null. Under `set -e`, on a machine without a controlling terminal
+  # those failures silently aborted the whole script with no output. Selecting a
+  # secret var must still complete here (bats has no controlling tty).
+  printf '#!/bin/sh\necho GITHUB_ACCESS_TOKEN\n' >"$STUB/fzf" # selects a secret
+  chmod +x "$STUB/fzf"
+
+  run env PATH="$STUB:$PATH" bash "$DOTUP_PERSONAL" </dev/null
+  [ "$status" -eq 0 ]
+  [[ "$output" == *"Personal settings saved"* ]]
+  grep -q '^export GITHUB_ACCESS_TOKEN=' "$ENV_FILE"
 }
 
 @test "warns and keeps first line when a saved value contains a newline" {

@@ -41,8 +41,11 @@ done <"$PERSONAL_SPEC"
 read_secret() {
   local prompt="$1" _outvar="$2" _value="" char="" old_stty
   printf '%s' "$prompt"
-  old_stty="$(stty -g </dev/tty 2>/dev/null)"
-  stty -echo </dev/tty 2>/dev/null
+  # stty/tty control must never be fatal under `set -e`: on a machine without a
+  # proper controlling terminal, /dev/tty access fails and its error is hidden
+  # by 2>/dev/null, which would otherwise abort the whole script silently.
+  old_stty="$(stty -g </dev/tty 2>/dev/null)" || true
+  stty -echo </dev/tty 2>/dev/null || true
   trap 'stty "$old_stty" </dev/tty 2>/dev/null' INT TERM EXIT
   while IFS= read -r -s -n1 char </dev/tty; do
     if [[ -z "$char" ]]; then
@@ -57,7 +60,7 @@ read_secret() {
       printf '*'
     fi
   done
-  stty "$old_stty" </dev/tty 2>/dev/null
+  stty "$old_stty" </dev/tty 2>/dev/null || true
   trap - INT TERM EXIT
   echo
   printf -v "$_outvar" '%s' "$_value"
