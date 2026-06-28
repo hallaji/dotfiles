@@ -2,12 +2,12 @@
 
 - [Cheat Sheet](#cheat-sheet)
   - [Steering Focus](#steering-focus)
-    - [Spaces \& Monitors (Yabai / SKHD)](#spaces--monitors-yabai--skhd)
+    - [Spaces \& Monitors (AeroSpace)](#spaces--monitors-aerospace)
     - [Terminals (Alacritty)](#terminals-alacritty)
     - [Editors (VIM / NVIM / VSCode)](#editors-vim--nvim--vscode)
     - [Browsers (Vimium / Vimari)](#browsers-vimium--vimari)
   - [OS Shortcuts (macOS)](#os-shortcuts-macos)
-  - [Yabai / SKHD](#yabai--skhd)
+  - [AeroSpace / SKHD](#aerospace--skhd)
   - [Tmux](#tmux)
     - [Tmux Key Bindings](#tmux-key-bindings)
       - [Custom Tmux Key Bindings](#custom-tmux-key-bindings)
@@ -38,13 +38,16 @@
 
 ## Steering Focus
 
-### Spaces & Monitors (Yabai / SKHD)
+### Spaces & Monitors (AeroSpace)
 
-- Focus on a window: `⌃⌥⌘` + (`h` | `j` | `k` | `l`)
-- Resize a window: `⌃⌥⌘` + (`←` | `↓` | `↑` | `→`)
-- Move a window: `⌃⌥⌘` + (`home` | `pagedown` | `pageup` | `end`)
-- Focus on a monitor by number `⌃⌥⌘` + (`1` | `2` | `3` | etc.)
-- Focus on the next space `⌃⌥⌘ + Backtick`
+The AeroSpace modifier is `MEH` = `⌃⇧⌥`.
+
+- Focus a window: `⌃⇧⌥` + (`h` | `j` | `k` | `l`) — at the left/right edge, wraps to the adjacent workspace
+- Focus a workspace by number: `⌃⇧⌥` + (`1` | `2` | `3` | etc.)
+- Focus previous/next workspace: `⌃⇧⌥` + (`←` | `→`)
+- Focus the next monitor: `⌃⇧⌥ + Backtick`
+- Move a window: `⌃⇧⌥ + a` (move mode), then `h` | `j` | `k` | `l`
+- Toggle to the last-used workspace: `⌃⇧⌥ + Space`
 
 ### Terminals (Alacritty)
 
@@ -74,11 +77,11 @@
 ## OS Shortcuts (macOS)
 
 - `HYPR` Control, Shift, Alt and GUI = `⌃⇧⌥⌘`
-- `LCAG` Control, Alt and GUI = `⌃⇧⌥`
+- `MEH` Control, Shift and Alt = `⌃⇧⌥` (the AeroSpace modifier)
 
 Checkout keyboard [keymaps](../keyboards) and [Keycodes](https://github.com/qmk/qmk_firmware/blob/master/docs/keycodes.md).
 
-- `⌘ + SPACE` Toogle search (Alfred)
+- `⌘ + SPACE` Toggle search (Alfred)
 - `HYPR + BACKTICK` Toggle macOS menu bar (via SKHD)
 - `HYPR + L` Lock screen (via SKHD)
 - `HYPR + D` Show desktop (via SKHD)
@@ -88,39 +91,70 @@ Checkout keyboard [keymaps](../keyboards) and [Keycodes](https://github.com/qmk/
 - `HYPR + [` Toggle meeting bar (via MeetingBar)
 - `HYPR + P` Toggle network monitor (via Little Snitch)
 - `HYPR + J` Join next meeting (via MeetingBar)
-- `HYPR + U` Toogle computer awake mode (via SKHD)
+- `HYPR + U` Toggle computer awake mode (via SKHD)
 - `HYPR + Y` Toggle "Do Not Disturb" [via macOS Shortcuts → Mission Control]
 - `HYPR + W` Show quick access for password manager (via 1password)
 - `HYPR + E` Lock password manager (via 1password)
 - `HYPR + A` Show notification centre [via macOS Shortcuts → Mission Control]
-- `HYPR + N` Toggle to switching minimal window (via Zoom)
+- `HYPR + N` Switch to minimal window (via Zoom)
 - `HYPR + Z` Start/Stop screen sharing (via Zoom)
 - `HYPR + X` Pause/Resume screen sharing (via Zoom)
 - `HYPR + V` Start/Stop video (via Zoom)
 - `HYPR + M` Mute/Unmute audio (via Zoom)
 - `HYPR + B` Toggle in-meeting chat (via Zoom)
-- `HYPR + N` Switch to minimal window (via Zoom)
 
-## Yabai / SKHD
+## AeroSpace / SKHD
 
-[koekeishiya/yabai](https://github.com/koekeishiya/yabai) and [koekeishiya/skhd](https://github.com/koekeishiya/skhd)
+[nikitabobko/AeroSpace](https://github.com/nikitabobko/AeroSpace) tiles windows
+across workspaces; a few global hotkeys run through
+[koekeishiya/skhd](https://github.com/koekeishiya/skhd).
 
-- `⌃⌥⌘ + r` Rotate windows
-- `⌃⌥⌘ + y` Mirror tree y-axis
-- `⌃⌥⌘ + x` Mirror tree x-axis
-- `⌃⌥⌘ + a` Toggle float (only on bsp spaces)
-- `⌃⌥⌘ + p` Toggle split vertically or horizontally with parent node
-- `⌃⌥⌘ + e` Toggle layout
-- `⌃⌥⌘ + s` Toggle sticky (show on all spaces)
-- `⌃⌥⌘ + f` Toggle window fullscreen zoom
-- `⌃⌥⌘ + d` Toggle window parent zoom
-- `⌃⌥⌘ + o` Toggle desktop offset
-- `⌃⌥⌘ + w` Destroy space (desktop)
-- `⌃⌥⌘ + n` Create a desktop and follow focus
-- `⌃⌥⌘ + m` Create a desktop, move focused window and follow focus
-- `⌃⌥⌘ + 0` Balance size of windows
-- `⌃⌥⌘ + -` Set the opacity of normal windows to minimum
-- `⌃⌥⌘ + =` Set the opacity of normal windows to maximum
+The AeroSpace modifier is `MEH` = `⌃⇧⌥`.
+
+### Main mode
+
+- `⌃⇧⌥` + (`h` | `j` | `k` | `l`) Focus window left/down/up/right; at the left/right edge, wraps to the adjacent workspace
+- `⌃⇧⌥` + (`1` … `0`) Focus workspace by number
+- `⌃⇧⌥` + (`←` | `→`) Focus previous/next workspace (wrap-around)
+- `⌃⇧⌥ + Backtick` Focus the next monitor (wrap-around)
+- `⌃⇧⌥ + Space` Toggle to the last-used workspace (back-and-forth)
+- `⌃⇧⌥ + Backspace` Toggle to the last-used workspace (back-and-forth)
+- `⌃⇧⌥ + ;` Toggle to the last-focused window (back-and-forth)
+- `⌃⇧⌥ + f` Toggle AeroSpace fullscreen
+- `⌃⇧⌥ + Enter` Toggle native macOS fullscreen
+- `⌃⇧⌥ + Esc` Exit native macOS fullscreen
+- `⌃⇧⌥ + d` Minimize the focused window (native)
+- `⌃⇧⌥ + w` Close the focused window
+- `⌃⇧⌥ + q` Close all windows but the current one
+- `⌃⇧⌥ + m` Toggle floating/tiling layout
+- `⌃⇧⌥ + ,` Toggle accordion layout (horizontal/vertical)
+- `⌃⇧⌥ + .` Toggle tiles layout (horizontal/vertical)
+- `⌃⇧⌥ + /` Flatten the workspace tree
+- `⌃⇧⌥ + -` Shrink the focused window (smart resize −50)
+- `⌃⇧⌥ + =` Grow the focused window (smart resize +50)
+- `⌃⇧⌥ + a` Enter **move** mode
+- `⌃⇧⌥ + s` Enter **service** mode
+
+### Move mode (`⌃⇧⌥ + a`, then)
+
+- (`h` | `j` | `k` | `l`) Move window left/down/up/right; at the left/right edge, moves to the adjacent workspace
+- (`1` … `0`) Move window to workspace by number and follow it
+- `n` | `p` Move window to the next/previous workspace and follow it
+- `Backtick` Move the workspace to the next monitor
+- `Esc` Return to main mode
+
+### Service mode (`⌃⇧⌥ + s`, then)
+
+- `r` Reload AeroSpace config
+- `Esc` Return to main mode
+
+### Global hotkeys (SKHD)
+
+- `HYPR + U` Toggle computer awake mode (Lungo)
+- `HYPR + D` Show desktop (F11)
+- `HYPR + L` Lock screen
+- `HYPR + Backtick` Show/Hide the macOS menu bar
+- `HYPR + Enter` End the current Zoom meeting, or join the next one
 
 ## Tmux
 
@@ -168,7 +202,7 @@ Checkout keyboard [keymaps](../keyboards) and [Keycodes](https://github.com/qmk/
 - `⌃b` + `?` List key bindings
 - `⌃b` + `t` Show digital clock
 - `⌃b` + `d` Detach from session
-- `⌃b` + `l` Toggle last active window/tab
+- `⌃b` + `⌃b` Toggle last active window/tab
 - `⌃b` + `;` Toggle last active pane
 - `⌃b` + `q` Show pane numbers
 - `⌃b` + `q` + `1..9` Switch pane by number
@@ -194,10 +228,13 @@ Checkout keyboard [keymaps](../keyboards) and [Keycodes](https://github.com/qmk/
 - `⌃b` + `P` Opens a menu to choose a buffer for pasting
 - `⌃⇧←` Swap current window with the left window
 - `⌃⇧→` Swap current window with the right window
-- `⌃b` + `Enter` Enter copy mode
+- In copy mode (entered via `⌃b [` or Alacritty's `⌘⇧c`):
   - `v` Begin selection
   - `V` Select line
+  - `⌃v` Toggle rectangle (block) selection
   - `y` Copy selection
+  - `H` Jump to start of line
+  - `L` Jump to end of line
 - `⌃b` + `y`
   - Copy text from the command line to the clipboard (normal mode)
   - Copy selection to system clipboard (copy mode)
@@ -212,22 +249,31 @@ Checkout keyboard [keymaps](../keyboards) and [Keycodes](https://github.com/qmk/
 ### Tmux bindings
 
 - `⌘ + :` Run a tmux command
+- `⌘ + E` Spread panes out evenly
+- `⌘⇧ + E` Toggle panes synchronisation
 - `⌘ + u` Grab and open any URL from the terminal window
-- `⌘ + p` Look up in files/directories
-- `⌘⇧ + p` Show session tree
+- `⌘ + p` Show all windows
+- `⌘⇧ + p` Show all sessions
+- `⌘⇧ + f` Search for a pane
 - `⌘ + s` Save environment
 - `⌘⇧ + s` Restore environment
 - `⌘ + d` Vertical pane
 - `⌘⇧ + d` Horizontal pane
-- `⌘ + w` Close pane/tab
-- `⌘⌥ + w` Kill current session
 - `⌘ + t` Open a new tab
-- `⌃⇧Tab` Previous tab
-- `⌃Tab` Next tab
+- `⌘ + w` Close current pane
+- `⌘⇧ + w` Close current window/tab
+- `⌘⌥ + w` Kill current session
 - `⌘ + r` Rename a tab
 - `⌘⇧ + r` Rename a session
 - `⌘⌥ + r` Reload tmux config
-- `⌘ + c` Start tmux copy mode
+- `⌃⇧Tab` Previous tab
+- `⌃Tab` Next tab
+- `⌘⇧ + ←` Previous session
+- `⌘⇧ + →` Next session
+- `⌘` + (`←` | `↓` | `↑` | `→`) Resize current pane
+- `⌘` + (`1` … `9`) Switch to a tab by number
+- `⌘ + c` Copy selection to clipboard
+- `⌘⇧ + c` Start tmux copy mode
 - `⌘ + v` Paste from clipboard
 
 ### Vi-mode
@@ -237,16 +283,18 @@ Use `i`, `I`, `a`, or `A` to return to **Insert mode**.
 
 #### Insert-mode shortcuts
 
-- `⌃ + P` : Change to a directory (searching `~/.Code`)
-- `⌃ + O` : Open a directory in editor (searching `~/.Code`)
+- `⌃ + F` : fzf directory picker under `$CODE` (`~/Code`); cd into the selection
 - `⌃ + R` : Multi-word history search
-- `⌃ + T` : Search backward in history
-- `⌃ + Y` : Search forward in history
+- `⌃ + P` : Previous history match (by prefix)
+- `⌃ + N` : Next history match (by prefix)
 - `⌃ + A` : Move to beginning of line
 - `⌃ + E` : Move to end of line
 - `⌃ + W` : Delete previous word
 - `⌃ + U` : Delete whole line
 - ↑ / ↓ : Navigate through history
+
+> `,f` (fzf directory picker) and `,o` (open best match in `$EDITOR`) are shell
+> functions that do the same under `$CODE`; `⌃F` is bound to `,f`.
 
 #### Normal-mode commands
 

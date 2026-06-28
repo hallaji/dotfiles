@@ -57,14 +57,21 @@ environment into the real file beside them (`~/.gitconfig.template` →
 `$XDG_PERSONAL_HOME` (managed by `dotup personal`). Entries tagged `:hex` also
 convert `#rrggbb` → `0xffrrggbb` for tools that need it (sketchybar, borders).
 The doctor's `templates` check re-renders in memory and compares, flagging
-anything stale or not yet rendered.
+anything stale or not yet rendered. `stale` is usually legitimate, not a bug: a
+referenced value changed (e.g. `dotup personal` rotated a token) and the file
+hasn't been re-rendered yet — it refreshes at the next login or immediately via
+`render-templates`. The check renders against the doctor's **current**
+environment, inherited from the invoking shell; `dotup doctor` and
+`devbox run doctor` agree because both inherit it. (A genuinely stripped
+environment — e.g. CI with no `.env`/personal vars loaded — would mis-flag
+env-dependent files, but the normal entrypoints don't.)
 
 ## Toolchain
 
 Tools are pinned in `devbox.json`. Run everything through devbox so versions
 match CI:
 
-- `devbox run lint` — pre-commit hooks (shellcheck, shfmt, yamllint, prettier, …)
+- `devbox run lint` — pre-commit hooks (shellcheck, shfmt, gofmt, yamllint, prettier, …)
 - `devbox run fmt` — auto-format
 - `devbox run test` — bats unit tests in `tests/unit`
 - `devbox run doctor` — health checks (Go CLI in `tools/doctor`)
@@ -78,7 +85,10 @@ Run a single test:
 ## Conventions
 
 - Shell scripts: `#!/usr/bin/env bash` or `zsh`, formatted with shfmt, clean
-  under shellcheck.
+  under shellcheck. Go is formatted with `gofmt` (both via `devbox run fmt`) and
+  enforced by a `gofmt` pre-commit hook; `go vet`/`go test` run in CI. Note
+  `gofmt`/`go test` only see **tracked** files — stage new Go before relying on
+  the lint to check it.
 - Tests assert **correct** behavior and must fail when the script is broken —
   never encode current broken behavior as expected.
 - Shell tests go in `tests/unit/*.bats`, sandboxed via `HOME`/`XDG_PERSONAL_HOME`
@@ -104,11 +114,48 @@ renaming, or removing one, update all of:
 `tests/unit/dotup-sync.bats` enforces that 2–4 match the `dotup-*` files; if it
 fails, the diff names the subcommand that is out of sync.
 
+## Documentation
+
+User-facing docs in `docs/` are derived from config and must be updated **in the
+same change** that alters the underlying behavior. No test enforces this (the
+docs are prose, with no machine-readable contract to the configs), so it is a
+manual convention — when you touch a keybinding or shortcut, update its doc.
+
+`docs/CHEATSHEET.md` mirrors keybindings/shortcuts. Each source maps to a section:
+
+| Source of truth                                            | CHEATSHEET section          |
+| --------------------------------------------------------- | --------------------------- |
+| `config/aerospace/.aerospace.toml`                        | AeroSpace / SKHD            |
+| `config/skhd/.skhdrc`                                      | AeroSpace / SKHD → Global hotkeys |
+| `config/tmux/.tmux.conf`                                   | Tmux                        |
+| `config/alacritty/.config/alacritty/keyboard.toml`        | Alacritty                   |
+| `config/zsh/.config/zsh/bindings.zsh`                     | Alacritty → Vi-mode         |
+| `config/vimium/.config/vimium/vimium-options.json`        | Vimium / Vimari             |
+| `config/{vim,neovim}/**` mappings                         | Vim/Neovim                  |
+
+`docs/CLIPBOARD.md` documents the clipboard flow across tmux/zsh/Alacritty, and
+`README.md`'s command table tracks `dotup` subcommands (see "Adding a dotup
+subcommand"). Keep both current when the relevant behavior changes.
+
+macOS window management is **AeroSpace** (launched by `dotup-services` alongside
+skhd, borders, sketchybar). The `yabai` package is legacy and is no longer
+started — don't document yabai bindings as current.
+
 ## The doctor (`tools/doctor`)
 
-Standalone Go module (`go@1.26.3` via devbox), no external deps. Five checks:
-`symlinks`, `templates`, `profile`, `tools`, `daemons`. Flags: `--json`,
-`--verbose`.
+Standalone Go module (via devbox), no external deps. Six checks:
+`symlinks`, `templates`, `profile`, `personal`, `tools`, `daemons`. Flags:
+`--json`, `--verbose`.
+
+The `personal` check reads `config/env/.env.personal.spec` — the single source of
+truth for the personal env vars, also consumed by `dotup-personal` — and reports
+which are populated in `$XDG_PERSONAL_HOME/env`.
+Secret-tagged entries are reported `set`/valid/`missing` only and their **values
+are never printed** (including under `--json`); non-secrets show their value. It
+live-validates credentials: the GitHub tokens via `gh api user` and the
+1Password token via `op` (both shell out to required tools; a network failure
+degrades to `unverified`, not a hard fail). To add or rename a personal var,
+edit only the spec — both consumers read it.
 
 A compiled binary is platform-specific (these machines span arm64 macOS and
 Arch Linux), so it is **not** committed. `config/bin/.local/bin/dotup-doctor` is
