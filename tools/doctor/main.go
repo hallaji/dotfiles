@@ -6,7 +6,6 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
-	"strings"
 )
 
 // Status is the outcome of a health check.
@@ -53,17 +52,37 @@ const (
 	green  = "\033[32m"
 	yellow = "\033[33m"
 	red    = "\033[31m"
+	blue   = "\033[34m"
+)
+
+// Report glyphs. Replace the value between the quotes with your Nerd Font icon
+// for each level — the color is applied automatically where the glyph is used.
+const (
+	glyphInfo    = "" // info    (blue)
+	glyphSuccess = "" // success (green)
+	glyphWarning = "" // warning (yellow)
+	glyphError   = "" // error   (red)
 )
 
 func icon(s Status) string {
 	switch s {
 	case Pass:
-		return green + "✓" + reset
+		return green + glyphSuccess + reset
 	case Warn:
-		return yellow + "⚠" + reset
+		return yellow + glyphWarning + reset
 	default:
-		return red + "✗" + reset
+		return red + glyphError + reset
 	}
+}
+
+// checkIcon is the glyph for a top-level check line. A healthy check shows the
+// info glyph (blue) rather than success — success/green is reserved for the
+// per-item detail rows (e.g. the personal report).
+func checkIcon(s Status) string {
+	if s == Pass {
+		return blue + glyphInfo + reset
+	}
+	return icon(s)
 }
 
 func main() {
@@ -81,6 +100,7 @@ func main() {
 		&SymlinksCheck{},
 		&TemplatesCheck{},
 		&ProfileCheck{},
+		&PersonalCheck{},
 		&ToolsCheck{},
 		&DaemonsCheck{},
 	}
@@ -106,17 +126,17 @@ func main() {
 }
 
 func printResults(results []Result, verbose bool) {
-	fmt.Printf("\n%sdotfiles doctor%s\n", bold, reset)
-	fmt.Println(strings.Repeat("─", 42))
 	fmt.Println()
 
 	failed := 0
 	for _, r := range results {
-		fmt.Printf("  %s  %-12s %s\n", icon(r.Status), r.Check, r.Message)
+		fmt.Printf("  %s  %-12s %s\n", checkIcon(r.Status), r.Check, r.Message)
 		showDetails := verbose || r.Status != Pass
 		if showDetails {
 			for _, d := range r.Details {
-				fmt.Printf("     %s↳ %s%s\n", dim, d, reset)
+				// Details may carry their own color (e.g. the personal check's
+				// ✓/✗ rows), so indent without forcing a dim wrapper.
+				fmt.Printf("     %s\n", d)
 			}
 		}
 		if r.Status == Fail {
@@ -126,9 +146,9 @@ func printResults(results []Result, verbose bool) {
 
 	fmt.Println()
 	if failed == 0 {
-		fmt.Printf("%s✓ all checks passed%s\n\n", green, reset)
+		fmt.Printf("%s%s all checks passed%s\n\n", blue, glyphInfo, reset)
 	} else {
-		fmt.Printf("%s%d check(s) failed%s\n\n", red, failed, reset)
+		fmt.Printf("%s%s %d check(s) failed%s\n\n", red, glyphError, failed, reset)
 	}
 }
 

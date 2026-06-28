@@ -19,16 +19,23 @@ BOLD_CYAN='\033[1;36m'
 RED='\033[0;31m'
 RESET='\033[0m'
 
-VARS=(
-  GITHUB_ACCESS_TOKEN:secret
-  GITHUB_REGISTRY_TOKEN:secret
-  GITHUB_USER
-  OP_SERVICE_ACCOUNT_TOKEN:secret
-  SIGNING_KEY_GPG
-  SIGNING_KEY_SSH
-  GIT_USER_EMAIL
-  GIT_USER_NAME
-)
+DOTFILES_HOME="${DOTFILES_HOME:-$HOME/.dotfiles}"
+PERSONAL_SPEC="$DOTFILES_HOME/config/env/.env.personal.spec"
+
+if [ ! -f "$PERSONAL_SPEC" ]; then
+  printf "${RED}Personal var spec not found: %s${RESET}\n" "$PERSONAL_SPEC" >&2
+  exit 1
+fi
+
+# Personal var list — single source of truth shared with the doctor's `personal`
+# check (tools/doctor/personal.go). One entry per line: NAME or NAME:secret.
+VARS=()
+while IFS= read -r line; do
+  line="${line%%#*}"           # strip comments
+  line="${line//[[:space:]]/}" # drop whitespace
+  [ -z "$line" ] && continue
+  VARS+=("$line")
+done <"$PERSONAL_SPEC"
 
 # Read a secret value echoing * per character, supports backspace and paste
 read_secret() {
@@ -140,24 +147,22 @@ else
   done
 fi
 
+save_failed() {
+  printf "${RED}Failed to save personal settings to %s${RESET}\n" "$PERSONAL_ENV_FILE" >&2
+  exit 1
+}
+
+tmp="$(mktemp "${PERSONAL_ENV_FILE}.XXXXXX")" || save_failed
+trap 'rm -f "$tmp"' EXIT
+
 {
   for entry in "${VARS[@]}"; do
     var="${entry%%:*}"
     printf 'export %s="%s"\n' "$var" "${!var}"
   done
-} >"$PERSONAL_ENV_FILE"
+} >"$tmp" || save_failed
 
-chmod 600 "$PERSONAL_ENV_FILE"
+chmod 600 "$tmp" || save_failed
+mv "$tmp" "$PERSONAL_ENV_FILE" || save_failed
 
-# https://www.1password.dev/service-accounts/use-with-1password-cli
-if command -v op &>/dev/null; then
-  export OP_SERVICE_ACCOUNT_TOKEN
-  account_json="$(op user get --me --format json 2>/dev/null)" || true
-  account_type="$(printf '%s' "$account_json" | grep -o '"type": *"[^"]*"' | cut -d'"' -f4)" || true
-  account_name="$(printf '%s' "$account_json" | grep -o '"name": *"[^"]*"' | cut -d'"' -f4)" || true
-  if [[ "$account_type" == "SERVICE_ACCOUNT" && "$account_name" == "CLI" ]]; then
-    echo " 1Password service account verified."
-  else
-    echo " 1Password service account check failed. Ensure OP_SERVICE_ACCOUNT_TOKEN is set."
-  fi
-fi
+echo "Personal settings saved. Run 'dotup doctor' to verify them."

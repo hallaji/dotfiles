@@ -1,24 +1,26 @@
 #!/usr/bin/env bats
 # Unit tests for config/bin/.local/bin/dotup-personal.
 #
-# Runs end-to-end against a sandbox HOME/XDG_PERSONAL_HOME with fzf and op
-# stubbed. read_secret (the interactive /dev/tty path) is only reached on a
-# non-empty fzf selection, so a no-op fzf stub keeps the whole run
-# non-interactive — that path is intentionally out of scope (needs a pty).
+# Runs end-to-end against a sandbox HOME/XDG_PERSONAL_HOME with fzf stubbed.
+# read_secret (the interactive /dev/tty path) is only reached on a non-empty fzf
+# selection, so a no-op fzf stub keeps the whole run non-interactive — that path
+# is intentionally out of scope (needs a pty). The var list is read from the real
+# repo spec (config/env/.env.personal.spec) via DOTFILES_HOME.
 
 setup() {
   SANDBOX="$(mktemp -d)"
   export HOME="$SANDBOX"
   # Override so the script can never touch the real ~/.local/personal/env.
   export XDG_PERSONAL_HOME="$SANDBOX/.local/personal"
+  # Point at the repo so dotup-personal finds the shared personal var spec.
+  export DOTFILES_HOME="$BATS_TEST_DIRNAME/../.."
   ENV_FILE="$XDG_PERSONAL_HOME/env"
   DOTUP_PERSONAL="$BATS_TEST_DIRNAME/../../config/bin/.local/bin/dotup-personal"
 
   STUB="$SANDBOX/stubs"
   mkdir -p "$STUB"
   printf '#!/bin/sh\nexit 0\n' >"$STUB/fzf" # selects nothing
-  printf '#!/bin/sh\nexit 0\n' >"$STUB/op"  # no op output by default
-  chmod +x "$STUB/fzf" "$STUB/op"
+  chmod +x "$STUB/fzf"
 }
 
 teardown() {
@@ -35,17 +37,40 @@ mode() {
   stat -c '%a' "$1" 2>/dev/null || stat -f '%Lp' "$1"
 }
 
-@test "writes an export line for each of the 8 personal vars" {
+# Personal var names in spec order (the single source of truth).
+spec_vars() {
+  while IFS= read -r line; do
+    line="${line%%#*}"
+    line="${line//[[:space:]]/}"
+    [ -z "$line" ] && continue
+    printf '%s\n' "${line%%:*}"
+  done <"$DOTFILES_HOME/config/env/.env.personal.spec"
+}
+
+@test "writes an export line for every var in the spec" {
   run_personal
   [ "$status" -eq 0 ]
-  for v in GITHUB_ACCESS_TOKEN GITHUB_REGISTRY_TOKEN GITHUB_USER \
-    OP_SERVICE_ACCOUNT_TOKEN SIGNING_KEY_GPG SIGNING_KEY_SSH \
-    GIT_USER_EMAIL GIT_USER_NAME; do
+  while IFS= read -r v; do
     grep -q "^export ${v}=" "$ENV_FILE" || {
       echo "missing: $v"
       return 1
     }
-  done
+  done < <(spec_vars)
+}
+
+@test "writes the env file in the same order as the spec" {
+  run_personal
+  [ "$status" -eq 0 ]
+  # The export lines must appear in exactly the spec's order.
+  local file_order
+  file_order="$(sed -n 's/^export \([^=]*\)=.*/\1/p' "$ENV_FILE")"
+  [ "$(spec_vars)" = "$file_order" ] || {
+    echo "spec order:"
+    spec_vars
+    echo "file order:"
+    printf '%s\n' "$file_order"
+    return 1
+  }
 }
 
 @test "preserves existing saved values when nothing is selected" {
@@ -99,6 +124,25 @@ EOF
   grep -q '^export GIT_USER_EMAIL="john@example.com"' "$ENV_FILE"
 }
 
+@test "fails with a friendly error and preserves the file when the write fails" {
+  mkdir -p "$XDG_PERSONAL_HOME"
+  cat >"$ENV_FILE" <<'EOF'
+export GITHUB_ACCESS_TOKEN="keep-me"
+EOF
+
+  # Force the atomic write to fail at the temp-file step.
+  printf '#!/bin/sh\nexit 1\n' >"$STUB/mktemp"
+  chmod +x "$STUB/mktemp"
+
+  run env PATH="$STUB:$PATH" bash "$DOTUP_PERSONAL" 2>&1
+  [ "$status" -ne 0 ]
+  [[ "$output" == *"Failed to save personal settings"* ]]
+  # Must not claim success on failure.
+  [[ "$output" != *"Personal settings saved"* ]]
+  # The existing env file must be left untouched.
+  grep -q '^export GITHUB_ACCESS_TOKEN="keep-me"' "$ENV_FILE"
+}
+
 @test "warns and keeps first line when a saved value contains a newline" {
   mkdir -p "$XDG_PERSONAL_HOME"
   # Simulate a multi-line value in the env file (e.g. someone pasted a token
@@ -119,28 +163,4 @@ EOF
   [ "$status" -eq 0 ]
   [[ "$output" == *"Warning"*"GIT_USER_NAME"* ]]
   grep -q '^export GIT_USER_NAME="line one"' "$ENV_FILE"
-}
-
-@test "1Password check passes for a SERVICE_ACCOUNT/CLI token" {
-  cat >"$STUB/op" <<'OP'
-#!/bin/sh
-printf '%s\n' '{"type": "SERVICE_ACCOUNT", "name": "CLI"}'
-OP
-  chmod +x "$STUB/op"
-
-  run_personal
-  [ "$status" -eq 0 ]
-  [[ "$output" == *"verified"* ]]
-}
-
-@test "1Password check fails for a non-service-account token" {
-  cat >"$STUB/op" <<'OP'
-#!/bin/sh
-printf '%s\n' '{"type": "PERSON", "name": "Vahid"}'
-OP
-  chmod +x "$STUB/op"
-
-  run_personal
-  [ "$status" -eq 0 ]
-  [[ "$output" == *"check failed"* ]]
 }
