@@ -108,7 +108,7 @@ shared core (stow, zsh, templates, tmux, alacritty, nvim, doctor, devbox) is
 identical everywhere; only the platform backends differ.
 
 ```mermaid
-flowchart TD
+flowchart LR
     core["Shared core<br/>stow · zsh · templates · render-templates<br/>tmux · alacritty · nvim · doctor · devbox"]:::core
     core --> gate{"OS guard<br/>(each installer self-gates)"}:::gate
 
