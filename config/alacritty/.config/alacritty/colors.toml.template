@@ -3,7 +3,7 @@ color = "${PALETTE_SE_ERROR}"
 
 [colors.normal]
 black = "${PALETTE_BA_SECONDARY_BG}"
-blue = "${PALETTE_SY_CONSTANT}"
+blue = "${PALETTE_SY_FUNCTION}"
 cyan = "${PALETTE_SE_PRIMARY}"
 green = "${PALETTE_SY_STRING}"
 magenta = "${PALETTE_SE_SECONDARY}"
