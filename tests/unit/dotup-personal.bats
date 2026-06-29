@@ -4,11 +4,11 @@
 # Runs end-to-end against a sandbox HOME/XDG_PERSONAL_HOME with fzf stubbed.
 # read_secret (the interactive /dev/tty path) is only reached on a non-empty fzf
 # selection, so a no-op fzf stub keeps most of the run non-interactive. The
-# *masked echo* behaviour needs a pty and stays out of scope, but the no-tty
-# degradation is covered below: bats (like CI) runs without a controlling
-# terminal, which is exactly the condition that used to abort the script. The
-# var list is read from the real repo spec (config/env/.env.personal.spec) via
-# DOTFILES_HOME.
+# *masked echo* behaviour needs a pty and stays out of scope. The no-tty
+# degradation is covered below, but only when there is no controlling terminal
+# (CI): with one, read_secret blocks on real keystrokes, so that test skips to
+# avoid hanging an interactive run. The var list is read from the real repo spec
+# (config/env/.env.personal.spec) via DOTFILES_HOME.
 
 setup() {
   SANDBOX="$(mktemp -d)"
@@ -146,15 +146,34 @@ EOF
   grep -q '^export GITHUB_ACCESS_TOKEN="keep-me"' "$ENV_FILE"
 }
 
-@test "secret-var entry degrades gracefully without a controlling tty" {
-  # Regression: read_secret uses stty and </dev/tty, whose errors are hidden by
-  # 2>/dev/null. Under `set -e`, on a machine without a controlling terminal
-  # those failures silently aborted the whole script with no output. Selecting a
-  # secret var must still complete here (bats has no controlling tty).
+@test "secret-var entry completes under set -e when stty/tty control fails" {
+  # Regression: read_secret runs stty and reads </dev/tty with their errors
+  # hidden by 2>/dev/null. Under `set -e` a single failure used to abort the
+  # whole script silently — the original bug was machine-specific, striking only
+  # where stty/tty control misbehaved. Two stubs reproduce that deterministically:
+  #   * stty exits non-zero  -> forces the tty-control failure the `|| true`
+  #     guards (a real pty's stty would succeed and never exercise the fix);
+  #   * fzf selects a secret  -> routes into read_secret.
+  # `script` then gives read_secret a real pty so its </dev/tty read returns on
+  # the fed newline instead of blocking. With the guards the script still saves;
+  # without them set -e aborts before the save. `script`'s CLI differs by flavour.
+  command -v script >/dev/null || skip "needs 'script' to allocate a pty"
+
   printf '#!/bin/sh\necho GITHUB_ACCESS_TOKEN\n' >"$STUB/fzf" # selects a secret
   chmod +x "$STUB/fzf"
+  printf '#!/bin/sh\nexit 1\n' >"$STUB/stty" # force tty-control failure
+  chmod +x "$STUB/stty"
 
-  run env PATH="$STUB:$PATH" bash "$DOTUP_PERSONAL" </dev/null
+  if script --version 2>/dev/null | grep -qi util-linux; then
+    # util-linux: -q quiet, -e return child's exit, -c CMD, trailing logfile.
+    run bash -c "export PATH='$STUB:'\$PATH
+      printf '\n' | script -qe -c 'bash \"$DOTUP_PERSONAL\"' /dev/null"
+  else
+    # BSD/macOS: script [-q] logfile [command ...].
+    run bash -c "export PATH='$STUB:'\$PATH
+      printf '\n' | script -q /dev/null bash '$DOTUP_PERSONAL'"
+  fi
+
   [ "$status" -eq 0 ]
   [[ "$output" == *"Personal settings saved"* ]]
   grep -q '^export GITHUB_ACCESS_TOKEN=' "$ENV_FILE"
