@@ -94,9 +94,10 @@ Run a single test:
 - Shell tests go in `tests/unit/*.bats`, sandboxed via `HOME`/`XDG_PERSONAL_HOME`
   with stub binaries on `PATH` (no real installs or network). Go tests live
   beside the code in `tools/doctor/*_test.go` (`go test ./...`, run in CI).
-- Some helpers are mirrored across languages and must be edited together: Go
-  `detectProfile` (`tools/doctor/profile.go`) ↔ zsh `detect_profile`
-  (`config/zsh/.config/zsh/profile.zsh`), guarded by `profile_test.go`; and the
+- The hostname mappings (`detect_profile`, `display_hostname`) live only in
+  `config/zsh/.config/zsh/profile.zsh`; the doctor's `profile` check sources
+  that file and runs them rather than duplicating the logic in Go.
+- Some helpers are mirrored across languages and must be edited together: the
   stow ignore-matching logic in `matchesIgnore` (`tools/doctor/symlinks.go`) ↔
   `is_ignored` (`tests/unit/stow-conflicts.bats`).
 

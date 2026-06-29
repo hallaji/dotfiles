@@ -1,13 +1,5 @@
-#!/bin/sh
+#!/bin/bash
 
-HOSTNAME=$(hostname | awk '{print toupper(substr($0,1,1)) tolower(substr($0,2))}')
-case "$(hostname | tr '[:upper:]' '[:lower:]')" in
-vhallaji-41nw96)
-  HOSTNAME="Monomaran"
-  ;;
-catamaran.local)
-  HOSTNAME="Catamaran"
-  ;;
-esac
+source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/profile.zsh"
 
-sketchybar --set "$NAME" label="$HOSTNAME"
+sketchybar --set "$NAME" label="$(display_hostname)"
