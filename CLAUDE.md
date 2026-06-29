@@ -124,21 +124,31 @@ manual convention — when you touch a keybinding or shortcut, update its doc.
 
 `docs/CHEATSHEET.md` mirrors keybindings/shortcuts. Each source maps to a section:
 
-| Source of truth                                            | CHEATSHEET section          |
-| --------------------------------------------------------- | --------------------------- |
-| `config/aerospace/.aerospace.toml`                        | AeroSpace / SKHD            |
-| `config/skhd/.skhdrc`                                      | AeroSpace / SKHD → Global hotkeys |
-| `config/tmux/.tmux.conf`                                   | Tmux                        |
-| `config/alacritty/.config/alacritty/keyboard.toml`        | Alacritty                   |
-| `config/zsh/.config/zsh/bindings.zsh`                     | Alacritty → Vi-mode         |
-| `config/vimium/.config/vimium/vimium-options.json`        | Vimium / Vimari             |
-| `config/{vim,neovim}/**` mappings                         | Vim/Neovim                  |
+| Source of truth                                    | CHEATSHEET section                |
+| -------------------------------------------------- | --------------------------------- |
+| `config/aerospace/.aerospace.toml`                 | AeroSpace / SKHD                  |
+| `config/skhd/.skhdrc`                              | AeroSpace / SKHD → Global hotkeys |
+| `config/tmux/.tmux.conf`                           | Tmux                              |
+| `config/alacritty/.config/alacritty/keyboard.toml` | Alacritty                         |
+| `config/zsh/.config/zsh/bindings.zsh`              | Alacritty → Vi-mode               |
+| `config/vimium/.config/vimium/vimium-options.json` | Vimium / Vimari                   |
+| `config/{vim,neovim}/**` mappings                  | Vim/Neovim                        |
 
 `docs/CLIPBOARD.md` documents the clipboard flow across tmux/zsh/Alacritty, and
 `README.md`'s command table tracks `dotup` subcommands (see "Adding a dotup
 subcommand"). Keep both current when the relevant behavior changes.
 `docs/ARCHITECTURE.md` (stow → templates → provisioning → doctor lifecycle, with
 a Mermaid diagram) must be refreshed when that flow changes.
+
+`docs/NEOVIM.md` is a config-accurate Neovim playbook: every keybinding is
+drawn from the real config, not Vim defaults. Its source of truth is
+`config/neovim/.config/nvim/lua/config/mappings.lua` plus the per-plugin
+`keys`/`config` specs in `config/neovim/.config/nvim/lua/plugins/*.lua`. When
+you add, remove, or rebind a Neovim mapping — or add/remove a plugin that owns
+keymaps — update `docs/NEOVIM.md` in the same change (and the Vim/Neovim
+section of `docs/CHEATSHEET.md` per the table above). If a task area has no
+custom binding, the doc states so and gives the plugin/Vim default, clearly
+labelled — preserve that distinction.
 
 macOS window management is **AeroSpace** (launched by `dotup-services` alongside
 skhd, borders, sketchybar). The `yabai` package is legacy and is no longer
