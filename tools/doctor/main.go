@@ -146,9 +146,9 @@ func printResults(results []Result, verbose bool) {
 
 	fmt.Println()
 	if failed == 0 {
-		fmt.Printf("%s%s all checks passed%s\n\n", blue, glyphInfo, reset)
+		fmt.Printf("%s%s  all checks passed%s\n\n", green, glyphSuccess, reset)
 	} else {
-		fmt.Printf("%s%s %d check(s) failed%s\n\n", red, glyphError, failed, reset)
+		fmt.Printf("%s%s  %d check(s) failed%s\n\n", red, glyphError, failed, reset)
 	}
 }
 
