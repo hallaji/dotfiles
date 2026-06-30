@@ -203,12 +203,6 @@
   (( ! $+functions[p10k] )) || p10k reload
 }
 
-# Run commands when p10k initializes
-function p10k-on-init() {
-  # Only run quote once per session
-  [[ -z "${_P10K_QUOTE_SHOWN:-}" ]] && quote 2>/dev/null && export _P10K_QUOTE_SHOWN=1
-}
-
 # Tell `p10k configure` which file it should overwrite.
 typeset -g POWERLEVEL9K_CONFIG_FILE=${${(%):-%x}:a}
 

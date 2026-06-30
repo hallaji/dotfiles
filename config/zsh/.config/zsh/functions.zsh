@@ -105,7 +105,6 @@ change_aws_profile() {
     echo 'No AWS account provided!'
   fi
   zle && { zle reset-prompt; zle -R }
-  p10k display -a
 }
 
 # Select an EC2 instance via fzf and open an AWS SSM session to it
@@ -154,7 +153,6 @@ change_gcloud_config() {
     echo 'No GCloud config provided!'
   fi
   zle && { zle reset-prompt; zle -R }
-  p10k display -a
 }
 
 # ┌─┐┬ ┬┌─┐┌┬┐┌─┐┌┬┐

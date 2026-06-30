@@ -182,20 +182,26 @@ fi
 [[ -d "$HOME/.rd/bin" ]] && export PATH="$HOME/.rd/bin:$PATH"
 
 
-# ┌─┐┌┬┐┌─┐┬─┐┌─┐┬ ┬┬┌─┐
-# └─┐ │ ├─┤├┬┘└─┐├─┤│├─┘
-# └─┘ ┴ ┴ ┴┴└─└─┘┴ ┴┴┴
-# https://starship.rs
+# ┌─┐┬─┐┌─┐┌┬┐┌─┐┌┬┐
+# ├─┘├┬┘│ ││││├─┘ │
+# ┴  ┴└─└─┘┴ ┴┴   ┴
+# Prompt engine, selected by $PROMPT_ENGINE (defined in ~/.env).
+# ohmyposh — https://ohmyposh.dev/docs
+# p10k     — https://github.com/romkatv/powerlevel10k
+# starship — https://starship.rs
 
-type starship &>/dev/null && eval "$(starship init zsh)"
-
-
-# ┌─┐┌┬┐┌─┐┌┐┌┬┌─
-# ├─┘ │ ├┤ │││├┴┐
-# ┴   ┴ └─┘┘└┘┴ ┴
-# https://github.com/romkatv/powerlevel10k
-
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+case "$PROMPT_ENGINE" in
+  starship)
+    type starship &>/dev/null && eval "$(starship init zsh)"
+    ;;
+  p10k)
+    [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+    ;;
+  ohmyposh | *)
+    type oh-my-posh &>/dev/null &&
+      eval "$(oh-my-posh init zsh --config "${XDG_CONFIG_HOME:-$HOME/.config}/oh-my-posh/config.toml")"
+    ;;
+esac
 
 
 # ┌─┐┌─┐─┐ ┬┬┌┬┐┌─┐

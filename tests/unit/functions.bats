@@ -44,9 +44,8 @@ setup() {
 
 @test "change_gcloud_config reports when nothing is selected" {
   printf '#!/bin/sh\nprintf "%%s\\n" NAME foo bar\n' >"$STUB/gcloud"
-  printf '#!/bin/sh\nexit 0\n' >"$STUB/fzf"  # no selection
-  printf '#!/bin/sh\nexit 0\n' >"$STUB/p10k" # prompt refresh no-op
-  chmod +x "$STUB/gcloud" "$STUB/fzf" "$STUB/p10k"
+  printf '#!/bin/sh\nexit 0\n' >"$STUB/fzf" # no selection
+  chmod +x "$STUB/gcloud" "$STUB/fzf"
 
   run env PATH="$STUB:$PATH" zsh -c "source '$FUNCTIONS_ZSH' 2>/dev/null; change_gcloud_config"
   [[ "$output" == *"No GCloud config provided"* ]]

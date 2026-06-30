@@ -46,8 +46,8 @@ stow hyprland
 
 # Other packages
 stow alacritty asdf aws bat bundler claude ctags curl devbox gh git gradle granted \
-     gpg lazygit neovim nix npm p10k pip process-compose ssh starship tig tmux \
-     vim zsh 1password
+     gpg lazygit neovim nix npm oh-my-posh p10k pip process-compose ssh starship \
+     tig tmux vim zsh 1password
 ```
 
 ### 2. Configure Personal Settings

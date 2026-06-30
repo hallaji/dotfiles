@@ -1,0 +1,87 @@
+# ┌─┐┬ ┬   ┌┬┐┬ ┬   ┌─┐┌─┐┌─┐┬ ┬
+# │ │├─┤───│││└┬┘───├─┘│ │└─┐├─┤
+# └─┘┴ ┴   ┴ ┴ ┴    ┴  └─┘└─┘┴ ┴
+# https://ohmyposh.dev/docs
+
+version = 3
+final_space = true
+console_title_template = '{{ .Shell }} in {{ .Folder }}'
+
+[palette]
+blue = '#89B4FA'
+mauve = '#CBA6F7'
+overlay = '#6C7086'
+red = '#F38BA8'
+sky = '#89DCEB'
+yellow = '#F9E2AF'
+
+# Line 1, left: directory · git
+[[blocks]]
+type = 'prompt'
+alignment = 'left'
+newline = true     # blank line above every prompt (sparse look)
+
+[[blocks.segments]]
+type = 'path'
+style = 'plain'
+foreground = 'p:blue'
+template = '{{ .Path }}'
+
+[blocks.segments.properties]
+style = 'full'
+
+[[blocks.segments]]
+type = 'git'
+style = 'plain'
+foreground = 'p:overlay'
+# Grey branch; '*' when dirty; cyan ahead/behind arrows via an inline span.
+template = ' {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }} <p:sky>{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</>'
+
+[blocks.segments.properties]
+branch_icon = ''
+commit_icon = '@'
+fetch_status = true
+
+# Line 1, right: previous command duration (>= 5s)
+[[blocks]]
+type = 'rprompt'
+overflow = 'hidden'
+
+[[blocks.segments]]
+type = 'executiontime'
+style = 'plain'
+foreground = 'p:yellow'
+template = '{{ .FormattedMs }}'
+
+[blocks.segments.properties]
+threshold = 5000
+
+# Line 2, left: prompt character (magenta ok, red on failure)
+[[blocks]]
+type = 'prompt'
+alignment = 'left'
+newline = true
+
+[[blocks.segments]]
+type = 'text'
+style = 'plain'
+foreground_templates = [
+  '{{ if gt .Code 0 }}p:red{{ end }}',
+  '{{ if eq .Code 0 }}p:mauve{{ end }}',
+]
+template = '❯'
+
+# Transient prompt: collapse accepted commands, keep status colour
+[transient_prompt]
+background = 'transparent'
+foreground_templates = [
+  '{{ if gt .Code 0 }}p:red{{ end }}',
+  '{{ if eq .Code 0 }}p:mauve{{ end }}',
+]
+template = '❯ '
+
+# Continuation prompt for multi-line input
+[secondary_prompt]
+foreground = 'p:mauve'
+background = 'transparent'
+template = '❯❯ '

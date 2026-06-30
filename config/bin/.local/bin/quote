@@ -160,4 +160,6 @@ QUOTES=(
 
 NUM_QUOTES=${#QUOTES[@]}
 RANDOM_INDEX=$((RANDOM % NUM_QUOTES))
-echo " ${QUOTES[$RANDOM_INDEX]} " | lolcat -S 8
+
+# -f forces colour even when stdout isn't a tty, so the quote stays colourful
+echo " ${QUOTES[$RANDOM_INDEX]} " | lolcat -f -S 8

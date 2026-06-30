@@ -73,6 +73,9 @@ sudo rm -rf /tmp/yay &&
 # https://asdf-vm.com/guide/getting-started.html#_1-install-asdf
 yay -S asdf-vm
 
+# https://ohmyposh.dev/docs/installation/linux
+yay -S oh-my-posh-bin
+
 # https://snapcraft.io/docs/tutorials/install-the-daemon/arch-linux/
 sudo rm -rf /tmp/snapd &&
   git clone https://aur.archlinux.org/snapd.git /tmp/snapd &&

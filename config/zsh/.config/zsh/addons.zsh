@@ -16,7 +16,8 @@ ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
 source "${ZINIT_HOME}/zinit.zsh"
 
-zinit ice depth=1; zinit light romkatv/powerlevel10k
+# Powerlevel10k — only load the plugin when it's the selected prompt engine
+[[ "$PROMPT_ENGINE" == "p10k" ]] && { zinit ice depth=1; zinit light romkatv/powerlevel10k; }
 
 # ┌─┐┌─┐┌┬┐┌─┐┬  ┌─┐┌┬┐┬┌─┐┌┐┌┌─┐
 # │  │ ││││├─┘│  ├┤  │ ││ ││││└─┐

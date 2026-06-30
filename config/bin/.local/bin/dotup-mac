@@ -119,6 +119,7 @@ brew install \
   f1bonacc1/tap/process-compose \
   felixkratz/formulae/borders \
   felixkratz/formulae/sketchybar \
+  jandedobbeleer/oh-my-posh/oh-my-posh \
   koekeishiya/formulae/skhd \
   supabase/tap/supabase
 
