@@ -6,6 +6,7 @@
 -- ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝     ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝
 -- https://neovim.io/doc/user/map.html
 -- https://neovim.io/doc/user/lua-guide.html#lua-guide-mappings
+-- Documented in docs/NEOVIM.md — update it in the same commit (also covers plugins/*.lua keys).
 
 if vim.g.vscode then
   return

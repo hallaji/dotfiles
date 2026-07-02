@@ -5,6 +5,7 @@
 # ███████║██║  ██╗██║  ██║██████╔╝
 # ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝
 # https://github.com/koekeishiya/skhd
+# Documented in docs/SKHD.md — update it in the same commit.
 
 # Toogle computer awake mode
 cmd + shift + alt + ctrl - u : open --background "lungo:toggle"

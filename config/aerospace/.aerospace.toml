@@ -6,6 +6,7 @@
 # ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝     ╚═╝  ╚═╝ ╚═════╝╚══════╝
 # https://github.com/nikitabobko/AeroSpace
 # https://nikitabobko.github.io/AeroSpace/guide#config-samples
+# Documented in docs/AEROSPACE.md — update it in the same commit.
 
 after-login-command = []
 after-startup-command = ['exec-and-forget sketchybar']

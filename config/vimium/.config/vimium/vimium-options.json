@@ -33,7 +33,7 @@
   "filterLinkHints": false,
   "waitForEnterForFilteredHints": true,
   "hideHud": false,
-  "keyMappings": "# Insert your preferred key mappings here.",
+  "keyMappings": "# Documented in docs/BROWSER.md — update it in the same commit.\n# Insert your preferred key mappings here.",
   "linkHintCharacters": "sadfjklewcmpgh",
   "linkHintNumbers": "0123456789",
   "newTabUrl": "about:newtab",

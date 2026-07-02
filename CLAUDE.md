@@ -122,17 +122,26 @@ same change** that alters the underlying behavior. No test enforces this (the
 docs are prose, with no machine-readable contract to the configs), so it is a
 manual convention — when you touch a keybinding or shortcut, update its doc.
 
-`docs/CHEATSHEET.md` mirrors keybindings/shortcuts. Each source maps to a section:
+Keybindings are documented in per-tool playbooks — each config-accurate, with
+a muscle-memory starter and a Mermaid keyspace chart. Keybinding detail lives
+only in the playbooks:
 
-| Source of truth                                    | CHEATSHEET section                |
-| -------------------------------------------------- | --------------------------------- |
-| `config/aerospace/.aerospace.toml`                 | AeroSpace / SKHD                  |
-| `config/skhd/.skhdrc`                              | AeroSpace / SKHD → Global hotkeys |
-| `config/tmux/.tmux.conf`                           | Tmux                              |
-| `config/alacritty/.config/alacritty/keyboard.toml` | Alacritty                         |
-| `config/zsh/.config/zsh/bindings.zsh`              | Alacritty → Vi-mode               |
-| `config/vimium/.config/vimium/vimium-options.json` | Vimium / Vimari                   |
-| `config/{vim,neovim}/**` mappings                  | Vim/Neovim                        |
+- `docs/NEOVIM.md` — all editor bindings (sourced from `config/{vim,neovim}/**`
+  mappings).
+- `docs/AEROSPACE.md` — the AeroSpace bindings (sourced from
+  `config/aerospace/.aerospace.toml`).
+- `docs/SKHD.md` — the skhd global hotkeys (sourced from
+  `config/skhd/.skhdrc`), plus a hand-maintained "OS-level shortcuts" section
+  (macOS and Arch) for global keys with no stowed config.
+- `docs/TMUX.md` — the tmux bindings (sourced from `config/tmux/.tmux.conf`).
+- `docs/ALACRITTY.md` — the Alacritty bindings (sourced from
+  `config/alacritty/.config/alacritty/keyboard.toml`).
+- `docs/ZSH.md` — the zsh vi-mode line-editing bindings (sourced from
+  `config/zsh/.config/zsh/bindings.zsh`, plus the `,f`/`,o` helpers in
+  `functions.zsh`).
+- `docs/BROWSER.md` — the Vimium/Vimari browser keys. All keys are extension
+  defaults; `config/vimium/.config/vimium/vimium-options.json` only customises
+  behavior (exclusions, hints, search). Vimari has no repo config.
 
 `docs/CLIPBOARD.md` documents the clipboard flow across tmux/zsh/Alacritty, and
 `README.md`'s command table tracks `dotup` subcommands (see "Adding a dotup
@@ -145,14 +154,17 @@ drawn from the real config, not Vim defaults. Its source of truth is
 `config/neovim/.config/nvim/lua/config/mappings.lua` plus the per-plugin
 `keys`/`config` specs in `config/neovim/.config/nvim/lua/plugins/*.lua`. When
 you add, remove, or rebind a Neovim mapping — or add/remove a plugin that owns
-keymaps — update `docs/NEOVIM.md` in the same change (and the Vim/Neovim
-section of `docs/CHEATSHEET.md` per the table above). If a task area has no
-custom binding, the doc states so and gives the plugin/Vim default, clearly
-labelled — preserve that distinction.
+keymaps — update `docs/NEOVIM.md` in the same change. It is the **only** doc
+for editor bindings. If a task area has no custom binding, the doc states so
+and gives the plugin/Vim default, clearly labelled — preserve that
+distinction.
 
 macOS window management is **AeroSpace** (launched by `dotup-services` alongside
-skhd, borders, sketchybar). The `yabai` package is legacy and is no longer
-started — don't document yabai bindings as current.
+skhd, borders, sketchybar), documented in `docs/AEROSPACE.md` with the skhd
+hotkeys in `docs/SKHD.md` — like NEOVIM.md, these are the only docs for those
+bindings and must be updated in the same change as the config. The `yabai`
+package is legacy and is no longer started — don't document yabai bindings as
+current.
 
 ## The doctor (`tools/doctor`)
 

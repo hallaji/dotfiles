@@ -1,3 +1,5 @@
+# Documented in docs/ALACRITTY.md — update it in the same commit.
+
 [[keyboard.bindings]]
 chars = "\u001B\r"
 key = "Return"

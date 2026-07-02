@@ -93,7 +93,7 @@ produced — `symlinks`, rendered `templates`, and running `daemons` — plus
 Two details left off the diagram for legibility:
 
 - The `personal` check live-validates credentials (GitHub tokens via `gh api
-  user`, the 1Password token via `op`); a network failure degrades to
+user`, the 1Password token via `op`); a network failure degrades to
   `unverified` rather than failing.
 - There are two doctor entrypoints — `dotup doctor` (cached binary, system Go)
   for day-to-day use, and `devbox run doctor` (`go run`, pinned Go) for repo
@@ -132,17 +132,17 @@ flowchart LR
     classDef check fill:transparent,stroke:#00b196,stroke-width:2px,color:#00b196
 ```
 
-| Capability       | macOS (arm64)                              | Linux (Arch)                          |
-| ---------------- | ------------------------------------------ | ------------------------------------- |
-| Provisioning     | `dotup mac` — Homebrew formulae + casks    | `dotup arch` — pacman + yay (AUR) + snap |
-| Window manager   | AeroSpace + skhd                           | Hyprland                              |
-| Status bar       | SketchyBar                                 | — (none yet)                          |
-| Window borders   | JankyBorders (`borders`)                   | Hyprland native                      |
-| App launcher     | Alfred                                     | wofi / dmenu                         |
-| Service launch   | `dotup services` → launchd (brew services) | Hyprland session (no dotup hook yet) |
-| `daemons` check  | `launchctl` labels (skhd, sketchybar, borders) | `pgrep` (Hyprland)               |
-| Clipboard        | `pbcopy` / `pbpaste`                       | `xclip`                              |
-| Secrets / 2FA    | 1Password CLI + pinentry-mac               | 1Password CLI + pam-u2f / libfido2   |
+| Capability      | macOS (arm64)                                  | Linux (Arch)                             |
+| --------------- | ---------------------------------------------- | ---------------------------------------- |
+| Provisioning    | `dotup mac` — Homebrew formulae + casks        | `dotup arch` — pacman + yay (AUR) + snap |
+| Window manager  | AeroSpace + skhd                               | Hyprland                                 |
+| Status bar      | SketchyBar                                     | — (none yet)                             |
+| Window borders  | JankyBorders (`borders`)                       | Hyprland native                          |
+| App launcher    | Alfred                                         | wofi / dmenu                             |
+| Service launch  | `dotup services` → launchd (brew services)     | Hyprland session (no dotup hook yet)     |
+| `daemons` check | `launchctl` labels (skhd, sketchybar, borders) | `pgrep` (Hyprland)                       |
+| Clipboard       | `pbcopy` / `pbpaste`                           | `xclip`                                  |
+| Secrets / 2FA   | 1Password CLI + pinentry-mac                   | 1Password CLI + pam-u2f / libfido2       |
 
 **Maturity:** macOS is the primary, fully wired setup; the Arch/Hyprland machine
 is supported but minimal and still growing (the `daemons` check only watches
@@ -154,5 +154,7 @@ is supported but minimal and still growing (the `daemons` check only watches
   hardcodes `pbcopy`/`pbpaste` (macOS-only); tmux copy/paste is already portable
   via tmux-yank. A portable `clip` helper would close this.
 
-See [CHEATSHEET.md](CHEATSHEET.md) for keybindings and [CLIPBOARD.md](CLIPBOARD.md)
-for the clipboard flow.
+For keybindings see the per-tool playbooks — [NEOVIM.md](NEOVIM.md),
+[AEROSPACE.md](AEROSPACE.md), [SKHD.md](SKHD.md), [TMUX.md](TMUX.md),
+[ALACRITTY.md](ALACRITTY.md), [ZSH.md](ZSH.md) and [BROWSER.md](BROWSER.md) —
+and [CLIPBOARD.md](CLIPBOARD.md) for the clipboard flow.
