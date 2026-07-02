@@ -39,7 +39,7 @@ Use `stow` to symlink configuration packages into the home directory.
 stow env bin gnustow
 
 # Mac-specific
-stow aerospace borders skhd sketchybar yabai
+stow aerospace alfred borders skhd sketchybar yabai
 
 # Linux-specific
 stow hyprland
@@ -47,7 +47,7 @@ stow hyprland
 # Other packages
 stow alacritty asdf aws bat bundler claude ctags curl devbox gh git gradle granted \
      gpg lazygit neovim nix npm oh-my-posh p10k pip process-compose ssh starship \
-     tig tmux vim zsh 1password
+     tig tmux vim vimium zsh 1password
 ```
 
 ### 2. Configure Personal Settings
