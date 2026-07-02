@@ -22,5 +22,5 @@ fi
 # └─┘└└─┘└─┘ ┴ └─┘
 # Greet with a quote once per session.
 if [[ -z "${_QUOTE_SHOWN:-}" ]] && command -v quote &>/dev/null; then
-  quote 2>/dev/null && export _QUOTE_SHOWN=1
+  quote 2>/dev/null && _QUOTE_SHOWN=1
 fi
