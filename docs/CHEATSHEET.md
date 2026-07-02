@@ -541,6 +541,15 @@ In preview window:
 
 - `,n` Switch to absolute or relative line numbers
 
+#### Notifications
+
+[folke/snacks.nvim](https://github.com/folke/snacks.nvim) (notifier) +
+[folke/noice.nvim](https://github.com/folke/noice.nvim)
+
+- `,uh` Notification history (regular buffer — search/yank, `q` to close)
+- `,ud` Dismiss all visible notifications
+- `,um` Full message history via `:Noice history` (includes echoes/cmdline)
+
 ## Vimium / Vimari
 
 [philc/vimium](https://github.com/philc/vimium)

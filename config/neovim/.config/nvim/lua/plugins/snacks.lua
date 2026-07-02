@@ -12,6 +12,12 @@ return {
   lazy = false,
   opts = {
     dashboard = { enabled = false },
+    notifier = {
+      enabled = true, -- replaces vim.notify; noice routes its notify view here
+      timeout = 4000, -- ms before a notification auto-hides
+      top_down = true, -- newest notification at the top
+      style = "compact", -- "compact" | "fancy" | "minimal"
+    },
     terminal = {
       win = { style = "terminal" },
     },

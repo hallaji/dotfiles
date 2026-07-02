@@ -59,6 +59,7 @@ flowchart TD
     leader --> trouble["Trouble<br/>,e"]:::trouble
     leader --> todo["TODO<br/>,t"]:::todo
     leader --> buffer["Buffer<br/>,b"]:::buffer
+    leader --> notif["Notifications<br/>,u"]:::buffer
     leader --> gpt["GPT<br/>,x"]:::ai
     leader --> copilot["Copilot<br/>,p"]:::ai
 
@@ -345,6 +346,9 @@ formatting via **conform**.
 | `,I` | Toggle indent guides | indentline marks |
 | `,S` | Toggle spell (en_au) | Prose-checking |
 | `,T` | Trim trailing whitespace (mini.trailspace) | Clean up before saving |
+| `,uh` | Notification history (snacks notifier) | Re-read or yank a popup that vanished — opens a regular buffer, `q` to close |
+| `,ud` | Dismiss all notifications | Clear a pile of popups at once |
+| `,um` | Full message history (`:Noice history`) | Everything, including echoes and cmdline messages |
 | `,h` | `:checkhealth` | Diagnose the Neovim setup |
 | `,C` | Generate color swatch | Colorscheme work |
 | `,P` | Inspect highlight under cursor | Theme/highlight debugging |

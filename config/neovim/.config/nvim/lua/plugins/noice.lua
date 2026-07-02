@@ -7,7 +7,6 @@
 -- https://github.com/folke/noice.nvim
 -- https://github.com/MunifTanjim/nui.nvim
 -- https://github.com/smjonas/inc-rename.nvim
--- https://github.com/rcarriga/nvim-notify
 
 return {
   "folke/noice.nvim",
@@ -15,12 +14,6 @@ return {
   dependencies = {
     "MunifTanjim/nui.nvim",
     { "smjonas/inc-rename.nvim", opts = {} },
-    {
-      "rcarriga/nvim-notify",
-      opts = {
-        background_colour = "#000000",
-      },
-    },
   },
   event = "VeryLazy",
   opts = {

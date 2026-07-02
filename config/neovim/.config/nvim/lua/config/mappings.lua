@@ -82,6 +82,24 @@ wk.add({
       desc = "Rulers",
       icon = "",
     },
+    { "<Leader>u", group = "Notifications", icon = "󰂚" },
+    {
+      "<Leader>ud",
+      function()
+        Snacks.notifier.hide()
+      end,
+      desc = "Dismiss All",
+      icon = "󰂛",
+    },
+    {
+      "<Leader>uh",
+      function()
+        Snacks.notifier.show_history()
+      end,
+      desc = "History",
+      icon = "󰋚",
+    },
+    { "<Leader>um", ":Noice history<CR>", desc = "Message History (All)", icon = "󰍡" },
     { "<Leader>w", ":set wrap! wrap?<CR>", desc = "Wrap Mode", icon = "󰖶" },
     { "<Leader>z", ":ZenMode<CR>", desc = "Zen Mode", icon = "󰽏" },
   },
