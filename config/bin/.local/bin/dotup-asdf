@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+set -o pipefail
 
 cat <<EOF
 ┌─┐┌─┐┌┬┐┌─┐
@@ -8,10 +8,26 @@ cat <<EOF
 ┴ ┴└─┘─┴┘└
 EOF
 
+# Guard on the harmful condition itself rather than IN_NIX_SHELL: a nix-store
+# SDKROOT is what actually redirects clang away from the macOS SDK.
+if [ "$(uname)" = "Darwin" ] && [[ "$SDKROOT" == /nix/store/* ]]; then
+  echo >&2
+  echo "!! Refusing to run: SDKROOT points into the nix store ($SDKROOT)." >&2
+  echo "   The devbox/nix env overrides the macOS SDK, so source-built plugins" >&2
+  echo "   (python, ruby, postgres, php) can't find system headers like zlib.h." >&2
+  echo "   Run 'dotup asdf' from a plain shell outside the devbox env." >&2
+  exit 1
+fi
+
+if ! type asdf &>/dev/null; then
+  echo "ASDF not installed — nothing to do." >&2
+  exit 0
+fi
+
 # https://github.com/asdf-vm/asdf-plugins
 ASDF_PLUGINS=(
   golang    # https://github.com/asdf-community/asdf-golang
-  gradle    # https://github.com/rfrancis/asdf-gradle.git
+  gradle    # https://github.com/rfrancis/asdf-gradle
   java      # https://github.com/halcyon/asdf-java
   kotlin    # https://github.com/asdf-community/asdf-kotlin
   lua       # https://github.com/Stratus3D/asdf-lua
@@ -24,29 +40,76 @@ ASDF_PLUGINS=(
   python    # https://github.com/asdf-community/asdf-python
   redis     # https://github.com/smashedtoatoms/asdf-redis
   ruby      # https://github.com/asdf-vm/asdf-ruby
-  terraform # https://github.com/asdf-community/asdf-hashicorp.git
+  terraform # https://github.com/asdf-community/asdf-hashicorp
 )
 
-if type asdf &>/dev/null; then
-  for item in "${ASDF_PLUGINS[@]}"; do
-    if asdf plugin list | grep -q "^$item$"; then
-      asdf plugin update "$item"
-    else
-      asdf plugin add "$item"
+# Resolve the version to install for a plugin. Most plugins are fine with
+# `asdf latest`; the exceptions take the newest purely numeric (dotted)
+# release from `asdf list all`, which excludes pre-releases and variants:
+#   java   — `asdf latest` can't parse the `openjdk-*` scheme, and the listing
+#            mixes early-access builds in with GA releases.
+#   gradle — `asdf latest` returns nothing (versions carry `-milestone` etc.).
+#   python — `asdf latest` picks the free-threaded `t` build; we want CPython.
+resolve_version() {
+  local plugin="$1"
+  case "$plugin" in
+  java)
+    asdf list all java 2>/dev/null |
+      grep -E '^openjdk-[0-9]+(\.[0-9]+)*$' | sort -V | tail -n 1
+    ;;
+  gradle | python)
+    asdf list all "$plugin" 2>/dev/null |
+      grep -E '^[0-9]+(\.[0-9]+)*$' | sort -V | tail -n 1
+    ;;
+  *)
+    asdf latest "$plugin" 2>/dev/null
+    ;;
+  esac
+}
+
+failed=()
+
+for item in "${ASDF_PLUGINS[@]}"; do
+  if asdf plugin list 2>/dev/null | grep -q "^$item$"; then
+    asdf plugin update "$item" || true
+  else
+    asdf plugin add "$item" || true
+  fi
+
+  version="$(resolve_version "$item")"
+  if [ -z "$version" ]; then
+    echo "!! could not resolve a version for $item — skipping" >&2
+    failed+=("$item")
+    continue
+  fi
+
+  echo "Installing $item $version..."
+  # Run the install in a subshell so any env tweaks stay scoped to it.
+  if (
+    # macOS-only shim: php builds from source and needs brew's bison/re2c
+    # ahead of the stale system ones; on Linux the distro packages suffice.
+    if [ "$item" = php ] && command -v brew &>/dev/null; then
+      for dep in bison re2c; do
+        prefix="$(brew --prefix "$dep" 2>/dev/null)" || continue
+        [ -d "$prefix/bin" ] && PATH="$prefix/bin:$PATH"
+      done
     fi
-    if [ "$item" == "java" ]; then
-      version=$(asdf list all java | grep "^openjdk-" | tail -n 1)
-      if [ -n "$version" ]; then
-        echo "Installing latest $item..."
-        asdf install java "$version" && asdf set --home java "$version"
-      fi
-    else
-      echo "Installing latest $item..."
-      asdf install "$item" latest && asdf set --home "$item" latest
-      if [ "$item" == "python" ]; then
-        echo "Installing addintional Python requirements..."
-        pip3 install --upgrade pip setuptools
-      fi
+    asdf install "$item" "$version"
+  ); then
+    asdf set --home "$item" "$version"
+    if [ "$item" = python ]; then
+      echo "Upgrading pip for the asdf python..."
+      asdf reshim python
+      asdf exec python -m pip install --upgrade pip || true
     fi
-  done
+  else
+    echo "!! $item $version failed to install" >&2
+    failed+=("$item")
+  fi
+done
+
+if [ "${#failed[@]}" -gt 0 ]; then
+  echo >&2
+  echo "Plugins that failed to install: ${failed[*]}" >&2
+  exit 1
 fi
