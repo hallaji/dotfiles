@@ -8,7 +8,7 @@ import (
 )
 
 // macDaemonsByProfile lists launchd service labels expected to be loaded on
-// macOS, keyed by $PROFILE; "common" applies to every profile. skhd, sketchybar,
+// macOS, keyed by $DOTFILES_PROFILE; "common" applies to every profile. skhd, sketchybar,
 // and borders are installed unconditionally by dotup-mac (not profile-gated), so
 // every Mac is expected to run all three. Add a profile key here only if some
 // machine genuinely runs a different set.
@@ -21,7 +21,7 @@ var macDaemonsByProfile = map[string][]string{
 }
 
 // linuxDaemonsByProfile lists process names expected to be running on Linux,
-// keyed by $PROFILE. A minimal starting point for the Arch/Hyprland machine —
+// keyed by $DOTFILES_PROFILE. A minimal starting point for the Arch/Hyprland machine —
 // extend this (or add systemd --user units) as that setup grows.
 var linuxDaemonsByProfile = map[string][]string{
 	"common": {
@@ -47,7 +47,7 @@ var (
 type DaemonsCheck struct{}
 
 func (c *DaemonsCheck) Run(_ string) Result {
-	profile := os.Getenv("PROFILE")
+	profile := os.Getenv("DOTFILES_PROFILE")
 	switch runtime.GOOS {
 	case "darwin":
 		return evalDaemons(expectedDaemons(macDaemonsByProfile, profile), launchctlLoaded, "loaded")

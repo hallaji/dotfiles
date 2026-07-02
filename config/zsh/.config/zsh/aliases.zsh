@@ -138,4 +138,4 @@ alias assume=". assume" # Assume a role
 alias ,gd="assume" # Assume a role
 alias ,gdw="assume -c" # Open a web console to the role
 alias ,gdc="assume -ar" # Open console using active role
-[[ "$PROFILE" == "CLTRMP" ]] && alias ,gdp="generate_aws_config" # Generate AWS config (CLTRMP profile only)
+[[ "$DOTFILES_PROFILE" == "CLTRMP" ]] && alias ,gdp="generate_aws_config" # Generate AWS config (CLTRMP profile only)

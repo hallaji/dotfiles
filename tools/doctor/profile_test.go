@@ -28,7 +28,7 @@ func writeProfileStub(t *testing.T, profile, display string) string {
 // TestProfileCheck exercises ProfileCheck.Run against a stub profile.zsh. The
 // hostname→profile and hostname→display-name mappings themselves are owned by
 // the shell and tested in tests/unit/profile.bats; this only verifies the
-// doctor's comparison logic (sourcing the shell, comparing to $PROFILE).
+// doctor's comparison logic (sourcing the shell, comparing to $DOTFILES_PROFILE).
 func TestProfileCheck(t *testing.T) {
 	t.Setenv("XDG_CONFIG_HOME", writeProfileStub(t, "TESTPROF", "TestHost"))
 
@@ -43,10 +43,10 @@ func TestProfileCheck(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			t.Setenv("PROFILE", tt.profile)
+			t.Setenv("DOTFILES_PROFILE", tt.profile)
 			res := (&ProfileCheck{}).Run("")
 			if res.Status != tt.want {
-				t.Errorf("PROFILE=%q: status=%v, want %v (%s)", tt.profile, res.Status, tt.want, res.Message)
+				t.Errorf("DOTFILES_PROFILE=%q: status=%v, want %v (%s)", tt.profile, res.Status, tt.want, res.Message)
 			}
 		})
 	}
@@ -56,7 +56,7 @@ func TestProfileCheck(t *testing.T) {
 // display_hostname makes it into the passing message.
 func TestProfileCheckReportsDisplayName(t *testing.T) {
 	t.Setenv("XDG_CONFIG_HOME", writeProfileStub(t, "TESTPROF", "TestHost"))
-	t.Setenv("PROFILE", "TESTPROF")
+	t.Setenv("DOTFILES_PROFILE", "TESTPROF")
 
 	res := (&ProfileCheck{}).Run("")
 	if res.Status != Pass {
@@ -71,7 +71,7 @@ func TestProfileCheckReportsDisplayName(t *testing.T) {
 // rather than failing hard (e.g. an environment where dotfiles aren't stowed).
 func TestProfileCheckMissingScript(t *testing.T) {
 	t.Setenv("XDG_CONFIG_HOME", t.TempDir()) // empty: no zsh/profile.zsh
-	t.Setenv("PROFILE", "TESTPROF")
+	t.Setenv("DOTFILES_PROFILE", "TESTPROF")
 
 	if res := (&ProfileCheck{}).Run(""); res.Status != Warn {
 		t.Errorf("status=%v, want Warn (%s)", res.Status, res.Message)

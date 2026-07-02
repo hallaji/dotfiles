@@ -8,7 +8,7 @@ import (
 	"strings"
 )
 
-// ProfileCheck verifies that $PROFILE matches what the shell's detect_profile
+// ProfileCheck verifies that $DOTFILES_PROFILE matches what the shell's detect_profile
 // would produce for this machine, and reports the friendly hostname. It sources
 // the installed profile.zsh and runs its functions rather than reimplementing
 // the hostname mapping in Go, so the zsh functions are the single source of
@@ -33,12 +33,12 @@ func (c *ProfileCheck) Run(_ string) Result {
 	// The friendly name is informational; if it can't be produced, just omit it.
 	display, _ := runProfileFunc(profileZsh, "display_hostname")
 
-	actual := os.Getenv("PROFILE")
+	actual := os.Getenv("DOTFILES_PROFILE")
 	if actual == "" {
 		return Result{
 			Check:   "profile",
 			Status:  Warn,
-			Message: fmt.Sprintf("$PROFILE not set (expected %s for %s)", expected, hostname),
+			Message: fmt.Sprintf("$DOTFILES_PROFILE not set (expected %s for %s)", expected, hostname),
 		}
 	}
 	if actual != expected {
