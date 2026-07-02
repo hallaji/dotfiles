@@ -12,7 +12,6 @@ return {
   event = "VeryLazy",
   opts = {},
   config = function()
-    print(os.getenv("PWD"))
     require("which-key").setup({
       win = {
         padding = { 1, 1 }, -- extra window padding [top/bottom, right/left]

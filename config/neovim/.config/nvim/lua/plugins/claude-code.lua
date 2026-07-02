@@ -8,7 +8,9 @@
 
 return {
   "coder/claudecode.nvim",
-  cond = not vim.g.vscode,
+  -- skip in vscode and in headless runs (e.g. dotup-vim) — the integration
+  -- server is only useful with a UI attached
+  cond = not vim.g.vscode and #vim.api.nvim_list_uis() > 0,
   dependencies = { "folke/snacks.nvim" },
   config = true,
   opts = {

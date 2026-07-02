@@ -12,4 +12,4 @@ source ~/.config/zsh/bindings.zsh
 source ~/.config/zsh/aliases.zsh
 source ~/.config/zsh/tools.zsh
 
-[[ "$PROFILE" == "CLTRMP" ]] && source ~/.config/hotel/config.zsh
+[[ "$PROFILE" == "CLTRMP" && -f ~/.config/hotel/config.zsh ]] && source ~/.config/hotel/config.zsh
