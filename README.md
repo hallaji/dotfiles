@@ -1,6 +1,6 @@
 # dotfiles
 
-```text
+```yaml
 ╭─────────────────────────────────────────────────────────────────╮
 │  ●  ●  ●                 ~/.dotfiles                            │
 ├─────────────────────────────────────────────────────────────────┤
@@ -20,12 +20,27 @@
 
 ## Prerequisites
 
-Install [GNU Stow](https://www.gnu.org/software/stow/manual/stow.html), a symlink manager used to link configuration packages into the home directory.
+### 1. Install Homebrew, Git, and Stow
+
+[GNU Stow](https://www.gnu.org/software/stow/manual/stow.html) is a symlink manager used to link configuration packages into the home directory.
 
 ```shell
-sudo pacman -S stow # arch
-# OR
-brew install stow # mac
+# mac
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew install git stow
+
+# OR arch
+sudo pacman -S git stow
+```
+
+### 2. Activate the SSH Agent in 1Password
+
+Settings → Developer → SSH Agent → **Use the SSH Agent**
+
+### 3. Clone the Repository
+
+```shell
+git clone git@github.com:hallaji/dotfiles.git ~/.dotfiles
 ```
 
 ## Setup
