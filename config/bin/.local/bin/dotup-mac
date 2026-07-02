@@ -12,16 +12,6 @@ cat <<EOF
 ┴ ┴┴ ┴└─┘
 EOF
 
-# Installing Nix
-# https://nix.dev/install-nix#install-nix
-
-type nix &>/dev/null || curl -L https://nixos.org/nix/install | sh
-
-# Installing Devbox
-# https://www.jetify.com/docs/devbox/installing_devbox
-
-type devbox &>/dev/null || curl -fsSL https://get.jetify.com/devbox | bash
-
 # Installing Homebrew
 # https://brew.sh
 
@@ -29,10 +19,12 @@ type brew &>/dev/null || curl -fsSL https://raw.githubusercontent.com/Homebrew/i
 
 # Core packages
 brew install \
+  antigravity-cli \
   asdf \
   aws-cdk \
   awscli \
   bat \
+  bison \
   claude-code \
   codex \
   copilot-cli \
@@ -53,7 +45,6 @@ brew install \
   fortune \
   fswatch \
   fzf \
-  gemini-cli \
   gh \
   git \
   gnupg \
@@ -74,7 +65,6 @@ brew install \
   ktlint \
   lazygit \
   lolcat \
-  neofetch \
   neovim \
   nmap \
   node \
@@ -86,6 +76,7 @@ brew install \
   pyenv \
   pyenv-virtualenv \
   python \
+  re2c \
   ripgrep \
   ruby \
   shortcat \
@@ -150,16 +141,35 @@ brew install --cask \
   postman \
   qmk-toolbox \
   session-manager-plugin \
-  visual-studio-code \
-  yubico-yubikey-manager
+  visual-studio-code
 
 # Third-party casks
 brew install --cask \
   nikitabobko/tap/aerospace
 
+# Installing Nix and Devbox
+# https://docs.determinate.systems
+# https://www.jetify.com/docs/devbox/installing_devbox
+
+if [[ "$DOTFILES_PROFILE" != "CLTRMP" ]]; then
+  if command -v nix &>/dev/null; then
+    echo "Already installed: $(nix --version)"
+  else
+    # https://github.com/DeterminateSystems/nix-installer
+    echo "Nix not found, installing..."
+    curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix |
+      sh -s -- install --no-confirm --extra-conf "trusted-users = root @admin"
+  fi
+  type devbox &>/dev/null || curl -fsSL https://get.jetify.com/devbox | FORCE=1 bash
+else
+  # https://github.com/cultureamp/hotel — owns nix/devbox on the work machine
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/cultureamp/devbox-extras/main/scripts/github_auth.rb)"
+  hotel setup ensure
+fi
+
 # Profile-specific installations
 
-if [[ "$PROFILE" == "CLTRMP" ]]; then
+if [[ "$DOTFILES_PROFILE" == "CLTRMP" ]]; then
   brew tap cultureamp/tap
 
   # https://github.com/cultureamp/silk
@@ -167,8 +177,4 @@ if [[ "$PROFILE" == "CLTRMP" ]]; then
 
   # https://github.com/cultureamp/wilma
   brew install wilma
-
-  # https://github.com/cultureamp/hotel
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/cultureamp/devbox-extras/main/scripts/github_auth.rb)"
-  hotel setup ensure
 fi
