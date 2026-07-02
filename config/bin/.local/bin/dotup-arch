@@ -45,6 +45,7 @@ sudo pacman -S --needed \
   inetutils \
   i3 \
   jq \
+  lazygit \
   less \
   libfido2 \
   lolcat \

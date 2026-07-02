@@ -239,6 +239,13 @@ wk.add({
     mode = "n",
     { "<Leader><C-G>", ":Neogit<CR>", desc = "Neogit", icon = "" },
     { "<Leader>g", group = "Git", icon = "" },
+    {
+      "<Leader>gL",
+      function()
+        Snacks.lazygit.log()
+      end,
+      desc = "Lazygit Log (Repo)",
+    },
     { "<Leader>gR", ":Gitsigns reset_buffer<CR>", desc = "Reset Buffer" },
     { "<Leader>gS", ":Gitsigns stage_buffer<CR>", desc = "Stage Buffer" },
     { "<Leader>gb", ":Gitsigns blame_line<CR>", desc = "Blame" },
@@ -250,6 +257,20 @@ wk.add({
     { "<Leader>gdo", ":DiffviewOpen<CR>", desc = "Open" },
     { "<Leader>gdr", ":DiffviewRefresh<CR>", desc = "Refresh" },
     { "<Leader>gdt", ":Gitsigns diffthis<CR>", desc = "This" },
+    {
+      "<Leader>gf",
+      function()
+        Snacks.lazygit.log_file()
+      end,
+      desc = "Lazygit Log (File)",
+    },
+    {
+      "<Leader>gg",
+      function()
+        Snacks.lazygit()
+      end,
+      desc = "Lazygit",
+    },
     { "<Leader>gl", group = "Link", icon = "󰌷" },
     { "<Leader>glc", ":GitLink<CR>", desc = "Copy Code Permalink", icon = "" },
     { "<Leader>glo", ":GitLink!<CR>", desc = "Open Code Permalink", icon = "" },

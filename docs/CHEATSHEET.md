@@ -504,6 +504,14 @@ In preview window:
 - `<leader>gd` Undo the hunk
 - `<leader>gf` Fold all unchanged lines, leaving just the hunks visible
 
+#### Lazygit
+
+[folke/snacks.nvim](https://github.com/folke/snacks.nvim) (lazygit, Neovim only)
+
+- `,gg` Open lazygit in a floating window
+- `,gL` Lazygit repo log
+- `,gf` Lazygit log for the current file
+
 #### GV
 
 [gv.vim](https://github.com/junegunn/gv.vim)

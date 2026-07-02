@@ -50,6 +50,7 @@ flowchart TD
     git --> git3["Diffview<br/>,gd"]:::git
     git --> git4["permalink<br/>,gl"]:::git
     git --> git5["toggles<br/>,gt"]:::git
+    git --> git6["lazygit<br/>,gg"]:::git
 
     leader --> find["Find & Replace<br/>,f"]:::find
     leader --> lsp["LSP<br/>,l"]:::lsp
@@ -91,6 +92,7 @@ flowchart TD
     G["Search / replace in repo"]:::intent --> H["&lt;C-F&gt;<br/>CtrlSF"]:::search
     I["Stage / preview a hunk"]:::intent --> J[",g*<br/>gitsigns"]:::git
     K["Full status / commit TUI"]:::intent --> L[",&lt;C-G&gt;<br/>Neogit"]:::git
+    Q["Floating git TUI"]:::intent --> R[",gg<br/>lazygit (snacks)"]:::git
     M["Side-by-side diff or history"]:::intent --> N[",gd*<br/>Diffview"]:::git
     O["Copy / open a permalink"]:::intent --> P[",gl*<br/>gitlinker"]:::git
 
@@ -188,11 +190,15 @@ CtrlP to fzf-lua; CtrlP is still installed and reachable via `:CtrlP`.
 ## Git
 
 Several tools, each for a different job: **gitsigns** (hunks/blame inline),
-**fugitive** (`:G…` status/commands), **neogit** (full TUI), **diffview**
-(side-by-side + history), **gitlinker** (permalinks).
+**fugitive** (`:G…` status/commands), **neogit** (full TUI), **lazygit**
+(floating TUI via snacks), **diffview** (side-by-side + history), **gitlinker**
+(permalinks).
 
 | Keys | Action | When |
 | ---- | ------ | ---- |
+| `,gg` | Open **Lazygit** (snacks float) | Full git TUI in a floating window |
+| `,gL` | Lazygit repo log | Browse the commit history in lazygit |
+| `,gf` | Lazygit log for current file | This file's history in lazygit |
 | `,<C-G>` | Open **Neogit** | Full status/stage/commit TUI |
 | `:G` _(fugitive, default cmd)_ | Fugitive status | Tim Pope-style staging/commands |
 | `,gs` | Stage hunk | Stage just the change under cursor |

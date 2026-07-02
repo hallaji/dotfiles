@@ -12,6 +12,9 @@ return {
   lazy = false,
   opts = {
     dashboard = { enabled = false },
+    lazygit = {
+      configure = true, -- theme lazygit to match the current colorscheme
+    },
     notifier = {
       enabled = true, -- replaces vim.notify; noice routes its notify view here
       timeout = 4000, -- ms before a notification auto-hides
