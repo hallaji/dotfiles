@@ -456,6 +456,38 @@ Generic Vim knowledge the rest of this doc builds on — nothing here is custom.
 
 ---
 
+## Minimal Vim (`config/vim/.vimrc`)
+
+A single self-contained `.vimrc` for servers and quick edits — copy the one
+file to any machine and it works in plain Vim with **zero plugins**. It keeps
+the same leader (`,`) and the muscle-memory subset of the bindings above:
+save/quit (`<C-S>`/`<C-Q>`, `,q`, `,Q`), the `,b*` buffer namespace, split
+navigation/resizing/cycling (`<C-H/J/K/L>`, `<C-Arrows>`, `Tab`/`S-Tab`),
+`[b ]b [t ]t`, the toggles (`,<Space>` `,n` `,N` `,r` `,S` `,w`), `,T` trim
+trailing whitespace, `,/` toggle comment, `,y`/`,p` system clipboard (visual),
+and `_` for the file explorer (netrw).
+
+Five optional plugins restore Neovim behavior when vim-plug can bootstrap
+(needs curl + network; offline boxes silently skip them):
+vim-tmux-navigator, vim-commentary, vim-surround, fzf + fzf.vim.
+
+Graceful fallbacks when plugins are absent: `<C-H/J/K/L>` still move between
+Vim splits (just not tmux panes), `,/` uses Vim 9.1's built-in `comment`
+package, and `<C-P>`/`<C-G>` fall back to `:find *` (with `path+=**`) and
+`:ls`+`:b` instead of fzf's `:Files`/`:Buffers`.
+
+Colors are an inline "catamaran-lite" — the same palette as the Neovim theme
+(`config/neovim/.config/nvim/lua/palettes/catamaran.lua`) as `highlight`
+commands in the `.vimrc` itself, with 256-color `cterm` fallbacks for
+terminals without truecolor. No colors file to install.
+
+Not in minimal Vim: LSP (`gd`, `,l*`), git (`,g*`), find & replace (`<C-F>`,
+`,f*`), GPT/Copilot, trees/pickers (`` ` ``, `-`, `~`), and the which-key
+popup.
+
+---
+
 _Source of truth: `config/neovim/.config/nvim/lua/config/mappings.lua` and the
 per-plugin specs in `config/neovim/.config/nvim/lua/plugins/`. When you change a
-binding there, update this file in the same commit._
+binding there, update this file in the same commit. Minimal Vim's source of
+truth is `config/vim/.vimrc` — same rule._

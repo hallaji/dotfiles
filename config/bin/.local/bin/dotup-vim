@@ -19,4 +19,4 @@ gem install neovim    # https://github.com/neovim/neovim-ruby
 nvim --headless "+Lazy! sync" "+qa"
 nvim --headless "+MasonToolsInstallSync" "+qa"
 nvim "+GoUpdateBinaries" "+qa"
-vim "+PlugUpgrade" "+PlugUpdate" "+qa"
+vim "+PlugUpgrade" "+PlugClean!" "+PlugUpdate" "+qa"
