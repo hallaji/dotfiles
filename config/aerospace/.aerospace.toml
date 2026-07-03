@@ -8,6 +8,8 @@
 # https://nikitabobko.github.io/AeroSpace/guide#config-samples
 # Documented in docs/AEROSPACE.md — update it in the same commit.
 
+config-version = 2
+
 after-login-command = []
 after-startup-command = ['exec-and-forget sketchybar']
 start-at-login = true
@@ -26,6 +28,9 @@ accordion-padding = 30
 default-root-container-layout = "tiles"     # tiles|accordion
 default-root-container-orientation = "auto" # horizontal|vertical|auto
 key-mapping.preset = "qwerty"               # qwerty|dvorak
+
+# config-version 2 no longer infers these from the workspace keybindings.
+persistent-workspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
 
 # Note: `outer.top` is updated through an alias that toggles SketchyBar.
 [gaps]
