@@ -29,20 +29,20 @@ if [ "$SENDER" = "aerospace_mode_change" ]; then
   case "$(aerospace list-modes --current 2>/dev/null)" in
   move)
     GLYPH="󰰏"
-    COLOR=$PALETTE_SE_ERROR
-    BORDER=$PALETTE_SE_ERROR
+    COLOR=$ACCENT_COLOR
+    BORDER=$ACCENT_COLOR
     DRAWING=on
     ;;
   service)
     GLYPH="󰰡"
-    COLOR=$PALETTE_SE_WARNING
-    BORDER=$PALETTE_SE_WARNING
+    COLOR=$WARNING_COLOR
+    BORDER=$WARNING_COLOR
     DRAWING=on
     ;;
   *)
     GLYPH=""
-    COLOR=$PALETTE_BA_PRIMARY_FG
-    BORDER=$PALETTE_SE_PRIMARY
+    COLOR=$LABEL_COLOR
+    BORDER=$ICON_COLOR
     DRAWING=off
     ;;
   esac

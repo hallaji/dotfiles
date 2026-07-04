@@ -20,15 +20,15 @@ sketchybar --bar \
   height=36 \
   notch_offset=36 \
   sticky=on \
-  color="$TRANSPARENT"
+  color="$BAR_COLOR"
 
 default=(
   padding_left=2
   padding_right=2
   icon.font="$FONT_ICON"
   label.font="$FONT_LABEL"
-  icon.color="$PALETTE_SE_PRIMARY"
-  label.color="$PALETTE_BA_PRIMARY_FG"
+  icon.color="$ICON_COLOR"
+  label.color="$LABEL_COLOR"
   icon.padding_left=4
   icon.padding_right=2
   label.padding_left=4
@@ -38,7 +38,7 @@ sketchybar --default "${default[@]}"
 
 separator=(
   icon=""
-  icon.color="$PALETTE_SE_ERROR"
+  icon.color="$ACCENT_COLOR"
   background.padding_left=-2
   background.padding_right=-2
 )
@@ -124,7 +124,7 @@ network_down=(
   background.padding_right=-67
   label.font="$FONT_NET_LABEL"
   icon.font="$FONT_NET_ICON"
-  icon.highlight_color="$PALETTE_SE_ERROR"
+  icon.highlight_color="$ACCENT_COLOR"
   icon=""
   update_freq=1
   script="$PLUGIN_DIR/network.sh"
@@ -135,7 +135,7 @@ network_up=(
   icon=""
   label.font="$FONT_NET_LABEL"
   icon.font="$FONT_NET_ICON"
-  icon.highlight_color="$PALETTE_SE_ERROR"
+  icon.highlight_color="$ACCENT_COLOR"
   update_freq=1
   script="$PLUGIN_DIR/network.sh"
 )

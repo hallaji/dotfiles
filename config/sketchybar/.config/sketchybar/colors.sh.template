@@ -8,8 +8,8 @@
 # while the single source of truth stays the palette in config/env/.env. Edit
 # colors there, not in the rendered colors.sh.
 
-export TRANSPARENT=0x00000000           # no palette equivalent — bar background
-export PALETTE_BA_PRIMARY_FG=${PALETTE_BA_PRIMARY_FG} # default label color
-export PALETTE_SE_PRIMARY=${PALETTE_SE_PRIMARY}       # default icon color, normal-mode border
-export PALETTE_SE_ERROR=${PALETTE_SE_ERROR}           # separators, move mode, network highlight
-export PALETTE_SE_WARNING=${PALETTE_SE_WARNING}       # service mode
+export BAR_COLOR=0x00000000                 # bar background (no palette equivalent)
+export LABEL_COLOR=${PALETTE_BA_PRIMARY_FG} # default label color, normal-mode reset
+export ICON_COLOR=${PALETTE_SE_PRIMARY}     # default icon color, normal-mode border
+export ACCENT_COLOR=${PALETTE_SE_ERROR}     # separators, move mode, network highlight
+export WARNING_COLOR=${PALETTE_SE_WARNING}  # service mode
