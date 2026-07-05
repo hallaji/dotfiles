@@ -11,7 +11,7 @@
     <text x="61" y="186" fill="${PALETTE_FG2}">black</text>
     <rect x="110" y="140" width="82" height="30" fill="${PALETTE_RED}"/>
     <text x="151" y="186" fill="${PALETTE_FG2}">red</text>
-    <rect x="200" y="140" width="82" height="30" fill="${PALETTE_MINT}"/>
+    <rect x="200" y="140" width="82" height="30" fill="${PALETTE_TEAL}"/>
     <text x="241" y="186" fill="${PALETTE_FG2}">green</text>
     <rect x="290" y="140" width="82" height="30" fill="${PALETTE_AMBER}"/>
     <text x="331" y="186" fill="${PALETTE_FG2}">yellow</text>
@@ -21,18 +21,18 @@
     <text x="511" y="186" fill="${PALETTE_FG2}">magenta</text>
     <rect x="560" y="140" width="82" height="30" fill="${PALETTE_CYAN}"/>
     <text x="601" y="186" fill="${PALETTE_FG2}">cyan</text>
-    <rect x="650" y="140" width="70" height="30" fill="${PALETTE_FG2}"/>
+    <rect x="650" y="140" width="70" height="30" fill="${PALETTE_FG1}"/>
     <text x="685" y="186" fill="${PALETTE_FG2}">white</text>
   </g>
   <text x="20" y="230" fill="${PALETTE_FG2}" font-size="12">colors.bright</text>
   <g font-size="11" text-anchor="middle">
-    <rect x="20" y="240" width="82" height="30" fill="${PALETTE_BG4}"/>
+    <rect x="20" y="240" width="82" height="30" fill="${PALETTE_GRAY}"/>
     <text x="61" y="286" fill="${PALETTE_FG2}">black</text>
     <rect x="110" y="240" width="82" height="30" fill="${PALETTE_RED}"/>
     <text x="151" y="286" fill="${PALETTE_FG2}">red</text>
-    <rect x="200" y="240" width="82" height="30" fill="${PALETTE_TEAL}"/>
+    <rect x="200" y="240" width="82" height="30" fill="${PALETTE_MINT}"/>
     <text x="241" y="286" fill="${PALETTE_FG2}">green</text>
-    <rect x="290" y="240" width="82" height="30" fill="${PALETTE_AMBER}"/>
+    <rect x="290" y="240" width="82" height="30" fill="${PALETTE_YELLOW}"/>
     <text x="331" y="286" fill="${PALETTE_FG2}">yellow</text>
     <rect x="380" y="240" width="82" height="30" fill="${PALETTE_BLUE}"/>
     <text x="421" y="286" fill="${PALETTE_FG2}">blue</text>
@@ -40,7 +40,7 @@
     <text x="511" y="286" fill="${PALETTE_FG2}">magenta</text>
     <rect x="560" y="240" width="82" height="30" fill="${PALETTE_CYAN}"/>
     <text x="601" y="286" fill="${PALETTE_FG2}">cyan</text>
-    <rect x="650" y="240" width="70" height="30" fill="${PALETTE_FG1}"/>
+    <rect x="650" y="240" width="70" height="30" fill="${PALETTE_FG0}"/>
     <text x="685" y="286" fill="${PALETTE_FG2}">white</text>
   </g>
   <text x="20" y="316" fill="${PALETTE_FG2}" font-size="12">cursor → UI_CURSOR · bg → BG2 · fg → FG0</text>

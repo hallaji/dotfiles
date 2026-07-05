@@ -95,21 +95,21 @@ flowchart TB
 | `PALETTE_BG1` | `#222831` | nvim color column (ruler) |
 | `PALETTE_BG2` | `#242a34` | **main background** (terminal, editor, bars) |
 | `PALETTE_BG3` | `#323a44` | raised background — ANSI black, cursor line, popup menus |
-| `PALETTE_BG4` | `#3a4555` | lightest background — ANSI bright black, inactive borders, muted text on dark |
+| `PALETTE_BG4` | `#3a4555` | lightest background — inactive borders, muted text on dark |
 | `PALETTE_NAVY` | `#202f42` | blue-tinted background — statusline section B, inactive statusline, lazygit selection |
-| `PALETTE_FG0` | `#e1e4e8` | primary foreground |
-| `PALETTE_FG1` | `#adbac7` | secondary foreground — ANSI bright white |
-| `PALETTE_FG2` | `#8296aa` | tertiary foreground — ANSI white, hints |
-| `PALETTE_GRAY` | `#515f72` | muted — comments, line numbers |
+| `PALETTE_FG0` | `#e1e4e8` | primary foreground, ANSI bright white |
+| `PALETTE_FG1` | `#adbac7` | secondary foreground — ANSI white |
+| `PALETTE_FG2` | `#8296aa` | tertiary foreground — hints, dim text |
+| `PALETTE_GRAY` | `#515f72` | muted — comments, line numbers, ANSI bright black |
 | `PALETTE_RED` | `#ff4b82` | errors, operators, visual mode |
 | `PALETTE_PINK` | `#ff75b5` | secondary accent, special chars |
 | `PALETTE_ROSE` | `#fdaccb` | identifiers, constants, tmux active tab |
 | `PALETTE_ORANGE` | `#ff6b35` | cursor |
-| `PALETTE_AMBER` | `#f5b168` | warnings, preprocessor, ANSI yellow + bright yellow |
-| `PALETTE_YELLOW` | `#f4d35e` | insert mode, alacritty hints |
+| `PALETTE_AMBER` | `#f5b168` | warnings, preprocessor, ANSI yellow |
+| `PALETTE_YELLOW` | `#f4d35e` | insert mode, alacritty hints, ANSI bright yellow |
 | `PALETTE_GREEN` | `#9ed47b` | replace mode |
-| `PALETTE_TEAL` | `#00b196` | success, ANSI bright green |
-| `PALETTE_MINT` | `#00e8c6` | strings, ANSI green |
+| `PALETTE_TEAL` | `#00b196` | success, ANSI green |
+| `PALETTE_MINT` | `#00e8c6` | strings, ANSI bright green |
 | `PALETTE_CYAN` | `#04f6f6` | primary accent, ANSI cyan, selection |
 | `PALETTE_SKY` | `#02d9fe` | functions, borders, normal mode, ANSI blue, underlined text |
 | `PALETTE_AZURE` | `#01bdfe` | keywords |

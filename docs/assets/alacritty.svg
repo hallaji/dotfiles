@@ -11,7 +11,7 @@
     <text x="61" y="186" fill="#8296aa">black</text>
     <rect x="110" y="140" width="82" height="30" fill="#ff4b82"/>
     <text x="151" y="186" fill="#8296aa">red</text>
-    <rect x="200" y="140" width="82" height="30" fill="#00e8c6"/>
+    <rect x="200" y="140" width="82" height="30" fill="#00b196"/>
     <text x="241" y="186" fill="#8296aa">green</text>
     <rect x="290" y="140" width="82" height="30" fill="#f5b168"/>
     <text x="331" y="186" fill="#8296aa">yellow</text>
@@ -21,18 +21,18 @@
     <text x="511" y="186" fill="#8296aa">magenta</text>
     <rect x="560" y="140" width="82" height="30" fill="#04f6f6"/>
     <text x="601" y="186" fill="#8296aa">cyan</text>
-    <rect x="650" y="140" width="70" height="30" fill="#8296aa"/>
+    <rect x="650" y="140" width="70" height="30" fill="#adbac7"/>
     <text x="685" y="186" fill="#8296aa">white</text>
   </g>
   <text x="20" y="230" fill="#8296aa" font-size="12">colors.bright</text>
   <g font-size="11" text-anchor="middle">
-    <rect x="20" y="240" width="82" height="30" fill="#3a4555"/>
+    <rect x="20" y="240" width="82" height="30" fill="#515f72"/>
     <text x="61" y="286" fill="#8296aa">black</text>
     <rect x="110" y="240" width="82" height="30" fill="#ff4b82"/>
     <text x="151" y="286" fill="#8296aa">red</text>
-    <rect x="200" y="240" width="82" height="30" fill="#00b196"/>
+    <rect x="200" y="240" width="82" height="30" fill="#00e8c6"/>
     <text x="241" y="286" fill="#8296aa">green</text>
-    <rect x="290" y="240" width="82" height="30" fill="#f5b168"/>
+    <rect x="290" y="240" width="82" height="30" fill="#f4d35e"/>
     <text x="331" y="286" fill="#8296aa">yellow</text>
     <rect x="380" y="240" width="82" height="30" fill="#6fc1ff"/>
     <text x="421" y="286" fill="#8296aa">blue</text>
@@ -40,7 +40,7 @@
     <text x="511" y="286" fill="#8296aa">magenta</text>
     <rect x="560" y="240" width="82" height="30" fill="#04f6f6"/>
     <text x="601" y="286" fill="#8296aa">cyan</text>
-    <rect x="650" y="240" width="70" height="30" fill="#adbac7"/>
+    <rect x="650" y="240" width="70" height="30" fill="#e1e4e8"/>
     <text x="685" y="286" fill="#8296aa">white</text>
   </g>
   <text x="20" y="316" fill="#8296aa" font-size="12">cursor → UI_CURSOR · bg → BG2 · fg → FG0</text>

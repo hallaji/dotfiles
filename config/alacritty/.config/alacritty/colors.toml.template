@@ -5,21 +5,21 @@ color = "${PALETTE_UI_ERROR}"
 black = "${PALETTE_BG3}"
 blue = "${PALETTE_SKY}"
 cyan = "${PALETTE_CYAN}"
-green = "${PALETTE_MINT}"
-magenta = "${PALETTE_PINK}"
-red = "${PALETTE_RED}"
-white = "${PALETTE_FG2}"
-yellow = "${PALETTE_AMBER}"
-
-[colors.bright]
-black = "${PALETTE_BG4}"
-blue = "${PALETTE_BLUE}"
-cyan = "${PALETTE_CYAN}"
 green = "${PALETTE_TEAL}"
-magenta = "${PALETTE_PURPLE}"
+magenta = "${PALETTE_PINK}"
 red = "${PALETTE_RED}"
 white = "${PALETTE_FG1}"
 yellow = "${PALETTE_AMBER}"
+
+[colors.bright]
+black = "${PALETTE_GRAY}"
+blue = "${PALETTE_BLUE}"
+cyan = "${PALETTE_CYAN}"
+green = "${PALETTE_MINT}"
+magenta = "${PALETTE_PURPLE}"
+red = "${PALETTE_RED}"
+white = "${PALETTE_FG0}"
+yellow = "${PALETTE_YELLOW}"
 
 [colors.cursor]
 cursor = "${PALETTE_UI_CURSOR}"
@@ -44,7 +44,7 @@ foreground = "${PALETTE_BG4}"
 [colors.primary]
 background = "${PALETTE_BG2}"
 bright_foreground = "${PALETTE_FG0}"
-dim_foreground = "${PALETTE_BG4}"
+dim_foreground = "${PALETTE_FG2}"
 foreground = "${PALETTE_FG0}"
 
 [colors.search.focused_match]
