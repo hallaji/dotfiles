@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="740" height="452" viewBox="0 0 740 452" font-family="Menlo, Consolas, monospace" font-size="13">
+  <rect x="0" y="0" width="740" height="452" rx="8" fill="${PALETTE_BG2}"/>
+  <text x="15" y="28" fill="${PALETTE_FG2}" font-size="12">Neutrals</text>
+  <rect x="15" y="38" width="170" height="44" rx="6" fill="${PALETTE_BG0}" stroke="${PALETTE_GRAY}" stroke-width="0.75"/>
+  <text x="100" y="56" text-anchor="middle" fill="${PALETTE_FG0}" font-weight="bold">BG0</text>
+  <text x="100" y="72" text-anchor="middle" fill="${PALETTE_FG0}" font-size="11">${PALETTE_BG0}</text>
+  <rect x="195" y="38" width="170" height="44" rx="6" fill="${PALETTE_BG1}" stroke="${PALETTE_GRAY}" stroke-width="0.75"/>
+  <text x="280" y="56" text-anchor="middle" fill="${PALETTE_FG0}" font-weight="bold">BG1</text>
+  <text x="280" y="72" text-anchor="middle" fill="${PALETTE_FG0}" font-size="11">${PALETTE_BG1}</text>
+  <rect x="375" y="38" width="170" height="44" rx="6" fill="${PALETTE_BG2}" stroke="${PALETTE_GRAY}" stroke-width="0.75"/>
+  <text x="460" y="56" text-anchor="middle" fill="${PALETTE_FG0}" font-weight="bold">BG2</text>
+  <text x="460" y="72" text-anchor="middle" fill="${PALETTE_FG0}" font-size="11">${PALETTE_BG2}</text>
+  <rect x="555" y="38" width="170" height="44" rx="6" fill="${PALETTE_BG3}" stroke="${PALETTE_GRAY}" stroke-width="0.75"/>
+  <text x="640" y="56" text-anchor="middle" fill="${PALETTE_FG0}" font-weight="bold">BG3</text>
+  <text x="640" y="72" text-anchor="middle" fill="${PALETTE_FG0}" font-size="11">${PALETTE_BG3}</text>
+  <rect x="15" y="92" width="170" height="44" rx="6" fill="${PALETTE_BG4}" stroke="${PALETTE_GRAY}" stroke-width="0.75"/>
+  <text x="100" y="110" text-anchor="middle" fill="${PALETTE_FG0}" font-weight="bold">BG4</text>
+  <text x="100" y="126" text-anchor="middle" fill="${PALETTE_FG0}" font-size="11">${PALETTE_BG4}</text>
+  <rect x="195" y="92" width="170" height="44" rx="6" fill="${PALETTE_NAVY}" stroke="${PALETTE_GRAY}" stroke-width="0.75"/>
+  <text x="280" y="110" text-anchor="middle" fill="${PALETTE_FG0}" font-weight="bold">NAVY</text>
+  <text x="280" y="126" text-anchor="middle" fill="${PALETTE_FG0}" font-size="11">${PALETTE_NAVY}</text>
+  <rect x="375" y="92" width="170" height="44" rx="6" fill="${PALETTE_FG0}" stroke="${PALETTE_GRAY}" stroke-width="0.75"/>
+  <text x="460" y="110" text-anchor="middle" fill="${PALETTE_BG2}" font-weight="bold">FG0</text>
+  <text x="460" y="126" text-anchor="middle" fill="${PALETTE_BG2}" font-size="11">${PALETTE_FG0}</text>
+  <rect x="555" y="92" width="170" height="44" rx="6" fill="${PALETTE_FG1}" stroke="${PALETTE_GRAY}" stroke-width="0.75"/>
+  <text x="640" y="110" text-anchor="middle" fill="${PALETTE_BG2}" font-weight="bold">FG1</text>
+  <text x="640" y="126" text-anchor="middle" fill="${PALETTE_BG2}" font-size="11">${PALETTE_FG1}</text>
+  <rect x="15" y="146" width="170" height="44" rx="6" fill="${PALETTE_FG2}" stroke="${PALETTE_GRAY}" stroke-width="0.75"/>
+  <text x="100" y="164" text-anchor="middle" fill="${PALETTE_BG2}" font-weight="bold">FG2</text>
+  <text x="100" y="180" text-anchor="middle" fill="${PALETTE_BG2}" font-size="11">${PALETTE_FG2}</text>
+  <rect x="195" y="146" width="170" height="44" rx="6" fill="${PALETTE_GRAY}" stroke="${PALETTE_GRAY}" stroke-width="0.75"/>
+  <text x="280" y="164" text-anchor="middle" fill="${PALETTE_FG0}" font-weight="bold">GRAY</text>
+  <text x="280" y="180" text-anchor="middle" fill="${PALETTE_FG0}" font-size="11">${PALETTE_GRAY}</text>
+  <text x="15" y="218" fill="${PALETTE_FG2}" font-size="12">Accents</text>
+  <rect x="15" y="228" width="170" height="44" rx="6" fill="${PALETTE_RED}" stroke="${PALETTE_GRAY}" stroke-width="0.75"/>
+  <text x="100" y="246" text-anchor="middle" fill="${PALETTE_BG2}" font-weight="bold">RED</text>
+  <text x="100" y="262" text-anchor="middle" fill="${PALETTE_BG2}" font-size="11">${PALETTE_RED}</text>
+  <rect x="195" y="228" width="170" height="44" rx="6" fill="${PALETTE_PINK}" stroke="${PALETTE_GRAY}" stroke-width="0.75"/>
+  <text x="280" y="246" text-anchor="middle" fill="${PALETTE_BG2}" font-weight="bold">PINK</text>
+  <text x="280" y="262" text-anchor="middle" fill="${PALETTE_BG2}" font-size="11">${PALETTE_PINK}</text>
+  <rect x="375" y="228" width="170" height="44" rx="6" fill="${PALETTE_ROSE}" stroke="${PALETTE_GRAY}" stroke-width="0.75"/>
+  <text x="460" y="246" text-anchor="middle" fill="${PALETTE_BG2}" font-weight="bold">ROSE</text>
+  <text x="460" y="262" text-anchor="middle" fill="${PALETTE_BG2}" font-size="11">${PALETTE_ROSE}</text>
+  <rect x="555" y="228" width="170" height="44" rx="6" fill="${PALETTE_ORANGE}" stroke="${PALETTE_GRAY}" stroke-width="0.75"/>
+  <text x="640" y="246" text-anchor="middle" fill="${PALETTE_BG2}" font-weight="bold">ORANGE</text>
+  <text x="640" y="262" text-anchor="middle" fill="${PALETTE_BG2}" font-size="11">${PALETTE_ORANGE}</text>
+  <rect x="15" y="282" width="170" height="44" rx="6" fill="${PALETTE_AMBER}" stroke="${PALETTE_GRAY}" stroke-width="0.75"/>
+  <text x="100" y="300" text-anchor="middle" fill="${PALETTE_BG2}" font-weight="bold">AMBER</text>
+  <text x="100" y="316" text-anchor="middle" fill="${PALETTE_BG2}" font-size="11">${PALETTE_AMBER}</text>
+  <rect x="195" y="282" width="170" height="44" rx="6" fill="${PALETTE_YELLOW}" stroke="${PALETTE_GRAY}" stroke-width="0.75"/>
+  <text x="280" y="300" text-anchor="middle" fill="${PALETTE_BG2}" font-weight="bold">YELLOW</text>
+  <text x="280" y="316" text-anchor="middle" fill="${PALETTE_BG2}" font-size="11">${PALETTE_YELLOW}</text>
+  <rect x="375" y="282" width="170" height="44" rx="6" fill="${PALETTE_GREEN}" stroke="${PALETTE_GRAY}" stroke-width="0.75"/>
+  <text x="460" y="300" text-anchor="middle" fill="${PALETTE_BG2}" font-weight="bold">GREEN</text>
+  <text x="460" y="316" text-anchor="middle" fill="${PALETTE_BG2}" font-size="11">${PALETTE_GREEN}</text>
+  <rect x="555" y="282" width="170" height="44" rx="6" fill="${PALETTE_TEAL}" stroke="${PALETTE_GRAY}" stroke-width="0.75"/>
+  <text x="640" y="300" text-anchor="middle" fill="${PALETTE_BG2}" font-weight="bold">TEAL</text>
+  <text x="640" y="316" text-anchor="middle" fill="${PALETTE_BG2}" font-size="11">${PALETTE_TEAL}</text>
+  <rect x="15" y="336" width="170" height="44" rx="6" fill="${PALETTE_MINT}" stroke="${PALETTE_GRAY}" stroke-width="0.75"/>
+  <text x="100" y="354" text-anchor="middle" fill="${PALETTE_BG2}" font-weight="bold">MINT</text>
+  <text x="100" y="370" text-anchor="middle" fill="${PALETTE_BG2}" font-size="11">${PALETTE_MINT}</text>
+  <rect x="195" y="336" width="170" height="44" rx="6" fill="${PALETTE_CYAN}" stroke="${PALETTE_GRAY}" stroke-width="0.75"/>
+  <text x="280" y="354" text-anchor="middle" fill="${PALETTE_BG2}" font-weight="bold">CYAN</text>
+  <text x="280" y="370" text-anchor="middle" fill="${PALETTE_BG2}" font-size="11">${PALETTE_CYAN}</text>
+  <rect x="375" y="336" width="170" height="44" rx="6" fill="${PALETTE_SKY}" stroke="${PALETTE_GRAY}" stroke-width="0.75"/>
+  <text x="460" y="354" text-anchor="middle" fill="${PALETTE_BG2}" font-weight="bold">SKY</text>
+  <text x="460" y="370" text-anchor="middle" fill="${PALETTE_BG2}" font-size="11">${PALETTE_SKY}</text>
+  <rect x="555" y="336" width="170" height="44" rx="6" fill="${PALETTE_AZURE}" stroke="${PALETTE_GRAY}" stroke-width="0.75"/>
+  <text x="640" y="354" text-anchor="middle" fill="${PALETTE_BG2}" font-weight="bold">AZURE</text>
+  <text x="640" y="370" text-anchor="middle" fill="${PALETTE_BG2}" font-size="11">${PALETTE_AZURE}</text>
+  <rect x="15" y="390" width="170" height="44" rx="6" fill="${PALETTE_BLUE}" stroke="${PALETTE_GRAY}" stroke-width="0.75"/>
+  <text x="100" y="408" text-anchor="middle" fill="${PALETTE_BG2}" font-weight="bold">BLUE</text>
+  <text x="100" y="424" text-anchor="middle" fill="${PALETTE_BG2}" font-size="11">${PALETTE_BLUE}</text>
+  <rect x="195" y="390" width="170" height="44" rx="6" fill="${PALETTE_STEEL}" stroke="${PALETTE_GRAY}" stroke-width="0.75"/>
+  <text x="280" y="408" text-anchor="middle" fill="${PALETTE_BG2}" font-weight="bold">STEEL</text>
+  <text x="280" y="424" text-anchor="middle" fill="${PALETTE_BG2}" font-size="11">${PALETTE_STEEL}</text>
+  <rect x="375" y="390" width="170" height="44" rx="6" fill="${PALETTE_PURPLE}" stroke="${PALETTE_GRAY}" stroke-width="0.75"/>
+  <text x="460" y="408" text-anchor="middle" fill="${PALETTE_BG2}" font-weight="bold">PURPLE</text>
+  <text x="460" y="424" text-anchor="middle" fill="${PALETTE_BG2}" font-size="11">${PALETTE_PURPLE}</text>
+  <rect x="555" y="390" width="170" height="44" rx="6" fill="${PALETTE_MAUVE}" stroke="${PALETTE_GRAY}" stroke-width="0.75"/>
+  <text x="640" y="408" text-anchor="middle" fill="${PALETTE_FG0}" font-weight="bold">MAUVE</text>
+  <text x="640" y="424" text-anchor="middle" fill="${PALETTE_FG0}" font-size="11">${PALETTE_MAUVE}</text>
+</svg>

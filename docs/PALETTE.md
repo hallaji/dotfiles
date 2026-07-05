@@ -46,48 +46,7 @@ palette edit, regenerate the mockups with `devbox run palette-assets`.
 
 ## Named colors (layer 1)
 
-```mermaid
-flowchart TB
-    subgraph neutrals[Neutrals]
-        direction LR
-        BG0["BG0<br>#1d232b"]:::bg0 ~~~ BG1["BG1<br>#222831"]:::bg1 ~~~ BG2["BG2<br>#242a34"]:::bg2 ~~~ BG3["BG3<br>#323a44"]:::bg3
-        BG4["BG4<br>#3a4555"]:::bg4 ~~~ NAVY["NAVY<br>#202f42"]:::navy ~~~ FG0["FG0<br>#e1e4e8"]:::fg0 ~~~ FG1["FG1<br>#adbac7"]:::fg1
-        FG2["FG2<br>#8296aa"]:::fg2 ~~~ GRAY["GRAY<br>#515f72"]:::gray
-    end
-    subgraph accents[Accents]
-        direction LR
-        RED["RED<br>#ff4b82"]:::red ~~~ PINK["PINK<br>#ff75b5"]:::pink ~~~ ROSE["ROSE<br>#fdaccb"]:::rose ~~~ ORANGE["ORANGE<br>#ff6b35"]:::orange
-        AMBER["AMBER<br>#f5b168"]:::amber ~~~ YELLOW["YELLOW<br>#f4d35e"]:::yellow ~~~ GREEN["GREEN<br>#9ed47b"]:::green ~~~ TEAL["TEAL<br>#00b196"]:::teal
-        MINT["MINT<br>#00e8c6"]:::mint ~~~ CYAN["CYAN<br>#04f6f6"]:::cyan ~~~ SKY["SKY<br>#02d9fe"]:::sky ~~~ AZURE["AZURE<br>#01bdfe"]:::azure
-        BLUE["BLUE<br>#6fc1ff"]:::blue ~~~ STEEL["STEEL<br>#599ac8"]:::steel ~~~ PURPLE["PURPLE<br>#a394cd"]:::purple ~~~ MAUVE["MAUVE<br>#766b95"]:::mauve
-    end
-    classDef bg0 fill:#1d232b,stroke:#515f72,color:#e1e4e8
-    classDef bg1 fill:#222831,stroke:#515f72,color:#e1e4e8
-    classDef bg2 fill:#242a34,stroke:#515f72,color:#e1e4e8
-    classDef bg3 fill:#323a44,stroke:#515f72,color:#e1e4e8
-    classDef bg4 fill:#3a4555,stroke:#515f72,color:#e1e4e8
-    classDef navy fill:#202f42,stroke:#515f72,color:#e1e4e8
-    classDef fg0 fill:#e1e4e8,stroke:#515f72,color:#242a34
-    classDef fg1 fill:#adbac7,stroke:#515f72,color:#242a34
-    classDef fg2 fill:#8296aa,stroke:#515f72,color:#242a34
-    classDef gray fill:#515f72,stroke:#515f72,color:#e1e4e8
-    classDef red fill:#ff4b82,stroke:#515f72,color:#242a34
-    classDef pink fill:#ff75b5,stroke:#515f72,color:#242a34
-    classDef rose fill:#fdaccb,stroke:#515f72,color:#242a34
-    classDef orange fill:#ff6b35,stroke:#515f72,color:#242a34
-    classDef amber fill:#f5b168,stroke:#515f72,color:#242a34
-    classDef yellow fill:#f4d35e,stroke:#515f72,color:#242a34
-    classDef green fill:#9ed47b,stroke:#515f72,color:#242a34
-    classDef teal fill:#00b196,stroke:#515f72,color:#242a34
-    classDef mint fill:#00e8c6,stroke:#515f72,color:#242a34
-    classDef cyan fill:#04f6f6,stroke:#515f72,color:#242a34
-    classDef sky fill:#02d9fe,stroke:#515f72,color:#242a34
-    classDef azure fill:#01bdfe,stroke:#515f72,color:#242a34
-    classDef blue fill:#6fc1ff,stroke:#515f72,color:#242a34
-    classDef steel fill:#599ac8,stroke:#515f72,color:#242a34
-    classDef purple fill:#a394cd,stroke:#515f72,color:#242a34
-    classDef mauve fill:#766b95,stroke:#515f72,color:#e1e4e8
-```
+![Palette swatches](assets/swatches.svg)
 
 | Name | Hex | Typical use |
 | --- | --- | --- |
