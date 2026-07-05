@@ -73,71 +73,73 @@ let g:netrw_sort_options = 'i'
 " ┌┬┐┬ ┬┌─┐┌┬┐┌─┐
 "  │ ├─┤├┤ │││├┤
 "  ┴ ┴ ┴└─┘┴ ┴└─┘
-" Inline catamaran-lite — same palette as the Neovim theme
-" (config/neovim/.config/nvim/lua/palettes/catamaran.lua) without a colors
-" file, so this stays a single copyable file. gui* values need
-" 'termguicolors'; cterm* values are 256-color approximations for terminals
-" and Vim builds without truecolor.
+" Inline catamaran-lite — same colors as the two-layer palette in
+" config/env/.env, hardcoded on purpose so this stays a single copyable file
+" for servers and quick edits (no $PALETTE_* env needed). Each hex is
+" annotated with its palette name; tests/unit/palette-sync.bats checks every
+" gui* hex is still a palette member. gui* values need 'termguicolors';
+" cterm* values are 256-color approximations for terminals and Vim builds
+" without truecolor.
 
 set background=dark " Before the overrides — changing it later reloads defaults
 
-" Syntax
-highlight Comment    ctermfg=60  guifg=#515f72
-highlight Constant   ctermfg=218 guifg=#f9bcd3
-highlight String     ctermfg=43  guifg=#00e8c6
-highlight Identifier ctermfg=218 guifg=#fdaccb cterm=NONE
-highlight Function   ctermfg=45  guifg=#02d9fe
-highlight Statement  ctermfg=39  guifg=#01bdfe cterm=NONE gui=NONE
-highlight Operator   ctermfg=204 guifg=#ff4b82
-highlight PreProc    ctermfg=216 guifg=#ffb582
-highlight Type       ctermfg=39  guifg=#01bdfe cterm=NONE gui=NONE
-highlight Special    ctermfg=211 guifg=#ff75b5
-highlight Todo       ctermfg=215 ctermbg=NONE guifg=#f5b168 guibg=NONE cterm=bold gui=bold
-highlight Error      ctermfg=254 ctermbg=204 guifg=#e1e4e8 guibg=#ff4b82
+" Code (CODE_* roles in the palette)
+highlight Comment    ctermfg=60  guifg=#515f72 " CODE_COMMENT (gray)
+highlight Constant   ctermfg=218 guifg=#fdaccb " CODE_CONSTANT (rose)
+highlight String     ctermfg=43  guifg=#00e8c6 " CODE_STRING (mint)
+highlight Identifier ctermfg=218 guifg=#fdaccb cterm=NONE " CODE_IDENTIFIER (rose)
+highlight Function   ctermfg=45  guifg=#02d9fe " CODE_FUNCTION (sky)
+highlight Statement  ctermfg=39  guifg=#01bdfe cterm=NONE gui=NONE " CODE_KEYWORD (azure)
+highlight Operator   ctermfg=204 guifg=#ff4b82 " CODE_OPERATOR (red)
+highlight PreProc    ctermfg=215 guifg=#f5b168 " CODE_PREPROCESSOR (amber)
+highlight Type       ctermfg=39  guifg=#01bdfe cterm=NONE gui=NONE " CODE_KEYWORD (azure)
+highlight Special    ctermfg=211 guifg=#ff75b5 " CODE_SPECIAL (pink)
+highlight Todo       ctermfg=215 ctermbg=NONE guifg=#f5b168 guibg=NONE cterm=bold gui=bold " AMBER
+highlight Error      ctermfg=254 ctermbg=204 guifg=#e1e4e8 guibg=#ff4b82 " FG0 on RED
 
 " Editor chrome
-highlight Normal       ctermfg=254 ctermbg=235  guifg=#e1e4e8 guibg=#242a34
-highlight NonText      ctermfg=238 guifg=#3a4555
-highlight SpecialKey   ctermfg=238 guifg=#3a4555
-highlight EndOfBuffer  ctermfg=238 guifg=#3a4555
-highlight LineNr       ctermfg=60  ctermbg=NONE guifg=#515f72 guibg=NONE
-highlight CursorLineNr ctermfg=51  guifg=#04f6f6 cterm=bold gui=bold
-highlight CursorLine   ctermbg=237 guibg=#323a44 cterm=NONE gui=NONE
-highlight ColorColumn  ctermbg=234 guibg=#222831
-highlight SignColumn   ctermbg=235 guibg=#242a34
-highlight Folded       ctermfg=103 ctermbg=237 guifg=#8296aa guibg=#323a44
-highlight VertSplit    ctermfg=234 ctermbg=NONE guifg=#1d232b guibg=NONE cterm=NONE gui=NONE
-highlight Visual       ctermbg=238 guibg=#3a4555
-highlight Search       ctermfg=235 ctermbg=215 guifg=#242a34 guibg=#f5b168
-highlight IncSearch    ctermfg=235 ctermbg=202 guifg=#242a34 guibg=#ff6b35 cterm=NONE gui=NONE
-highlight MatchParen   ctermfg=51  ctermbg=238 guifg=#04f6f6 guibg=#3a4555 cterm=bold gui=bold
-highlight Directory    ctermfg=45  guifg=#02d9fe
-highlight Title        ctermfg=211 guifg=#ff75b5 cterm=bold gui=bold
+highlight Normal       ctermfg=254 ctermbg=235  guifg=#e1e4e8 guibg=#242a34 " FG0 on BG2
+highlight NonText      ctermfg=238 guifg=#3a4555 " BG4
+highlight SpecialKey   ctermfg=238 guifg=#3a4555 " BG4
+highlight EndOfBuffer  ctermfg=238 guifg=#3a4555 " BG4
+highlight LineNr       ctermfg=60  ctermbg=NONE guifg=#515f72 guibg=NONE " GRAY
+highlight CursorLineNr ctermfg=51  guifg=#04f6f6 cterm=bold gui=bold " CYAN
+highlight CursorLine   ctermbg=237 guibg=#323a44 cterm=NONE gui=NONE " BG3
+highlight ColorColumn  ctermbg=234 guibg=#222831 " BG1
+highlight SignColumn   ctermbg=235 guibg=#242a34 " BG2
+highlight Folded       ctermfg=103 ctermbg=237 guifg=#8296aa guibg=#323a44 " FG2 on BG3
+highlight VertSplit    ctermfg=234 ctermbg=NONE guifg=#1d232b guibg=NONE cterm=NONE gui=NONE " BG0
+highlight Visual       ctermbg=238 guibg=#3a4555 " BG4
+highlight Search       ctermfg=235 ctermbg=215 guifg=#242a34 guibg=#f5b168 " BG2 on AMBER
+highlight IncSearch    ctermfg=235 ctermbg=202 guifg=#242a34 guibg=#ff6b35 cterm=NONE gui=NONE " BG2 on ORANGE
+highlight MatchParen   ctermfg=51  ctermbg=238 guifg=#04f6f6 guibg=#3a4555 cterm=bold gui=bold " CYAN on BG4
+highlight Directory    ctermfg=45  guifg=#02d9fe " SKY
+highlight Title        ctermfg=211 guifg=#ff75b5 cterm=bold gui=bold " PINK
 
 " Menus, status line, tabs
-highlight Pmenu        ctermfg=249 ctermbg=237 guifg=#adbac7 guibg=#323a44
-highlight PmenuSel     ctermfg=235 ctermbg=45  guifg=#242a34 guibg=#02d9fe
-highlight WildMenu     ctermfg=235 ctermbg=45  guifg=#242a34 guibg=#02d9fe cterm=bold gui=bold
-highlight StatusLine   ctermfg=235 ctermbg=45  guifg=#242a34 guibg=#02d9fe cterm=bold gui=bold
-highlight StatusLineNC ctermfg=103 ctermbg=234 guifg=#8296aa guibg=#1b2839 cterm=NONE gui=NONE
-highlight TabLine      ctermfg=103 ctermbg=237 guifg=#8296aa guibg=#323a44 cterm=NONE gui=NONE
-highlight TabLineSel   ctermfg=218 ctermbg=235 guifg=#fdaccb guibg=#242a34 cterm=bold gui=bold
-highlight TabLineFill  ctermbg=234 guibg=#1d232b cterm=NONE gui=NONE
+highlight Pmenu        ctermfg=249 ctermbg=237 guifg=#adbac7 guibg=#323a44 " FG1 on BG3
+highlight PmenuSel     ctermfg=235 ctermbg=45  guifg=#242a34 guibg=#02d9fe " BG2 on SKY
+highlight WildMenu     ctermfg=235 ctermbg=45  guifg=#242a34 guibg=#02d9fe cterm=bold gui=bold " BG2 on SKY
+highlight StatusLine   ctermfg=235 ctermbg=45  guifg=#242a34 guibg=#02d9fe cterm=bold gui=bold " BG2 on SKY (MODE_NORMAL)
+highlight StatusLineNC ctermfg=103 ctermbg=235 guifg=#8296aa guibg=#202f42 cterm=NONE gui=NONE " FG2 on NAVY
+highlight TabLine      ctermfg=103 ctermbg=237 guifg=#8296aa guibg=#323a44 cterm=NONE gui=NONE " FG2 on BG3
+highlight TabLineSel   ctermfg=218 ctermbg=235 guifg=#fdaccb guibg=#242a34 cterm=bold gui=bold " ROSE on BG2
+highlight TabLineFill  ctermbg=234 guibg=#1d232b cterm=NONE gui=NONE " BG0
 
 " Messages, spelling, diffs
-highlight ErrorMsg   ctermfg=254 ctermbg=204  guifg=#e1e4e8 guibg=#ff4b82
-highlight WarningMsg ctermfg=215 guifg=#f5b168
-highlight MoreMsg    ctermfg=36  guifg=#00b196
-highlight Question   ctermfg=36  guifg=#00b196
-highlight ModeMsg    ctermfg=45  guifg=#02d9fe cterm=bold gui=bold
-highlight SpellBad   ctermfg=204 cterm=underline guifg=NONE gui=undercurl guisp=#ff4b82
-highlight SpellCap   ctermfg=75  cterm=underline guifg=NONE gui=undercurl guisp=#6fc1ff
-highlight SpellLocal ctermfg=43  cterm=underline guifg=NONE gui=undercurl guisp=#00e8c6
-highlight SpellRare  ctermfg=140 cterm=underline guifg=NONE gui=undercurl guisp=#a394cd
-highlight DiffAdd    ctermbg=23  guibg=#12352f
-highlight DiffDelete ctermfg=204 ctermbg=52 guifg=#ff4b82 guibg=#3a1c28
-highlight DiffChange ctermbg=236 guibg=#2a3240
-highlight DiffText   ctermbg=238 guibg=#3a4555 cterm=NONE gui=NONE
+highlight ErrorMsg   ctermfg=254 ctermbg=204  guifg=#e1e4e8 guibg=#ff4b82 " FG0 on RED
+highlight WarningMsg ctermfg=215 guifg=#f5b168 " AMBER
+highlight MoreMsg    ctermfg=36  guifg=#00b196 " TEAL
+highlight Question   ctermfg=36  guifg=#00b196 " TEAL
+highlight ModeMsg    ctermfg=45  guifg=#02d9fe cterm=bold gui=bold " SKY
+highlight SpellBad   ctermfg=204 cterm=underline guifg=NONE gui=undercurl guisp=#ff4b82 " RED
+highlight SpellCap   ctermfg=75  cterm=underline guifg=NONE gui=undercurl guisp=#6fc1ff " BLUE
+highlight SpellLocal ctermfg=43  cterm=underline guifg=NONE gui=undercurl guisp=#00e8c6 " MINT
+highlight SpellRare  ctermfg=140 cterm=underline guifg=NONE gui=undercurl guisp=#a394cd " PURPLE
+highlight DiffAdd    ctermbg=23  guibg=#12352f " vim-only diff tint (not in palette)
+highlight DiffDelete ctermfg=204 ctermbg=52 guifg=#ff4b82 guibg=#3a1c28 " RED on vim-only diff tint
+highlight DiffChange ctermbg=236 guibg=#2a3240 " vim-only diff tint (not in palette)
+highlight DiffText   ctermbg=238 guibg=#3a4555 cterm=NONE gui=NONE " BG4
 
 " ┌─┐┌─┐┌┬┐┌┬┐┌─┐┌┐┌┌┬┐┌─┐
 " │  │ │││││││├─┤│││ ││└─┐

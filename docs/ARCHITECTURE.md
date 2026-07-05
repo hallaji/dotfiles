@@ -46,10 +46,10 @@ flowchart TD
     pstore --> rt
 
     %% Colors from config/env/.env palette:
-    %% repo  = #02d9fe (PALETTE_UI_BORDER)    prov  = #a394cd (PALETTE_SE_FOCUS)
-    %% store = #ff75b5 (PALETTE_SE_SECONDARY) out   = #00e8c6 (PALETTE_SY_STRING)
-    %% run   = #f5b168 (PALETTE_SE_WARNING)   check = #00b196 (PALETTE_SE_SUCCESS)
-    %% subgraph frame = #515f72 (PALETTE_SY_COMMENT) / #8296aa (PALETTE_BA_TERTIARY_FG)
+    %% repo  = #02d9fe (PALETTE_SKY)    prov  = #a394cd (PALETTE_PURPLE)
+    %% store = #ff75b5 (PALETTE_PINK) out   = #00e8c6 (PALETTE_MINT)
+    %% run   = #f5b168 (PALETTE_AMBER)   check = #00b196 (PALETTE_TEAL)
+    %% subgraph frame = #515f72 (PALETTE_GRAY) / #8296aa (PALETTE_FG2)
     classDef repo fill:transparent,stroke:#02d9fe,color:#02d9fe
     classDef prov fill:transparent,stroke:#a394cd,color:#a394cd
     classDef store fill:transparent,stroke:#ff75b5,stroke-width:2px,color:#ff75b5
@@ -77,6 +77,14 @@ invoked from `.zprofile` at login — expands them in place
 out-of-repo personal values at `$XDG_PERSONAL_HOME/env` (managed by
 `dotup personal`). Entries tagged `:hex` also convert `#rrggbb` →
 `0xffrrggbb` for tools that need it (sketchybar, borders).
+
+**Palette.** Colors are a two-layer system in `config/env/.env`: named colors
+(the palette — the only place hex literals live) and semantic role aliases
+grouped `CODE_*` / `UI_*` / `MODE_*`. Templates, the shell environment (tmux,
+fzf), oh-my-posh, and Neovim all consume the same vars; ANSI-indexed tools
+(tig, starship, p10k) inherit them transitively via the terminal.
+`tests/unit/palette-sync.bats` keeps every hardcoded copy honest. See
+[PALETTE.md](PALETTE.md) for swatches, tables, and the maintenance workflow.
 
 **Provisioning.** A single `dotup` dispatcher fans out to subcommands:
 `personal` (writes the personal store), OS-split installers `mac`/`arch`
@@ -122,9 +130,9 @@ flowchart LR
     linrt --> dchk2["doctor · daemons<br/>pgrep processes"]:::check
 
     %% Colors from config/env/.env palette:
-    %% core = #02d9fe (PALETTE_UI_BORDER)   gate  = #a394cd (PALETTE_SE_FOCUS)
-    %% mac  = #00e8c6 (PALETTE_SY_STRING)   linux = #f5b168 (PALETTE_SE_WARNING)
-    %% check = #00b196 (PALETTE_SE_SUCCESS)
+    %% core = #02d9fe (PALETTE_SKY)   gate  = #a394cd (PALETTE_PURPLE)
+    %% mac  = #00e8c6 (PALETTE_MINT)   linux = #f5b168 (PALETTE_AMBER)
+    %% check = #00b196 (PALETTE_TEAL)
     classDef core fill:transparent,stroke:#02d9fe,color:#02d9fe
     classDef gate fill:transparent,stroke:#a394cd,color:#a394cd
     classDef mac fill:transparent,stroke:#00e8c6,color:#00e8c6

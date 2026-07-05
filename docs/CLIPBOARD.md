@@ -16,7 +16,7 @@ flowchart LR
     C <--> Z["Zsh (vi-mode)"]:::src
 
     %% Colors from config/env/.env palette:
-    %% hub = #ff75b5 (PALETTE_SE_SECONDARY), src = #02d9fe (PALETTE_UI_BORDER)
+    %% hub = #ff75b5 (PALETTE_PINK), src = #02d9fe (PALETTE_SKY)
     classDef hub fill:transparent,stroke:#ff75b5,stroke-width:2px,color:#ff75b5
     classDef src fill:transparent,stroke:#02d9fe,color:#02d9fe
 ```

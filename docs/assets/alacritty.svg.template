@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="740" height="330" viewBox="0 0 740 330" font-family="Menlo, Consolas, monospace" font-size="13">
+  <rect x="0" y="0" width="740" height="330" rx="8" fill="${PALETTE_BG2}"/>
+  <text x="20" y="34"><tspan fill="${PALETTE_SKY}">~/.dotfiles</tspan><tspan fill="${PALETTE_FG2}"> main* </tspan><tspan fill="${PALETTE_CYAN}">⇡</tspan></text>
+  <text x="20" y="58"><tspan fill="${PALETTE_PURPLE}">❯</tspan><tspan fill="${PALETTE_FG0}"> bat palette.md</tspan></text>
+  <rect x="152" y="46" width="9" height="16" fill="${PALETTE_UI_CURSOR}"/>
+  <rect x="20" y="72" width="220" height="20" fill="${PALETTE_UI_ACCENT}"/>
+  <text x="26" y="87" fill="${PALETTE_BG2}">selection → UI_ACCENT</text>
+  <text x="20" y="130" fill="${PALETTE_FG2}" font-size="12">colors.normal</text>
+  <g font-size="11" text-anchor="middle">
+    <rect x="20" y="140" width="82" height="30" fill="${PALETTE_BG3}"/>
+    <text x="61" y="186" fill="${PALETTE_FG2}">black</text>
+    <rect x="110" y="140" width="82" height="30" fill="${PALETTE_RED}"/>
+    <text x="151" y="186" fill="${PALETTE_FG2}">red</text>
+    <rect x="200" y="140" width="82" height="30" fill="${PALETTE_MINT}"/>
+    <text x="241" y="186" fill="${PALETTE_FG2}">green</text>
+    <rect x="290" y="140" width="82" height="30" fill="${PALETTE_AMBER}"/>
+    <text x="331" y="186" fill="${PALETTE_FG2}">yellow</text>
+    <rect x="380" y="140" width="82" height="30" fill="${PALETTE_SKY}"/>
+    <text x="421" y="186" fill="${PALETTE_FG2}">blue</text>
+    <rect x="470" y="140" width="82" height="30" fill="${PALETTE_PINK}"/>
+    <text x="511" y="186" fill="${PALETTE_FG2}">magenta</text>
+    <rect x="560" y="140" width="82" height="30" fill="${PALETTE_CYAN}"/>
+    <text x="601" y="186" fill="${PALETTE_FG2}">cyan</text>
+    <rect x="650" y="140" width="70" height="30" fill="${PALETTE_FG2}"/>
+    <text x="685" y="186" fill="${PALETTE_FG2}">white</text>
+  </g>
+  <text x="20" y="230" fill="${PALETTE_FG2}" font-size="12">colors.bright</text>
+  <g font-size="11" text-anchor="middle">
+    <rect x="20" y="240" width="82" height="30" fill="${PALETTE_BG4}"/>
+    <text x="61" y="286" fill="${PALETTE_FG2}">black</text>
+    <rect x="110" y="240" width="82" height="30" fill="${PALETTE_RED}"/>
+    <text x="151" y="286" fill="${PALETTE_FG2}">red</text>
+    <rect x="200" y="240" width="82" height="30" fill="${PALETTE_TEAL}"/>
+    <text x="241" y="286" fill="${PALETTE_FG2}">green</text>
+    <rect x="290" y="240" width="82" height="30" fill="${PALETTE_AMBER}"/>
+    <text x="331" y="286" fill="${PALETTE_FG2}">yellow</text>
+    <rect x="380" y="240" width="82" height="30" fill="${PALETTE_BLUE}"/>
+    <text x="421" y="286" fill="${PALETTE_FG2}">blue</text>
+    <rect x="470" y="240" width="82" height="30" fill="${PALETTE_PURPLE}"/>
+    <text x="511" y="286" fill="${PALETTE_FG2}">magenta</text>
+    <rect x="560" y="240" width="82" height="30" fill="${PALETTE_CYAN}"/>
+    <text x="601" y="286" fill="${PALETTE_FG2}">cyan</text>
+    <rect x="650" y="240" width="70" height="30" fill="${PALETTE_FG1}"/>
+    <text x="685" y="286" fill="${PALETTE_FG2}">white</text>
+  </g>
+  <text x="20" y="316" fill="${PALETTE_FG2}" font-size="12">cursor → UI_CURSOR · bg → BG2 · fg → FG0</text>
+</svg>

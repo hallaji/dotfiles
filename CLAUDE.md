@@ -66,6 +66,13 @@ environment, inherited from the invoking shell; `dotup doctor` and
 environment — e.g. CI with no `.env`/personal vars loaded — would mis-flag
 env-dependent files, but the normal entrypoints don't.)
 
+The color palette in `config/env/.env` is two-layered: named colors (the only
+place hex literals live) and `CODE_*`/`UI_*`/`MODE_*` role aliases. **Edit
+hexes only in the named-color layer.** `tests/unit/palette-sync.bats` enforces
+that the intentionally hardcoded copies (nvim fallbacks, `.vimrc`,
+`docs/PALETTE.md`, the generated `docs/assets` mockups) stay in sync;
+regenerate the mockups with `devbox run palette-assets`. See `docs/PALETTE.md`.
+
 ## Toolchain
 
 Tools are pinned in `devbox.json`. Run everything through devbox so versions
@@ -147,7 +154,11 @@ only in the playbooks:
 `README.md`'s command table tracks `dotup` subcommands (see "Adding a dotup
 subcommand"). Keep both current when the relevant behavior changes.
 `docs/ARCHITECTURE.md` (stow → templates → provisioning → doctor lifecycle, with
-a Mermaid diagram) must be refreshed when that flow changes.
+a Mermaid diagram) must be refreshed when that flow changes. `docs/PALETTE.md`
+documents the color palette (swatches, role tables, generated mockups); its
+tables and the `docs/assets/*.svg` mockups are checked against
+`config/env/.env` by `tests/unit/palette-sync.bats`, so update it in the same
+change as any palette edit and re-run `devbox run palette-assets`.
 
 `docs/NEOVIM.md` is a config-accurate Neovim playbook: every keybinding is
 drawn from the real config, not Vim defaults. Its source of truth is

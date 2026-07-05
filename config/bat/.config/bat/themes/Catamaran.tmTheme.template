@@ -19,23 +19,23 @@
 			<key>settings</key>
 			<dict>
 				<key>background</key>
-				<string>${PALETTE_BA_PRIMARY_BG}</string>
+				<string>${PALETTE_BG2}</string>
 				<key>foreground</key>
-				<string>${PALETTE_BA_PRIMARY_FG}</string>
+				<string>${PALETTE_FG0}</string>
 				<key>caret</key>
 				<string>${PALETTE_UI_CURSOR}</string>
 				<key>lineHighlight</key>
-				<string>${PALETTE_BA_SECONDARY_BG}</string>
+				<string>${PALETTE_BG3}</string>
 				<key>selection</key>
-				<string>${PALETTE_BA_TERTIARY_BG}</string>
+				<string>${PALETTE_BG4}</string>
 				<key>selectionForeground</key>
-				<string>${PALETTE_BA_PRIMARY_FG}</string>
+				<string>${PALETTE_FG0}</string>
 				<key>invisibles</key>
-				<string>${PALETTE_BA_TERTIARY_BG}</string>
+				<string>${PALETTE_BG4}</string>
 				<key>gutter</key>
-				<string>${PALETTE_BA_PRIMARY_BG}</string>
+				<string>${PALETTE_BG2}</string>
 				<key>gutterForeground</key>
-				<string>${PALETTE_SY_COMMENT}</string>
+				<string>${PALETTE_GRAY}</string>
 			</dict>
 		</dict>
 		<!-- Comments -->
@@ -49,7 +49,7 @@
 				<key>fontStyle</key>
 				<string>italic</string>
 				<key>foreground</key>
-				<string>${PALETTE_SY_COMMENT}</string>
+				<string>${PALETTE_CODE_COMMENT}</string>
 			</dict>
 		</dict>
 		<!-- Strings -->
@@ -61,7 +61,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>${PALETTE_SY_STRING}</string>
+				<string>${PALETTE_CODE_STRING}</string>
 			</dict>
 		</dict>
 		<!-- Numbers / constants -->
@@ -73,7 +73,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>${PALETTE_SY_CONSTANT}</string>
+				<string>${PALETTE_CODE_CONSTANT}</string>
 			</dict>
 		</dict>
 		<!-- Language constants (true/false/null) -->
@@ -85,7 +85,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>${PALETTE_SY_CONSTANT}</string>
+				<string>${PALETTE_CODE_CONSTANT}</string>
 			</dict>
 		</dict>
 		<!-- Keywords -->
@@ -97,7 +97,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>${PALETTE_SY_KEYWORD}</string>
+				<string>${PALETTE_CODE_KEYWORD}</string>
 			</dict>
 		</dict>
 		<!-- Operators -->
@@ -109,7 +109,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>${PALETTE_SY_OPERATOR}</string>
+				<string>${PALETTE_CODE_OPERATOR}</string>
 			</dict>
 		</dict>
 		<!-- Functions -->
@@ -121,7 +121,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>${PALETTE_SY_FUNCTION}</string>
+				<string>${PALETTE_CODE_FUNCTION}</string>
 			</dict>
 		</dict>
 		<!-- Variables / identifiers -->
@@ -133,7 +133,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>${PALETTE_SY_IDENTIFIER}</string>
+				<string>${PALETTE_CODE_IDENTIFIER}</string>
 			</dict>
 		</dict>
 		<!-- Types / classes / support -->
@@ -145,7 +145,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>${PALETTE_SY_PREPROCESSOR}</string>
+				<string>${PALETTE_CODE_PREPROCESSOR}</string>
 			</dict>
 		</dict>
 		<!-- Tags (HTML/XML/JSX) -->
@@ -157,7 +157,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>${PALETTE_SY_KEYWORD}</string>
+				<string>${PALETTE_CODE_KEYWORD}</string>
 			</dict>
 		</dict>
 		<!-- Attributes -->
@@ -169,7 +169,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>${PALETTE_SY_IDENTIFIER}</string>
+				<string>${PALETTE_CODE_IDENTIFIER}</string>
 			</dict>
 		</dict>
 		<!-- Preprocessor / imports -->
@@ -181,7 +181,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>${PALETTE_SY_PREPROCESSOR}</string>
+				<string>${PALETTE_CODE_PREPROCESSOR}</string>
 			</dict>
 		</dict>
 		<!-- Special / regexp / escapes -->
@@ -193,7 +193,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>${PALETTE_SY_SPECIAL}</string>
+				<string>${PALETTE_CODE_SPECIAL}</string>
 			</dict>
 		</dict>
 		<!-- Headings (markdown) -->
@@ -207,7 +207,7 @@
 				<key>fontStyle</key>
 				<string>bold</string>
 				<key>foreground</key>
-				<string>${PALETTE_SY_FUNCTION}</string>
+				<string>${PALETTE_CODE_FUNCTION}</string>
 			</dict>
 		</dict>
 		<!-- Bold / italic / link (markdown) -->
@@ -221,7 +221,7 @@
 				<key>fontStyle</key>
 				<string>bold</string>
 				<key>foreground</key>
-				<string>${PALETTE_SY_IDENTIFIER}</string>
+				<string>${PALETTE_CODE_IDENTIFIER}</string>
 			</dict>
 		</dict>
 		<dict>
@@ -234,7 +234,7 @@
 				<key>fontStyle</key>
 				<string>italic</string>
 				<key>foreground</key>
-				<string>${PALETTE_SY_IDENTIFIER}</string>
+				<string>${PALETTE_CODE_IDENTIFIER}</string>
 			</dict>
 		</dict>
 		<dict>
@@ -247,7 +247,7 @@
 				<key>fontStyle</key>
 				<string>underline</string>
 				<key>foreground</key>
-				<string>${PALETTE_SY_STRING}</string>
+				<string>${PALETTE_CODE_STRING}</string>
 			</dict>
 		</dict>
 		<!-- Diff (bat --diff / git) -->
@@ -259,7 +259,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>${PALETTE_SE_SUCCESS}</string>
+				<string>${PALETTE_UI_SUCCESS}</string>
 			</dict>
 		</dict>
 		<dict>
@@ -270,7 +270,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>${PALETTE_SE_ERROR}</string>
+				<string>${PALETTE_UI_ERROR}</string>
 			</dict>
 		</dict>
 		<dict>
@@ -281,7 +281,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>${PALETTE_SE_WARNING}</string>
+				<string>${PALETTE_UI_WARNING}</string>
 			</dict>
 		</dict>
 		<!-- Invalid -->
@@ -293,7 +293,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>${PALETTE_SE_ERROR}</string>
+				<string>${PALETTE_UI_ERROR}</string>
 			</dict>
 		</dict>
 	</array>

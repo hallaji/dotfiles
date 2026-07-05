@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="740" height="336" viewBox="0 0 740 336" font-family="Menlo, Consolas, monospace" font-size="13">
+  <rect x="0" y="0" width="740" height="296" rx="8" fill="#242a34"/>
+  <g text-anchor="end" fill="#3a4555">
+    <text x="36" y="36">1</text>
+    <text x="36" y="58">2</text>
+    <text x="36" y="80">3</text>
+    <text x="36" y="102">4</text>
+    <text x="36" y="124">5</text>
+    <text x="36" y="146">6</text>
+    <text x="36" y="168">7</text>
+    <text x="36" y="190">8</text>
+  </g>
+  <text x="56" y="36" fill="#f5b168">#!/usr/bin/env lua</text>
+  <text x="56" y="58" fill="#515f72" font-style="italic">-- Catamaran palette demo (see docs/PALETTE.md)</text>
+  <text x="56" y="80"><tspan fill="#01bdfe">local</tspan><tspan fill="#fdaccb"> theme </tspan><tspan fill="#ff4b82">=</tspan><tspan fill="#02d9fe"> require</tspan><tspan fill="#e1e4e8">(</tspan><tspan fill="#00e8c6">"theme"</tspan><tspan fill="#e1e4e8">)</tspan></text>
+  <text x="56" y="102"><tspan fill="#01bdfe">local</tspan><tspan fill="#fdaccb"> greeting </tspan><tspan fill="#ff4b82">=</tspan><tspan fill="#00e8c6"> "hello</tspan><tspan fill="#ff75b5">\n</tspan><tspan fill="#00e8c6">"</tspan></text>
+  <text x="56" y="124"><tspan fill="#01bdfe">function</tspan><tspan fill="#02d9fe"> M.setup</tspan><tspan fill="#e1e4e8">(</tspan><tspan fill="#fdaccb">opts</tspan><tspan fill="#e1e4e8">)</tspan></text>
+  <text x="56" y="146"><tspan fill="#e1e4e8">  </tspan><tspan fill="#01bdfe">local</tspan><tspan fill="#fdaccb"> limit </tspan><tspan fill="#ff4b82">=</tspan><tspan fill="#fdaccb"> 30</tspan></text>
+  <text x="56" y="168"><tspan fill="#e1e4e8">  </tspan><tspan fill="#01bdfe">if</tspan><tspan fill="#fdaccb"> opts.max </tspan><tspan fill="#ff4b82">&gt;</tspan><tspan fill="#fdaccb"> limt </tspan><tspan fill="#01bdfe">then</tspan><tspan fill="#e1e4e8"> </tspan><tspan fill="#01bdfe">return</tspan><tspan fill="#fdaccb"> nil</tspan><tspan fill="#e1e4e8"> </tspan><tspan fill="#01bdfe">end</tspan></text>
+  <text x="56" y="190"><tspan fill="#01bdfe">end</tspan></text>
+  <path d="M 209 172 q 3 4 6 0 q 3 -4 6 0 q 3 4 6 0 q 3 -4 6 0 q 3 4 6 0" stroke="#ff4b82" stroke-width="1.5" fill="none"/>
+  <path d="M 137 150 q 3 4 6 0 q 3 -4 6 0 q 3 4 6 0 q 3 -4 6 0" stroke="#f5b168" stroke-width="1.5" fill="none"/>
+  <g font-size="12">
+    <rect x="8" y="260" width="92" height="26" fill="#02d9fe"/>
+    <text x="54" y="277" text-anchor="middle" fill="#242a34" font-weight="bold">NORMAL</text>
+    <rect x="100" y="260" width="110" height="26" fill="#202f42"/>
+    <text x="155" y="277" text-anchor="middle" fill="#599ac8"> main</text>
+    <rect x="210" y="260" width="380" height="26" fill="#242a34"/>
+    <text x="222" y="277" fill="#3a4555">lua/config/mappings.lua</text>
+    <rect x="590" y="260" width="90" height="26" fill="#202f42"/>
+    <text x="635" y="277" text-anchor="middle" fill="#599ac8">42% ☰ 12:7</text>
+    <rect x="680" y="260" width="52" height="26" fill="#02d9fe"/>
+    <text x="706" y="277" text-anchor="middle" fill="#242a34" font-weight="bold">lua</text>
+  </g>
+  <g font-size="11" font-weight="bold">
+    <rect x="8" y="306" width="76" height="22" rx="4" fill="#02d9fe"/>
+    <text x="46" y="321" text-anchor="middle" fill="#242a34">NORMAL</text>
+    <rect x="92" y="306" width="76" height="22" rx="4" fill="#f4d35e"/>
+    <text x="130" y="321" text-anchor="middle" fill="#242a34">INSERT</text>
+    <rect x="176" y="306" width="76" height="22" rx="4" fill="#ff4b82"/>
+    <text x="214" y="321" text-anchor="middle" fill="#242a34">VISUAL</text>
+    <rect x="260" y="306" width="76" height="22" rx="4" fill="#9ed47b"/>
+    <text x="298" y="321" text-anchor="middle" fill="#242a34">REPLACE</text>
+    <rect x="344" y="306" width="76" height="22" rx="4" fill="#766b95"/>
+    <text x="382" y="321" text-anchor="middle" fill="#242a34">COMMAND</text>
+  </g>
+</svg>

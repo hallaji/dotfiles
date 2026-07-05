@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="740" height="196" viewBox="0 0 740 196" font-family="Menlo, Consolas, monospace" font-size="12">
+  <rect x="0" y="0" width="740" height="196" rx="8" fill="#242a34"/>
+  <rect x="10" y="10" width="438" height="148" fill="#242a34" stroke="#02d9fe" stroke-width="2"/>
+  <text x="22" y="32" fill="#e1e4e8">active pane</text>
+  <text x="22" y="52" fill="#8296aa">pane-active-border → UI_BORDER</text>
+  <rect x="458" y="10" width="272" height="148" fill="#242a34" stroke="#323a44" stroke-width="2"/>
+  <text x="470" y="32" fill="#8296aa">inactive pane</text>
+  <text x="470" y="52" fill="#8296aa">pane-border → BG3</text>
+  <g>
+    <rect x="0" y="166" width="740" height="30" fill="#242a34"/>
+    <rect x="0" y="166" width="64" height="30" fill="#02d9fe"/>
+    <text x="32" y="185" text-anchor="middle" fill="#242a34" font-weight="bold"> 1</text>
+    <rect x="64" y="166" width="120" height="30" fill="#202f42"/>
+    <text x="124" y="185" text-anchor="middle" fill="#599ac8">session: dot</text>
+    <rect x="184" y="166" width="180" height="30" fill="#1d232b"/>
+    <text x="196" y="185" fill="#3a4555">󰓪 1 zsh</text>
+    <text x="290" y="185" fill="#fdaccb">󰓩 2 nvim</text>
+    <rect x="364" y="166" width="192" height="30" fill="#1d232b"/>
+    <text x="376" y="185" fill="#3a4555">window-status → BG4 on BG0</text>
+    <rect x="556" y="166" width="120" height="30" fill="#202f42"/>
+    <text x="616" y="185" text-anchor="middle" fill="#599ac8">10:33 · Sat 5</text>
+    <rect x="676" y="166" width="64" height="30" fill="#02d9fe"/>
+    <text x="708" y="185" text-anchor="middle" fill="#242a34" font-weight="bold">host</text>
+  </g>
+</svg>

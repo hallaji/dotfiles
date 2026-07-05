@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="740" height="330" viewBox="0 0 740 330" font-family="Menlo, Consolas, monospace" font-size="13">
+  <rect x="0" y="0" width="740" height="330" rx="8" fill="#242a34"/>
+  <text x="20" y="34"><tspan fill="#02d9fe">~/.dotfiles</tspan><tspan fill="#8296aa"> main* </tspan><tspan fill="#04f6f6">⇡</tspan></text>
+  <text x="20" y="58"><tspan fill="#a394cd">❯</tspan><tspan fill="#e1e4e8"> bat palette.md</tspan></text>
+  <rect x="152" y="46" width="9" height="16" fill="#ff6b35"/>
+  <rect x="20" y="72" width="220" height="20" fill="#04f6f6"/>
+  <text x="26" y="87" fill="#242a34">selection → UI_ACCENT</text>
+  <text x="20" y="130" fill="#8296aa" font-size="12">colors.normal</text>
+  <g font-size="11" text-anchor="middle">
+    <rect x="20" y="140" width="82" height="30" fill="#323a44"/>
+    <text x="61" y="186" fill="#8296aa">black</text>
+    <rect x="110" y="140" width="82" height="30" fill="#ff4b82"/>
+    <text x="151" y="186" fill="#8296aa">red</text>
+    <rect x="200" y="140" width="82" height="30" fill="#00e8c6"/>
+    <text x="241" y="186" fill="#8296aa">green</text>
+    <rect x="290" y="140" width="82" height="30" fill="#f5b168"/>
+    <text x="331" y="186" fill="#8296aa">yellow</text>
+    <rect x="380" y="140" width="82" height="30" fill="#02d9fe"/>
+    <text x="421" y="186" fill="#8296aa">blue</text>
+    <rect x="470" y="140" width="82" height="30" fill="#ff75b5"/>
+    <text x="511" y="186" fill="#8296aa">magenta</text>
+    <rect x="560" y="140" width="82" height="30" fill="#04f6f6"/>
+    <text x="601" y="186" fill="#8296aa">cyan</text>
+    <rect x="650" y="140" width="70" height="30" fill="#8296aa"/>
+    <text x="685" y="186" fill="#8296aa">white</text>
+  </g>
+  <text x="20" y="230" fill="#8296aa" font-size="12">colors.bright</text>
+  <g font-size="11" text-anchor="middle">
+    <rect x="20" y="240" width="82" height="30" fill="#3a4555"/>
+    <text x="61" y="286" fill="#8296aa">black</text>
+    <rect x="110" y="240" width="82" height="30" fill="#ff4b82"/>
+    <text x="151" y="286" fill="#8296aa">red</text>
+    <rect x="200" y="240" width="82" height="30" fill="#00b196"/>
+    <text x="241" y="286" fill="#8296aa">green</text>
+    <rect x="290" y="240" width="82" height="30" fill="#f5b168"/>
+    <text x="331" y="286" fill="#8296aa">yellow</text>
+    <rect x="380" y="240" width="82" height="30" fill="#6fc1ff"/>
+    <text x="421" y="286" fill="#8296aa">blue</text>
+    <rect x="470" y="240" width="82" height="30" fill="#a394cd"/>
+    <text x="511" y="286" fill="#8296aa">magenta</text>
+    <rect x="560" y="240" width="82" height="30" fill="#04f6f6"/>
+    <text x="601" y="286" fill="#8296aa">cyan</text>
+    <rect x="650" y="240" width="70" height="30" fill="#adbac7"/>
+    <text x="685" y="286" fill="#8296aa">white</text>
+  </g>
+  <text x="20" y="316" fill="#8296aa" font-size="12">cursor → UI_CURSOR · bg → BG2 · fg → FG0</text>
+</svg>

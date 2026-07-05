@@ -51,16 +51,16 @@ theme:
       showSeparator: true
   colors:
     text:
-      primary: "${PALETTE_BA_PRIMARY_FG}"
-      secondary: "${PALETTE_SE_FOCUS}"
-      inverted: "${PALETTE_BA_SECONDARY_BG}"
-      faint: "${PALETTE_SE_HINT}"
-      warning: "${PALETTE_SE_WARNING}"
-      success: "${PALETTE_SE_SUCCESS}"
-      error: "${PALETTE_SE_ERROR}"
+      primary: "${PALETTE_FG0}"
+      secondary: "${PALETTE_UI_FOCUS}"
+      inverted: "${PALETTE_BG3}"
+      faint: "${PALETTE_UI_HINT}"
+      warning: "${PALETTE_UI_WARNING}"
+      success: "${PALETTE_UI_SUCCESS}"
+      error: "${PALETTE_UI_ERROR}"
     background:
-      selected: "${PALETTE_SL_SECTION_C_BG}"
+      selected: "${PALETTE_BG0}"
     border:
-      faint: "${PALETTE_BA_SECONDARY_BG}"
-      primary: "${PALETTE_BA_TERTIARY_BG}"
-      secondary: "${PALETTE_SL_SECTION_C_BG}"
+      faint: "${PALETTE_BG3}"
+      primary: "${PALETTE_BG4}"
+      secondary: "${PALETTE_BG0}"

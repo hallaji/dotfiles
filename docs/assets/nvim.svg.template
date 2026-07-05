@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="740" height="336" viewBox="0 0 740 336" font-family="Menlo, Consolas, monospace" font-size="13">
+  <rect x="0" y="0" width="740" height="296" rx="8" fill="${PALETTE_BG2}"/>
+  <g text-anchor="end" fill="${PALETTE_BG4}">
+    <text x="36" y="36">1</text>
+    <text x="36" y="58">2</text>
+    <text x="36" y="80">3</text>
+    <text x="36" y="102">4</text>
+    <text x="36" y="124">5</text>
+    <text x="36" y="146">6</text>
+    <text x="36" y="168">7</text>
+    <text x="36" y="190">8</text>
+  </g>
+  <text x="56" y="36" fill="${PALETTE_AMBER}">#!/usr/bin/env lua</text>
+  <text x="56" y="58" fill="${PALETTE_GRAY}" font-style="italic">-- Catamaran palette demo (see docs/PALETTE.md)</text>
+  <text x="56" y="80"><tspan fill="${PALETTE_AZURE}">local</tspan><tspan fill="${PALETTE_ROSE}"> theme </tspan><tspan fill="${PALETTE_RED}">=</tspan><tspan fill="${PALETTE_SKY}"> require</tspan><tspan fill="${PALETTE_FG0}">(</tspan><tspan fill="${PALETTE_MINT}">"theme"</tspan><tspan fill="${PALETTE_FG0}">)</tspan></text>
+  <text x="56" y="102"><tspan fill="${PALETTE_AZURE}">local</tspan><tspan fill="${PALETTE_ROSE}"> greeting </tspan><tspan fill="${PALETTE_RED}">=</tspan><tspan fill="${PALETTE_MINT}"> "hello</tspan><tspan fill="${PALETTE_PINK}">\n</tspan><tspan fill="${PALETTE_MINT}">"</tspan></text>
+  <text x="56" y="124"><tspan fill="${PALETTE_AZURE}">function</tspan><tspan fill="${PALETTE_SKY}"> M.setup</tspan><tspan fill="${PALETTE_FG0}">(</tspan><tspan fill="${PALETTE_ROSE}">opts</tspan><tspan fill="${PALETTE_FG0}">)</tspan></text>
+  <text x="56" y="146"><tspan fill="${PALETTE_FG0}">  </tspan><tspan fill="${PALETTE_AZURE}">local</tspan><tspan fill="${PALETTE_ROSE}"> limit </tspan><tspan fill="${PALETTE_RED}">=</tspan><tspan fill="${PALETTE_ROSE}"> 30</tspan></text>
+  <text x="56" y="168"><tspan fill="${PALETTE_FG0}">  </tspan><tspan fill="${PALETTE_AZURE}">if</tspan><tspan fill="${PALETTE_ROSE}"> opts.max </tspan><tspan fill="${PALETTE_RED}">&gt;</tspan><tspan fill="${PALETTE_ROSE}"> limt </tspan><tspan fill="${PALETTE_AZURE}">then</tspan><tspan fill="${PALETTE_FG0}"> </tspan><tspan fill="${PALETTE_AZURE}">return</tspan><tspan fill="${PALETTE_ROSE}"> nil</tspan><tspan fill="${PALETTE_FG0}"> </tspan><tspan fill="${PALETTE_AZURE}">end</tspan></text>
+  <text x="56" y="190"><tspan fill="${PALETTE_AZURE}">end</tspan></text>
+  <path d="M 209 172 q 3 4 6 0 q 3 -4 6 0 q 3 4 6 0 q 3 -4 6 0 q 3 4 6 0" stroke="${PALETTE_UI_ERROR}" stroke-width="1.5" fill="none"/>
+  <path d="M 137 150 q 3 4 6 0 q 3 -4 6 0 q 3 4 6 0 q 3 -4 6 0" stroke="${PALETTE_UI_WARNING}" stroke-width="1.5" fill="none"/>
+  <g font-size="12">
+    <rect x="8" y="260" width="92" height="26" fill="${PALETTE_MODE_NORMAL}"/>
+    <text x="54" y="277" text-anchor="middle" fill="${PALETTE_BG2}" font-weight="bold">NORMAL</text>
+    <rect x="100" y="260" width="110" height="26" fill="${PALETTE_NAVY}"/>
+    <text x="155" y="277" text-anchor="middle" fill="${PALETTE_STEEL}"> main</text>
+    <rect x="210" y="260" width="380" height="26" fill="${PALETTE_BG2}"/>
+    <text x="222" y="277" fill="${PALETTE_BG4}">lua/config/mappings.lua</text>
+    <rect x="590" y="260" width="90" height="26" fill="${PALETTE_NAVY}"/>
+    <text x="635" y="277" text-anchor="middle" fill="${PALETTE_STEEL}">42% ☰ 12:7</text>
+    <rect x="680" y="260" width="52" height="26" fill="${PALETTE_MODE_NORMAL}"/>
+    <text x="706" y="277" text-anchor="middle" fill="${PALETTE_BG2}" font-weight="bold">lua</text>
+  </g>
+  <g font-size="11" font-weight="bold">
+    <rect x="8" y="306" width="76" height="22" rx="4" fill="${PALETTE_MODE_NORMAL}"/>
+    <text x="46" y="321" text-anchor="middle" fill="${PALETTE_BG2}">NORMAL</text>
+    <rect x="92" y="306" width="76" height="22" rx="4" fill="${PALETTE_MODE_INSERT}"/>
+    <text x="130" y="321" text-anchor="middle" fill="${PALETTE_BG2}">INSERT</text>
+    <rect x="176" y="306" width="76" height="22" rx="4" fill="${PALETTE_MODE_VISUAL}"/>
+    <text x="214" y="321" text-anchor="middle" fill="${PALETTE_BG2}">VISUAL</text>
+    <rect x="260" y="306" width="76" height="22" rx="4" fill="${PALETTE_MODE_REPLACE}"/>
+    <text x="298" y="321" text-anchor="middle" fill="${PALETTE_BG2}">REPLACE</text>
+    <rect x="344" y="306" width="76" height="22" rx="4" fill="${PALETTE_MODE_COMMAND}"/>
+    <text x="382" y="321" text-anchor="middle" fill="${PALETTE_BG2}">COMMAND</text>
+  </g>
+</svg>

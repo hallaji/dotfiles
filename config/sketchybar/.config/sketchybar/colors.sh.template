@@ -9,7 +9,7 @@
 # colors there, not in the rendered colors.sh.
 
 export BAR_COLOR=0x00000000                 # bar background (no palette equivalent)
-export LABEL_COLOR=${PALETTE_BA_PRIMARY_FG} # default label color, normal-mode reset
-export ICON_COLOR=${PALETTE_SE_PRIMARY}     # default icon color, normal-mode border
-export ACCENT_COLOR=${PALETTE_SE_ERROR}     # separators, move mode, network highlight
-export WARNING_COLOR=${PALETTE_SE_WARNING}  # service mode
+export LABEL_COLOR=${PALETTE_FG0} # default label color, normal-mode reset
+export ICON_COLOR=${PALETTE_UI_ACCENT} # default icon color, normal-mode border
+export ACCENT_COLOR=${PALETTE_RED} # separators, move mode, network highlight
+export WARNING_COLOR=${PALETTE_UI_WARNING} # service mode

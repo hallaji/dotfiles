@@ -26,6 +26,9 @@
       "test": [
         "bats tests/unit"
       ],
+      "palette-assets": [
+        "bash scripts/render-palette-assets.sh"
+      ],
       "doctor": [
         "(cd tools/doctor && go run .)"
       ]

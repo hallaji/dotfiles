@@ -20,46 +20,47 @@ return {
       -- Clear module cache to reload updated palettes
       package.loaded["palettes." .. colorscheme] = nil
       local ok, palette = pcall(require, "palettes." .. colorscheme)
-      if not ok or not palette.status then
+      if not ok or not palette.mode then
         return "auto"
       end
 
-      local l = palette.status
+      local m = palette.mode
+      local c = palette.color
       local function create_mode(bg, fg, gui)
-        return { bg = bg, fg = fg or palette.base.primary_bg, gui = gui }
+        return { bg = bg, fg = fg or c.bg2, gui = gui }
       end
 
-      local common_b = { bg = l.section_b_bg, fg = l.section_b_fg }
-      local common_c = { bg = palette.base.primary_bg, fg = l.section_c_fg }
+      local common_b = { bg = c.navy, fg = c.steel }
+      local common_c = { bg = c.bg2, fg = c.bg4 }
 
       return {
         normal = {
-          a = create_mode(l.normal, nil, "bold"),
+          a = create_mode(m.normal, nil, "bold"),
           b = common_b,
           c = common_c,
         },
         insert = {
-          a = create_mode(l.insert, nil, "bold"),
+          a = create_mode(m.insert, nil, "bold"),
           b = common_b,
           c = common_c,
         },
         visual = {
-          a = create_mode(l.visual, palette.base.primary_fg, "bold"),
+          a = create_mode(m.visual, c.fg0, "bold"),
           b = common_b,
           c = common_c,
         },
         replace = {
-          a = create_mode(l.replace, nil, "bold"),
+          a = create_mode(m.replace, nil, "bold"),
           b = common_b,
           c = common_c,
         },
         command = {
-          a = create_mode(l.command, palette.base.primary_fg, "bold"),
+          a = create_mode(m.command, c.fg0, "bold"),
           b = common_b,
           c = common_c,
         },
         inactive = {
-          a = { bg = l.inactive, fg = l.section_b_fg },
+          a = { bg = c.navy, fg = c.steel },
           b = common_b,
           c = common_c,
         },

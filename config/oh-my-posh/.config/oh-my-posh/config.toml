@@ -16,7 +16,7 @@ newline = true     # blank line above every prompt (sparse look)
 [[blocks.segments]]
 type = 'path'
 style = 'plain'
-foreground_templates = ['{{ .Env.PALETTE_SY_FUNCTION }}']
+foreground_templates = ['{{ .Env.PALETTE_SKY }}']
 template = '{{ .Path }}'
 
 [blocks.segments.properties]
@@ -25,9 +25,9 @@ style = 'full'
 [[blocks.segments]]
 type = 'git'
 style = 'plain'
-foreground_templates = ['{{ .Env.PALETTE_SE_HINT }}']
+foreground_templates = ['{{ .Env.PALETTE_UI_HINT }}']
 # Muted branch; '*' when dirty; ahead/behind arrows via an inline span.
-template = ' {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }} <{{ .Env.PALETTE_SE_PRIMARY }}>{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</>'
+template = ' {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }} <{{ .Env.PALETTE_UI_ACCENT }}>{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</>'
 
 [blocks.segments.properties]
 branch_icon = ''
@@ -42,7 +42,7 @@ overflow = 'hidden'
 [[blocks.segments]]
 type = 'executiontime'
 style = 'plain'
-foreground_templates = ['{{ .Env.PALETTE_SE_WARNING }}']
+foreground_templates = ['{{ .Env.PALETTE_UI_WARNING }}']
 template = '{{ .FormattedMs }}'
 
 [blocks.segments.properties]
@@ -58,8 +58,8 @@ newline = true
 type = 'text'
 style = 'plain'
 foreground_templates = [
-  '{{ if gt .Code 0 }}{{ .Env.PALETTE_SE_ERROR }}{{ end }}',
-  '{{ if eq .Code 0 }}{{ .Env.PALETTE_SE_FOCUS }}{{ end }}',
+  '{{ if gt .Code 0 }}{{ .Env.PALETTE_UI_ERROR }}{{ end }}',
+  '{{ if eq .Code 0 }}{{ .Env.PALETTE_UI_FOCUS }}{{ end }}',
 ]
 template = '❯'
 
@@ -67,8 +67,8 @@ template = '❯'
 [transient_prompt]
 background = 'transparent'
 foreground_templates = [
-  '{{ if gt .Code 0 }}{{ .Env.PALETTE_SE_ERROR }}{{ end }}',
-  '{{ if eq .Code 0 }}{{ .Env.PALETTE_SE_FOCUS }}{{ end }}',
+  '{{ if gt .Code 0 }}{{ .Env.PALETTE_UI_ERROR }}{{ end }}',
+  '{{ if eq .Code 0 }}{{ .Env.PALETTE_UI_FOCUS }}{{ end }}',
 ]
 template = '❯ '
 
@@ -76,4 +76,4 @@ template = '❯ '
 # palette color is applied via an inline span instead of foreground)
 [secondary_prompt]
 background = 'transparent'
-template = '<{{ .Env.PALETTE_SE_FOCUS }}>❯❯</> '
+template = '<{{ .Env.PALETTE_UI_FOCUS }}>❯❯</> '

@@ -1,64 +1,64 @@
 [bell]
-color = "${PALETTE_SE_ERROR}"
+color = "${PALETTE_UI_ERROR}"
 
 [colors.normal]
-black = "${PALETTE_BA_SECONDARY_BG}"
-blue = "${PALETTE_SY_FUNCTION}"
-cyan = "${PALETTE_SE_PRIMARY}"
-green = "${PALETTE_SY_STRING}"
-magenta = "${PALETTE_SE_SECONDARY}"
-red = "${PALETTE_SE_ERROR}"
-white = "${PALETTE_BA_TERTIARY_FG}"
-yellow = "${PALETTE_SE_WARNING}"
+black = "${PALETTE_BG3}"
+blue = "${PALETTE_SKY}"
+cyan = "${PALETTE_CYAN}"
+green = "${PALETTE_MINT}"
+magenta = "${PALETTE_PINK}"
+red = "${PALETTE_RED}"
+white = "${PALETTE_FG2}"
+yellow = "${PALETTE_AMBER}"
 
 [colors.bright]
-black = "${PALETTE_BA_TERTIARY_BG}"
-blue = "${PALETTE_SE_INFO}"
-cyan = "${PALETTE_SE_PRIMARY}"
-green = "${PALETTE_SE_SUCCESS}"
-magenta = "${PALETTE_SE_FOCUS}"
-red = "${PALETTE_SE_ERROR}"
-white = "${PALETTE_BA_SECONDARY_FG}"
-yellow = "${PALETTE_SY_PREPROCESSOR}"
+black = "${PALETTE_BG4}"
+blue = "${PALETTE_BLUE}"
+cyan = "${PALETTE_CYAN}"
+green = "${PALETTE_TEAL}"
+magenta = "${PALETTE_PURPLE}"
+red = "${PALETTE_RED}"
+white = "${PALETTE_FG1}"
+yellow = "${PALETTE_AMBER}"
 
 [colors.cursor]
 cursor = "${PALETTE_UI_CURSOR}"
-text = "${PALETTE_BA_SECONDARY_BG}"
+text = "${PALETTE_BG3}"
 
 [colors.footer_bar]
-background = "${PALETTE_BA_SECONDARY_BG}"
-foreground = "${PALETTE_SE_SECONDARY}"
+background = "${PALETTE_BG3}"
+foreground = "${PALETTE_UI_ACCENT_ALT}"
 
 [colors.hints.end]
-background = "${PALETTE_BA_SECONDARY_BG}"
-foreground = "${PALETTE_SL_INSERT}"
+background = "${PALETTE_BG3}"
+foreground = "${PALETTE_YELLOW}"
 
 [colors.hints.start]
-background = "${PALETTE_SL_INSERT}"
-foreground = "${PALETTE_BA_SECONDARY_BG}"
+background = "${PALETTE_YELLOW}"
+foreground = "${PALETTE_BG3}"
 
 [colors.line_indicator]
-background = "${PALETTE_BA_PRIMARY_BG}"
-foreground = "${PALETTE_BA_TERTIARY_BG}"
+background = "${PALETTE_BG2}"
+foreground = "${PALETTE_BG4}"
 
 [colors.primary]
-background = "${PALETTE_BA_PRIMARY_BG}"
-bright_foreground = "${PALETTE_BA_PRIMARY_FG}"
-dim_foreground = "${PALETTE_BA_TERTIARY_BG}"
-foreground = "${PALETTE_BA_PRIMARY_FG}"
+background = "${PALETTE_BG2}"
+bright_foreground = "${PALETTE_FG0}"
+dim_foreground = "${PALETTE_BG4}"
+foreground = "${PALETTE_FG0}"
 
 [colors.search.focused_match]
-background = "${PALETTE_SE_SECONDARY}"
-foreground = "${PALETTE_BA_SECONDARY_BG}"
+background = "${PALETTE_UI_ACCENT_ALT}"
+foreground = "${PALETTE_BG3}"
 
 [colors.search.matches]
-background = "${PALETTE_BA_TERTIARY_BG}"
-foreground = "${PALETTE_SE_SECONDARY}"
+background = "${PALETTE_BG4}"
+foreground = "${PALETTE_UI_ACCENT_ALT}"
 
 [colors.selection]
-background = "${PALETTE_SE_PRIMARY}"
-text = "${PALETTE_BA_PRIMARY_BG}"
+background = "${PALETTE_UI_ACCENT}"
+text = "${PALETTE_BG2}"
 
 [colors.vi_mode_cursor]
-cursor = "${PALETTE_SL_INSERT}"
-text = "${PALETTE_BA_SECONDARY_BG}"
+cursor = "${PALETTE_MODE_INSERT}"
+text = "${PALETTE_BG3}"

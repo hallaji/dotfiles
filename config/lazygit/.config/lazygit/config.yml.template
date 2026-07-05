@@ -14,10 +14,10 @@ gui:
   commandLogSize: 4
   theme:
     activeBorderColor:
-      - "${PALETTE_SL_TMUX}"
+      - "${PALETTE_UI_BORDER}"
     inactiveBorderColor:
       - "${PALETTE_UI_BORDER}"
     selectedLineBgColor:
-      - "${PALETTE_SL_SECTION_B_BG}"
+      - "${PALETTE_NAVY}"
     defaultFgColor:
-      - "${PALETTE_BA_PRIMARY_FG}"
+      - "${PALETTE_FG0}"
