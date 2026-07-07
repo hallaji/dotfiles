@@ -91,6 +91,10 @@ Run a single test:
 
 ## Conventions
 
+- Commit messages follow Conventional Commits: `type(scope): summary` with types
+  like `feat`, `fix`, `perf`, `chore`, `docs`, `refactor`, `test`. The body, if
+  any, is one short plain paragraph of at most 3 lines describing the change —
+  no bullet lists, no trailers.
 - Shell scripts: `#!/usr/bin/env bash` or `zsh`, formatted with shfmt, clean
   under shellcheck. Go is formatted with `gofmt` (both via `devbox run fmt`) and
   enforced by a `gofmt` pre-commit hook; `go vet`/`go test` run in CI. Note

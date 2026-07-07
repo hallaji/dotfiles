@@ -1,1 +1,16 @@
-{}
+{
+  "attribution": {
+    "commit": ""
+  },
+  "permissions": {
+    "allow": [
+      "Bash(devbox run lint)",
+      "Bash(devbox run fmt)",
+      "Bash(devbox run test)",
+      "Bash(devbox run doctor)",
+      "Bash(devbox run palette-assets)",
+      "Bash(devbox run -- bats *)",
+      "Bash(stow -n *)"
+    ]
+  }
+}
