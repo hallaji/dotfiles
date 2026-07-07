@@ -7,6 +7,14 @@
 # The order determines when each tool modifies the environment.
 # Most tools prepend to $PATH so their binaries take priority.
 
+# ┬ ┬┌─┐┌┬┐┌─┐┌┐ ┬─┐┌─┐┬ ┬
+# ├─┤│ ││││├┤ ├┴┐├┬┘├┤ │││
+# ┴ ┴└─┘┴ ┴└─┘└─┘┴└─└─┘└┴┘
+# https://brew.sh/
+
+type brew &>/dev/null && eval "$(brew shellenv)"
+
+
 # ┌─┐┌┐┌┌─┐  ┌─┐┌─┐┌─┐┌─┐┬ ┬┌─┐┬─┐┌┬┐
 # │ ││││├┤   ├─┘├─┤└─┐└─┐││││ │├┬┘ ││
 # └─┘┘└┘└─┘  ┴  ┴ ┴└─┘└─┘└┴┘└─┘┴└──┴┘
@@ -68,23 +76,9 @@ type fzf &>/dev/null && source <(fzf --zsh)
 # └─┘└─┘┴─┘└─┘└─┘─┴┘
 # https://cloud.google.com/cli?hl=en
 
-if type gcloud &>/dev/null; then
-  source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
-  source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
-fi
-
-
-# ┬┌─┐┬ ┬
-# ││  │ │
-# ┴└─┘└─┘
-# https://icu.unicode.org/home
-
-if type brew &> /dev/null && brew --prefix icu4c &> /dev/null; then
-  export PATH="$(brew --prefix icu4c)/bin:$PATH"
-  export PATH="$(brew --prefix icu4c)/sbin:$PATH"
-  export LDFLAGS="-L$(brew --prefix icu4c)/lib"
-  export CPPFLAGS="-I$(brew --prefix icu4c)/include"
-  export PKG_CONFIG_PATH="$(brew --prefix icu4c)/lib/pkgconfig"
+if type gcloud &>/dev/null && [[ -f "$HOMEBREW_PREFIX/share/google-cloud-sdk/path.zsh.inc" ]]; then
+  source "$HOMEBREW_PREFIX/share/google-cloud-sdk/path.zsh.inc"
+  source "$HOMEBREW_PREFIX/share/google-cloud-sdk/completion.zsh.inc"
 fi
 
 
@@ -197,24 +191,15 @@ esac
 eval "$(zoxide init zsh)"
 
 
-# ┬ ┬┌─┐┌┬┐┌─┐┌┐ ┬─┐┌─┐┬ ┬
-# ├─┤│ ││││├┤ ├┴┐├┬┘├┤ │││
-# ┴ ┴└─┘┴ ┴└─┘└─┘┴└─└─┘└┴┘
-# https://brew.sh/
-
-type brew &>/dev/null && eval "$(brew shellenv)"
-
-
 # ┌─┐┌─┐┌┬┐┌─┐
 # ├─┤└─┐ ││├┤
 # ┴ ┴└─┘─┴┘└
 # https://asdf-vm.com
 
-if [[ "$OSTYPE" == "darwin"* ]] && type brew &> /dev/null; then
-  source "$(brew --prefix asdf)/libexec/asdf.sh" 2>/dev/null || :
-else
-  source /opt/asdf-vm/asdf.sh 2>/dev/null || :
-fi
+# asdf ≥0.16 is a Go binary (brew on macOS, pacman on Arch) with no asdf.sh to
+# source; it only needs its shims directory on PATH.
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+
 if type asdf &> /dev/null; then
   # https://github.com/halcyon/asdf-java#java_home
   asdf where java &>/dev/null && source ~/.asdf/plugins/java/set-java-home.zsh

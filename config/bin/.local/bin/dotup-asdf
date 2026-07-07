@@ -94,6 +94,23 @@ for item in "${ASDF_PLUGINS[@]}"; do
         [ -d "$prefix/bin" ] && PATH="$prefix/bin:$PATH"
       done
     fi
+
+    # macOS-only shim: postgres (>=16) and php (intl) link against ICU, but
+    # brew's icu4c is keg-only — hidden from default compiler and pkg-config
+    # search paths — so point this build at the keg. On Linux the distro's
+    # system-wide ICU is found without help.
+    case "$item" in
+    postgres | php)
+      if command -v brew &>/dev/null; then
+        icu="$(brew --prefix icu4c 2>/dev/null)"
+        if [ -d "$icu" ]; then
+          export PKG_CONFIG_PATH="$icu/lib/pkgconfig${PKG_CONFIG_PATH:+:$PKG_CONFIG_PATH}"
+          export LDFLAGS="-L$icu/lib${LDFLAGS:+ $LDFLAGS}"
+          export CPPFLAGS="-I$icu/include${CPPFLAGS:+ $CPPFLAGS}"
+        fi
+      fi
+      ;;
+    esac
     asdf install "$item" "$version"
   ); then
     asdf set --home "$item" "$version"
