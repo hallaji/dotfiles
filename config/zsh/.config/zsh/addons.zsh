@@ -28,8 +28,11 @@ type brew &>/dev/null && fpath=($(brew --prefix)/share/zsh/site-functions $fpath
 type assume &>/dev/null && fpath=(~/.granted/zsh_autocomplete/assume/ $fpath)
 type granted &>/dev/null && fpath=(~/.granted/zsh_autocomplete/granted/ $fpath)
 
-# Remove broken symlinks left behind when plugins drop completion files
-find "${ZINIT[COMPLETIONS_DIR]}" -maxdepth 1 -type l ! -exec test -e {} \; -delete 2>/dev/null
+# Remove broken symlinks left behind when plugins drop completion files.
+# The -@ glob qualifier matches dangling symlinks natively
+_broken_completions=("${ZINIT[COMPLETIONS_DIR]}"/*(DN-@))
+(( $#_broken_completions )) && rm -f -- "${_broken_completions[@]}"
+unset _broken_completions
 
 autoload -Uz compinit && compinit
 
