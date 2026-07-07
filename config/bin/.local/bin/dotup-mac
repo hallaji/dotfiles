@@ -73,8 +73,6 @@ brew install \
   pinentry-mac \
   pi-coding-agent \
   poetry \
-  pyenv \
-  pyenv-virtualenv \
   python \
   re2c \
   ripgrep \
