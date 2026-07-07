@@ -17,9 +17,9 @@ type skhd >/dev/null 2>&1 && skhd --start-service
 # https://github.com/FelixKratz/JankyBorders
 # Colors come from bordersrc (rendered from config/env/.env into colors.sh).
 type borders >/dev/null 2>&1 &&
-  brew services start borders
+  brew services restart borders
 
 # https://github.com/FelixKratz/SketchyBar
 # Colors come from sketchybarrc (rendered from config/env/.env into colors.sh).
 type sketchybar >/dev/null 2>&1 &&
-  brew services start sketchybar
+  brew services restart sketchybar
