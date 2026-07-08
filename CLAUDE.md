@@ -141,9 +141,11 @@ only in the playbooks:
   mappings).
 - `docs/AEROSPACE.md` — the AeroSpace bindings (sourced from
   `config/aerospace/.aerospace.toml`).
-- `docs/SKHD.md` — the skhd global hotkeys (sourced from
-  `config/skhd/.skhdrc`), plus a hand-maintained "OS-level shortcuts" section
-  (macOS and Arch) for global keys with no stowed config.
+- `docs/HOTKEYS.md` — system-wide hotkeys: skhd on macOS (sourced from
+  `config/skhd/.skhdrc`) and Hyprland's global binds on Linux (sourced from
+  `config/hyprland/.config/hypr/hyprland.conf`, currently unconfigured), plus
+  a hand-maintained "OS-level shortcuts" section (macOS and Arch) for global
+  keys with no stowed config.
 - `docs/TMUX.md` — the tmux bindings (sourced from `config/tmux/.tmux.conf`).
 - `docs/ALACRITTY.md` — the Alacritty bindings (sourced from
   `config/alacritty/.config/alacritty/keyboard.toml`).
@@ -176,7 +178,7 @@ distinction.
 
 macOS window management is **AeroSpace** (launched by `dotup-services` alongside
 skhd, borders, sketchybar), documented in `docs/AEROSPACE.md` with the skhd
-hotkeys in `docs/SKHD.md` — like NEOVIM.md, these are the only docs for those
+hotkeys in `docs/HOTKEYS.md` — like NEOVIM.md, these are the only docs for those
 bindings and must be updated in the same change as the config. The `yabai`
 package is legacy and is no longer started — don't document yabai bindings as
 current.

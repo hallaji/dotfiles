@@ -6,7 +6,7 @@ keybinding below is taken from this repo's actual config —
 [AeroSpace](https://github.com/nikitabobko/AeroSpace) tiles windows across
 workspaces; it is launched by `dotup-services` alongside skhd, borders and
 sketchybar. The system-wide `HYPR` hotkeys live with skhd — see the
-[SKHD Playbook](SKHD.md).
+[Hotkeys Playbook](HOTKEYS.md).
 
 - **The AeroSpace modifier is `MEH` = `⌃⇧⌥`** (Control + Shift + Option). So
   `MEH + h` means hold all three, then `h`.

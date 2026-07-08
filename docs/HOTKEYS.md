@@ -1,20 +1,23 @@
-# SKHD Playbook
+# System Hotkeys Playbook
 
-A personal, config-accurate cheat-sheet for the system-wide macOS hotkeys.
-Every keybinding below is taken from this repo's actual config —
-`config/skhd/.skhdrc`. [skhd](https://github.com/koekeishiya/skhd) is a simple
-hotkey daemon, launched by `dotup-services` alongside AeroSpace, borders and
-sketchybar. It complements [AeroSpace](AEROSPACE.md): AeroSpace owns the `MEH`
-keyspace, skhd owns `HYPR`.
+- **macOS** — [skhd](https://github.com/koekeishiya/skhd), a simple hotkey
+  daemon launched by `dotup-services` alongside AeroSpace. Bindings below are
+  taken from `config/skhd/.skhdrc`. It complements [AeroSpace](AEROSPACE.md):
+  AeroSpace owns the `MEH` keyspace, skhd owns `HYPR`.
+- **Linux** — global binds live in Hyprland's own `bind =`
+  lines (`config/hyprland/.config/hypr/hyprland.conf`), since Hyprland is
+  both the compositor and the hotkey daemon.
 
-- **`HYPR` = `⌃⇧⌥⌘`** (Control + Shift + Option + Command) — `MEH` plus `⌘`.
-- Only the skhd hotkeys run through `.skhdrc`. Shortcuts defined at the OS or
-  app level are tracked by hand in
-  [OS-level shortcuts](#os-level-shortcuts) below.
+Also tracked here: [OS-level shortcuts](#os-level-shortcuts), global keys
+configured through System Settings / app preferences rather than a stowed
+config file, maintained by hand for both platforms.
+
+- **`HYPR` = `⌃⇧⌥⌘`** (Control + Shift + Option + Command) — `MEH` plus `⌘`,
+  skhd's (macOS-only) modifier convention.
 
 ---
 
-## Hotkeys
+## skhd (macOS)
 
 | Keys              | Action                                                                      |
 | ----------------- | --------------------------------------------------------------------------- |
@@ -24,13 +27,15 @@ keyspace, skhd owns `HYPR`.
 | `HYPR + Backtick` | Show/Hide the macOS menu bar (flagged `@FIXME` in `.skhdrc` — may not work) |
 | `HYPR + Enter`    | End the current Zoom meeting, or join the next one                          |
 
-`HYPR + Enter` is the clever one: it asks AeroSpace for a running Zoom meeting
-window — if one exists it focuses and closes it (ending the meeting), otherwise
-it forwards to `HYPR + j`, MeetingBar's join-next-meeting shortcut.
-
 > Tip: run `skhd -o` to print the keycode and modifiers of any key you press —
 > handy when adding a binding for a key with no name (the `.skhdrc` footnote
 > lists the ones already in use).
+
+## Hyprland (Linux)
+
+None configured yet — `hyprland.conf` still has only the stock example
+binds (window management, not system-wide hotkeys). Update this section once
+real global binds are added.
 
 ---
 
@@ -66,6 +71,7 @@ None verified yet.
 
 ---
 
-_Source of truth: `config/skhd/.skhdrc` for the skhd hotkeys — update this
+_Source of truth: `config/skhd/.skhdrc` for the skhd hotkeys,
+`config/hyprland/.config/hypr/hyprland.conf` for Hyprland binds — update this
 file in the same commit as a binding change. The OS-level shortcuts section
 has no config file; keep it current as shortcuts are added or removed._
