@@ -4,10 +4,10 @@
 -- ██║╚██╔╝██║██║██║╚██╗██║██║
 -- ██║ ╚═╝ ██║██║██║ ╚████║██║
 -- ╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝╚═╝
--- https://github.com/echasnovski/mini.nvim
+-- https://github.com/nvim-mini/mini.nvim
 
 return {
-  "echasnovski/mini.nvim",
+  "nvim-mini/mini.nvim",
   cond = not vim.g.vscode,
   version = "*",
   config = function()

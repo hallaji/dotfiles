@@ -394,7 +394,7 @@ formatting via **conform**.
 | `,<Space>`     | Clear search highlight                         | After a `/` search                                                           |
 | `,z`           | Zen mode                                       | Distraction-free writing                                                     |
 | `,l`           | Limelight                                      | Dim everything but the current paragraph                                     |
-| `,m`           | Markdown preview toggle                        | Live-render the current `.md`                                                |
+| `,m`           | Markdown render toggle                         | In-buffer rendering of `.md` (render-markdown.nvim)                          |
 | `,w`           | Toggle line wrap                               | Long lines on/off                                                            |
 | `,n` / `,N`    | Toggle line numbers / relativenumber           | Number display                                                               |
 | `,r`           | Toggle rulers (80,120 colorcolumn)             | Show/hide the column guides                                                  |

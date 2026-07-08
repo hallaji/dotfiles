@@ -5,22 +5,18 @@
 -- ██║ ╚═╝ ██║██║  ██║██║  ██║██║  ██╗██████╔╝╚██████╔╝╚███╔███╔╝██║ ╚████║
 -- ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝  ╚═════╝  ╚══╝╚══╝ ╚═╝  ╚═══╝
 -- https://github.com/preservim/vim-markdown
--- https://github.com/iamcco/markdown-preview.nvim
+-- https://github.com/MeanderingProgrammer/render-markdown.nvim
 
 return {
   {
-    "iamcco/markdown-preview.nvim",
+    "MeanderingProgrammer/render-markdown.nvim",
     cond = not vim.g.vscode,
-    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
     ft = { "markdown" },
-    build = function()
-      vim.fn["mkdp#util#install"]()
-    end,
-    config = function()
-      vim.g.mkdp_auto_start = 0 -- Don't automatically open the preview window
-      vim.g.mkdp_auto_close = 0 -- Don't automatically close the preview window when the buffer is closed
-      vim.g.mkdp_command_for_global = 0 -- Don't map <Plug>MarkdownPreview to <Leader>mp
-    end,
+    dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-mini/mini.nvim" },
+    opts = {
+      latex = { enabled = false }, -- needs a latex treesitter parser + utftex/latex2text, none installed
+      yaml = { enabled = false }, -- needs a yaml treesitter parser, not installed
+    },
   },
   {
     "preservim/vim-markdown",

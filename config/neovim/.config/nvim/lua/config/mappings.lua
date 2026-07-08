@@ -73,7 +73,7 @@ wk.add({
     { "<Leader>c", group = "Comment", icon = "󰅺" },
     { "<Leader>h", ":checkhealth<CR>", desc = "Check Health", icon = "󰩂" },
     { "<Leader>l", ":Limelight!!<CR>", desc = "Limelight Mode", icon = "󱟇" },
-    { "<Leader>m", "<Plug>MarkdownPreviewToggle", desc = "Markdown Preview", icon = "󰽛" },
+    { "<Leader>m", ":RenderMarkdown toggle<CR>", desc = "Markdown Render", icon = "󰽛" },
     { "<Leader>n", ":set norelativenumber number!<CR>", desc = "Line Numbers", icon = "" },
     {
       "<Leader>r",
