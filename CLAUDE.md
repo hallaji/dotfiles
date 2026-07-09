@@ -185,9 +185,16 @@ current.
 
 ## The doctor (`tools/doctor`)
 
-Standalone Go module (via devbox), no external deps. Six checks:
-`symlinks`, `templates`, `profile`, `personal`, `tools`, `daemons`. Flags:
-`--json`, `--verbose`.
+Standalone Go module (via devbox), no external deps. Seven checks:
+`symlinks`, `templates`, `profile`, `personal`, `tools`, `daemons`, `parsers`.
+Flags: `--json`, `--verbose`.
+
+The `parsers` check parses the `ensure_installed` list out of
+`config/neovim/.config/nvim/lua/plugins/treesitter.lua` (the single source of
+truth — don't duplicate the list in Go) and verifies each language has a
+compiled parser and queries dir under Neovim's `site/` data dir. Missing
+parsers are a `warn`, not a `fail`: tree-sitter-manager reinstalls them in the
+background on the next Neovim launch.
 
 The `personal` check reads `config/env/.env.personal.spec` — the single source of
 truth for the personal env vars, also consumed by `dotup-personal` — and reports

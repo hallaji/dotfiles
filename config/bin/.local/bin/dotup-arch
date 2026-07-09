@@ -55,6 +55,7 @@ sudo pacman -S --needed \
   stow \
   tk \
   tmux \
+  tree-sitter-cli \
   ttf-jetbrains-mono-nerd \
   wofi \
   xclip \

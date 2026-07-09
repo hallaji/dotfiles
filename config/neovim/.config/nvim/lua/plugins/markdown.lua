@@ -12,10 +12,9 @@ return {
     "MeanderingProgrammer/render-markdown.nvim",
     cond = not vim.g.vscode,
     ft = { "markdown" },
-    dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-mini/mini.nvim" },
+    dependencies = { "nvim-mini/mini.nvim" },
     opts = {
       latex = { enabled = false }, -- needs a latex treesitter parser + utftex/latex2text, none installed
-      yaml = { enabled = false }, -- needs a yaml treesitter parser, not installed
     },
   },
   {

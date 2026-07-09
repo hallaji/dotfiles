@@ -103,6 +103,7 @@ func main() {
 		&PersonalCheck{},
 		&ToolsCheck{},
 		&DaemonsCheck{},
+		&ParsersCheck{},
 	}
 
 	results := make([]Result, 0, len(checkers))

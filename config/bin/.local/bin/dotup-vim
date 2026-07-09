@@ -16,7 +16,9 @@ gem install neovim    # https://github.com/neovim/neovim-ruby
 # declared in mason-tool-installer; MasonToolsInstallSync installs them in a
 # blocking manner (run_on_start is async and would race a headless quit). Run it
 # in a separate invocation so the plugin is present and its command registered.
-nvim --headless "+Lazy! sync" "+qa"
+# The lua wait keeps nvim open until tree-sitter-manager's async parser jobs
+# (kicked off by its :TSUpdate! build hook during the sync) have finished.
+nvim --headless "+Lazy! sync" '+lua vim.wait(600000, function() return vim.tbl_isempty(require("tree-sitter-manager.installer").installing) end, 1000)' "+qa"
 nvim --headless "+MasonToolsInstallSync" "+qa"
 nvim "+GoUpdateBinaries" "+qa"
 vim "+PlugUpgrade" "+PlugClean!" "+PlugUpdate" "+qa"

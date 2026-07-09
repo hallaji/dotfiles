@@ -4,63 +4,60 @@
 --    ██║   ██╔══██╗██╔══╝  ██╔══╝  ╚════██║██║   ██║      ██║   ██╔══╝  ██╔══██╗
 --    ██║   ██║  ██║███████╗███████╗███████║██║   ██║      ██║   ███████╗██║  ██║
 --    ╚═╝   ╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝╚═╝   ╚═╝      ╚═╝   ╚══════╝╚═╝  ╚═╝
--- https://github.com/nvim-treesitter/nvim-treesitter
+-- https://github.com/romus204/tree-sitter-manager.nvim
+-- Parser/query manager for Neovim 0.12+ native treesitter (successor to the
+-- archived nvim-treesitter); highlighting itself is started by vim.treesitter.
 
 return {
-  "nvim-treesitter/nvim-treesitter",
-  branch = "main",
+  "romus204/tree-sitter-manager.nvim",
   cond = not vim.g.vscode,
-  build = ":TSUpdate",
-  config = function()
-    require("nvim-treesitter").setup({
-      -- A list of parser names, or "all" (the five listed parsers should always be installed)
-      ensure_installed = {
-        "bash",
-        "c",
-        "comment",
-        "cpp",
-        "css",
-        "diff",
-        "dockerfile",
-        "go",
-        "html",
-        "java",
-        "javascript",
-        "kotlin",
-        "lua",
-        "php",
-        "python",
-        "query",
-        "regex",
-        "ruby",
-        "sql",
-        "toml",
-        "tsx",
-        "typescript",
-        "vim",
-        "vimdoc",
-        "yaml",
-      },
+  build = ":TSUpdate!", -- rebuild installed parsers when the plugin updates its pins
+  opts = {
+    -- Parsers to install on setup (pinned revisions, with matching queries)
+    ensure_installed = {
+      "bash",
+      "c",
+      "comment",
+      "cpp",
+      "css",
+      "diff",
+      "dockerfile",
+      -- ensured (not auto-installed) because git commit/rebase editor sessions
+      -- inherit a relative GIT_INDEX_FILE that breaks the parser install
+      "git_rebase",
+      "gitcommit",
+      "go",
+      "html",
+      "java",
+      "javascript",
+      "kotlin",
+      "lua",
+      "php",
+      "python",
+      "query",
+      "regex",
+      "ruby",
+      "sql",
+      "toml",
+      "tsx",
+      "typescript",
+      "vim",
+      "vimdoc",
+      "yaml",
+    },
 
-      -- Install parsers synchronously (only applied to `ensure_installed`)
-      sync_install = false,
+    -- Install missing parsers when entering a buffer (needs the tree-sitter CLI)
+    auto_install = true,
 
-      -- Automatically install missing parsers when entering buffer
-      -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
-      auto_install = true,
+    -- Parsers to never auto-install (markdown/markdown_inline ship with Neovim)
+    noauto_install = {
+      "json",
+      "jsdoc",
+      "markdown",
+      "markdown_inline",
+    },
 
-      -- List of parsers to ignore installing (or "all")
-      ignore_install = {
-        "json",
-        "jsdoc",
-        "markdown",
-        "markdown_inline",
-      },
-
-      highlight = {
-        enable = true,
-        disable = { "markdown", "markdown_inline" },
-      },
-    })
-  end,
+    -- Start native treesitter highlighting for buffers with an installed parser
+    highlight = true,
+  },
 }
