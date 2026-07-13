@@ -1,5 +1,32 @@
-[bell]
-color = "${PALETTE_UI_ERROR}"
+# ┌─┐┬─┐┬┌┬┐┌─┐┬─┐┬ ┬
+# ├─┘├┬┘││││├─┤├┬┘└┬┘
+# ┴  ┴└─┴┴ ┴┴ ┴┴└─ ┴
+
+[colors.primary]
+background = "${PALETTE_BG2}"
+bright_foreground = "${PALETTE_FG0}"
+dim_foreground = "${PALETTE_FG2}"
+foreground = "${PALETTE_FG0}"
+
+# ┌─┐┌─┐┬  ┌─┐┌─┐┌┬┐┬┌─┐┌┐┌
+# └─┐├┤ │  ├┤ │   │ ││ ││││
+# └─┘└─┘┴─┘└─┘└─┘ ┴ ┴└─┘┘└┘
+
+[colors.selection]
+background = "${PALETTE_UI_ACCENT}"
+text = "${PALETTE_BG2}"
+
+# ┌─┐┬ ┬┬─┐┌─┐┌─┐┬─┐
+# │  │ │├┬┘└─┐│ │├┬┘
+# └─┘└─┘┴└─└─┘└─┘┴└─
+
+[colors.cursor]
+cursor = "${PALETTE_UI_CURSOR}"
+text = "${PALETTE_BG3}"
+
+# ┌┐┌┌─┐┬─┐┌┬┐┌─┐┬
+# ││││ │├┬┘│││├─┤│
+# ┘└┘└─┘┴└─┴ ┴┴ ┴┴─┘
 
 [colors.normal]
 black = "${PALETTE_BG3}"
@@ -11,6 +38,10 @@ red = "${PALETTE_RED}"
 white = "${PALETTE_FG1}"
 yellow = "${PALETTE_AMBER}"
 
+# ┌┐ ┬─┐┬┌─┐┬ ┬┌┬┐
+# ├┴┐├┬┘││ ┬├─┤ │
+# └─┘┴└─┴└─┘┴ ┴ ┴
+
 [colors.bright]
 black = "${PALETTE_GRAY}"
 blue = "${PALETTE_BLUE}"
@@ -21,9 +52,12 @@ red = "${PALETTE_RED}"
 white = "${PALETTE_FG0}"
 yellow = "${PALETTE_YELLOW}"
 
-[colors.cursor]
-cursor = "${PALETTE_UI_CURSOR}"
-text = "${PALETTE_BG3}"
+# ┬ ┬┬
+# │ ││
+# └─┘┴
+
+[bell]
+color = "${PALETTE_UI_ERROR}"
 
 [colors.footer_bar]
 background = "${PALETTE_BG3}"
@@ -41,12 +75,6 @@ foreground = "${PALETTE_BG3}"
 background = "${PALETTE_BG2}"
 foreground = "${PALETTE_BG4}"
 
-[colors.primary]
-background = "${PALETTE_BG2}"
-bright_foreground = "${PALETTE_FG0}"
-dim_foreground = "${PALETTE_FG2}"
-foreground = "${PALETTE_FG0}"
-
 [colors.search.focused_match]
 background = "${PALETTE_UI_ACCENT_ALT}"
 foreground = "${PALETTE_BG3}"
@@ -54,10 +82,6 @@ foreground = "${PALETTE_BG3}"
 [colors.search.matches]
 background = "${PALETTE_BG4}"
 foreground = "${PALETTE_UI_ACCENT_ALT}"
-
-[colors.selection]
-background = "${PALETTE_UI_ACCENT}"
-text = "${PALETTE_BG2}"
 
 [colors.vi_mode_cursor]
 cursor = "${PALETTE_MODE_INSERT}"

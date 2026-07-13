@@ -38,10 +38,12 @@ sudo pacman -S --needed \
   figlet \
   firefox \
   fzf \
+  ghostty \
   git \
   github-cli \
   go \
   hyprland \
+  imagemagick \
   inetutils \
   i3 \
   jq \
@@ -49,6 +51,7 @@ sudo pacman -S --needed \
   less \
   libfido2 \
   lolcat \
+  mermaid-cli \
   neovim \
   pam-u2f \
   pi-coding-agent \

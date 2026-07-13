@@ -1,0 +1,169 @@
+#  ██████╗ ██╗  ██╗ ██████╗ ███████╗████████╗████████╗██╗   ██╗
+# ██╔════╝ ██║  ██║██╔═══██╗██╔════╝╚══██╔══╝╚══██╔══╝╚██╗ ██╔╝
+# ██║  ███╗███████║██║   ██║███████╗   ██║      ██║    ╚████╔╝
+# ██║   ██║██╔══██║██║   ██║╚════██║   ██║      ██║     ╚██╔╝
+# ╚██████╔╝██║  ██║╚██████╔╝███████║   ██║      ██║      ██║
+#  ╚═════╝ ╚═╝  ╚═╝ ╚═════╝ ╚══════╝   ╚═╝      ╚═╝      ╚═╝
+# https://ghostty.org/docs/config
+
+# Documented in docs/TERMINAL.md, which covers every terminal emulator in these
+# dotfiles. Configs are kept in sync 1:1: every cmd chord sends a tmux prefix
+# sequence (\x02 = ctrl-b), overriding the terminal's native split/tab bindings
+# so tmux stays the one multiplexer. When you change a binding here, make the
+# same change in every other terminal's config and in docs/TERMINAL.md in the
+# same commit; tests/unit/terminal-sync.bats enforces that the configs match.
+
+# ┌─┐┌─┐┬  ┌─┐┬─┐┌─┐
+# │  │ ││  │ │├┬┘└─┐
+# └─┘└─┘┴─┘└─┘┴└─└─┘
+
+config-file = ?colors
+
+# ┌─┐┬ ┬┌─┐┬  ┬
+# └─┐├─┤├┤ │  │
+# └─┘┴ ┴└─┘┴─┘┴─┘
+
+command = /bin/zsh -l -i -c tmux
+
+# ┌─┐┌─┐┌┐┌┌┬┐
+# ├┤ │ ││││ │
+# └  └─┘┘└┘ ┴
+
+font-family = JetBrainsMono Nerd Font
+font-size = 16
+adjust-cell-height = 12
+
+# ┬ ┬┬┌┐┌┌┬┐┌─┐┬ ┬
+# │││││││ │││ ││││
+# └┴┘┴┘└┘─┴┘└─┘└┴┘
+
+window-width = 120
+window-height = 26
+window-padding-x = 15
+window-padding-y = 5
+macos-titlebar-style = hidden
+
+# ┌─┐┬ ┬┬─┐┌─┐┌─┐┬─┐
+# │  │ │├┬┘└─┐│ │├┬┘
+# └─┘└─┘┴└─└─┘└─┘┴└─
+
+cursor-style = block
+cursor-style-blink = true
+
+# ┌─┐┌─┐┬  ┌─┐┌─┐┌┬┐┬┌─┐┌┐┌
+# └─┐├┤ │  ├┤ │   │ ││ ││││
+# └─┘└─┘┴─┘└─┘└─┘ ┴ ┴└─┘┘└┘
+
+copy-on-select = clipboard
+
+# ┌─┐┌─┐┬─┐┌─┐┬  ┬  ┬┌┐┌┌─┐
+# └─┐│  ├┬┘│ ││  │  │││││ ┬
+# └─┘└─┘┴└─└─┘┴─┘┴─┘┴┘└┘└─┘
+
+mouse-scroll-multiplier = 3
+
+# ┌─┐┌─┐┌─┐┌─┐┬┌─┐┬    ┬┌─┌─┐┬ ┬┌─┐
+# └─┐├─┘├┤ │  │├─┤│    ├┴┐├┤ └┬┘└─┐
+# └─┘┴  └─┘└─┘┴┴ ┴┴─┘  ┴ ┴└─┘ ┴ └─┘
+
+# Insert a newline without submitting (REPLs, Claude Code, etc.)
+keybind = shift+enter=text:\x1b\r
+# Send `<C-n>i` and map it `<C-i>` in VIM
+keybind = ctrl+i=text:\x0ei
+
+# ┌─┐┌─┐┌┐┌┌─┐┌─┐
+# ├─┘├─┤│││├┤ └─┐
+# ┴  ┴ ┴┘└┘└─┘└─┘
+
+# Create a vertical pane `⌃b` + `%`
+keybind = cmd+d=text:\x02%
+# Create a horizontal pane `⌃b` + `"`
+keybind = cmd+shift+d=text:\x02\x22
+# Close current pane `⌃b` + `x`
+keybind = cmd+w=text:\x02x
+# Resize current pane to left `⌃b` + `H`
+keybind = cmd+left=text:\x02H
+# Resize current pane to down `⌃b` + `J`
+keybind = cmd+down=text:\x02J
+# Resize current pane to up `⌃b` + `K`
+keybind = cmd+up=text:\x02K
+# Resize current pane to right `⌃b` + `L`
+keybind = cmd+right=text:\x02L
+# Spread panes out evenly `⌃b` + `E`
+keybind = cmd+e=text:\x02E
+# Toggle panes synchronisation `⌃b` + `⌃s`
+keybind = cmd+shift+e=text:\x02\x13
+# Search for a pane `⌃b` + `f`
+keybind = cmd+shift+f=text:\x02f
+
+# ┌┬┐┌─┐┌┐ ┌─┐
+#  │ ├─┤├┴┐└─┐
+#  ┴ ┴ ┴└─┘└─┘
+
+# Create a new window/tab
+keybind = cmd+t=text:\x02c
+# Move to next window/tab `⌃b` + `n`
+keybind = ctrl+tab=text:\x02n
+# Move to previous window/tab `⌃b` + `p`
+keybind = ctrl+shift+tab=text:\x02p
+# Switch to window/tab #1 `⌃b` + `1`
+keybind = cmd+1=text:\x021
+# Switch to window/tab #2 `⌃b` + `2`
+keybind = cmd+2=text:\x022
+# Switch to window/tab #3 `⌃b` + `3`
+keybind = cmd+3=text:\x023
+# Switch to window/tab #4 `⌃b` + `4`
+keybind = cmd+4=text:\x024
+# Switch to window/tab #5 `⌃b` + `5`
+keybind = cmd+5=text:\x025
+# Switch to window/tab #6 `⌃b` + `6`
+keybind = cmd+6=text:\x026
+# Switch to window/tab #7 `⌃b` + `7`
+keybind = cmd+7=text:\x027
+# Switch to window/tab #8 `⌃b` + `8`
+keybind = cmd+8=text:\x028
+# Switch to window/tab #9 `⌃b` + `9`
+keybind = cmd+9=text:\x029
+# Show all windows `⌃b` + `w`
+keybind = cmd+p=text:\x02w
+# Rename current window/tab `⌃b` + `,`
+keybind = cmd+r=text:\x02,
+# Close current window/tab `⌃b` + `&`
+keybind = cmd+shift+w=text:\x02&
+
+# ┌─┐┌─┐┌─┐┌─┐┬┌─┐┌┐┌┌─┐
+# └─┐├┤ └─┐└─┐││ ││││└─┐
+# └─┘└─┘└─┘└─┘┴└─┘┘└┘└─┘
+
+# Show all sessions `⌃b` + `s`
+keybind = cmd+shift+p=text:\x02s
+# Move to previous session `⌃b` + `(`
+keybind = cmd+shift+left=text:\x02(
+# Move to next session `⌃b` + `)`
+keybind = cmd+shift+right=text:\x02)
+# Rename current session `⌃b` + `$`
+keybind = cmd+shift+r=text:\x02$
+# Kill current session `⌃b` + `Q`
+keybind = cmd+alt+w=text:\x02Q
+
+# ┌─┐┬  ┬┌─┐┌┐ ┌─┐┌─┐┬─┐┌┬┐
+# │  │  │├─┘├┴┐│ │├─┤├┬┘ ││
+# └─┘┴─┘┴┴  └─┘└─┘┴ ┴┴└──┴┘
+
+# Start tmux copy mode `⌃b` + `[`
+keybind = cmd+shift+c=text:\x02[
+
+# ┌┬┐┌┬┐┬ ┬─┐ ┬  ┌┬┐┌─┐┌─┐┬  ┌─┐
+#  │ ││││ │┌┴┬┘   │ │ ││ ││  └─┐
+#  ┴ ┴ ┴└─┘┴ └─   ┴ └─┘└─┘┴─┘└─┘
+
+# Enter tmux command mode `⌃b` + `:`
+keybind = cmd+;=text:\x02:
+# Grab and open any URL from the terminal window `⌃b` + `u`
+keybind = cmd+u=text:\x02u
+# Save environment `⌃b` + `S`
+keybind = cmd+s=text:\x02S
+# Restore environment `⌃b` + `R`
+keybind = cmd+shift+s=text:\x02R
+# Reload tmux config `⌃b` + `⌃r`
+keybind = cmd+alt+r=text:\x02\x12

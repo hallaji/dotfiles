@@ -1,0 +1,46 @@
+# ┌─┐┬─┐┬┌┬┐┌─┐┬─┐┬ ┬
+# ├─┘├┬┘││││├─┤├┬┘└┬┘
+# ┴  ┴└─┴┴ ┴┴ ┴┴└─ ┴
+
+background = ${PALETTE_BG2}
+foreground = ${PALETTE_FG0}
+
+# ┌─┐┌─┐┬  ┌─┐┌─┐┌┬┐┬┌─┐┌┐┌
+# └─┐├┤ │  ├┤ │   │ ││ ││││
+# └─┘└─┘┴─┘└─┘└─┘ ┴ ┴└─┘┘└┘
+
+selection-background = ${PALETTE_UI_ACCENT}
+selection-foreground = ${PALETTE_BG2}
+
+# ┌─┐┬ ┬┬─┐┌─┐┌─┐┬─┐
+# │  │ │├┬┘└─┐│ │├┬┘
+# └─┘└─┘┴└─└─┘└─┘┴└─
+
+cursor-color = ${PALETTE_UI_CURSOR}
+cursor-text = ${PALETTE_BG3}
+
+# ┌┐┌┌─┐┬─┐┌┬┐┌─┐┬
+# ││││ │├┬┘│││├─┤│
+# ┘└┘└─┘┴└─┴ ┴┴ ┴┴─┘
+
+palette = 0=${PALETTE_BG3}
+palette = 1=${PALETTE_RED}
+palette = 2=${PALETTE_TEAL}
+palette = 3=${PALETTE_AMBER}
+palette = 4=${PALETTE_SKY}
+palette = 5=${PALETTE_PINK}
+palette = 6=${PALETTE_CYAN}
+palette = 7=${PALETTE_FG1}
+
+# ┌┐ ┬─┐┬┌─┐┬ ┬┌┬┐
+# ├┴┐├┬┘││ ┬├─┤ │
+# └─┘┴└─┴└─┘┴ ┴ ┴
+
+palette = 8=${PALETTE_GRAY}
+palette = 9=${PALETTE_RED}
+palette = 10=${PALETTE_MINT}
+palette = 11=${PALETTE_YELLOW}
+palette = 12=${PALETTE_BLUE}
+palette = 13=${PALETTE_PURPLE}
+palette = 14=${PALETTE_CYAN}
+palette = 15=${PALETTE_FG0}

@@ -7,6 +7,10 @@ are Alacritty middle-click and tmux `⌃b + ]`, which read their own local buffe
 (the selection buffer / tmux's paste buffer) that are filled on copy too, so they
 usually match the system clipboard but can drift.
 
+[Ghostty](TERMINAL.md) behaves like the Alacritty rows below: drag-select
+auto-copies (`copy-on-select = clipboard` ≙ `save_to_clipboard`), `⌘c`/`⌘v`
+are its native copy/paste defaults, and `⌘⇧c` enters tmux copy mode.
+
 ```mermaid
 flowchart LR
     A["Alacritty"]:::src <--> C

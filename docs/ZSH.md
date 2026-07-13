@@ -4,7 +4,7 @@ A personal, config-accurate cheat-sheet for vi-style shell-line editing. Every
 keybinding below is taken from this repo's actual config —
 `config/zsh/.config/zsh/bindings.zsh` — with zsh vi-mode defaults clearly
 marked _(default)_. This is the shell layer: it works in any terminal, on both
-macOS and Linux ([Alacritty](ALACRITTY.md) is just where you'll use it).
+macOS and Linux (the [terminal](TERMINAL.md) is just where you'll use it).
 
 - **`Esc` (or `⌃[`) enters Normal mode**; `i`, `I`, `a`, or `A` return to
   Insert mode. `KEYTIMEOUT=20` means `Esc` registers in 200ms while multi-key

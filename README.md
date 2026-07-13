@@ -47,9 +47,9 @@ stow aerospace alfred borders skhd sketchybar yabai
 stow hyprland
 
 # Other packages
-stow alacritty asdf aws bat bundler claude ctags curl devbox gh git gradle granted \
-     gpg lazygit neovim nix npm oh-my-posh p10k pip process-compose ssh starship \
-     tig tmux vim vimium zsh 1password
+stow alacritty asdf aws bat bundler claude ctags curl devbox gh ghostty git gradle \
+     granted gpg lazygit neovim nix npm oh-my-posh p10k pip process-compose ssh \
+     starship tig tmux vim vimium zsh 1password
 ```
 
 ### 2. Configure Personal Settings

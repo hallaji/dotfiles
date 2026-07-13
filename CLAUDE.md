@@ -147,8 +147,18 @@ only in the playbooks:
   a hand-maintained "OS-level shortcuts" section (macOS and Arch) for global
   keys with no stowed config.
 - `docs/TMUX.md` — the tmux bindings (sourced from `config/tmux/.tmux.conf`).
-- `docs/ALACRITTY.md` — the Alacritty bindings (sourced from
-  `config/alacritty/.config/alacritty/keyboard.toml`).
+- `docs/TERMINAL.md` — the terminal emulators (Alacritty, sourced from
+  `config/alacritty/.config/alacritty/alacritty.toml`, and Ghostty, from
+  `config/ghostty/.config/ghostty/config`). Each terminal keeps its whole
+  config in that one file, with only the color palette split out into a
+  separate rendered-from-template file (`colors.toml` / `colors`). The
+  keybindings are identical across both, so the doc lists them once; a
+  per-terminal section covers Ghostty's translation rules, deliberate
+  differences, and behavior parity. `alacritty.toml` is the binding source of
+  truth. Changing a binding in one terminal means making the same change in the
+  other: `tests/unit/terminal-sync.bats` diffs the two configs' chord→sequence
+  maps and fails on drift (behavior/docs parity stays a manual convention).
+  Adding a third terminal just means porting the chords and listing it there.
 - `docs/ZSH.md` — the zsh vi-mode line-editing bindings (sourced from
   `config/zsh/.config/zsh/bindings.zsh`, plus the `,f`/`,o` helpers in
   `functions.zsh`).
@@ -156,7 +166,7 @@ only in the playbooks:
   defaults; `config/vimium/.config/vimium/vimium-options.json` only customises
   behavior (exclusions, hints, search). Vimari has no repo config.
 
-`docs/CLIPBOARD.md` documents the clipboard flow across tmux/zsh/Alacritty, and
+`docs/CLIPBOARD.md` documents the clipboard flow across tmux/zsh/Alacritty/Ghostty, and
 `README.md`'s command table tracks `dotup` subcommands (see "Adding a dotup
 subcommand"). Keep both current when the relevant behavior changes.
 `docs/ARCHITECTURE.md` (stow → templates → provisioning → doctor lifecycle, with

@@ -17,6 +17,7 @@ TEMPLATE_FILES=(
   ~/.config/bat/themes/Catamaran.tmTheme.template
   ~/.config/borders/colors.sh.template:hex
   ~/.config/gh-dash/config.yml.template
+  ~/.config/ghostty/colors.template
   ~/.config/lazygit/config.yml.template
   ~/.config/process-compose/theme.yaml.template
   ~/.config/sketchybar/colors.sh.template:hex

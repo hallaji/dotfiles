@@ -3,9 +3,9 @@
 A personal, config-accurate cheat-sheet for the terminal multiplexer. Every
 keybinding below is taken from this repo's actual config —
 `config/tmux/.tmux.conf` — with tmux defaults clearly marked _(default)_.
-[tmux](https://github.com/tmux/tmux) runs inside Alacritty, which launches it
-at startup and fronts many of these bindings with `⌘` shortcuts — see the
-[Alacritty Playbook](ALACRITTY.md).
+[tmux](https://github.com/tmux/tmux) runs inside the terminal (Alacritty or
+Ghostty), which launches it at startup and fronts many of these bindings with
+`⌘` shortcuts — see the [Terminal Playbook](TERMINAL.md).
 
 - **The prefix is `⌃b`** (tmux default). So `⌃b c` means `⌃b`, release, then `c`.
 - Copy mode is **vi-style** (`mode-keys vi`).

@@ -164,5 +164,5 @@ is supported but minimal and still growing (the `daemons` check only watches
 
 For keybindings see the per-tool playbooks — [NEOVIM.md](NEOVIM.md),
 [AEROSPACE.md](AEROSPACE.md), [HOTKEYS.md](HOTKEYS.md), [TMUX.md](TMUX.md),
-[ALACRITTY.md](ALACRITTY.md), [ZSH.md](ZSH.md) and [BROWSER.md](BROWSER.md) —
+[TERMINAL.md](TERMINAL.md), [ZSH.md](ZSH.md) and [BROWSER.md](BROWSER.md) —
 and [CLIPBOARD.md](CLIPBOARD.md) for the clipboard flow.

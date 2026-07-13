@@ -65,6 +65,7 @@ brew install \
   ktlint \
   lazygit \
   lolcat \
+  mermaid-cli \
   neovim \
   nmap \
   node \
@@ -127,6 +128,7 @@ brew install --cask \
   font-roboto-mono \
   font-roboto-mono-nerd-font \
   fork \
+  ghostty \
   gifox \
   gitbutler \
   github \
