@@ -415,16 +415,21 @@ formatting via **conform**.
 **Editing helpers (plugin defaults):** vim-surround — `cs"'` change surround,
 `ds"` delete surround, `ys{motion}{char}` add surround, `S{char}` in visual.
 
-**AI assists:** Copilot under `,p…` (e.g. `,pe` enable, `,ps` status) and in
-insert mode `<C-J>` accept / `<C-K>` accept word / `<C-L>` accept line /
-`<C-H>` force-suggest. GPT (gp.nvim) under `,x…` — `,xc` new chat, `,xt` toggle
-chat, `,xr` inline rewrite, `,x<C-x>` (or `,<C-X>`) new chat split. Claude Code
-(claudecode.nvim) on `,a` — toggles the session in normal mode (launched in a
-matching external terminal: Ghostty or Alacritty, whichever hosts Neovim), and
-sends the visual selection to Claude in visual mode. Inside a commit buffer
-(`gitcommit`), `,a` instead drafts a Conventional Commits message from the
-staged diff via the headless `claude` CLI, replacing the message area so it is
-safe to re-run.
+**AI assists:** the `,p…` and `,x…` entries are which-key groups — press the
+prefix to see every sub-key live.
+
+| Keys               | Action                                                           | Notes                                                                         |
+| ------------------ | ---------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `,p…`              | Copilot group (`,pe` enable, `,ps` status, …)                    | insert mode: `<C-J>` accept, `<C-K>` word, `<C-L>` line, `<C-H>` force        |
+| `,x…`              | GPT group (gp.nvim): `,xc` new chat, `,xt` toggle, `,xr` rewrite | `,x<C-x>` (or `,<C-X>`) new chat split; streams via the Anthropic **API key** |
+| `,a` _(normal)_    | Toggle Claude Code session                                       | claudecode.nvim, in a matching external terminal (Ghostty/Alacritty)          |
+| `,as` _(visual)_   | Send selection to the Claude Code session                        | to the running session                                                        |
+| `,ar` _(visual)_   | Rewrite selection in place — headless `claude` CLI               | your Claude Code **subscription**, no metered cost; slower than `,xr`         |
+| `,a` _(gitcommit)_ | Draft commit message — headless `claude` CLI                     | from the staged diff; replaces the message area, safe to re-run               |
+
+The `,xr` (gp.nvim) and `,ar` (CLI) rewrites overlap deliberately: `,xr` streams
+instantly but bills the API key, while `,ar` reuses your subscription at the cost
+of per-call latency.
 
 ---
 

@@ -236,8 +236,20 @@ wk.add({
 -- └─┘┴─┘┴ ┴└─┘─┴┘└─┘
 
 wk.add({
-  { mode = "n", { "<Leader>a", ":ClaudeCode<CR>", desc = "Claude Code", icon = "󰚩" } },
-  { mode = "x", { "<Leader>a", ":ClaudeCodeSend<CR>", desc = "Send to Claude", icon = "󰚩" } },
+  {
+    mode = "n",
+    { "<Leader>a", ":ClaudeCode<CR>", desc = "Claude Code", icon = "󰚩" },
+  },
+  {
+    mode = "x",
+    { "<Leader>a", group = "Claude Code", icon = "󰚩" },
+    { "<Leader>as", ":ClaudeCodeSend<CR>", desc = "Send selection to Claude Code session" },
+    {
+      "<Leader>ar",
+      ":<C-u>lua require('config.functions').claude_rewrite_selection()<CR>",
+      desc = "Rewrite selection (Claude CLI)",
+    },
+  },
 })
 
 -- ┌─┐┬┌┬┐
