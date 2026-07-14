@@ -231,6 +231,15 @@ wk.add({
   },
 })
 
+-- ┌─┐┬  ┌─┐┬ ┬┌┬┐┌─┐
+-- │  │  ├─┤│ │ ││├┤
+-- └─┘┴─┘┴ ┴└─┘─┴┘└─┘
+
+wk.add({
+  { mode = "n", { "<Leader>a", ":ClaudeCode<CR>", desc = "Claude Code", icon = "󰚩" } },
+  { mode = "x", { "<Leader>a", ":ClaudeCodeSend<CR>", desc = "Send to Claude", icon = "󰚩" } },
+})
+
 -- ┌─┐┬┌┬┐
 -- │ ┬│ │
 -- └─┘┴ ┴

@@ -23,7 +23,14 @@ return {
 
       -- Provider-specific options
       provider_opts = {
-        external_terminal_cmd = "alacritty --working-directory " .. vim.fn.getcwd() .. " -e %s",
+        -- Match the host terminal's launch syntax
+        external_terminal_cmd = function(cmd)
+          local cwd = vim.fn.getcwd()
+          if vim.env.GHOSTTY_RESOURCES_DIR or vim.env.TERM_PROGRAM == "ghostty" then
+            return string.format('ghostty --working-directory="%s" -e %s', cwd, cmd)
+          end
+          return string.format('alacritty --working-directory "%s" -e %s', cwd, cmd)
+        end,
       },
     },
   },

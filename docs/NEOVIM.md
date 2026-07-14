@@ -63,6 +63,7 @@ flowchart TD
     leader --> notif["Notifications<br/>,u"]:::buffer
     leader --> gpt["GPT<br/>,x"]:::ai
     leader --> copilot["Copilot<br/>,p"]:::ai
+    leader --> claude["Claude Code<br/>,a"]:::ai
 
     %% Colors from config/env/.env palette (see docs/ARCHITECTURE.md):
     %% core=#02d9fe  git=#00b196  find=#f5b168  lsp=#a394cd
@@ -417,7 +418,13 @@ formatting via **conform**.
 **AI assists:** Copilot under `,p…` (e.g. `,pe` enable, `,ps` status) and in
 insert mode `<C-J>` accept / `<C-K>` accept word / `<C-L>` accept line /
 `<C-H>` force-suggest. GPT (gp.nvim) under `,x…` — `,xc` new chat, `,xt` toggle
-chat, `,xr` inline rewrite, `,x<C-x>` (or `,<C-X>`) new chat split.
+chat, `,xr` inline rewrite, `,x<C-x>` (or `,<C-X>`) new chat split. Claude Code
+(claudecode.nvim) on `,a` — toggles the session in normal mode (launched in a
+matching external terminal: Ghostty or Alacritty, whichever hosts Neovim), and
+sends the visual selection to Claude in visual mode. Inside a commit buffer
+(`gitcommit`), `,a` instead drafts a Conventional Commits message from the
+staged diff via the headless `claude` CLI, replacing the message area so it is
+safe to re-run.
 
 ---
 
