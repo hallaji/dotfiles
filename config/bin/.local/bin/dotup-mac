@@ -167,6 +167,13 @@ else
   hotel setup ensure
 fi
 
+# macOS defaults
+
+if [[ "$(defaults read com.apple.dock show-recents 2>/dev/null)" != "0" ]]; then
+  defaults write com.apple.dock show-recents -bool false
+  killall Dock
+fi
+
 # Profile-specific installations
 
 if [[ "$DOTFILES_PROFILE" == "CLTRMP" ]]; then
