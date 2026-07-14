@@ -97,11 +97,11 @@ func main() {
 	}
 
 	checkers := []Checker{
+		&ProfileCheck{},
 		&SymlinksCheck{},
 		&TemplatesCheck{},
 		&EnvCheck{},
 		&PersonalCheck{},
-		&ProfileCheck{},
 		&ToolsCheck{},
 		&DaemonsCheck{},
 		&ParsersCheck{},

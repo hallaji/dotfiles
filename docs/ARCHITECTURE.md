@@ -26,7 +26,7 @@ flowchart TD
     rt["render-templates<br/>(.zprofile, at login)<br/>expand ${VAR} · :hex #rrggbb→0xffrrggbb"]:::run
     rendered["<b>rendered files</b><br/>~/.gitconfig · colors.sh …"]:::out
     daemons["<b>login services</b><br/>macOS: aerospace · skhd · borders · sketchybar<br/>Linux: Hyprland"]:::run
-    doctor["<b>doctor</b> — validates the result<br/>symlinks · templates · env · personal-env<br/>profile · tools · daemons"]:::check
+    doctor["<b>doctor</b> — validates the result<br/>profile · symlinks · templates · env<br/>personal-env · tools · daemons"]:::check
 
     %% Main spine (top → bottom).
     pkgs -->|"stow -R · .stowrc (--no-folding)"| links

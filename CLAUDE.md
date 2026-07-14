@@ -195,9 +195,9 @@ current.
 
 ## The doctor (`tools/doctor`)
 
-Standalone Go module (via devbox), no external deps. Eight checks:
-`symlinks`, `templates`, `env`, `personal-env`, `profile`, `tools`, `daemons`,
-`parsers`. Flags: `--json`, `--verbose`.
+Standalone Go module (via devbox), no external deps. Eight checks, reported in
+this order: `profile`, `symlinks`, `templates`, `env`, `personal-env`, `tools`,
+`daemons`, `parsers`. Flags: `--json`, `--verbose`.
 
 The `parsers` check parses the `ensure_installed` list out of
 `config/neovim/.config/nvim/lua/plugins/treesitter.lua` (the single source of
