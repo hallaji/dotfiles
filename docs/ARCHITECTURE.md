@@ -26,7 +26,7 @@ flowchart TD
     rt["render-templates<br/>(.zprofile, at login)<br/>expand ${VAR} · :hex #rrggbb→0xffrrggbb"]:::run
     rendered["<b>rendered files</b><br/>~/.gitconfig · colors.sh …"]:::out
     daemons["<b>login services</b><br/>macOS: aerospace · skhd · borders · sketchybar<br/>Linux: Hyprland"]:::run
-    doctor["<b>doctor</b> — validates the result<br/>symlinks · templates · profile<br/>personal · tools · daemons"]:::check
+    doctor["<b>doctor</b> — validates the result<br/>symlinks · templates · env · personal-env<br/>profile · tools · daemons"]:::check
 
     %% Main spine (top → bottom).
     pkgs -->|"stow -R · .stowrc (--no-folding)"| links
@@ -95,12 +95,13 @@ legacy and is not started.
 
 **Validation.** `dotup doctor` closes the loop, validating what provisioning
 produced — `symlinks`, rendered `templates`, and running `daemons` — plus
-`personal`, `tools`, and `profile`. The binary is built on demand from
+`env`, `personal-env`, `tools`, and `profile`. The binary is built on demand
+from
 `tools/doctor/*.go` by a wrapper (cached per machine), with Go pinned by devbox.
 
 Two details left off the diagram for legibility:
 
-- The `personal` check live-validates credentials (GitHub tokens via `gh api
+- The `personal-env` check live-validates credentials (GitHub tokens via `gh api
 user`, the 1Password token via `op`); a network failure degrades to
   `unverified` rather than failing.
 - There are two doctor entrypoints — `dotup doctor` (cached binary, system Go)

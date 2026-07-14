@@ -195,9 +195,9 @@ current.
 
 ## The doctor (`tools/doctor`)
 
-Standalone Go module (via devbox), no external deps. Seven checks:
-`symlinks`, `templates`, `profile`, `personal`, `tools`, `daemons`, `parsers`.
-Flags: `--json`, `--verbose`.
+Standalone Go module (via devbox), no external deps. Eight checks:
+`symlinks`, `templates`, `env`, `personal-env`, `profile`, `tools`, `daemons`,
+`parsers`. Flags: `--json`, `--verbose`.
 
 The `parsers` check parses the `ensure_installed` list out of
 `config/neovim/.config/nvim/lua/plugins/treesitter.lua` (the single source of
@@ -206,7 +206,17 @@ compiled parser and queries dir under Neovim's `site/` data dir. Missing
 parsers are a `warn`, not a `fail`: tree-sitter-manager reinstalls them in the
 background on the next Neovim launch.
 
-The `personal` check reads `config/env/.env.personal.spec` — the single source of
+The `env` check parses `config/env/.env` (stowed to `~/.env`, sourced by
+`.zshenv`) and reports how many of its top-level `export` vars are loaded in
+the doctor's inherited environment. Predictable values (literals, `$VAR`
+references resolvable within the file) are also compared and flagged `stale`
+when the running shell has not re-sourced `~/.env` since an edit. Values the
+shell computes at source time (command substitution, PATH-style
+self-references, `${...}` parameter expansion, leading `~`) are checked for
+presence only, and indented exports inside OS conditionals are skipped because
+the doctor cannot evaluate the branch.
+
+The `personal-env` check reads `config/env/.env.personal.spec` — the single source of
 truth for the personal env vars, also consumed by `dotup-personal` — and reports
 which are populated in `$XDG_PERSONAL_HOME/env`.
 Secret-tagged entries are reported `set`/valid/`missing` only and their **values

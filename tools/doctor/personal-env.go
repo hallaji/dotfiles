@@ -68,10 +68,10 @@ type PersonalCheck struct{}
 func (c *PersonalCheck) Run(repoRoot string) Result {
 	spec, err := loadSpec(filepath.Join(repoRoot, specPath))
 	if err != nil {
-		return Result{Check: "personal", Status: Warn, Message: "spec unreadable: " + err.Error()}
+		return Result{Check: "personal-env", Status: Warn, Message: "spec unreadable: " + err.Error()}
 	}
 	if len(spec) == 0 {
-		return Result{Check: "personal", Status: Warn, Message: "spec is empty"}
+		return Result{Check: "personal-env", Status: Warn, Message: "spec is empty"}
 	}
 
 	values := readPersonalEnv(personalEnvPath())
@@ -107,7 +107,7 @@ func (c *PersonalCheck) Run(repoRoot string) Result {
 	default:
 		msg += ", all valid"
 	}
-	return Result{Check: "personal", Status: overall, Message: msg, Details: details}
+	return Result{Check: "personal-env", Status: overall, Message: msg, Details: details}
 }
 
 // evalPersonalVar evaluates a populated var: live-validates the GitHub and

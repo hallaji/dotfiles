@@ -77,7 +77,7 @@ func icon(s Status) string {
 
 // checkIcon is the glyph for a top-level check line. A healthy check shows the
 // info glyph (blue) rather than success — success/green is reserved for the
-// per-item detail rows (e.g. the personal report).
+// per-item detail rows (e.g. the personal-env report).
 func checkIcon(s Status) string {
 	if s == Pass {
 		return blue + glyphInfo + reset
@@ -99,8 +99,9 @@ func main() {
 	checkers := []Checker{
 		&SymlinksCheck{},
 		&TemplatesCheck{},
-		&ProfileCheck{},
+		&EnvCheck{},
 		&PersonalCheck{},
+		&ProfileCheck{},
 		&ToolsCheck{},
 		&DaemonsCheck{},
 		&ParsersCheck{},
@@ -129,9 +130,16 @@ func main() {
 func printResults(results []Result, verbose bool) {
 	fmt.Println()
 
+	width := 0
+	for _, r := range results {
+		if len(r.Check) > width {
+			width = len(r.Check)
+		}
+	}
+
 	failed := 0
 	for _, r := range results {
-		fmt.Printf("  %s  %-12s %s\n", checkIcon(r.Status), r.Check, r.Message)
+		fmt.Printf("  %s  %-*s    %s\n", checkIcon(r.Status), width, r.Check, r.Message)
 		showDetails := verbose || r.Status != Pass
 		if showDetails {
 			for _, d := range r.Details {
