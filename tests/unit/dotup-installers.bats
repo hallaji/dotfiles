@@ -49,9 +49,10 @@ run_guard() {
 }
 
 # Build an isolated PATH for exercising dotup-mac's nix/devbox section:
-# real sh/bash/cat/grep, recording curl/hotel/brew stubs, and a no-op ruby so
-# the rest of the script runs clean. nix and devbox are deliberately absent so
-# the install branches fire.
+# real sh/bash/cat/grep, recording curl/hotel/brew/defaults/killall stubs, and
+# a no-op ruby so the rest of the script runs clean. nix and devbox are
+# deliberately absent so the install branches fire; the defaults stub reads
+# back nothing, so the macOS-defaults branch fires too.
 make_mac_stub_path() {
   MACSTUBS="$BATS_TEST_TMPDIR/macstubs"
   mkdir -p "$MACSTUBS"
@@ -59,9 +60,13 @@ make_mac_stub_path() {
   export CURL_LOG="$BATS_TEST_TMPDIR/curl.log"
   export HOTEL_LOG="$BATS_TEST_TMPDIR/hotel.log"
   export BREW_LOG="$BATS_TEST_TMPDIR/brew.log"
+  export DEFAULTS_LOG="$BATS_TEST_TMPDIR/defaults.log"
+  export KILLALL_LOG="$BATS_TEST_TMPDIR/killall.log"
   : >"$CURL_LOG"
   : >"$HOTEL_LOG"
   : >"$BREW_LOG"
+  : >"$DEFAULTS_LOG"
+  : >"$KILLALL_LOG"
   cat >"$MACSTUBS/curl" <<'CURL'
 #!/bin/sh
 echo "curl $*" >>"$CURL_LOG"
@@ -74,8 +79,17 @@ HOTEL
 #!/bin/sh
 echo "brew $*" >>"$BREW_LOG"
 BREW
+  cat >"$MACSTUBS/defaults" <<'DEFAULTS'
+#!/bin/sh
+echo "defaults $*" >>"$DEFAULTS_LOG"
+DEFAULTS
+  cat >"$MACSTUBS/killall" <<'KILLALL'
+#!/bin/sh
+echo "killall $*" >>"$KILLALL_LOG"
+KILLALL
   printf '#!/bin/sh\nexit 0\n' >"$MACSTUBS/ruby"
-  chmod +x "$MACSTUBS/curl" "$MACSTUBS/hotel" "$MACSTUBS/brew" "$MACSTUBS/ruby"
+  chmod +x "$MACSTUBS/curl" "$MACSTUBS/hotel" "$MACSTUBS/brew" \
+    "$MACSTUBS/defaults" "$MACSTUBS/killall" "$MACSTUBS/ruby"
 }
 
 @test "dotup-mac installs nix (Determinate) and devbox on non-CLTRMP profiles" {
@@ -110,6 +124,29 @@ BREW
   grep -q '^brew install silk-cli$' "$BREW_LOG"
   grep -q '^brew install wilma$' "$BREW_LOG"
   run ! grep -E 'install\.determinate\.systems|get\.jetify\.com' "$CURL_LOG"
+}
+
+@test "dotup-mac disables dock recents and restarts the Dock" {
+  make_mac_stub_path
+  run env PATH="$MACSTUBS" DOTFILES_PROFILE=PRSNL bash "$BIN/dotup-mac"
+  [ "$status" -eq 0 ]
+  grep -q '^defaults write com.apple.dock show-recents -bool false$' "$DEFAULTS_LOG"
+  grep -q '^killall Dock$' "$KILLALL_LOG"
+}
+
+@test "dotup-mac leaves the Dock alone when recents are already disabled" {
+  make_mac_stub_path
+  cat >"$MACSTUBS/defaults" <<'DEFAULTS'
+#!/bin/sh
+echo "defaults $*" >>"$DEFAULTS_LOG"
+if [ "$1" = "read" ]; then echo 0; fi
+DEFAULTS
+  chmod +x "$MACSTUBS/defaults"
+
+  run env PATH="$MACSTUBS" DOTFILES_PROFILE=PRSNL bash "$BIN/dotup-mac"
+  [ "$status" -eq 0 ]
+  run ! grep -q '^defaults write' "$DEFAULTS_LOG"
+  [ ! -s "$KILLALL_LOG" ]
 }
 
 @test "dotup-asdf adds every plugin and pins the newest stable versions" {
