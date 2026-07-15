@@ -100,6 +100,7 @@ brew install \
   wallpaper \
   watch \
   wget \
+  ykman \
   zoxide \
   zsh
 
