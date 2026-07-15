@@ -95,11 +95,10 @@ EOF
   grep -q '^export GITHUB_REGISTRY_TOKEN="tok-2"' "$ENV_FILE"
   grep -q '^export GITHUB_USER="vahid"' "$ENV_FILE"
   grep -q '^export OP_SERVICE_ACCOUNT_TOKEN="op-tok"' "$ENV_FILE"
+  grep -q '^export SIGNING_KEY_GPG="gpg-key"' "$ENV_FILE"
   grep -q '^export SIGNING_KEY_SSH="ssh-key"' "$ENV_FILE"
   grep -q '^export GIT_USER_EMAIL="me@example.com"' "$ENV_FILE"
   grep -q '^export GIT_USER_NAME="Me"' "$ENV_FILE"
-  # Off-spec vars (SIGNING_KEY_GPG is commented out of the spec) are dropped.
-  ! grep -q '^export SIGNING_KEY_GPG=' "$ENV_FILE"
 }
 
 @test "personal dir is mode 700 and env file is mode 600" {
@@ -116,6 +115,7 @@ export GITHUB_ACCESS_TOKEN=""
 export GITHUB_REGISTRY_TOKEN=""
 export GITHUB_USER=""
 export OP_SERVICE_ACCOUNT_TOKEN=""
+export SIGNING_KEY_GPG=""
 export SIGNING_KEY_SSH=""
 export GIT_USER_EMAIL="john@example.com"
 export GIT_USER_NAME="John Doe"
@@ -188,6 +188,7 @@ EOF
     printf 'export GITHUB_REGISTRY_TOKEN=""\n'
     printf 'export GITHUB_USER=""\n'
     printf 'export OP_SERVICE_ACCOUNT_TOKEN=""\n'
+    printf 'export SIGNING_KEY_GPG=""\n'
     printf 'export SIGNING_KEY_SSH=""\n'
     printf 'export GIT_USER_EMAIL=""\n'
     printf "export GIT_USER_NAME=\"line one\nline two\"\n"
