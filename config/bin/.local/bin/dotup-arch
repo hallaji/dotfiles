@@ -31,6 +31,7 @@ sudo pacman -S --needed \
   alacritty \
   base-devel \
   cowsay \
+  curl \
   diff-so-fancy \
   direnv \
   dmenu \
@@ -53,6 +54,7 @@ sudo pacman -S --needed \
   lolcat \
   mermaid-cli \
   neovim \
+  openssh \
   pam-u2f \
   pi-coding-agent \
   stow \
@@ -60,6 +62,8 @@ sudo pacman -S --needed \
   tmux \
   tree-sitter-cli \
   ttf-jetbrains-mono-nerd \
+  vim \
+  wget \
   wofi \
   xclip \
   yubikey-manager \
