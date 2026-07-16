@@ -3,8 +3,10 @@
 A cheat-sheet for the terminal emulators in this repo. Every binding below is
 taken from the actual configs, with terminal defaults marked _(default)_.
 
-All terminals launch [tmux](TMUX.md) directly at startup (`zsh -l -i -c tmux`)
-and bind almost every `⌘` chord to a tmux prefix sequence. **The keybindings
+All terminals launch [tmux](TMUX.md) directly at startup
+(`zsh -l -i -c "tmux attach || tmux new-session"`, so a reopened terminal
+reattaches to the existing session instead of spawning a new one) and bind
+almost every `⌘` chord to a tmux prefix sequence. **The keybindings
 are identical across every terminal here**, so the tables below apply to all.
 
 ## The terminals

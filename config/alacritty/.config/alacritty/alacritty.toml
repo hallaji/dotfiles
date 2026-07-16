@@ -29,7 +29,7 @@ import = ["colors.toml"]
 
 [terminal.shell]
 program = "/bin/zsh"
-args = ["-l", "-i", "-c", "tmux"]
+args = ["-l", "-i", "-c", "tmux attach || tmux new-session"]
 
 # ┌─┐┌─┐┌┐┌┌┬┐
 # ├┤ │ ││││ │

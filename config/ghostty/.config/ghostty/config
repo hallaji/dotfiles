@@ -23,7 +23,7 @@ config-file = ?colors
 # └─┐├─┤├┤ │  │
 # └─┘┴ ┴└─┘┴─┘┴─┘
 
-command = /bin/zsh -l -i -c tmux
+command = /bin/zsh -l -i -c "tmux attach || tmux new-session"
 
 # ┌─┐┌─┐┌┐┌┌┬┐
 # ├┤ │ ││││ │
