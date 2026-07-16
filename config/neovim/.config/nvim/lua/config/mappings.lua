@@ -238,7 +238,18 @@ wk.add({
 wk.add({
   {
     mode = "n",
-    { "<Leader>a", ":ClaudeCode<CR>", desc = "Claude Code", icon = "󰚩" },
+    {
+      "<Leader>a",
+      "<Cmd>lua require('config.functions').claude_toggle('snacks')<CR>",
+      desc = "Claude Code (split)",
+      icon = "󰚩",
+    },
+    {
+      "<Leader>A",
+      "<Cmd>lua require('config.functions').claude_toggle('external')<CR>",
+      desc = "Claude Code (terminal window)",
+      icon = "󰚩",
+    },
   },
   {
     mode = "x",

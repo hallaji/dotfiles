@@ -422,7 +422,8 @@ prefix to see every sub-key live.
 | ------------------ | ---------------------------------------------------------------- | ----------------------------------------------------------------------------- |
 | `,p…`              | Copilot group (`,pe` enable, `,ps` status, …)                    | insert mode: `<C-J>` accept, `<C-K>` word, `<C-L>` line, `<C-H>` force        |
 | `,x…`              | GPT group (gp.nvim): `,xc` new chat, `,xt` toggle, `,xr` rewrite | `,x<C-x>` (or `,<C-X>`) new chat split; streams via the Anthropic **API key** |
-| `,a` _(normal)_    | Toggle Claude Code session                                       | claudecode.nvim, in a matching external terminal (Ghostty/Alacritty)          |
+| `,a` _(normal)_    | Toggle Claude Code session in an in-editor split                 | claudecode.nvim via the snacks provider; split on the right, ~40% width       |
+| `,A` _(normal)_    | Toggle Claude Code session in a terminal window                  | claudecode.nvim, in a matching external terminal (Ghostty/Alacritty)          |
 | `,as` _(visual)_   | Send selection to the Claude Code session                        | to the running session                                                        |
 | `,ar` _(visual)_   | Rewrite selection in place — headless `claude` CLI               | your Claude Code **subscription**, no metered cost; slower than `,xr`         |
 | `,a` _(gitcommit)_ | Draft commit message — headless `claude` CLI                     | from the staged diff; replaces the message area, safe to re-run               |

@@ -149,4 +149,14 @@ function M.claude_rewrite_selection()
   end)
 end
 
+-- Toggle the Claude Code terminal with a chosen provider. claudecode.nvim
+-- resolves its provider from global config, not per-command, so pin it right
+-- before toggling to keep each binding deterministic regardless of which was
+-- used last. A one-arg setup only touches `provider`, leaving the external
+-- terminal command and env intact.
+function M.claude_toggle(provider)
+  require("claudecode.terminal").setup({ provider = provider })
+  vim.cmd("ClaudeCode")
+end
+
 return M

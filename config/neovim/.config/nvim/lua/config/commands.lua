@@ -57,7 +57,8 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
 -- ┴ ┴┴
 
 -- In a commit buffer, <leader>a drafts the message (shadows the global Claude
--- Code session toggle, which is the intended AI action in this context).
+-- Code split toggle, which is the intended AI action in this context; <leader>A
+-- still opens a terminal-window session here if needed).
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "gitcommit",
   callback = function(ev)
