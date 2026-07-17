@@ -282,6 +282,35 @@ wk.add({
   },
 })
 
+-- Buffer-local diff-review keys, claimed only inside the diff buffer (,y/,n are global elsewhere).
+vim.api.nvim_create_autocmd("User", {
+  pattern = "ClaudeCodeDiffOpened",
+  group = vim.api.nvim_create_augroup("ClaudeCodeDiffKeys", { clear = true }),
+  callback = function(ev)
+    local win = ev.data and ev.data.diff_window
+    if not (win and vim.api.nvim_win_is_valid(win)) then
+      return
+    end
+    local buf = vim.api.nvim_win_get_buf(win)
+    wk.add({
+      {
+        "<Leader>y",
+        "<Cmd>ClaudeCodeDiffAccept<CR>",
+        desc = "Accept Claude diff",
+        icon = "󰚩",
+        buffer = buf,
+      },
+      {
+        "<Leader>n",
+        "<Cmd>ClaudeCodeDiffDeny<CR>",
+        desc = "Deny Claude diff",
+        icon = "󰚩",
+        buffer = buf,
+      },
+    })
+  end,
+})
+
 -- ┌─┐┬┌┬┐
 -- │ ┬│ │
 -- └─┘┴ ┴
