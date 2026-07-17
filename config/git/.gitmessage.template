@@ -4,20 +4,24 @@
 # │││├┤ └─┐└─┐├─┤│ ┬├┤
 # ┴ ┴└─┘└─┘└─┘┴ ┴└─┘└─┘
 # <type>[(optional scope)]: <description>
+#
 # [optional body]
+#
 # [optional footer(s)]
 #
 # +-----------+-------------------------------------------------+----------+
 # | Type      |                                                 | Semver   |
 # +-----------+-------------------------------------------------+----------+
-# | any of    | A commit that has a footer:                     | MAJOR    |
-# | following | BREAKING CHANGE: <description>                  |          |
-# | types     | AND/OR                                          | BREAKING |
-# |           | A commit that has a `!` before colon `:`        | CHANGE   |
+# | any type  | A commit that has a footer:                     | MAJOR    |
+# | with a    | BREAKING CHANGE: <description>                  |          |
+# | breaking  | AND/OR                                          | BREAKING |
+# | marker    | A commit that has a `!` before colon `:`        | CHANGE   |
 # |           | <type>[optional scope]!: <description>          |          |
 # +-----------+-------------------------------------------------+----------+
 # | feat      | Adds a new feature to the codebase              | MINOR    |
+# +-----------+-------------------------------------------------+----------+
 # | fix       | Fixes a bug in the codebase                     | PATCH    |
+# +-----------+-------------------------------------------------+----------+
 # | refactor  | Code improvement, no feature or bug fix         | -        |
 # | docs      | Documentation updates                           | -        |
 # | perf      | Performance improvement                         | -        |
