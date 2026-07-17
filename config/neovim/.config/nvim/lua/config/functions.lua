@@ -155,6 +155,7 @@ end
 -- used last. A one-arg setup only touches `provider`, leaving the external
 -- terminal command and env intact.
 function M.claude_toggle(provider)
+  ---@diagnostic disable-next-line: missing-fields
   require("claudecode.terminal").setup({ provider = provider })
   vim.cmd("ClaudeCode")
 end
