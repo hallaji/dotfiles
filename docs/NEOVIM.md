@@ -370,7 +370,7 @@ runtime types and completion — and no `Undefined global vim` warnings — from
 | `,er`                               | Refresh Trouble               | Re-scan                                           |
 | `,dd`                               | Float current line diagnostic | Read the message under cursor (`vim.diagnostic.open_float`) |
 | `,dl`                               | Diagnostics to loclist        | `vim.diagnostic.setloclist`                       |
-| `]d` / `[d`                         | Next / prev diagnostic        | `vim.diagnostic.jump`, opens the float on landing |
+| `]d` / `[d`                         | Next / prev diagnostic        | `vim.diagnostic.jump`; message shows inline via virtual lines |
 | `<C-W>d` _(Nvim default)_           | Float current line diagnostic | Read the message under cursor                     |
 
 > Severity-filtered navigation is **not** bound. Use `,dd`/`]d`/`[d`, the

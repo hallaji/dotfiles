@@ -53,7 +53,7 @@ wk.add({
     {
       "[d",
       function()
-        vim.diagnostic.jump({ count = -1, float = true })
+        vim.diagnostic.jump({ count = -1 })
       end,
       desc = "Previous Diagnostic",
       icon = "󰒡",
@@ -65,7 +65,7 @@ wk.add({
     {
       "]d",
       function()
-        vim.diagnostic.jump({ count = 1, float = true })
+        vim.diagnostic.jump({ count = 1 })
       end,
       desc = "Next Diagnostic",
       icon = "󰒡",
