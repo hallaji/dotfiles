@@ -367,11 +367,12 @@ runtime types and completion — and no `Undefined global vim` warnings — from
 | `,et`                               | Toggle Trouble                | Show/hide                                         |
 | `,ec`                               | Close Trouble                 | Dismiss                                           |
 | `,er`                               | Refresh Trouble               | Re-scan                                           |
-| `]d` / `[d` _(default cmd, no key)_ | Next / prev diagnostic        | `:lua vim.diagnostic.goto_next()` / `goto_prev()` |
+| `,dd`                               | Float current line diagnostic | Read the message under cursor (`vim.diagnostic.open_float`) |
+| `,dl`                               | Diagnostics to loclist        | `vim.diagnostic.setloclist`                       |
+| `]d` / `[d`                         | Next / prev diagnostic        | `vim.diagnostic.jump`, opens the float on landing |
 | `<C-W>d` _(Nvim default)_           | Float current line diagnostic | Read the message under cursor                     |
 
-> Diagnostic-jump and severity-filtered navigation are **not** bound (the `]d`/`[d`
-> and `,ld*` blocks are commented out in `mappings.lua`). Use the
+> Severity-filtered navigation is **not** bound. Use `,dd`/`]d`/`[d`, the
 > `vim.diagnostic.*` commands above, or open Trouble and step through there.
 
 **Completion (nvim-cmp, insert mode):** `<C-Space>` trigger, `<Tab>` next item,

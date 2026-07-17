@@ -50,10 +50,12 @@ wk.add({
     { "<Tab>", "<C-W>w", desc = "Circle Window Forward", icon = "󱞣" },
 
     { "[", group = "Previous", icon = "󰮳" },
+    { "[d", function() vim.diagnostic.jump({ count = -1, float = true }) end, desc = "Previous Diagnostic", icon = "󰒡" },
     { "[b", ":bprev<CR>", desc = "Previous Buffer", icon = "" },
     { "[t", ":tabp<CR>", desc = "Previous Tab", icon = "" },
 
     { "]", group = "Next", icon = "󰮱" },
+    { "]d", function() vim.diagnostic.jump({ count = 1, float = true }) end, desc = "Next Diagnostic", icon = "󰒡" },
     { "]b", ":bnext<CR>", desc = "Next Buffer", icon = "" },
     { "]t", ":tabn<CR>", desc = "Next Tab", icon = "" },
 
@@ -71,6 +73,9 @@ wk.add({
     { "<Leader>S", ":set spell! spelllang=en_au<CR>", desc = "Spell Check", icon = "󰓆" },
     { "<Leader>T", ":lua MiniTrailspace.trim()<CR>", desc = "Trim Trailing Spaces", icon = "" },
     { "<Leader>c", group = "Comment", icon = "󰅺" },
+    { "<Leader>d", group = "Diagnostics", icon = "󰒡" },
+    { "<Leader>dd", vim.diagnostic.open_float, desc = "Line Diagnostics", icon = "󰌶" },
+    { "<Leader>dl", vim.diagnostic.setloclist, desc = "Diagnostics to Loclist", icon = "󰂛" },
     { "<Leader>h", ":checkhealth<CR>", desc = "Check Health", icon = "󰩂" },
     { "<Leader>l", ":Limelight!!<CR>", desc = "Limelight Mode", icon = "󱟇" },
     { "<Leader>m", ":RenderMarkdown toggle<CR>", desc = "Markdown Render", icon = "󰽛" },
