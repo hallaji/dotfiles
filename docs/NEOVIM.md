@@ -294,8 +294,11 @@ base). Resolve hunks in the merge view, or use fugitive's `:Gdiffsplit!` and the
 
 ## Buffers, windows, tabs
 
-Splits and tmux panes share `<C-H/J/K/L>` via **vim-tmux-navigator** — one set of
-keys moves seamlessly across both.
+Splits and tmux panes share `<C-H/J/K/L>` via **vim-tmux-navigator**, so one set
+of keys moves seamlessly across both. The same keys also work in terminal-mode
+buffers (such as the Claude Code split), letting you jump straight out to a code
+split without first leaving insert mode. They pass through to fzf when a
+fuzzy-finder terminal is focused.
 
 **Buffers**
 
@@ -336,7 +339,9 @@ keys moves seamlessly across both.
 ## LSP / code intelligence
 
 Native LSP via **nvim-lspconfig** + **mason**; diagnostics list via **trouble**;
-formatting via **conform**.
+formatting via **conform**. Editing this config's own Lua gets full Neovim
+runtime types and completion — and no `Undefined global vim` warnings — from
+**lazydev.nvim** (loaded on Lua files only).
 
 | Keys            | Action                                  | When                                              |
 | --------------- | --------------------------------------- | ------------------------------------------------- |
@@ -370,7 +375,8 @@ formatting via **conform**.
 > `vim.diagnostic.*` commands above, or open Trouble and step through there.
 
 **Completion (nvim-cmp, insert mode):** `<C-Space>` trigger, `<Tab>` next item,
-`<CR>` confirm, `<C-f>`/`<C-d>` scroll docs.
+`<CR>` confirm, `<C-f>`/`<C-d>` scroll docs. Sources: LSP, LuaSnip, buffer,
+path, spell — plus lazydev for the Neovim Lua API when editing this config.
 
 ---
 

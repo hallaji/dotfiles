@@ -46,6 +46,7 @@ return {
       }),
 
       sources = cmp.config.sources({
+        { name = "lazydev", group_index = 0 }, -- Neovim Lua API (skips LSP fallback)
         { name = "nvim_lsp" },
         { name = "luasnip" },
         { name = "buffer" },
