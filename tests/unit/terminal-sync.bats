@@ -26,6 +26,7 @@ normalize_chord() {
     if (key == "semicolon") key = ";"
     if (key == "return") key = "enter"
     if (key ~ /^key[0-9]$/) key = substr(key, 4)
+    if (key ~ /^digit_[0-9]$/) key = substr(key, 7)
     print ctrl alt shift cmd key
   }'
 }

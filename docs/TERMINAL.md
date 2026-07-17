@@ -181,7 +181,13 @@ config syntax. Translation rules (Alacritty → Ghostty):
 | `mods = "Command\|Shift"`        | `cmd+shift+…`                    |
 | `chars = "\u0002x"` (`⌃b` + `x`) | `text:\x02x`                     |
 | `key = "Left"` (arrows)          | `left` / `down` / `up` / `right` |
+| `key = "Key1"` (number row)      | `digit_1` … `digit_9`            |
 | `action = "Copy"`                | `copy_to_clipboard`              |
+
+The number row must use the **physical** key names (`digit_1`, not `1`).
+Ghostty binds its built-in `goto_tab` to the physical `super+digit_N`; a
+logical `cmd+1` is a different trigger, so the default wins and the chord never
+reaches tmux.
 
 After editing, `ghostty +validate-config` checks the syntax and
 `ghostty +list-keybinds` shows the result (`⌘` prints as `super`).
@@ -197,7 +203,10 @@ counterpart, on purpose:
 Conversely, Ghostty ships **native** splits/tabs on the same keys (`⌘d`, `⌘t`,
 `⌘w`, `⌘1…9`, …). The config overrides each of these per key with the tmux
 sequence so tmux stays the one multiplexer — never use `keybind = clear`, which
-would also wipe the defaults worth keeping (`⌘c` `⌘v` `⌘n` `⌘q`).
+would also wipe the defaults worth keeping (`⌘c` `⌘v` `⌘n` `⌘q`). Overriding a
+default only works when the trigger matches exactly: `⌘1…9` default to the
+_physical_ `super+digit_N`, so the config must bind `cmd+digit_N` (not `cmd+N`)
+or the `goto_tab` default is left in place.
 
 **Behavior parity** — settings mirrored from the Alacritty `alacritty.toml`
 (≈ marks approximations):

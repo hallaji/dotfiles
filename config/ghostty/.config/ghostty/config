@@ -107,23 +107,23 @@ keybind = ctrl+tab=text:\x02n
 # Move to previous window/tab `⌃b` + `p`
 keybind = ctrl+shift+tab=text:\x02p
 # Switch to window/tab #1 `⌃b` + `1`
-keybind = cmd+1=text:\x021
+keybind = cmd+digit_1=text:\x021
 # Switch to window/tab #2 `⌃b` + `2`
-keybind = cmd+2=text:\x022
+keybind = cmd+digit_2=text:\x022
 # Switch to window/tab #3 `⌃b` + `3`
-keybind = cmd+3=text:\x023
+keybind = cmd+digit_3=text:\x023
 # Switch to window/tab #4 `⌃b` + `4`
-keybind = cmd+4=text:\x024
+keybind = cmd+digit_4=text:\x024
 # Switch to window/tab #5 `⌃b` + `5`
-keybind = cmd+5=text:\x025
+keybind = cmd+digit_5=text:\x025
 # Switch to window/tab #6 `⌃b` + `6`
-keybind = cmd+6=text:\x026
+keybind = cmd+digit_6=text:\x026
 # Switch to window/tab #7 `⌃b` + `7`
-keybind = cmd+7=text:\x027
+keybind = cmd+digit_7=text:\x027
 # Switch to window/tab #8 `⌃b` + `8`
-keybind = cmd+8=text:\x028
+keybind = cmd+digit_8=text:\x028
 # Switch to window/tab #9 `⌃b` + `9`
-keybind = cmd+9=text:\x029
+keybind = cmd+digit_9=text:\x029
 # Show all windows `⌃b` + `w`
 keybind = cmd+p=text:\x02w
 # Rename current window/tab `⌃b` + `,`
