@@ -50,12 +50,26 @@ wk.add({
     { "<Tab>", "<C-W>w", desc = "Circle Window Forward", icon = "󱞣" },
 
     { "[", group = "Previous", icon = "󰮳" },
-    { "[d", function() vim.diagnostic.jump({ count = -1, float = true }) end, desc = "Previous Diagnostic", icon = "󰒡" },
+    {
+      "[d",
+      function()
+        vim.diagnostic.jump({ count = -1, float = true })
+      end,
+      desc = "Previous Diagnostic",
+      icon = "󰒡",
+    },
     { "[b", ":bprev<CR>", desc = "Previous Buffer", icon = "" },
     { "[t", ":tabp<CR>", desc = "Previous Tab", icon = "" },
 
     { "]", group = "Next", icon = "󰮱" },
-    { "]d", function() vim.diagnostic.jump({ count = 1, float = true }) end, desc = "Next Diagnostic", icon = "󰒡" },
+    {
+      "]d",
+      function()
+        vim.diagnostic.jump({ count = 1, float = true })
+      end,
+      desc = "Next Diagnostic",
+      icon = "󰒡",
+    },
     { "]b", ":bnext<CR>", desc = "Next Buffer", icon = "" },
     { "]t", ":tabn<CR>", desc = "Next Tab", icon = "" },
 
