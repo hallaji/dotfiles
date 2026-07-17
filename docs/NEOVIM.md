@@ -297,8 +297,9 @@ base). Resolve hunks in the merge view, or use fugitive's `:Gdiffsplit!` and the
 Splits and tmux panes share `<C-H/J/K/L>` via **vim-tmux-navigator**, so one set
 of keys moves seamlessly across both. The same keys also work in terminal-mode
 buffers (such as the Claude Code split), letting you jump straight out to a code
-split without first leaving insert mode. They pass through to fzf when a
-fuzzy-finder terminal is focused.
+split without first leaving insert mode, and in visual/select mode, so you can
+jump to another pane (e.g. the Claude Code split) with a selection still active.
+They pass through to fzf when a fuzzy-finder terminal is focused.
 
 **Buffers**
 
