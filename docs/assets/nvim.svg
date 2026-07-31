@@ -10,10 +10,10 @@
     <text x="36" y="168">7</text>
     <text x="36" y="190">8</text>
   </g>
-  <text x="56" y="36" fill="#f5b168">#!/usr/bin/env lua</text>
+  <text x="56" y="36" fill="#a394cd">#!/usr/bin/env lua</text>
   <text x="56" y="58" fill="#515f72" font-style="italic">-- Catamaran palette demo (see docs/PALETTE.md)</text>
-  <text x="56" y="80"><tspan fill="#01bdfe">local</tspan><tspan fill="#fdaccb"> theme </tspan><tspan fill="#ff4b82">=</tspan><tspan fill="#02d9fe"> require</tspan><tspan fill="#e1e4e8">(</tspan><tspan fill="#00e8c6">"theme"</tspan><tspan fill="#e1e4e8">)</tspan></text>
-  <text x="56" y="102"><tspan fill="#01bdfe">local</tspan><tspan fill="#fdaccb"> greeting </tspan><tspan fill="#ff4b82">=</tspan><tspan fill="#00e8c6"> "hello</tspan><tspan fill="#ff75b5">\n</tspan><tspan fill="#00e8c6">"</tspan></text>
+  <text x="56" y="80"><tspan fill="#01bdfe">local</tspan><tspan fill="#fdaccb"> theme </tspan><tspan fill="#ff4b82">=</tspan><tspan fill="#02d9fe"> require</tspan><tspan fill="#e1e4e8">(</tspan><tspan fill="#f5b168">"theme"</tspan><tspan fill="#e1e4e8">)</tspan></text>
+  <text x="56" y="102"><tspan fill="#01bdfe">local</tspan><tspan fill="#fdaccb"> greeting </tspan><tspan fill="#ff4b82">=</tspan><tspan fill="#f5b168"> "hello</tspan><tspan fill="#ff75b5">\n</tspan><tspan fill="#f5b168">"</tspan></text>
   <text x="56" y="124"><tspan fill="#01bdfe">function</tspan><tspan fill="#02d9fe"> M.setup</tspan><tspan fill="#e1e4e8">(</tspan><tspan fill="#fdaccb">opts</tspan><tspan fill="#e1e4e8">)</tspan></text>
   <text x="56" y="146"><tspan fill="#e1e4e8">  </tspan><tspan fill="#01bdfe">local</tspan><tspan fill="#fdaccb"> limit </tspan><tspan fill="#ff4b82">=</tspan><tspan fill="#fdaccb"> 30</tspan></text>
   <text x="56" y="168"><tspan fill="#e1e4e8">  </tspan><tspan fill="#01bdfe">if</tspan><tspan fill="#fdaccb"> opts.max </tspan><tspan fill="#ff4b82">&gt;</tspan><tspan fill="#fdaccb"> limt </tspan><tspan fill="#01bdfe">then</tspan><tspan fill="#e1e4e8"> </tspan><tspan fill="#01bdfe">return</tspan><tspan fill="#fdaccb"> nil</tspan><tspan fill="#e1e4e8"> </tspan><tspan fill="#01bdfe">end</tspan></text>

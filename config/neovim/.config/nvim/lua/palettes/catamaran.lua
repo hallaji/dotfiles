@@ -45,14 +45,14 @@ local c = {
 return {
   color = c,
   code = {
-    string = get_color("PALETTE_CODE_STRING", c.mint),
+    string = get_color("PALETTE_CODE_STRING", c.amber),
     keyword = get_color("PALETTE_CODE_KEYWORD", c.azure),
     func = get_color("PALETTE_CODE_FUNCTION", c.sky), -- "function" is reserved
     identifier = get_color("PALETTE_CODE_IDENTIFIER", c.rose),
     constant = get_color("PALETTE_CODE_CONSTANT", c.rose),
     comment = get_color("PALETTE_CODE_COMMENT", c.gray),
     operator = get_color("PALETTE_CODE_OPERATOR", c.red),
-    preprocessor = get_color("PALETTE_CODE_PREPROCESSOR", c.amber),
+    preprocessor = get_color("PALETTE_CODE_PREPROCESSOR", c.purple),
     special = get_color("PALETTE_CODE_SPECIAL", c.pink),
   },
   ui = {

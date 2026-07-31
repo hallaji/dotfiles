@@ -10,10 +10,10 @@
     <text x="36" y="168">7</text>
     <text x="36" y="190">8</text>
   </g>
-  <text x="56" y="36" fill="${PALETTE_AMBER}">#!/usr/bin/env lua</text>
+  <text x="56" y="36" fill="${PALETTE_PURPLE}">#!/usr/bin/env lua</text>
   <text x="56" y="58" fill="${PALETTE_GRAY}" font-style="italic">-- Catamaran palette demo (see docs/PALETTE.md)</text>
-  <text x="56" y="80"><tspan fill="${PALETTE_AZURE}">local</tspan><tspan fill="${PALETTE_ROSE}"> theme </tspan><tspan fill="${PALETTE_RED}">=</tspan><tspan fill="${PALETTE_SKY}"> require</tspan><tspan fill="${PALETTE_FG0}">(</tspan><tspan fill="${PALETTE_MINT}">"theme"</tspan><tspan fill="${PALETTE_FG0}">)</tspan></text>
-  <text x="56" y="102"><tspan fill="${PALETTE_AZURE}">local</tspan><tspan fill="${PALETTE_ROSE}"> greeting </tspan><tspan fill="${PALETTE_RED}">=</tspan><tspan fill="${PALETTE_MINT}"> "hello</tspan><tspan fill="${PALETTE_PINK}">\n</tspan><tspan fill="${PALETTE_MINT}">"</tspan></text>
+  <text x="56" y="80"><tspan fill="${PALETTE_AZURE}">local</tspan><tspan fill="${PALETTE_ROSE}"> theme </tspan><tspan fill="${PALETTE_RED}">=</tspan><tspan fill="${PALETTE_SKY}"> require</tspan><tspan fill="${PALETTE_FG0}">(</tspan><tspan fill="${PALETTE_AMBER}">"theme"</tspan><tspan fill="${PALETTE_FG0}">)</tspan></text>
+  <text x="56" y="102"><tspan fill="${PALETTE_AZURE}">local</tspan><tspan fill="${PALETTE_ROSE}"> greeting </tspan><tspan fill="${PALETTE_RED}">=</tspan><tspan fill="${PALETTE_AMBER}"> "hello</tspan><tspan fill="${PALETTE_PINK}">\n</tspan><tspan fill="${PALETTE_AMBER}">"</tspan></text>
   <text x="56" y="124"><tspan fill="${PALETTE_AZURE}">function</tspan><tspan fill="${PALETTE_SKY}"> M.setup</tspan><tspan fill="${PALETTE_FG0}">(</tspan><tspan fill="${PALETTE_ROSE}">opts</tspan><tspan fill="${PALETTE_FG0}">)</tspan></text>
   <text x="56" y="146"><tspan fill="${PALETTE_FG0}">  </tspan><tspan fill="${PALETTE_AZURE}">local</tspan><tspan fill="${PALETTE_ROSE}"> limit </tspan><tspan fill="${PALETTE_RED}">=</tspan><tspan fill="${PALETTE_ROSE}"> 30</tspan></text>
   <text x="56" y="168"><tspan fill="${PALETTE_FG0}">  </tspan><tspan fill="${PALETTE_AZURE}">if</tspan><tspan fill="${PALETTE_ROSE}"> opts.max </tspan><tspan fill="${PALETTE_RED}">&gt;</tspan><tspan fill="${PALETTE_ROSE}"> limt </tspan><tspan fill="${PALETTE_AZURE}">then</tspan><tspan fill="${PALETTE_FG0}"> </tspan><tspan fill="${PALETTE_AZURE}">return</tspan><tspan fill="${PALETTE_ROSE}"> nil</tspan><tspan fill="${PALETTE_FG0}"> </tspan><tspan fill="${PALETTE_AZURE}">end</tspan></text>

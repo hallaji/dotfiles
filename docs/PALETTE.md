@@ -64,17 +64,17 @@ palette edit, regenerate the mockups with `devbox run palette-assets`.
 | `PALETTE_PINK` | `#ff75b5` | secondary accent, special chars |
 | `PALETTE_ROSE` | `#fdaccb` | identifiers, constants, tmux active tab |
 | `PALETTE_ORANGE` | `#ff6b35` | cursor |
-| `PALETTE_AMBER` | `#f5b168` | warnings, preprocessor, ANSI yellow |
+| `PALETTE_AMBER` | `#f5b168` | strings, warnings, ANSI yellow |
 | `PALETTE_YELLOW` | `#f4d35e` | insert mode, alacritty hints, ANSI bright yellow |
 | `PALETTE_GREEN` | `#9ed47b` | replace mode |
 | `PALETTE_TEAL` | `#00b196` | success, ANSI green |
-| `PALETTE_MINT` | `#00e8c6` | strings, ANSI bright green |
+| `PALETTE_MINT` | `#00e8c6` | ANSI bright green, spelling hints |
 | `PALETTE_CYAN` | `#04f6f6` | primary accent, ANSI cyan, selection |
 | `PALETTE_SKY` | `#02d9fe` | functions, borders, normal mode, ANSI blue, underlined text |
 | `PALETTE_AZURE` | `#01bdfe` | keywords |
 | `PALETTE_BLUE` | `#6fc1ff` | info, ANSI bright blue |
 | `PALETTE_STEEL` | `#599ac8` | statusline section B foreground |
-| `PALETTE_PURPLE` | `#a394cd` | focus, ANSI bright magenta |
+| `PALETTE_PURPLE` | `#a394cd` | preprocessor, imports, focus, ANSI bright magenta |
 | `PALETTE_MAUVE` | `#766b95` | command mode |
 
 ## Roles (layer 2)
@@ -83,14 +83,14 @@ palette edit, regenerate the mockups with `devbox run palette-assets`.
 
 | Role | Color | Used for |
 | --- | --- | --- |
-| `PALETTE_CODE_STRING` | `PALETTE_MINT` | strings |
+| `PALETTE_CODE_STRING` | `PALETTE_AMBER` | strings |
 | `PALETTE_CODE_KEYWORD` | `PALETTE_AZURE` | keywords, statements, types |
 | `PALETTE_CODE_FUNCTION` | `PALETTE_SKY` | functions, markdown headings |
 | `PALETTE_CODE_IDENTIFIER` | `PALETTE_ROSE` | variables, attributes |
 | `PALETTE_CODE_CONSTANT` | `PALETTE_ROSE` | numbers, language constants |
 | `PALETTE_CODE_COMMENT` | `PALETTE_GRAY` | comments |
 | `PALETTE_CODE_OPERATOR` | `PALETTE_RED` | operators, punctuation |
-| `PALETTE_CODE_PREPROCESSOR` | `PALETTE_AMBER` | preprocessor, imports |
+| `PALETTE_CODE_PREPROCESSOR` | `PALETTE_PURPLE` | preprocessor, imports |
 | `PALETTE_CODE_SPECIAL` | `PALETTE_PINK` | escapes, regexp |
 
 ### UI — cross-tool chrome (fzf, sketchybar, borders, gh-dash, lazygit, process-compose, alfred, oh-my-posh, nvim)
