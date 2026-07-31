@@ -282,7 +282,7 @@ wk.add({
   },
 })
 
--- Buffer-local diff-review keys, claimed only inside the diff buffer (,y/,n are global elsewhere).
+-- Buffer-local diff-review keys, claimed only inside the diff buffer (y/n are global elsewhere).
 vim.api.nvim_create_autocmd("User", {
   pattern = "ClaudeCodeDiffOpened",
   group = vim.api.nvim_create_augroup("ClaudeCodeDiffKeys", { clear = true }),
@@ -292,18 +292,23 @@ vim.api.nvim_create_autocmd("User", {
       return
     end
     local buf = vim.api.nvim_win_get_buf(win)
+    -- Drives the orange accept/deny prompt in lualine's far-right section.
+    vim.b[buf].claudecode_diff_active = true
+    vim.schedule(function()
+      vim.cmd("redrawstatus!")
+    end)
     wk.add({
       {
-        "<Leader>y",
+        "y",
         "<Cmd>ClaudeCodeDiffAccept<CR>",
-        desc = "Accept Claude diff",
+        desc = "Yes, accept Claude diff",
         icon = "󰚩",
         buffer = buf,
       },
       {
-        "<Leader>n",
+        "n",
         "<Cmd>ClaudeCodeDiffDeny<CR>",
-        desc = "Deny Claude diff",
+        desc = "No, deny Claude diff",
         icon = "󰚩",
         buffer = buf,
       },

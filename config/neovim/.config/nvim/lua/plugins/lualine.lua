@@ -11,6 +11,15 @@ return {
   cond = not vim.g.vscode,
   dependencies = { "nvim-tree/nvim-web-devicons" },
   config = function()
+    local function load_palette()
+      local colorscheme = vim.g.colors_name
+      if not colorscheme then
+        return nil
+      end
+      local ok, palette = pcall(require, "palettes." .. colorscheme)
+      return ok and palette or nil
+    end
+
     local function get_theme()
       local colorscheme = vim.g.colors_name
       if not colorscheme then
@@ -19,8 +28,8 @@ return {
 
       -- Clear module cache to reload updated palettes
       package.loaded["palettes." .. colorscheme] = nil
-      local ok, palette = pcall(require, "palettes." .. colorscheme)
-      if not ok or not palette.mode then
+      local palette = load_palette()
+      if not palette or not palette.mode then
         return "auto"
       end
 
@@ -67,9 +76,31 @@ return {
       }
     end
 
+    -- True only while the current buffer is an open Claude Code diff; the flag is
+    -- buffer-local (set in config/mappings.lua), so with globalstatus the prompt
+    -- disappears by itself as soon as you leave the diff buffer.
+    local function diff_active()
+      return vim.b.claudecode_diff_active == true
+    end
+
+    local function diff_inactive()
+      return not diff_active()
+    end
+
     local components = {
       spell = function()
         return vim.wo.spell and "󰓆 [" .. vim.o.spelllang .. "]" or ""
+      end,
+      claude_diff = function()
+        return "󰚩 y: accept  n: deny"
+      end,
+      claude_diff_color = function()
+        local palette = load_palette()
+        local c = palette and palette.color
+        if not c then
+          return {}
+        end
+        return { bg = c.orange, fg = c.bg2, gui = "bold" }
       end,
     }
 
@@ -142,8 +173,16 @@ return {
             "progress",
           },
           lualine_z = {
+            -- Inside a Claude Code diff the accept/deny prompt takes this section
+            -- over; the window list comes back when you leave the buffer.
+            {
+              components.claude_diff,
+              cond = diff_active,
+              color = components.claude_diff_color,
+            },
             {
               "windows",
+              cond = diff_inactive,
               mode = 0,
               icons_enabled = true,
               show_modified_status = true,

@@ -435,8 +435,12 @@ prefix to see every sub-key live.
 | `,as` _(visual)_   | Send selection to the Claude Code session                        | to the running session                                                        |
 | `,ar` _(visual)_   | Rewrite selection in place — headless `claude` CLI               | your Claude Code **subscription**, no metered cost; slower than `,xr`         |
 | `,a` _(gitcommit)_ | Draft commit message — headless `claude` CLI                     | from the staged diff; replaces the message area, safe to re-run               |
-| `,y` _(diff buf)_  | Accept the open Claude Code diff (`:ClaudeCodeDiffAccept`)        | bound buffer-local only while a diff is open; `:w` also accepts               |
-| `,n` _(diff buf)_  | Deny the open Claude Code diff (`:ClaudeCodeDiffDeny`)            | buffer-local; `:q` / closing the diff window also rejects                     |
+| `y` _(diff buf)_   | Accept the open Claude Code diff (`:ClaudeCodeDiffAccept`)        | bound buffer-local only while a diff is open; `:w` also accepts               |
+| `n` _(diff buf)_   | Deny the open Claude Code diff (`:ClaudeCodeDiffDeny`)            | buffer-local; `:q` / closing the diff window also rejects                     |
+
+While a diff buffer is the current one, lualine's far-right section swaps the
+window list for an orange `󰚩 y: accept  n: deny` prompt, so the two keys are
+always in view. It reverts as soon as you leave the buffer.
 
 The `,xr` (gp.nvim) and `,ar` (CLI) rewrites overlap deliberately: `,xr` streams
 instantly but bills the API key, while `,ar` reuses your subscription at the cost
