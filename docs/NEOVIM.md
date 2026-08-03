@@ -19,7 +19,7 @@ custom binding**, the row is marked _(default)_ and gives the plugin/Vim default
 | `<C-P>`                         | Find file in repo (git files, fzf-lua) |
 | `<C-G>`                         | Switch buffer (fzf-lua)                |
 | `<C-F>`                         | Find & replace across project (CtrlSF) |
-| `` ` ``                         | Jump into the file tree (nvim-tree)    |
+| `` ` ``                         | Toggle the file tree popup (nvim-tree) |
 | `<C-H>`/`<C-J>`/`<C-K>`/`<C-L>` | Move between splits **and** tmux panes |
 | `gd`                            | Go to definition                       |
 | `gr`                            | Find references                        |
@@ -110,14 +110,17 @@ flowchart TD
 
 ## File explorer
 
-Primary tree is **nvim-tree**. Only the focus key is custom; everything _inside_
-the tree uses nvim-tree's own default keymaps (press **`g?`** in the tree for the
-full list — these are plugin defaults, not configured here).
+Primary tree is **nvim-tree**, opened as a centered popup (80% of the editor
+wide, 70% tall, rounded border) rather than a left sidebar. Picking a file closes
+the popup, so it never hovers over the buffer you just opened. Only the toggle
+key is custom; everything _inside_ the tree uses nvim-tree's own default keymaps
+(press **`g?`** in the tree for the full list — these are plugin defaults, not
+configured here).
 
 | Keys                                        | Action                              | When                                        |
 | ------------------------------------------- | ----------------------------------- | ------------------------------------------- |
-| `` ` `` (backtick)                          | Focus nvim-tree (`:NvimTreeFocus`)  | Jump to the tree without losing your buffer |
-| `:NvimTreeToggle` _(default cmd, no key)_   | Open/close the tree                 | Show/hide the sidebar                       |
+| `` ` `` (backtick)                          | Toggle tree (`:NvimTreeToggle`)     | Open the popup, or dismiss it again         |
+| `:NvimTreeFocus` _(default cmd, no key)_    | Focus the tree without toggling     | Jump back into an already-open popup        |
 | `:NvimTreeFindFile` _(default cmd, no key)_ | Reveal current file in tree         | "Where am I in the project?"                |
 | `-`                                         | nnn file **picker** at buffer's dir | Quick one-shot file pick                    |
 | `~`                                         | nnn **explorer** at buffer's dir    | Browse with nnn instead of the tree         |
@@ -136,7 +139,7 @@ full list — these are plugin defaults, not configured here).
 | `R`                         | Refresh tree                         |
 | `H`                         | Toggle hidden (dotfiles)             |
 | `-`                         | Step up to parent dir                |
-| `q`                         | Close tree                           |
+| `q`                         | Close the popup                      |
 | `g?`                        | Help / all mappings                  |
 
 ---

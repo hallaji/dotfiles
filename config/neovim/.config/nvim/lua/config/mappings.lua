@@ -75,7 +75,7 @@ wk.add({
 
     { "-", ":NnnPicker %:p:h<CR>", desc = "NNN Picker", icon = "" },
     { "~", ":NnnExplorer %:p:h<CR>", desc = "NNN Explorer", icon = "" },
-    { "`", ":NvimTreeFocus<CR>", desc = "Nvim Tree", icon = "" },
+    { "`", ":NvimTreeToggle<CR>", desc = "Nvim Tree", icon = "" },
 
     { "<Leader>", group = "Leader", icon = "󰸥" },
     { "<Leader>/", "<Plug>NERDCommenterToggle", desc = "Comment", icon = "󰆉" },

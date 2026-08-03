@@ -12,7 +12,28 @@ return {
   config = function()
     require("nvim-tree").setup({
       view = {
-        width = 30,
+        float = {
+          enable = true,
+          open_win_config = function()
+            local screen_w = vim.opt.columns:get()
+            local screen_h = vim.opt.lines:get() - vim.opt.cmdheight:get()
+            local width = math.floor(screen_w * 0.8)
+            local height = math.floor(screen_h * 0.7)
+            return {
+              border = "rounded",
+              relative = "editor",
+              width = width,
+              height = height,
+              row = math.floor((screen_h - height) / 2),
+              col = math.floor((screen_w - width) / 2),
+            }
+          end,
+        },
+      },
+      actions = {
+        open_file = {
+          quit_on_open = true, -- don't leave the float hovering over the opened file
+        },
       },
       renderer = {
         add_trailing = false,
