@@ -2,46 +2,46 @@
   "lockfile_version": "1",
   "packages": {
     "claude-code@latest": {
-      "last_modified": "2026-07-23T05:10:05Z",
-      "resolved": "github:NixOS/nixpkgs/7525d999cd850b9a488817abc89c75dc733acf17#claude-code",
+      "last_modified": "2026-08-01T16:34:20Z",
+      "resolved": "github:NixOS/nixpkgs/a5cbcfe954791221bfffe2307f7d1a1bf61a871e#claude-code",
       "source": "devbox-search",
-      "version": "2.1.217",
+      "version": "2.1.220",
       "systems": {
         "aarch64-darwin": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/ifg9gi4xhi29d7xyvyi5imnzl6nw153q-claude-code-2.1.217",
+              "path": "/nix/store/fbnnw4ak1s11l8zhx48mps0mvf82bh4c-claude-code-2.1.220",
               "default": true
             }
           ],
-          "store_path": "/nix/store/ifg9gi4xhi29d7xyvyi5imnzl6nw153q-claude-code-2.1.217"
+          "store_path": "/nix/store/fbnnw4ak1s11l8zhx48mps0mvf82bh4c-claude-code-2.1.220"
         },
         "aarch64-linux": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/rmlirxcvznmqnixh6j4cail6kzkiykbx-claude-code-2.1.217",
+              "path": "/nix/store/hsrdgrp23hjk15qm2b4vz2ib7afiapnn-claude-code-2.1.220",
               "default": true
             }
           ],
-          "store_path": "/nix/store/rmlirxcvznmqnixh6j4cail6kzkiykbx-claude-code-2.1.217"
+          "store_path": "/nix/store/hsrdgrp23hjk15qm2b4vz2ib7afiapnn-claude-code-2.1.220"
         },
         "x86_64-linux": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/f780avppg80awacdn4xvznxdgaqgccrc-claude-code-2.1.217",
+              "path": "/nix/store/wad84rvlsrcs1wq4kkk0dlpblynmspa8-claude-code-2.1.220",
               "default": true
             }
           ],
-          "store_path": "/nix/store/f780avppg80awacdn4xvznxdgaqgccrc-claude-code-2.1.217"
+          "store_path": "/nix/store/wad84rvlsrcs1wq4kkk0dlpblynmspa8-claude-code-2.1.220"
         }
       }
     },
     "github:NixOS/nixpkgs/nixpkgs-unstable": {
-      "last_modified": "2026-07-29T04:59:45Z",
-      "resolved": "github:NixOS/nixpkgs/9bc02893134c733dd85de46ee4fb2fac696b5529?lastModified=1785301185&narHash=sha256-eoS3KQTO0aPWXZvIaRbRAzSSHW3l5wdMFXtT1ISfoKA%3D"
+      "last_modified": "2026-08-03T09:05:39Z",
+      "resolved": "github:NixOS/nixpkgs/104240a772428cc2e20d8fd86c9ddbb886bbaff2?lastModified=1785747939&narHash=sha256-D740uKsMbgsfK2oaDenJLLPIZfq7W0%2Fg4KN%2FFls8eKs%3D"
     }
   }
 }
