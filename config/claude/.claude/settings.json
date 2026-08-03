@@ -15,5 +15,6 @@
   "editorMode": "vim",
   "inputNeededNotifEnabled": true,
   "agentPushNotifEnabled": true,
-  "voiceEnabled": true
+  "voiceEnabled": true,
+  "model": "opus"
 }
