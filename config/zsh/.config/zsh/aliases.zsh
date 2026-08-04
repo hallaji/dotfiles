@@ -52,7 +52,7 @@ alias ,kp='f() { killport "$1" };f' # Kill a port number
 alias ls="ls --color" # Enable colors for `ls` command
 alias ,e="$EDITOR" # Edit current directory
 alias ,z='cd "$(zoxide query -l | fzf)"' # Change directory using zoxide and fzf
-alias ,ls="n -AHei" # NNN file manager https://github.com/jarun/nnn
+alias ,ls="n -AGHci" # NNN file manager https://github.com/jarun/nnn
 alias ,gopath="add_gopath" # Add a new GOPATH
 
 
