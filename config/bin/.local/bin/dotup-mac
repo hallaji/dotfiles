@@ -185,4 +185,7 @@ if [[ "$DOTFILES_PROFILE" == "CLTRMP" ]]; then
 
   # https://github.com/cultureamp/wilma
   brew install wilma
+
+  # https://buildkite.com/docs/platform/cli/installation
+  brew install buildkite/buildkite/bk
 fi
