@@ -26,8 +26,16 @@ local function run_claude(opts)
     { stdin = opts.stdin, text = true },
     vim.schedule_wrap(function(obj)
       if obj.code ~= 0 or vim.trim(obj.stdout or "") == "" then
-        local err = obj.stderr ~= "" and obj.stderr or "no output"
-        vim.notify("claude failed: " .. err, vim.log.levels.ERROR, nid)
+        -- Some failures (e.g. expired auth) are reported on stdout, not stderr.
+        local err = vim.trim(obj.stderr or "")
+        if err == "" then
+          err = vim.trim(obj.stdout or "")
+        end
+        vim.notify(
+          "claude failed: " .. (err ~= "" and err or "no output"),
+          vim.log.levels.ERROR,
+          nid
+        )
         return
       end
       -- Strip stray code fences the model sometimes adds.
