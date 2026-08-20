@@ -111,3 +111,7 @@ wget "https://cache.agilebits.com/dist/1P/op2/pkg/v2.33.1/op_linux_amd64_v2.33.1
   sudo groupadd -f onepassword-cli &&
   sudo chgrp onepassword-cli /usr/local/bin/op &&
   sudo chmod g+s /usr/local/bin/op
+
+# Noodle - API workflows in terminal
+# https://noodlerest.dev
+curl -LsSf https://noodlerest.dev/install.sh | sh

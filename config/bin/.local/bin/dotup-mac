@@ -148,6 +148,10 @@ brew install --cask \
 brew install --cask \
   nikitabobko/tap/aerospace
 
+# Noodle - API workflows in terminal
+# https://noodlerest.dev
+curl -LsSf https://noodlerest.dev/install.sh | sh
+
 # Installing Nix and Devbox
 # https://docs.determinate.systems
 # https://www.jetify.com/docs/devbox/installing_devbox
