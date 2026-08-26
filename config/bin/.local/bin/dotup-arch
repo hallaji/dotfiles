@@ -30,23 +30,26 @@ type devbox &>/dev/null || curl -fsSL https://get.jetify.com/devbox | bash
 sudo pacman -S --needed \
   alacritty \
   base-devel \
+  coreutils \
   cowsay \
   curl \
   diff-so-fancy \
   direnv \
   dmenu \
+  dmidecode \
   dolphin \
   figlet \
   firefox \
+  fwupd \
   fzf \
   ghostty \
   git \
   github-cli \
   go \
   hyprland \
+  i3 \
   imagemagick \
   inetutils \
-  i3 \
   jq \
   lazygit \
   less \
@@ -57,6 +60,7 @@ sudo pacman -S --needed \
   openssh \
   pam-u2f \
   pi-coding-agent \
+  sequoia-sq \
   stow \
   tk \
   tmux \
@@ -115,3 +119,7 @@ wget "https://cache.agilebits.com/dist/1P/op2/pkg/v2.33.1/op_linux_amd64_v2.33.1
 # Noodle - API workflows in terminal
 # https://noodlerest.dev
 curl -LsSf https://noodlerest.dev/install.sh | sh
+
+# Herdr - Runtime for coding agents
+# https://herdr.dev
+curl -fsSL https://herdr.dev/install.sh | sh
