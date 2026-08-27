@@ -159,18 +159,18 @@ so there's no need to press `Esc` after a move.
 Apps are auto-assigned to workspaces on launch (`on-window-detected`), and
 workspaces are pinned to monitors. Utility apps float instead of tiling.
 
-| Workspace | Apps                   | Monitor              |
-| --------- | ---------------------- | -------------------- |
-| 1         | Arc                    | main                 |
-| 2         | Alacritty, Fork        | main                 |
-| 3         | VSCode                 | main                 |
-| 4         | Claude                 | main                 |
-| 5         | —                      | main                 |
-| 6         | Slack                  | main                 |
-| 7         | Hey                    | main                 |
-| 8         | —                      | main                 |
-| 9         | —                      | secondary, else main |
-| 0         | Notion Calendar (Cron) | secondary, else main |
+| Workspace | Apps                            | Monitor              |
+| --------- | ------------------------------- | -------------------- |
+| 1         | Arc                             | main                 |
+| 2         | Claude, ChatGPT (Codex), Cursor | main                 |
+| 3         | Alacritty, Ghostty              | main                 |
+| 4         | VSCode, Fork                    | main                 |
+| 5         | Slack, Zoom                     | main                 |
+| 6         | Hey                             | main                 |
+| 7         | —                               | main                 |
+| 8         | UGREEN NAS                      | main                 |
+| 9         | Notion, Obsidian                | secondary, else main |
+| 0         | Notion Calendar (Cron)          | secondary, else main |
 
 **Always floating**: System Settings, Little Snitch (agent, monitor, app),
 1Password.

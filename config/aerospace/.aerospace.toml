@@ -69,28 +69,57 @@ if.app-id = "company.thebrowser.Browser"
 run = "move-node-to-workspace 1"
 
 [[on-window-detected]]
+if.app-id = "com.anthropic.claudefordesktop"
+run = "move-node-to-workspace 2"
+
+# ChatGPT.app ships with the Codex bundle id, so this covers both.
+[[on-window-detected]]
+if.app-id = "com.openai.codex"
+run = "move-node-to-workspace 2"
+
+[[on-window-detected]]
+if.app-id = "com.todesktop.230313mzl4w4u92"
+run = "move-node-to-workspace 2"
+
+[[on-window-detected]]
 if.app-id = "org.alacritty"
-run = "move-node-to-workspace 2"
-
-[[on-window-detected]]
-if.app-id = "com.DanPristupov.Fork"
-run = "move-node-to-workspace 2"
-
-[[on-window-detected]]
-if.app-id = "com.microsoft.VSCode"
 run = "move-node-to-workspace 3"
 
 [[on-window-detected]]
-if.app-id = "com.anthropic.claudefordesktop"
+if.app-id = "com.mitchellh.ghostty"
+run = "move-node-to-workspace 3"
+
+[[on-window-detected]]
+if.app-id = "com.microsoft.VSCode"
+run = "move-node-to-workspace 4"
+
+[[on-window-detected]]
+if.app-id = "com.DanPristupov.Fork"
 run = "move-node-to-workspace 4"
 
 [[on-window-detected]]
 if.app-id = "com.tinyspeck.slackmacgap"
-run = "move-node-to-workspace 6"
+run = "move-node-to-workspace 5"
+
+[[on-window-detected]]
+if.app-id = "us.zoom.xos"
+run = "move-node-to-workspace 5"
 
 [[on-window-detected]]
 if.app-id = "com.hey.app.desktop"
-run = "move-node-to-workspace 7"
+run = "move-node-to-workspace 6"
+
+[[on-window-detected]]
+if.app-id = "com.ugreen.pro.client"
+run = ["layout tiling", "move-node-to-workspace 8"]
+
+[[on-window-detected]]
+if.app-id = "notion.id"
+run = "move-node-to-workspace 9"
+
+[[on-window-detected]]
+if.app-id = "md.obsidian"
+run = "move-node-to-workspace 9"
 
 [[on-window-detected]]
 if.app-id = "com.cron.electron"
