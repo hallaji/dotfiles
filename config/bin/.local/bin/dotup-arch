@@ -123,3 +123,7 @@ curl -LsSf https://noodlerest.dev/install.sh | sh
 # Herdr - Runtime for coding agents
 # https://herdr.dev
 curl -fsSL https://herdr.dev/install.sh | sh
+
+# Hey CLI
+# https://github.com/basecamp/hey-cli
+curl -fsSL https://hey.com/install-cli | bash
