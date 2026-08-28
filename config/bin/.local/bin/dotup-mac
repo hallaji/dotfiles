@@ -162,6 +162,10 @@ curl -fsSL https://herdr.dev/install.sh | sh
 # https://github.com/basecamp/hey-cli
 curl -fsSL https://hey.com/install-cli | bash
 
+# Pi - Coding agent for terminal
+# https://pi.dev/
+curl -fsSL https://pi.dev/install.sh | sh
+
 # Installing Nix and Devbox
 # https://docs.determinate.systems
 # https://www.jetify.com/docs/devbox/installing_devbox
