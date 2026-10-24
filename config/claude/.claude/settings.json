@@ -1,12 +1,5 @@
 {
   "permissions": {
-    "ask": [
-      "Bash(git commit)",
-      "Bash(git commit:*)",
-      "Bash(git push)",
-      "Bash(git push:*)",
-      "Bash(git -C:*)"
-    ],
     "deny": [
       "Bash(gh pr merge*)",
       "Bash(gh pr edit*--enable-auto-merge*)",
@@ -39,5 +32,9 @@
   "editorMode": "vim",
   "inputNeededNotifEnabled": true,
   "agentPushNotifEnabled": true,
-  "voiceEnabled": true
+  "voiceEnabled": true,
+  "sandbox": {
+    "enabled": true
+  }
 }
+
