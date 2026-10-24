@@ -20,6 +20,7 @@ type brew &>/dev/null || curl -fsSL https://raw.githubusercontent.com/Homebrew/i
 # Core packages
 brew install \
   antigravity-cli \
+  aria2 \
   asdf \
   aws-cdk \
   awscli \

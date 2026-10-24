@@ -29,6 +29,7 @@ type devbox &>/dev/null || curl -fsSL https://get.jetify.com/devbox | bash
 
 sudo pacman -S --needed \
   alacritty \
+  aria2 \
   base-devel \
   coreutils \
   cowsay \
