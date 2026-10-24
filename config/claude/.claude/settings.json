@@ -6,6 +6,12 @@
       "Bash(git push)",
       "Bash(git push:*)",
       "Bash(git -C:*)"
+    ],
+    "deny": [
+      "Bash(gh pr merge*)",
+      "Bash(gh pr edit*--enable-auto-merge*)",
+      "Bash(gh api*/merge*)",
+      "Bash(gh api*/pulls/*/merge*)"
     ]
   },
   "statusLine": {
