@@ -95,6 +95,10 @@ Run a single test:
   like `feat`, `fix`, `perf`, `chore`, `docs`, `refactor`, `test`. The body, if
   any, is one short plain paragraph of at most 3 lines describing the change —
   no bullet lists, no trailers.
+- Pull request descriptions follow `.github/PULL_REQUEST_TEMPLATE.md`: a `Why`
+  section and a `What` section, nothing else. Keep `What` to a few high-level
+  bullets; the diff has the details. GitHub prefills the template in the UI,
+  but `gh pr create --body` bypasses it, so write the body in that shape.
 - Shell scripts: `#!/usr/bin/env bash` or `zsh`, formatted with shfmt, clean
   under shellcheck. Go is formatted with `gofmt` (both via `devbox run fmt`) and
   enforced by a `gofmt` pre-commit hook; `go vet`/`go test` run in CI. Note
