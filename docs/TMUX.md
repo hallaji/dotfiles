@@ -187,8 +187,8 @@ fresh-machine safety net in `.tmux.conf` installs them on first launch.
 
 tmux-continuum autosaves the environment every 15 minutes but does not
 restore it on start (`@continuum-restore` is off), so a new server comes up
-empty and `⌃b R` brings the last snapshot back on demand. Alacritty launches
-tmux itself, so there's no `@continuum-boot`.
+empty and `⌃b R` brings the last snapshot back on demand. Alacritty and
+Ghostty both launch tmux themselves on open, so there's no `@continuum-boot`.
 vim-tmux-navigator, tmux-yank, tmux-open and tmux-urlview provide the
 navigation, clipboard, open and URL keys listed in the sections above.
 
