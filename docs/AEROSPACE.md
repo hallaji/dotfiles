@@ -161,7 +161,7 @@ workspaces are pinned to monitors. Utility apps float instead of tiling.
 
 | Workspace | Apps                            | Monitor              |
 | --------- | ------------------------------- | -------------------- |
-| 1         | Arc                             | main                 |
+| 1         | Arc, Chrome                     | main                 |
 | 2         | Claude, ChatGPT (Codex), Cursor | main                 |
 | 3         | Alacritty, Ghostty              | main                 |
 | 4         | VSCode, Fork                    | main                 |
