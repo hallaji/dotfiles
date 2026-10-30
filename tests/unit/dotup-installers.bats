@@ -3,9 +3,10 @@
 #
 # Guard/no-op: with the prerequisite tool absent (a minimal PATH with only the
 # basics, no brew/gh/asdf), each script exits 0 and installs nothing.
-# Command-capture: dotup-asdf and dotup-mac run against recording stubs to
-# verify the plugin loop, java/gradle/python version pinning, and the
-# profile-gated nix/devbox installs — no real installs.
+# Command-capture: dotup-asdf, dotup-mac and dotup-tools run against recording
+# stubs to verify the plugin loop, java/gradle/python version pinning, the
+# profile-gated nix/devbox installs, and install-or-update for the shared tools -
+# no real installs.
 
 bats_require_minimum_version 1.5.0 # `run !` below
 
@@ -46,6 +47,59 @@ run_guard() {
 @test "dotup-asdf no-ops without asdf" {
   run_guard "$BIN/dotup-asdf"
   [ "$status" -eq 0 ]
+}
+
+@test "dotup-tools no-ops without curl" {
+  run_guard "$BIN/dotup-tools"
+  [ "$status" -eq 0 ]
+  [ -z "$output" ]
+}
+
+# Isolated PATH for dotup-tools: real sh/bash/cat plus a recording curl stub.
+# The tools themselves are absent unless a test adds them.
+make_tools_stub_path() {
+  TOOLSTUBS="$BATS_TEST_TMPDIR/toolstubs"
+  mkdir -p "$TOOLSTUBS"
+  for t in sh bash cat; do ln -sf "$(command -v "$t")" "$TOOLSTUBS/$t"; done
+  export CURL_LOG="$BATS_TEST_TMPDIR/curl.log"
+  export TOOLS_LOG="$BATS_TEST_TMPDIR/tools.log"
+  : >"$CURL_LOG"
+  : >"$TOOLS_LOG"
+  printf '#!/bin/sh\necho "curl $*" >>"$CURL_LOG"\n' >"$TOOLSTUBS/curl"
+  chmod +x "$TOOLSTUBS/curl"
+}
+
+@test "dotup-tools installs every tool when it is missing" {
+  make_tools_stub_path
+  run env PATH="$TOOLSTUBS" bash "$BIN/dotup-tools"
+  [ "$status" -eq 0 ]
+  for url in claude.ai/install.sh noodlerest.dev/install.sh \
+    herdr.dev/install.sh hey.com/install-cli pi.dev/install.sh; do
+    grep -qF "$url" "$CURL_LOG" || {
+      echo "not installed: $url"
+      return 1
+    }
+  done
+}
+
+@test "dotup-tools updates every tool when it is installed" {
+  make_tools_stub_path
+  for t in claude noodle herdr hey pi; do
+    printf '#!/bin/sh\necho "%s $*" >>"$TOOLS_LOG"\n' "$t" >"$TOOLSTUBS/$t"
+    chmod +x "$TOOLSTUBS/$t"
+  done
+
+  run env PATH="$TOOLSTUBS" bash "$BIN/dotup-tools"
+  [ "$status" -eq 0 ]
+  for cmd in 'claude update' 'noodle update' 'herdr update' 'hey upgrade' \
+    'pi update'; do
+    grep -qx "$cmd" "$TOOLS_LOG" || {
+      echo "not updated: $cmd"
+      return 1
+    }
+  done
+  # nothing gets reinstalled over an existing copy
+  [ ! -s "$CURL_LOG" ]
 }
 
 # Build an isolated PATH for exercising dotup-mac's nix/devbox section:

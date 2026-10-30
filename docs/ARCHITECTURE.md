@@ -17,7 +17,7 @@ flowchart TD
         dispatch["dotup (dispatcher)"]:::prov
         dispatch --> personal["personal"]:::prov
         dispatch --> osinst["mac / arch<br/>(brew / pacman)"]:::prov
-        dispatch --> tools["cli · shell · asdf · vim"]:::prov
+        dispatch --> tools["cli · shell · asdf · vim · tools"]:::prov
         dispatch --> svc["services"]:::prov
     end
 
@@ -88,9 +88,10 @@ fzf), oh-my-posh, and Neovim all consume the same vars; ANSI-indexed tools
 
 **Provisioning.** A single `dotup` dispatcher fans out to subcommands:
 `personal` (writes the personal store), OS-split installers `mac`/`arch`
-(Homebrew / pacman), the toolchain installers `cli`/`shell`/`asdf`/`vim`, and
-`services`, which launches **aerospace · skhd · borders · sketchybar** on macOS
-(Hyprland on Linux). Window management is AeroSpace; the `yabai` package is
+(Homebrew / pacman), the toolchain installers `cli`/`shell`/`asdf`/`vim`,
+`tools` (cross-platform tools from their own install scripts, such as Claude
+Code), and `services`, which launches **aerospace · skhd · borders ·
+sketchybar** on macOS (Hyprland on Linux). Window management is AeroSpace; the `yabai` package is
 legacy and is not started.
 
 **Validation.** `dotup doctor` closes the loop, validating what provisioning

@@ -60,7 +60,6 @@ sudo pacman -S --needed \
   neovim \
   openssh \
   pam-u2f \
-  pi-coding-agent \
   sequoia-sq \
   stow \
   tk \
@@ -116,19 +115,3 @@ wget "https://cache.agilebits.com/dist/1P/op2/pkg/v2.33.1/op_linux_amd64_v2.33.1
   sudo groupadd -f onepassword-cli &&
   sudo chgrp onepassword-cli /usr/local/bin/op &&
   sudo chmod g+s /usr/local/bin/op
-
-# Noodle - API workflows in terminal
-# https://noodlerest.dev
-curl -LsSf https://noodlerest.dev/install.sh | sh
-
-# Herdr - Runtime for coding agents
-# https://herdr.dev
-curl -fsSL https://herdr.dev/install.sh | sh
-
-# Hey CLI
-# https://github.com/basecamp/hey-cli
-curl -fsSL https://hey.com/install-cli | bash
-
-# Pi - Coding agent for terminal
-# https://pi.dev/
-curl -fsSL https://pi.dev/install.sh | sh

@@ -77,6 +77,7 @@ The `dotup` command handles both fresh installs and ongoing maintenance of tools
 | `dotup personal` | Personal settings            |
 | `dotup services` | System services              |
 | `dotup shell`    | Shell installations          |
+| `dotup tools`    | Cross-platform tools         |
 | `dotup vim`      | Vim/Neovim installations     |
 
 ---

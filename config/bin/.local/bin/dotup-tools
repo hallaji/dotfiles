@@ -1,0 +1,56 @@
+#!/bin/bash
+
+set -e
+
+if ! command -v curl &>/dev/null; then
+  exit 0
+fi
+
+cat <<BANNER
+┌┬┐┌─┐┌─┐┬  ┌─┐
+ │ │ ││ ││  └─┐
+ ┴ └─┘└─┘┴─┘└─┘
+BANNER
+
+# Tools installed by their own cross-platform installer scripts, shared by
+# macOS and Linux. OS package managers live in dotup-mac and dotup-arch.
+
+# Claude Code - Agentic coding tool
+# https://claude.com/claude-code
+if type claude &>/dev/null; then
+  claude update
+else
+  curl -fsSL https://claude.ai/install.sh | bash
+fi
+
+# Noodle - API workflows in terminal
+# https://noodlerest.dev
+if type noodle &>/dev/null; then
+  noodle update
+else
+  curl -LsSf https://noodlerest.dev/install.sh | sh
+fi
+
+# Herdr - Runtime for coding agents
+# https://herdr.dev
+if type herdr &>/dev/null; then
+  herdr update
+else
+  curl -fsSL https://herdr.dev/install.sh | sh
+fi
+
+# Hey CLI
+# https://github.com/basecamp/hey-cli
+if type hey &>/dev/null; then
+  hey upgrade
+else
+  curl -fsSL https://hey.com/install-cli | bash
+fi
+
+# Pi - Coding agent for terminal
+# https://pi.dev/
+if type pi &>/dev/null; then
+  pi update
+else
+  curl -fsSL https://pi.dev/install.sh | sh
+fi

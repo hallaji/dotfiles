@@ -194,6 +194,7 @@ _dotup_completion() {
     'personal:Manage personal settings'
     'services:System services'
     'shell:Shell installations'
+    'tools:Cross-platform tools'
     'vim:Vim/Neovim installations'
   )
   _describe 'Dotup options' options
