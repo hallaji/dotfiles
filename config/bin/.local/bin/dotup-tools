@@ -6,11 +6,11 @@ if ! command -v curl &>/dev/null; then
   exit 0
 fi
 
-cat <<BANNER
-┌┬┐┌─┐┌─┐┬  ┌─┐
- │ │ ││ ││  └─┐
- ┴ └─┘└─┘┴─┘└─┘
-BANNER
+cat <<EOF
+┌─┐┌─┐┌┬┐┌┬┐┌─┐┌┐┌  ┌┬┐┌─┐┌─┐┬  ┌─┐
+│  │ ││││││││ ││││   │ │ ││ ││  └─┐
+└─┘└─┘┴ ┴┴ ┴└─┘┘└┘   ┴ └─┘└─┘┴─┘└─┘
+EOF
 
 # Tools installed by their own cross-platform installer scripts, shared by
 # macOS and Linux. OS package managers live in dotup-mac and dotup-arch.
