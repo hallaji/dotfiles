@@ -35,7 +35,6 @@
   "agentPushNotifEnabled": true,
   "voiceEnabled": true,
   "sandbox": {
-    "enabled": true
+    "enabled": false
   }
 }
-
