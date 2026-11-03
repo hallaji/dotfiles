@@ -115,3 +115,14 @@ wget "https://cache.agilebits.com/dist/1P/op2/pkg/v2.33.1/op_linux_amd64_v2.33.1
   sudo groupadd -f onepassword-cli &&
   sudo chgrp onepassword-cli /usr/local/bin/op &&
   sudo chmod g+s /usr/local/bin/op
+
+# Supabase CLI
+# https://supabase.com/docs/guides/local-development/cli/getting-started
+# The official release tarball; the "latest" URL means every run also updates
+# it. There's no official Arch package, so this skips the AUR.
+case "$(uname -m)" in
+aarch64 | arm64) supabase_arch=arm64 ;;
+*) supabase_arch=amd64 ;;
+esac
+curl -fsSL "https://github.com/supabase/cli/releases/latest/download/supabase_linux_${supabase_arch}.tar.gz" |
+  sudo tar -xz --no-same-owner -C /usr/local/bin supabase

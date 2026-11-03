@@ -89,8 +89,8 @@ fzf), oh-my-posh, and Neovim all consume the same vars; ANSI-indexed tools
 **Provisioning.** A single `dotup` dispatcher fans out to subcommands:
 `personal` (writes the personal store), OS-split installers `mac`/`arch`
 (Homebrew / pacman), the toolchain installers `cli`/`shell`/`asdf`/`vim`,
-`tools` (cross-platform tools from their own install scripts, such as Claude
-Code), and `services`, which launches **aerospace · skhd · borders ·
+`tools` (cross-platform tools from their own install scripts or npm, such as
+Claude Code and the Vercel CLI), and `services`, which launches **aerospace · skhd · borders ·
 sketchybar** on macOS (Hyprland on Linux). Window management is AeroSpace; the `yabai` package is
 legacy and is not started.
 

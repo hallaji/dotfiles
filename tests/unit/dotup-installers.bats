@@ -102,6 +102,23 @@ make_tools_stub_path() {
   [ ! -s "$CURL_LOG" ]
 }
 
+@test "dotup-tools installs or updates the Vercel CLI through npm" {
+  make_tools_stub_path
+  printf '#!/bin/sh\necho "npm $*" >>"$TOOLS_LOG"\n' >"$TOOLSTUBS/npm"
+  chmod +x "$TOOLSTUBS/npm"
+
+  run env PATH="$TOOLSTUBS" bash "$BIN/dotup-tools"
+  [ "$status" -eq 0 ]
+  grep -qx 'npm install -g vercel@latest' "$TOOLS_LOG"
+}
+
+@test "dotup-tools skips the Vercel CLI without npm" {
+  make_tools_stub_path
+  run env PATH="$TOOLSTUBS" bash "$BIN/dotup-tools"
+  [ "$status" -eq 0 ]
+  run ! grep -q vercel "$TOOLS_LOG" "$CURL_LOG"
+}
+
 # Build an isolated PATH for exercising dotup-mac's nix/devbox section:
 # real sh/bash/cat/grep, recording curl/hotel/brew/defaults/killall stubs, and
 # a no-op ruby so the rest of the script runs clean. nix and devbox are
