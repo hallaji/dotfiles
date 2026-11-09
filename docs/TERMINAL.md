@@ -216,13 +216,19 @@ or the `goto_tab` default is left in place.
 | `[font]` family / size            | `font-family` / `font-size`               |
 | `font.offset.y = 12`              | `adjust-cell-height = 12` ≈               |
 | `window.dimensions` 120×26        | `window-width` / `window-height`          |
-| `window.padding` 15/5             | `window-padding-x` / `window-padding-y`   |
+| `window.padding` 15/5             | `window-padding-x` / `window-padding-y` ≈ |
 | `decorations = "buttonless"`      | `macos-titlebar-style = hidden` ≈         |
 | `selection.save_to_clipboard`     | `copy-on-select = clipboard`              |
 | `cursor` blinking block           | `cursor-style` + `cursor-style-blink`     |
 | `scrolling.multiplier = 3`        | `mouse-scroll-multiplier = 3`             |
 | `scrolling.history = 10000` lines | default `scrollback-limit` (byte-based)   |
 | `colors.toml.template`            | `colors.template` — same `PALETTE_*` vars |
+
+Ghostty pads 10px above and below the grid, and `window-padding-balance =
+equal` splits the space left over from fitting whole rows evenly, so the top
+and bottom gaps stay the same at any zoom. `window-padding-color = extend`
+fills the side padding with the nearest cell colors, so the statuslines reach
+the window edges.
 
 **Truecolor & TERM** — Ghostty sets `TERM=xterm-ghostty`; tmux's
 `terminal-overrides` in `config/tmux/.tmux.conf` includes `xterm-ghostty:RGB`

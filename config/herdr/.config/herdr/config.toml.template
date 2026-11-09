@@ -1,0 +1,48 @@
+# ██╗  ██╗███████╗██████╗ ██████╗ ██████╗
+# ██║  ██║██╔════╝██╔══██╗██╔══██╗██╔══██╗
+# ███████║█████╗  ██████╔╝██║  ██║██████╔╝
+# ██╔══██║██╔══╝  ██╔══██╗██║  ██║██╔══██╗
+# ██║  ██║███████╗██║  ██║██████╔╝██║  ██║
+# ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝
+# https://herdr.dev/tui/docs/config-reference/
+#
+# Rendered to config.toml by render-templates, so edits made from herdr's
+# Settings screen are overwritten at the next login. Change them here.
+
+onboarding = false
+
+[ui]
+accent = "${PALETTE_ROSE}"
+
+# ┌┬┐┬ ┬┌─┐┌┬┐┌─┐
+#  │ ├─┤├┤ │││├┤
+#  ┴ ┴ ┴└─┘┴ ┴└─┘
+
+# Catppuccin is the base; every token it draws is overridden below. accent
+# draws the focused pane border, the active tab background and menu borders;
+# overlay0 draws other pane borders and inactive tab text; surface_dim draws
+# the sidebar separators. The active tab text is panel_bg, so it matches the
+# tmux active window: BG2 on ROSE.
+[theme]
+name = "catppuccin"
+
+[theme.custom]
+accent = "${PALETTE_ROSE}"
+panel_bg = "${PALETTE_BG2}"
+sidebar_bg = "${PALETTE_BG1}"
+active_row_bg = "${PALETTE_NAVY}"
+selection_bg = "${PALETTE_BG3}"
+surface_dim = "${PALETTE_BG3}"
+surface0 = "${PALETTE_BG0}"
+surface1 = "${PALETTE_BG4}"
+overlay0 = "${PALETTE_GRAY}"
+overlay1 = "${PALETTE_FG2}"
+text = "${PALETTE_FG0}"
+subtext0 = "${PALETTE_FG1}"
+mauve = "${PALETTE_UI_FOCUS}"
+green = "${PALETTE_GREEN}"
+yellow = "${PALETTE_YELLOW}"
+red = "${PALETTE_UI_ERROR}"
+blue = "${PALETTE_UI_INFO}"
+teal = "${PALETTE_TEAL}"
+peach = "${PALETTE_AMBER}"
