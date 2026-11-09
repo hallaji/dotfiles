@@ -23,8 +23,8 @@ layers.
 Colors reach tools four ways:
 
 1. **Templates at login** — `render-templates` (run from `~/.zprofile`)
-   envsubsts alacritty, bat, sketchybar, borders, alfred, gh-dash, lazygit
-   and process-compose configs; the `:hex` tag converts to the `0xAARRGGBB`
+   envsubsts alacritty, bat, sketchybar, borders, alfred, gh-dash, herdr,
+   lazygit and process-compose configs; the `:hex` tag converts to the `0xAARRGGBB`
    form sketchybar/borders need.
 2. **Live shell environment** — tmux (server environment) and fzf
    (`FZF_DEFAULT_OPTS` in `tools.zsh`).
@@ -50,19 +50,19 @@ palette edit, regenerate the mockups with `devbox run palette-assets`.
 
 | Name | Hex | Typical use |
 | --- | --- | --- |
-| `PALETTE_BG0` | `#1d232b` | darkest background — tmux status section C, nvim statusline/separators |
+| `PALETTE_BG0` | `#1d232b` | darkest background — tmux inactive tabs and section C, nvim statusline/separators |
 | `PALETTE_BG1` | `#222831` | nvim color column (ruler) |
 | `PALETTE_BG2` | `#242a34` | **main background** (terminal, editor, bars) |
 | `PALETTE_BG3` | `#323a44` | raised background — ANSI black, cursor line, popup menus |
 | `PALETTE_BG4` | `#3a4555` | lightest background — inactive borders, muted text on dark |
-| `PALETTE_NAVY` | `#202f42` | blue-tinted background — statusline section B, inactive statusline, lazygit selection |
+| `PALETTE_NAVY` | `#202f42` | blue-tinted background — statusline section B, inactive statusline, lazygit selection, herdr active row |
 | `PALETTE_FG0` | `#e1e4e8` | primary foreground, ANSI bright white |
 | `PALETTE_FG1` | `#adbac7` | secondary foreground — ANSI white |
 | `PALETTE_FG2` | `#8296aa` | tertiary foreground — hints, dim text |
-| `PALETTE_GRAY` | `#515f72` | muted — comments, line numbers, ANSI bright black |
+| `PALETTE_GRAY` | `#515f72` | muted — comments, line numbers, ANSI bright black, inactive tab text (tmux, herdr) |
 | `PALETTE_RED` | `#ff4b82` | errors, operators, visual mode |
 | `PALETTE_PINK` | `#ff75b5` | secondary accent, special chars |
-| `PALETTE_ROSE` | `#fdaccb` | identifiers, constants, tmux active tab |
+| `PALETTE_ROSE` | `#fdaccb` | identifiers, constants, tmux and herdr active tab |
 | `PALETTE_ORANGE` | `#ff6b35` | cursor |
 | `PALETTE_AMBER` | `#f5b168` | strings, warnings, ANSI yellow |
 | `PALETTE_YELLOW` | `#f4d35e` | insert mode, alacritty hints, ANSI bright yellow |
@@ -93,7 +93,7 @@ palette edit, regenerate the mockups with `devbox run palette-assets`.
 | `PALETTE_CODE_PREPROCESSOR` | `PALETTE_PURPLE` | preprocessor, imports |
 | `PALETTE_CODE_SPECIAL` | `PALETTE_PINK` | escapes, regexp |
 
-### UI — cross-tool chrome (fzf, sketchybar, borders, gh-dash, lazygit, process-compose, alfred, oh-my-posh, nvim)
+### UI — cross-tool chrome (fzf, sketchybar, borders, gh-dash, herdr, lazygit, process-compose, alfred, oh-my-posh, nvim)
 
 | Role | Color | Used for |
 | --- | --- | --- |
