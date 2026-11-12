@@ -40,7 +40,8 @@ return {
       end
 
       local common_b = { bg = c.navy, fg = c.steel }
-      local common_c = { bg = c.bg2, fg = c.bg4 }
+      -- Section C is the stretch that fills the bar, same color as the tmux fill
+      local common_c = { bg = c.bg0, fg = c.bg4 }
 
       return {
         normal = {

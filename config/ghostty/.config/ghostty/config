@@ -39,8 +39,8 @@ adjust-cell-height = 12
 
 window-width = 120
 window-height = 26
-window-padding-x = 15
-window-padding-y = 10
+window-padding-x = 20
+window-padding-y = 0
 window-padding-balance = equal
 window-padding-color = extend
 macos-titlebar-style = hidden
