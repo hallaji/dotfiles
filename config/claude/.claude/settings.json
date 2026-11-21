@@ -7,6 +7,10 @@
       "Bash(gh api*/pulls/*/merge*)"
     ]
   },
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
   "statusLine": {
     "type": "command",
     "command": "~/.claude/statusline.sh"
